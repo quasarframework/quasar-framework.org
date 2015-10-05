@@ -1,0 +1,7 @@
+docs:
+  getting_started:
+    overview: index.html
+
+api:
+  core:
+    overview: index.html
