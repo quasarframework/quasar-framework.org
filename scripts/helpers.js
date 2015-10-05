@@ -91,7 +91,7 @@ hexo.extend.helper.register('canonical_url', function(lang){
 });
 
 hexo.extend.helper.register('raw_link', function(path){
-  return 'https://github.com/hexojs/site/edit/master/source/' + path;
+  return 'https://github.com/rstoenescu/quasar-site/edit/master/source/' + path;
 });
 
 hexo.extend.helper.register('page_anchor', function(str){
