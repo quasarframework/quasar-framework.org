@@ -8,7 +8,7 @@ timezone: UTC
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://0.0.0.0:4000
-root: /quasar-framework/
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
@@ -47,6 +47,10 @@ pagination_dir: page
 
 # Extensions
 theme: quasar
+
+# Accounts
+github: rstoenescu/quasar-framework
+twitter: quasarframework
 
 # Deployment
 deploy:
