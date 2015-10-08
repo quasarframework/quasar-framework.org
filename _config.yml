@@ -51,6 +51,7 @@ theme: quasar
 # Accounts
 github: rstoenescu/quasar-framework
 twitter: quasarframework
+google_analytics: UA-6317975-4
 
 # Deployment
 deploy:
