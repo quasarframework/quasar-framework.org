@@ -9,7 +9,7 @@
 <div id="content-wrap">
   <div class="wrapper">
     <div class="inner">
-      <p style="background-color: red; padding: 20px; text-align: center;">IN ACTIVE DEVELOPMENT! FAR FROM READY FOR PRODUCTION! COME BACK LATER!</p>
+      <p style="background-color: red; color: white; padding: 20px; text-align: center;">IN ACTIVE DEVELOPMENT! FAR FROM READY! COME BACK LATER!</p>
       {{ page.content }}
       <ul id="intro-cmd-wrap">
         <li class="intro-cmd-item">npm install quasar-cli -g</li>
