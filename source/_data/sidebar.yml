@@ -1,6 +1,7 @@
 docs:
   getting_started:
     overview: index.html
+    installation: installation.html
     commands: commands.html
     commit_message_format: commit-message-format.html
 

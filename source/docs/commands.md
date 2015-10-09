@@ -54,10 +54,5 @@ If however you want to release a specific version, use this command:
 $ quasar release:version 1.2.3
 ```
 
-## Options
-
-### TBD
-Description
-``` bash
-$ quasar
-```
+# Options
+TBD
