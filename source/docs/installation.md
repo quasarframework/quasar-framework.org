@@ -19,17 +19,4 @@ $ gem install scss-lint
 $ npm rebuild node-sass
 ```
 
-# Create a project
-
-Create a project folder (in this case is called *q-project* but you can name it whatever you want):
-``` bash
-$ quasar create q-project
-$ cd q-project
-```
-
-Finally install local project dependencies:
-``` bash
-$ npm install
-```
-
-You're all set now. You can start developing your application.
+You're all set now. You can start creating a Quasar Project. Head on to [Quick Start](quick-start.html).
