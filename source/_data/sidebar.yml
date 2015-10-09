@@ -1,6 +1,8 @@
 docs:
   getting_started:
     overview: index.html
+    commands: commands.html
+    commit_message_format: commit-message-format.html
 
 api:
   core:

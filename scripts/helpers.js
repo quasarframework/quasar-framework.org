@@ -79,7 +79,7 @@ hexo.extend.helper.register('header_menu', function(className) {
 
 hexo.extend.helper.register('link_text', function(string) {
   var capitalized = string.charAt(0).toUpperCase() + string.substring(1).toLowerCase();
-  var replaced = capitalized.replace('_', ' ');
+  var replaced = capitalized.replace(/_/g, ' ');
   return replaced;
 });
 
