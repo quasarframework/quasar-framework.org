@@ -13,7 +13,15 @@ Now install some global dependencies.
 $ npm install -g gulp mocha testem
 ```
 
-Then create a project folder (in this case is called *q-project* but you can name it whatever you want).
+You will also need to install Ruby and scss-lint gem in order to be able to preprocess SCSS files. 
+``` bash
+$ gem install scss-lint
+$ npm rebuild node-sass
+```
+
+# Create a project
+
+Create a project folder (in this case is called *q-project* but you can name it whatever you want):
 ``` bash
 $ quasar create q-project
 $ cd q-project
