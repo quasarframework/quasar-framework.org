@@ -6,8 +6,7 @@
   "hexo": {
     "version": "3.1.1"
   },
-  "devDependencies": {
-    "smooth-scroll": "github:cferdinandi/smooth-scroll",
+  "dependencies": {
     "cheerio": ">=0.19.0",
     "hexo": ">=3.1.1",
     "hexo-deployer-git": "0.0.4",
@@ -21,11 +20,13 @@
     "htmlmin": "0.0.4",
     "lodash": ">=3.0.0",
     "lunr": ">=0.5.7",
+    "smooth-scroll": "github:cferdinandi/smooth-scroll"
+  },
+  "devDependencies": {
     "cssnano": ">=2.1.0",
     "eslint": ">=1.6.0",
     "eslint-config-defaults": ">=7.0.1",
     "gulp": ">=3.8.11",
-    "gulp-html-minifier": ">=0.1.6",
     "gulp-htmlmin": "^1.2.0",
     "gulp-if": ">=1.2.5",
     "gulp-image-resize": ">=0.6.0",
