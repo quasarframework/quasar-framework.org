@@ -38,7 +38,7 @@ gulp.task('useref', function() {
     .pipe($.revReplace({
       prefix: '/'
     }))
-    .pipe($.if('*.html', $.htmlMinifier(htmlMinifierOptions)))
+    .pipe($.if('*.html', $.htmlmin(htmlMinifierOptions)))
     .pipe(gulp.dest('public'));
 });
 

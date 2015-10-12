@@ -1,4 +1,7 @@
 {
   "ignore": [
-  ]
+  ],
+  "dependencies": {
+    "unused-ignores": ["hexo-renderer-jade"]
+  }
 }

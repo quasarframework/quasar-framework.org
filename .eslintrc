@@ -2,13 +2,13 @@
   "extends": "defaults/configurations/google",
 
   "env": {
-    "browser": 1
+    "browser": true
   },
 
   "globals": {
-    "require": 1,
-    "$": 1,
-    "hexo": 1
+    "require": true,
+    "$": true,
+    "hexo": true
   },
 
   "rules": {
