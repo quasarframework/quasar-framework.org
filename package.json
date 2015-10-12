@@ -19,7 +19,6 @@
     "hexo-server": ">=0.1.1",
     "htmlmin": "0.0.4",
     "lodash": ">=3.0.0",
-    "lunr": ">=0.5.7",
     "smooth-scroll": "github:cferdinandi/smooth-scroll"
   },
   "devDependencies": {
