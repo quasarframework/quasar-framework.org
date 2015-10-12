@@ -22,6 +22,8 @@
   },
   "devDependencies": {
     "cssnano": "^2.1.0",
+    "eslint": "^1.6.0",
+    "eslint-config-defaults": "^7.0.1",
     "gulp": "^3.8.11",
     "gulp-html-minifier": "^0.1.6",
     "gulp-if": "^1.2.5",
