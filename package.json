@@ -18,8 +18,7 @@
     "hexo-renderer-stylus": ">=0.2.0",
     "hexo-server": ">=0.1.1",
     "htmlmin": "0.0.4",
-    "lodash": ">=3.0.0",
-    "smooth-scroll": "github:cferdinandi/smooth-scroll"
+    "lodash": ">=3.0.0"
   },
   "devDependencies": {
     "cssnano": ">=2.1.0",

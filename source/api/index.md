@@ -1,3 +1,3 @@
 title: API
 ---
-API description
+Browse the API.
