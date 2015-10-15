@@ -18,7 +18,7 @@ quasar.add.route({...});
 ```
 Initialize router to start listening to hash changes:
 ```
-quasar.initialize.router();
+quasar.start.router();
 ```
 
 # Route Definition
@@ -132,7 +132,7 @@ quasar.remove.route(path);
 Example: quasar.remove.route('#/article');
 ```
 
-## Retrieving All routes
+## Retrieving All Routes
 ```
 var routes = quasar.get.all.routes();
 ```
