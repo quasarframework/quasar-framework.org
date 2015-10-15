@@ -3,7 +3,7 @@ docs:
     overview: index.html
     installation: installation.html
     quick_start: quick-start.html
-    commands: commands.html
+    cli_commands: cli-commands.html
     commit_message_format: commit-message-format.html
 
 api:

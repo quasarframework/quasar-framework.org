@@ -1,4 +1,4 @@
-title: Commands
+title: CLI Commands
 ---
 ## version
 Displays version information.
