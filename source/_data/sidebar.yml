@@ -10,5 +10,5 @@ api:
   start:
     overview: index.html
   core:
-    quasar.env: quasar.env.html
-    quasar.debug: quasar.debug.html
+    Environment: quasar.environment.html
+    Debug: quasar.debug.html
