@@ -10,5 +10,6 @@ api:
   start:
     overview: index.html
   core:
-    Environment: quasar.environment.html
-    Debug: quasar.debug.html
+    environment: quasar.environment.html
+    debug_helpers: quasar.debug-helpers.html
+    router: quasar.router.html

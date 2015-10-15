@@ -2,6 +2,10 @@
 
 var pathFn = require('path');
 
+function formatNavigationLinks(text) {
+  return text.replace('_', ' ');
+}
+
 hexo.extend.helper.register('page_nav', function() {
   var type = this.page.canonical_path.split('/')[0];
   var sidebar = this.site.data.sidebar[type];
@@ -33,7 +37,8 @@ hexo.extend.helper.register('page_nav', function() {
   if (index < keys.length - 1) {
     result += '<a href="' + keys[index + 1] + '" class="article-footer-next" title="Next: ' +
       keys[index + 1] + '">' +
-      '<span>Next: ' + list[keys[index + 1]] + '</span><i class="fa fa-chevron-right"></i></a>';
+      '<span>' + formatNavigationLinks(list[keys[index + 1]]) +
+      '</span><i class="fa fa-chevron-right"></i></a>';
   }
 
   return result;
