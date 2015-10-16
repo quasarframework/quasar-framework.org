@@ -3,7 +3,7 @@
 var pathFn = require('path');
 
 function formatNavigationLinks(text) {
-  return text.replace('_', ' ');
+  return text.replace(/_/g, ' ');
 }
 
 hexo.extend.helper.register('page_nav', function() {

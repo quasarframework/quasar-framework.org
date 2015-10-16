@@ -1,6 +1,6 @@
 title: CLI Commands
 ---
-## version
+## Version
 Displays version information.
 ``` bash
 $ quasar -V
@@ -9,7 +9,7 @@ $ quasar version
 
 
 
-# Create content
+# Create Content
 
 ## create *&lt;folder&gt;*
 Initializes a project folder with everything necessary.
@@ -19,7 +19,7 @@ $ quasar create [folder]
 
 
 
-# Making a release
+# Making a Release
 Versioning takes into account the Angular commit style.
 See [Commit Message Format](commit-message-format.html).
 
