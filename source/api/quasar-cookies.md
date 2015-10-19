@@ -21,7 +21,13 @@ var cookies = quasar.get.all.cookies();
 quasar.set.cookie('cookie_name', cookie_value, options);
 ```
 
-`options` can be `expire`, `path`, `domain`, `secure`. They are explained below:
+`options` is an Object which can have the following properties: `expire`, `path`, `domain`, `secure`. They are explained below.
+
+```
+quasar.set.cookie('quasar', 'framework', {
+  secure: true
+});
+```
 
 ## Option `expires`
 ```
