@@ -8,7 +8,6 @@ $ quasar version
 ```
 
 
-
 # Create Content
 
 ## create *&lt;folder&gt;*

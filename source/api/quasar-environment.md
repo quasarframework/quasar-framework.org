@@ -1,4 +1,4 @@
-title: Environment
+title: Quasar Environment
 ---
 
 Helpers are built-in to detect the environment in which the code is running:

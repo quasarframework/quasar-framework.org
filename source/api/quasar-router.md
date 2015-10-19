@@ -1,4 +1,4 @@
-title: Router
+title: Quasar Router
 ---
 Quasar Framework has its own built-in router.
 

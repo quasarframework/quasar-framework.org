@@ -1,4 +1,4 @@
-title: Debug Helpers
+title: Quasar Debug Helpers
 ---
 
 The `quasar.debug` object has useful debugging methods.
