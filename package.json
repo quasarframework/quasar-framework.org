@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "license": "MIT",
+  "scripts": {
+    "deploy": "hexo clean && hexo generate && cp source/.circle.yml public/circle.yml && hexo deploy"
+  },
   "hexo": {
     "version": "3.1.1"
   },
