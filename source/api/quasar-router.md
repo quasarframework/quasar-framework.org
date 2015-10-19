@@ -1,6 +1,5 @@
 title: Quasar Router
 ---
-Quasar Framework has its own built-in router.
 
 # Getting Started
 Each route is an object defined like below:
