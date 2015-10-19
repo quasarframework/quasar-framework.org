@@ -14,3 +14,4 @@ api:
     debug_helpers: quasar-debug-helpers.html
     router: quasar-router.html
     ajax_requests: quasar-ajax-requests.html
+    cookies: quasar-cookies.html
