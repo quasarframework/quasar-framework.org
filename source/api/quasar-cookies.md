@@ -9,12 +9,18 @@ This is a wrapper over the standardized `document.cookie`.
 ```
 var value = quasar.get.cookie('cookie_name');
 ```
+When cookie is not set, the return value is `undefined`.
 
 # Read All Cookies
 ```
 var cookies = quasar.get.all.cookies();
 ```
 `cookies` variable will be an object with key-value pairs (cookie_name : cookie_value).
+
+# Verify if Cookie is Set
+```
+(Boolean) quasar.has.cookie('cookie_name');
+```
 
 # Write a Cookie
 ```
