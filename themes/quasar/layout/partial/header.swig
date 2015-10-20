@@ -11,9 +11,6 @@
         </li>
       </ul>
     </nav>
-    <div id="search-btn-wrap" class="main-nav-item">
-      <a id="search-btn" class="main-nav-link st-search-launcher"><i class="fa fa-search"></i></a>
-    </div>
     <a id="mobile-nav-toggle">
       <span class="mobile-nav-toggle-bar"></span>
       <span class="mobile-nav-toggle-bar"></span>
