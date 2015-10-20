@@ -52,6 +52,7 @@ theme: quasar
 github: rstoenescu/quasar-framework
 twitter: quasarframework
 google_analytics: UA-6317975-4
+swiftype_key: xYFG7xgp5jx2SRfjz6mQ
 
 # Deployment
 deploy:
