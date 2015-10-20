@@ -1,4 +1,4 @@
-title: Quasar Storage
+title: Quasar Web Storage
 ---
 
 Quasar provides a wrapper over Web Storage API.

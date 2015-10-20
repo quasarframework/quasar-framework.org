@@ -9,7 +9,7 @@ hexo.extend.helper.register('header_menu', function(className) {
 
   _.each(menu, function(path, title) {
     result += '<li class="' + className + '-item">';
-    result += '<a href="' + path + '" class="' + className + '-link">' + self.link_text(title) + '</a>';
+    result += '<a href="' + path + '" class="' + className + '-link">' + self.site_navigation_sidebar_link(title) + '</a>';
     result += '</li>';
   });
 

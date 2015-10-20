@@ -1,4 +1,4 @@
-docs:
+guide:
   getting_started:
     overview: index.html
     installation: installation.html
@@ -15,4 +15,4 @@ api:
     router: quasar-router.html
     ajax_requests: quasar-ajax-requests.html
     cookies: quasar-cookies.html
-    web_storage_api: quasar-web-storage-api.html
+    web_storage: quasar-web-storage-api.html

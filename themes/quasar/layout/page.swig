@@ -7,10 +7,12 @@
             <div class="inner">
               <header class="article-header">
                 <h1 class="article-title" itemprop="name">{{ page.title }}</h1>
-                <a href="{{ raw_link(page.source) }}" class="article-edit-link" title="{{ __('page.improve') }}"><i class="fa fa-pencil"></i></a>
+                <a href="{{ edit_page_link(page.source) }}" class="article-edit-link" title="Improve Page"><i class="fa fa-pencil"></i></a>
               </header>
               <div class="article-content" itemprop="articleBody" data-swiftype-index="true">
                 {{ page_anchor(page.content) }}
+                <br>
+                <i class="fa fa-pencil"></i> <a href="{{ edit_page_link(page.source) }}" title="Improve Page">Caught a mistake or want to contribute to the documentation?</a>
               </div>
               <footer class="article-footer">
                 <time class="article-footer-updated" datetime="{{ date_xml(page.updated) }}" itemprop="dateModified">Last update: {{ date(page.updated) }}</time>

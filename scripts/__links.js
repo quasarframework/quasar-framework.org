@@ -6,23 +6,16 @@ function startsWith(str, start) {
   return str.substring(0, start.length) === start;
 }
 
-hexo.extend.helper.register('link_text', function(string) {
-  var capitalized = string.charAt(0).toUpperCase() + string.substring(1).toLowerCase();
-  var replaced = capitalized.replace(/_/g, ' ');
+hexo.extend.helper.register('site_navigation_sidebar_link', function(string) {
+  var replaced = string.replace(/_/g, ' ');
+  var capitalized = replaced.replace(/\w\S*/g, function(txt) {
+    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+  });
 
-  return replaced;
+  return capitalized;
 });
 
-hexo.extend.helper.register('canonical_url', function(lang) {
-  var path = this.page.canonical_path;
-
-  if (lang && lang !== 'en') {
-    path = lang + '/' + path;
-  }
-  return this.config.url + '/' + path;
-});
-
-hexo.extend.helper.register('raw_link', function(path) {
+hexo.extend.helper.register('edit_page_link', function(path) {
   return 'https://github.com/rstoenescu/quasar-site/edit/master/source/' + path;
 });
 
@@ -43,15 +36,4 @@ hexo.extend.helper.register('page_anchor', function(str) {
   });
 
   return $.html();
-});
-
-hexo.extend.helper.register('canonical_path_for_nav', function() {
-  var path = this.page.canonical_path;
-
-  if (startsWith(path, 'docs/') || startsWith(path, 'api/')) {
-    return path;
-  }
-  else {
-    return '';
-  }
 });

@@ -13,7 +13,7 @@ hexo.extend.helper.register('doc_sidebar', function(className) {
   var prefix = 'sidebar.' + type + '.';
 
   _.each(sidebar, function(menu, title) {
-    result += '<strong class="' + className + '-title">' + self.link_text(title) + '</strong>';
+    result += '<strong class="' + className + '-title">' + self.site_navigation_sidebar_link(title) + '</strong>';
 
     _.each(menu, function(link, text) {
       var itemClass = className + '-link';
@@ -22,7 +22,7 @@ hexo.extend.helper.register('doc_sidebar', function(className) {
         itemClass += ' current';
       }
 
-      result += '<a href="' + link + '" class="' + itemClass + '">' + self.link_text(text) + '</a>';
+      result += '<a href="' + link + '" class="' + itemClass + '">' + self.site_navigation_sidebar_link(text) + '</a>';
     });
   });
 
