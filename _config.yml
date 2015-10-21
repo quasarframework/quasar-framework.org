@@ -31,11 +31,11 @@ render_drafts: false
 
 relative_link: false
 future: true
+
 highlight:
   enable: true
-  line_number: true
   auto_detect: true
-  tab_replace:
+  line_number: false
 
 # Date / Time format
 date_format: YYYY-MM-DD

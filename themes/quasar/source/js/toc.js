@@ -14,10 +14,10 @@
     var scrollTop = container.scrollTop;
 
     if (scrollTop > headerHeight) {
-      toc.classList.add('top');
+      toc.classList.add('fixed');
     }
     else {
-      toc.classList.remove('top');
+      toc.classList.remove('fixed');
     }
   }
 
