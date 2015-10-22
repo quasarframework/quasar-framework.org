@@ -4,8 +4,8 @@ var
   gulp = require('gulp'),
   plugins = require('gulp-load-plugins')(),
   runSequence = require('run-sequence'),
-  del = require('del'),
-  cssnano = require('cssnano');
+  del = require('del')
+  ;
 
 var htmlMinifierOptions = {
   removeComments: true,

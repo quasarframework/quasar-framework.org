@@ -25,7 +25,6 @@
     "lodash": ">=3.0.0"
   },
   "devDependencies": {
-    "cssnano": ">=2.1.0",
     "del": "^2.0.2",
     "eslint": "^1.6.0",
     "eslint-config-defaults": ">=7.0.1",
@@ -35,9 +34,7 @@
     "gulp-if": ">=1.2.5",
     "gulp-image-resize": ">=0.6.0",
     "gulp-load-plugins": ">=0.8.0",
-    "gulp-minify-css": ">=0.4.6",
     "gulp-minify-html": ">=1.0.0",
-    "gulp-postcss": ">=4.0.3",
     "gulp-rename": ">=1.2.0",
     "gulp-rev": ">=3.0.1",
     "gulp-rev-collector": ">=0.1.4",
