@@ -28,22 +28,7 @@ $header-height = 40px
 .nav-link
     padding-bottom 3px
     &:hover, &.current
-        border-bottom 3px solid $green
-
-#search-query
-    height 30px
-    line-height 30px
-    box-sizing border-box
-    padding 0 15px 0 30px
-    border 1px solid #e3e3e3
-    outline none
-    border-radius 15px
-    margin-right 10px
-    transition border-color .2s ease
-    background #fff url(/images/search.png) 8px 5px no-repeat
-    background-size 20px
-    &:focus
-        border-color $green
+        border-bottom 3px solid $main
 
 #logo
     display inline-block
@@ -118,8 +103,8 @@ $header-height = 40px
     .sidebar-link
         color $light
         &.current
-            font-weight 600
-            color $green
+            font-weight 900
+            color $main
         &.new
             &:after
                 content "NEW"
@@ -127,7 +112,7 @@ $header-height = 40px
                 font-size 10px
                 font-weight 600
                 color #fff
-                background-color $green
+                background-color $main
                 line-height 14px
                 padding 0 4px
                 border-radius 3px
@@ -136,11 +121,13 @@ $header-height = 40px
                 position relative
                 top -1px
         &:hover
-            border-bottom 2px solid $green
+            border-bottom 2px solid $main
     .section-link
         &.active
             font-weight bold
-            color $green
+            border-left: 3px solid $main
+            padding-left: 3px
+            color $main
     .main-menu
         margin-bottom 20px
         display none
@@ -185,10 +172,10 @@ $header-height = 40px
         margin 3em 0 1.2em
         position relative
         &:before
-            content "#"
-            color $green
+            content "+"
+            color $main
             position absolute
-            left -0.7em
+            left -1em
             top -2px
             font-size 1.2em
             font-weight bold
@@ -199,12 +186,12 @@ $header-height = 40px
     ul, ol
         padding-left 1.5em
     a
-        color $green
+        color $main
         font-weight 600
     blockquote
         margin 2em 0
         padding-left 20px
-        border-left 4px solid $green
+        border-left 4px solid $main
         p
             font-weight 600
             margin-left 0
@@ -294,7 +281,7 @@ $header-height = 40px
     .nav-link
         padding-bottom 1px
         &:hover, &.current
-            border-bottom 2px solid $green
+            border-bottom 2px solid $main
     #search-query
         width 200px
         margin-bottom 10px

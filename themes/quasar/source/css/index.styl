@@ -33,7 +33,7 @@ html, body
     &:first-child
         margin-left 0
     &:hover, &.current
-        border-bottom 3px solid $green
+        border-bottom 3px solid $main
 
 #logo
     display block
@@ -75,65 +75,10 @@ html, body
         left 0
         padding 1.5em 0
         img
-            width 20px  
+            width 20px
     a.button
         width 280px
         margin .5em
-
-#social
-    text-align center
-    list-style-type none
-    margin 0 auto
-    padding 0
-    margin 1.5em auto
-    li
-        display inline-block
-        margin 0 5px
-        vertical-align middle
-        &.last
-            margin-left -2px
-
-#example
-    //background-color #f3f3f3
-    text-align center
-    padding 20px
-    max-width 1200px
-    margin 0 auto 3em
-    h2
-        margin-bottom 1.5em
-    code, pre
-        background-color transparent
-    figure.highlight
-        margin 0
-        box-shadow none
-        background-color transparent
-    .sign
-        display inline-block
-        height 10em
-        line-height 9em
-        padding 0 .5em
-        font-weight 600
-        color $light
-    .block
-        text-align left
-        display inline-block
-        width 28%
-        height 10em
-        vertical-align top
-        background-color #f9f9f9
-        border-radius 2px
-        box-shadow 0 1px 2px rgba(0,0,0,.125)
-    #demo
-        padding 0 20px
-        input
-            font-size .75em
-            border 1px solid #ccc
-            padding 4px 8px
-            border-radius 2px
-            font-family $body-font
-            &:focus
-                outline none
-                border-color $green
 
 #features
     padding 3em 0
@@ -164,61 +109,14 @@ html, body
             padding-left 52px
             margin .4em 0
         a
-            color $green
+            color $main
             font-weight 600
-    .icon
-        display inline-block
-        vertical-align middle
-        position relative
-        top -3px
-        width 40px
-        height 40px
-        margin-right 12px
-        background url(../images/icons.png)
-        background-size 240px 40px
-        &.fast
-            background-position -40px 0
-        &.compact
-            background-position -80px 0
-        &.powerful
-            background-position -120px 0
-        &.composable
-            background-position -160px 0
-        &.module
-            background-position -200px 0
-
-#why
-    padding 4em 0
-    background-color $green
-    color #fff
-    h2
-        margin-top 0
-        color #fff
-        font-size 1.5em
-        text-align center
-    ul
-        line-height 1.8em
-        font-size 1.15em
-        width 320px
-        margin 0 auto
-        padding 0
-        list-style-type none
-        li:before
-            content ""
-            display inline-block
-            width 24px
-            height 24px
-            background url(../images/check.png) center center no-repeat
-            background-size 24px 24px
-            margin-right 10px
-            position relative
-            top 4px
 
 #footer
     text-align center
     color #fff
     padding 4em 0
-    background-color #7f8c8d
+    background-color $main
     .avatar
         width 100px
         border-radius 100%

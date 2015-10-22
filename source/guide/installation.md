@@ -12,7 +12,7 @@ Make sure you are running NodeJS >= 4.1.1.
 
 Now install some global dependencies.
 ``` bash
-$ npm install -g gulp mocha testem
+$ npm install -g gulp mocha karma
 ```
 
 You will also need to install Ruby and scss-lint gem in order to be able to preprocess SCSS files.

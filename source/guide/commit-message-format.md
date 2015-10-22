@@ -1,7 +1,9 @@
-title: Recommended Commit Message Format
+title: Commit Message Format
 type: guide
 order: 5
 ---
+
+## Overview
 This format will help with the *$ quasar release* command when generating the automatic changelog or recommending a version.
 Using other format breaks parts of the *release* commands.
 
@@ -21,10 +23,10 @@ The **header** is mandatory and the **scope** of the header is optional.
 Any line of the commit message cannot be longer 100 characters! This allows the message to be easier
 to read on GitHub as well as in various git tools.
 
-### Revert
+## Revert
 If the commit reverts a previous commit, it should begin with `revert: `, followed by the header of the reverted commit. In the body it should say: `This reverts commit <hash>.`, where the hash is the SHA of the commit being reverted.
 
-### Type
+## Type
 Must be one of the following:
 
 * **feat**: A new feature

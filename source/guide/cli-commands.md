@@ -10,9 +10,9 @@ $ quasar version
 ```
 
 
-# Create Content
+## Create Content
 
-## create *&lt;folder&gt;*
+### create *&lt;folder&gt;*
 Initializes a project folder with everything necessary.
 ``` bash
 $ quasar create [folder]
@@ -20,12 +20,12 @@ $ quasar create [folder]
 
 
 
-# Making a Release
+## Making a Release
 Versioning takes into account the Angular commit style.
 See [Commit Message Format](commit-message-format.html).
 
 
-## release:recommend
+### release:recommend
 Recommends the type of version bump, which can be: `patch`, `minor` or `major`.
 The recommendation is based on the commit message style. See [Commit Message Format](commit-message-format.html).
 ``` bash
@@ -34,7 +34,7 @@ $ quasar release:recommend
 
 
 
-## release *&lt;type&gt;*
+### release *&lt;type&gt;*
 `type` can be: prepatch, path, preminor, minor, premajor, major, prerelease
 ``` bash
 $ quasar release minor
@@ -49,11 +49,11 @@ What it does is:
 
 
 
-## release:version *&lt;version&gt;*
+### release:version *&lt;version&gt;*
 If however you want to release a specific version, use this command:
 ``` bash
 $ quasar release:version 1.2.3
 ```
 
-# Options
+## Options
 TBD

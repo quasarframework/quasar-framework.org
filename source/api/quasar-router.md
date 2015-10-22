@@ -3,9 +3,9 @@ type: api
 order: 4
 ---
 
-# Getting Started
+## Getting Started
 Each route is an object defined like below:
-```
+``` js
 var route = {
   path: '#/'
   before: function() { ... } // can be omitted
@@ -14,17 +14,17 @@ var route = {
 };
 ```
 Adding a route:
-```
+``` js
 quasar.add.route({...});
 ```
 Initialize router to start listening to hash changes:
-```
+``` js
 quasar.start.router();
 ```
 
-# Route Definition
+## Route Definition
 You can easily customize your route. A complex example below:
-```
+``` js
 var route = {
   path: '#/',
   before: function() {
@@ -58,9 +58,9 @@ var route = {
 };
 ```
 
-## Using `this.next(data)`
+### Using `this.next(data)`
 Sometimes you may need to pass in data from one route method to the next. Even do a Ajax request.
-```
+``` js
 var route = {
   path: '#/article',
   before: function() {
@@ -82,13 +82,13 @@ var route = {
 };
 ```
 > **IMPORTANT**
-> This is required when using multiple route methods. If this isn't called, the next route method NOT GOING to get called at all.
+> This is required when using multiple route methods. If this isn't called, the next route method is NOT GOING to get called at all.
 
-# Router Management
+## Router Management
 
-## Initializing the Router
+### Initializing the Router
 Router can be initialized with a config object:
-```
+``` js
 quasar.start.router({
   // can be omitted:
   onRouteChange: function(route) {
@@ -104,65 +104,65 @@ quasar.start.router({
 ```
 Once the router is initialized it will start listening for hash changes.
 
-## Stopping the Router
+### Stopping the Router
 The router can be stopped so it won't listen for hash changes:
-```
+``` js
 quasar.stop.router();
 ```
 
-## Checking if Router is running
-```
+### Checking if Router is running
+``` js
 (boolean) quasar.router.is.running();
 ```
 
-## Adding Route
-```
+### Adding Route
+``` js
 quasar.add.route({...});
 ```
 
-## Overwriting a Route
+### Overwriting a Route
 Sometimes you may need to overwrite a route.
-```
+``` js
 quasar.overwrite.route({...new_route_obj...});
 ```
 It will look for the `path` from new_route_obj and replace the current route with this new one.
 
-## Removing Route
-```
+### Removing Route
+``` js
 quasar.remove.route(path);
 Example: quasar.remove.route('#/article');
 ```
 
-## Retrieving All Routes
-```
+### Retrieving All Routes
+``` js
 var routes = quasar.get.all.routes();
 ```
 
-## Checking if Route Exists
-```
+### Checking if Route Exists
+``` js
 (boolean) quasar.has.route(path);
 Example: quasar.has.route('#/article');
 ```
 
-## Retrieving Current Route
-```
+### Retrieving Current Route
+``` js
 (route_obj) quasar.get.current.route();
 ```
 
-## Get Route By Path
-```
+### Get Route By Path
+``` js
 (route_obj) quasar.get.route(path);
 Example: quasar.get.route('#/article');
 ```
 
-## Refreshing Current Route
+### Refreshing Current Route
 This will trigger the route methods once again.
-```
+``` js
 quasar.refresh.current.route();
 ```
 
-## Navigating to a Route
-```
+### Navigating to a Route
+``` js
 quasar.navigate.to.route(path);
 Example: quasar.navigate.to.route('#/article');
 ```
