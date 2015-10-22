@@ -28,11 +28,13 @@ code, pre
     -moz-osx-font-smoothing initial
 
 code
-    color #e96900
+    color #525252
     padding 3px 5px
     margin 0 2px
     border-radius 2px
+    border: 1px solid #e6e6e6;
     white-space nowrap
+    box-shadow 0 1px 1px rgba(0,0,0,0.125)
 
 em
     color $light
@@ -40,20 +42,64 @@ em
 p
     word-spacing 0.05em
 
+
+
+@-webkit-keyframes swing
+    15%
+        -webkit-transform translateX(5px)
+        transform: translateX(5px)
+    30%
+        -webkit-transform translateX(-5px)
+       transform: translateX(-5px)
+    50%
+        -webkit-transform translateX(3px)
+        transform: translateX(3px)
+    65%
+        -webkit-transform translateX(-3px)
+        transform: translateX(-3px)
+    80%
+        -webkit-transform translateX(2px)
+        transform: translateX(2px)
+    100%
+        -webkit-transform translateX(0);
+        transform: translateX(0);
+
+@keyframes swing
+    15%
+        -webkit-transform translateX(5px)
+        transform: translateX(5px)
+    30%
+        -webkit-transform translateX(-5px)
+        transform: translateX(-5px)
+    50%
+        -webkit-transform translateX(3px)
+        transform: translateX(3px)
+    65%
+        -webkit-transform translateX(-3px)
+        transform: translateX(-3px)
+    80%
+        -webkit-transform translateX(2px)
+        transform: translateX(2px)
+    100%
+        -webkit-transform translateX(0);
+        transform: translateX(0);
+
 a.button
     display inline-block
     font-family $code-font
     font-weight 700
     color #fff
     background-color lighten($main, 8%)
-    border-bottom 2px solid darken($main, 12%)
+    box-shadow $shadow
     padding 12px 14px
-    border-radius 4px
+    border-radius $radius
     transition all .15s ease
     &:hover
         background-color lighten($main, 15%)
-        -webkit-transform translate(0, -2px)
-        transform translate(0, -2px)
+        -webkit-animation swing 1s ease
+        animation swing 1s ease
+        -webkit-animation-iteration-count 1
+        animation-iteration-count 1
 
 .highlight
     overflow-x auto
@@ -63,6 +109,7 @@ a.button
     padding .8em
     line-height 1.1em
     border-radius $radius
+    box-shadow $shadow
     table, tr, td
         width 100%
         border-collapse collapse
@@ -107,17 +154,24 @@ a.button
     -moz-transition all 0.5s ease 0s
     -webkit-transition all 0.5s ease 0s
     -o-transition all 0.5s ease 0s
-    opacity 0.5
-    display none
+    opacity 0.6
     cursor pointer
     position fixed
-    bottom 10px
-    right 10px
-    padding 7px
-    background-color #ddd
-    color #666
+    bottom -70px
+    right 40px
+    padding 20px
+    background-color #F8F8F8
+    color #525252
+    box-shadow $shadow
     border-radius $radius
+    border 2px solid #ccc
     &.visible
-      display block
-#toTop:hover
-    opacity 1
+        bottom -5px
+    &:hover
+        opacity: 1
+
+@media screen and (max-width: 720px)
+    #toTop
+        right -4px
+        padding 8px 10px
+        opacity: 0.9
