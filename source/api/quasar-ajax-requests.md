@@ -39,7 +39,7 @@ quasar.make.a.del.request({...});
 ### Request Properties
 When making a request, you can use the properties below:
 
-| Name | Type | Description | |
+| Name | Type | Description |
 | ---- | ---- | ----- |
 | url | String | URL or relative path to base URL (see [Configuring Requests](#Configuring_Requests)) |
 | query | String or Object | Query String |

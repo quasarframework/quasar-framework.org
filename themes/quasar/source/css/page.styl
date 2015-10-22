@@ -268,7 +268,7 @@ $header-height = 40px
             margin-top 5px
             margin-left 0
     iframe
-        margin: 0 !important
+        margin 0 !important
 
 @media screen and (max-width: 720px)
     body
@@ -290,7 +290,7 @@ $header-height = 40px
     #main
         padding 2em 1.4em 0
     .highlight pre
-        padding 1.2em 1em
+        padding 0
     .sidebar
         position fixed
         background-color #f9f9f9
@@ -316,17 +316,19 @@ $header-height = 40px
         text-align center
 .content
   table
-    max-width: 100%
-    border: 1px solid #eee
-    border-radius: 4px
-    border-spacing: 0
+    max-width 100%
+    border 1px solid #eee
+    border-radius 4px
+    border-spacing 0
     th
-      font-weight: bold
+      font-weight bold
     th, td
-      padding: 5px 15px
+      padding 13px 15px
     tr
       &:nth-child(2n)
-        background: #eee
+        background #eee
   figure
     table
-      border: 0
+      border 0
+  .highlight pre
+    padding 0

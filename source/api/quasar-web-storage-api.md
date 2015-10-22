@@ -1,4 +1,4 @@
-title: Quasar  jsWeb Storage
+title: Quasar Web Storage
 type: api
 order: 7
 ---
