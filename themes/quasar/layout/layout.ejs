@@ -1,4 +1,7 @@
-<% var isIndex = page.path === 'index.html' %>
+<%
+  var isIndex = page.path === 'index.html';
+  var isBlog = page.path.indexOf('blog/') === 0;
+%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -8,19 +11,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600|Roboto Mono' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Dosis:300,500&text=Quasar%20Framework' rel='stylesheet' type='text/css'>
-        <link rel="icon" href="/images/quasar-logo.png" type="image/x-icon">
+        <link rel="icon" href="<%- config.root %>images/quasar-logo.png" type="image/x-icon">
         <script>
             window.PAGE_TYPE = "<%- page.type %>"
         </script>
+        <!-- build:css css/<%- isIndex ? 'landing' : 'page' %>-combined.css -->
         <%- css(isIndex ? 'css/index' : 'css/page') %>
-        <%- partial('partials/ga') %>
+        <!-- endbuild -->
     </head>
     <body>
         <% if (!isIndex) { %>
             <div id="mobile-bar">
                 <a class="menu-button"></a>
                 <span class="logo-text">Quasar Framework</span>
-                <a class="logo" href="/"></a>
+                <a class="logo" href="<%- config.root %>"></a>
             </div>
             <%- partial('partials/header') %>
             <div id="main">
@@ -29,18 +33,23 @@
                 <% } else { %>
                     <%- body %>
                 <% } %>
+                <a href="#top" id="toTop">Go to Top</a>
             </div>
-            <script src="/js/smooth-scroll.min.js"></script>
-            <script src="/js/common.js"></script>
         <% } else { %>
             <%- body %>
         <% } %>
-
         <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 FastClick.attach(document.body);
             }, false);
         </script>
+        <%- partial('partials/ga') %>
+        <% if (!isIndex) { %>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/7.1.1/js/smooth-scroll.min.js"></script>
+          <!-- build:js js/page-combined.js -->
+          <script src="<%- config.root %>js/page.js"></script>
+          <!-- endbuild -->
+        <% } %>
     </body>
 </html>

@@ -7,8 +7,9 @@
   var header = document.getElementById('header');
   var menu = document.querySelector('.sidebar');
   var content = document.querySelector('.content');
-  var mobileBar = document.getElementById('mobile-bar');
   var toTop = document.getElementById('toTop');
+
+  var mobileBar = document.getElementById('mobile-bar');
   var menuButton = mobileBar.querySelector('.menu-button');
 
   menuButton.addEventListener('click', function() {
@@ -172,38 +173,53 @@
   }
 
 
-  function scrollTo(element, to, duration) {
-    var start = element.scrollTop,
-      change = to - start,
-      increment = 7;
+  function easeInCubic(t, b, c, d) {
+    return b + c * (t /= d) * t * t;
+  };
 
-    var animateScroll = function(elapsedTime) {
-      elapsedTime += increment;
-      var position = easeInOut(elapsedTime, start, change, duration);
+  var requestAnimFrame = (function() {
+    return window.requestAnimationFrame || window.webkitRequestAnimationFrame ||
+      window.mozRequestAnimationFrame || function(callback) { window.setTimeout(callback, 1000 / 60); };
+  })();
 
-      element.scrollTop = position;
-      if (elapsedTime < duration) {
-        setTimeout(function() {
-          animateScroll(elapsedTime);
-        }, increment);
+  function scrollToTop(duration) {
+    // because it's so fucking difficult to detect the scrolling element, just move them all
+    function move(amount) {
+      document.documentElement.scrollTop = amount;
+      document.body.parentNode.scrollTop = amount;
+      document.body.scrollTop = amount;
+    }
+    function position() {
+      return document.documentElement.scrollTop || document.body.parentNode.scrollTop || document.body.scrollTop;
+    }
+
+    var start = position(),
+      change = 0 - start,
+      currentTime = 0,
+      increment = 20,
+      duration = typeof duration === 'undefined' ? 500 : duration
+      ;
+
+    var animateScroll = function() {
+      // increment the time
+      currentTime += increment;
+      // find the value with the quadratic in-out easing function
+      var val = easeInCubic(currentTime, start, change, duration);
+
+      // move the document.body
+      move(val);
+      // do the animation unless its over
+      if (currentTime < duration) {
+        requestAnimFrame(animateScroll);
       }
     };
 
-    animateScroll(0);
-  }
-
-  function easeInOut(currentTime, start, change, duration) {
-    currentTime /= duration / 2;
-    if (currentTime < 1) {
-      return change / 2 * currentTime * currentTime + start;
-    }
-    currentTime -= 1;
-    return -change / 2 * (currentTime * (currentTime - 2) - 1) + start;
+    animateScroll();
   }
 
   toTop.addEventListener('click', function(e) {
     e.preventDefault();
-    scrollTo(document.body, 0, 1250);
+    scrollToTop(1000);
   });
 
   function updateToTop(top) {

@@ -1,21 +1,25 @@
 <div id="hero">
   <div class="inner">
     <ul id="nav">
-      <li><a href="/guide/" class="nav-link">Guide</a></li>
-      <li><a href="/api/" class="nav-link">API</a></li>
-      <li><a href="/blog/" class="nav-link">Blog</a></li>
+      <li><a href="<%- config.root %>guide/" class="nav-link">Guide</a></li>
+      <li><a href="<%- config.root %>api/" class="nav-link">API</a></li>
+      <li><a href="<%- config.root %>blog/" class="nav-link">Blog</a></li>
       <li><a href="https://github.com/rstoenescu/quasar-framework" class="nav-link" target="_blank">GitHub</a></li>
     </ul>
     <div id="logo-wrap">
-      <img id="logo" src="/images/quasar-logo.png">
+      <img id="logo" src="<%- config.root %>images/quasar-logo.png">
       <h1>Quasar Framework</h1>
     </div>
-    <p class="desc">Build desktop & phone/tablet apps simultaneously.</p>
+    <p class="desc">
+      Build desktop & phone/tablet apps simultaneously.
+      <br>
+      <strong>Far from ready for 1st release.</strong>
+    </p>
     <p class="buttons">
-      <a href="/guide/installation.html" class="button">Install & Read About It</a>
+      <a href="<%- config.root %>guide/installation.html" class="button">Install & Read About It</a>
     </p>
   </div>
-  <div class="down"><img src="/images/down.png"></div>
+  <div class="down"><img src="<%- config.root %>images/down.png"></div>
 </div>
 
 <div id="features">
@@ -40,7 +44,7 @@
 </div>
 
 <div id="footer">
-  <a class="start" href="/guide/index.html">Get Started</a>
+  <a class="start" href="<%- config.root %>guide/index.html">Get Started</a>
   <p>Released under the <a href="http://opensource.org/licenses/MIT" target="_blank">MIT License</a></p>
   <p>Copyright (c) <%- date(Date.now(), 'YYYY') %> Razvan Stoenescu</p>
 </div>
