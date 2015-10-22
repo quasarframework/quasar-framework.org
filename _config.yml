@@ -7,7 +7,7 @@ timezone: UTC
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://0.0.0.0:4000
+url: http://quasar-framework.org
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -32,10 +32,19 @@ render_drafts: false
 relative_link: false
 future: true
 
+markdown:
+  gfm: true
+  pedantic: false
+  sanitize: false
+  tables: true
+  breaks: true
+  smartLists: true
+  smartypants: true
+
 highlight:
   enable: true
-  auto_detect: true
   line_number: false
+  tab_replace:
 
 # Date / Time format
 date_format: YYYY-MM-DD
@@ -49,7 +58,7 @@ pagination_dir: page
 theme: quasar
 
 # Accounts
-github: rstoenescu/quasar-framework
+github: https://github.com/rstoenescu/quasar-framework
 twitter: quasarframework
 google_analytics: UA-6317975-4
 

@@ -1,3 +1,6 @@
-title: API
+title: Overview
+type: api
+order: 1
 ---
-Browse the API.
+
+Quasar API

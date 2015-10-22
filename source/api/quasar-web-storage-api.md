@@ -1,4 +1,6 @@
 title: Quasar Web Storage
+type: api
+order: 7
 ---
 
 Quasar provides a wrapper over Web Storage API.

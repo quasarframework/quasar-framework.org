@@ -1,4 +1,6 @@
 title: Quick Start
+type: guide
+order: 3
 ---
 
 Create a project folder (in this case is called *q-project* but you can name it whatever you want):

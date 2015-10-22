@@ -1,4 +1,6 @@
 title: Installation
+type: guide
+order: 2
 ---
 
 First, install  Quasar CLI:
@@ -13,7 +15,7 @@ Now install some global dependencies.
 $ npm install -g gulp mocha testem
 ```
 
-You will also need to install Ruby and scss-lint gem in order to be able to preprocess SCSS files. 
+You will also need to install Ruby and scss-lint gem in order to be able to preprocess SCSS files.
 ``` bash
 $ gem install scss-lint
 $ npm rebuild node-sass

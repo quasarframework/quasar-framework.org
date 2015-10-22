@@ -1,4 +1,6 @@
 title: Recommended Commit Message Format
+type: guide
+order: 5
 ---
 This format will help with the *$ quasar release* command when generating the automatic changelog or recommending a version.
 Using other format breaks parts of the *release* commands.
