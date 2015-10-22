@@ -9,8 +9,7 @@
   var content = document.querySelector('.content');
   var mobileBar = document.getElementById('mobile-bar');
   var toTop = document.getElementById('toTop');
-
-  var menuButton = mobileBar.querySelector('.menu-button');
+  var menuButton = mobileBar.querySelectorAll('.menu-button');
 
   menuButton.addEventListener('click', function() {
     menu.classList.toggle('open');
