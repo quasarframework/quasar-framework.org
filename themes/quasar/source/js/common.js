@@ -8,6 +8,7 @@
   var menu = document.querySelector('.sidebar');
   var content = document.querySelector('.content');
   var mobileBar = document.getElementById('mobile-bar');
+  var toTop = document.getElementById('toTop');
 
   var menuButton = mobileBar.querySelector('.menu-button');
 
@@ -78,20 +79,10 @@
     });
   }
 
-  // listen for scroll event to do positioning & highlights
-  window.addEventListener('scroll', updateSidebar);
-  window.addEventListener('resize', updateSidebar);
-
-  function updateSidebar() {
-    var top = doc && doc.scrollTop || body.scrollTop;
+  function updateSidebar(top) {
     var headerHeight = header.offsetHeight;
 
-    if (top > headerHeight) {
-      main.className = 'fix-sidebar';
-    }
-    else {
-      main.className = '';
-    }
+    main.className = top > headerHeight ? 'fix-sidebar' : '';
 
     if (animating || !allLinks) {
       return;
@@ -128,7 +119,7 @@
 
     link.innerHTML =
       '<a class="section-link" data-scroll href="#' + h.id + '">' +
-        text +
+      text +
       '</a>';
 
     return link;
@@ -162,7 +153,7 @@
   function setActive(id) {
     var previousActive = menu.querySelector('.section-link.active');
     var currentActive = typeof id === 'string' ?
-      menu.querySelector('.section-link[href="#' + id + '"]') : id;
+    menu.querySelector('.section-link[href="#' + id + '"]') : id;
 
     if (currentActive !== previousActive) {
       if (previousActive) {
@@ -180,5 +171,56 @@
     link.parentNode.insertBefore(wrapper, link);
     wrapper.appendChild(link);
   }
+
+
+  function scrollTo(element, to, duration) {
+    var start = element.scrollTop,
+      change = to - start,
+      increment = 7;
+
+    var animateScroll = function(elapsedTime) {
+      elapsedTime += increment;
+      var position = easeInOut(elapsedTime, start, change, duration);
+
+      element.scrollTop = position;
+      if (elapsedTime < duration) {
+        setTimeout(function() {
+          animateScroll(elapsedTime);
+        }, increment);
+      }
+    };
+
+    animateScroll(0);
+  }
+
+  function easeInOut(currentTime, start, change, duration) {
+    currentTime /= duration / 2;
+    if (currentTime < 1) {
+      return change / 2 * currentTime * currentTime + start;
+    }
+    currentTime -= 1;
+    return -change / 2 * (currentTime * (currentTime - 2) - 1) + start;
+  }
+
+  toTop.addEventListener('click', function(e) {
+    e.preventDefault();
+    scrollTo(document.body, 0, 1250);
+  });
+
+  function updateToTop(top) {
+    toTop.classList[top > 1000 ? 'add' : 'remove']('visible');
+  }
+
+
+  function redraw() {
+    var top = doc && doc.scrollTop || body.scrollTop;
+
+    updateSidebar(top);
+    updateToTop(top);
+  }
+
+  // listen for scroll event to do positioning & highlights
+  window.addEventListener('scroll', redraw);
+  window.addEventListener('resize', redraw);
 
 })();
