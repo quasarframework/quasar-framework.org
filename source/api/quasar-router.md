@@ -64,9 +64,9 @@ Sometimes you may need to pass in data from one route method to the next. Even d
 var route = {
   path: '#/article',
   before: function() {
-    quasar.get.request({
+    quasar.make.a.get.request({
       path: '/users.php'
-    }).success(function(data) {
+    }).done(function(data) {
       this.next(data);
     });
   },

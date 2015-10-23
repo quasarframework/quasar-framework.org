@@ -2,7 +2,12 @@
     <%- partial('partials/sidebar', { type: page.type, index: page.index }) %>
 <% } %>
 <div class="content <%- page.type ? page.type + ' with-sidebar' : '' %>">
-    <h1><%- page.title %></h1>
+    <h1>
+      <a href="https://github.com/rstoenescu/quasar-site/edit/master/source/<%- page.source %>" title="Edit page on GitHub" target="_blank">
+        <%- page.title %>
+        <i class="float: right; fa fa-pencil"></i>
+      </a>
+    </h1>
     <%- page.content %>
     <% if (page.type === 'guide' || page.type === 'api') { %>
       <div class="guide-links">
@@ -18,6 +23,10 @@
       <div style="font-style: italic">
         Last updated: <%- (new Date(page.updated)).toDateString() %>
       </div>
-      Caught a mistake or want to contribute to the documentation? <a href="https://github.com/rstoenescu/quasar-site/edit/master/source/<%- page.source %>" target="_blank">Edit this page</a>!
+      Caught a mistake or want to contribute to the documentation?
+      <a href="https://github.com/rstoenescu/quasar-site/edit/master/source/<%- page.source %>" target="_blank">
+        Edit this page on GitHub
+        <i class="fa fa-pencil"></i>
+      </a>
     </div>
 </div>
