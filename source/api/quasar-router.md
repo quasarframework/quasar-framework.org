@@ -155,10 +155,10 @@ Example: quasar.has.route('#/article');
 Example: quasar.get.route('#/article');
 ```
 
-### Refreshing Current Route
+### Reloading Current Route
 This will trigger the route methods once again.
 ``` js
-quasar.refresh.current.route();
+quasar.reload.current.route();
 ```
 
 ### Navigating to a Route
