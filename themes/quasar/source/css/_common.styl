@@ -158,7 +158,7 @@ a.button
     cursor pointer
     position fixed
     bottom -70px
-    right 40px
+    right 10px
     padding 20px
     background-color #F8F8F8
     color #525252
@@ -169,6 +169,14 @@ a.button
         bottom -5px
     &:hover
         opacity: 1
+
+@media screen and (min-width: 720px)
+    #toTop:hover
+        bottom 5px
+
+@media screen and (min-width: 1400px)
+    #toTop
+        right 20%
 
 @media screen and (max-width: 720px)
     #toTop
