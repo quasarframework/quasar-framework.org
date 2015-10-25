@@ -30,7 +30,7 @@
     "hexo-renderer-marked": "^0.2.4",
     "hexo-renderer-stylus": "^0.3.0",
     "hexo-server": "^0.1.1",
-    "htmlmin": "0.0.4"
+    "htmlmin": "^0.0.4"
   },
   "devDependencies": {
     "del": "^2.0.2",

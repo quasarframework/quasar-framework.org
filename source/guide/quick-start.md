@@ -5,7 +5,7 @@ order: 3
 
 Create a project folder (in this case is called *q-project* but you can name it whatever you want):
 ``` bash
-$ quasar create q-project
+$ quasar new q-project
 $ cd q-project
 ```
 
