@@ -37,8 +37,14 @@ Cleans development and production builds.
 $ quasar clean
 ```
 
+## Monitoring & Auto-Build
+Monitors source code files (Javascript files, CSS files, assets, ...) for changes and when change is detected it auto-rebuilds.
+``` bash
+$ quasar monitor
+```
+
 ## Live Preview
-You can even live preview the build in your browser(s). Whenever you modify anything in the sourcecode (Javascript files, CSS files, assets, ...), it gets rebuilt and the browser(s) refreshed.
+You can even live preview the build in your browser(s). Whenever you modify anything in the source code (Javascript files, CSS files, assets, ...), it gets rebuilt and the browser(s) refreshed.
 
 > **NOTE**: CSS is injected into the browser(s) so the page is not required to reload, which is really cool.
 
