@@ -175,7 +175,7 @@
 
   function easeInCubic(t, b, c, d) {
     return b + c * (t /= d) * t * t;
-  };
+  }
 
   var requestAnimFrame = (function() {
     return window.requestAnimationFrame || window.webkitRequestAnimationFrame ||
