@@ -9,6 +9,13 @@ $ quasar -V
 $ quasar version
 ```
 
+## Help
+Displays list of all commands and options.
+``` bash
+$ quasar
+$ quasar -h
+```
+
 
 ## Create Project Folder
 
@@ -19,16 +26,16 @@ $ quasar new [folder-name]
 
 ## Build
 
-### Development
+### For development
 Generates a folder called `/build` which contains sourcemaps and everything needed to debug.
 ``` bash
 $ quasar build
 ```
 
-### Production
+### For production
 Generates a folder called `/dist`. Everything is compiled, minified, ...
 ``` bash
-$ quasar build
+$ quasar dist
 ```
 
 ### Cleaning
