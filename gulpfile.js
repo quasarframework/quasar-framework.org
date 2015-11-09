@@ -36,8 +36,8 @@ gulp.task('useref', function() {
 });
 
 gulp.task('clean-unused-files', function() {
-  del(['public/**/*.js', '!public/**/*combined*.js']);
-  del(['public/**/*.css', '!public/**/*combined*.css']);
+  del.sync(['public/**/*.js', '!public/**/*combined*.js']);
+  del.sync(['public/**/*.css', '!public/**/*combined*.css']);
 });
 
 gulp.task('copy-assets', function() {
