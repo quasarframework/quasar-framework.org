@@ -1,6 +1,4 @@
 title: Quasar Debug Helpers
-type: api
-order: 3
 ---
 
 The `quasar.debug` object has useful debugging methods.

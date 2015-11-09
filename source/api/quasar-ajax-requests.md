@@ -1,6 +1,4 @@
 title: Quasar Ajax Requests
-type: api
-order: 5
 ---
 
 Quasar Ajax Requests are a wrapper over jQuery's `$.ajax()` method. There are many features added on top of it.

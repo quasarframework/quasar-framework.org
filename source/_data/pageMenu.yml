@@ -1,0 +1,18 @@
+guide:
+  root:
+    Overview: index
+    Installation: $
+    'Quick Start': $
+    'CLI Commands': $
+    'Commit Message Format': $
+api:
+  root:
+    Overview: index
+  Global:
+    Environment: quasar-$
+    'Debug Helpers': quasar-$
+    Router: quasar-$
+    'Ajax Requests': quasar-$
+    Cookies: quasar-$
+    'Web Storage': quasar-$-api
+    Require: quasar-$

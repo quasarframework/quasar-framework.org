@@ -1,6 +1,4 @@
 title: Quasar Require
-type: api
-order: 8
 ---
 
 This feature is used to dynamically include `.js` files or inject `.css` ones.

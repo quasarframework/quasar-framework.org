@@ -1,6 +1,4 @@
 title: CLI Commands
-type: guide
-order: 4
 ---
 ## Version
 Displays version information.

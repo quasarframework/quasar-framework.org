@@ -1,6 +1,4 @@
 title: Installation
-type: guide
-order: 2
 ---
 
 First, install  Quasar CLI:

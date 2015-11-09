@@ -1,6 +1,4 @@
 title: Commit Message Format
-type: guide
-order: 5
 ---
 
 ## Overview

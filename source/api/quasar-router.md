@@ -1,6 +1,4 @@
 title: Quasar Router
-type: api
-order: 4
 ---
 
 ## Getting Started

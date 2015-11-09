@@ -1,22 +1,27 @@
-<% if (page.type) { %>
-    <%- partial('partials/sidebar', { type: page.type, index: page.index }) %>
+<%
+  var withSidebar = page_has_sidebar(page);
+  if (withSidebar) {
+    var previousPage = previous_page(page);
+    var nextPage     = next_page(page);
+%>
+    <%- partial('partials/sidebar') %>
 <% } %>
 <div class="content <%- page.type ? page.type + ' with-sidebar' : '' %>">
     <h1>
-      <a href="https://github.com/rstoenescu/quasar-site/edit/master/source/<%- page.source %>" title="Edit page on GitHub" target="_blank">
-        <%- page.title %>
-        <i class="float: right; fa fa-pencil"></i>
+      <%- page.title %>
+      <a href="https://github.com/rstoenescu/quasar-site/edit/master/source/<%- page.source %>" title="Edit Page on GitHub" target="_blank">
+        Edit <i class="fa fa-pencil"></i>
       </a>
     </h1>
     <%- page.content %>
-    <% if (page.type === 'guide' || page.type === 'api') { %>
+    <% if (withSidebar) { %>
       <div class="guide-links">
-        <% site.pages.find({ type: page.type, order: page.order - 1 }).each(function (page) { %>
-          <span>← <a href="<%- url_for(page.path) %>"><%- page.title %></a></span>
-        <% }) %>
-        <% site.pages.find({ type: page.type, order: page.order + 1 }).each(function (page) { %>
-          <span style="float:right"><a href="<%- url_for(page.path) %>"><%- page.title %></a> →</span>
-        <% }) %>
+        <% if (previousPage) { %>
+          <span>← <a href="<%- url_for(previousPage.path) %>"><%- previousPage.title %></a></span>
+        <% } %>
+        <% if (nextPage) { %>
+          <span style="float:right"><a href="<%- url_for(nextPage.path) %>"><%- nextPage.title %></a> →</span>
+        <% } %>
       </div>
     <% } %>
     <div class="footer">

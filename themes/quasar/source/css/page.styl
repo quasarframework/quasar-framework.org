@@ -80,13 +80,13 @@ $header-height = 40px
         font-size 20px
 
 .sidebar
-    position absolute
+    float left
     z-index 10
     top 0
     left 60px
+    width 260px
     bottom 0
     padding 2.2em 0
-    width 260px
     margin-right 20px
     overflow-x hidden
     overflow-y auto
@@ -96,6 +96,9 @@ $header-height = 40px
         width: 0 !important
     h2
         margin-top .2em
+        margin-bottom 7px
+    h3
+        margin-bottom 3px
     ul
         list-style-type none
         margin 0
@@ -113,21 +116,6 @@ $header-height = 40px
         &.current
             font-weight 900
             color $main
-        &.new
-            &:after
-                content "NEW"
-                display inline-block
-                font-size 10px
-                font-weight 600
-                color #fff
-                background-color $main
-                line-height 14px
-                padding 0 4px
-                border-radius 3px
-                margin-left 5px
-                vertical-align middle
-                position relative
-                top -1px
         &:hover
             border-bottom 2px solid $main
     .section-link
@@ -143,14 +131,13 @@ $header-height = 40px
 
 .content
     padding 2.2em 0
-    max-width 600px
-    margin 0 auto
-    &.api
-        ul
-            padding-left 1.25em
-            line-height 1.4em
-            ul, p
-                margin .6em 0
+    max-width 700px
+    margin 0 auto 0 300px
+    ul
+        padding-left 1.25em
+        line-height 1.4em
+        ul, p
+            margin .6em 0
     a.button
         font-size .9em
         color #fff
@@ -172,10 +159,10 @@ $header-height = 40px
         margin-left 20px
     h1
         margin 0 0 1em
-        i
-          color #000
-        &:hover a
-          color #000
+        a
+            float right
+            font-size 60%
+            margin-top 7px
     h2
         margin 2em 0 .8em
         padding-bottom .7em
@@ -237,6 +224,28 @@ $header-height = 40px
             font-weight bold
             font-family $logo-font
             font-size 14px
+    table
+      max-width 100%
+      border 1px solid #eee
+      border-radius 4px
+      border-spacing 0
+      box-shadow $shadow
+      th
+        font-weight bold
+        border-bottom 2px solid #eee
+      th, td
+        padding 13px 15px
+      tr
+        &:nth-child(2n)
+          background #eee
+    figure
+      table
+        border 0
+        box-shadow none
+        th
+          border-bottom 0
+    .highlight pre
+      padding 0
 
 .guide-links
     margin-top 2em
@@ -280,9 +289,6 @@ $header-height = 40px
         padding-bottom 1px
         &:hover, &.current
             border-bottom 2px solid $main
-    #search-query
-        width 200px
-        margin-bottom 10px
     #mobile-bar
         display block
     #main
@@ -307,31 +313,7 @@ $header-height = 40px
             -webkit-transform translate(0, 0)
             transform translate(0, 0)
     .content
-        &.with-sidebar
-            margin-left 0
+        margin 0
     .footer
         margin-left 0
         text-align center
-.content
-  table
-    max-width 100%
-    border 1px solid #eee
-    border-radius 4px
-    border-spacing 0
-    box-shadow $shadow
-    th
-      font-weight bold
-      border-bottom 2px solid #eee
-    th, td
-      padding 13px 15px
-    tr
-      &:nth-child(2n)
-        background #eee
-  figure
-    table
-      border 0
-      box-shadow none
-      th
-        border-bottom 0
-  .highlight pre
-    padding 0

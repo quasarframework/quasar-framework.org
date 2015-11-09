@@ -1,6 +1,4 @@
 title: Overview
-type: guide
-order: 1
 ---
 
 Learn here more about Quasar Framework. How to install it, how to create a project, how to manage it, and more.

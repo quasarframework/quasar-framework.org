@@ -1,6 +1,4 @@
 title: Quasar Cookies
-type: api
-order: 6
 ---
 This is a wrapper over the standardized `document.cookie`.
 
