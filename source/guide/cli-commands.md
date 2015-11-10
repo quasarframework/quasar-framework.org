@@ -15,7 +15,7 @@ $ quasar -h
 ```
 
 
-## Create Project Folder
+## Create App Folder
 
 Initializes a project folder with everything necessary.
 ``` bash

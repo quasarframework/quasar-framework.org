@@ -5,6 +5,10 @@ guide:
     'Quick Start': $
     'CLI Commands': $
     'Commit Message Format': $
+  App:
+    Structure: quasar-app-$
+    'Writing a Page': writing-quasar-page
+    'Build Process': quasar-$
 api:
   root:
     Overview: index

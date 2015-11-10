@@ -67,3 +67,6 @@ deploy:
   type: git
   repo: git@github.com:rstoenescu/quasar-framework.git
   branch: gh-pages
+
+sitemap:
+    path: sitemap.xml
