@@ -151,12 +151,4 @@ Each page has a starting point for each type of asset:
 | script.**&lt;page-name&gt;**.js | **[Required]** Starting point of the page logic |
 | config.**&lt;page-name&gt;**.yml | **[Required]** YAML file with page configuration (called *Manifest*). |
 
-### config.page-name.yml
-Provide page specific configuration, called *Manifest*.
-
-Important properties below. These get computed by default if CSS and HTML main page files exists, but they can be overriden to point to other files. The path must start with the folder where root *index.html* file exists.
-``` js
-css: 'path/to/css'
-html: 'path/to/html'
-```
-Any other property here will get into the page manifest. Read more in the [Writing a Page](/guide/writing-quasar-page.html) section.
+Read about page manifests (`config.*page-name*.yml`) in [Writing a Page](/guide/writing-quasar-page.html#Page_Manifest) section.

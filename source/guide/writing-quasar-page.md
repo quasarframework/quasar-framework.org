@@ -72,6 +72,51 @@ module.exports.render = function() {
 > Include other JS files for modularity by *require()*-ing them. Take full advantage of Webpack.
 > Read more about the [Build Process](/guide/quasar-build-process.html) to understand.
 
+## Page Manifest
+Provide page specific configuration (in YAML format), called *Manifest* in `/pages/*page-name*/config.*page-name*.yml`.
+
+### HTML & CSS Properties
+These get computed by default if CSS and HTML main page files exists, but they can be overridden to point to other files. The path must start with the folder where app root *index.html* file exists.
+``` yaml
+css: 'path/to/css'
+html: 'path/to/html'
+```
+
+### Page Routes Properties
+One more important property is `hashes`, which is an array of hashes for the respective page. Example:
+``` yaml
+# config.book.yml
+
+hashes:
+  - '$' # registers #/book route (because 'book' is the name of the page)
+  - ':chapter/:page' # adds this.params.chapter & this.params.page from page methods
+```
+So now if we navigate to route *#/book/thinking/20*, we'll trigger *book* page:
+``` js
+// js/script.book.js
+
+module.exports.render = function() {
+  this.params.chapter // is (String) 'thinking'
+  this.params.page // is (String) '20'
+};
+```
+
+### Your Own Properties
+Any other property that you write in the page manifest will be accessible under `this.manifest` property in page methods.
+``` yaml
+# config.book.yml
+
+myprop: 'my-value'
+```
+``` js
+// js/script.book.js
+
+module.exports.render = function() {
+  this.manifest.myprop // is 'my-value'
+};
+```
+
+
 ## HTML
 The Quasar App Pages' HTML is a Vue instance. Read more about the [Build Process](/guide/quasar-build-process.html#HTML_Files) to understand.
 
