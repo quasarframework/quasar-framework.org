@@ -20,6 +20,7 @@ module.exports.prepare = function() {
   this.query // [Object] Route query string -- see API > Router
   this.name // [String] Page name (eg. 'index')
   this.manifest // [Object] Page manifest (config.page-name.yml)
+  this.route // [String] Route name (eg. '$' or ':chapter/:page')
 
   /* When async operations are done, call this: */
   this.done(/* Object */data);
@@ -36,6 +37,7 @@ module.exports.prepare = function() {
    this.query // [Object] Route query string -- see API > Router
    this.name // [String] Page name (eg. 'index')
    this.manifest // [Object] Page manifest (config.page-name.yml)
+   this.route // [String] Route name (eg. '$' or ':chapter/:page')
 
    /*
     * Specific properties available:
@@ -57,6 +59,7 @@ module.exports.render = function() {
   this.query // [Object] Route query string -- see API > Router
   this.name // [String] Page name (eg. 'index')
   this.manifest // [Object] Page manifest (config.page-name.yml)
+  this.route // [String] Route name (eg. '$' or ':chapter/:page')
 
   /*
    * Specific properties available:
