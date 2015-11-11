@@ -8,7 +8,7 @@ Now let's dissect how pages work.
 
 ## Javascript
 The starting point of a page is the *js/script.page-name.js* file.
-``` javascript
+``` js
 /*
  * Use for Async operations (like Ajax requests) before displaying page
  */

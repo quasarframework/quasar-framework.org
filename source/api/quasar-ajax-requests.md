@@ -45,6 +45,7 @@ When making a request, you can use the properties below:
 | cachable | Boolean | Should the response be cached? *Only for GET requests* |
 | requestName | String | See Request Name |
 | persistent | Boolean | Cannot be aborted by `quasar.abort.all.requests()` |
+| local | Boolean | Ignore baseURL and make a request from App folder (see [Configuring Requests](#Configuring_Requests)) |
 | timeout | Number | Number of milliseconds before timeout |
 
 ... and any jQuery [$.ajax() properties](http://api.jquery.com/jquery.ajax/). Some examples: `dataFilter`, `dataType`, `converters`, `contentType`, `headers`, `processData`, `xhrFields`. See [More Request Properties](#More_Request_Properties).
@@ -112,6 +113,8 @@ Example:
 ``` js
 quasar.config.requests.baseURL = "http://quasar-framework.org/api/";
 ```
+
+If a request is made with *local* property set to `true` then baseURL is ignored.
 
 ### More Request Properties
 

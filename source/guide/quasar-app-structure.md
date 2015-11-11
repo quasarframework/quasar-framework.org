@@ -2,7 +2,7 @@ title: Quasar App Structure
 ---
 ## Overview
 This is what a new Quasar Framework App folder structure looks like. Some folders are creating after building the App.
-```
+``` bash
 .
 ├── build
 │   ├── css
@@ -77,17 +77,17 @@ What each is used for:
 | --- | --- |
 | /build | Development build folder |
 | /dist | Production build folder |
-| /src | App source files [...more](#Source_Folder) |
+| /src | App source files; see [Source Folder](#Source_Folder) |
 | /test | Test source files |
 | /quasar.build.yml | YAML file used to configure App build |
 
 ### quasar.build.yml
 This is the place to include your own dependencies, or configure the banner that is automatically added when building for Production, and many more.
 
-Note that the format must be YAML.
+> Note that the format must be YAML.
 
 Example:
-``` javascript
+``` yml
 deps:
   js:
     - 'node_modules/X/js/y.js'
@@ -101,25 +101,23 @@ banner: {}
 
 #### 'preview' property
 Browser-Sync configuration. Read more [here](http://www.browsersync.io/docs/options/). Example of default configuration which is merged with user specific one:
-``` javascript
-{
-  port: 3000,
-  ui: {port: 3001},
-  open: false,
-  reloadOnRestart: true,
-  server: {
-    baseDir: build
-  }
-}
+``` yml
+preview:
+  port: 3000
+  ui:
+    port: 3001
+  open: false
+  reloadOnRestart: true
 ```
 
 #### 'banner' property
 Read more how to configure [here](https://github.com/rstoenescu/gulp-pipes#banner). Example of configuration:
-``` javascript
-{
-  templatePath: '...',
-  variables: {...}
-}
+``` yml
+banner:
+  templatePath: '...'
+  variables:
+    ...
+    ...
 ```
 
 ## Source Folder
@@ -157,7 +155,7 @@ Each page has a starting point for each type of asset:
 Provide page specific configuration, called *Manifest*.
 
 Important properties below. These get computed by default if CSS and HTML main page files exists, but they can be overriden to point to other files. The path must start with the folder where root *index.html* file exists.
-``` javascript
+``` js
 css: 'path/to/css'
 html: 'path/to/html'
 ```

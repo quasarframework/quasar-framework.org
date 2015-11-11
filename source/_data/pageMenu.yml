@@ -6,7 +6,9 @@ guide:
     'CLI Commands': $
     'Commit Message Format': $
   App:
+    'Built-in Stack': $
     Structure: quasar-app-$
+    'Starting Point': quasar-app-$
     'Writing a Page': writing-quasar-page
     'Build Process': quasar-$
 api:
