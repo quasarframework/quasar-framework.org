@@ -28,6 +28,8 @@
             <div id="main">
                 <% if (page.blog_index) { %>
                     <%- partial('partials/blog') %>
+                <% } else if (page.search_index) { %>
+                    <%- partial('partials/search') %>
                 <% } else { %>
                     <%- body %>
                 <% } %>
@@ -44,9 +46,13 @@
         </script>
         <%- partial('partials/ga') %>
         <% if (!isIndex) { %>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/7.1.1/js/smooth-scroll.min.js"></script>
           <!-- build:js js/page-combined.js -->
           <script src="<%- config.root %>js/page.js"></script>
+          <% if (page.search_index) { %>
+            <script src="<%- config.root %>js/search.js"></script>
+          <% } %>
           <!-- endbuild -->
         <% } %>
     </body>

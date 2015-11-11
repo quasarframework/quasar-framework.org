@@ -32,6 +32,10 @@ render_drafts: false
 relative_link: false
 future: true
 
+search:
+  path: search.xml
+  field: all
+
 markdown:
   gfm: true
   pedantic: false
