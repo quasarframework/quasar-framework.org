@@ -1,6 +1,10 @@
 $(function() {
   'use strict';
 
+  if (window.location.pathname.indexOf('/search') !== 0) {
+    return;
+  }
+
   function titleCase(string) {
     return string.replace(/\w\S*/g, function(txt) {return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
   }
