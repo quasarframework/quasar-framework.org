@@ -1,6 +1,6 @@
 title: Quasar Build Process
 ---
-The App must be built before deployment. Read more how to build in the [CLI Commands](/guide/cli-commands.html#Build) section.
+The App must be built before deployment. Read more how to build (and test) in the [CLI Commands](/guide/cli-commands.html#Build) section.
 
 Following lines will describe how everything is glued together.
 

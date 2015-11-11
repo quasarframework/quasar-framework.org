@@ -29,12 +29,14 @@ Generates a folder called `/build` which contains sourcemaps and everything need
 ``` bash
 $ quasar build
 ```
+For more details to see what this does go to [Build Process](/guide/quasar-build-process.html) and [App Structure](/guide/quasar-app-structure.html).
 
 ### For production
 Generates a folder called `/dist`. Everything is compiled, minified, ...
 ``` bash
 $ quasar dist
 ```
+For more details to see what this does go to [Build Process](/guide/quasar-build-process.html) and [App Structure](/guide/quasar-app-structure.html).
 
 ### Cleaning
 Cleans development and production builds.
@@ -47,12 +49,23 @@ Monitors source code files (Javascript files, CSS files, assets, ...) for change
 ``` bash
 $ quasar monitor
 ```
+For more details to see what this does go to [Build Process](/guide/quasar-build-process.html) and [App Structure](/guide/quasar-app-structure.html).
 
 ## Live Preview
 You can even live preview the build in your browser(s). Whenever you modify anything in the source code (Javascript files, CSS files, assets, ...), it gets rebuilt and the browser(s) refreshed.
+``` bash
+$ quasar preview
+```
+For more details to see what this does go to [Build Process](/guide/quasar-build-process.html) and [App Structure](/guide/quasar-app-structure.html).
 
 > **NOTE**: CSS is injected into the browser(s) so the page is not required to reload, which is really cool.
 
+## Running Test Suites
+Run test suites with Karma, Mocha, Chai & Sinon.
+``` bash
+$ quasar test
+```
+For more details on how to tweak testing see [App Structure - quasar.build.yml](/guide/quasar-app-structure.html#quasar-build-yml) and look for `test` property description.
 
 ## Pages
 

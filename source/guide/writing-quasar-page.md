@@ -1,7 +1,9 @@
 title: Writing a Quasar App Page
 ---
-Make sure you read and understood the [structure of a Quasar App](/guide/quasar-app-structure.html) first.
+Make sure you read and understand the [structure of a Quasar App](/guide/quasar-app-structure.html) first. Read the [Pages](/guide/quasar-app-structure.html#Pages) section closely.
+
 Then use the [Quasar CLI](/guide/cli-commands.html#Pages) to build a page.
+
 Also don't forget to read more about the [Build Process](/guide/quasar-build-process.html) to understand how pages are compiled, what files are considered an entry-point and many more.
 
 Now let's dissect how pages work.
