@@ -7,9 +7,4 @@ $ quasar new q-project
 $ cd q-project
 ```
 
-Finally install local project dependencies:
-``` bash
-$ npm install
-```
-
 You're all set now. You can start developing your application.

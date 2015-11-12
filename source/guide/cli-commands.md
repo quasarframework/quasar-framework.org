@@ -1,18 +1,27 @@
 title: CLI Commands
 ---
-## Version
+## Options
+
+### Version
 Displays version information.
 ``` bash
 $ quasar -V
 $ quasar version
 ```
 
-## Help
+### Help
 Displays list of all commands and options.
 ``` bash
 $ quasar
 $ quasar -h
 ```
+
+### Verbose Mode
+If you want to get more information on what's going on (for example when building App), turn on the debug flag (`-d` option):
+``` bash
+$ quasar -d ..........
+```
+
 
 
 ## Create App Folder
@@ -88,13 +97,13 @@ $ quasar remove:page [page-name]
 
 ## Making a Release
 
-> **NOTE** This is not yet available.
+> **NOTE**: This is not yet available.
 
 Versioning takes into account the Angular commit style.
 See [Commit Message Format](commit-message-format.html).
 
 
-### release:recommend
+### Recommend Release Type
 Recommends the type of version bump, which can be: `patch`, `minor` or `major`.
 The recommendation is based on the commit message style. See [Commit Message Format](commit-message-format.html).
 ``` bash
@@ -103,7 +112,7 @@ $ quasar release:recommend
 
 
 
-### release *&lt;type&gt;*
+### Release Version Type
 `type` can be: prepatch, path, preminor, minor, premajor, major, prerelease
 ``` bash
 $ quasar release minor
@@ -118,7 +127,7 @@ What it does is:
 
 
 
-### release:version *&lt;version&gt;*
+### Release a Specific Version
 If however you want to release a specific version, use this command:
 ``` bash
 $ quasar release:version 1.2.3
