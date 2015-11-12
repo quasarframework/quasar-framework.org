@@ -18,6 +18,7 @@ api:
     Environment: quasar-$
     'Debug Helpers': quasar-$
     Router: quasar-$
+    Events: quasar-$
     'Ajax Requests': quasar-$
     Cookies: quasar-$
     'Web Storage': quasar-$-api

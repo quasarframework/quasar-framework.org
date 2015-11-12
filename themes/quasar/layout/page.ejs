@@ -9,9 +9,6 @@
 <div class="content <%- page.type ? page.type + ' with-sidebar' : '' %>">
     <h1>
       <%- page.title %>
-      <a href="https://github.com/rstoenescu/quasar-site/edit/master/source/<%- page.source %>" title="Edit Page on GitHub" target="_blank">
-        <i class="fa fa-pencil"></i> Improve Page
-      </a>
     </h1>
     <%- page.content %>
     <% if (withSidebar) { %>
@@ -25,12 +22,12 @@
       </div>
     <% } %>
     <div class="footer">
-      <div style="font-style: italic">
+      <div>
         Last updated: <%- (new Date(page.updated)).toDateString() %>
       </div>
       Caught a mistake or want to contribute to the documentation?
       <a href="https://github.com/rstoenescu/quasar-site/edit/master/source/<%- page.source %>" target="_blank">
-        Edit this page on GitHub
+        Suggest an edit on GitHub
         <i class="fa fa-pencil"></i>
       </a>
     </div>

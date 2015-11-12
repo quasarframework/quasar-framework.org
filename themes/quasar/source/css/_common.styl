@@ -102,13 +102,13 @@ a.button
     font-family $logo-font
     font-size 150%
     color #fff
-    background-color lighten($main, 8%)
+    background-color $light
     box-shadow $shadow
     padding 12px 14px
     border-radius $radius
     transition all .15s ease
     &:hover
-        background-color lighten($main, 15%)
+        background-color lighten($main, 25%)
         -webkit-animation swing 1s ease
         animation swing 1s ease
         -webkit-animation-iteration-count 1
@@ -166,9 +166,6 @@ a.button
 
 #toTop
     transition all 0.5s ease 0s
-    -moz-transition all 0.5s ease 0s
-    -webkit-transition all 0.5s ease 0s
-    -o-transition all 0.5s ease 0s
     opacity 0.6
     cursor pointer
     position fixed

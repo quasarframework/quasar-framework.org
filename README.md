@@ -1,3 +1,5 @@
+![Quasar Framework logo](http://quasar-framework.org/images/quasar-logo.png)
+
 # Quasar Framework Official Website
 
 <a href="https://codeclimate.com/github/rstoenescu/quasar-site"><img src="https://codeclimate.com/github/rstoenescu/quasar-site/badges/gpa.svg" /></a>

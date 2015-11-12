@@ -77,6 +77,26 @@ module.exports.render = function() {
 > Include other JS files for modularity by *require()*-ing them. Take full advantage of Webpack.
 > Read more about the [Build Process](/guide/quasar-build-process.html) to understand.
 
+### Page Events
+There are global events registered for each step of the way when a user navigates to a page. See [Quasar Events Global Emitter](/api/quasar-events.html#Global_Events_Emitter) if you haven't already.
+
+| Event Name | Description |
+| --- | --- |
+| app:page:requiring | Triggered right before requiring page Javascript |
+| app:page:preparing | Triggered before calling page - prepare() |
+| app:page:scoping | Triggered before calling page - scope() |
+| app:page:rendering | Triggered before calling page - render() |
+| app:page:ready | Triggered when page has fully loaded |
+
+All these events are triggered regardless of the fact that the page script has the respective methods or not.
+
+Usage example:
+``` js
+quasar.global.events.on('app:page:ready', function(props) {
+  // props.params, props.query, props.name, props.manifest, props.route, ... available
+});
+```
+
 ## Page Manifest
 Provide page specific configuration (in YAML format), called *Manifest* in `/pages/*page-name*/config.*page-name*.yml`.
 

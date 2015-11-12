@@ -35,7 +35,6 @@ If you know what you are doing and how to create the required folder structure, 
 
 > **Standalone download not yet available**
 
-<a href="<%- config.root %>guide/installation.html" class="button">Development build</a> &nbsp;&nbsp;*With sourcemaps, log messages and debug mode*
-<a href="<%- config.root %>guide/installation.html" class="button">Production build</a> &nbsp;&nbsp;*Minified, no logs*
+<a href="<%- config.root %>guide/installation.html" class="button">Download Latest Stable</a>
 
 Compatible with CommonJS2 and AMD loaders, but works without those too.
