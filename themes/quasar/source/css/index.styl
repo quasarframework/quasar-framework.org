@@ -9,7 +9,7 @@ zoom(n)
 html, body
     height 100%
 
-#nav, #translations
+#nav
     list-style-type none
     text-align center
     padding 0
@@ -18,16 +18,8 @@ html, body
         &:last-child .nav-link
             margin-right 0
 
-#translations
-    margin-bottom 3em
-    .delimiter
-        color $light
-        margin 0 5px
-    .nav-link
-        margin 0
-
 .nav-link
-    color $light
+    color darken($dark, 20%)
     padding-bottom 3px
     margin 0 1.5em
     &:first-child
@@ -61,13 +53,13 @@ html, body
         font-size 4em
         margin 0
     .warning
-        color $light
+        color $medium
     .desc
         max-width 800px
         padding 0 20px
         text-align center
         margin 1.5em auto
-        color $light
+        color $medium
         i
             font-size 50px
             color $main
@@ -121,12 +113,9 @@ html, body
             line-height 40px
             margin-bottom 0
         p
-            color $light
+            color lighten($medium, 30%)
             padding-left 52px
             margin .4em 0
-        a
-            color $main
-            font-weight 600
 
 #footer
     text-align center
