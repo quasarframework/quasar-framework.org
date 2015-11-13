@@ -120,11 +120,13 @@ $header-height = 40px
         &:hover
             border-bottom 2px solid $main
     .section-link
-        &.active
-            font-weight bold
+        transition all 0.2s ease-in
+        &.active, &:hover
+            color $main
             border-left: 3px solid $main
             padding-left: 3px
-            color $main
+        &.active
+            font-weight bold
     .main-menu
         margin-bottom 20px
         display none
@@ -188,7 +190,9 @@ $header-height = 40px
         padding-left 1.5em
     a
         color $main
-        font-weight 600
+        font-weight 700
+        &:hover:not(.button)
+            color $dark
     blockquote
         margin 2em 0
         padding-left 20px
