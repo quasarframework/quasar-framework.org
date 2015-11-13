@@ -25,7 +25,7 @@ module.exports.prepare = function() {
   this.route // [String] Route name (eg. '$' or ':chapter/:page')
 
   /* When async operations are done, call this: */
-  this.done(/* Object */data);
+  this.done(/* [Anything] */data);
 };
 
  /*

@@ -4,7 +4,7 @@ title: Quasar Web Storage
 Quasar provides a wrapper over Web Storage API.
 
 > **NOTE**
-> Web Storage API only retrieves strings. **Quasar retrieves data with its original data type.** You tell it to store a number then to retrieve it and it will still be a number, not a string representation of the number as with Web Storage API. Same for JSON, Regular Expressions, Dates, Booleans and so on. Read below.
+> Web Storage API only retrieves strings. **Quasar retrieves data with its original data type.** You tell it to store a Number then to retrieve it and it will still be a Number, not a string representation of the number as with Web Storage API. Same for JSON, Regular Expressions, Dates, Booleans and so on. Read below.
 
 ## Getting Started
 

@@ -85,7 +85,7 @@ $ quasar new:page [page-name]
 
 ### Rename Page
 ``` bash
-$ quasar rename:page [page-name]
+$ quasar rename:page [old-page-name] [new-page-name]
 ```
 
 ### Remove Page

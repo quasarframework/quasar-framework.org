@@ -22,6 +22,7 @@ This is what a new Quasar Framework App folder structure looks like. Some folder
 │   │       │   └── view.index.html
 │   │       └── js
 │   │           └── script.index.js
+│   ├── app.json
 │   └── index.html
 ├── coverage
 │   ├── lcov-report
@@ -50,6 +51,7 @@ This is what a new Quasar Framework App folder structure looks like. Some folder
 │   │       │   └── view.index.html
 │   │       └── js
 │   │           └── script.index.js
+│   ├── app.json
 │   └── index.html
 ├── src
 │   ├── css
@@ -81,7 +83,7 @@ This is what a new Quasar Framework App folder structure looks like. Some folder
 ├── README.md
 └── .stylintrc
 
-33 directories, 43 files
+33 directories, 45 files
 ```
 
 What each is used for:
@@ -90,6 +92,7 @@ What each is used for:
 | --- | --- |
 | /build | Development build folder |
 | /dist | Production build folder |
+| {/build,/dist}/app.json | Page Manifest put together. Details [here](#app-json) |
 | /coverage | Code coverage after [running tests with CLI](/guide/cli-commands.html#Running_Test_Suites) |
 | /src | App source files; see [Source Folder](#Source_Folder) |
 | /test | Test source files used for [running tests with CLI](/guide/cli-commands.html#Running_Test_Suites) |
@@ -99,6 +102,23 @@ What each is used for:
 | /package.json | App's NPM management file |
 | /quasar.build.yml | YAML file used to [configure App build](#quasar-build-yml) |
 | /.stylintrc | Default Stylus lint config for linting Stylus files |
+
+### app.json
+This is the place that all App configuration gets merged in. All pages manifests, all routes, and many more. You can build a search widget based on this file.
+
+Example:
+``` json
+{
+  "pages": {
+    "index": {
+      "hashes": [
+        "$",
+        ":article/:page"
+      ]
+    }
+  }
+}
+```
 
 ### quasar.build.yml
 This is the place to include your own dependencies, or configure the banner that is automatically added when building for Production, and many more.

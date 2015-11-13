@@ -24,7 +24,7 @@ var isEmitter = quasar.is.events.emitter(someObject);
 ```
 
 ### Global Events Emitter
-There is a global events emitter already available for you to use: `quasar.global.events`. For this emitter it is highly recommended to only register callbacks for existing events and not create new events.
+There is a global events emitter already available for you to use: `quasar.global.events`. Make sure you *DON'T* name your own events to match the ones that Quasar uses by default (see list [here](/guide/writing-quasar-page.html#Page_Events)). It is recommended that you create your own global emitters to avoid event naming problems.
 
 ## Emitter Methods
 

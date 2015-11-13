@@ -95,7 +95,7 @@ Explanation of the methods are below:
 | fail | jqXHR, textStatus, errorThrown | Failure handler |
 | always | data/jqXHR, textStatus, jqXHR/errorThrown | Both success & failure handler; is triggered regardless of the outcome |
 | then | Function, Function | Alternative way to specify success handler (first param) and failure handler (second param) |
-| abort | | Halts the request before it is completed |
+| abort | *None* | Halts the request before it is completed |
 
 > **NOTE**
 > All methods (including `quasar.make.a.<TYPE>.request`) return a Promise.
@@ -113,6 +113,8 @@ Example:
 ``` js
 quasar.config.requests.baseURL = "http://quasar-framework.org/api/";
 ```
+
+When wrapping your App with Cordova this provides very useful as your App may use a server somewhere on the Internet to get data. So in order to avoid specifying the host for each request, set the `baseURL` property.
 
 If a request is made with *local* property set to `true` then baseURL is ignored.
 

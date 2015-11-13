@@ -3,7 +3,7 @@ title: Installation
 ## Quasar CLI
 **This is the recommended way** by using the Quasar CLI to generate and build a Quasar App.
 
-Make sure you have latest NodeJS and NPM.
+Make sure you have latest NodeJS (>= 4.2.0) and NPM.
 ``` bash
 $ npm install -g quasar-cli
 ```

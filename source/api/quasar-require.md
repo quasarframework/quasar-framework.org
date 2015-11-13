@@ -4,7 +4,7 @@ title: Quasar Require
 This feature is used to dynamically include `.js` files or inject `.css` ones.
 
 ## Require a Script file
-You can require a CommonJS compliant .js file directly from your application. Subsequent require() calls within the files are going to also be fetched. Besides being able to use synchronous require() calls within the browser, you can also require scripts from your node_modules/ folder.
+You can require a CommonJS compliant .js file directly from your application. Subsequent require() calls within the files are going to also be fetched. Besides being able to use synchronous (but not browser blocking!) require() calls within the browser, you can also require scripts from your node_modules/ folder.
 
 Features that you can take advantage of:
 * Synchronous `require()` in modules, but without making synchronous Ajax calls nor freezing the browser.
