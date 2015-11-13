@@ -23,7 +23,8 @@ gulp.task('useref', function() {
 
   return gulp.src('public/**/*.html')
     .pipe(assets)
-    .pipe(plugins.if('*.css', plugins.csso()))
+    .pipe(plugins.if('*.css', plugins.cssBase64()))
+    .pipe(plugins.if('*.css', plugins.minifyCss()))
     .pipe(plugins.if('*.js', plugins.uglify()))
     .pipe(plugins.rev())
     .pipe(assets.restore())
