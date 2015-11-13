@@ -28,66 +28,111 @@ There is a global events emitter already available for you to use: `quasar.globa
 
 ## Emitter Methods
 
-### Registering an Event
-`emitter.on(String eventName, Function callback[, Object context])`
+> **NOTE**
+> Event name must *NOT* contain space characters, otherwise the string will be considered as containing multiple events names.
+
+### Registering an Event/Callback
+`emitter.on(String eventNames, Function callback [, Object context])`
 
 Example:
 ``` js
 var context = {...}; // will be used as *this* within callback
 emitter.on('event-name', function(param1, param2, ...paramN) { ... }, context);
 
-// Callback parameters (param1, ...paramN) are determined when triggering the event
+// The params that are used when triggering the event are passed on
+// to each callback.
+
+// We can register multiple events at once:
+emitter.on('event1 event2 eventN', callback);
 ```
 
-### Removing an Event
-`emitter.off(String eventName[, Function callback])`
+### Removing an Event/Callback
+`emitter.off(String eventNames [, Function callback])`
 
-Example of unregistering an event:
 ``` js
+// Unregistering an event:
 emitter.off('event-name');
 // 'event-name' does no longer has any callbacks
-```
 
-Example of unregistering a specific callback for an event:
-``` js
+// Unregistering a specific callback for an event:
 var callback = function(...) {...};
 emitter.on('event-name', callback);
 emitter.off('event-name', callback);
-// 'event-name' still exists, but does not contain the above callback anymore
+// 'event-name' still exists (if other callbacks are registered to this event),
+// but does not contain the above callback anymore
+
+// We can remove callback from multiple events at once:
+emitter.off('event1 event2 eventN', callback);
+
+// or we can remove all callbacks from multiple events at once:
+emitter.off('event1 event2 eventN');
+
+// or we can remove all callbacks and all events at once:
+emitter.off();
 ```
 
-### Registering an Event Only Once
-`emitter.once(String eventName, Function callback[, Object context])`
+### Registering a Callback to Be Run Only Once
+`emitter.once(String eventNames, Function callback [, Object context])`
 
-Sometimes you need to trigger a callback only once.
-Example:
+Sometimes you need to trigger a callback only once. Example:
 ``` js
 var callback = function(...) {...};
 emitter.once('event-name', callback);
 // callback will be triggered only once
+
+// We can also register callback to be triggered once
+// for multiple events at once:
+emitter.once('event1 event2', callback);
+// callback will be triggered only once for 'event1'
+// AND only once more for 'event2'
+// ... so triggering 'event1' and 'event2' multiple times
+// will run callback a total of 2 times
 ```
 
 ### Triggering an Event
-`emitter.trigger(String eventName)`
+`emitter.trigger(String eventNames [, Anything *args])`
 
 Example:
 ``` js
 emitter.trigger('event-name');
 // All callbacks associated with 'event-name' will be triggered
 // in the order that they were registered.
+
+// Trigger with parameters (as many as you want):
+emitter.trigger('event-name', 10, 'wow', {obj: true});
+// These parameters will be used when calling all registered
+// callbacks for 'event-name' --> callback(10, 'wow', {obj: true});
+
+// We can also trigger multiple events at once:
+emitter.trigger('event1 event2 event3');
+emitter.trigger('event1 event2 event3', 10, 'wow', {obj: true});
+
+// We can also trigger ALL registered events at once:
+emitter.trigger();
 ```
 
-### Checking if Event is Registered
-`Boolean emitter.hasEvent(String eventName[, Function callback])`
+### Checking for Subscribers
+`Boolean emitter.hasSubscriber(String eventNames [, Function callback])`
+or
+`Boolean emitter.hasSubscriber(Function callback)`
 
 Example:
 ``` js
 // Check if 'event-name' has any callbacks associated
-var exists = emitter.hasEvent('event-name');
+var exists = emitter.hasSubscriber('event-name');
 
-// Check if a callback is registered with 'event-name':
+// Check if a callback is registered for an event:
 function myFunction() {...};
-var exists = emitter.hasEvent('event-name', myFunction);
+var exists = emitter.hasSubscriber('event-name', myFunction);
+
+// Check if a callback is registered for any of the specified events
+var exists = emitter.hasSubscriber('event1 event2', myFunction);
+
+// Check if a callback is registered for any events
+var exists = emitter.hasSubscriber(myFunction);
+
+// Check if an emitter has any events/callbacks at all:
+var exists = emitter.hasSubscriber();
 ```
 
 ### Getting List of Events
