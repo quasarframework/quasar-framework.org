@@ -62,12 +62,23 @@ For more details to see what this does go to [Build Process](/guide/quasar-build
 
 ## Live Preview
 You can even live preview the build in your browser(s). Whenever you modify anything in the source code (Javascript files, CSS files, assets, ...), it gets rebuilt and the browser(s) refreshed.
+
+Furthermore, clicks, scroll and form input are automatically synchronized between all opened browsers.
 ``` bash
 $ quasar preview
 ```
 For more details to see what this does go to [Build Process](/guide/quasar-build-process.html) and [App Structure](/guide/quasar-app-structure.html).
 
 > **NOTE**: CSS is injected into the browser(s) so the page is not required to reload, which is really cool.
+
+## Live Preview with Responsive View
+Want to quickly see how your App handles different device screen sizes? This is the command that you should use. Recommended (and designed) to be viewed from a desktop browser.
+
+Watches the source code (and reloads if necessary or injects CSS without page reload) but clicks, scroll and form input are *NOT* automatically synchronized between all opened browsers as for previous command.
+
+``` bash
+$ quasar rpreview
+```
 
 ## Running Test Suites
 Run test suites with Karma, Mocha, Chai & Sinon.
