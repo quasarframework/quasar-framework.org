@@ -5,6 +5,8 @@ This is what a new Quasar Framework App folder structure looks like. Some folder
 ``` bash
 .
 ├── build
+│   ├── assets
+│   │   └── favicon.ico
 │   ├── css
 │   │   ├── app.css
 │   │   └── app-dependencies.css
@@ -34,6 +36,8 @@ This is what a new Quasar Framework App folder structure looks like. Some folder
 │   │   └── sorter.js
 │   └── lcov.info
 ├── dist
+│   ├── assets
+│   │   └── favicon.ico
 │   ├── css
 │   │   ├── app.css
 │   │   └── app-dependencies.css
@@ -54,6 +58,8 @@ This is what a new Quasar Framework App folder structure looks like. Some folder
 │   ├── app.json
 │   └── index.html
 ├── src
+│   ├── assets
+│   │   └── favicon.ico
 │   ├── css
 │   │   └── app.styl
 │   ├── html
@@ -83,7 +89,7 @@ This is what a new Quasar Framework App folder structure looks like. Some folder
 ├── README.md
 └── .stylintrc
 
-33 directories, 45 files
+36 directories, 48 files
 ```
 
 What each is used for:
@@ -141,13 +147,24 @@ test:
 ```
 
 #### 'preview' property
-Browser-Sync configuration. Read more [here](http://www.browsersync.io/docs/options/). Example of default configuration which is merged with user specific one:
+[Live Preview](/guide/cli-commands.html#Live_Preview) configuration. Read more [here](http://www.browsersync.io/docs/options/). Example of default configuration which is merged with user specific one:
 ``` yml
 preview:
   port: 3000
   ui:
     port: 3001
   open: false
+  reloadOnRestart: true
+```
+
+#### 'rpreview' property
+[Live Preview with Responsive View](/guide/cli-commands.html#Live_Preview_with_Responsive_View) configuration. Read more [here](http://www.browsersync.io/docs/options/). Example of default configuration which is merged with user specific one:
+``` yml
+rpreview:
+  port: 3100
+  ui: false
+  open: false
+  ghostMode: true
   reloadOnRestart: true
 ```
 
