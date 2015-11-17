@@ -7,7 +7,7 @@ Following lines will describe how everything is glued together.
 ## Source Files
 
 ### Javascript Files
-Javascript files are glued together using <a href="http://webpack.github.io/docs/" target="_blank">Webpack</a>. So you can use *require()* -- and *require.resolve()* -- for modularity. You must adhere to the <a href="https://webpack.github.io/docs/commonjs.html" target="_blank">CommonJS2</a> format when writing *.js* files.
+Javascript files are glued together using <a href="http://webpack.github.io/docs/" target="_blank">Webpack</a>. So you can use *require()* -- and *require.resolve()* -- for modularity. You must adhere to the [CommonJS format](/guide/commonjs-format.html) because of its many advantages when writing *.js* files.
 
 Take into consideration that the following files are taken as Webpack entry-points (take a good look at folders):
 * /js/*file-name*.js

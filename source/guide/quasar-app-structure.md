@@ -141,6 +141,8 @@ deps:
     - 'node_modules/X/css/y.css'
 preview:
   port: 3500
+rpreview:
+  port: 3600
 banner: {}
 test:
   exclude: []
@@ -213,4 +215,4 @@ Each page has a starting point for each type of asset:
 | script.**&lt;page-name&gt;**.js | **[Required]** Starting point of the page logic |
 | config.**&lt;page-name&gt;**.yml | **[Required]** YAML file with page configuration (called *Manifest*). |
 
-Read about page manifests (`config.*page-name*.yml`) in [Writing a Page](/guide/writing-quasar-page.html#Page_Manifest) section.
+> Read about page manifests (`config.*page-name*.yml`) in [Writing a Page](/guide/writing-quasar-page.html#Page_Manifest) section.

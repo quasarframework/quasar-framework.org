@@ -3,13 +3,15 @@ guide:
     'What is Quasar': index
     Installation: $
     'CLI Commands': $
-    'Commit Message Format': $
-  App:
     'Built-in Stack': $
-    Structure: quasar-app-$
+  App:
+    'App Structure': quasar-$
     'Starting Point': quasar-app-$
     'Writing a Page': writing-quasar-page
     'Build Process': quasar-$
+  Miscellaneous:
+    'CommonJS Format': $
+    'Commit Message Format': $
 api:
   root:
     Overview: index

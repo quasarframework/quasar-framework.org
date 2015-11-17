@@ -4,9 +4,9 @@ Make sure you read and understand the [structure of a Quasar App](/guide/quasar-
 
 Then use the [Quasar CLI](/guide/cli-commands.html#Pages) to build a page.
 
-Also don't forget to read more about the [Build Process](/guide/quasar-build-process.html) to understand how pages are compiled, what files are considered an entry-point and many more.
+Also don't forget to read more about the [Build Process](/guide/quasar-build-process.html) to understand how pages are precompiled and bundled, what files are considered an entry-point and many more.
 
-Now let's dissect how pages work.
+Let's dissect how pages work.
 
 ## Javascript
 The starting point of a page is the *js/script.page-name.js* file.
@@ -77,26 +77,6 @@ module.exports.render = function() {
 > Include other JS files for modularity by *require()*-ing them. Take full advantage of Webpack.
 > Read more about the [Build Process](/guide/quasar-build-process.html) to understand.
 
-### Page Events
-There are global events registered for each step of the way when a user navigates to a page. See [Quasar Events Global Emitter](/api/quasar-events.html#Global_Events_Emitter) if you haven't already.
-
-| Event Name | Description |
-| --- | --- |
-| app:page:requiring | Triggered right before requiring page Javascript |
-| app:page:preparing | Triggered before calling page - prepare() |
-| app:page:scoping | Triggered before calling page - scope() |
-| app:page:rendering | Triggered before calling page - render() |
-| app:page:ready | Triggered when page has fully loaded |
-
-All these events are triggered regardless of the fact that the page script has the respective methods or not.
-
-Usage example:
-``` js
-quasar.global.events.on('app:page:ready', function(props) {
-  // props.params, props.query, props.name, props.manifest, props.route, ... available
-});
-```
-
 ## Page Manifest
 Provide page specific configuration (in YAML format), called *Manifest* in `/pages/*page-name*/config.*page-name*.yml`.
 
@@ -141,6 +121,25 @@ module.exports.render = function() {
 };
 ```
 
+## Page Events
+There are global events registered for each step of the way when a user navigates to a page. See [Quasar Events Global Emitter](/api/quasar-events.html#Global_Events_Emitter) if you haven't already.
+
+| Event Name | Description |
+| --- | --- |
+| app:page:requiring | Triggered right before requiring page Javascript |
+| app:page:preparing | Triggered before calling page - prepare() |
+| app:page:scoping | Triggered before calling page - scope() |
+| app:page:rendering | Triggered before calling page - render() |
+| app:page:ready | Triggered when page has fully loaded |
+
+All these events are triggered regardless of the fact that the page script has the respective methods or not.
+
+Usage example:
+``` js
+quasar.global.events.on('app:page:ready', function(props) {
+  // props.params, props.query, props.name, props.manifest, props.route, ... available
+});
+```
 
 ## HTML
 The Quasar App Pages' HTML is a Vue instance. Read more about the [Build Process](/guide/quasar-build-process.html#HTML_Files) to understand.
