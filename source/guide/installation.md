@@ -1,40 +1,15 @@
 title: Installation
 ---
-## Quasar CLI
-**This is the recommended way** by using the Quasar CLI to generate and build a Quasar App.
+Use the `Quasar CLI` to generate or manage a Quasar App.
 
 Make sure you have latest NodeJS (>= 4.2.0) and NPM.
 ``` bash
 $ npm install -g quasar-cli
 ```
-
-You are all set. Head on to [Quick Start](quick-start.html) now.
-
-## NPM
-If you know what you are doing and how to create the required folder structure, inside
-your app folder:
-
+Create a project folder (in this case is called *q-project* but you can name it whatever you want):
 ``` bash
-$ npm install --save quasar-framework
+$ quasar new q-project
+$ cd q-project
 ```
 
-Compatible with CommonJS2 and AMD loaders, but works without those too.
-
-## Bower
-If you know what you are doing and how to create the required folder structure, inside
-your app folder:
-
-``` bash
-$ bower install quasar-framework
-```
-
-Compatible with CommonJS2 and AMD loaders, but works without those too.
-
-## Standalone
-If you know what you are doing and how to create the required folder structure, you can download from below:
-
-> **Standalone download not yet available**
-
-<a href="<%- config.root %>guide/installation.html" class="button">Download Latest Stable</a>
-
-Compatible with CommonJS2 and AMD loaders, but works without those too.
+You're all set now. Read about the Quasar CLI [here](/guide/cli-commands.html). Get to know how powerful it is so you can leverage it.

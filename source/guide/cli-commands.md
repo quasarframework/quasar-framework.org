@@ -79,15 +79,18 @@ Watches the source code (and reloads if necessary or injects CSS without page re
 ``` bash
 $ quasar rpreview
 ```
+<img src="/images/screenshot-live-preview-2.png">
 
 ## Running Test Suites
-Run test suites with Karma, Mocha, Chai & Sinon.
+Write tests and run them with the out of the box test-pack which includes Karma, Mocha, Chai & Sinon.
 ``` bash
 $ quasar test
 ```
 For more details on how to tweak testing see [App Structure - quasar.build.yml](/guide/quasar-app-structure.html#quasar-build-yml) and look for `test` property description.
 
 ## Pages
+
+Pages are the core of any Quasar App. Think of a Quasar Page as a webpage which has its own View, Controller and Model.
 
 ### Create Page
 ``` bash

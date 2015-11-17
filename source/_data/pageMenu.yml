@@ -1,8 +1,7 @@
 guide:
   root:
-    Overview: index
+    'What is Quasar': index
     Installation: $
-    'Quick Start': $
     'CLI Commands': $
     'Commit Message Format': $
   App:
