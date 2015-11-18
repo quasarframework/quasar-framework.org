@@ -1,6 +1,6 @@
 title: Writing a Quasar App Page
 ---
-Make sure you read and understand the [structure of a Quasar App](/guide/quasar-app-structure.html) first. Read the [Pages](/guide/quasar-app-structure.html#Pages) section closely.
+Make sure you read and understand the [folder structure of a Quasar App](/guide/quasar-app-structure.html) first. Read the [Pages](/guide/quasar-app-structure.html#Pages) section closely.
 
 Then use the [Quasar CLI](/guide/cli-commands.html#Pages) to build a page.
 
@@ -9,7 +9,7 @@ Also don't forget to read more about the [Build Process](/guide/quasar-build-pro
 Let's dissect how pages work.
 
 ## Javascript
-The starting point of a page is the *js/script.page-name.js* file.
+The starting point of a Quasar Page is *js/script.page-name.js* file. Think of it as the Controller part of a page.
 ``` js
 /*
  * Use for Async operations (like Ajax requests) before displaying page

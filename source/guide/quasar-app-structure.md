@@ -98,7 +98,7 @@ What each is used for:
 | --- | --- |
 | /build | Development build folder |
 | /dist | Production build folder |
-| {/build,/dist}/app.json | Page Manifest put together. Details [here](#app-json) |
+| {/build,/dist}/app.json | Pages Manifests put together. Details [here](/guide/quasar-app-configuration.html#app-json) |
 | /coverage | Code coverage after [running tests with CLI](/guide/cli-commands.html#Running_Test_Suites) |
 | /src | App source files; see [Source Folder](#Source_Folder) |
 | /test | Test source files used for [running tests with CLI](/guide/cli-commands.html#Running_Test_Suites) |
@@ -106,83 +106,8 @@ What each is used for:
 | /.eslintrc | Default ESLINT config for linting Javascript files |
 | /.gitignore | Tells GIT what files to ignore |
 | /package.json | App's NPM management file |
-| /quasar.build.yml | YAML file used to [configure App build](#quasar-build-yml) |
+| /quasar.build.yml | YAML file used to [configure App build](/guide/quasar-app-configuration.html#quasar-build-yml) |
 | /.stylintrc | Default Stylus lint config for linting Stylus files |
-
-### app.json
-This is the place that all App configuration gets merged in. All pages manifests, all routes, and many more. You can build a search widget based on this file.
-
-Example:
-``` json
-{
-  "pages": {
-    "index": {
-      "hashes": [
-        "$",
-        ":article/:page"
-      ]
-    }
-  }
-}
-```
-
-### quasar.build.yml
-This is the place to include your own dependencies, or configure the banner that is automatically added when building for Production, and many more.
-
-> Note that the format must be YAML.
-
-Example:
-``` yml
-deps:
-  js:
-    - 'node_modules/X/js/y.js'
-    - 'node_modules/W/z.js'
-  css:
-    - 'node_modules/X/css/y.css'
-preview:
-  port: 3500
-rpreview:
-  port: 3600
-banner: {}
-test:
-  exclude: []
-```
-
-#### 'preview' property
-[Live Preview](/guide/cli-commands.html#Live_Preview) configuration. Read more [here](http://www.browsersync.io/docs/options/). Example of default configuration which is merged with user specific one:
-``` yml
-preview:
-  port: 3000
-  ui:
-    port: 3001
-  open: false
-  reloadOnRestart: true
-```
-
-#### 'rpreview' property
-[Live Preview with Responsive View](/guide/cli-commands.html#Live_Preview_with_Responsive_View) configuration. Read more [here](http://www.browsersync.io/docs/options/). Example of default configuration which is merged with user specific one:
-``` yml
-rpreview:
-  port: 3100
-  ui: false
-  open: false
-  ghostMode: true
-  reloadOnRestart: true
-```
-
-#### 'banner' property
-Read more how to configure [here](https://github.com/rstoenescu/gulp-pipes#banner). Example of configuration:
-``` yml
-banner:
-  templatePath: '...'
-  variables:
-    ...
-    ...
-```
-
-#### 'test' property
-This property overrides any of the <a href="https://github.com/rstoenescu/quasar-cli/blob/master/lib/gulp/gulp-config.js#L107-L196" target="_blank">default Karma configuration</a> options.
-See the full list of <a href="http://karma-runner.github.io/0.8/config/configuration-file.html" target="_blank">Karma configuration properties</a> that you can use.
 
 ## Source Folder
 

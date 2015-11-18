@@ -6,12 +6,14 @@ guide:
     'Built-in Stack': $
   App:
     'App Structure': quasar-$
+    'App Configuration': quasar-$
     'Starting Point': quasar-app-$
     'Writing a Page': writing-quasar-page
     'Build Process': quasar-$
   Miscellaneous:
     'CommonJS Format': $
     'Commit Message Format': $
+    'Contributing to Quasar': $
 api:
   root:
     Overview: index

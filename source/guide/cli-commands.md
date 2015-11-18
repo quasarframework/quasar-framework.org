@@ -86,7 +86,7 @@ Write tests and run them with the out of the box test-pack which includes Karma,
 ``` bash
 $ quasar test
 ```
-For more details on how to tweak testing see [App Structure - quasar.build.yml](/guide/quasar-app-structure.html#quasar-build-yml) and look for `test` property description.
+For more details on how to tweak testing see [App Structure - quasar.build.yml](/guide/quasar-app-configuration.html#quasar-build-yml) and look for `test` property description.
 
 ## Pages
 

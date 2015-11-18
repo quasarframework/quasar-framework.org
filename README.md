@@ -17,6 +17,18 @@ FAR FROM READY!!!
 
 Do not take an interest in this yet.
 
+## Quasar Components
+
+* [Quasar Framework](https://github.com/rstoenescu/quasar-framework)
+* [Quasar CLI](https://github.com/rstoenescu/quasar-cli)
+* [Quasar Semantic UI Build](https://github.com/rstoenescu/quasar-semantic)
+
+## Contributing
+
+I'm excited if you want to contribute to Quasar under any form (report bugs, write a plugin, fix an issue, write a new feature).
+
+I'm only asking that you [read this](http://quasar-framework.org/guide/contributing-to-quasar.html) first.
+
 ## License
 
 Copyright (c) 2015 Razvan Stoenescu
