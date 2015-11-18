@@ -53,7 +53,7 @@ module.exports.prepare = function() {
  /*
   * Finally everything is set to start page operations
   */
-module.exports.render = function() {
+module.exports.start = function() {
   /*
    * Properties available:
    */
@@ -100,7 +100,7 @@ So now if we navigate to route *#/book/thinking/20*, we'll trigger *book* page:
 ``` js
 // js/script.book.js
 
-module.exports.render = function() {
+module.exports.start = function() {
   this.params.chapter // is (String) 'thinking'
   this.params.page // is (String) '20'
 };
@@ -116,7 +116,7 @@ myprop: 'my-value'
 ``` js
 // js/script.book.js
 
-module.exports.render = function() {
+module.exports.start = function() {
   this.manifest.myprop // is 'my-value'
 };
 ```
@@ -129,7 +129,7 @@ There are global events registered for each step of the way when a user navigate
 | app:page:requiring | Triggered right before requiring page Javascript |
 | app:page:preparing | Triggered before calling page - prepare() |
 | app:page:scoping | Triggered before calling page - scope() |
-| app:page:rendering | Triggered before calling page - render() |
+| app:page:starting | Triggered before calling page - start() |
 | app:page:ready | Triggered when page has fully loaded |
 
 All these events are triggered regardless of the fact that the page script has the respective methods or not.

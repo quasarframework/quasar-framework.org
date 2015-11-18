@@ -87,7 +87,8 @@ See the [Commit Message Format](/guide/commit-message-format.html) section.
 ## Development Setup
 
 You will need [Node.js](http://nodejs.org) along NPM.
-Then install all other dependencies.
+
+Fork Quasar Framework Github repository. Then install all other dependencies.
 ``` bash
 $ npm install
 ```
