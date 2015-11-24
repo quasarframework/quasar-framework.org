@@ -1,8 +1,5 @@
 @import "_common"
 
-zoom(n)
-    transform scale(n)
-
 html, body
     height 100%
 
@@ -74,7 +71,7 @@ html, body
         margin .5em
 
 #features
-    padding 5em 0 5em 0
+    padding 5em 0
     border-top 1px solid #eee
     text-align center
     background: #e3e3e3 url(../images/features-delimiter.gif) top repeat-x
@@ -113,35 +110,29 @@ html, body
 #footer
     text-align center
     color #fff
-    padding 7em 0 4em 0
+    padding 3em 0
     background $main url(../images/footer-delimiter.gif) top repeat-x
-    .avatar
-        width 100px
-        border-radius 100%
-        margin 2.5em 0 1em
     a
         color #fff
         text-decoration underline
-        &.start
-            font-size 1.2em
-            text-decoration none
-            text-transform uppercase
-            letter-spacing 1px
-            border 1px solid #fff
-            display inline-block
-            padding 12px 20px
-            transition all .15s ease
-            margin-bottom 2em
-            &:hover
-                background-color #fff
-                color #7f8c8d
-                border-radius 10px
-                zoom(1.35)
     p
         margin .3em 0
-
-#main
-    display none
+        &.buttons
+            margin 3em 0
+            a
+                margin 0 1em
+                font-size 1.2em
+                text-decoration none
+                text-transform uppercase
+                letter-spacing 1px
+                border 1px solid #fff
+                display inline-block
+                padding 12px 20px
+                margin-bottom 2em
+                &:hover
+                    background-color #fff
+                    color #7f8c8d
+                    border-radius 10px
 
 @media screen and (max-width: 480px)
     body
@@ -149,7 +140,7 @@ html, body
     #nav
         margin 3em 1.8em 0
     #logo-wrap
-        margin 2em 0
+        margin 5em 0 3em 0
     #logo
         width 120px
     .nav-link
@@ -166,9 +157,6 @@ html, body
         h1
             font-size 2em
             font-weight 400
-        .buttons
-            max-width 300px
-            margin 1em auto
         a.button
             width 260px
             font-size .8em
@@ -180,14 +168,16 @@ html, body
             margin 1em auto
             br
                 display none
-        .down
-            display none
     #features
         padding 2em 0 2em 0
         .feat
             font-size 14px
             margin .8em 0
             width 255px
+    #footer
+        padding 2em 0
+        p.buttons
+            margin 4em 0 2em 0
 
 @media screen and (max-width: 860px)
     #features, #hero

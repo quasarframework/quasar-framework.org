@@ -9,19 +9,10 @@
 <a href="https://david-dm.org/rstoenescu/quasar-site#info=devDependencies" title="devDependency status"><img src="https://david-dm.org/rstoenescu/quasar-site/dev-status.svg"/></a>
 <a href="https://david-dm.org/rstoenescu/quasar-site#info=optionalDependencies" title="optionalDependency status"><img src="https://david-dm.org/rstoenescu/quasar-site/optional-status.svg"/></a>
 
-## Description
-
-IN ACTIVE DEVELOPMENT!!!
-
-FAR FROM READY!!!
-
-Do not take an interest in this yet.
-
 ## Quasar Components
 
 * [Quasar Framework](https://github.com/rstoenescu/quasar-framework)
-* [Quasar CLI](https://github.com/rstoenescu/quasar-cli)
-* [Quasar Semantic UI Build](https://github.com/rstoenescu/quasar-semantic)
+* [Quasar Framework CLI](https://github.com/rstoenescu/quasar-cli)
 
 ## Contributing
 

@@ -102,9 +102,18 @@ $ quasar new:page [page-name]
 $ quasar rename:page [old-page-name] [new-page-name]
 ```
 
-### Remove Page
+## Plugins
+
+Quasar Plugins are the way to enhance your Quasar App with additional features. Think of Plugins as common Quasar Framework functionality that can be shared between apps.
+
+### Create Plugin
 ``` bash
-$ quasar remove:page [page-name]
+$ quasar new:plugin [plugin-name]
+```
+
+### Rename Plugin
+``` bash
+$ quasar rename:plugin [old-plugin-name] [new-plugin-name]
 ```
 
 

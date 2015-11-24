@@ -17,12 +17,13 @@ guide:
 api:
   root:
     Overview: index
-  Global:
+  Core:
     Environment: quasar-$
     'Debug Helpers': quasar-$
     Router: quasar-$
     Events: quasar-$
-    'Ajax Requests': quasar-$
+    Ajax: quasar-$
+    Require: quasar-$
+  'Features':
     Cookies: quasar-$
     'Web Storage': quasar-$-api
-    Require: quasar-$

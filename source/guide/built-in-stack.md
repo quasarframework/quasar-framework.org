@@ -44,3 +44,8 @@ Read more <a href="https://ftlabs.github.io/fastclick/" target="_blank">here</a>
 Inspired by Bootstrap & Foundation, but way better. Semantic is a development framework that helps create beautiful, responsive layouts using human-friendly HTML. Semantic UI treats words and classes as exchangeable concepts. Classes use syntax from natural languages like noun/modifier relationships, word order, and plurality to link concepts intuitively.
 
 Read more <a href="http://semantic-ui.com/" target="_blank">here</a>.
+
+## Apache Cordova
+Wrap your App in Cordova so it can be installed on a mobile phone. It offers access to native device APIs, which is awesome. It integrates perfectly with Quasar Framework.
+
+Read more <a href="https://cordova.apache.org/" target="_blank">here</a>.
