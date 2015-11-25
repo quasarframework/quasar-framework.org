@@ -4,7 +4,9 @@ var
   gulp = require('gulp'),
   plugins = require('gulp-load-plugins')(),
   runSequence = require('run-sequence'),
-  del = require('del')
+  del = require('del'),
+  imagemin = require('gulp-imagemin'),
+  pngquant = require('imagemin-pngquant')
   ;
 
 var htmlMinifierOptions = {
@@ -36,7 +38,17 @@ gulp.task('useref', function() {
     .pipe(gulp.dest('public'));
 });
 
-gulp.task('clean-unused-files', function() {
+gulp.task('images', function() {
+  return gulp.src('public/images/**/*')
+    .pipe(plugins.imagemin({
+      progressive: true,
+      svgoPlugins: [{removeViewBox: false}],
+      use: [pngquant()]
+    }))
+    .pipe(gulp.dest('public/images'));
+});
+
+gulp.task('clean-unused-files', ['useref'], function() {
   del.sync(['public/**/*.js', '!public/**/*combined*.js']);
   del.sync(['public/**/*.css', '!public/**/*combined*.css']);
 });
@@ -46,9 +58,4 @@ gulp.task('copy-assets', function() {
     .pipe(gulp.dest('public/'));
 });
 
-gulp.task('default', function() {
-  runSequence(
-    'useref',
-    ['clean-unused-files', 'copy-assets']
-  );
-});
+gulp.task('default', ['useref', 'images', 'clean-unused-files', 'copy-assets']);
