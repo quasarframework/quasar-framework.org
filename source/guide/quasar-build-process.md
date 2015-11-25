@@ -71,3 +71,6 @@ So when writing a Quasar App Page HTML and you want to *include* something, in t
 <strong>facebook.com/include</strong>
 <strong>twitter.com/include</strong>
 ```
+
+### Image Files
+Image files should be placed under `assets` folders. By default, on a production build, `GIF`, `JPEG`, `PNG` and `SVG` image files get "minified" without losing noticeable quality.

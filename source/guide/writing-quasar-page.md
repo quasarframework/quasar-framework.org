@@ -150,3 +150,4 @@ Notice that all CSS files have the *.styl* extension. This is because you can us
 
 ## Assets
 Place all your page assets (images, fonts, ...) inside the `/pages/*page-name*/assets/` folder.
+Images get optimized by default on a production build.

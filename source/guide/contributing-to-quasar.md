@@ -8,7 +8,6 @@ You can also help with the documentation if you catch a mistake or want to add a
 
 * <a href="https://github.com/rstoenescu/quasar-framework" target="_blank">Quasar Framework</a>
 * <a href="https://github.com/rstoenescu/quasar-cli" target="_blank">Quasar CLI</a>
-* <a href="https://github.com/rstoenescu/quasar-semantic" target="_blank">Quasar Semantic UI Build</a>
 
 ## Issue Reporting Guidelines
 
@@ -24,7 +23,7 @@ You can also help with the documentation if you catch a mistake or want to add a
 
 ## Pull Request Guidelines
 
-- Checkout a topic branch from `dev` and merge back against `dev`.
+- Checkout a topic branch from `master` and merge back against `master`.
 
 - Work in the `src` folder and **DO NOT** checkin `/build` or `/dist` in the commits.
 
@@ -39,7 +38,7 @@ You can also help with the documentation if you catch a mistake or want to add a
     - Provide convincing reason to add this feature. Ideally you should open a suggestion issue first and have it greenlighted before working on it.
 
 - If fixing a bug:
-    - Provide detailed description of the bug in the PR. Live demo preferred.
+    - Provide detailed description of the bug in the PR. Live demo preferred. Use <a href="http://http://plnkr.co" target="_blank">Plunker</a>.
     - Add appropriate test coverage if applicable.
 
 ## Code Style
@@ -57,7 +56,7 @@ You can also help with the documentation if you catch a mistake or want to add a
     ;
   ```
 - Return early.
-- 1 space after `function`
+- Notice the spaces when declaring a `function`:
   ``` js
   function fnName(param1, param2, ..., paramN) {
     ...
@@ -106,6 +105,8 @@ To watch source code and rebuild automatically while previewing the UI:
 $ gulp preview
 ```
 
+There's a `/preview` folder containing a demo Quasar App which gets previewed in the browser. Change its source to make use of a feature that's of interest to you.
+
 There's also another type of previewing -- with a Responsive View (browsers won't be synchronized). Its purpose is for you to view the UI in a desktop browser and be able to quickly switch between different device screen sizes and orientation.
 ``` bash
 $ gulp rpreview
@@ -113,17 +114,20 @@ $ gulp rpreview
 
 To make a development build:
 ``` bash
-# will create the /build folder
-$ gulp build
+# will create the /build and /dist folders
+$ gulp dev
 ```
 
-To make a production build:
+To make a production build (source minified and optimized for End-User):
 ``` bash
-# overwrites the /build folder and creates /dist
-$ gulp dist
+$ gulp prod
+```
+By default, you can create both development and production builds:
+``` bash
+$ gulp
 ```
 
-To clean builds folder:
+To clean `/build` and `/dist` folders:
 ``` bash
 $ gulp clean
 ```

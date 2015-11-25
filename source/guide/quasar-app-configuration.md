@@ -76,5 +76,5 @@ banner:
 ```
 
 ### 'test' property
-This property overrides any of the <a href="https://github.com/rstoenescu/quasar-cli/blob/master/lib/gulp/gulp-config.js#L119-L208" target="_blank">default Karma configuration</a> options.
+This property overrides any of the <a href="https://github.com/rstoenescu/quasar-cli/blob/master/lib/gulp/gulp-config.js#L123-L212" target="_blank">default Karma configuration</a> options.
 See the full list of <a href="http://karma-runner.github.io/0.8/config/configuration-file.html" target="_blank">Karma configuration properties</a> that you can use.

@@ -1,6 +1,7 @@
 title: What is Quasar?
 ---
-Quasar is a SPA front-end framework on steroids. Some of its features:
+Quasar is a moderm HTML5 SPA (Single Page Application) front-end framework on steroids.
+Some of its features:
 
 ### Desktop & Mobile App
 Write code once and then deploy as a responsive website or as a phone/tablet app. No need to waste time on HOW your content is displayed.. just focus on what your content is.
@@ -8,8 +9,13 @@ Write code once and then deploy as a responsive website or as a phone/tablet app
 ### Focus on Content
 Quasar is a time-saver from many perspectives. You don't have to worry about a lot of things, including how your content is being displayed to best leverages the screen real-estate. The built-in components are responsive by default.
 
+### Built for Speed
+Quasar Framework has a lot of optimizations behind the scenes to make your App run really fast (and consume the lowest possible battery power) by using the integrated Build system described below.
+
 ### Build System
 Build system out of the box to help you in managing an App folder, precompiling code, bundling it together, preparing it for deployment, running tests, live previewing of your code in browser(s). No need to write even a single line of code for this.
+
+Trivial tasks like optimizing image files (and much more) are taken care of by default. Just issue Quasar CLI commands.
 
 ### Javascript in CommonJS Format
 As well as ensuring your code is encapsulated and modular, CommonJS modules give you dependency management, scope isolation, and namespacing. They should be used in any JavaScript application that spans more than a few files. This is why every Quasar App Javascript file must adhere to. Don't worry about how code is compiled and bundled together because Quasar takes care of it.
@@ -20,10 +26,12 @@ Develop reactive UI with two-way data binding. No need to directly touch the DOM
 ### Focus on Reusable Code
 Focus on writing reusable web components as (reactive) HTML tags.
 
-### Plugins
-Easy plugin system to enhance Quasar's abilities. Write your own, share them on Github.
+### Web Components
+**There is a rich ecosystem of reactive HTML tags ready to be used provided by default.** Head on to the API to get to know them and use them to write as few lines of code as possible and yet enrich your App with beautifully crafted functionality.
 
-### CLI
+You want a swipe-responsive sidebar or a menu with tabs, or a card? Use an HTML tag provided by Quasar Framework.
+
+### CLI (Command Line Interface)
 CLI available to help you in creating an App folder, building, testing, live previewing and ultimately managing App source code files.
 
 ### Enforced Code Quality

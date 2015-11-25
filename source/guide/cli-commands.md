@@ -102,20 +102,27 @@ $ quasar new:page [page-name]
 $ quasar rename:page [old-page-name] [new-page-name]
 ```
 
-## Plugins
 
-Quasar Plugins are the way to enhance your Quasar App with additional features. Think of Plugins as common Quasar Framework functionality that can be shared between apps.
+## Runtime Information
+Display information about your runtime, including operating system, nodejs version, Quasar CLI version and more.
 
-### Create Plugin
 ``` bash
-$ quasar new:plugin [plugin-name]
+$ quasar info
 ```
 
-### Rename Plugin
+Output example:
 ``` bash
-$ quasar rename:plugin [old-plugin-name] [new-plugin-name]
-```
+$ quasar info
 
+ Runtime
+ Quasar CLI 	 v0.0.18
+ Node JS 	 v4.2.0
+
+ Operating System
+ Architecture 	 x64
+ Platform 	 linux
+ Release 	 3.19.0-33-generic
+```
 
 
 ## Making a Release
