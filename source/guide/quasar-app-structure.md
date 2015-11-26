@@ -3,29 +3,8 @@ title: Quasar App Structure
 ## Overview
 This is what a new Quasar Framework App folder structure looks like. Some folders are creating after building the App.
 ``` bash
+$ tree -I node_modules -a --dirsfirst
 .
-├── build
-│   ├── assets
-│   │   └── favicon.ico
-│   ├── css
-│   │   ├── app.css
-│   │   └── app-dependencies.css
-│   ├── html
-│   │   └── app.html
-│   ├── js
-│   │   ├── app-dependencies.js
-│   │   └── app.js
-│   ├── pages
-│   │   └── index
-│   │       ├── assets
-│   │       ├── css
-│   │       │   └── style.index.css
-│   │       ├── html
-│   │       │   └── view.index.html
-│   │       └── js
-│   │           └── script.index.js
-│   ├── app.json
-│   └── index.html
 ├── coverage
 │   ├── lcov-report
 │   │   ├── base.css
@@ -39,16 +18,27 @@ This is what a new Quasar Framework App folder structure looks like. Some folder
 │   ├── assets
 │   │   └── favicon.ico
 │   ├── css
+│   │   ├── themes
+│   │   │   └── default
+│   │   │       └── assets
+│   │   │           ├── fonts
+│   │   │           │   ├── icons.eot
+│   │   │           │   ├── icons.otf
+│   │   │           │   ├── icons.svg
+│   │   │           │   ├── icons.ttf
+│   │   │           │   ├── icons.woff
+│   │   │           │   └── icons.woff2
+│   │   │           └── images
+│   │   │               └── flags.png
 │   │   ├── app.css
 │   │   └── app-dependencies.css
-│   ├── html
-│   │   └── app.html
 │   ├── js
 │   │   ├── app-dependencies.js
 │   │   └── app.js
 │   ├── pages
 │   │   └── index
 │   │       ├── assets
+│   │       │   └── assets-README.txt
 │   │       ├── css
 │   │       │   └── style.index.css
 │   │       ├── html
@@ -63,12 +53,13 @@ This is what a new Quasar Framework App folder structure looks like. Some folder
 │   ├── css
 │   │   └── app.styl
 │   ├── html
-│   │   └── app.html
+│   │   └── html-README.txt
 │   ├── js
 │   │   └── app.js
 │   ├── pages
 │   │   └── index
 │   │       ├── assets
+│   │       │   └── assets-README.txt
 │   │       ├── css
 │   │       │   └── style.index.styl
 │   │       ├── html
@@ -89,16 +80,15 @@ This is what a new Quasar Framework App folder structure looks like. Some folder
 ├── README.md
 └── .stylintrc
 
-36 directories, 48 files
+29 directories, 45 files
 ```
 
 What each is used for:
 
 | Asset | Description |
 | --- | --- |
-| /build | Development build folder |
 | /dist | Production build folder |
-| {/build,/dist}/app.json | Pages Manifests put together. Details [here](/guide/quasar-app-configuration.html#app-json) |
+| /dist/app.json | Pages Manifests put together. Details [here](/guide/quasar-app-configuration.html#app-json) |
 | /coverage | Code coverage after [running tests with CLI](/guide/cli-commands.html#Running_Test_Suites) |
 | /src | App source files; see [Source Folder](#Source_Folder) |
 | /test | Test source files used for [running tests with CLI](/guide/cli-commands.html#Running_Test_Suites) |

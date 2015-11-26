@@ -9,7 +9,7 @@ guide:
     'App Configuration': quasar-$
     'Starting Point': quasar-app-$
     'Writing a Page': writing-quasar-page
-    'Build Process': quasar-$
+    'Build System': quasar-$
   Miscellaneous:
     'CommonJS Format': $
     'Commit Message Format': $

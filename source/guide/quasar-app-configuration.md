@@ -36,7 +36,7 @@ deps:
     - 'node_modules/X/css/y.css'
 preview:
   port: 3500
-rpreview:
+previewResp:
   port: 3600
 banner: {}
 test:
@@ -54,10 +54,10 @@ preview:
   reloadOnRestart: true
 ```
 
-### 'rpreview' property
+### 'previewResp' property
 [Live Preview with Responsive View](/guide/cli-commands.html#Live_Preview_with_Responsive_View) configuration. Read more about configuration properties [here](http://www.browsersync.io/docs/options/). Example of default configuration which is merged with user specific one:
 ``` yml
-rpreview:
+previewResp:
   port: 3100
   ui: false
   open: false

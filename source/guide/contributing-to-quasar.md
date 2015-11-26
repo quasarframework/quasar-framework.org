@@ -25,7 +25,7 @@ You can also help with the documentation if you catch a mistake or want to add a
 
 - Checkout a topic branch from `master` and merge back against `master`.
 
-- Work in the `src` folder and **DO NOT** checkin `/build` or `/dist` in the commits.
+- Work in the `src` folder and **DO NOT** checkin `/dist` in the commits.
 
 - Squash the commit if there are too many small ones.
 
@@ -92,7 +92,7 @@ Fork Quasar Framework Github repository. Then install all other dependencies.
 $ npm install
 ```
 
-To monitor source code for changes and rebuild:
+To monitor source code for changes and rebuild automatically:
 ``` bash
 $ gulp monitor
 ```
@@ -109,7 +109,7 @@ There's a `/preview` folder containing a demo Quasar App which gets previewed in
 
 There's also another type of previewing -- with a Responsive View (browsers won't be synchronized). Its purpose is for you to view the UI in a desktop browser and be able to quickly switch between different device screen sizes and orientation.
 ``` bash
-$ gulp rpreview
+$ gulp preview-resp
 ```
 
 To make a development build:
@@ -120,14 +120,18 @@ $ gulp dev
 
 To make a production build (source minified and optimized for End-User):
 ``` bash
+# will create the /build and /dist folders
 $ gulp prod
 ```
-By default, you can create both development and production builds:
+
+By default, you can create both development and production builds -- this is the official Production build:
 ``` bash
 $ gulp
+# or
+$ gulp dist
 ```
 
-To clean `/build` and `/dist` folders:
+To clean folder from build artifacts:
 ``` bash
 $ gulp clean
 ```

@@ -1,4 +1,4 @@
-title: Quasar Build Process
+title: Quasar Build System
 ---
 The App must be built before deployment. Read more how to build (and test) in the [CLI Commands](/guide/cli-commands.html#Build) section.
 

@@ -4,7 +4,7 @@ Make sure you read and understand the [folder structure of a Quasar App](/guide/
 
 Then use the [Quasar CLI](/guide/cli-commands.html#Pages) to build a page.
 
-Also don't forget to read more about the [Build Process](/guide/quasar-build-process.html) to understand how pages are precompiled and bundled, what files are considered an entry-point and many more.
+Also don't forget to read more about the [Build System](/guide/quasar-build-system.html) to understand how pages are precompiled and bundled, what files are considered an entry-point and many more.
 
 Let's dissect how pages work.
 
@@ -75,7 +75,7 @@ module.exports.start = function() {
 ```
 
 > Include other JS files for modularity by *require()*-ing them. Take full advantage of Webpack.
-> Read more about the [Build Process](/guide/quasar-build-process.html) to understand.
+> Read more about the [Build System](/guide/quasar-build-system.html) to understand.
 
 ## Page Manifest
 Provide page specific configuration (in YAML format), called *Manifest* in `/pages/*page-name*/config.*page-name*.yml`.
@@ -142,11 +142,11 @@ quasar.global.events.on('app:page:ready', function(props) {
 ```
 
 ## HTML
-The Quasar App Pages' HTML is a Vue instance. Read more about the [Build Process](/guide/quasar-build-process.html#HTML_Files) to understand.
+The Quasar App Pages' HTML is a Vue instance. Read more about the [Build System](/guide/quasar-build-system.html#HTML_Files) to understand.
 
 
 ## CSS
-Notice that all CSS files have the *.styl* extension. This is because you can use  Stylus (with NIB). Read more about the [Build Process](/guide/quasar-build-process.html) to understand.
+Notice that all CSS files have the *.styl* extension. This is because you can use  Stylus (with NIB). Read more about the [Build System](/guide/quasar-build-system.html) to understand.
 
 ## Assets
 Place all your page assets (images, fonts, ...) inside the `/pages/*page-name*/assets/` folder.
