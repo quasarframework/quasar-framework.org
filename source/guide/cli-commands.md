@@ -127,6 +127,8 @@ $ quasar wrap run
 $ quasar wrap build
 ```
 
+> Use it in conjuction with `quasar build` when you frequently test on your mobile: `quasar build && quasar wrap run`
+
 ## Runtime Information
 Display information about your runtime, including operating system, nodejs version, Quasar CLI version and more.
 
