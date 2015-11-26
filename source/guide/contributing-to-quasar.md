@@ -130,6 +130,10 @@ $ gulp
 # or
 $ gulp dist
 ```
+After you build the demo App (from `/preview`) you can see it in action as a native App:
+``` bash
+$ gulp wrapper
+```
 
 To clean folder from build artifacts:
 ``` bash

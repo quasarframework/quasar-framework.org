@@ -98,14 +98,34 @@ Pages are the core of any Quasar App. Think of a Quasar Page as a webpage which 
 
 ### Create Page
 ``` bash
-$ quasar new:page [page-name]
+$ quasar page [page-name]
 ```
 
 ### Rename Page
 ``` bash
-$ quasar rename:page [old-page-name] [new-page-name]
+$ quasar page [current-page-name] [new-page-name]
 ```
 
+## Native Mobile App Wrapper
+You can use Cordova to wrap your Quasar App into a native mobile App.
+
+### Wrap your App
+So you want to be able to produce native apps for the mobile platforms:
+``` bash
+$ quasar wrap
+```
+This command generates a folder inside your App called `/wrapper`. It contains the assets of a Cordova project mapped to your Quasar App's source code.
+
+### Execute Cordova Command
+You surely want to add a platform or perform useful Cordova commands:
+``` bash
+$ quasar wrap [Cordova command arguments]
+
+# examples:
+$ quasar wrap platform add android
+$ quasar wrap run
+$ quasar wrap build
+```
 
 ## Runtime Information
 Display information about your runtime, including operating system, nodejs version, Quasar CLI version and more.
