@@ -22,10 +22,7 @@ Example:
 ```
 
 ## quasar.build.yml
-This is the place to include your own dependencies, or configure the banner that is automatically added when building for Production, and many more.
-
-> **NOTE**
-> The format of the file must be YAML.
+This is the place where you configure how your App is built, what dependencies to inject, how your Quasar App is tested and more.
 
 Example:
 ``` yml
@@ -39,12 +36,14 @@ preview:
   port: 3500
 previewResp:
   port: 3600
-banner: {}
 test:
   exclude: []
 ```
 
-### 'preview' property
+### 'deps' object
+Specify the dependencies of your App. You can use NPM to install different packages, or Bower, or just download some file from somewhere and store it inside the App's folder. In the end, all you need is a path. The Build System takes care of the rest. Mind the order as it may be important.
+
+### 'preview' object
 [Live Preview](/guide/cli-commands.html#Live_Preview) configuration. Read more about configuration properties  [here](http://www.browsersync.io/docs/options/). Example of default configuration which is merged with user specific one:
 ``` yml
 preview:
@@ -55,7 +54,7 @@ preview:
   reloadOnRestart: true
 ```
 
-### 'previewResp' property
+### 'previewResp' object
 [Live Preview with Responsive View](/guide/cli-commands.html#Live_Preview_with_Responsive_View) configuration. Read more about configuration properties [here](http://www.browsersync.io/docs/options/). Example of default configuration which is merged with user specific one:
 ``` yml
 previewResp:
@@ -66,16 +65,6 @@ previewResp:
   reloadOnRestart: true
 ```
 
-### 'banner' property
-Read more how to configure [here](https://github.com/rstoenescu/gulp-pipes#banner). Example of configuration:
-``` yml
-banner:
-  templatePath: '...'
-  variables:
-    ...
-    ...
-```
-
-### 'test' property
-This property overrides any of the <a href="https://github.com/rstoenescu/quasar-cli/blob/master/lib/gulp/gulp-config.js#L123-L212" target="_blank">default Karma configuration</a> options.
+### 'test' object
+This object's properties override any of the <a href="https://github.com/rstoenescu/quasar-cli/blob/master/lib/gulp/gulp-config.js#L14-L103" target="_blank">default Karma configuration</a> options.
 See the full list of <a href="http://karma-runner.github.io/0.8/config/configuration-file.html" target="_blank">Karma configuration properties</a> that you can use.
