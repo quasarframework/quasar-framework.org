@@ -12,7 +12,6 @@ guide:
     'Build System': quasar-$
   Miscellaneous:
     'CommonJS Format': $
-    'Commit Message Format': $
     'Contributing to Quasar': $
     'Mobile Wrapper Tips': quasar-$
 api:
