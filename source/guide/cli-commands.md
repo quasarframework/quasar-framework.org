@@ -2,36 +2,34 @@ title: CLI Commands
 ---
 ## Options
 
-### Version
+#### Version
 Displays version information.
 ``` bash
 $ quasar -V
 $ quasar version
 ```
 
-### Help
+#### Help
 Displays list of all commands and options.
 ``` bash
 $ quasar
 $ quasar -h
 ```
 
-### Verbose Mode
+#### Verbose Mode
 If you want to get more information on what's going on (for example when building App), turn on the debug flag (`-d` option):
 ``` bash
 $ quasar -d ..........
 ```
 
-
-
-## Create App Folder
+## Create App
 
 Initializes a project folder with everything necessary.
 ``` bash
 $ quasar new [folder-name]
 ```
 
-## Build
+## Build App
 
 ### For Development
 Generates a folder called `/dist` which contains sourcemaps and everything needed to debug.
@@ -55,8 +53,8 @@ Cleans App folder from build artifacts.
 $ quasar clean
 ```
 
-## Monitoring & Auto-Build
-Monitors source code files (Javascript files, CSS files, assets, ...) for changes and when change is detected it auto-rebuilds.
+### Monitoring & Auto-Rebuild
+Monitors source code files (Javascript files, CSS files, assets, ...) for changes and when that happens it auto-rebuilds to update the end-user code.
 ``` bash
 $ quasar monitor
 ```
@@ -74,7 +72,7 @@ For more details to see what this does go to [Build System](/guide/quasar-build-
 > **NOTE**
 > CSS is injected into the browser(s) so the page is not required to reload, which is really cool.
 
-## Live Preview with Responsive View
+### Responsive View
 Want to quickly see how your App handles different device screen sizes? This is the command that you should use. Recommended (and designed) to be viewed from a desktop browser.
 
 Watches the source code (and reloads if necessary or injects CSS without page reload) but clicks, scroll and form input are *NOT* automatically synchronized between all opened browsers as for previous command.

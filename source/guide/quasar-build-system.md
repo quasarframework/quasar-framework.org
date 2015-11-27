@@ -1,6 +1,6 @@
 title: Quasar Build System
 ---
-The App must be built before deployment. Read more how to build (and test) in the [CLI Commands](/guide/cli-commands.html#Build) section.
+The App must be built before deployment. Read more how to build (and test) in the [CLI Commands](/guide/cli-commands.html#Build_App) section.
 
 Following lines will describe how everything is glued together.
 
@@ -25,9 +25,6 @@ Take into consideration that the following files are taken as Stylus entry-point
 So when writing a Quasar App Page CSS and you want to *import* something, in the */pages/page-name/css/* folder, make a sub-folder and place it there. Otherwise any *.styl* files directly under */pages/page-name/css/* folder are considered entry-points and will be built accordingly, which is not what you want. Same for the global */css* folder.
 
 ### HTML Files
-> **TIP**
-> The Quasar App Pages' HTML is compiled into Vue instances, so yeah!, you can use **two-way data binding**. Read more about the two-way data binding Vue library and how to use it <a href="http://vuejs.org" target="_blank">here</a>.
-
 To support code modularity inside your HTMLs you can include other HTML files/templates. Take into consideration that the following files are considered entry-points (take a good look at folders):
 * /html/*file-name*.html
 * /pages/*page-name*/html/*file-name*.html
@@ -72,6 +69,9 @@ So when writing a Quasar App Page HTML and you want to *include* something, in t
 <strong>facebook.com/include</strong>
 <strong>twitter.com/include</strong>
 ```
+
+> **TIP**
+> The HTML of Quasar App Pages is used as template for Vue instances, so yeah!, you can use **two-way data binding**. Read more about the two-way data binding Vue library and how to use it <a href="http://vuejs.org" target="_blank">here</a>.
 
 ### Image Files
 Image files should be placed under `assets` folders. By default, on a production build, `GIF`, `JPEG`, `PNG` and `SVG` image files get "minified" without losing noticeable quality.
