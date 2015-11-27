@@ -71,7 +71,8 @@ $ quasar preview
 ```
 For more details to see what this does go to [Build System](/guide/quasar-build-system.html) and [App Structure](/guide/quasar-app-structure.html).
 
-> **NOTE**: CSS is injected into the browser(s) so the page is not required to reload, which is really cool.
+> **NOTE**
+> CSS is injected into the browser(s) so the page is not required to reload, which is really cool.
 
 ## Live Preview with Responsive View
 Want to quickly see how your App handles different device screen sizes? This is the command that you should use. Recommended (and designed) to be viewed from a desktop browser.
@@ -83,7 +84,7 @@ $ quasar preview -r
 # or
 $ quasar preview --responsive
 ```
-<img src="/images/screenshot-live-preview-2.png">
+![Responsive Preview Screen](/images/preview-2.png "Responsive Preview Screen")
 
 ## Running Test Suites
 Write tests and run them with the out of the box test-pack which includes Karma, Mocha, Chai & Sinon.
@@ -127,6 +128,7 @@ $ quasar wrap run
 $ quasar wrap build
 ```
 
+> **TIP**
 > Use it in conjunction with `quasar build` when you frequently test on your mobile: `quasar build && quasar wrap run`
 
 ## Runtime Information
@@ -154,7 +156,8 @@ $ quasar info
 
 ## Making a Release
 
-> **NOTE**: This is not yet available.
+> **NOTE**
+> This is not yet available.
 
 Versioning takes into account the Angular commit style.
 See [Commit Message Format](commit-message-format.html).

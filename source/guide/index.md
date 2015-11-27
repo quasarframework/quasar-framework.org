@@ -40,11 +40,11 @@ Code quality is enforced by the built-in code linters and by test system availab
 ### Live Preview
 Live Preview as you write your code. Open multiple browsers and get them synchronized for click/scroll/form input events. More than that, whenever you change your code, the browsers automatically get refreshed. So forget the F5 button.
 
+![Live Preview Screen](/images/preview-1.png "Live Preview Screen")
+
 Even more, you have a "Responsive View" too which helps you to quickly switch between different screen sizes in your browser window.
 
-<img src="/images/screenshot-live-preview-1.png">
-<br>
-<img src="/images/screenshot-live-preview-2.png">
+![Responsive Preview Screen](/images/preview-2.png "Responsive Preview Screen")
 
 ### Semantic API
 The API syntax is intuitive as if you talk to someone and tell it what you want. Example:

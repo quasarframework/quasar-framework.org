@@ -74,6 +74,7 @@ module.exports.start = function() {
 };
 ```
 
+> **TIP**
 > Include other JS files for modularity by *require()*-ing them. Take full advantage of Webpack.
 > Read more about the [Build System](/guide/quasar-build-system.html) to understand.
 

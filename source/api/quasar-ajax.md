@@ -207,7 +207,8 @@ When sending data to the server, use `contentType` to specify Content Type.
 
 Default is **application/x-www-form-urlencoded; charset=UTF-8**, which is fine for most cases. If you explicitly pass in a `contentType`, then it is always sent to the server (even if no data is sent). If set to `false` it will not set any content type header.
 
-> Note: The W3C XMLHttpRequest specification dictates that the charset is always UTF-8; specifying another charset will not force the browser to change the encoding.
+> **NOTE**
+> The W3C XMLHttpRequest specification dictates that the charset is always UTF-8; specifying another charset will not force the browser to change the encoding.
 
 #### Headers
 `headers` is an object of additional header key/value pairs to send along with requests using the XMLHttpRequest transport. The header X-Requested-With: XMLHttpRequest is always added, but its default XMLHttpRequest value can be changed here. Values in the headers setting can also be overwritten from within the beforeSend function.

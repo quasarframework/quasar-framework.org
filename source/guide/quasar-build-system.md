@@ -25,6 +25,7 @@ Take into consideration that the following files are taken as Stylus entry-point
 So when writing a Quasar App Page CSS and you want to *import* something, in the */pages/page-name/css/* folder, make a sub-folder and place it there. Otherwise any *.styl* files directly under */pages/page-name/css/* folder are considered entry-points and will be built accordingly, which is not what you want. Same for the global */css* folder.
 
 ### HTML Files
+> **TIP**
 > The Quasar App Pages' HTML is compiled into Vue instances, so yeah!, you can use **two-way data binding**. Read more about the two-way data binding Vue library and how to use it <a href="http://vuejs.org" target="_blank">here</a>.
 
 To support code modularity inside your HTMLs you can include other HTML files/templates. Take into consideration that the following files are considered entry-points (take a good look at folders):

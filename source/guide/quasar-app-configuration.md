@@ -24,7 +24,8 @@ Example:
 ## quasar.build.yml
 This is the place to include your own dependencies, or configure the banner that is automatically added when building for Production, and many more.
 
-> Note that the format must be YAML.
+> **NOTE**
+> The format of the file must be YAML.
 
 Example:
 ``` yml

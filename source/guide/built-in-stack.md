@@ -27,7 +27,7 @@ Changing the *input* element content automatically updates `data.message` (calle
 ## jQuery
 No need for an introduction. Mind that you should not be required to use it though due to Vue. It is included by default just because Quasar Framework uses it under the cover.
 
-> **NOTE**
+> **IMPORTANT**
 > A good Quasar App uses NO jQuery code and it does NOT touch DOM elements directly under any way. Vue should handle the DOM update for you through the scope.
 
 ## Lodash

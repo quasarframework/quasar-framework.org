@@ -14,6 +14,7 @@ guide:
     'CommonJS Format': $
     'Commit Message Format': $
     'Contributing to Quasar': $
+    'Mobile Wrapper Tips': quasar-$
 api:
   root:
     Overview: index
