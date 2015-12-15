@@ -105,7 +105,7 @@ List of features:
 ### Usage
 ``` js
 // Injecting globally
-quasar.inject.global.css(URL);
+quasar.inject.css(URL);
 
 // Injecting per-page
 quasar.inject.page.css(URL);
@@ -114,7 +114,7 @@ quasar.inject.page.css(URL);
 Removing injected CSS:
 ``` js
 // Removing globally injected CSS
-quasar.clear.global.css();
+quasar.clear.css();
 
 // Removing page injected CSS
 quasar.clear.page.css();

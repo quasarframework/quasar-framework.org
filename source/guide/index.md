@@ -1,10 +1,17 @@
 title: What is Quasar?
 ---
 Quasar is a modern HTML5 SPA (Single Page Application) front-end framework on steroids.
+
 Some of its features:
 
 ### Responsive Website & Mobile App
+![Build on one. Use it on all.](/images/responsive-banner.png "Build on one. Use it on all.")
+
 Write code once and then deploy as a responsive website or as a native phone/tablet app. No need to waste time on HOW your content is displayed.. just focus on what your content is.
+
+
+### CSS Framework
+Quasar uses its own full-featured CSS Framework. You can tweak it and build your own theme to make your App's design distinctive.
 
 ### Focus on Content
 Quasar is a time-saver from many perspectives. You don't have to worry about a lot of things, including how your content is being displayed to best leverages the screen real-estate. The built-in components are responsive by default.

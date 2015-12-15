@@ -105,6 +105,20 @@ $ quasar page [page-name]
 $ quasar page [current-page-name] [new-page-name]
 ```
 
+## Layouts
+
+Layouts are the elements that wrap one or multiple pages (like navigational bar).
+
+### Create Layout
+``` bash
+$ quasar layout [layout-name]
+```
+
+### Rename Layout
+``` bash
+$ quasar layout [current-layout-name] [new-layout-name]
+```
+
 ## Native Mobile App Wrapper
 You can use Cordova to wrap your Quasar App into a native mobile App.
 

@@ -1,29 +1,38 @@
 guide:
   root:
-    'What is Quasar': index
+    What is Quasar: index
     Installation: $
-    'CLI Commands': $
-    'Built-in Stack': $
+    CLI Commands: $
+    Built-in Stack: $
   App:
-    'App Structure': quasar-$
-    'App Configuration': quasar-$
-    'Starting Point': quasar-app-$
-    'Writing a Page': writing-quasar-page
-    'Build System': quasar-$
+    App Structure: quasar-$
+    App Configuration: quasar-$
+    Starting Point: quasar-app-$
+    Writing a Page: writing-quasar-page
+    Writing a Layout: writing-quasar-layout
+    Build System: quasar-$
   Miscellaneous:
-    'CommonJS Format': $
-    'Contributing to Quasar': $
-    'Mobile Wrapper Tips': quasar-$
+    Vue State Management: $
+    CommonJS Format: $
+    Contributing to Quasar: $
+    Mobile Wrapper Tips: quasar-$
 api:
   root:
     Overview: index
   Core:
-    Environment: quasar-$
-    'Debug Helpers': quasar-$
-    Router: quasar-$
-    Events: quasar-$
-    Ajax: quasar-$
-    Require: quasar-$
-  'Features':
-    Cookies: quasar-$
-    'Web Storage': quasar-$-api
+    Environment: core-js-$
+    Debug Helpers: core-js-$
+    Router: core-js-$
+    Events: core-js-$
+    Ajax: core-js-$
+    Require: core-js-$
+  Features:
+    Cookies: feat-$
+    Web Storage: feat-$
+  Web Components:
+    Layout: web-components-$
+  Core CSS:
+    Color Palette: core-css-$
+    Icons: core-css-$
+    Helper Classes: core-css-$
+    Flexbox Layout: core-css-$

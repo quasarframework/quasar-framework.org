@@ -2,113 +2,116 @@ title: Writing a Quasar App Page
 ---
 Make sure you read and understand the [folder structure of a Quasar App](/guide/quasar-app-structure.html) first. Read the [Pages](/guide/quasar-app-structure.html#Pages) section closely.
 
-Then use the [Quasar CLI](/guide/cli-commands.html#Pages) to build a page.
+Then use the [Quasar CLI](/guide/cli-commands.html#Pages) to build a Page.
 
 Also don't forget to read more about the [Build System](/guide/quasar-build-system.html) to understand how pages are precompiled and bundled, what files are considered an entry-point and many more.
 
-Let's dissect how pages work.
+Let's dissect how Pages work.
 
 ## Javascript
-The starting point of a Quasar Page is *js/script.page-name.js* file. Think of it as the Controller part of a page.
+The starting point of a Quasar Page is *js/script.page-name.js* file. Think of it as the Controller part of a Page.
+
+It has a basic CommonJS structure that exports a Vue instantiation object or a function for doing asynchronous operations before calling a callback with a Vue instantiation object.
+
 ``` js
-/*
- * Use for Async operations (like Ajax requests) before displaying page
- */
-module.exports.prepare = function() {
-  /*
-   * Properties available:
-   */
-  this.params // [Object] Route parameters -- see API > Router
-  this.query // [Object] Route query string -- see API > Router
-  this.name // [String] Page name (eg. 'index')
-  this.manifest // [Object] Page manifest (config.page-name.yml)
-  this.route // [String] Route name (eg. '$' or ':chapter/:page')
+// Option 1. Supply Vue instantiation object
 
-  /* When async operations are done, call this: */
-  this.done(/* [Anything] */data);
-};
+var html = require('raw!../html/view.page-name.html');
 
- /*
-  * Compute Vue scope
-  */
- module.exports.scope = function() {
-   /*
-    * Common properties available:
-    */
-   this.params // [Object] Route parameters -- see API > Router
-   this.query // [Object] Route query string -- see API > Router
-   this.name // [String] Page name (eg. 'index')
-   this.manifest // [Object] Page manifest (config.page-name.yml)
-   this.route // [String] Route name (eg. '$' or ':chapter/:page')
-
-   /*
-    * Specific properties available:
-    */
-   this.data // [Anything] Result from calling this.done() from prepare() from above
-
-   /* Return what is going to become the Vue scope of the page */
-   return {...};
- };
-
- /*
-  * Finally everything is set to start page operations
-  */
-module.exports.start = function() {
-  /*
-   * Properties available:
-   */
-  this.params // [Object] Route parameters -- see API > Router
-  this.query // [Object] Route query string -- see API > Router
-  this.name // [String] Page name (eg. 'index')
-  this.manifest // [Object] Page manifest (config.page-name.yml)
-  this.route // [String] Route name (eg. '$' or ':chapter/:page')
-
-  /*
-   * Specific properties available:
-   */
-  this.data // [Anything] Result from calling this.done() from prepare() from above
-  this.scope // [Object] Result from calling scope() from above
-  this.vm // [Object, Vue instance] Vue-Model of page
-
+module.exports = { // Vue instance
+  template: html,
   ...
 };
 ```
 
-> **TIP**
-> Include other JS files for modularity by *require()*-ing them. Take full advantage of Webpack.
-> Read more about the [Build System](/guide/quasar-build-system.html) to understand.
+``` js
+// Option 2. Do some asynch ops first
+
+var html = require('raw!../html/view.page-name.html');
+
+module.exports = function(done) {
+  /*
+   * Properties available:
+   */
+  this.params // [Object] Route parameters -- see API > Router
+  this.query // [Object] Route query string -- see API > Router
+  this.name // [String] Page name (eg. 'index')
+  this.manifest // [Object] Page manifest (config.page-name.yml)
+  this.route // [String] Route name (eg. '$' or ':chapter/:page')
+
+  // ...
+  // asynchronous operations
+  // ...
+
+  done({ // Vue instance
+    template: html,
+    ...
+  });
+};
+```
+
+### Tips
+
+1. When exporting a function, make sure the callback is called, otherwise the Page will never load.
+
+2. Include other JS files for modularity by *require()*-ing them. Take full advantage of Webpack.
+Read more about the [Build System](/guide/quasar-build-system.html) to understand.
+
+3. Make sure you use `require('raw!.....')` syntax for the template so that it will get bundled automatically into your JS file with the help of the Build System. This saves one precious HTTP request. **Do not require the template within the exporting function (if you use one) because Webpack won't know it needs to be handled at compile time**. So require it outside to avoid issues.
+
+4. Make good use of the Vue component lifecycle methods (`created`, `beforeCompile`, `compiled`, `ready`, `beforeDestroy`, `destroyed`) and different props:
+![Vue Lifecycle Diagram](/images/vue-lifecycle.png "Vue Lifecycle Diagram")
+``` js
+// Example making use of Vue component lifecycle methods
+
+var html = require('raw!../html/view.page-name.html');
+
+module.exports = { // Vue instance
+  template: html,
+  beforeCompile: {
+    // Before template compiling
+    // ...
+  },
+  ready: {
+    // Template has been rendered into view
+    // ...
+  }
+};
+```
 
 ## Page Manifest
 Provide page specific configuration (in YAML format), called *Manifest* in `/pages/*page-name*/config.*page-name*.yml`.
 
-### HTML & CSS Properties
-These get computed by default if CSS and HTML main page files exists, but they can be overridden to point to other files. The path must start with the folder where app root *index.html* file exists.
+### CSS Property
+These get computed by default if CSS main page file exists (**so it is optional!**), but it can be overridden to point to other files. The path must start with the folder where app root *index.html* file exists.
 ``` yaml
 css: 'path/to/css'
-html: 'path/to/html'
 ```
 
-### Page Routes Properties
+### Page Routes Property
 One more important property is `hashes`, which is an array of hashes for the respective page. Example:
 ``` yaml
 # config.book.yml
 
 hashes:
   - '$' # registers #/book route (because 'book' is the name of the page)
-  - ':chapter/:page' # adds this.params.chapter & this.params.page from page methods
+  - ':chapter/:page' # adds this.params.chapter & this.params.page to page's main script when using a function
 ```
 So now if we navigate to route *#/book/thinking/20*, we'll trigger *book* page:
 ``` js
 // js/script.book.js
 
-module.exports.start = function() {
+module.exports = function(done) {
   this.params.chapter // is (String) 'thinking'
   this.params.page // is (String) '20'
+
+  done(...);
 };
 ```
 
 ### Your Own Properties
-Any other property that you write in the page manifest will be accessible under `this.manifest` property in page methods.
+Any other property that you write in the page manifest will be accessible under `this.manifest` property in page methods, and under the global `quasar.global.manifest` object.
+
 ``` yaml
 # config.book.yml
 
@@ -117,23 +120,25 @@ myprop: 'my-value'
 ``` js
 // js/script.book.js
 
-module.exports.start = function() {
+module.exports = function(done) {
   this.manifest.myprop // is 'my-value'
+
+  done(...);
 };
 ```
 
 ## Page Events
-There are global events registered for each step of the way when a user navigates to a page. See [Quasar Events Global Emitter](/api/quasar-events.html#Global_Events_Emitter) if you haven't already.
+There are global events registered for each step of the way when a user navigates to a page. See [Quasar Events Global Emitter](/api/core-js-events.html#Global_Events_Emitter) if you haven't already.
 
 | Event Name | Description |
 | --- | --- |
-| app:page:requiring | Triggered right before requiring page Javascript |
-| app:page:preparing | Triggered before calling page - prepare() |
-| app:page:scoping | Triggered before calling page - scope() |
-| app:page:starting | Triggered before calling page - start() |
+| app:page:require | Triggered before requiring page JS file |
+| app:page:post-require | Triggered after requiring page JS file |
+| app:page:prepare | Triggered before solving page dependencies |
+| app:page:post-prepare | Triggered after we have the page's Vue instantiation object |
+| app:page:render | Triggered before rendering page on screen |
+| app:page:post-render | Triggered after rendering page on screen |
 | app:page:ready | Triggered when page has fully loaded |
-
-All these events are triggered regardless of the fact that the page script has the respective methods or not.
 
 Usage example:
 ``` js
@@ -143,11 +148,11 @@ quasar.global.events.on('app:page:ready', function(props) {
 ```
 
 ## HTML
-The Quasar App Pages' HTML is a Vue instance. Read more about the [Build System](/guide/quasar-build-system.html#HTML_Files) to understand.
+The Quasar App Page HTML represents a Vue instance template. Read more about the [Build System](/guide/quasar-build-system.html#HTML_Files) to understand.
 
 
 ## CSS
-Notice that all CSS files have the *.styl* extension. This is because you can use  Stylus (with NIB). Read more about the [Build System](/guide/quasar-build-system.html) to understand.
+Notice that all CSS files have the *.styl* extension. This is because you can use Stylus (with NIB extension). Read more about the [Build System](/guide/quasar-build-system.html) to understand.
 
 ## Assets
 Place all your page assets (images, fonts, ...) inside the `/pages/*page-name*/assets/` folder.
