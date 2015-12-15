@@ -63,7 +63,7 @@ Read more about the [Build System](/guide/quasar-build-system.html) to understan
 ``` js
 // Example making use of Vue component lifecycle methods
 
-var html = require('raw!../html/view.page-name.html');
+var html = require('raw!./view.page-name.html');
 
 module.exports = { // Vue instance
   template: html,
@@ -77,6 +77,8 @@ module.exports = { // Vue instance
   }
 };
 ```
+
+5. Make sure you sanitize intervals, timeouts, requestAnimationFrames or anything else at `beforeDestroy` point, otherwise you may end up with bugs when user switches to another Layout.
 
 ## HTML
 The Quasar App Layout HTML representa a Vue instance template. Read more about the [Build System](/guide/quasar-build-system.html#HTML_Files) to understand.
@@ -116,7 +118,7 @@ There are several Web Components that you can use. Some of them are mandatory. A
 Read more about the Components and how to use them in the [Web Components - Layout](/api/web-components-layout.html) section.
 
 ## Layout Events
-There are global events registered for each step of the way when a Layout is loaded/swaped. See [Quasar Events Global Emitter](/api/core-js-events.html#Global_Events_Emitter) if you haven't already.
+There are global events registered for each step of the way when a Layout is loaded/swapped. See [Quasar Events Global Emitter](/api/core-js-events.html#Global_Events_Emitter) if you haven't already.
 
 | Event Name | Description |
 | --- | --- |

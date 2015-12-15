@@ -5,7 +5,7 @@
     <div class="list">
         <h2>
             <% var type = page_type(page); %>
-            <%- type === 'api' ? 'API' : (type.charAt(0).toUpperCase() + type.slice(1)) %>
+            <%- type === 'api' ? 'API' : (type === 'css' ? 'CSS' : (type.charAt(0).toUpperCase() + type.slice(1))) %>
         </h2>
         <%
           var p, path;

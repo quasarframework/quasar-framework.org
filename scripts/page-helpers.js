@@ -9,7 +9,7 @@
   hexo.extend.helper.register('page_has_sidebar', function(page) {
     var type = this.page_type(page);
 
-    return type === 'api' || type === 'guide';
+    return _.includes(['api', 'guide', 'css'], type);
   });
 
   hexo.extend.helper.register('page_path_from_menu', function(type, html, name) {

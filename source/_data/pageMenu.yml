@@ -31,7 +31,10 @@ api:
     Web Storage: feat-$
   Web Components:
     Layout: web-components-$
-  Core CSS:
+    Spinners: web-components-$
+css:
+  root:
+    Overview: index
     Color Palette: core-css-$
     Icons: core-css-$
     Helper Classes: core-css-$

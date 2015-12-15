@@ -9,14 +9,14 @@ Also don't forget to read more about the [Build System](/guide/quasar-build-syst
 Let's dissect how Pages work.
 
 ## Javascript
-The starting point of a Quasar Page is *js/script.page-name.js* file. Think of it as the Controller part of a Page.
+The starting point of a Quasar Page is *script.page-name.js* file. Think of it as the Controller part of a Page.
 
 It has a basic CommonJS structure that exports a Vue instantiation object or a function for doing asynchronous operations before calling a callback with a Vue instantiation object.
 
 ``` js
 // Option 1. Supply Vue instantiation object
 
-var html = require('raw!../html/view.page-name.html');
+var html = require('raw!./view.page-name.html');
 
 module.exports = { // Vue instance
   template: html,
@@ -27,7 +27,7 @@ module.exports = { // Vue instance
 ``` js
 // Option 2. Do some asynch ops first
 
-var html = require('raw!../html/view.page-name.html');
+var html = require('raw!./view.page-name.html');
 
 module.exports = function(done) {
   /*
@@ -64,7 +64,7 @@ Read more about the [Build System](/guide/quasar-build-system.html) to understan
 ``` js
 // Example making use of Vue component lifecycle methods
 
-var html = require('raw!../html/view.page-name.html');
+var html = require('raw!./view.page-name.html');
 
 module.exports = { // Vue instance
   template: html,
@@ -78,6 +78,8 @@ module.exports = { // Vue instance
   }
 };
 ```
+
+5. Make sure you sanitize intervals, timeouts, requestAnimationFrames or anything else at `beforeDestroy` point, otherwise you may end up with bugs when user switches to another Page.
 
 ## Page Manifest
 Provide page specific configuration (in YAML format), called *Manifest* in `/pages/*page-name*/config.*page-name*.yml`.
