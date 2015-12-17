@@ -144,35 +144,3 @@ a.button
     z-index 1
     padding 0 10px 30px 60px
     overflow-x hidden
-
-#toTop
-    transition all 0.5s ease 0s
-    opacity 0.6
-    cursor pointer
-    position fixed
-    bottom -70px
-    right 10px
-    padding 20px
-    background-color #F8F8F8
-    color #525252
-    box-shadow $shadow
-    border-radius $radius
-    border 2px solid #ccc
-    &.visible
-        bottom -5px
-    &:hover
-        opacity: 1
-
-@media screen and (min-width: 720px)
-    #toTop:hover
-        bottom 5px
-
-@media screen and (min-width: 1500px)
-    #toTop
-        right 20%
-
-@media screen and (max-width: 720px)
-    #toTop
-        right -4px
-        padding 8px 10px
-        opacity: 0.9

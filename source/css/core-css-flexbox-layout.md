@@ -27,6 +27,8 @@ Following classes must be accompanied by the `layout` class, which adds the `dis
 **You can also wrap content**. Use `wrap` or `wrap-reverse` classes. By default, flex items will all try to fit onto one line. You can change that and allow the items to wrap as needed with this property. Direction also plays a role here, determining the direction new lines are stacked in.
 ![Flexbox Direction](/images/flexbox-wrap.svg)
 
+If you explicitly do not want to wrap, use `nowrap` class.
+
 ### Justify Alignment
 **For alignment along the main axis**, use classes below. It helps distribute extra free space left over when either all the flex items on a line are inflexible, or are flexible but have reached their maximum size. It also exerts some control over the alignment of items when they overflow the line.
 ![Flexbox Justify Content](/images/flexbox-justify.svg)

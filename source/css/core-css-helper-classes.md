@@ -62,3 +62,6 @@ There's the `scroll` class that helps some browsers (like on iOS platform) to be
 
 ## Window Height
 Whenever you need an item to have the height equivalent to the screen height, use `window-height` Quasar CSS class.
+
+## User Selection
+There's a way to avoid the user to be able to select a text (with mouse or through touch). Just add `non-selectable` class.

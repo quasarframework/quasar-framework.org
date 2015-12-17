@@ -223,7 +223,7 @@
   });
 
   function updateToTop(top) {
-    toTop.classList[top > 1000 ? 'add' : 'remove']('visible');
+    toTop.classList[top > 80 ? 'add' : 'remove']('visible');
   }
 
 

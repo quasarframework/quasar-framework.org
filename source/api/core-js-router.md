@@ -6,9 +6,7 @@ Each route is an object defined like below:
 ``` js
 var route = {
   path: '#/'
-  before: function() { ... } // can be omitted
-  on: function() { ... }
-  after: function() { ... } // can be omitted
+  trigger: function() { ... }
 };
 ```
 Adding a route:
@@ -21,25 +19,20 @@ quasar.start.router();
 ```
 
 ## Route Definition
-You can easily customize your route. A complex example below:
+A more detailed explanation of a route:
 ``` js
 var route = {
+  // hash that gets matched
   path: '#/',
-  before: function() {
+
+  // method to run when hash is matched
+  trigger: function() {
     //The [this] object is a copy of the [route] object plus:
     //this.params containing the hash tokens
     //this.state containing state ('before', 'on', 'after')
     //this.next containing methods to pass parameters to the next state
     //this.url containing the original url hash
     //this.query containing the query string parameters
-  },
-  on: function(data) {
-    //...same as above...
-    //plus `data` which contains what is sent by this.next() from before()
-  },
-  after: function(data) {
-    //...same as above...
-    //plus `data` which contains what is sent by this.next() from before() OR on()
   }
 };
 ```
@@ -49,56 +42,38 @@ For example, for [http://domain.com/#/article/science/20151010]() you will have:
 ```
 var route = {
   path: '#/article/:category/:date',
-  on: function() {
+  trigger: function() {
     // this.params.category contains 'science'
     // this.params.date contains '20151010'
   }
 };
 ```
 
-### Using `this.next(data)`
-Sometimes you may need to pass in data from one route method to the next. Even do a Ajax request.
-``` js
-var route = {
-  path: '#/article',
-  before: function() {
-    quasar.make.a.get.request({
-      path: '/users.php'
-    }).done(function(data) {
-      this.next(data);
-    });
-  },
-  on: function(data) {
-    // here we have `data` from the Ajax call from before()
-    this.next(data);
-  },
-  after: function(data) {
-    // here we have `data` from the Ajax call from on()
+## Events
+You can hook into some Router events easily:
 
-    // no need to call this.next() here too
-  }
-};
+| Event Name | Parameters | Description |
+| --- | --- |
+| app:route:change | (String) hash | Detected hash change |
+| app:route:notfound | (Array) hash_parts | New hash does not match any route |
+| app:route:trigger | (Object) route | Triggering execution of a route |
+| app:router:started | *None* | Router has started listening |
+| app:router:stopped | *None* | Router has stopped listening |
+
+Example:
+``` js
+quasar.global.events.on('app:route:notfound', function(hashParts) {
+  // hey, user navigated to a route, but we don't have
+  // any route with such hash matched...
+});
 ```
-> **IMPORTANT**
-> This is required when using multiple route methods. If this isn't called, the next route method is NOT GOING to get called at all.
 
 ## Router Management
 
 ### Initializing the Router
 Router can be initialized with a config object:
 ``` js
-quasar.start.router({
-  // can be omitted:
-  onRouteChange: function(route) {
-    // a route has been matched and `route` parameter is the actual route object
-  },
-
-  // can be omitted:
-  onRouteNotFound: function(array) {
-    // `array` parameter contains the hash components
-    // Example for #/article/science array will be ['article', 'science']
-  }
-});
+quasar.start.router();
 ```
 Once the router is initialized it will start listening for hash changes.
 
@@ -123,11 +98,11 @@ Sometimes you may need to overwrite a route.
 ``` js
 quasar.overwrite.route({...new_route_obj...});
 ```
-It will look for the `path` from new_route_obj and replace the current route with this new one.
+It will look for the `hash` from new_route_obj and replace the current route with this new one.
 
 ### Removing Route
 ``` js
-quasar.remove.route(path);
+quasar.remove.route(hash);
 Example: quasar.remove.route('#/article');
 ```
 
@@ -138,7 +113,7 @@ var routes = quasar.get.all.routes();
 
 ### Checking if Route Exists
 ``` js
-(boolean) quasar.has.route(path);
+(boolean) quasar.has.route(hash);
 Example: quasar.has.route('#/article');
 ```
 
@@ -149,7 +124,7 @@ Example: quasar.has.route('#/article');
 
 ### Get Route By Path
 ``` js
-(route_obj) quasar.get.route(path);
+(route_obj) quasar.get.route(hash);
 Example: quasar.get.route('#/article');
 ```
 
@@ -161,6 +136,6 @@ quasar.reload.current.route();
 
 ### Navigating to a Route
 ``` js
-quasar.navigate.to.route(path);
+quasar.navigate.to.route(hash);
 Example: quasar.navigate.to.route('#/article');
 ```

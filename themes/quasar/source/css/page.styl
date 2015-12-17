@@ -2,34 +2,15 @@
 @import "_blog"
 @import "_search"
 
-$header-height = 40px
+$header-height = 30px
+$header-color = $medium
+$header-padding = 25px
 
 #header
     background-color #fff
     box-shadow $shadow
-    padding 25px 60px
-    position relative
-    z-index 0
-
-#nav
-    list-style-type none
-    margin 0
-    padding 0
-    position absolute
-    right 60px
-    top 25px
-    height $header-height
-    line-height $header-height
-    .break
-        display none
-    li
-        display inline-block
-        margin 0 .6em
-
-.nav-link
-    padding-bottom 3px
-    &:hover, &.current
-        border-bottom 3px solid $main
+    padding $header-padding 60px
+    z-index 100
 
 #logo
     display inline-block
@@ -43,6 +24,28 @@ $header-height = 40px
         margin-right 6px
         width $header-height
         height $header-height
+
+#nav
+    list-style-type none
+    margin 0
+    padding 0
+    position absolute
+    left 352px
+    top 25px
+    height $header-height
+    line-height $header-height
+    .break
+        display none
+    li
+        display inline-block
+        margin 0 .6em
+    a, i
+        color $header-color
+
+.nav-link
+    padding-bottom 3px
+    &:hover, &.current
+        border-bottom 3px solid $main
 
 #mobile-bar
     position fixed
@@ -162,13 +165,13 @@ $header-height = 40px
         width 280px
         margin-left 20px
     h1
-        margin 0 0 1em
+        margin 0 0 .7em 0
     h2
         margin 2em 0 .8em
-        padding-bottom .7em
+        padding-bottom .4em
         border-bottom 1px solid $border
     h3
-        margin 2em 0 1.2em
+        margin 1.3em 0 1.2em
         position relative
         &:before
             content "+"
@@ -303,3 +306,34 @@ $header-height = 40px
     .footer
         margin-left 0
         text-align center
+
+#toTop
+    transition all 0.5s ease 0s
+    opacity 0.6
+    cursor pointer
+    position fixed
+    padding 20px
+    background-color #F8F8F8
+    color #525252
+    box-shadow $shadow
+    border-radius $radius
+    border 2px solid #ccc
+    &:hover
+        opacity: 1
+
+    @media screen and (min-width: 720px)
+        top -70px
+        left 650px
+        &.visible
+          top -10px
+        &:hover
+            top 0
+
+    @media screen and (max-width: 720px)
+        right 10px
+        &.visible
+            bottom -5px
+        bottom -70px
+        right -4px
+        padding 8px 10px
+        opacity: 0.9
