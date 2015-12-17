@@ -2,23 +2,26 @@
 @import "_blog"
 @import "_search"
 
-$header-height = 30px
-$header-color = $medium
+$header-height = 80px
+$header-color = white
 $header-padding = 25px
+$header-bg = #0273D4
+$header-shadow = 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.4)
 
 #header
-    background-color #fff
-    box-shadow $shadow
-    padding $header-padding 60px
+    background-color $header-bg
+    box-shadow $header-shadow
+    height $header-height
     z-index 100
 
 #logo
     display inline-block
     font-size 1.7em
     line-height $header-height
-    color $dark
+    color $header-color
     font-family $logo-font
     font-weight 500
+    margin-left 25px
     img
         vertical-align top
         margin-right 6px
@@ -31,7 +34,7 @@ $header-padding = 25px
     padding 0
     position absolute
     left 352px
-    top 25px
+    top 0
     height $header-height
     line-height $header-height
     .break
@@ -47,41 +50,31 @@ $header-padding = 25px
     &:hover, &.current
         border-bottom 3px solid $main
 
+$mbar-height = 90px
 #mobile-bar
-    position fixed
-    top 0
-    left 0
     width 100%
-    height 40px
-    background-color #fff
-    z-index 9
+    height $mbar-height
+    background-color $header-bg
+    box-shadow $header-shadow
+    color $header-color
+    text-align center
     display none
-    box-shadow 0 0 4px rgba(0,0,0,.25)
     .menu-button
-        position absolute
-        width 24px
-        height 24px
-        top 8px
-        left 12px
-        background url(../images/menu.png) center center no-repeat
-        background-size 24px
-        cursor: pointer
+        cursor pointer
+        font-size 23px
+        padding 10px
+        line-height $mbar-height - 17
+        color white
     .logo
-        position absolute
-        width 30px
-        height 30px
+        width $mbar-height - 3
+        height $mbar-height - 3
         background url(../images/quasar-logo.png) center center no-repeat
-        top 5px
-        right: 12px
-        margin-left -15px
-        background-size 30px
+        background-size $mbar-height
     .logo-text
-        position absolute
-        left 50px
-        line-height: 37px
+        line-height: $mbar-height - 3
         font-family 'Dosis', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif
         font-weight 500
-        font-size 20px
+        font-size 23px
 
 .sidebar
     float left
@@ -256,23 +249,11 @@ $header-padding = 25px
     .content.with-sidebar
         margin-left 280px
 
-@media screen and (max-width: 560px)
-    #downloads
-        text-align center
-        margin-bottom 25px
-        .info
-            margin-top 5px
-            margin-left 0
-    iframe
-        margin 0 !important
-
 @media screen and (max-width: 720px)
     body
         -webkit-text-size-adjust none
         font-size 14px
     #header
-        display none
-    #logo
         display none
     .nav-link
         padding-bottom 1px
@@ -280,8 +261,10 @@ $header-padding = 25px
             border-bottom 2px solid $main
     #mobile-bar
         display block
+        z-index 0
     #main
         padding 2em 1.4em 0
+        position inherit
     .highlight pre
         padding 0
     .sidebar
@@ -290,19 +273,23 @@ $header-padding = 25px
         height 100%
         top 0
         left 0
-        padding 60px 30px 20px
+        padding 25px 30px 20px
         box-shadow 0 0 10px rgba(0,0,0,.2)
         box-sizing border-box
         transition all .4s cubic-bezier(0.4, 0, 0, 1)
         -webkit-transform translate(-280px, 0)
         transform translate(-280px, 0)
+        z-index 1000
         .main-menu
             display block
         &.open
             -webkit-transform translate(0, 0)
             transform translate(0, 0)
+        li
+            list-style-type circle
     .content
         margin 0
+        padding-top 0
     .footer
         margin-left 0
         text-align center
@@ -314,7 +301,7 @@ $header-padding = 25px
     position fixed
     padding 20px
     background-color #F8F8F8
-    color #525252
+    color $main
     box-shadow $shadow
     border-radius $radius
     border 2px solid #ccc
@@ -335,5 +322,4 @@ $header-padding = 25px
             bottom -5px
         bottom -70px
         right -4px
-        padding 8px 10px
         opacity: 0.9

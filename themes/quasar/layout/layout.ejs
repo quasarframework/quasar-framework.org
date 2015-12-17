@@ -13,18 +13,17 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
         <link rel="icon" href="<%- config.root %>images/quasar-logo.png" type="image/x-icon">
         <!-- build:css css/<%- isIndex ? 'landing' : 'page' %>-combined.css -->
-        <% if (!isIndex) { %>
-          <% /*css('css/quasar.min')*/ %>
-        <% } %>
         <%- css(isIndex ? 'css/index' : 'css/page') %>
         <!-- endbuild -->
     </head>
     <body>
         <% if (!isIndex) { %>
             <div id="mobile-bar">
-                <a class="menu-button"></a>
-                <span class="logo-text">Quasar Framework</span>
-                <a class="logo" href="<%- config.root %>"></a>
+                <i class="menu-button fa fa-bars"></i>
+                <a id="logo" href="<%- config.root %>">
+                    <span>Quasar Framework</span>
+                    <img src="/images/quasar-logo.png">
+                </a>
             </div>
             <%- partial('partials/header') %>
             <div id="main">

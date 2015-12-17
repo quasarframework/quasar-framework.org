@@ -63,3 +63,12 @@ hammer.on('pan', function() {...});
 ```
 
 Don't worry, jQuery events are still emitted when using Hammer this way.
+
+## Prevent Ghost Clicks
+When using the `v-touch` directive there's no need for you to bother with ghost-clicks as they are taken care of. But when dealing directly with jQuery and Hammer, you need to make the following call:
+
+``` js
+quasar.prevent.ghost.click(node);
+
+// 'node' can be a jQuery selector or a native DOM element
+```
