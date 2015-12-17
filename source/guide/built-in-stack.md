@@ -39,6 +39,13 @@ Add touch gestures to your App. Hammer is a open-source library that can recogni
 
 Read more about it <a href="http://hammerjs.github.io/" target="_blank">here</a>.
 
+## VelocityJS
+Add complex Javascript animations which make good use of `requestAnimationFrame()` under the hood. Note that requestAnimationFrame() is a browser API which enables for faster than CSS animations.
+
+It's incredibly fast, and it features color animation, transforms, loops, easings, SVG support, and scrolling. It is the best of jQuery and CSS transitions combined.
+
+The Velocity UI pack is included too. Read more about it <a href="http://julian.com/research/velocity/" target="_blank">here</a>.
+
 ## jQuery
 No need for an introduction. Mind that you should not be required to use it though due to Vue. It is included by default just because Quasar Framework uses it under the cover.
 
