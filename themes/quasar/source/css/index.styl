@@ -23,11 +23,12 @@ html, body
 
 #logo
     display block
-    margin 0 auto
+    margin 6em auto 6em
     width 200px
 
 #logo-wrap
     margin 4em 0
+    padding 0 2em
 
 #hero
     text-align center
@@ -48,16 +49,6 @@ html, body
         margin 0
     .warning
         color $medium
-    .desc
-        max-width 800px
-        padding 0 20px
-        text-align center
-        margin 1em auto
-        color $medium
-        i
-            font-size 3em
-            color $dark
-            padding 10px
     .down
         position absolute
         bottom 0
@@ -70,17 +61,16 @@ html, body
         width 300px
         margin .5em
 
+.second-desc img
+    margin-top 2em
 
 .feats
     max-width 1200px
-    margin 0 auto
+    margin 2em auto 0 auto
 
 .section
     margin 5em 0
     text-align center
-    .title
-        font-size 1.4em
-        margin-bottom 4em
     .feats
         margin 4em auto
     .feat
@@ -169,15 +159,13 @@ html, body
                     color #7f8c8d
                     border-radius 10px
 
-@media screen and (max-width: 480px)
+@media screen and (max-width: 550px)
     body
         font-size 14px
     #nav
         margin 4em 1.8em 0
-    #logo-wrap
-        margin 1em 0 1em 0
     #logo
-        width 120px
+        margin 2em auto
     .nav-link
         font-size .85em
         margin 0 .5em
@@ -196,13 +184,6 @@ html, body
             width 260px
             font-size .8em
             margin .5em 0
-        .desc
-            max-width 300px
-        .warning, .desc
-            font-size .85em
-            margin 1em auto
-            br
-                display none
     #features
         padding 2em 0 2em 0
         .feat
@@ -213,7 +194,5 @@ html, body
         padding 2em 0
         p.buttons
             margin 4em 0 2em 0
-
-@media screen and (max-width: 860px)
     #features, #hero
         font-size 16px
