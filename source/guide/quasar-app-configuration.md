@@ -34,7 +34,7 @@ deps:
     - 'node_modules/X/css/y.css'
 preview:
   port: 3500
-previewResp:
+responsive:
   port: 3600
 test:
   exclude: []
