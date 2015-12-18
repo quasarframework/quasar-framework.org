@@ -27,6 +27,7 @@ api:
     Ajax: core-js-$
     Require: core-js-$
     Touch Events: core-js-$
+    HTML Tag Attributes: core-js-$
   Features:
     Cookies: feat-$
     Web Storage: feat-$

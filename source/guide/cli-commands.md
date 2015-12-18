@@ -31,32 +31,34 @@ $ quasar new [folder-name]
 
 ## Build App
 
-### For Development
-Generates a folder called `/dist` which contains sourcemaps and everything needed to debug.
-``` bash
-$ quasar build
-```
-For more details to see what this does go to [Build System](/guide/quasar-build-system.html) and [App Structure](/guide/quasar-app-structure.html).
+### Make a Build
+Generates a folder called `/dist` which contains sourcemaps and everything needed to debug for Development or compiled, minified, optimized for Production.
 
-### For Production
-Generates a folder called `/dist`. Everything is compiled, minified, ...
 ``` bash
-$ quasar build -p
-# or
-$ quasar build --production
+# Make a Development build
+$ quasar build
+
+# Make a Production build
+$ quasar build -p # or --production
 ```
 For more details to see what this does go to [Build System](/guide/quasar-build-system.html) and [App Structure](/guide/quasar-app-structure.html).
 
 ### Cleaning
 Cleans App folder from build artifacts.
+
 ``` bash
 $ quasar clean
 ```
 
 ### Monitoring & Auto-Rebuild
 Monitors source code files (Javascript files, CSS files, assets, ...) for changes and when that happens it auto-rebuilds to update the end-user code.
+
 ``` bash
+# monitor and auto-rebuild for Development
 $ quasar monitor
+
+# monitor and auto-rebuild for Production
+$ quasar monitor -p # or --production
 ```
 For more details to see what this does go to [Build System](/guide/quasar-build-system.html) and [App Structure](/guide/quasar-app-structure.html).
 
@@ -65,22 +67,28 @@ You can even live preview the build in your browser(s). Whenever you modify anyt
 
 Furthermore, clicks, scroll and form input are automatically synchronized between all opened browsers.
 ``` bash
+# Live Preview Development build
 $ quasar preview
+
+# Live Preview Production build
+$ quasar preview -p # or --production
 ```
 For more details to see what this does go to [Build System](/guide/quasar-build-system.html) and [App Structure](/guide/quasar-app-structure.html).
 
 > **NOTE**
 > CSS is injected into the browser(s) so the page is not required to reload, which is really cool.
 
-### Responsive View
+## Responsive Live Preview
 Want to quickly see how your App handles different device screen sizes? This is the command that you should use. Recommended (and designed) to be viewed from a desktop browser.
 
 Watches the source code (and reloads if necessary or injects CSS without page reload) but clicks, scroll and form input are *NOT* automatically synchronized between all opened browsers as for previous command.
 
 ``` bash
-$ quasar preview -r
-# or
-$ quasar preview --responsive
+# Responsive Live Preview Development build
+$ quasar responsive
+
+# Responsive Live Preview Production build
+$ quasar responsive -p # or --production
 ```
 ![Responsive Preview Screen](/images/preview-2.png "Responsive Preview Screen")
 

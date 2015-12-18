@@ -29,3 +29,6 @@ Take into consideration that the following files are taken as Stylus entry-point
 
 ### Image Files
 Image files should be placed under `assets` folders. By default, on a production build, `GIF`, `JPEG`, `PNG` and `SVG` image files get "minified" without losing noticeable quality.
+
+### HTML Files
+When building for Production, HTML files are minified.

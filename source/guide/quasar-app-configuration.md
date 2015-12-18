@@ -54,10 +54,10 @@ preview:
   reloadOnRestart: true
 ```
 
-### 'previewResp' object
-[Live Preview with Responsive View](/guide/cli-commands.html#Responsive_View) configuration. Read more about configuration properties [here](http://www.browsersync.io/docs/options/). Example of default configuration which is merged with user specific one:
+### 'responsive' object
+[Live Preview with Responsive View](/guide/cli-commands.html#Responsive_Live_Preview) configuration. Read more about configuration properties [here](http://www.browsersync.io/docs/options/). Example of default configuration which is merged with user specific one:
 ``` yml
-previewResp:
+responsive:
   port: 3100
   ui: false
   open: false
@@ -66,5 +66,5 @@ previewResp:
 ```
 
 ### 'test' object
-This object's properties override any of the <a href="https://github.com/rstoenescu/quasar-cli/blob/master/lib/gulp/gulp-config.js#L14-L103" target="_blank">default Karma configuration</a> options.
+This object's properties override any of the <a href="https://github.com/rstoenescu/quasar-cli/blob/master/lib/gulp/gulp-config.js#L14-L100" target="_blank">default Karma configuration</a> options.
 See the full list of <a href="http://karma-runner.github.io/0.8/config/configuration-file.html" target="_blank">Karma configuration properties</a> that you can use.

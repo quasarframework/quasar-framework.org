@@ -91,7 +91,11 @@ $ npm install
 
 To monitor source code for changes and rebuild automatically:
 ``` bash
+# for Development
 $ gulp monitor
+
+# for Production
+$ gulp monitor:prod
 ```
 
 To watch source code and rebuild automatically while previewing the UI:
@@ -99,25 +103,30 @@ To watch source code and rebuild automatically while previewing the UI:
 # multiple browsers opened to the indicated link will
 # have clicks/scrolls/form input events synchronized
 
+# for Development
 $ gulp preview
+
+# for Production
+$ gulp preview:prod
 ```
 
 There's a `/preview` folder containing a demo Quasar App which gets previewed in the browser. Change its source to make use of a feature that's of interest to you.
 
 There's also another type of previewing -- with a Responsive View (browsers won't be synchronized). Its purpose is for you to view the UI in a desktop browser and be able to quickly switch between different device screen sizes and orientation.
 ``` bash
-$ gulp preview-resp
+# for Development
+$ gulp responsive
+
+# for Production
+$ gulp responsive:prod
 ```
 
-To make a development build:
+To make a build (will create `/dist` folder):
 ``` bash
-# will create the /build and /dist folders
+# Development:
 $ gulp dev
-```
 
-To make a production build (source minified and optimized for End-User):
-``` bash
-# will create the /build and /dist folders
+# Production:
 $ gulp prod
 ```
 
@@ -127,9 +136,13 @@ $ gulp
 # or
 $ gulp dist
 ```
-After you build the demo App (from `/preview`) you can see it in action as a native App:
+After you build the demo App (from `/preview`) you can see it in action as a native App. Make sure you add a platform to the demo App first.
 ``` bash
-$ gulp wrapper
+$ gulp wrap
+
+# Adding a platform to the demo App
+$ cd preview
+$ quasar wrap platform add android
 ```
 
 To clean folder from build artifacts:
