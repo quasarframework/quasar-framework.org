@@ -3,14 +3,14 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="319px" height="112px" viewBox="0 0 319 112" enable-background="new 0 0 319 112" xml:space="preserve">
-<rect fill="#89479B" width="319" height="112"/>
-<rect x="24" y="10" fill="#E88024" width="42.669" height="22"/>
-<rect x="76.873" y="10" fill="#E88024" width="67.713" height="22"/>
-<rect x="154.79" y="10" fill="#E88024" width="42.669" height="22"/>
-<rect x="207.662" y="10" fill="#E88024" width="85.338" height="22"/>
-<rect x="24" y="74.5" fill="#E88024" width="31.538" height="22"/>
-<rect x="66.669" y="74.5" fill="#E88024" width="63.076" height="22"/>
-<rect x="138.557" y="74.5" fill="#E88024" width="42.669" height="22"/>
+<rect fill="#232447" width="319" height="112"/>
+<rect x="24" y="10" fill="#4e9bd4" width="42.669" height="22"/>
+<rect x="76.873" y="10" fill="#4e9bd4" width="67.713" height="22"/>
+<rect x="154.79" y="10" fill="#4e9bd4" width="42.669" height="22"/>
+<rect x="207.662" y="10" fill="#4e9bd4" width="85.338" height="22"/>
+<rect x="24" y="74.5" fill="#4e9bd4" width="31.538" height="22"/>
+<rect x="66.669" y="74.5" fill="#4e9bd4" width="63.076" height="22"/>
+<rect x="138.557" y="74.5" fill="#4e9bd4" width="42.669" height="22"/>
 <g>
 	<g>
 		<path fill="none" stroke="#FFFFFF" stroke-miterlimit="10" d="M296.276,17c1.041,0,2.015,0.231,2.916,0.623"/>

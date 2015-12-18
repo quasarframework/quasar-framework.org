@@ -12,6 +12,7 @@ Most importantly, the flexbox layout is direction-agnostic as opposed to the reg
 
 ## Getting Started
 Flexbox applies to either the Container (Parent) or the Container's items (Children).
+
 ![Flexbox Container](/images/flexbox-container.svg)
 ![Flexbox Items](/images/flexbox-items.svg)
 
@@ -21,35 +22,42 @@ Following classes must be accompanied by the `layout` class, which adds the `dis
 
 ### Direction
 **You need a direction**. Use `horizontal`, `horizontal-reverse`, `vertical` or `vertical-reverse` classes.
+
 ![Flexbox Direction](/images/flexbox-direction.svg)
 
 ### Wrap
 **You can also wrap content**. Use `wrap` or `wrap-reverse` classes. By default, flex items will all try to fit onto one line. You can change that and allow the items to wrap as needed with this property. Direction also plays a role here, determining the direction new lines are stacked in.
+
 ![Flexbox Direction](/images/flexbox-wrap.svg)
 
 If you explicitly do not want to wrap, use `nowrap` class.
 
 ### Justify Alignment
 **For alignment along the main axis**, use classes below. It helps distribute extra free space left over when either all the flex items on a line are inflexible, or are flexible but have reached their maximum size. It also exerts some control over the alignment of items when they overflow the line.
+
 ![Flexbox Justify Content](/images/flexbox-justify.svg)
 
 ### Items Alignment
 **For alignment perpendicular to the main axis**, use classes below. This defines the default behaviour for how flex items are laid out along the cross axis on the current line. Think of it as the justify-* version for the cross-axis (perpendicular to the main-axis).
+
 ![Flexbox Items Align](/images/flexbox-items-align.svg)
 
 ### Content Alignment
 The next classes **align a flex container's lines** within when there is extra space in the cross-axis, similar to how justify-* aligns individual items within the main-axis.
+
 ![Flexbox Content Align](/images/flexbox-content-align.svg)
 
 ## Children Classes
 
 ### Order
 **You can set the order** by using `order-i` classes, where *i* is between 1-12. By default, flex items are laid out in the source order. However, the order property controls the order in which they appear in the flex container. If you need more granularity, use `order` CSS property and assign the desired value.
+
 ![Flexbox Order](/images/flexbox-order.svg)
 
 ### Grow
 **An item can grow if it's enough space available** by using `grow-i` classes, where *i* is between 1-12. This defines the ability for a flex item to grow if necessary. It accepts a unit-less value that serves as a proportion. It dictates what amount of the available space inside the flex container the item should take up.
 If all items have `grow-1` class, the remaining space in the container will be distributed equally to all children. If one of the children has `grow-2`, the remaining space would take up twice as much space as the others (or it will try to, at least).
+
 ![Flexbox Grow](/images/flexbox-grow.svg)
 
 ### Shrink
@@ -57,6 +65,7 @@ If all items have `grow-1` class, the remaining space in the container will be d
 
 ### Self Alignment
 **An item can override the aligned specified on parent**. This allows alignment to be overridden for individual flex items. Please see the [Items Alignment](#Items_Alignment) explanation from Parent Classes to understand the available values.
+
 ![Flexbox Grow](/images/flexbox-self.svg)
 
 ### Flex Basis
