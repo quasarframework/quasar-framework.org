@@ -5,7 +5,7 @@ title: Quasar Router
 Each route is an object defined like below:
 ``` js
 var route = {
-  path: '#/'
+  hash: '#/'
   trigger: function() { ... }
 };
 ```
@@ -23,7 +23,7 @@ A more detailed explanation of a route:
 ``` js
 var route = {
   // hash that gets matched
-  path: '#/',
+  hash: '#/',
 
   // method to run when hash is matched
   trigger: function() {
@@ -36,12 +36,12 @@ var route = {
   }
 };
 ```
-The path property can be a normal static hash like #/page/books or a parametrized string like #/article/:category/:date, in this case the route parameters will be completed with hash tokens.
+The `hash` property can be a normal static hash like #/page/books or a parametrized string like #/article/:category/:date, in this case the route parameters will be completed with hash tokens.
 
 For example, for [http://domain.com/#/article/science/20151010]() you will have:
 ```
 var route = {
-  path: '#/article/:category/:date',
+  hash: '#/article/:category/:date',
   trigger: function() {
     // this.params.category contains 'science'
     // this.params.date contains '20151010'
@@ -71,7 +71,6 @@ quasar.global.events.on('app:route:notfound', function(hashParts) {
 ## Router Management
 
 ### Initializing the Router
-Router can be initialized with a config object:
 ``` js
 quasar.start.router();
 ```
