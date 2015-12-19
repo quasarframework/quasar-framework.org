@@ -3,6 +3,8 @@ title: Quasar Events
 Events are important for the inner workings of your App and also for writing Quasar Plugins.
 Sometimes you need an event bus or a publish/subscribe channel. An emitter solves this need.
 
+If you are looking for the Events List, it is [here](/guide/quasar-events-list.html).
+
 ## Creating an Emitter
 We call an emitter an object who is capable of registering and triggering events.
 
