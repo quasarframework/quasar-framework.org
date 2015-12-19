@@ -130,24 +130,7 @@ module.exports = function(done) {
 ```
 
 ## Page Events
-There are global events registered for each step of the way when a user navigates to a page. See [Quasar Events Global Emitter](/api/core-js-events.html#Global_Events_Emitter) if you haven't already.
-
-| Event Name | Description |
-| --- | --- |
-| app:page:require | Triggered before requiring page JS file |
-| app:page:post-require | Triggered after requiring page JS file |
-| app:page:prepare | Triggered before solving page dependencies |
-| app:page:post-prepare | Triggered after we have the page's Vue instantiation object |
-| app:page:render | Triggered before rendering page on screen |
-| app:page:post-render | Triggered after rendering page on screen |
-| app:page:ready | Triggered when page has fully loaded |
-
-Usage example:
-``` js
-quasar.global.events.on('app:page:ready', function(props) {
-  // props.params, props.query, props.name, props.manifest, props.route, ... available
-});
-```
+See [Quasar Events List](/guide/quasar-events-list.html#Page_Events).
 
 ## HTML
 The Quasar App Page HTML represents a Vue instance template. Read more about the [Build System](/guide/quasar-build-system.html#HTML_Files) to understand.

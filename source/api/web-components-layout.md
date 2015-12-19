@@ -10,15 +10,15 @@ Layout example with all components available to get a feel of how to use them:
 
   <quasar-header>
     <quasar-row>
-      <quasar-button><quasar-icon sidebar></quasar-icon></quasar-button>
+      <quasar-button><quasar-icon menu></quasar-icon></quasar-button>
       <quasar-title>Text {{text}}</quasar-title>
       <quasar-button><quasar-icon alarm></quasar-icon></quasar-button>
-      <quasar-button><quasar-icon ellipsis vertical></quasar-icon></quasar-button>
+      <quasar-button><quasar-icon more_vert></quasar-icon></quasar-button>
     </quasar-row>
     <quasar-navigation>
-      <quasar-tab><quasar-icon database></quasar-icon>Tab 1</quasar-tab>
+      <quasar-tab><quasar-icon tab></quasar-icon>Tab 1</quasar-tab>
       <quasar-tab><quasar-icon alarm></quasar-icon>Tab 2</quasar-tab>
-      <quasar-tab><quasar-icon database></quasar-icon>Tab 3</quasar-tab>
+      <quasar-tab><quasar-icon tab></quasar-icon>Tab 3</quasar-tab>
     </quasar-navigation>
   </quasar-header>
 
@@ -69,4 +69,7 @@ Wraps the footer. Use rows as for the header.
 Wraps the navigational tabs. Do not wrap in a `quasar-row`.
 
 ### quasar-tab
-Wraps a tab for the navigational row.
+Wraps a tab for the navigational row. It automatically switches between two states, depending on the screen real estate available (screen width):
+
+1. **Scrollable** - left and right arrow buttons appear when necessary to scroll between tabs; user can also use touch gestures to scroll left-right.
+2. **Non-scrollable** - each tab occupies the same amount of space horizontally.

@@ -11,8 +11,9 @@ guide:
     Writing a Page: writing-quasar-page
     Writing a Layout: writing-quasar-layout
     Build System: quasar-$
-  Miscellaneous:
+    Events List: quasar-$
     Vue State Management: $
+  Miscellaneous:
     CommonJS Format: $
     Contributing to Quasar: $
     Mobile Wrapper Tips: quasar-$
@@ -21,13 +22,13 @@ api:
     Overview: index
   Core:
     Environment: core-js-$
-    Debug Helpers: core-js-$
     Router: core-js-$
     Events: core-js-$
     Ajax: core-js-$
     Require: core-js-$
     Touch Events: core-js-$
     HTML Tag Attributes: core-js-$
+    Debug Helpers: core-js-$
   Features:
     Cookies: feat-$
     Web Storage: feat-$

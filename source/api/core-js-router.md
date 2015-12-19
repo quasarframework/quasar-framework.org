@@ -1,6 +1,8 @@
 title: Quasar Router
 ---
 
+Quasar Framwork takes care of your routes automatically. But in case you need to do something fancy, here's the API.
+
 ## Getting Started
 Each route is an object defined like below:
 ``` js
@@ -50,19 +52,11 @@ var route = {
 ```
 
 ## Events
-You can hook into some Router events easily:
-
-| Event Name | Parameters | Description |
-| --- | --- |
-| app:route:change | (String) hash | Detected hash change |
-| app:route:notfound | (Array) hash_parts | New hash does not match any route |
-| app:route:trigger | (Object) route | Triggering execution of a route |
-| app:router:started | *None* | Router has started listening |
-| app:router:stopped | *None* | Router has stopped listening |
+You can hook into some Router events easily. See [Quasar Events List](/guide/quasar-events-list.html#Router_Events).
 
 Example:
 ``` js
-quasar.global.events.on('app:route:notfound', function(hashParts) {
+quasar.global.events.on('app:route:notfound', function(Array hashParts) {
   // hey, user navigated to a route, but we don't have
   // any route with such hash matched...
 });

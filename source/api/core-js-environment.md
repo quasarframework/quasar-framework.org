@@ -13,25 +13,8 @@ Helpers are built-in to detect the environment in which the code is running:
 > **NOTE**
 > Running on mobile means you can have this code running on a mobile device (phone or tablet) but with a browser, not within a Cordova wrapper.
 
-Platform specific:
-* android
-* lackberry
-* cros
-* ios
-* ipad
-* iphone
-* ipod
-* kindle
-* linux
-* mac
-* playbook
-* silk
-* chrome
-* opera
-* safari
-* win (Windows)
-* winphone (Windows Phone)
-* & more...
+Other **quasar.runs.on** platform specific properties:
+`android`, `blackberry`, `cros`, `ios`, `ipad`, `iphone`, `ipod`, `kindle`, `linux`, `mac`, `playbook`, `silk`, `chrome`, `opera`, `safari`, `win` (Windows), `winphone` (Windows Phone) and more...
 
 Example when running Chrome on a Linux desktop machine:
 ``` js

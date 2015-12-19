@@ -1,4 +1,4 @@
-title: Quasar CSS Spinners
+title: Quasar Spinners
 ---
 
 To be written.

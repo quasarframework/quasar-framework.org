@@ -92,15 +92,15 @@ There are several Web Components that you can use. Some of them are mandatory. A
 
   <quasar-header>
     <quasar-row>
-      <quasar-button><quasar-icon sidebar></quasar-icon></quasar-button>
+      <quasar-button><quasar-icon menu></quasar-icon></quasar-button>
       <quasar-title>Text {{text}}</quasar-title>
       <quasar-button><quasar-icon alarm></quasar-icon></quasar-button>
-      <quasar-button><quasar-icon ellipsis vertical></quasar-icon></quasar-button>
+      <quasar-button><quasar-icon more_vert></quasar-icon></quasar-button>
     </quasar-row>
     <quasar-navigation>
-      <quasar-tab><quasar-icon database></quasar-icon>Tab 1</quasar-tab>
+      <quasar-tab><quasar-icon tab></quasar-icon>Tab 1</quasar-tab>
       <quasar-tab><quasar-icon alarm></quasar-icon>Tab 2</quasar-tab>
-      <quasar-tab><quasar-icon database></quasar-icon>Tab 3</quasar-tab>
+      <quasar-tab><quasar-icon tab></quasar-icon>Tab 3</quasar-tab>
     </quasar-navigation>
   </quasar-header>
 
@@ -118,21 +118,4 @@ There are several Web Components that you can use. Some of them are mandatory. A
 Read more about the Components and how to use them in the [Web Components - Layout](/api/web-components-layout.html) section.
 
 ## Layout Events
-There are global events registered for each step of the way when a Layout is loaded/swapped. See [Quasar Events Global Emitter](/api/core-js-events.html#Global_Events_Emitter) if you haven't already.
-
-| Event Name | Description |
-| --- | --- |
-| app:layout:require | Triggered before requiring page JS file |
-| app:layout:post-require | Triggered after requiring page JS file |
-| app:layout:prepare | Triggered before solving page dependencies |
-| app:layout:post-prepare | Triggered after we have the page's Vue instantiation object |
-| app:layout:render | Triggered before rendering page on screen |
-| app:layout:post-render | Triggered after rendering page on screen |
-| app:layout:ready | Triggered when page has fully loaded |
-
-Usage example:
-``` js
-quasar.global.events.on('app:layout:ready', function() {
-  ...
-});
-```
+See [Quasar Events List](/guide/quasar-events-list.html#Layout_Events).
