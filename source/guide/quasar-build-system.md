@@ -23,6 +23,7 @@ Notice that all CSS files are built using <a href="https://learnboost.github.io/
 Take into consideration that the following files are taken as Stylus entry-points (take a good look at folders):
 * /css/*.styl (Note: directly under /css; no sub-folders)
 * /pages/*page-name*/css/*file-name*.styl
+* /layouts/*layout-name*/layout.*layout-name*.styl
 
 > **NOTE**
 > Subfolders should be used to modularize your CSS code.

@@ -1,10 +1,24 @@
-title: Writing a Quasar App Layout
+title: Quasar App Layouts
 ---
 
-Make sure you read and understand the [folder structure of a Quasar App](/guide/quasar-app-structure.html) first.
-Read the [Layouts](/guide/quasar-app-structure.html#Layouts) section closely. Then use the [Quasar CLI](/guide/cli-commands.html#Layouts) to build a Layout.
+Layouts are the elements that wrap page content, like navigational bar or sidebar. Multiple pages can share the same Layout, which is one of the main reason for their existence.
+
+Because it's easier and it ensures you're using the Quasar standard, use [Quasar CLI](/guide/cli-commands.html#Layouts) to build a Layout.
+
+Don't forget to read more about the [Build System](/guide/quasar-build-system.html) to understand how layouts are precompiled and bundled, what files are considered an entry-point and many more.
 
 Now let's dissect how Layouts work.
+
+## Structure
+Each layout has its own folder (`/src/layouts/<layout-name>`) and has the following structure:
+
+| Asset | Description |
+| --- | --- |
+| /assets | Folder to place images, fonts, ... specific to the layout only |
+| layout.**&lt;layout-name&gt;**.js | Starting point of the Layout logic |
+| layout.**&lt;layout-name&gt;**.yml | YAML file with layout configuration (called *Manifest*) |
+| layout.**&lt;layout-name&gt;**.html | Template for your Layout |
+| layout.**&lt;layout-name&gt;**.styl | *(optional)* Starting point of the Layout CSS |
 
 ## Javascript
 The starting point of a Quasar Layout is *layout.layout-name.js* file. Think of it as the Controller of a Layout.
@@ -29,14 +43,11 @@ var html = require('raw!./layout.layout-name.html');
 
 module.exports = function(done) {
   /*
-   * Properties available regarding the page
-   * that gets loaded along this Layout
+   * 'this' contains Layout manifest;
+   * for example if you have specific
+   * CSS for the layout, then:
+   * 'this.css' will contain the URL
    */
-  this.params // [Object] Route parameters -- see API > Router
-  this.query // [Object] Route query string -- see API > Router
-  this.name // [String] Page name (eg. 'index')
-  this.manifest // [Object] Page manifest (config.page-name.yml)
-  this.route // [String] Route name (eg. '$' or ':chapter/:page')
 
   // ...
   // asynchronous operations
@@ -117,5 +128,23 @@ There are several Web Components that you can use. Some of them are mandatory. A
 
 Read more about the Components and how to use them in the [Web Components - Layout](/api/web-components-layout.html) section.
 
+## CSS
+Each layout can use its own CSS. When switching to another layout, the specific CSS is removed.
+
+Notice that all CSS files have the *.styl* extension. This is because you can use Stylus (with NIB extension). Read more about the [Build System](/guide/quasar-build-system.html) to understand.
+
+## Assets
+Place all your page assets (like images) inside the `/layouts/*layout-name*/assets/` folder.
+Images get optimized by default on a production build.
+
 ## Layout Events
 See [Quasar Events List](/guide/quasar-events-list.html#Layout_Events).
+
+## Layout Manifest
+Provide layout specific configuration (in YAML format), called *Manifest* in `/layouts/*layout-name*/layout.*layout-name*.yml`.
+
+### CSS Property
+This property gets computed by default if the `.styl` file exists in the layout folder (**so it is optional!**), but it can be overridden to point to other files. The path must start with the folder where app root *index.html* file exists.
+``` yaml
+css: 'path/to/css'
+```

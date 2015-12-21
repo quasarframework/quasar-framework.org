@@ -29,6 +29,7 @@ $ tree -I 'node_modules|wrapper' -a --dirsfirst
 │   │   └── app.js
 │   ├── layouts
 │   │   └── main
+│   │       ├── layout.main.css
 │   │       └── layout.main.js
 │   ├── pages
 │   │   └── index
@@ -36,7 +37,6 @@ $ tree -I 'node_modules|wrapper' -a --dirsfirst
 │   │       │   └── assets-README.txt
 │   │       ├── style.index.css
 │   │       └── script.index.js
-│   ├── app.json
 │   └── index.html
 ├── src
 │   ├── assets
@@ -49,6 +49,8 @@ $ tree -I 'node_modules|wrapper' -a --dirsfirst
 │   │   └── app.js
 │   ├── layouts
 │   │   └── main
+│   │       ├── layout.main.yml
+│   │       ├── layout.main.styl
 │   │       ├── layout.main.html
 │   │       └── layout.main.js
 │   ├── pages
@@ -75,7 +77,7 @@ $ tree -I 'node_modules|wrapper' -a --dirsfirst
 ├── README.md
 └── .stylintrc
 
-29 directories, 55 files
+29 directories, 58 files
 ```
 
 What each is used for:
@@ -83,7 +85,6 @@ What each is used for:
 | Asset | Description |
 | --- | --- |
 | /dist | Production build folder |
-| /dist/app.json | Pages Manifests put together. Details [here](/guide/quasar-app-configuration.html#app-json) |
 | /coverage | Code coverage after [running tests with CLI](/guide/cli-commands.html#Running_Test_Suites) |
 | /src | App source files; see [Source Folder](#Source_Folder) |
 | /test | Test source files used for [running tests with CLI](/guide/cli-commands.html#Running_Test_Suites) |
@@ -104,31 +105,3 @@ What each is used for:
 | /src/pages | Folder to store assets for each page |
 | /src/layouts | Folder to store assets for each layout |
 | /src/index.html | App starting point |
-
-## Pages
-An App's central working point is the Pages it is composed of.
-
-Each page has its own folder (`/src/pages/<page-name>`) and has the structure below:
-
-| Asset | Description |
-| --- | --- |
-| /assets | Folder to place images, fonts, ... specific to the page only |
-| /script.**&lt;page-name&gt;**.js | JS entry point for the page |
-| /style.**&lt;page-name&gt;**.styl | CSS entry point for the page |
-| /view.**&lt;page-name&gt;**.html | HTML template for the page |
-| /config.**&lt;page-name&gt;**.yml | YAML file with page configuration (called *Manifest*) |
-
-
-Read about page manifests (`config.*page-name*.yml`) in [Writing a Page](/guide/writing-quasar-page.html#Page_Manifest) section.
-
-## Layouts
-Layouts are the elements that wrap page content, like navigational bar or sidebar. Multiple pages can share the same Layout, which is one of the main reason for their existence.
-
-Each layout has its own folder (`/src/layouts/<layout-name>`) and has the following structure:
-
-| Asset | Description |
-| --- | --- |
-| layout.**&lt;layout-name&gt;**.js | **[Required]** Starting point of the Layout logic |
-| layout.**&lt;layout-name&gt;**.html | Template for your Layout |
-
-Read more about it in [Writing a Layout](/guide/writing-quasar-layout.html) section.

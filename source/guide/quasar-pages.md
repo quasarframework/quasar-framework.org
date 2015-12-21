@@ -1,12 +1,24 @@
-title: Writing a Quasar App Page
+title: Quasar App Pages
 ---
-Make sure you read and understand the [folder structure of a Quasar App](/guide/quasar-app-structure.html) first. Read the [Pages](/guide/quasar-app-structure.html#Pages) section closely.
 
-Then use the [Quasar CLI](/guide/cli-commands.html#Pages) to build a Page.
+An App's central working point is the Pages it is composed of. It enables navigation between different corners of your App.
 
-Also don't forget to read more about the [Build System](/guide/quasar-build-system.html) to understand how pages are precompiled and bundled, what files are considered an entry-point and many more.
+Because it's easier and it ensures you're using the Quasar standard, use [Quasar CLI](/guide/cli-commands.html#Pages) to build a Page.
+
+Don't forget to read more about the [Build System](/guide/quasar-build-system.html) to understand how pages are precompiled and bundled, what files are considered an entry-point and many more.
 
 Let's dissect how Pages work.
+
+## Structure
+Each page has its own folder (`/src/pages/<page-name>`) and has the structure below:
+
+| Asset | Description |
+| --- | --- |
+| /assets | Folder to place images, fonts, ... specific to the page only |
+| /script.**&lt;page-name&gt;**.js | JS entry point for the page |
+| /config.**&lt;page-name&gt;**.yml | YAML file with page configuration (called *Manifest*) |
+| /view.**&lt;page-name&gt;**.html | *(optional)* HTML template for the page |
+| /style.**&lt;page-name&gt;**.styl | *(optional)* CSS entry point for the page |
 
 ## Javascript
 The starting point of a Quasar Page is *script.page-name.js* file. Think of it as the Controller part of a Page.
@@ -85,7 +97,7 @@ module.exports = { // Vue instance
 Provide page specific configuration (in YAML format), called *Manifest* in `/pages/*page-name*/config.*page-name*.yml`.
 
 ### CSS Property
-These get computed by default if CSS main page file exists (**so it is optional!**), but it can be overridden to point to other files. The path must start with the folder where app root *index.html* file exists.
+This property gets computed by default if the `.styl` file exists in the page folder (**so it is optional!**), but it can be overridden to point to other files. The path must start with the folder where app root *index.html* file exists.
 ``` yaml
 css: 'path/to/css'
 ```
@@ -137,8 +149,10 @@ The Quasar App Page HTML represents a Vue instance template. Read more about the
 
 
 ## CSS
+Each page can use its own CSS. When switching to another page, the specific CSS is removed.
+
 Notice that all CSS files have the *.styl* extension. This is because you can use Stylus (with NIB extension). Read more about the [Build System](/guide/quasar-build-system.html) to understand.
 
 ## Assets
-Place all your page assets (images, fonts, ...) inside the `/pages/*page-name*/assets/` folder.
+Place all your page assets (like images, fonts, ...) inside the `/pages/*page-name*/assets/` folder.
 Images get optimized by default on a production build.

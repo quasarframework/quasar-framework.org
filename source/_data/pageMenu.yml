@@ -8,8 +8,8 @@ guide:
     App Structure: quasar-$
     App Configuration: quasar-$
     Starting Point: quasar-app-$
-    Writing a Page: writing-quasar-page
-    Writing a Layout: writing-quasar-layout
+    Pages: quasar-$
+    Layouts: quasar-$
     Build System: quasar-$
     Events List: quasar-$
     Vue State Management: $
