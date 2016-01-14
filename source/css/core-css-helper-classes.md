@@ -39,6 +39,12 @@ Example:
 <div class="fixed-top"></div>
 ```
 
+Also, you can float items around:
+``` html
+<div class="float-left"></div>
+<div class="float-right"></div>
+```
+
 ## Text Alignment
 Use `text-center`, `text-right`, `text-left` or `text-justify` Quasar CSS classes to align text positioning.
 
@@ -59,6 +65,8 @@ There's also the option to have a transition animation:
 
 ## Scroll
 There's the `scroll` class that helps some browsers (like on iOS platform) to best handle scrolling by touch on an element's that is overflowed (it adds the `overflow: auto` CSS property automatically).
+
+On the other hand, if you don't want an element to be scrollable, add `no-scroll` CSS class.
 
 ## Window Height
 Whenever you need an item to have the height equivalent to the screen height, use `window-height` Quasar CSS class.

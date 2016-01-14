@@ -28,6 +28,7 @@ api:
     Require: core-js-$
     Touch Events: core-js-$
     HTML Tag Attributes: core-js-$
+    Utils: core-js-$
     Debug Helpers: core-js-$
   Features:
     Cookies: feat-$

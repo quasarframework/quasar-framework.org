@@ -13,7 +13,7 @@ Quasar has its own Vue directive written for handling touch events:
 <div v-touch:pan="panning">...</div>
 ```
 
-Here's the list of touch events supported by HammerJS: `pan`, `pinch`, `press`, `rotate`, `swipe`, `tap`. Basically, any touch action that HammerJS has, so visit their website to get updates.
+Here's the list of touch events supported by HammerJS: `pan`, `pinch`, `press`, `rotate`, `swipe`. Basically, any touch action that HammerJS has, so visit their website to get updates.
 
 > Just make sure that the method you supply to the directive is registered in your Vue, be that the Quasar Page Vue instance, the Quasar Layout Vue instance or any other Vue instance containing the respective node.
 
@@ -65,10 +65,13 @@ hammer.on('pan', function() {...});
 Don't worry, jQuery events are still emitted when using Hammer this way.
 
 ## Prevent Ghost Clicks
-When using the `v-touch` directive there's no need for you to bother with ghost-clicks as they are taken care of. But when dealing directly with jQuery and Hammer, you need to make the following call:
+When dealing directly with jQuery and Hammer for a `tap` event, you need to make the following call:
 
 ``` js
 quasar.prevent.ghost.click(node);
 
 // 'node' can be a jQuery selector or a native DOM element
 ```
+
+> **NOTE**
+> `v-touch` directive does NOT support `tap` event. Use `v-on:click` directive or jQuery's `.click()` method instead.

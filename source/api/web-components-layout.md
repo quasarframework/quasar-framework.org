@@ -6,11 +6,11 @@ Layout example with all components available to get a feel of how to use them:
 ``` html
 <!-- layout.example.html -->
 
-<quasar-layout shrink-header scroll-shadow> <!-- mandatory -->
+<quasar-layout shrink-header scroll-shadow> <!-- ! MANDATORY ! -->
 
-  <quasar-header>
+  <quasar-header> <!-- optional -->
     <quasar-row>
-      <quasar-button><quasar-icon menu></quasar-icon></quasar-button>
+      <quasar-button class="quasar-drawer-toggle"><quasar-icon menu></quasar-icon></quasar-button>
       <quasar-title>Text {{text}}</quasar-title>
       <quasar-button><quasar-icon alarm></quasar-icon></quasar-button>
       <quasar-button><quasar-icon more_vert></quasar-icon></quasar-button>
@@ -22,9 +22,32 @@ Layout example with all components available to get a feel of how to use them:
     </quasar-navigation>
   </quasar-header>
 
-  <quasar-page></quasar-page> <!-- mandatory -->
+  <quasar-page></quasar-page> <!-- ! MANDATORY ! -->
 
-  <quasar-footer>
+  <quasar-drawer> <!-- optional -->
+    <quasar-drawer-cover>
+      <div>
+        <img src="http://semantic-ui.com/images/avatar/large/elliot.jpg" width="100px" height="100px" style="border-radius: 50px; margin-bottom: 20px">
+      </div>
+      <div><strong>Razvan Stoenescu</strong></div>
+      <div>Quasar Framework rulz!</div>
+    </quasar-drawer-cover>
+
+    <quasar-drawer-item>
+      <quasar-icon alarm class="small"></quasar-icon>
+      Message
+    </quasar-drawer-item>
+
+    <quasar-drawer-divider></quasar-drawer-divider>
+    <quasar-drawer-header>Subheader</quasar-drawer-header>
+
+    <quasar-drawer-item>
+      <quasar-icon alarm class="small"></quasar-icon>
+      Second Message
+    </quasar-drawer-item>
+  </quasar-drawer>
+
+  <quasar-footer> <!-- optional -->
     <quasar-row>
       <quasar-title>Quasar Rocks!</quasar-title>
     </quasar-row>
@@ -42,6 +65,8 @@ Wraps the layout and is a mandatory tag for a Quasar Layout. There are a few beh
 2. `keep-marginals` - Keep top navigation bar and footer visible at all times regardless of page scroll position.
 3. `shrink-header` - When user scrolls the page only the top row remains visible and all subsequent rows get hidden.
 4. `retract-header` - When user scrolls the page down the top navigation bar gets hidden. When scrolling up it slowly gets visible again regardless of page scroll position.
+5. `keep-header` - Keep top bar visible at all times regardless of page scroll position
+6. `keep-footer` - Keep footer bar visible at all times regardless of page scroll position
 
 Example:
 ``` html
@@ -49,6 +74,8 @@ Example:
   ...
 </quasar-layout>
 ```
+
+There's a difference between `keep-marginals` and `keep-header`/`keep-footer`/`retract-header`/`shrink-header` when using a Drawer component. `keep-marginals` will keep header and footer on the right side of the Drawer, while the other options will place the Drawer below/above header/footer. Experiment before choosing a layout to see what fits your needs.
 
 ### quasar-page
 Wraps the page content and is a mandatory tag for a Quasar Layout.
@@ -73,3 +100,8 @@ Wraps a tab for the navigational row. It automatically switches between two stat
 
 1. **Scrollable** - left and right arrow buttons appear when necessary to scroll between tabs; user can also use touch gestures to scroll left-right.
 2. **Non-scrollable** - each tab occupies the same amount of space horizontally.
+
+### quasar-drawer
+Adds a Drawer component which can be brought up from left by touch events. On screens larger than phones the drawer is displayed at all times on the left. See the example from the top of the page to learn what tags to use within it.
+
+Add CSS class `quasar-drawer-toggle` to any element for which you want the user to be able to toggle the Drawer when clicked.
