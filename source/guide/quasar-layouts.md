@@ -103,15 +103,15 @@ There are several Web Components that you can use. Some of them are mandatory. A
 
   <quasar-header>
     <quasar-row>
-      <quasar-button><quasar-icon menu></quasar-icon></quasar-button>
+      <quasar-button><quasar-icon>menu</quasar-icon></quasar-button>
       <quasar-title>Text {{text}}</quasar-title>
-      <quasar-button><quasar-icon alarm></quasar-icon></quasar-button>
-      <quasar-button><quasar-icon more_vert></quasar-icon></quasar-button>
+      <quasar-button><quasar-icon>alarm</quasar-icon></quasar-button>
+      <quasar-button><quasar-icon>more_vert</quasar-icon></quasar-button>
     </quasar-row>
     <quasar-navigation>
-      <quasar-tab><quasar-icon tab></quasar-icon>Tab 1</quasar-tab>
-      <quasar-tab><quasar-icon alarm></quasar-icon>Tab 2</quasar-tab>
-      <quasar-tab><quasar-icon tab></quasar-icon>Tab 3</quasar-tab>
+      <quasar-tab><quasar-icon>tab</quasar-icon>Tab 1</quasar-tab>
+      <quasar-tab><quasar-icon>alarm</quasar-icon>Tab 2</quasar-tab>
+      <quasar-tab><quasar-icon>tab</quasar-icon>Tab 3</quasar-tab>
     </quasar-navigation>
   </quasar-header>
 

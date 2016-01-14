@@ -10,15 +10,15 @@ Layout example with all components available to get a feel of how to use them:
 
   <quasar-header> <!-- optional -->
     <quasar-row>
-      <quasar-button class="quasar-drawer-toggle"><quasar-icon menu></quasar-icon></quasar-button>
+      <quasar-button class="quasar-drawer-toggle"><quasar-icon>menu</quasar-icon></quasar-button>
       <quasar-title>Text {{text}}</quasar-title>
-      <quasar-button><quasar-icon alarm></quasar-icon></quasar-button>
-      <quasar-button><quasar-icon more_vert></quasar-icon></quasar-button>
+      <quasar-button><quasar-icon>alarm</quasar-icon></quasar-button>
+      <quasar-button><quasar-icon>more_vert</quasar-icon></quasar-button>
     </quasar-row>
     <quasar-navigation>
-      <quasar-tab><quasar-icon tab></quasar-icon>Tab 1</quasar-tab>
-      <quasar-tab><quasar-icon alarm></quasar-icon>Tab 2</quasar-tab>
-      <quasar-tab><quasar-icon tab></quasar-icon>Tab 3</quasar-tab>
+      <quasar-tab page="index"><quasar-icon>tab</quasar-icon>Page 1</quasar-tab>
+      <quasar-tab page="second"><quasar-icon>alarm</quasar-icon>Page 2</quasar-tab>
+      <quasar-tab page="third" route="#/third/route"><quasar-icon>tab</quasar-icon>Page 3</quasar-tab>
     </quasar-navigation>
   </quasar-header>
 
@@ -34,7 +34,7 @@ Layout example with all components available to get a feel of how to use them:
     </quasar-drawer-cover>
 
     <quasar-drawer-item>
-      <quasar-icon alarm class="small"></quasar-icon>
+      <quasar-icon>alarm</quasar-icon>
       Message
     </quasar-drawer-item>
 
@@ -42,7 +42,7 @@ Layout example with all components available to get a feel of how to use them:
     <quasar-drawer-header>Subheader</quasar-drawer-header>
 
     <quasar-drawer-item>
-      <quasar-icon alarm class="small"></quasar-icon>
+      <quasar-icon>alert</quasar-icon>
       Second Message
     </quasar-drawer-item>
   </quasar-drawer>
@@ -100,6 +100,34 @@ Wraps a tab for the navigational row. It automatically switches between two stat
 
 1. **Scrollable** - left and right arrow buttons appear when necessary to scroll between tabs; user can also use touch gestures to scroll left-right.
 2. **Non-scrollable** - each tab occupies the same amount of space horizontally.
+
+There are two HTML attributes that will interest you:
+1. [String] `page` - Tells to what page the user will navigate when the tab is clicked/tapped.
+2. [String/Function] `route` (optional) - If you need the user to navigate to a specific route. You will also need `page` attribute if you want the tab to be selected automatically when user navigates to the respective page.
+
+Example:
+``` html
+<quasar-navigation>
+  <quasar-tab page="index"><quasar-icon>tab</quasar-icon>Page 1</quasar-tab>
+  <quasar-tab page="second"><quasar-icon>alarm</quasar-icon>Page 2</quasar-tab>
+
+  <!-- Specify 'route' when you want the user to navigate to a route with parameters -->
+  <quasar-tab page="third" route="#/third/route">Page 3</quasar-tab>
+  <!-- For function which return a route String, -->
+  <!-- use dynamic property binding (: - semicolon): -->
+  <quasar-tab page="third" :route="getRoute">Page 3</quasar-tab>
+  <!-- 'getRoute' must be a method defined in your Layout Vue instance -->
+
+  <!--
+    When 'page' (and possibly 'route') attributes are missing,
+    then the auto-select and click/tap event will need to be
+    explicitly added by you;
+    Useful when you want the Tab to be used in other ways that
+    the ones designed for by default (navigating to a page).
+  -->
+  <quasar-tab>Page 4</quasar-tab>
+</quasar-navigation>
+```
 
 ### quasar-drawer
 Adds a Drawer component which can be brought up from left by touch events. On screens larger than phones the drawer is displayed at all times on the left. See the example from the top of the page to learn what tags to use within it.
