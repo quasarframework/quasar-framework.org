@@ -124,7 +124,7 @@ module.exports = function(done) {
 ```
 
 ### Your Own Properties
-Any other property that you write in the page manifest will be accessible under `this.manifest` property in page methods, and under the global `quasar.global.manifest` object.
+Any other property that you write in the page manifest will be accessible under `this.manifest` property in page methods, and under the global `quasar.data.manifest` object.
 
 ``` yaml
 # config.book.yml

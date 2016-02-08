@@ -32,18 +32,18 @@ Following classes must be accompanied by the `layout` class, which adds the `dis
 
 If you explicitly do not want to wrap, use `nowrap` class.
 
-### Justify Alignment
+### Horizontal Alignment
 **For alignment along the main axis**, use classes below. It helps distribute extra free space left over when either all the flex items on a line are inflexible, or are flexible but have reached their maximum size. It also exerts some control over the alignment of items when they overflow the line.
 
-![Flexbox Justify Content](/images/flexbox-justify.svg)
+![Flexbox Justify Content](/images/flexbox-horizontal-align.svg)
 
-### Items Alignment
-**For alignment perpendicular to the main axis**, use classes below. This defines the default behaviour for how flex items are laid out along the cross axis on the current line. Think of it as the justify-* version for the cross-axis (perpendicular to the main-axis).
+### Vertical Alignment
+**For alignment perpendicular to the main axis**, use classes below. This defines the default behaviour for how flex items are laid out along the cross axis on the current line. Think of it as the horizontal-* version for the cross-axis (perpendicular to the main-axis).
 
-![Flexbox Items Align](/images/flexbox-items-align.svg)
+![Flexbox Items Align](/images/flexbox-vertical-align.svg)
 
 ### Content Alignment
-The next classes **align a flex container's lines** within when there is extra space in the cross-axis, similar to how justify-* aligns individual items within the main-axis.
+The next classes **align a flex container's lines** within when there is extra space in the cross-axis, similar to how horizontal-* aligns individual items within the main-axis.
 
 ![Flexbox Content Align](/images/flexbox-content-align.svg)
 
@@ -64,7 +64,7 @@ If all items have `grow-1` class, the remaining space in the container will be d
 **An item can shrink if necessary** by using `shrink-i` classes, where *i* is between 1-12.
 
 ### Self Alignment
-**An item can override the aligned specified on parent**. This allows alignment to be overridden for individual flex items. Please see the [Items Alignment](#Items_Alignment) explanation from Parent Classes to understand the available values.
+**An item can override the aligned specified on parent**. This allows alignment to be overridden for individual flex items. Please see the [Items Alignment](#Items_Alignment) explanation from Parent Classes to understand the available values (`self-start`, `self-center`, `self-baseline`, `self-end`, `self-stretch`).
 
 ![Flexbox Grow](/images/flexbox-self.svg)
 

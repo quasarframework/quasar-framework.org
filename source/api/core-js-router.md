@@ -56,7 +56,7 @@ You can hook into some Router events easily. See [Quasar Events List](/guide/qua
 
 Example:
 ``` js
-quasar.global.events.on('app:route:notfound', function(Array hashParts) {
+quasar.events.on('app:route:notfound', function(Array hashParts) {
   // hey, user navigated to a route, but we don't have
   // any route with such hash matched...
 });

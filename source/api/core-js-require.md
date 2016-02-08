@@ -41,7 +41,7 @@ quasar.require.script({String} path | {Function} fn)
 #### Specifying Path
 ``` js
 // Requiring "module-file.js"
-quasar.require.script("./module-file"), function (err, exports) {
+quasar.require.script("./module-file", function (err, exports) {
     if (err) {
         // an error was encountered while loading the script file
 

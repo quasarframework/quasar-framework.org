@@ -6,7 +6,7 @@ See [Quasar Events API](/api/core-js-events.html) if you haven't already, to lea
 
 Example:
 ``` js
-quasar.global.events.on('Event-Name', function(Object/Array/String/Anything) {
+quasar.events.on('Event-Name', function(Object/Array/String/Anything) {
   ...
 });
 ```
@@ -25,7 +25,7 @@ quasar.global.events.on('Event-Name', function(Object/Array/String/Anything) {
 
 Example:
 ``` js
-quasar.global.events.on('app:route:notfound', function(Object RouteNotFound) {
+quasar.events.on('app:route:notfound', function(Object RouteNotFound) {
   // hey, user navigated to a route, but we don't have
   // any route with such hash matched...
 
@@ -58,7 +58,7 @@ quasar.global.events.on('app:route:notfound', function(Object RouteNotFound) {
 
 Example:
 ``` js
-quasar.global.events.on('app:route:notfound', function(Array hashParts) {
+quasar.events.on('app:route:notfound', function(Array hashParts) {
   // hey, user navigated to a route, but we don't have
   // any route with such hash matched...
 });

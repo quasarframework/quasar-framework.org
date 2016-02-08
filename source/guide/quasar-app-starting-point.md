@@ -13,7 +13,7 @@ Starting a Quasar App is simple. The code is embedded in `index.html` under a &l
 
 1. The `@@appManifest` part is replaced by the Build System with the App Manifest definition. Example:
 ``` js
-quasar.global.manifest = {
+quasar.data.manifest = {
     "pages": {
         "index": {
             "layout": "main",

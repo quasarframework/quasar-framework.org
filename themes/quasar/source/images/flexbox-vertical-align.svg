@@ -8,31 +8,31 @@
 <rect x="39.119" y="24" fill="#4e9bd4" width="29.547" height="59.5"/>
 <rect x="79.355" y="24" fill="#4e9bd4" width="29.547" height="29.75"/>
 <rect x="119.347" y="24" fill="#4e9bd4" width="29.547" height="48.5"/>
-<text transform="matrix(1 0 0 1 8 19)" fill="#34495e" font-family="'Source Sans Pro'" font-size="16">items-start</text>
+<text transform="matrix(1 0 0 1 8 19)" fill="#34495e" font-family="'Source Sans Pro'" font-size="16">vertical-start</text>
 <rect y="155" fill="#232447" width="148.895" height="98"/>
 <rect y="178.281" fill="#4e9bd4" width="29.547" height="48.5"/>
 <rect x="39.119" y="172.781" fill="#4e9bd4" width="29.547" height="59.5"/>
 <rect x="79.355" y="187.656" fill="#4e9bd4" width="29.547" height="29.75"/>
 <rect x="119.347" y="178.281" fill="#4e9bd4" width="29.547" height="48.5"/>
-<text transform="matrix(1 0 0 1 8 150)" fill="#34495e" font-family="'Source Sans Pro'" font-size="16">items-center</text>
+<text transform="matrix(1 0 0 1 8 150)" fill="#34495e" font-family="'Source Sans Pro'" font-size="16">vertical-center</text>
 <rect y="279" fill="#232447" width="308.395" height="98"/>
 <rect y="287.406" fill="#4e9bd4" width="64" height="68.875"/>
 <rect x="70.121" y="293.562" fill="#4e9bd4" width="64" height="43.438"/>
 <rect x="142.273" y="286.406" fill="#4e9bd4" width="78.727" height="63.594"/>
 <rect x="229.039" y="290.047" fill="#4e9bd4" width="78.727" height="76.953"/>
-<text transform="matrix(1 0 0 1 8 274)" fill="#34495e" font-family="'Source Sans Pro'" font-size="16">items-baseline</text>
+<text transform="matrix(1 0 0 1 8 274)" fill="#34495e" font-family="'Source Sans Pro'" font-size="16">vertical-baseline</text>
 <rect x="159.5" y="155" fill="#232447" width="148.895" height="98"/>
 <rect x="159.5" y="154.031" fill="#4e9bd4" width="29.547" height="98.969"/>
 <rect x="198.619" y="155" fill="#4e9bd4" width="29.547" height="98"/>
 <rect x="238.855" y="155" fill="#4e9bd4" width="29.547" height="98"/>
 <rect x="278.848" y="155" fill="#4e9bd4" width="29.547" height="98"/>
-<text transform="matrix(1 0 0 1 167.5 150)" fill="#34495e" font-family="'Source Sans Pro'" font-size="16">items-stretch</text>
+<text transform="matrix(1 0 0 1 167.5 150)" fill="#34495e" font-family="'Source Sans Pro'" font-size="16">vertical-stretch</text>
 <rect x="159.5" y="24" fill="#232447" width="148.895" height="98"/>
 <rect x="159.5" y="73.5" fill="#4e9bd4" width="29.547" height="48.5"/>
 <rect x="198.619" y="62.5" fill="#4e9bd4" width="29.547" height="59.5"/>
 <rect x="238.855" y="92.25" fill="#4e9bd4" width="29.547" height="29.75"/>
 <rect x="278.848" y="73.5" fill="#4e9bd4" width="29.547" height="48.5"/>
-<text transform="matrix(1 0 0 1 167.5 19)" fill="#34495e" font-family="'Source Sans Pro'" font-size="16">items-end</text>
+<text transform="matrix(1 0 0 1 167.5 19)" fill="#34495e" font-family="'Source Sans Pro'" font-size="16">vertical-end</text>
 <text transform="matrix(1 0 0 1 5 308)" font-family="'Source Sans Pro'" font-size="13">text text</text>
 <text transform="matrix(1 0 0 1 243 308)" font-family="'Source Sans Pro'" font-size="13">text text</text>
 <text transform="matrix(1 0 0 1 81.666 308.7295)" font-family="'Source Sans Pro'" font-size="10">text text</text>
