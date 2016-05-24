@@ -75,7 +75,7 @@
     // init smooth scroll
     smoothScroll.init({
       speed: 400,
-      offset: window.innerWidth > 720 ? 40 : 58
+      offset: window.innerWidth > 720 ? 100 : 15
     });
   }
 
@@ -223,7 +223,7 @@
   });
 
   function updateToTop(top) {
-    toTop.classList[top > 80 ? 'add' : 'remove']('visible');
+    toTop.classList[top > 1500 ? 'add' : 'remove']('visible');
   }
 
 

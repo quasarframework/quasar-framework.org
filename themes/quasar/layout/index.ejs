@@ -1,49 +1,59 @@
 <div id="hero">
-  <div class="inner">
-    <ul id="nav">
-      <%- partial('partials/main_menu') %>
-    </ul>
-    <div id="logo-wrap">
-      <img id="logo" src="<%- config.root %>images/quasar-logo.png">
-      <h1>Quasar Framework</h1>
-      <p>
-        Modern HTML5 Single Page Application front-end framework on steroids.
-      </p>
-      <p><strong>Working on 1<sup>st</sup> release.</strong></p>
-      <div class="down"><img src="<%- config.root %>images/down.png"></div>
-    </div>
-  </div>
+  <p>
+    <img src="<%- config.root %>images/responsive-banner.png">
+  </p>
+  <p class="framework-name">
+    Quasar Framework
+  </p>
+  <p>
+    Modern HTML5 SPA front-end framework on steroids.
+  </p>
+  <p>
+    Desktop and Mobile. Native Mobile Apps Included.
+  </p>
+  <p class="buttons">
+    <a href="<%- config.root %>guide/index.html" class="button">GET STARTED</a>
+    <a href="<%- config.root %>guide/index.html" class="button">INSTALL v0.1</a>
+  </p>
 </div>
 
-<div class="section">
-  <div class="inner second-desc">
-    <p>Build on one. Use it on all.</p>
-    <p><em>* Including native mobile Apps. *</em></p>
-    <img src="<%- config.root %>images/responsive-banner.png">
-  </div>
+<div class="features main-features">
   <div class="feats">
+    <div class="feat">
+      <i class="icon fa fa-code-fork"></i>
+      <h2>All Platforms in One Go</h2>
+      <p>
+        Learn the Quasar way and the framework takes care of the quirks for each platform.
+        You'll have just one source code for all platforms simultaneously: desktop/mobile website, native mobile apps (iOS, Android, and so on).
+      </p>
+    </div>
     <div class="feat">
       <i class="icon fa fa-bolt"></i>
-      <h2>Speeds Up Development</h2>
-      <p>Most of the heavy-lifting is already done (through Quasar CLI). Your focus is on your App content rather how the App is built and optimized for each platform.</p>
+      <h2>Speed and Efficiency</h2>
+      <p>
+        Most of the heavy-lifting is already done through Quasar CLI.
+        Your focus is on your App content rather how the App is built and optimized
+        for each platform.
+        Quasar takes care of the redundant tasks allowing you to be the most efficient possible.
+      </p>
     </div>
     <div class="feat">
-      <i class="icon fa fa-users"></i>
-      <h2>Focused on User Experience</h2>
-      <p>Components provide great feedback to the user while the responsive user interface allows for a unified user experience across mobile/desktop platforms.</p>
-    </div>
-    <div class="feat">
-      <i class="icon fa fa-book"></i>
-      <h2>Great Documentation</h2>
-      <p>Everything is documented in crystal clear fashion, with examples, guides and tips.</p>
+      <i class="icon fa fa-cogs"></i>
+      <h2>Web Components</h2>
+      <p>
+        Quasar Web Components are at the heart of the framework.
+        Contribute or use one from the built-in ecosystem. Write as few lines of code
+        as possible and yet enrich your App with beautifully crafted functionality with
+        a unified user experience across mobile/desktop platforms.
+      </p>
     </div>
   </div>
 </div>
 
-<div id="features">
+<div class="features detailed-features">
   <div class="feats">
     <div class="feat">
-      <i class="icon fa fa-plane"></i>
+      <i class="icon fa fa-hourglass-half"></i>
       <h2>Time Saver</h2>
       <p>Out of the box code boilerplating, build system, live preview, test setup, image optimizations and many more.</p>
     </div>
@@ -63,19 +73,10 @@
       <p>Quasar CLI ensures code quality out of the box (linters, app validators, test setup).</p>
     </div>
     <div class="feat">
-      <i class="icon fa fa-cubes"></i>
-      <h2>Web Components</h2>
-      <p>
-        Contribute or use one from the built-in ecosystem. Write as few lines of code
-        as possible and yet enrich your App with beautifully crafted functionality.
-      </p>
-    </div>
-    <div class="feat">
       <i class="icon fa fa-refresh fa-spin"></i>
       <h2>Live Preview</h2>
       <p>
-        Watch click/scroll/form input synchronized browsers auto-refresh on source code change. Responsive View
-        also available to quickly switch between desktop/tablet/phone screen sizes (with orientation too).
+        Watch browsers auto-refresh on source code change. Complex tool included in Quasar CLI to speed up your development.
       </p>
     </div>
     <div class="feat">
@@ -111,6 +112,11 @@
       </p>
     </div>
     <div class="feat">
+      <i class="icon fa fa-book"></i>
+      <h2>Great Documentation</h2>
+      <p>Everything is documented in crystal clear fashion, with examples, guides and tips.</p>
+    </div>
+    <div class="feat">
       <i class="icon fa fa-github"></i>
       <h2>Open Source</h2>
       <p>Help with fixing bugs or write new features/widgets/plugins.</p>
@@ -119,13 +125,21 @@
 </div>
 
 <div id="footer">
-  <p class="buttons">
-    <a href="<%- config.root %>guide/index.html" class="button">What is Quasar?</a>
-    <a href="<%- config.root %>guide/installation.html" class="button">Install & Create an App</a>
-  </p>
-  <p>Released under the <a href="http://opensource.org/licenses/MIT" target="_blank">MIT License</a></p>
   <p>
-    Copyright <i class="fa fa-copyright"></i>
-    <%- date(Date.now(), 'YYYY') %>
-    Razvan Stoenescu <i class="fa fa-bullhorn"></i></p>
+    Code licensed under the
+    <a href="http://opensource.org/licenses/MIT" target="_blank">MIT License</a>.
+  </p>
+  <p>
+    Documentation licensed under the
+    <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+  </p>
+  <p class="written-by">
+    Provided with love by
+    <a href="https://github.com/rstoenescu" target="_blank">
+      Razvan Stoenescu
+      <i class="fa fa-bullhorn"></i>
+    </a>
+  </p>
 </div>
+
+<div class="sidebar"></div>

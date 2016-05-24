@@ -1,96 +1,51 @@
-@import "_common"
-@import "_blog"
-@import "_search"
+@import '_common'
+@import '_blog'
+@import '_search'
 
-$header-height = 80px
-$header-color = white
-$header-padding = 25px
-$header-bg = #0273D4
-$header-shadow = 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.4)
+$mobile-bar-height = 80px
 
-#header
-    background-color $header-bg
-    box-shadow $header-shadow
-    height $header-height
-    z-index 100
-
-#logo
-    display inline-block
-    font-size 1.7em
-    line-height $header-height
-    color $header-color
-    font-family $logo-font
-    font-weight 500
-    margin-left 25px
-    img
-        vertical-align top
-        margin-right 6px
-        width $header-height
-        height $header-height
-
-#nav
-    list-style-type none
-    margin 0
-    padding 0
-    position absolute
-    left 352px
-    top 0
-    height $header-height
-    line-height $header-height
-    .break
-        display none
-    li
-        display inline-block
-        margin 0 .6em
-    a, i
-        color $header-color
-
-.nav-link
-    padding-bottom 3px
-    &:hover, &.current
-        border-bottom 3px solid $main
-
-$mbar-height = 90px
 #mobile-bar
     width 100%
-    height $mbar-height
+    height $mobile-bar-height
     background-color $header-bg
     box-shadow $header-shadow
     color $header-color
     text-align center
     display none
+    position absolute
+    top 0
+    left 0
+    right 0
     .menu-button
         cursor pointer
         font-size 23px
         padding 10px
-        line-height $mbar-height - 17
+        line-height $mobile-bar-height - 17
         color white
     .logo
-        width $mbar-height - 3
-        height $mbar-height - 3
+        width $mobile-bar-height - 3
+        height $mobile-bar-height - 3
         background url(../images/quasar-logo.png) center center no-repeat
-        background-size $mbar-height
+        background-size $mobile-bar-height
     .logo-text
-        line-height: $mbar-height - 3
+        line-height ($mobile-bar-height - 3)
         font-family 'Dosis', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif
         font-weight 500
         font-size 23px
 
 .sidebar
-    float left
-    z-index 10
-    top 0
+    position fixed
+    top 80px
     left 60px
-    width 260px
     bottom 0
-    padding 2.2em 0
+    z-index 10
+    width 260px
+    padding 20px 0
     margin-right 20px
     overflow-x hidden
     overflow-y auto
     -webkit-overflow-scrolling touch
     -ms-overflow-style none
-    &::-webkit-scrollbar
-        width: 0 !important
     h2
         margin-top .2em
         margin-bottom 7px
@@ -117,11 +72,11 @@ $mbar-height = 90px
         &:hover
             border-bottom 2px solid $main
     .section-link
-        transition all 0.2s ease-in
+        transition all .2s ease-in
         &.active, &:hover
             color $main
-            border-left: 3px solid $main
-            padding-left: 3px
+            border-left 3px solid $main
+            padding-left 3px
         &.active
             font-weight bold
     .main-menu
@@ -130,7 +85,7 @@ $mbar-height = 90px
         padding-left 0
 
 .content
-    padding 2.2em 0
+    padding 0
     max-width 700px
     margin 0 auto 0 300px
     ul
@@ -140,7 +95,7 @@ $mbar-height = 90px
             margin .6em 0
     a.button
         font-size .9em
-        color #fff
+        color $white
         margin .2em 0
         width 180px
         text-align center
@@ -167,16 +122,16 @@ $mbar-height = 90px
         margin 2em 0 1.2em
         position relative
         &:before
-            content "+"
+            content '#'
             color $dark
             position absolute
-            left -0.7em
+            left -.7em
             top -2px
             font-size 1.2em
             font-weight bold
     h2, h3, h4, h5, h6
         &:hover:after
-          content " #"
+          content '#'
           color $dark
           font-weight bold
     figure, p, ul, ol
@@ -185,7 +140,7 @@ $mbar-height = 90px
         line-height 1.6em
     ul, ol
         padding-left 1.5em
-    a:not([href^="#"]):not(.search-result)
+    a:not([href^='#']):not(.search-result)
         color $main
         font-weight 700
         padding 3px 2px
@@ -208,13 +163,13 @@ $mbar-height = 90px
         margin 1em 0
     table
       max-width 100%
-      border 1px solid #eee
+      border 1px solid #eee // @stylint ignore
       border-radius 4px
       border-spacing 0
       box-shadow $shadow
       th
         font-weight bold
-        border-bottom 2px solid #eee
+        border-bottom 2px solid #eee // @stylint ignore
       th, td
         padding 13px 15px
       tr
@@ -240,16 +195,16 @@ $mbar-height = 90px
         height 1px
         margin-bottom 1.5em
 
-@media screen and (min-width: 720px)
+@media screen and (min-width 720px)
     #main.fix-sidebar
         .sidebar
             position fixed
 
-@media screen and (max-width: 1200px)
+@media screen and (max-width 1200px)
     .content.with-sidebar
         margin-left 280px
 
-@media screen and (max-width: 720px)
+@media screen and (max-width 720px)
     body
         -webkit-text-size-adjust none
         font-size 14px
@@ -261,7 +216,7 @@ $mbar-height = 90px
             border-bottom 2px solid $main
     #mobile-bar
         display block
-        z-index 0
+        z-index 10
     #main
         padding 2em 1.4em 0
         position inherit
@@ -269,14 +224,14 @@ $mbar-height = 90px
         padding 0
     .sidebar
         position fixed
-        background-color #f9f9f9
+        background-color #f9f9f9 // @stylint ignore
         height 100%
         top 0
         left 0
         padding 25px 30px 20px
-        box-shadow 0 0 10px rgba(0,0,0,.2)
+        box-shadow 0 0 10px rgba(0, 0, 0, .2)
         box-sizing border-box
-        transition all .4s cubic-bezier(0.4, 0, 0, 1)
+        transition all .4s cubic-bezier(.4, 0, 0, 1)
         -webkit-transform translate(-280px, 0)
         transform translate(-280px, 0)
         z-index 1000
@@ -295,31 +250,44 @@ $mbar-height = 90px
         text-align center
 
 #toTop
-    transition all 0.5s ease 0s
-    opacity 0.6
-    cursor pointer
-    position fixed
-    padding 20px
-    background-color #F8F8F8
-    color $main
-    box-shadow $shadow
-    border-radius $radius
-    border 2px solid #ccc
+  transition all .5s ease
+  opacity .6
+  cursor pointer
+  position fixed
+  padding 20px
+  background-color #F8F8F8 // @stylint ignore
+  color $main
+  box-shadow $shadow
+  border-radius $radius
+  border 2px solid #ccc // @stylint ignore
+  &:hover
+    opacity 1
+
+  @media screen and (min-width: 720px)
+    top 0
+    left 650px
+    &.visible
+      top 70px
     &:hover
-        opacity: 1
+      top 75px
 
-    @media screen and (min-width: 720px)
-        top -70px
-        left 650px
-        &.visible
-          top -10px
-        &:hover
-            top 0
+  @media screen and (max-width: 720px)
+    right 10px
+    &.visible
+      bottom -5px
+    bottom -70px
+    right -4px
+    opacity .9
 
-    @media screen and (max-width: 720px)
-        right 10px
-        &.visible
-            bottom -5px
-        bottom -70px
-        right -4px
-        opacity: 0.9
+#main
+  z-index 1
+  padding ($mobile-bar-height + 20px) 10px 30px 60px
+  overflow-x hidden
+
+#search-content
+  display none
+
+.content > h1 i
+  font-size 70%
+  vertical-align middle
+  color $dark

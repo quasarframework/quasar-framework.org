@@ -17,36 +17,34 @@
         <!-- endbuild -->
     </head>
     <body>
-        <% if (!isIndex) { %>
-            <div id="mobile-bar">
-                <i class="menu-button fa fa-bars"></i>
-                <a id="logo" href="<%- config.root %>">
-                    <span>Quasar Framework</span>
-                    <img src="/images/quasar-logo.png">
-                </a>
-            </div>
-            <%- partial('partials/header') %>
-            <div id="main">
-                <% if (page.blog_index) { %>
-                    <%- partial('partials/blog') %>
-                <% } else if (page.search_index) { %>
-                    <%- partial('partials/search') %>
-                <% } else { %>
-                    <%- body %>
-                <% } %>
-                <a href="#top" id="toTop"><i class="fa fa-arrow-up"></i></a>
-            </div>
-        <% } else { %>
-            <%- body %>
-        <% } %>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                FastClick.attach(document.body);
-            }, false);
-        </script>
+        <div id="mobile-bar">
+            <i class="menu-button fa fa-bars"></i>
+            <a id="logo" href="<%- config.root %>">
+                <span>Quasar Framework</span>
+                <img src="/images/quasar-logo.png">
+            </a>
+        </div>
+        <%- partial('partials/header') %>
+        <div id="main">
+            <% if (page.blog_index) { %>
+                <%- partial('partials/blog') %>
+            <% } else if (page.search_index) { %>
+                <%- partial('partials/search') %>
+            <% } else { %>
+                <%- body %>
+            <% } %>
+            <% if (!isIndex) { %>
+              <a href="#top" id="toTop"><i class="fa fa-arrow-up"></i></a>
+            <% } %>
+        </div>
         <%- partial('partials/ga') %>
         <% if (!isIndex) { %>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+          <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            FastClick.attach(document.body);
+          }, false);
+          </script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/7.1.1/js/smooth-scroll.min.js"></script>
           <!-- build:js js/page-combined.js -->

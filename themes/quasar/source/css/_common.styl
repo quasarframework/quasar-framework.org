@@ -1,85 +1,134 @@
-@import "_variables"
-@import "_syntax"
+@import '_variables'
+@import '_syntax'
 
 body
-    font-family $body-font
-    font-size $body-font-size
-    -webkit-font-smoothing antialiased
-    -moz-osx-font-smoothing grayscale
-    color $medium
-    margin 0
+  font-family $body-font
+  font-size $body-font-size
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+  color $medium
+  margin 0
 
 a
-    text-decoration none
-    color $medium
-    outline 0
+  text-decoration none
+  color $medium
+  outline 0
 
 img
-    border none
+  border 0
 
 h1, h2, h3, h4, strong
-    font-weight 600
-    color $dark
+  font-weight 600
+  color $dark
 
 hr
-    margin 2em 0
-    height 2px
-    background-color #e5e5e5
-    border 0
-    padding 0
+  margin 2em 0
+  height 2px
+  background-color $hr-color
+  border 0
+  padding 0
 
 input
-    vertical-align middle
-    border 1px solid $border
-    border-radius 3px
-    box-shadow $shadow
-    line-height 20px
-    font-size 16px
-    padding 12px 10px
-    width 100%
-    cursor pointer
-    outline 0
-    box-sizing border-box
+  vertical-align middle
+  border 1px solid $border
+  border-radius 3px
+  box-shadow $shadow
+  line-height 20px
+  font-size 16px
+  padding 12px 10px
+  width 100%
+  cursor pointer
+  outline 0
+  box-sizing border-box
 
 code, pre
-    font-family $code-font
-    font-size $code-font-size
-    background-color $bg
-    -webkit-font-smoothing initial
-    -moz-osx-font-smoothing initial
+  font-family $code-font
+  font-size $code-font-size
+  background-color $bg
+  -webkit-font-smoothing initial
+  -moz-osx-font-smoothing initial
 
 code
-    color $dark
-    padding 3px 5px
-    margin 0 2px
-    border-radius 2px
-    border: 1px solid #e6e6e6
-    white-space nowrap
-    box-shadow 0 1px 1px rgba(0,0,0,0.125)
+  color $dark
+  padding 3px 5px
+  margin 0 2px
+  border-radius 2px
+  border $code-border
+  white-space nowrap
+  box-shadow 0 1px 1px rgba(0, 0, 0, .125)
 
 em
-    color $light
+  color $light
 
 p
-    word-spacing 0.05em
+  word-spacing .05em
 
 iframe
-    border 0
-    box-shadow 0 0 5px 2px #aaa
+  border 0
+  box-shadow $iframe-box-shadow
+
+#header
+  position fixed
+  top 0
+  left 0
+  right 0
+  background-color $header-bg
+  box-shadow $header-shadow
+  height $header-height
+  z-index 100
+
+#logo
+  display inline-block
+  font-size 1.7em
+  line-height $header-height
+  color $header-color
+  font-family $logo-font
+  font-weight 500
+  margin-left 25px
+  img
+    vertical-align top
+    margin-right 6px
+    width $header-height
+    height $header-height
+
+#nav
+  list-style-type none
+  margin 0
+  padding 0
+  position absolute
+  left 352px
+  top 0
+  height $header-height
+  line-height $header-height
+  .break
+    display none
+  li
+    display inline-block
+    margin 0 .6em
+  a, i
+    color $header-color
+  i
+    font-size 120%
+
+.nav-link
+  padding-bottom 3px
+  &:hover, &.current
+    border-bottom 3px solid $main
+
 
 @keyframes swing
-    15%
-        transform translateX(5px)
-    30%
-        transform translateX(-5px)
-    50%
-        transform translateX(3px)
-    65%
-        transform translateX(-3px)
-    80%
-        transform translateX(2px)
-    100%
-        transform translateX(0)
+  15%
+    transform translateX(5px)
+  30%
+    transform translateX(-5px)
+  50%
+    transform translateX(3px)
+  65%
+    transform translateX(-3px)
+  80%
+    transform translateX(2px)
+  100%
+    transform translateX(0)
 
 @keyframes bounce
   0%, 20%, 50%, 80%, 100%
@@ -89,69 +138,66 @@ iframe
   60%
     transform translateY(-15px)
 
+.logo-font
+  font-family $logo-font
+
 a.button
-    display inline-block
-    font-family $logo-font
-    font-size 150%
-    color #fff
-    background-color $light
-    box-shadow $shadow
-    padding 12px 14px
-    border-radius $radius
-    transition all .15s ease
-    &:hover
-        background-color lighten($main, 25%)
-        animation swing 1s ease
-        animation-iteration-count 1
+  display inline-block
+  font-family $logo-font
+  color $white
+  background-color $main
+  box-shadow $shadow
+  padding 10px 14px
+  border-radius 4px
+  transition all .25s ease
+  font-size 1.2rem
+  &:hover
+    background-color $black
+    animation swing 1s ease
+    animation-iteration-count 1
 
 .highlight
-    overflow-x auto
-    position relative
+  overflow-x auto
+  position relative
+  padding 0
+  background-color $bg
+  padding .8em
+  line-height 1.1em
+  border-radius $radius
+  box-shadow $shadow
+  table, tr, td
+    width 100%
+    border-collapse collapse
     padding 0
-    background-color $bg
-    padding .8em
-    line-height 1.1em
-    border-radius $radius
-    box-shadow $shadow
-    table, tr, td
-        width 100%
-        border-collapse collapse
-        padding 0
-        margin 0
-    .gutter
-        width 1.5em
-    .code
-        pre
-            padding 1.2em 1.4em
-            line-height 1.5em
-            margin 0
-    &.html, &.js, &.bash, &.css, &.yaml, &.json
-        .code:after
-            position absolute
-            top 0
-            right 0
-            color #ccc
-            text-align right
-            font-size .75em
-            padding 5px 10px 0
-            line-height 15px
-            height 15px
-            font-weight 600
-    &.html .code:after
-        content 'HTML'
-    &.js .code:after
-        content 'JS'
-    &.bash .code:after
-        content 'Shell'
-    &.css .code:after
-        content 'CSS'
-    &.json .code:after
-        content 'JSON'
-    &.yaml .code:after
-        content 'YAML'
-
-#main
-    position relative
-    z-index 1
-    padding 0 10px 30px 60px
-    overflow-x hidden
+    margin 0
+  .gutter
+    width 1.5em
+  .code
+    pre
+      padding 1.2em 1.4em
+      line-height 1.5em
+      margin 0
+  &.html, &.js, &.bash, &.css, &.yaml, &.json
+    .code:after
+      position absolute
+      top 0
+      right 0
+      color #ccc // @stylint ignore
+      text-align right
+      font-size .75em
+      padding 5px 10px 0
+      line-height 15px
+      height 15px
+      font-weight 600
+  &.html .code:after
+    content 'HTML'
+  &.js .code:after
+    content 'JS'
+  &.bash .code:after
+    content 'Shell'
+  &.css .code:after
+    content 'CSS'
+  &.json .code:after
+    content 'JSON'
+  &.yaml .code:after
+    content 'YAML'

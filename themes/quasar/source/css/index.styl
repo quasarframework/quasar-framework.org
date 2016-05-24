@@ -1,166 +1,99 @@
-@import "_common"
+@import '_common'
 
 html, body
-    height 100%
+  height 100%
 
-#nav
-    list-style-type none
-    text-align center
-    padding 0
-    li
-        display inline-block
-        &:last-child .nav-link
-            margin-right 0
-
-.nav-link
-    color $dark
-    padding-bottom 3px
-    margin 0 1.5em
-    &:first-child
-        margin-left 0
-    &:hover, &.current
-        border-bottom 3px solid $main
-
-#logo
-    display block
-    margin 6em auto 6em
-    width 200px
-
-#logo-wrap
-    margin 4em 0
-    padding 0 2em
+#main
+  padding-top 40px
 
 #hero
+  height 600px
+  display flex
+  flex-flow column
+  align-items center
+  justify-content center
+  p
+    margin 5px 0 0 0
+    font-size 1.1rem
     text-align center
-    height 100vh
-    h1
-        font-family $logo-font
-        font-weight 300
-        font-size 4em
-        margin 0
-    .warning
-        color $medium
-    .down
-        width 100%
-        padding 1.5em 0
-        img
-            width 20px
-            animation bounce 3s infinite ease
-    a.button
-        width 300px
-        margin .5em
-    .inner
-        margin 17vh 0
-
-.second-desc img
-    margin-top 2em
+  .framework-name
+    font-family $logo-font
+    font-size 4.5rem
+    margin-top 15px
+    margin-bottom 10px
+    color $dark
+  .buttons
+    margin-top 25px
+    a
+      margin 10px
 
 .feats
-    max-width 1200px
-    margin 2em auto 0 auto
+  max-width 1200px
+  margin 1rem auto
 
-.section
-    margin 0 0 5em 0
-    text-align center
-    .feats
-        margin 4em auto
-    .feat
-        box-sizing border-box
-        display inline-block
-        vertical-align top
-        width 285px
-        margin 40px
-        h2
-            color $main
-            line-height 40px
-            margin-bottom 0
-        p
-            margin .4em 0
-        .icon
-            color $main
-            text-align center
-            vertical-align middle
-            position relative
-            width 40px
-            height 40px
-            font-size 40px
+.main-features
+  margin-bottom 40px
 
-#features
-    padding 5em 0
-    border-top 1px solid #eee
+.detailed-features
+  border-top 1px solid #eee // @stylint ignore
+  background #e3e3e3 url(../images/features-delimiter.gif) top repeat-x // @stylint ignore
+
+.features
+  padding 1rem 0
+  text-align center
+  .feat .icon
     text-align center
-    background: #e3e3e3 url(../images/features-delimiter.gif) top repeat-x
-    .feat .icon
-        text-align center
-        display inline-block
-        vertical-align middle
-        position relative
-        top 20px
-        left -5px
-        width 40px
-        height 40px
-        font-size 40px
-        margin-right 10px
-        float left
-        color $main
-    .feat
-        box-sizing border-box
-        -moz-box-sizing border-box
-        display inline-block
-        text-align left
-        vertical-align top
-        width 285px
-        margin 40px
-        h2
-            color $main
-            line-height 40px
-            margin-bottom 0
-        p
-            padding-left 52px
-            margin .4em 0
+    display inline-block
+    vertical-align middle
+    position relative
+    top 20px
+    left -5px
+    width 40px
+    height 40px
+    font-size 40px
+    margin-right 10px
+    float left
+    color $main
+  .feat
+    box-sizing border-box
+    -moz-box-sizing border-box
+    display inline-block
+    text-align left
+    vertical-align top
+    width 285px
+    margin 25px 40px
+    h2
+      color $main
+      line-height 40px
+      margin-bottom 0
+    p
+      padding-left 52px
+      margin .4em 0
 
 #footer
-    text-align center
-    color #fff
-    padding 3em 0
-    background $main url(../images/footer-delimiter.gif) top repeat-x
-    a
-        color white
-        font-weight bold
-    p
-        margin .3em 0
-        i
-            vertical-align middle
-            font-size 150%
-        &.buttons
-            margin 3em 0
-            a
-                margin 0 1em
-                font-size 1.2em
-                font-weight normal
-                text-decoration none
-                text-transform uppercase
-                letter-spacing 1px
-                border 1px solid #fff
-                display inline-block
-                padding 12px 20px
-                margin-bottom 2em
-                &:hover
-                    background-color #fff
-                    color #7f8c8d
-                    border-radius 10px
+  text-align center
+  color #fff // @stylint ignore
+  padding 5rem 0 3rem
+  background #000 url(../images/footer-delimiter.gif) top repeat-x // @stylint ignore
+  a
+    color white
+    font-weight bold
+  p
+    margin .3rem 0
+    i
+      vertical-align middle
+      font-size 1.2rem
+  .written-by
+    margin-top 1.3rem
 
-@media screen and (max-width: 550px)
-    body
-        font-size 16px
-    #nav
-        margin 0 1.8em 0
+@media screen and (max-width 550px)
     #logo
         margin 2em auto
     .nav-link
-        font-size .85em
+        font-size .85rem
         margin 0 .5em
     #hero
+        height 400px
         .inner
             margin-top 5vh
         .down
@@ -172,13 +105,27 @@ html, body
             width 260px
             font-size .8em
             margin .5em 0
-    #features
+        p
+          font-size 95%
+        .framework-name
+          font-size 2rem
+    .features
         padding 2em 0 2em 0
         .feat
-            font-size 14px
+            font-size 12px
             margin .8em 0
-            width 272px
-    #footer
-        padding 2em 0
-        p.buttons
-            margin 4em 0 2em 0
+            width 252px
+
+@media screen and (max-width 720px)
+  #main
+    padding-top 100px
+  #logo
+    display none
+  #nav
+    width 100%
+    display flex
+    align-items center
+    justify-content center
+    position inherit
+    left 0
+    margin 0

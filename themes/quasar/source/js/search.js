@@ -15,7 +15,7 @@ $(function() {
       return {
         title: $('title', this).text(),
         content: $('content', this).text(),
-        url: $('url', this).text()
+        url: $('url', this).text().replace(/^.*\/\/[^\/]+/, '')
       };
     }).get();
 
@@ -50,6 +50,8 @@ $(function() {
         var indexContent = -1;
         var firstOccur = -1;
 
+        console.log(dataUrl);
+
         // only match artiles with not empty titles and contents
         if(dataTitle != '' && dataContent != '') {
           keywords.forEach(function(keyword, i) {
@@ -66,7 +68,6 @@ $(function() {
               if (i == 0) {
                 firstOccur = indexContent;
               }
-              // contentIndex.push({indexContent:indexContent, keyword_len:keyword_len});
             }
           });
         }
@@ -115,6 +116,9 @@ $(function() {
       str += '</ul>';
       $resultContent.innerHTML = str;
     });
+
+    $('#loading-search').slideToggle();
+    $('#search-content').slideToggle();
   }
 
   $.ajax({

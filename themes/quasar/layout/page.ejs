@@ -9,6 +9,9 @@
 <div class="content <%- page.type ? page.type + ' with-sidebar' : '' %>">
     <h1>
       <%- page.title %>
+      <a href="https://github.com/rstoenescu/quasar-site/edit/master/source/<%- page.source %>" target="_blank">
+        &nbsp;&nbsp;<i class="fa fa-pencil"></i>&nbsp;&nbsp;
+      </a>
     </h1>
     <%- page.content %>
     <% if (withSidebar) { %>
