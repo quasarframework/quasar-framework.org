@@ -13,6 +13,7 @@ a
   text-decoration none
   color $medium
   outline 0
+  cursor pointer
 
 img
   border 0
@@ -65,7 +66,6 @@ p
 
 iframe
   border 0
-  box-shadow $iframe-box-shadow
 
 #header
   position fixed
@@ -111,9 +111,9 @@ iframe
     font-size 120%
 
 .nav-link
-  padding-bottom 3px
+  border-bottom 3px solid transparent
   &:hover, &.current
-    border-bottom 3px solid $main
+    border-bottom 3px solid $white
 
 
 @keyframes swing

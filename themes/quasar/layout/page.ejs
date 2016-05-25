@@ -6,6 +6,7 @@
 %>
     <%- partial('partials/sidebar') %>
 <% } %>
+
 <div class="content <%- page.type ? page.type + ' with-sidebar' : '' %>">
     <h1>
       <%- page.title %>
@@ -36,3 +37,16 @@
       </a>
     </div>
 </div>
+
+<aside id="preview" style="display: none;">
+  <div id="preview-chooser">
+    <a data-theme="android" class="active"><i class="fa fa-android"></i></a>
+    <a data-theme="ios"><i class="fa fa-apple"></i></a>
+  </div>
+  <div id="android-preview" class="theme active">
+    <iframe id="android-iframe" frameborder="0"></iframe>
+  </div>
+  <div id="ios-preview" class="theme">
+    <iframe id="ios-iframe" frameborder="0"></iframe>
+  </div>
+</aside>

@@ -1,4 +1,4 @@
-(function() {
+$(function() {
 
   var each = [].forEach;
   var main = document.getElementById('main');
@@ -160,6 +160,12 @@
         previousActive.classList.remove('active');
       }
       currentActive.classList.add('active');
+
+      if (window.themePreview) {
+        var link = $('.content a[data-scroll][href="#' + id + '"]').next();
+
+        window.themePreview.selectPage(link ? link.data('page') : '');
+      }
     }
   }
 
@@ -237,5 +243,63 @@
   // listen for scroll event to do positioning & highlights
   window.addEventListener('scroll', redraw);
   window.addEventListener('resize', redraw);
+});
 
-})();
+$(function() {
+  var
+    previewNode = $('#preview'),
+    themePicker = $('#preview-chooser a'),
+    themeNodes = $('#preview .theme'),
+    iframes = $('#preview iframe'),
+    contentNode = $('#main > .content'),
+    selectedTheme = $.cookie('theme') || 'android',
+    demoPoints = $('#main .content .demo-point')
+    ;
+
+  if (themePicker.length === 0 || demoPoints.length === 0) {
+    return;
+  }
+
+  themePicker.click(function() {
+    window.themePreview.selectTheme($(this).data('theme'));
+  });
+
+  window.themePreview = {
+    show: function(page) {
+      previewNode.css('display', 'block');
+      contentNode.addClass('with-previewer');
+      this.selectPage(page);
+    },
+    hide: function() {
+      previewNode.css('display', 'none');
+      contentNode.removeClass('with-previewer');
+    },
+    selectPage: function(page) {
+      iframes.each(function() {
+        var
+          $this = $(this),
+          platform = $(this).attr('id').split('-')[0]
+          ;
+
+        if (page) {
+          $this.attr('src', '/preview/' + platform + '.html#/' + page);
+        }
+        else {
+          $this.attr('src', '');
+        }
+      });
+    },
+    selectTheme: function(theme) {
+      themePicker.removeClass('active');
+      $('#preview #preview-chooser a[data-theme="' + theme + '"]').addClass('active');
+
+      themeNodes.css('display', 'none');
+      $('#' + theme + '-preview').css('display', 'block');
+
+      $.cookie('theme', theme);
+    }
+  };
+
+  window.themePreview.selectTheme(selectedTheme);
+  window.themePreview.show();
+});

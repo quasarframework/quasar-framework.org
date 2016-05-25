@@ -7,7 +7,7 @@
     "deploy": "hexo clean && hexo generate && gulp && hexo deploy"
   },
   "hexo": {
-    "version": "3.1.1"
+    "version": "3.2.0"
   },
   "dependencies": {
     "hexo": "^3.1.1",
