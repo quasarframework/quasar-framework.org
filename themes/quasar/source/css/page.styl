@@ -187,69 +187,76 @@ $mobile-bar-height = 80px
       padding 0
 
 .guide-links
-    margin-top 4em
-    height 1em
+  margin-top 4em
+  height 1em
 
 .footer
-    color $medium
-    font-size .9em
-    hr
-        height 1px
-        margin-bottom 1.5em
+  color $medium
+  font-size .9em
+  hr
+    height 1px
+    margin-bottom 1.5em
+
+#main
+  z-index 1
+  padding ($mobile-bar-height + 20px) 10px 30px 60px
+  overflow-x hidden
 
 @media screen and (min-width 720px)
-    #main.fix-sidebar
-        .sidebar
-            position fixed
+  .sidebar #header
+    display none
+  #main.fix-sidebar
+    .sidebar
+      position fixed
 
 @media screen and (max-width 1200px)
-    .content.with-sidebar
-        margin-left 280px
+  .content.with-sidebar
+    margin-left 280px
 
 @media screen and (max-width 720px)
-    body
-        -webkit-text-size-adjust none
-        font-size 14px
-    #header
-        display none
-    .nav-link
-        padding-bottom 1px
-        &:hover, &.current
-            border-bottom 2px solid $main
-    #mobile-bar
+  body
+    -webkit-text-size-adjust none
+    font-size 14px
+    > #header
+      display none
+  .nav-link
+    padding-bottom 1px
+    &:hover, &.current
+      border-bottom 2px solid $main
+  #mobile-bar
+    display block
+    z-index 10
+  #main
+    padding-left 20px
+    position inherit
+  .highlight pre
+    padding 0
+  .sidebar
+    position fixed
+    background-color #f9f9f9 // @stylint ignore
+    height 100%
+    top 0
+    left 0
+    padding 25px 30px 20px
+    box-shadow 0 0 10px rgba(0, 0, 0, .2)
+    box-sizing border-box
+    transition all .4s cubic-bezier(.4, 0, 0, 1)
+    -webkit-transform translate(-280px, 0)
+    transform translate(-280px, 0)
+    z-index 1000
+    .main-menu
         display block
-        z-index 10
-    #main
-        padding 2em 1.4em 0
-        position inherit
-    .highlight pre
-        padding 0
-    .sidebar
-        position fixed
-        background-color #f9f9f9 // @stylint ignore
-        height 100%
-        top 0
-        left 0
-        padding 25px 30px 20px
-        box-shadow 0 0 10px rgba(0, 0, 0, .2)
-        box-sizing border-box
-        transition all .4s cubic-bezier(.4, 0, 0, 1)
-        -webkit-transform translate(-280px, 0)
-        transform translate(-280px, 0)
-        z-index 1000
-        .main-menu
-            display block
-        &.open
-            -webkit-transform translate(0, 0)
-            transform translate(0, 0)
-        li
-            list-style-type circle
-    .content
-        margin 0
-        padding-top 0
-    .footer
-        margin-left 0
-        text-align center
+    &.open
+      -webkit-transform translate(0, 0)
+      transform translate(0, 0)
+    li
+      list-style-type circle
+  .content
+    margin 0
+    padding-top 0
+  .footer
+    margin-left 0
+    text-align center
 
 #toTop
   transition all .5s ease
@@ -280,11 +287,6 @@ $mobile-bar-height = 80px
     bottom -70px
     right -4px
     opacity .9
-
-#main
-  z-index 1
-  padding ($mobile-bar-height + 20px) 10px 30px 60px
-  overflow-x hidden
 
 #search-content
   display none
@@ -359,3 +361,21 @@ $mobile-bar-height = 80px
     margin-right 467px
   #preview
     display block
+
+
+.sidebar #header
+  text-align center
+  a, i
+    color $main
+    span
+      display none
+  #nav
+    margin-top 10px
+    margin-bottom 25px
+    position inherit
+    left 0
+    top 0
+    line-height 30px
+    li
+      padding 8px
+      display inline-block
