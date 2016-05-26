@@ -18,10 +18,10 @@
     <% if (withSidebar) { %>
       <div class="guide-links">
         <% if (previousPage) { %>
-          <span>← <a href="<%- url_for(previousPage.path) %>"><%- previousPage.title %></a></span>
+          <span><a href="<%- url_for(previousPage.path) %>"><i class="fa fa-chevron-left"></i> <%- previousPage.title %></a></span>
         <% } %>
         <% if (nextPage) { %>
-          <span style="float:right"><a href="<%- url_for(nextPage.path) %>"><%- nextPage.title %></a> →</span>
+          <span style="float:right"><a href="<%- url_for(nextPage.path) %>"><%- nextPage.title %> <i class="fa fa-chevron-right"></i></a></span>
         <% } %>
       </div>
     <% } %>
