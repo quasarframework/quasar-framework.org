@@ -317,12 +317,25 @@ $mobile-bar-height = 80px
   background center top no-repeat url("/images/devices-sprite.jpg")
   background-size 467px
   margin 20px auto 0
+  a
+    background-color transparent
+    box-shadow none
+    font-size .8rem
+    &:hover
+      color $black
+      background-color $white
+    i
+      font-size 140%
 
 #ios-preview
   iframe
     margin-top 85px
     width 320px
     height 568px
+  a
+    position absolute
+    bottom 75px
+    right 80px
 
 #android-preview
   background-position center center
@@ -330,6 +343,39 @@ $mobile-bar-height = 80px
     margin-top 64px
     width 360px
     height 590px
+  a
+    position absolute
+    bottom 25px
+    right 175px
+    left 180px
+
+#desktop-preview
+  position fixed
+  top 0
+  right 0
+  bottom 0
+  left 0
+  background center center no-repeat url("/images/desktop.jpg")
+  background-size 100% 100%
+  pointer-events none
+  div, iframe
+    pointer-events all
+  iframe
+    margin-top 30px
+    width 95%
+    height 82%
+  div
+    position absolute
+    bottom 16px
+    right 16px
+    a, i
+      margin-left 10px
+
+#btn-close-desktop-view
+  border-radius 50%
+  i
+    margin-left 0 !important
+    font-size 25px
 
 #preview-chooser
   height $header-height
@@ -342,7 +388,7 @@ $mobile-bar-height = 80px
     color $header-color
     margin-left 3px
     margin-right 3px
-    border-radius 24px
+    border-radius 5px
     padding 10px 16px
     transition .2s color, .2s background-color
     i

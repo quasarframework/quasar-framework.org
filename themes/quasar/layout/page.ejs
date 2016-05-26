@@ -42,11 +42,21 @@
   <div id="preview-chooser">
     <a data-theme="android" class="active"><i class="fa fa-android"></i></a>
     <a data-theme="ios"><i class="fa fa-apple"></i></a>
+    <a data-theme="desktop"><i class="fa fa-desktop"></i></a>
   </div>
   <div id="android-preview" class="theme active">
     <iframe id="android-iframe" frameborder="0"></iframe>
+    <a class="button view-source" target="_blank"><i class="fa fa-code-fork"></i><br>View Source</a>
   </div>
   <div id="ios-preview" class="theme">
     <iframe id="ios-iframe" frameborder="0"></iframe>
+    <a class="button view-source" target="_blank"><i class="fa fa-code-fork"></i><br>View Source</a>
+  </div>
+  <div id="desktop-preview" class="theme">
+    <iframe id="desktop-iframe" frameborder="0"></iframe>
+    <div>
+      <a class="button view-source" target="_blank">View Source <i class="fa fa-code-fork"></i></a>
+      <a id="btn-close-desktop-view" class="button"><i class="fa fa-times"></i></a>
+    </div>
   </div>
 </aside>

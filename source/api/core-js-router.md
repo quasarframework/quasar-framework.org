@@ -41,7 +41,7 @@ var route = {
 The `hash` property can be a normal static hash like #/page/books or a parametrized string like #/article/:category/:date, in this case the route parameters will be completed with hash tokens.
 
 For example, for [http://domain.com/#/article/science/20151010]() you will have:
-```
+``` js
 var route = {
   hash: '#/article/:category/:date',
   trigger: function() {
