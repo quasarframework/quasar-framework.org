@@ -1,9 +1,8 @@
 guide:
   root:
-    What is Quasar: index
+    Getting Started: index
     Installation: $
     CLI Commands: $
-    Built-in Stack: $
   App:
     App Structure: quasar-$
     App Configuration: quasar-$
@@ -14,6 +13,7 @@ guide:
     Events List: quasar-$
     Vue State Management: $
   Miscellaneous:
+    Built-in Stack: $
     CommonJS Format: $
     Contributing to Quasar: $
     Mobile Wrapper Tips: quasar-$

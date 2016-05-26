@@ -29,11 +29,6 @@ Wrap your App in Cordova so it can be installed on a mobile phone. It offers acc
 
 Read more about it <a href="https://cordova.apache.org/" target="_blank">here</a>.
 
-## Lodash
-Inspired by Underscore (& even has compatible API), but better. You have the global object `_` (underscore character) you can use.
-
-Read more about it <a href="https://lodash.com/" target="_blank">here</a>.
-
 ## HammerJS
 Add touch gestures to your App. Hammer is a open-source library that can recognize gestures made by touch, mouse and pointer events. It doesn't have any dependencies, and it's small.
 

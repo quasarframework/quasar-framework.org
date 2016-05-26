@@ -90,7 +90,7 @@ $ quasar responsive
 # Responsive Live Preview Production build
 $ quasar responsive -p # or --production
 ```
-![Responsive Preview Screen](/images/preview-2.png "Responsive Preview Screen")
+![Responsive Preview Screen](/images/preview.png "Responsive Preview Screen")
 
 ## Running Test Suites
 Write tests and run them with the out of the box test-pack which includes Karma, Mocha, Chai & Sinon.
