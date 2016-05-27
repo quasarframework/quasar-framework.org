@@ -20,15 +20,15 @@ guide:
 api:
   root:
     Overview: index
-    Events List: js-$
   Javascript:
     Environment: js-$
     Router: js-$
     Events: js-$
+    Events List: js-$
     Ajax Requests: js-$
     Require Script or CSS: js-$
-    Cookies: feat-$
-    Web Storage: feat-$
+    Cookies: js-$
+    Web Storage: js-$
     Touch Events: js-$
     Helpers and Utils: js-$
   CSS:

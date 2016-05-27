@@ -98,6 +98,8 @@ What each is used for:
 
 ## Source Folder
 
+This is where you'll spend most of your time writing code for your App.
+
 | Asset | Description |
 | --- | --- |
 | /src/css | Folder to store global/common CSS files |

@@ -2,7 +2,7 @@ title: Quasar Events List
 ---
 
 There are global events registered for some key things in Quasar Framework.
-See [Quasar Events API](/api/core-js-events.html) if you haven't already, to learn how to hook into these events and what they are.
+See [Quasar Events API](/api/js-events.html) if you haven't already, to learn how to hook into these events and what they are.
 
 Example:
 ``` js
