@@ -1,15 +1,25 @@
 (function() {
 
-  var _ = require('lodash');
+  var each = [].forEach;
+
+  hexo.extend.helper.register('body_class', function(page) {
+    if (page.path === 'index.html') {
+      return 'index';
+    }
+    else if (page.layout === 'post') {
+      return 'blog post';
+    }
+    else if (page.blog_index) {
+      return 'blog';
+    }
+    else if (page.search_index) {
+      return 'search';
+    }
+    return '';
+  });
 
   hexo.extend.helper.register('page_type', function(page) {
     return page.path.substring(0, page.path.indexOf('/'));
-  });
-
-  hexo.extend.helper.register('page_has_sidebar', function(page) {
-    var type = this.page_type(page);
-
-    return _.includes(['api', 'guide', 'css'], type);
   });
 
   hexo.extend.helper.register('page_path_from_menu', function(type, html, name) {
@@ -24,11 +34,15 @@
     var type = this.page_type(page);
     var categories = this.site.data.pageMenu[type];
 
-    _.forEach(categories, function(category) {
+    if (!categories) {
+      return;
+    }
+
+    each.call(categories, function(category) {
       if (foundPosition) {
         return;
       }
-      _.forEach(category, function(html, name) {
+      category.forEach(function(html, name) {
         if (foundPosition) {
           return;
         }
@@ -55,11 +69,15 @@
     var type = this.page_type(page);
     var categories = this.site.data.pageMenu[type];
 
-    _.forEach(categories, function(category) {
+    if (!categories) {
+      return;
+    }
+
+    each.call(categories, function(category) {
       if (foundPosition) {
         return;
       }
-      _.forEach(category, function(html, name) {
+      category.forEach(function(html, name) {
         if (foundPosition) {
           return;
         }

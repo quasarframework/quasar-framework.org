@@ -1,13 +1,9 @@
 <%
-  var withSidebar = page_has_sidebar(page);
-  if (withSidebar) {
-    var previousPage = previous_page(page);
-    var nextPage     = next_page(page);
+  var previousPage = previous_page(page);
+  var nextPage     = next_page(page);
 %>
-    <%- partial('partials/sidebar') %>
-<% } %>
 
-<div class="content <%- page.type ? page.type + ' with-sidebar' : '' %>">
+<div class="content">
     <h1>
       <%- page.title %>
       <a href="https://github.com/rstoenescu/quasar-site/edit/master/source/<%- page.source %>" target="_blank">
@@ -15,16 +11,14 @@
       </a>
     </h1>
     <%- page.content %>
-    <% if (withSidebar) { %>
-      <div class="guide-links">
-        <% if (previousPage) { %>
-          <span><a href="<%- url_for(previousPage.path) %>"><i class="fa fa-chevron-left"></i> <%- previousPage.title %></a></span>
-        <% } %>
-        <% if (nextPage) { %>
-          <span style="float:right"><a href="<%- url_for(nextPage.path) %>"><%- nextPage.title %> <i class="fa fa-chevron-right"></i></a></span>
-        <% } %>
-      </div>
-    <% } %>
+    <div class="guide-links">
+      <% if (previousPage) { %>
+        <span><a href="<%- url_for(previousPage.path) %>"><i class="fa fa-chevron-left"></i> <%- previousPage.title %></a></span>
+      <% } %>
+      <% if (nextPage) { %>
+        <span style="float:right"><a href="<%- url_for(nextPage.path) %>"><%- nextPage.title %> <i class="fa fa-chevron-right"></i></a></span>
+      <% } %>
+    </div>
     <div class="footer">
       <hr>
       <div>
@@ -46,16 +40,16 @@
   </div>
   <div id="android-preview" class="theme active">
     <iframe id="android-iframe" frameborder="0"></iframe>
-    <a class="button view-source" target="_blank"><i class="fa fa-code-fork"></i><br>View Source</a>
+    <a class="view-source" target="_blank"><i class="fa fa-file-code-o"></i><br>View Source</a>
   </div>
   <div id="apple-preview" class="theme">
     <iframe id="apple-iframe" frameborder="0"></iframe>
-    <a class="button view-source" target="_blank"><i class="fa fa-code-fork"></i><br>View Source</a>
+    <a class="view-source" target="_blank"><i class="fa fa-file-code-o"></i><br>View Source</a>
   </div>
   <div id="desktop-preview" class="theme">
     <iframe id="desktop-iframe" frameborder="0"></iframe>
     <div>
-      <a class="button view-source" target="_blank">View Source <i class="fa fa-code-fork"></i></a>
+      <a class="button view-source" target="_blank">View Source <i class="fa fa-file-code-o"></i></a>
       <a id="btn-close-desktop-view" class="button"><i class="fa fa-times"></i></a>
     </div>
   </div>

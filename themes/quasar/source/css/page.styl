@@ -1,190 +1,113 @@
 @import '_common'
 @import '_blog'
 @import '_search'
-
-$mobile-bar-height = 80px
-
-#mobile-bar
-    width 100%
-    height $mobile-bar-height
-    background-color $header-bg
-    box-shadow $header-shadow
-    color $header-color
-    text-align center
-    display none
-    position absolute
-    top 0
-    left 0
-    right 0
-    .menu-button
-        cursor pointer
-        font-size 23px
-        padding 10px
-        line-height $mobile-bar-height - 17
-        color white
-    .logo
-        width $mobile-bar-height - 3
-        height $mobile-bar-height - 3
-        background url(../images/quasar-logo.png) center center no-repeat
-        background-size $mobile-bar-height
-    .logo-text
-        line-height ($mobile-bar-height - 3)
-        font-family 'Dosis', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif
-        font-weight 500
-        font-size 23px
-
-.sidebar
-    position fixed
-    top 80px
-    left 60px
-    bottom 0
-    z-index 10
-    width 260px
-    padding 20px 0
-    margin-right 20px
-    overflow-x hidden
-    overflow-y auto
-    -webkit-overflow-scrolling touch
-    -ms-overflow-style none
-    h2
-        margin-top .2em
-        margin-bottom 7px
-    h3
-        margin-bottom 3px
-    ul
-        list-style-type none
-        margin 0
-        line-height 1.8em
-        padding-left 1em
-    .version-select
-        vertical-align middle
-        margin-left 5px
-    .menu-root
-        padding-left 0
-    .menu-sub
-        font-size .85em
-    .sidebar-link
-        color $medium
-        &.current
-            font-weight 900
-            color $main
-            font-style italic
-        &:hover
-            border-bottom 2px solid $main
-    .section-link
-        transition all .2s ease-in
-        &.active, &:hover
-            color $main
-            border-left 3px solid $main
-            padding-left 3px
-        &.active
-            font-weight bold
-    .main-menu
-        margin-bottom 20px
-        display none
-        padding-left 0
+@import '_preview'
 
 .content
-    padding 0
-    margin 0 auto 0 300px
-    max-width 750px
-    &.with-previewer
-      max-width none
-    ul
-        padding-left 1.25em
-        line-height 1.4em
-        ul, p
-            margin .6em 0
-    a.button
-        font-size .9em
-        color $white
-        margin .2em 0
-        width 180px
-        text-align center
-        padding 12px 24px
-        display inline-block
-        vertical-align middle
-    img
-        max-width 100%
-    span.light
-        color $light
-    span.info
-        font-size .85em
-        display inline-block
-        vertical-align middle
-        width 280px
-        margin-left 20px
-    h1
-        margin 0 0 .7em 0
-    h2
-        margin 2em 0 .8em
-        padding-bottom .4em
-        border-bottom 1px solid $border
-    h3
-        margin 2em 0 1.2em
-        position relative
-        &:before
-            content ' #'
-            color $dark
-            position absolute
-            left -.7em
-            top -2px
-            font-size 1.2em
-            font-weight bold
-    h2, h3, h4, h5, h6
-        &:hover:after
+  padding 0
+  margin 10px auto 0 300px
+  max-width 750px
+  &.with-previewer
+    max-width none
+  ul
+      padding-left 1.25em
+      line-height 1.4em
+      ul, p
+          margin .6em 0
+  a.button
+      font-size .9em
+      color $white
+      margin .2em 0
+      width 180px
+      text-align center
+      padding 12px 24px
+      display inline-block
+      vertical-align middle
+  img
+      max-width 100%
+  span.light
+      color $light
+  span.info
+      font-size .85em
+      display inline-block
+      vertical-align middle
+      width 280px
+      margin-left 20px
+  h1
+      margin 0 0 .7em 0
+  h2
+      margin 2em 0 .8em
+      padding-bottom .4em
+      border-bottom 1px solid $border
+  h3
+      margin 2em 0 1.2em
+      position relative
+      &:before
           content ' #'
           color $dark
+          position absolute
+          left -.7em
+          top -2px
+          font-size 1.2em
           font-weight bold
-    figure, p, ul, ol
-        margin 1.2em 0
-    p, ul, ol
-        line-height 1.6em
-    ul, ol
-        padding-left 1.5em
-    a:not([href^='#']):not(.search-result)
-        color $main
-        font-weight 700
-        padding 3px 2px
-        transition all .3s ease
-        border-radius $radius
-        &:hover:not(.button)
-            color $dark
-            background-color lighten($light, 70%)
-    blockquote
-        margin 2.5em .7em
-        padding 0
-        p
-            padding 1.5em
-            border-left 5px solid $main
-            border-right 5px solid $main
-            background-color $bg
-            border-radius 1.3 * $radius
-
-    iframe
-        margin 1em 0
-    table
-      max-width 100%
-      border 1px solid #eee // @stylint ignore
-      border-radius 4px
-      border-spacing 0
-      box-shadow $shadow
-      th
+  h2, h3, h4, h5, h6
+      &:hover:after
+        content ' #'
+        color $dark
         font-weight bold
-        border-bottom 2px solid #eee // @stylint ignore
-      th, td
-        padding 13px 15px
-      tr
-        &:nth-child(2n)
-          background $bg
-    figure
-      table
-        border 0
-        box-shadow none
-        th
-          border-bottom 0
-    .highlight pre
+  figure, p, ul, ol
+      margin 1.2em 0
+  p, ul, ol
+      line-height 1.6em
+  ul, ol
+      padding-left 1.5em
+  a:not([href^='#']):not(.search-result)
+      color $main
+      font-weight 700
+      padding 3px 2px
+      transition all .3s ease
+      border-radius $radius
+      &:hover:not(.button)
+          color $dark
+          background-color lighten($light, 70%)
+  blockquote
+      margin 2.5em .7em
       padding 0
+      p
+          padding 1.5em
+          border-left 5px solid $main
+          border-right 5px solid $main
+          background-color $bg
+          border-radius 1.3 * $radius
+
+  iframe
+      margin 1em 0
+  table
+    max-width 100%
+    border 1px solid #eee // @stylint ignore
+    border-radius 4px
+    border-spacing 0
+    box-shadow $shadow
+    th
+      font-weight bold
+      border-bottom 2px solid #eee // @stylint ignore
+    th, td
+      padding 13px 15px
+    tr
+      &:nth-child(2n)
+        background $bg
+  figure
+    table
+      border 0
+      box-shadow none
+      th
+        border-bottom 0
+  .highlight pre
+    padding 0
+  > h1 i
+    font-size 70%
+    vertical-align middle
+    color $dark
 
 .guide-links
   margin-top 4em
@@ -201,234 +124,5 @@ $mobile-bar-height = 80px
     margin-bottom 1.5em
 
 #main
-  z-index 1
-  padding ($mobile-bar-height + 20px) 10px 30px 60px
-  overflow-x hidden
-
-@media screen and (min-width 720px)
-  .sidebar #header
-    display none
-  #main.fix-sidebar
-    .sidebar
-      position fixed
-
-@media screen and (max-width 1200px)
-  .content.with-sidebar
-    margin-left 280px
-
-@media screen and (max-width 720px)
-  body
-    -webkit-text-size-adjust none
-    font-size 14px
-    > #header
-      display none
-  .nav-link
-    padding-bottom 1px
-    &:hover, &.current
-      border-bottom 2px solid $main
-  #mobile-bar
-    display block
-    z-index 10
-  #main
-    padding-left 20px
-    position inherit
-  .highlight pre
-    padding 0
-  .sidebar
-    position fixed
-    background-color #f9f9f9 // @stylint ignore
-    height 100%
-    top 0
-    left 0
-    padding 25px 30px 20px
-    box-shadow 0 0 10px rgba(0, 0, 0, .2)
-    box-sizing border-box
-    transition all .4s cubic-bezier(.4, 0, 0, 1)
-    -webkit-transform translate(-280px, 0)
-    transform translate(-280px, 0)
-    z-index 1000
-    .main-menu
-        display block
-    &.open
-      -webkit-transform translate(0, 0)
-      transform translate(0, 0)
-    li
-      list-style-type circle
-  .content
-    margin 0
-    padding-top 0
-  .footer
-    margin-left 0
-    text-align center
-
-#toTop
-  transition all .5s ease
-  opacity .6
-  cursor pointer
-  position fixed
-  padding 20px
-  background-color #F8F8F8 // @stylint ignore
-  color $main
-  box-shadow $shadow
-  border-radius $radius
-  border 2px solid #ccc // @stylint ignore
-  &:hover
-    opacity 1
-
-  @media screen and (min-width 720px)
-    top 0
-    left 650px
-    &.visible
-      top 70px
-    &:hover
-      top 75px
-
-  @media screen and (max-width 720px)
-    right 10px
-    &.visible
-      bottom -5px
-    bottom -70px
-    right -4px
-    opacity .9
-
-#search-content
-  display none
-
-.content
-  > h1 i
-    font-size 70%
-    vertical-align middle
-    color $dark
-
-#preview
-  width 467px
-  display none
-  position fixed
-  top 0
-  right -20px
-  text-align center
-  z-index 150
-
-  .theme
-    display none
-    &.active
-      display block
-
-a.spawn-demo
-  padding 10px 15px !important
-  border 1px solid $main
-
-#apple-preview, #android-preview
-  width 467px
-  height 800px
-  background center top no-repeat url("/images/devices-sprite.jpg")
-  background-size 467px
-  margin 20px auto 0
-  a
-    background-color transparent
-    box-shadow none
-    font-size .8rem
-    &:hover
-      color $black
-      background-color $white
-    i
-      font-size 140%
-
-#apple-preview
-  iframe
-    margin-top 85px
-    width 320px
-    height 568px
-  a
-    position absolute
-    bottom 75px
-    right 80px
-
-#android-preview
-  background-position center center
-  iframe
-    margin-top 64px
-    width 360px
-    height 590px
-  a
-    position absolute
-    bottom 25px
-    right 175px
-    left 180px
-
-#desktop-preview
-  position fixed
-  top 0
-  right 0
-  bottom 0
-  left 0
-  background center center no-repeat url("/images/desktop.jpg")
-  background-size 100% 100%
-  pointer-events none
-  div, iframe
-    pointer-events all
-  iframe
-    margin-top 30px
-    width 95%
-    height 82%
-  div
-    position absolute
-    bottom 16px
-    right 16px
-    a, i
-      margin-left 10px
-
-#btn-close-desktop-view
-  border-radius 50%
-  i
-    margin-left 0 !important
-    font-size 25px
-
-#preview-chooser
-  height $header-height
-  display flex
-  align-items center
-  justify-content center
-
-  a
-    display inline-block
-    color $header-color
-    margin-left 3px
-    margin-right 3px
-    border-radius 5px
-    padding 10px 16px
-    transition .2s color, .2s background-color
-    i
-      font-size 125%
-
-    &.active, &:hover
-      color $header-bg
-      background-color $white
-
-@media screen and (max-width 1099px)
-  #preview
-    display none !important
-
-@media screen and (min-width 1100px)
-  #main .content.with-previewer
-    margin-right 467px
-  #preview
-    display block
-
-
-.sidebar #header
-  text-align center
-  a, i
-    color $main
-    span
-      display none
-  #nav
-    margin-top 10px
-    margin-bottom 25px
-    position inherit
-    left 0
-    top 0
-    line-height 30px
-    li
-      padding 8px
-      display inline-block
+  padding ($header-height + 20px) 10px 30px 20px
+  

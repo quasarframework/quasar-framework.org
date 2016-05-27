@@ -11,4 +11,4 @@ Following the following steps will familiarize yourself with Quasar Framework fa
 $ quasar new app-name
 ```
 
-And don't forget to have fun!
+And don't forget to have fun :)

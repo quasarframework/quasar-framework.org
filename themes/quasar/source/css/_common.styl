@@ -67,7 +67,7 @@ p
 iframe
   border 0
 
-body > #header
+#header
   position fixed
   top 0
   left 0
@@ -76,45 +76,36 @@ body > #header
   box-shadow $header-shadow
   height $header-height
   z-index 100
+  display flex
+  align-items stretch
+  justify-content flex-start
+
+  a
+    color $header-color
+    line-height $header-height
+    font-family $logo-font
+    font-weight 500
+    font-size 1rem
+    padding 0 25px
+    &.current
+      background-color rgba(255, 255, 255, .2)
+      cursor default
+    &:hover:not(.current)
+      background-color darken($header-bg, 15%)
+  i
+    font-size 1.2rem
 
 #logo
-  display inline-block
-  font-size 1.7em
-  line-height $header-height
-  color $header-color
-  font-family $logo-font
-  font-weight 500
-  margin-left 25px
+  font-size 1.2rem !important
   img
     vertical-align top
-    margin-right 6px
     width $header-height
     height $header-height
 
-#nav
-  list-style-type none
-  margin 0
-  padding 0
-  position absolute
-  left 352px
-  top 0
-  height $header-height
-  line-height $header-height
-  .break
-    display none
-  li
-    display inline-block
-    margin 0 .6em
-  a, i
-    color $header-color
-  i
-    font-size 120%
-
-.nav-link
-  border-bottom 3px solid transparent
-  &:hover, &.current
-    border-bottom 3px solid $white
-
+#main
+  z-index 1
+  padding-top ($header-height + 20px)
+  overflow-x hidden
 
 @keyframes swing
   15%
@@ -193,3 +184,122 @@ a.button
     content 'JSON'
   &.yaml .code:after
     content 'YAML'
+
+.sidebar
+  position fixed
+  top 80px
+  left 40px
+  bottom 0
+  z-index 10
+  width 240px
+  padding 20px 0
+  margin-right 20px
+  overflow-x hidden
+  overflow-y auto
+  -webkit-overflow-scrolling touch
+  -ms-overflow-style none
+  h2
+      margin-top .2em
+      margin-bottom 7px
+  h3
+      margin-bottom 3px
+  ul
+      list-style-type none
+      margin 0
+      line-height 1.8em
+      padding-left 1em
+  .version-select
+      vertical-align middle
+      margin-left 5px
+  .menu-root
+      padding-left 0
+  .menu-sub
+      font-size .85em
+  .sidebar-link
+      color $medium
+      &.current
+          font-weight 900
+          color $main
+          font-style italic
+      &:hover
+          border-bottom 2px solid $main
+  .section-link
+      transition all .2s ease-in
+      &.active, &:hover
+          color $main
+          border-left 3px solid $main
+          padding-left 3px
+      &.active
+          font-weight bold
+  .main-menu
+      margin-bottom 20px
+      display none
+      padding-left 0
+
+.sidebar-menu
+  color $main
+  margin-bottom 20px
+  a
+    display block
+    font-size 1rem
+    padding 5px 0
+
+.sidebar-backdrop
+  position fixed
+  top 0
+  right 0
+  bottom 0
+  left 0
+  background-color rgba(0, 0, 0, .4)
+  z-index 999
+  display none
+  &.active
+    display block
+
+@media screen and (min-width $small-screen + 1px)
+  .sidebar-backdrop
+    display none !important
+  #header .menu-button, .sidebar-menu
+    display none
+    #main.fix-sidebar .sidebar
+      position fixed
+
+@media screen and (max-width $small-screen)
+  #header
+    .menu-button
+      padding 0 20px
+    .menu-link
+      display none
+    #logo
+      padding 0
+  body
+    -webkit-text-size-adjust none
+    font-size 14px
+  .highlight pre
+    padding 0
+  .sidebar
+    position fixed
+    background-color #f9f9f9 // @stylint ignore
+    height 100%
+    top 0
+    left 0
+    padding 25px 30px 20px
+    box-shadow 0 0 10px rgba(0, 0, 0, .2)
+    box-sizing border-box
+    transition all .4s cubic-bezier(.4, 0, 0, 1)
+    -webkit-transform translate(-280px, 0)
+    transform translate(-280px, 0)
+    z-index 1000
+    .main-menu
+      display block
+    &.open
+      -webkit-transform translate(0, 0)
+      transform translate(0, 0)
+    li
+      list-style-type circle
+  .content
+    margin 0 !important
+    padding-top 0
+  .footer
+    margin-left 0
+    text-align center

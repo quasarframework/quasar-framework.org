@@ -88,7 +88,7 @@ What each is used for:
 | /coverage | Code coverage after [running tests with CLI](/guide/cli-commands.html#Running_Test_Suites) |
 | /src | App source files; see [Source Folder](#Source_Folder) |
 | /test | Test source files used for [running tests with CLI](/guide/cli-commands.html#Running_Test_Suites) |
-| /wrapper | Native mobile app wrapper; see [Native_Mobile_App_Wrapper](/guide/cli-commands.html#Native_Mobile_App_Wrapper) |
+| /wrapper | Native mobile app wrapper; see [Native Mobile App Wrapper](/guide/cli-commands.html#Native_Mobile_App_Wrapper) |
 | /.eslintrc | Default ESLINT config for linting Javascript files |
 | /.gitignore | Tells GIT what files to ignore |
 | /package.json | App's NPM management file |

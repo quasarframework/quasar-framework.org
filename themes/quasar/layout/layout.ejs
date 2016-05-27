@@ -1,6 +1,5 @@
 <%
   var isIndex = page.path === 'index.html';
-  var isBlog = page.path.indexOf('blog/') === 0;
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,18 +11,11 @@
         <link href='http://fonts.googleapis.com/css?family=Dosis:300,500&text=Quasar%20Framework' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
         <link rel="icon" href="<%- config.root %>images/quasar-logo.png" type="image/x-icon">
-        <!-- build:css css/<%- isIndex ? 'landing' : 'page' %>-combined.css -->
-        <%- css(isIndex ? 'css/index' : 'css/page') %>
+        <!-- build:css css/<%- isIndex ? 'index' : 'page' %>-combined.css -->
+          <%- css(isIndex ? 'css/index' : 'css/page') %>
         <!-- endbuild -->
     </head>
-    <body>
-        <div id="mobile-bar">
-            <i class="menu-button fa fa-bars"></i>
-            <a id="logo" href="<%- config.root %>">
-                <span>Quasar Framework</span>
-                <img src="/images/quasar-logo.png">
-            </a>
-        </div>
+    <body class="<%- body_class(page) %>">
         <%- partial('partials/header') %>
         <div id="main">
             <% if (page.blog_index) { %>
@@ -32,9 +24,6 @@
                 <%- partial('partials/search') %>
             <% } else { %>
                 <%- body %>
-            <% } %>
-            <% if (!isIndex) { %>
-              <a href="#top" id="toTop"><i class="fa fa-arrow-up"></i></a>
             <% } %>
         </div>
         <%- partial('partials/ga') %>
@@ -50,7 +39,12 @@
           <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
           <!-- build:js js/page-combined.js -->
           <script src="<%- config.root %>js/page.js"></script>
+          <script src="<%- config.root %>js/preview.js"></script>
           <script src="<%- config.root %>js/search.js"></script>
+          <!-- endbuild -->
+        <% } else { %>
+          <!-- build:js js/index-combined.js -->
+          <script src="<%- config.root %>js/page.js"></script>
           <!-- endbuild -->
         <% } %>
     </body>

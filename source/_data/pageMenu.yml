@@ -17,7 +17,7 @@ guide:
     CommonJS Format: $
     Contributing to Quasar: $
     Mobile Wrapper Tips: quasar-$
-api:
+components:
   root:
     Overview: index
   Core:
@@ -33,13 +33,11 @@ api:
   Features:
     Cookies: feat-$
     Web Storage: feat-$
-  Web Components:
-    Layout: web-components-$
-    Spinners: web-components-$
-css:
-  root:
-    Overview: index
+  CSS:
     Color Palette: core-css-$
     Icons: core-css-$
     Helper Classes: core-css-$
     Flexbox Layout: core-css-$
+  Web Components:
+    Layout: web-components-$
+    Spinners: web-components-$

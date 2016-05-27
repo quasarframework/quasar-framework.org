@@ -10,6 +10,8 @@ Don't forget to read more about the [Build System](/guide/quasar-build-system.ht
 Now let's dissect how Layouts work.
 
 ## Structure
+<input type="hidden" data-demo="parallax">
+
 Each layout has its own folder (`/src/layouts/<layout-name>`) and has the following structure:
 
 | Asset | Description |

@@ -4,14 +4,17 @@ html, body
   height 100%
 
 #main
-  padding-top 40px
+  padding-top $header-height
 
 #hero
-  height 600px
+  height 500px
   display flex
   flex-flow column
   align-items center
   justify-content center
+  margin-top 50px
+  img
+    max-width 90%
   p
     margin 5px 0 0 0
     font-size 1.1rem
@@ -87,17 +90,8 @@ html, body
     margin-top 1.3rem
 
 @media screen and (max-width 550px)
-  #logo
-    margin 2em auto
-  .nav-link
-    font-size .85rem
-    margin 0 .5em
   #hero
     height 400px
-    .inner
-      margin-top 5vh
-    .down
-      padding-top .3em
     h1
       font-size 2em
       font-weight 400
@@ -115,17 +109,3 @@ html, body
       font-size 12px
       margin .8em 0
       width 252px
-
-@media screen and (max-width 720px)
-  #main
-    padding-top 100px
-  #logo
-    display none
-  #nav
-    width 100%
-    display flex
-    align-items center
-    justify-content center
-    position inherit
-    left 0
-    margin 0

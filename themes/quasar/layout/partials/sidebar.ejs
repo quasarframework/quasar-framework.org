@@ -1,30 +1,48 @@
+<div class="sidebar-backdrop"></div>
+
 <div class="sidebar">
-    <%- partial('partials/header') %>
-    <div class="list">
-        <h2>
-            <% var type = page_type(page); %>
-            <%- type === 'api' ? 'API' : (type === 'css' ? 'CSS' : (type.charAt(0).toUpperCase() + type.slice(1))) %>
-        </h2>
-        <%
-          var p, path;
-          _.forEach(site.data.pageMenu[type], function(pages, category) {
-            if (category !== 'root') {
-        %>
-              <h3><%- category %></h3>
-        <%  } %>
-            <ul class="menu-root">
-              <%
-                _.forEach(pages, function(html, name) {
-                  path = page_path_from_menu(type, html, name);
-                  p = site.pages.find({path: path});
-              %>
-                  <li>
-                      <a href="<%- config.root + path %>" class="sidebar-link<%- page.path === path ? ' current' : '' %>"><%- name %></a>
-                  </li>
-              <%
-                });
-              %>
-            </ul>
-        <% });  %>
+  <div class="list">
+    <div class="sidebar-menu">
+      <%- partial('partials/menu') %>
     </div>
+    <h2>
+      <% var type = page_type(page); %>
+      <%-
+        page.blog_index || page.search_index || page.layout === 'post' ?
+        '' : type.charAt(0).toUpperCase() + type.slice(1)
+      %>
+    </h2>
+    <%
+      var p, path;
+      _.forEach(site.data.pageMenu[type], function(pages, category) {
+        if (category !== 'root') {
+    %>
+          <h3><%- category %></h3>
+    <%  } %>
+        <ul class="menu-root">
+          <%
+            _.forEach(pages, function(html, name) {
+              path = page_path_from_menu(type, html, name);
+              p = site.pages.find({path: path});
+          %>
+            <li>
+              <a href="<%- config.root + path %>" class="sidebar-link<%- page.path === path ? ' current' : '' %>"><%- name %></a>
+            </li>
+          <% }); %>
+        </ul>
+    <% }); %>
+  </div>
+
+  <% if (page.layout === 'post') { %>
+  <div class="list">
+    <h2>Recent Posts</h2>
+    <ul>
+      <% site.posts.sort('date', -1).limit(10).each(function (post) { %>
+        <li>
+          <a href="<%- config.root + post.path %>" class="sidebar-link<%- page.title === post.title ? ' current' : '' %>"><%- post.title %></a>
+        </li>
+      <% }) %>
+    </ul>
+  </div>
+  <% } %>
 </div>
