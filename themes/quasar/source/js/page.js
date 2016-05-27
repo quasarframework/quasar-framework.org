@@ -198,4 +198,13 @@
   // listen for scroll event to do positioning & highlights
   window.addEventListener('scroll', updateSidebar);
   window.addEventListener('resize', updateSidebar);
+
+  // Make external links open in another window
+  var links = document.links;
+
+  for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+    if (links[i].hostname !== window.location.hostname) {
+      links[i].target = '_blank';
+    }
+  }
 }());

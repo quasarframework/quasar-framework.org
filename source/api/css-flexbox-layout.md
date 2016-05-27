@@ -64,7 +64,7 @@ If all items have `grow-1` class, the remaining space in the container will be d
 **An item can shrink if necessary** by using `shrink-i` classes, where *i* is between 1-12.
 
 ### Self Alignment
-**An item can override the aligned specified on parent**. This allows alignment to be overridden for individual flex items. Please see the [Items Alignment](#Items_Alignment) explanation from Parent Classes to understand the available values (`self-start`, `self-center`, `self-baseline`, `self-end`, `self-stretch`).
+**An item can override the aligned specified on parent**. This allows alignment to be overridden for individual flex items. Please see the [Items Alignment](#Items-Alignment) explanation from Parent Classes to understand the available values (`self-start`, `self-center`, `self-baseline`, `self-end`, `self-stretch`).
 
 ![Flexbox Grow](/images/flexbox-self.svg)
 

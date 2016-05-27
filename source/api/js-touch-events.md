@@ -1,7 +1,7 @@
 title: Handling Touch Events
 ---
 
-Quasar makes good use of <a href="http://hammerjs.github.io/" target="_blank">HammerJS</a> and has specific API to nicely wrap touch events.
+Quasar makes good use of [HammerJS](http://hammerjs.github.io/) and has specific API to nicely wrap touch events.
 
 ## Vue 'v-touch' directive
 Quasar has its own Vue directive written for handling touch events:

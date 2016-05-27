@@ -18,13 +18,14 @@ responsive:
   port: 3600
 test:
   exclude: []
+// forceTheme: 'mat' << optional
 ```
 
-### 'deps' object
+### 'deps' Object
 Specify the dependencies of your App. You can use NPM to install different packages, or Bower, or just download some file from somewhere and store it inside the App's folder. In the end, all you need is a path. The Build System takes care of the rest. Mind the order as it may be important.
 
-### 'preview' object
-[Live Preview](/guide/cli-commands.html#Live_Preview) configuration. Read more about configuration properties  [here](http://www.browsersync.io/docs/options/). Example of default configuration which is merged with user specific one:
+### 'preview' Object
+[Live Preview](/guide/cli-commands.html#Live-Preview) configuration. Read more about configuration properties  [here](http://www.browsersync.io/docs/options/). Example of default configuration which is merged with user specific one:
 ``` yml
 preview:
   port: 3000
@@ -34,8 +35,8 @@ preview:
   reloadOnRestart: true
 ```
 
-### 'responsive' object
-[Live Preview with Responsive View](/guide/cli-commands.html#Responsive_Live_Preview) configuration. Read more about configuration properties [here](http://www.browsersync.io/docs/options/). Example of default configuration which is merged with user specific one:
+### 'responsive' Object
+[Live Preview with Responsive View](/guide/cli-commands.html#Responsive-Live-Preview) configuration. Read more about configuration properties [here](http://www.browsersync.io/docs/options/). Example of default configuration which is merged with user specific one:
 ``` yml
 responsive:
   port: 3100
@@ -45,6 +46,9 @@ responsive:
   reloadOnRestart: true
 ```
 
-### 'test' object
+### 'test' Object
 This object's properties override any of the <a href="https://github.com/rstoenescu/quasar-cli/blob/master/lib/gulp/gulp-config.js#L14-L100" target="_blank">default Karma configuration</a> options.
 See the full list of <a href="http://karma-runner.github.io/0.8/config/configuration-file.html" target="_blank">Karma configuration properties</a> that you can use.
+
+### 'forceTheme' String
+By default, Quasar builds all available themes for your App. This is costly while writing code, so you can force the build of only one theme to speed up your development.

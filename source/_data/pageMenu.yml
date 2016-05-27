@@ -3,6 +3,7 @@ guide:
     Getting Started: index
     Installation: $
     CLI Commands: $
+    Contributing to Quasar: $
   App:
     App Structure: quasar-$
     App Configuration: quasar-$
@@ -10,34 +11,34 @@ guide:
     Pages: quasar-$
     Layouts: quasar-$
     Build System: quasar-$
-    Events List: quasar-$
-    Vue State Management: $
+    Themes: quasar-$
   Miscellaneous:
-    Built-in Stack: $
+    Vue State Management: $
     CommonJS Format: $
-    Contributing to Quasar: $
     Mobile Wrapper Tips: quasar-$
+    Built-in Stack: $
+api:
+  root:
+    Overview: index
+    Events List: js-$
+  Javascript:
+    Environment: js-$
+    Router: js-$
+    Events: js-$
+    Ajax Requests: js-$
+    Require Script or CSS: js-$
+    Cookies: feat-$
+    Web Storage: feat-$
+    Touch Events: js-$
+    Helpers and Utils: js-$
+  CSS:
+    Color Palette: css-$
+    Icons: css-$
+    Helper Classes: css-$
+    Flexbox Layout: css-$
 components:
   root:
     Overview: index
-  Core:
-    Environment: core-js-$
-    Router: core-js-$
-    Events: core-js-$
-    Ajax: core-js-$
-    Require: core-js-$
-    Touch Events: core-js-$
-    HTML Tag Attributes: core-js-$
-    Utils: core-js-$
-    Debug Helpers: core-js-$
-  Features:
-    Cookies: feat-$
-    Web Storage: feat-$
-  CSS:
-    Color Palette: core-css-$
-    Icons: core-css-$
-    Helper Classes: core-css-$
-    Flexbox Layout: core-css-$
   Web Components:
     Layout: web-components-$
     Spinners: web-components-$

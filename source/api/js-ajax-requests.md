@@ -32,23 +32,23 @@ quasar.make.a.del.request({...});
 ```
 
 > **DATA FORMAT**
-> By default, the response is treated as a JSON string and it's parsed, unless specified otherwise with `dataType` property (see [Request Properties](#Request_Properties)).
+> By default, the response is treated as a JSON string and it's parsed, unless specified otherwise with `dataType` property (see [Request Properties](#Request-Properties)).
 
 ### Request Properties
 When making a request, you can use the properties below:
 
 | Name | Type | Description |
 | ---- | ---- | ----- |
-| url | String | URL or relative path to base URL (see [Configuring Requests](#Configuring_Requests)) |
+| url | String | URL or relative path to base URL (see [Configuring Requests](#Configuring-Requests)) |
 | query | String or Object | Query String |
 | data | Object | Data to be sent along with the request |
 | cachable | Boolean | Should the response be cached? *Only for GET requests* |
 | requestName | String | See Request Name |
 | persistent | Boolean | Cannot be aborted by `quasar.abort.all.requests()` |
-| local | Boolean | Ignore baseURL and make a request from App folder (see [Configuring Requests](#Configuring_Requests)) |
+| local | Boolean | Ignore baseURL and make a request from App folder (see [Configuring Requests](#Configuring-Requests)) |
 | timeout | Number | Number of milliseconds before timeout |
 
-... and any jQuery [$.ajax() properties](http://api.jquery.com/jquery.ajax/). Some examples: `dataFilter`, `dataType`, `converters`, `contentType`, `headers`, `processData`, `xhrFields`. See [More Request Properties](#More_Request_Properties).
+... and any jQuery [$.ajax() properties](http://api.jquery.com/jquery.ajax/). Some examples: `dataFilter`, `dataType`, `converters`, `contentType`, `headers`, `processData`, `xhrFields`. See [More Request Properties](#More-Request-Properties).
 
 > **NOTE**
 > Only the `url` property is mandatory.
@@ -106,8 +106,8 @@ There are global configuration properties that apply to all requests through `qu
 | Name | Type | Description |
 | --- | --- | --- |
 | baseURL | String | Base URL for all requests. Example: "http://quasar-framework.org/api/" |
-| failFnHandler | Function | Global failure handler. See [Global Failure Handler](#Global_Failure_Handler) |
-| use.cache | Boolean | GET requests cache the response by default or not. See [Request Cache](#Request_Cache) |
+| failFnHandler | Function | Global failure handler. See [Global Failure Handler](#Global-Failure-Handler) |
+| use.cache | Boolean | GET requests cache the response by default or not. See [Request Cache](#Request-Cache) |
 
 Example:
 ``` js
@@ -120,7 +120,7 @@ If a request is made with *local* property set to `true` then baseURL is ignored
 
 ### More Request Properties
 
-The properties below are additions to [Request Properties](#Request_Properties).
+The properties below are additions to [Request Properties](#Request-Properties).
 
 #### Filtering Received Data
 Sometime you need to sanitize the received data with `dataFilter` method, which takes a function to be used to handle the raw response data of XMLHttpRequest. This is a pre-filtering function to sanitize the response. You should return the sanitized data. The function accepts two arguments: The raw data returned from the server and the `dataType` parameter.

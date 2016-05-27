@@ -1,5 +1,7 @@
-title: Quasar Debug Helpers
+title: Quasar Helpers
 ---
+
+## Debug Helpers
 
 The `quasar.debug` object has useful debugging methods.
 
@@ -18,3 +20,5 @@ quasar.debug.profile('xyz');
 quasar.debug.profile('xyz');
 ```
 You can have multiple profiles running at the same time.
+
+## Quasar Utils

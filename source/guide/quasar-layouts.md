@@ -94,7 +94,7 @@ module.exports = { // Vue instance
 5. Make sure you sanitize intervals, timeouts, requestAnimationFrames or anything else at `beforeDestroy` point, otherwise you may end up with bugs when user switches to another Layout.
 
 ## HTML
-The Quasar App Layout HTML representa a Vue instance template. Read more about the [Build System](/guide/quasar-build-system.html#HTML_Files) to understand.
+The Quasar App Layout HTML representa a Vue instance template. Read more about the [Build System](/guide/quasar-build-system.html#HTML-Files) to understand.
 
 There are several Web Components that you can use. Some of them are mandatory. A quick example:
 
@@ -140,7 +140,7 @@ Place all your page assets (like images) inside the `/layouts/*layout-name*/asse
 Images get optimized by default on a production build.
 
 ## Layout Events
-See [Quasar Events List](/guide/quasar-events-list.html#Layout_Events).
+See [Quasar Events List](/guide/quasar-events-list.html#Layout-Events).
 
 ## Layout Manifest
 Provide layout specific configuration (in YAML format), called *Manifest* in `/layouts/*layout-name*/layout.*layout-name*.yml`.

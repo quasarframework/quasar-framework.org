@@ -9,7 +9,7 @@
       <% var type = page_type(page); %>
       <%-
         page.blog_index || page.search_index || page.layout === 'post' ?
-        '' : type.charAt(0).toUpperCase() + type.slice(1)
+        '' : (type === 'api' ? 'API' : type.charAt(0).toUpperCase() + type.slice(1))
       %>
     </h2>
     <%

@@ -22,11 +22,10 @@ $ tree -I 'node_modules|wrapper' -a --dirsfirst
 │   │   │       └── ...
 │   │   └── favicon.ico
 │   ├── css
-│   │   ├── app.css
-│   │   └── app-dependencies.css
+│   │   ├── app.mat.css
+│   │   └── app.ios.css
 │   ├── js
-│   │   ├── app-dependencies.js
-│   │   └── app.js
+│   │   └── deps.js
 │   ├── layouts
 │   │   └── main
 │   │       ├── layout.main.css
@@ -42,11 +41,15 @@ $ tree -I 'node_modules|wrapper' -a --dirsfirst
 │   ├── assets
 │   │   └── favicon.ico
 │   ├── css
-│   │   └── app.styl
+│   │   ├── common
+│   │   │   ├── app.style.styl
+│   │   │   └── app.theme.styl
+│   │   ├── app.ios.styl
+│   │   └── app.mat.styl
 │   ├── html
 │   │   └── html-README.txt
 │   ├── js
-│   │   └── app.js
+│   │   └── ...
 │   ├── layouts
 │   │   └── main
 │   │       ├── layout.main.yml
@@ -76,8 +79,6 @@ $ tree -I 'node_modules|wrapper' -a --dirsfirst
 ├── quasar.build.yml
 ├── README.md
 └── .stylintrc
-
-29 directories, 58 files
 ```
 
 What each is used for:
@@ -85,10 +86,10 @@ What each is used for:
 | Asset | Description |
 | --- | --- |
 | /dist | Production build folder |
-| /coverage | Code coverage after [running tests with CLI](/guide/cli-commands.html#Running_Test_Suites) |
-| /src | App source files; see [Source Folder](#Source_Folder) |
-| /test | Test source files used for [running tests with CLI](/guide/cli-commands.html#Running_Test_Suites) |
-| /wrapper | Native mobile app wrapper; see [Native Mobile App Wrapper](/guide/cli-commands.html#Native_Mobile_App_Wrapper) |
+| /coverage | Code coverage after [running tests with CLI](/guide/cli-commands.html#Running-Test-Suites) |
+| /src | App source files; see [Source Folder](#Source-Folder) |
+| /test | Test source files used for [running tests with CLI](/guide/cli-commands.html#Running-Test-Suites) |
+| /wrapper | Native mobile app wrapper; see [Native Mobile App Wrapper](/guide/cli-commands.html#Native-Mobile-App-Wrapper) |
 | /.eslintrc | Default ESLINT config for linting Javascript files |
 | /.gitignore | Tells GIT what files to ignore |
 | /package.json | App's NPM management file |
@@ -102,6 +103,6 @@ What each is used for:
 | /src/css | Folder to store global/common CSS files |
 | /src/html | Folder to store global/common HTML files |
 | /src/js | Folder to store global/common JS files |
-| /src/pages | Folder to store assets for each page |
-| /src/layouts | Folder to store assets for each layout |
+| /src/pages | Folder to store assets for each page; see [Pages](/guide/quasar-pages.html) |
+| /src/layouts | Folder to store assets for each layout; see [Layouts](/guide/quasar-layouts.html) |
 | /src/index.html | App starting point |

@@ -21,4 +21,4 @@ If you want to be able to wrap your Quasar App into a native mobile app, then yo
 ``` bash
 $ npm install -g cordova
 ```
-Now head on to a section from the Quasar CLI guide called [Native Mobile App Wrapper](/guide/cli-commands.html#Native_Mobile_App_Wrapper) to see more details on how to manage the native app wrapper.
+Now head on to a section from the Quasar CLI guide called [Native Mobile App Wrapper](/guide/cli-commands.html#Native-Mobile-App-Wrapper) to see more details on how to manage the native app wrapper.

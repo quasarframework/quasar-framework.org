@@ -7,8 +7,6 @@ Because it's easier and it ensures you're using the Quasar standard, use [Quasar
 
 Don't forget to read more about the [Build System](/guide/quasar-build-system.html) to understand how pages are precompiled and bundled, what files are considered an entry-point and many more.
 
-Let's dissect how Pages work.
-
 ## Structure
 Each page has its own folder (`/src/pages/<page-name>`) and has the structure below:
 
@@ -142,10 +140,10 @@ module.exports = function(done) {
 ```
 
 ## Page Events
-See [Quasar Events List](/guide/quasar-events-list.html#Page_Events).
+See [Quasar Events List](/guide/quasar-events-list.html#Page-Events).
 
 ## HTML
-The Quasar App Page HTML represents a Vue instance template. Read more about the [Build System](/guide/quasar-build-system.html#HTML_Files) to understand.
+The Quasar App Page HTML represents a Vue instance template. Read more about the [Build System](/guide/quasar-build-system.html#HTML-Files) to understand.
 
 
 ## CSS

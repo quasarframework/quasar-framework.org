@@ -6,8 +6,8 @@ You can also help with the documentation if you catch a mistake or want to add a
 
 ## Github Repositories
 
-* <a href="https://github.com/rstoenescu/quasar-framework" target="_blank">Quasar Framework</a>
-* <a href="https://github.com/rstoenescu/quasar-cli" target="_blank">Quasar CLI</a>
+* [Quasar Framework](https://github.com/rstoenescu/quasar-framework)
+* [Quasar CLI](https://github.com/rstoenescu/quasar-cli)
 
 ## Issue Reporting Guidelines
 
@@ -25,11 +25,11 @@ You can also help with the documentation if you catch a mistake or want to add a
 
 - Checkout a topic branch from `master` and merge back against `master`.
 
-- Work in the `src` folder and **DO NOT** checkin `/dist` in the commits.
+- Work in the `src` folder and **DO NOT** checkin `/dist` in the commits or any other file or folder described in `.gitignore`.
 
 - Squash the commit if there are too many small ones.
 
-- Follow the [code style](#Code_Style).
+- Follow the [code style](#Code-Style) in next section.
 
 - Make sure that running "npm test" passes all tests.
 
@@ -38,12 +38,12 @@ You can also help with the documentation if you catch a mistake or want to add a
     - Provide convincing reason to add this feature. Ideally you should open a suggestion issue first and have it greenlighted before working on it.
 
 - If fixing a bug:
-    - Provide detailed description of the bug in the PR. Live demo preferred. Use <a href="http://http://plnkr.co" target="_blank">Plunker</a>.
+    - Provide detailed description of the bug in the PR. Live demo preferred. Use [jsFiddle](https://jsfiddle.net/), [Plunker](https://plnkr.co/), or [JsBin](http://jsbin.com/).
     - Add appropriate test coverage if applicable.
 
 ## Code Style
 
-- Follow <a href="https://google.github.io/styleguide/javascriptguide.xml" target="_blank">Google JavaScript Style Guide</a>
+- Follow [Google JavaScript Style Guide](https://google.github.io/styleguide/javascriptguide.xml)
 - 2 spaces indentation (*NO* tabs).
 - Stroustrup brace style.
 - Multiple var declarations like this:
@@ -98,7 +98,7 @@ $ gulp monitor
 $ gulp monitor:prod
 ```
 
-To watch source code and rebuild automatically while previewing the UI:
+A better option is to watch source code and rebuild automatically **while previewing the UI in browser(s)**:
 ``` bash
 # multiple browsers opened to the indicated link will
 # have clicks/scrolls/form input events synchronized

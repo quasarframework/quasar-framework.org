@@ -52,7 +52,7 @@ var route = {
 ```
 
 ## Events
-You can hook into some Router events easily. See [Quasar Events List](/guide/quasar-events-list.html#Router_Events).
+You can hook into some Router events easily. See [Quasar Events List](/guide/quasar-events-list.html#Router-Events).
 
 Example:
 ``` js

@@ -1,6 +1,6 @@
 title: Quasar Mobile Wrapper Tips
 ---
-Make sure you read the CLI section called [Native Mobile App Wrapper](/guide/cli-commands.html#Native_Mobile_App_Wrapper) first. This will give you a starting point. But here are some tips:
+Make sure you read the CLI section called [Native Mobile App Wrapper](/guide/cli-commands.html#Native-Mobile-App-Wrapper) first. This will give you a starting point. But here are some tips:
 
 ## Browser Simulator
 Use Google Chrome's emulator from Developer Tools. It's a fantastic tool. You can select which device to emulate, but keep in mind that it's an *emulator* and not the real deal.
