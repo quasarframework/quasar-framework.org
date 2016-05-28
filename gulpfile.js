@@ -6,7 +6,10 @@ var
   runSequence = require('run-sequence'),
   del = require('del'),
   imagemin = require('gulp-imagemin'),
-  pngquant = require('imagemin-pngquant')
+  pngquant = require('imagemin-pngquant'),
+
+  spawn = require('child_process').spawn,
+  path = require('path')
   ;
 
 var htmlMinifierOptions = {
@@ -23,7 +26,7 @@ var htmlMinifierOptions = {
 gulp.task('useref', function() {
   var assets = plugins.useref.assets();
 
-  return gulp.src('public/**/*.html')
+  return gulp.src(['public/**/*.html', '!public/demo-app/**/*.html'])
     .pipe(assets)
     .pipe(plugins.if('*.css', plugins.cssBase64()))
     .pipe(plugins.if('*.css', plugins.minifyCss()))
@@ -49,13 +52,24 @@ gulp.task('images', function() {
 });
 
 gulp.task('clean-unused-files', ['useref'], function() {
-  del.sync(['public/**/*.js', '!public/**/*combined*.js']);
-  del.sync(['public/**/*.css', '!public/**/*combined*.css']);
+  del.sync(['public/**/*.js', '!public/**/*combined*.js', '!public/demo-app/**/*.js']);
+  del.sync(['public/**/*.css', '!public/**/*combined*.css', '!public/demo-app/**/*.css']);
 });
 
 gulp.task('copy-assets', function() {
   return gulp.src('assets/**/*')
     .pipe(gulp.dest('public/'));
+});
+
+gulp.task('demo', function(done) {
+  var cwd = path.join(process.cwd(), 'demo-app');
+
+  spawn('quasar', ['build', '-p'], {cwd: cwd, stdio: 'inherit'})
+    .on('error', function(err) {
+      console.error('Could NOT build demo app!!!!!');
+      process.exit(1);
+    })
+    .on('close', done);
 });
 
 gulp.task('default', ['useref', 'images', 'clean-unused-files', 'copy-assets']);
