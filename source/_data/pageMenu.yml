@@ -4,6 +4,7 @@ guide:
     Installation: $
     CLI Commands: $
     Contributing to Quasar: $
+    Built-in Stack: $
   App:
     App Structure: quasar-$
     App Configuration: quasar-$
@@ -12,11 +13,10 @@ guide:
     Layouts: quasar-$
     Build System: quasar-$
     Themes: quasar-$
-  Miscellaneous:
     Vue State Management: $
+  Miscellaneous:
     CommonJS Format: $
     Mobile Wrapper Tips: quasar-$
-    Built-in Stack: $
 api:
   root:
     Overview: index
