@@ -9,6 +9,7 @@ Helpers are built-in to detect the environment in which the code is running:
 | quasar.runs.on.cordova | boolean | Is the code running within Cordova? |
 | quasar.runs.on.desktop | boolean | Is the code running on a desktop browser? |
 | quasar.runs.with.touch | boolean | Is the code running on a touch capable screen? |
+| quasar.runs.within.iframe | boolean | Is the App running within an IFRAME? |
 
 > **NOTE**
 > Running on mobile means you can have this code running on a mobile device (phone or tablet) but with a browser, not within a Cordova wrapper.

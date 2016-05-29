@@ -26,6 +26,9 @@ Take into consideration that the following files are taken as Stylus entry-point
 * /layouts/*layout-name*/layout.*layout-name*.styl
 
 > **NOTE**
+> You can speed up build time when developing by forcing only one theme rather than build all. See [forceTheme](/guide/quasar-app-configuration.html#‘forceTheme’-String) property in [App Configuration](/guide/quasar-app-configuration.html).
+
+> **NOTE**
 > Subfolders should be used to modularize your CSS code.
 
 ### Image Files

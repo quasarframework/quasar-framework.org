@@ -116,7 +116,8 @@ quasar.config.requests.baseURL = "http://quasar-framework.org/api/";
 
 When wrapping your App with Cordova this provides very useful as your App may use a server somewhere on the Internet to get data. So in order to avoid specifying the host for each request, set the `baseURL` property.
 
-If a request is made with *local* property set to `true` then baseURL is ignored.
+> **TIP**
+> If a request is made with *local* property set to `true` then baseURL is ignored. This is to be used when making Ajax requests from same server that fetches your website (or from a local resource from a website wrapped with Cordova).
 
 ### More Request Properties
 

@@ -139,52 +139,6 @@ a.button
     animation swing 1s ease
     animation-iteration-count 1
 
-.highlight
-  overflow-x auto
-  position relative
-  padding 0
-  background-color $bg
-  padding .8em
-  line-height 1.1em
-  border-radius $radius
-  box-shadow $shadow
-  table, tr, td
-    width 100%
-    border-collapse collapse
-    padding 0
-    margin 0
-  .gutter
-    width 1.5em
-  .code
-    pre
-      padding 1.2em 1.4em
-      line-height 1.5em
-      margin 0
-  &.html, &.js, &.bash, &.css, &.yaml, &.json
-    .code:after
-      position absolute
-      top 0
-      right 0
-      color #ccc // @stylint ignore
-      text-align right
-      font-size .75em
-      padding 5px 10px 0
-      line-height 15px
-      height 15px
-      font-weight 600
-  &.html .code:after
-    content 'HTML'
-  &.js .code:after
-    content 'JS'
-  &.bash .code:after
-    content 'Shell'
-  &.css .code:after
-    content 'CSS'
-  &.json .code:after
-    content 'JSON'
-  &.yaml .code:after
-    content 'YAML'
-
 .sidebar
   position fixed
   top 80px

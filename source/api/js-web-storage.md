@@ -1,7 +1,7 @@
 title: Quasar Web Storage
 ---
 
-Quasar provides a wrapper over Web Storage API.
+Quasar provides a wrapper over [Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API).
 
 > **NOTE**
 > Web Storage API only retrieves strings. **Quasar retrieves data with its original data type.** You tell it to store a Number then to retrieve it and it will still be a Number, not a string representation of the number as with Web Storage API. Same for JSON, Regular Expressions, Dates, Booleans and so on. Read below.

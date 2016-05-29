@@ -1,7 +1,7 @@
 title: Quasar Router
 ---
 
-Quasar Framwork takes care of your routes automatically. But in case you need to do something fancy, here's the API.
+Quasar Framwork takes care of your routes automatically so you don't have to manage Page switching yourself. But in case you need to do something fancy, here's the API.
 
 ## Getting Started
 Each route is an object defined like below:
@@ -31,8 +31,6 @@ var route = {
   trigger: function() {
     //The [this] object is a copy of the [route] object plus:
     //this.params containing the hash tokens
-    //this.state containing state ('before', 'on', 'after')
-    //this.next containing methods to pass parameters to the next state
     //this.url containing the original url hash
     //this.query containing the query string parameters
   }
@@ -52,7 +50,7 @@ var route = {
 ```
 
 ## Events
-You can hook into some Router events easily. See [Quasar Events List](/guide/quasar-events-list.html#Router-Events).
+You can hook into some Router events easily. See [Quasar Events List](/api/js-events-list.html#Router-Events).
 
 Example:
 ``` js

@@ -103,6 +103,15 @@ Read more about the [Build System](/guide/quasar-build-system.html) to understan
 
 5. Make sure you sanitize intervals, timeouts, requestAnimationFrames or anything else at `beforeDestroy` point, otherwise you may end up with bugs when user switches to another Layout.
 
+### Global Layout Variables
+
+Global variables are available for you to use to access layouts:
+
+| Global Variable | Description |
+| --- | --- |
+| `quasar.current.layout` | Access current layout's properties: `name` and `vm` (current page's VueModel Object - good place to change VM's reactive data) |
+| `quasar.layout[*layout-name*]` | Same properties as `quasar.current.layout` that refer to all layouts available on your App |
+
 ## Layout Template
 The Quasar App Layout HTML represents a Vue instance template. Read more about the [Build System](/guide/quasar-build-system.html#HTML-Files) to understand.
 

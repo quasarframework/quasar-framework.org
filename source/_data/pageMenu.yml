@@ -12,7 +12,7 @@ guide:
     Pages: quasar-$
     Layouts: quasar-$
     Build System: quasar-$
-    Themes: quasar-$
+    Theming: quasar-$
     Vue State Management: $
   Miscellaneous:
     CommonJS Format: $
@@ -29,9 +29,12 @@ api:
     Require Script or CSS: js-$
     Cookies: js-$
     Web Storage: js-$
+    App Visibility: js-$
+    App Fullscreen: js-$
     Touch Events: js-$
     Helpers and Utils: js-$
   CSS:
+    Stylus Variables: css-$
     Color Palette: css-$
     Icons: css-$
     Helper Classes: css-$
@@ -39,6 +42,10 @@ api:
 components:
   root:
     Overview: index
-  Web Components:
+  General:
+    App Notify: $
+  Layout Specific:
     Layout: web-components-$
     Spinners: web-components-$
+  Page Specific:
+    Modal: $

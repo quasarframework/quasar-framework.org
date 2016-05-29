@@ -110,6 +110,15 @@ Read more about the [Build System](/guide/quasar-build-system.html) and [Require
 
 5. Make sure you sanitize intervals, timeouts, requestAnimationFrames or anything else at `beforeDestroy` point, otherwise you may end up with bugs when user switches to another Page or Layout.
 
+### Global Page Variables
+
+Global variables are available for you to use to access pages:
+
+| Global Variable | Description |
+| --- | --- |
+| `quasar.current.page` | Access current page's properties, like `name`, `hash`, `manifest`, `pageContainer` (jQuery Node), `scrollContainer` (jQuery Node), `vm` (current page's VueModel Object - good place to change VM's reactive data) |
+| `quasar.page[*page-name*]` | Same properties as `quasar.current.page` that refer to all pages available on your App |
+
 ## Page Manifest
 Provide page specific configuration (in YAML format), called *Manifest* in `/pages/*page-name*/config.*page-name*.yml`.
 

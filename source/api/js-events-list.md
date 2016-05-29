@@ -25,12 +25,11 @@ quasar.events.on('Event-Name', function(Object/Array/String/Anything) {
 
 Example:
 ``` js
-quasar.events.on('app:route:notfound', function(Object RouteNotFound) {
-  // hey, user navigated to a route, but we don't have
-  // any route with such hash matched...
+quasar.events.on('app:page:ready', function(Object context) {
+  // hey, app page is ready
 
-  // RouteNotFound has the following properties:
-  // `params`, `query`, `name` (page name), `manifest`, `route`
+  // `context` has the following properties:
+  // `name`, `hash`, `manifest`
 });
 ```
 
@@ -63,3 +62,19 @@ quasar.events.on('app:route:notfound', function(Array hashParts) {
   // any route with such hash matched...
 });
 ```
+
+## App Visibility
+
+| Event Name | Parameters | Description |
+| --- | --- | --- |
+| app:visibility | (String) state | App got focus if `state` is `visible` or lost focus if `state` is `hidden` |
+
+Read more about it [here](/api/js-app-visibility.html).
+
+## App Notify
+
+| Event Name | Parameters | Description |
+| --- | --- | --- |
+| app:notify | (String) html | Is triggered when `quasar.notify()` is used. |
+
+Read more about it [here](/components/app-notify.html).
