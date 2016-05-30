@@ -165,7 +165,7 @@
       }
       currentActive.classList.add('active');
 
-      if (window.themePreview) {
+      if (window.themePreview && !window.themePreview.fullPageDemo) {
         var
           demoTarget = $(currentActive).attr('href').substring(1),
           link = $('.content a[data-scroll][href="#' + demoTarget + '"]').next()

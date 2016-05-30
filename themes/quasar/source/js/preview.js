@@ -7,6 +7,7 @@
     contentNode = $('#main > .content'),
     selectedTheme = $.cookie('theme') || 'android',
     demoPoints = $('#main .content input[data-demo]'),
+    fullPageDemo = $('#main .content input[data-fullpage-demo]'),
     viewSourceButtons = $('.view-source'),
     currentPage,
     mobileThemes = ['android', 'apple']
@@ -20,7 +21,17 @@
     return '/demo-app/' + theme + '.html#/' + (page === 'index' ? '' : page);
   }
 
-  if (themePicker.length === 0 || demoPoints.length === 0) {
+  function getMobileLinks(page) {
+    return '<span class="demo-links">Demo: ' +
+      mobileThemes.map(function(theme) {
+        return '<a class="spawn-demo" ' +
+          'href="' + getDemoURL(theme, page) + '" target="_blank"><i class="fa fa-' + theme + '"></i></a>';
+      }).join(' ') +
+      ' <a class="spawn-demo" target="_blank" href="' + getSourceURL(page) + '">' +
+      'Source <i class="fa fa-file-code-o"></i></a></span>';
+  }
+
+  if (themePicker.length === 0 || demoPoints.length === 0 && fullPageDemo.length === 0) {
     return;
   }
   else if (isMobile()) {
@@ -30,16 +41,10 @@
         page = $this.data('demo')
         ;
 
-      $this.after(
-        '<span class="demo-links">Demo: ' +
-        mobileThemes.map(function(theme) {
-          return '<a class="spawn-demo" ' +
-            'href="' + getDemoURL(theme, page) + '" target="_blank"><i class="fa fa-' + theme + '"></i></a>';
-        }).join(' ') +
-        ' <a class="spawn-demo" target="_blank" href="' + getSourceURL(page) + '">' +
-        'Source <i class="fa fa-file-code-o"></i></a></span>'
-      );
+      $this.after(getMobileLinks(page));
     });
+    fullPageDemo.after(getMobileLinks(fullPageDemo.data('fullpage-demo')));
+    return;
   }
 
   themePicker.click(function() {
@@ -111,7 +116,13 @@
     }
   };
 
-  window.themePreview.show();
+  if (fullPageDemo.length > 0) {
+    window.themePreview.fullPageDemo = true;
+    window.themePreview.show(fullPageDemo.data('fullpage-demo'));
+  }
+  else {
+    window.themePreview.show();
+  }
 
   function isMobile() {
     // eslint-disable-next-line

@@ -1,0 +1,1 @@
+module.exports=function(t){function e(o){if(r[o])return r[o].exports;var n=r[o]={exports:{},id:o,loaded:!1};return t[o].call(n.exports,n,n.exports,e),n.loaded=!0,n.exports}var r={};return e.m=t,e.c=r,e.p="",e(0)}([function(t,e,r){t.exports=r(3)},,,function(t,e,r){"use strict";var o=r(4);t.exports={template:o}},function(t,e){t.exports="Page Template\n"}]);
