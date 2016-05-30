@@ -50,7 +50,9 @@
     return;
   }
 
-  $('#main .footer').css('margin-bottom', '100vh');
+  if (fullPageDemo.length === 0) {
+    $('#main .footer').css('margin-bottom', '100vh');
+  }
 
   themePicker.click(function() {
     window.themePreview.selectTheme($(this).data('theme'));

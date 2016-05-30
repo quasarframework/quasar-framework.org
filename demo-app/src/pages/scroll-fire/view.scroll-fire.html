@@ -1,0 +1,12 @@
+<div class="screen-bar shadow-1 fixed-top">Quasar Scroll Fire</div>
+
+<p class="caption">Please scroll down to see the image and Scroll Fire being called with a nice Velocity effect.</p>
+  <p v-for="n in 6" class="par-text">{{loremipsum}}</p>
+
+  <p class="caption">Scroll Fire below. Reload page to see the effect again.</p>
+  <p class="text-center">
+    <img v-scroll-fire="bounceImage" src="assets/quasar.jpg" style="width: 200px">
+  </p>
+
+  <p v-for="n in 3" class="par-text">{{loremipsum}}</p>
+</div>

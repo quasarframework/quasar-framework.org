@@ -32,6 +32,8 @@ api:
     App Visibility: js-$
     App Fullscreen: js-$
     Touch Events: js-$
+    Vue Directives: js-$
+    Scroll Fire: js-$-directive
     Helpers and Utils: js-$
   CSS:
     Stylus Variables: css-$

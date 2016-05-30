@@ -1,7 +1,6 @@
 title: Quasar Helpers
 ---
 ## Open External URL
-
 ``` js
 quasar.open.url('http://...');
 ```
@@ -9,7 +8,6 @@ quasar.open.url('http://...');
 It will take care of the quirks involved when running under Cordova or on a browser, including notifying the user he/she has to acknowledge opening popups.
 
 ## Debounce Function
-
 If your App uses JavaScript to accomplish taxing tasks, a debounce function is essential to ensuring a given task doesn't fire so often that it bricks browser performance. Debouncing a function limits the rate at which the function can fire.
 
 A quick example: you have a resize listener on the window which does some element dimension calculations and (possibly) repositions a few elements. That isn't a heavy task in itself but being repeatedly fired after numerous resizes will really slow your App down. So why not limit the rate at which the function can fire?
@@ -32,7 +30,6 @@ window.addEventListener(
 ```
 
 ## Function Reflection
-
 Retrieve in an array the formal name of a Function's parameters (NOT their effective value).
 
 ``` js
@@ -47,8 +44,26 @@ var parameters = quasar.get.fn.param.names(
 console.log(parameters); // ['a', 'b', 'c']
 ```
 
-## Get Normalized Path
+## Key Codes
+Quasar has all key codes available through `quasar.key`. Some examples:
 
+``` js
+$('#searchbox input').bind('keypress', function(e) {
+  var key = e.keyCode || e.which;
+
+  if (key === quasar.key.enter) {
+    ...
+  }
+  else if (key === quasar.key.backspace) {
+    ...
+  }
+  ...
+});
+```
+
+For a complete list of keys just type `quasar.key` in your browsers JS console.
+
+## Get Normalized Path
 ``` js
 (String) quasar.get.normalized.path(String path);
 
@@ -61,7 +76,6 @@ console.log(normalizedPath); // "http://quasar-framework.org/images/quasar.png"
 ```
 
 ## Next Tick
-
 ``` js
 // Alias for `setTimeout(fn, 1)`:
 quasar.nextTick(Function fn);
