@@ -56,7 +56,7 @@ $primary = #00ffff
 
 The platform in which your App runs is automatically detected and the `<body>` tag gets following classes:
 
-| Class Name | Description |
+| Body Class Name | Description |
 | --- | --- |
 | `mat` | Default style; **Material Design theme**; Android platform |
 | `ios` | Apple platform; **iOS theme** |
@@ -81,7 +81,7 @@ body
 > **Theme Specific CSS**
 > Regarding themes, if you take a look at the Structure of Stylus files above, you'll notice there are two files (`app.ios.styl` and `app.mat.styl`). Inject code for the specific theme there after you get the hang of how things stand with those files. It's best to not clog all themes generated CSS with code specific to a certain theme only.
 >
-> **All your Stylus variables need to be declared before the inclusion of Quasar Framework theme files (from NPM).**
+> **All your Stylus variables need to be declared before the inclusion of Quasar Framework theme files (from NPM).** If you follow the default structure of files (and be care-free) then inject variable overrides in *src/css/common/app.theme.styl*.
 
 ## Speed Up Build Time
 

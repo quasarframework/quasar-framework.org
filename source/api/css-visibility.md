@@ -20,6 +20,8 @@ There are some CSS classes that you can use out of the box for common functional
 | `mat-only` | Visible only for Material Quasar Theme |
 | `ios-only` | Visible only for iOS Quasar Theme |
 
+Also check [Quasar Theming &gt; Platform Specific Styles](/guide/quasar-theming.html#Platform-Specific-Styles).
+
 > **NOTE**
 > There is also a non-recommended way to hide DOM elements through Javascript. Read more on [Javascript &gt; Environment](/api/js-environment.html) page.
 
