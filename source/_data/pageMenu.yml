@@ -33,6 +33,7 @@ api:
     App Fullscreen: js-$
     Touch Events: js-$
     Vue Directives: js-$
+    Vue Transitions: js-$
     Scroll Fire: js-$-directive
     Helpers and Utils: js-$
   CSS:
@@ -40,11 +41,13 @@ api:
     Color Palette: css-$
     Icons: css-$
     Typography: css-$
-    HTML Tables: css-$
+    Grid Layout: css-$
     Shadows: css-$
+    Visibility: css-$
+    Positioning: css-$
+    HTML Tables: css-$
     Media Elements: css-$
-    Helper Classes: css-$
-    Flexbox Layout: css-$
+    Other Helper Classes: css-$
 components:
   root:
     Overview: index

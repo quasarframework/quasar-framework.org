@@ -30,3 +30,6 @@ quasar.runs.on = {
   webkit: true
 };
 ```
+
+> **NOTE**
+> When trying to show DOM elements only on a platform you can skip using Javascript and make use of Quasar CSS classes (which is more efficient). Read about on [CSS &gt; Visibility](/api/css-visibility.html#Platform-Related) documentation page.

@@ -29,4 +29,4 @@ module.exports = {
 ```
 
 > **IMPORTANT**
-> For performance purposes, the method being fired is debounced 50ms by default. Read more about `debouncing` [here](/api/js-helpers-and-utils.html#Debounce-Function).
+> For performance purposes, the scroll listener function injected  is by default debounced by 50ms. Read more about `debouncing` [here](/api/js-helpers-and-utils.html#Debounce-Function).

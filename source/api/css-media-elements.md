@@ -11,6 +11,8 @@ Image gets resized to fit the container with `responsive` class.
 <img class="responsive" src="...">
 ```
 
+You also have `background-cover` CSS helper class which is good for DOM elements with an image set as background.
+
 ## Videos
 <input type="hidden" data-demo="videos">
 

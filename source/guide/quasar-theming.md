@@ -5,6 +5,7 @@ Every website or mobile app needs a specific design to differentiate from the co
 1. It offers two themes out of the box: Material and iOS
 2. The two themes can be customized/extended easily from the App code. You can change the primary color, the secondary color, and most of the CSS. Customizing does not mean having multiple CSS files, one overriding properties from the other. No. You'll have one stylesheet with each CSS property declared only once.
 3. You can create your own theme from scratch.
+4. **All themes include a CSS reset (following latest standards) to eliminate quirks between platforms**.
 
 Quasar CSS is a blank slate that you can easily customize and modify to fit your brand, while still following the standards of each platform. The best apps in the app stores are fully customized and Quasar makes it easy to do the same with your App.
 

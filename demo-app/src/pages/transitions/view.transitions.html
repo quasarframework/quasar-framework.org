@@ -1,0 +1,19 @@
+<div class="screen-bar shadow-1 fixed-top">Quasar Vue Transitions</div>
+
+<h2>"Slide" Transition</h2>
+
+<p>
+  Click/Tap on the button below to see the transition in action.
+</p>
+<p>
+  <button class="primary" @click="toggleVisibility()">Toggle</button>
+</p>
+
+<p>
+  <img
+    class="responsive"
+    v-show="visible"
+    transition="slide"
+    src="assets/quasar.jpg"
+  >
+</p>
