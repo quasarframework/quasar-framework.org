@@ -37,6 +37,10 @@ api:
     Stylus Variables: css-$
     Color Palette: css-$
     Icons: css-$
+    Typography: css-$
+    HTML Tables: css-$
+    Shadows: css-$
+    Media Elements: css-$
     Helper Classes: css-$
     Flexbox Layout: css-$
 components:

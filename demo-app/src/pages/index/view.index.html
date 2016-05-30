@@ -1,1 +1,11 @@
-Page Template
+<div class="screen-bar shadow-1 fixed-top">Quasar Framework</div>
+
+<div class="list bordered inner-delimiter">
+  <div class="item" v-for="page in pages">
+    <i>{{page.icon}}</i>
+    <div class="item-content cursor-pointer" @click="navigateTo(page.name)">
+      <div class="item-label">{{page.label}}</div>
+      <i>chevron_right</i>
+    </div>
+  </div>
+</div>

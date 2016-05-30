@@ -18,6 +18,9 @@
   }
 
   function getDemoURL(theme, page) {
+    if (page.indexOf('http') === 0) {
+      return page;
+    }
     return '/demo-app/' + theme + '.html#/' + (page === 'index' ? '' : page);
   }
 
@@ -46,6 +49,8 @@
     fullPageDemo.after(getMobileLinks(fullPageDemo.data('fullpage-demo')));
     return;
   }
+
+  $('#main .footer').css('margin-bottom', '100vh');
 
   themePicker.click(function() {
     window.themePreview.selectTheme($(this).data('theme'));
@@ -82,7 +87,7 @@
         if (page) {
           $this.attr('src', getDemoURL(theme, page));
           viewSourceButtons
-            .css('display', 'inline-block')
+            .css('display', page.indexOf('http') === 0 ? 'none' : 'inline-block')
             .attr('href', getSourceURL(page));
         }
         else {
