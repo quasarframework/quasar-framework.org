@@ -1,0 +1,36 @@
+<div class="screen-bar shadow-1 fixed-top">Quasar Parallax</div>
+
+<h5>
+  Scroll down (best using scrollbar instead of mouse scroll
+  if on desktop) to see Parallax in action.
+</h5>
+
+<p v-for="n in 7" class="par-text">{{loremipsum}}</p>
+
+<parallax src="assets/parallax1.jpg" :height="200">
+  <div slot="loading">Loading...</div>
+  <h1>Parallax</h1>
+</parallax>
+
+<p v-for="n in 7" class="par-text">{{loremipsum}}</p>
+
+<parallax src="assets/parallax2.jpg">
+  <div slot="loading">Loading...</div>
+  <h1>Parallax</h1>
+</parallax>
+
+<p v-for="n in 7" class="par-text">{{loremipsum}}</p>
+
+<parallax src="assets/parallax1.jpg">
+  <div slot="loading">Loading...</div>
+  <h1>Parallax</h1>
+</parallax>
+
+<p v-for="n in 7" class="par-text">{{loremipsum}}</p>
+
+<parallax src="assets/mountains.jpg" :height="200">
+  <div slot="loading">Loading...</div>
+  <h1>Parallax</h1>
+</parallax>
+
+<p v-for="n in 7" class="par-text">{{loremipsum}}</p>

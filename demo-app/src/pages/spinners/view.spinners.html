@@ -1,0 +1,29 @@
+<div class="screen-bar shadow-1 fixed-top">Quasar Spinners</div>
+
+<h5>Configure them</h5>
+
+<div class="list item-delimiter bordered">
+  <div class="item">
+    <i>format_size</i>
+    <div class="item-content">
+      <range :model.sync="size" min="20" max="256"></range>
+      <div class="item-left-margin item-value" style="font-weight: bold">{{size}}px</div>
+    </div>
+  </div>
+  <div class="item fixed-label">
+    <i>palette</i>
+    <div class="item-content">
+      <label for="color-spinner" class="item-label">Color</label>
+      <input id="color-spinner" v-model="color">
+      <choice :model.sync="color" :options="colorOptions" ok-label="Pick" title="Spinner Color"></choice>
+    </div>
+  </div>
+</div>
+
+<h5>Hover over them to see their names</h5>
+
+<div style="margin-top: 20px">
+  <div v-for="spinner in spinners" v-tooltip.inline="spinner">
+    <spinner :name="spinner" :color="color" :size="size"></spinner>
+  </div>
+</div>

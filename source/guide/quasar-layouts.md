@@ -10,13 +10,16 @@ Don't forget to read more about the [Build System](/guide/quasar-build-system.ht
 ## Structure
 Each layout has its own folder (`/src/layouts/<layout-name>`) and has the following structure:
 
-| Asset | Description |
+| Asset | Optional | Description |
 | --- | --- |
-| /assets | Folder to place images, fonts, ... specific to the layout only |
-| layout.**&lt;layout-name&gt;**.js | Starting point of the Layout logic |
-| layout.**&lt;layout-name&gt;**.yml | YAML file with layout configuration (called *Manifest*) |
-| layout.**&lt;layout-name&gt;**.html | Template for your Layout |
-| layout.**&lt;layout-name&gt;**.styl | *(optional)* Starting point of the Layout CSS |
+| /assets | Yes | Folder to place images, fonts, ... specific to the layout only |
+| layout.**&lt;layout-name&gt;**.js | | Starting point of the Layout logic |
+| layout.**&lt;layout-name&gt;**.yml | | YAML file with layout configuration (called *Manifest*) |
+| layout.**&lt;layout-name&gt;**.html | | Template for your Layout |
+| layout.**&lt;layout-name&gt;**.styl | Yes | Starting point of the Layout CSS |
+
+> **NOTE**
+> If you do not use the optional files or folder, delete them to get a boost in build times. This folder structure is created by [Quasar CLI](/guide/cli-commands.html#Create-Layout) so you don't have to manually do it.
 
 ## Layout Controller (Javascript)
 The starting point of a Quasar Layout is *layout.layout-name.js* file. Think of it as the Controller of a Layout.

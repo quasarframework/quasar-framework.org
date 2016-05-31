@@ -1,0 +1,37 @@
+<div class="screen-bar shadow-1 fixed-top">Quasar Progress Bars</div>
+
+<p>Click/Tap on progress bars to change their value</p>
+
+<h5>Determinate State</h5>
+<p>
+  <progress-bar :model="progress" @click="randomize()"></progress-bar>
+  <progress-bar :model="progress" class="stripe" @click="randomize()"></progress-bar>
+  <progress-bar :model="progress" class="stripe positive" @click="randomize()"></progress-bar>
+  <progress-bar :model="progress" class="stripe info" @click="randomize()"></progress-bar>
+  <progress-bar :model="progress" class="stripe warning" @click="randomize()"></progress-bar>
+  <progress-bar :model="progress" class="stripe secondary" @click="randomize()"></progress-bar>
+  <progress-bar :model="progress" class="stripe tertiary" @click="randomize()"></progress-bar>
+  <progress-bar :model="progress" class="stripe dark" @click="randomize()"></progress-bar>
+  <progress-bar :model="progress" class="stripe negative" @click="randomize()"></progress-bar>
+  <progress-bar :model="progress" class="stripe animate" @click="randomize()"></progress-bar>
+</p>
+
+<h5>Indeterminate State</h5>
+<p>
+  <progress-bar class="indeterminate"></progress-bar>
+  <progress-bar class="indeterminate positive"></progress-bar>
+  <progress-bar class="indeterminate warning"></progress-bar>
+  <progress-bar class="indeterminate negative"></progress-bar>
+  <progress-bar class="indeterminate dark"></progress-bar>
+</p>
+
+<h5>Specific Height</h5>
+<p>
+  <progress-bar class="indeterminate stripe" style="height: 45px"></progress-bar>
+</p>
+
+<h5>Striped</h5>
+<progress-bar :model="progress" class="stripe" @click="randomize()"></progress-bar>
+
+<h5>Striped and Animated</h5>
+<progress-bar :model="progress" class="stripe animate" @click="randomize()"></progress-bar>

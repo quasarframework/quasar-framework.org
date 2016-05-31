@@ -18,6 +18,9 @@ Each page has its own folder (`/src/pages/<page-name>`) and has the structure be
 | /view.**&lt;page-name&gt;**.html | *(optional)* HTML template for the page |
 | /style.**&lt;page-name&gt;**.styl | *(optional)* CSS entry point for the page |
 
+> **NOTE**
+> If you do not use the optional files or folder, delete them to get a boost in build times. This folder structure is created by [Quasar CLI](/guide/cli-commands.html#Create-Page) so you don't have to manually do it.
+
 ## Page Controller (Javascript)
 The starting point of a Quasar Page is *script.page-name.js* file. Think of it as the Controller part of a Page.
 

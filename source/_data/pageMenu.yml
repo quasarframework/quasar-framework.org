@@ -58,6 +58,10 @@ components:
     Modal: $
   Layout Components:
     Layout: web-components-$
-    Spinners: web-components-$
   Web Components:
-    Modal: $
+    Progress Bars: $
+    Spinners: $
+    Parallax: $
+    Rating: $
+    Badge: $
+    Breadcrumb: $
