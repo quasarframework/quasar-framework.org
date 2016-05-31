@@ -65,3 +65,5 @@ components:
     Rating: $
     Badge: $
     Breadcrumb: $
+    Tree: $
+    Pagination: $
