@@ -51,10 +51,13 @@ api:
 components:
   root:
     Overview: index
-  General:
+  Generic:
     App Notify: $
-  Layout Specific:
+    Action Sheet: $
+    Dialog: $
+    Modal: $
+  Layout Components:
     Layout: web-components-$
     Spinners: web-components-$
-  Page Specific:
+  Web Components:
     Modal: $
