@@ -16,7 +16,7 @@ So there are two types: expandable (has sub-actions) and non-expandable. If not 
 
 <!-- Expandable -->
 <fab>
-  <small-fab class="primary">mail</small-fab>
+  <small-fab class="primary" @click="someMethod()">mail</small-fab>
   <small-fab class="secondary">alarm</small-fab>
 </fab>
 ```
