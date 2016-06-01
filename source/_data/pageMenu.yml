@@ -59,6 +59,7 @@ components:
   Layout Components:
     Layout: web-components-$
   Web Components:
+    Buttons: $
     Progress Bars: $
     Spinners: $
     Parallax: $
