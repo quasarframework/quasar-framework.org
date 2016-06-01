@@ -4,6 +4,8 @@ Quasar buttons are of two shapes: rectangle (regular) and circular. They come in
 
 <input type="hidden" data-fullpage-demo="buttons">
 
+For circular buttons only use icons as content.
+
 ## Basic Usage
 
 ```html
@@ -15,6 +17,17 @@ Quasar buttons are of two shapes: rectangle (regular) and circular. They come in
 <!-- Circular shaped; only use icon as content -->
 <button class="primary circular">
   <i>alarm</i>
+</button>
+```
+
+When adding an icon to a regular button, use `on-left` or `on-right` CSS classes:
+``` html
+<button class="primary">
+  <i class="on-left">mail</i> Button Label
+</button>
+
+<button class="teal">
+  Button Label <i class="on-right">mail</i>
 </button>
 ```
 

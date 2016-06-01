@@ -57,7 +57,10 @@ components:
     Dialog: $
     Modal: $
   Layout Components:
-    Layout: web-components-$
+    Layout Overview: $
+    Layout Headers: $
+    Layout Navigation Tabs: $
+    Layout Drawer: $
   Web Components:
     Buttons: $
     Progress Bars: $
@@ -69,3 +72,5 @@ components:
     Tree: $
     Pagination: $
     Floating Action Buttons: $
+    Tabs: $
+    Grid: $-component

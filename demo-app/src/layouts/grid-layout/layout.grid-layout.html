@@ -1,0 +1,49 @@
+<screen>
+
+  <div slot="header" class="row items-center justify-center" style="min-height: 64px;">
+    <button class="left-drawer-toggle"><i>menu</i></button>
+    <p>Quasar Grid</p>
+  </div>
+
+  <drawer>
+    <div class="list platform-delimiter">
+      <div class="list-header">
+        Selection
+      </div>
+      <div class="item item-link">
+        <i>view_module</i>
+        <label class="item-content">
+          <div class="item-label">No Selection</div>
+          <radio :model.sync="grid.selection" value="none"></radio>
+        </label>
+      </div>
+      <div class="item item-link">
+        <i>done</i>
+        <label class="item-content">
+          <div class="item-label">Single</div>
+          <radio :model.sync="grid.selection" value="single"></radio>
+        </label>
+      </div>
+      <div class="item item-link">
+        <i>done_all</i>
+        <label class="item-content">
+          <div class="item-label">Multiple</div>
+          <radio :model.sync="grid.selection" value="multiple"></radio>
+        </label>
+      </div>
+      <div class="list-header">
+        Other Options
+      </div>
+      <div class="item item-link">
+        <i>swap_vert</i>
+        <label class="item-content">
+          <div class="item-label">Sortable</div>
+          <checkbox :model.sync="grid.sortable"></checkbox>
+        </label>
+      </div>
+    </div>
+  </drawer>
+
+  <page></page>
+
+</screen>
