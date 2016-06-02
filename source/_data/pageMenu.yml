@@ -59,7 +59,7 @@ components:
     Layout Headers: $
     Layout Navigation Tabs: $
     Layout Drawer: $
-  Form:
+  Form Inputs:
     Input Textbox: $
     Textarea: $
     Checkbox: $
@@ -70,6 +70,7 @@ components:
     Selectbox: $
   Web Components:
     Buttons: $
+    List: $
     Progress Bars: $
     Spinners: $
     Parallax: $
