@@ -1,0 +1,14 @@
+<div class="screen-bar shadow-1 fixed-top">Quasar State Component</div>
+
+<div class="row justify-center" style="margin-top: 20px;">
+  <state :model.sync="state">
+    <div slot="active">
+      <spinner name="bars" :size="51" color="#90caf9"></spinner>
+      &nbsp;&nbsp;&nbsp;Active State
+    </div>
+
+    <button class="primary" @click="changeState()">
+      Default State - Hit me!
+    </button>
+  </state>
+</div>

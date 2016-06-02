@@ -84,5 +84,8 @@ components:
     Grid: $-component
     Collapsible: $
     Tooltips: $
+    State Component: $
+    Slider: $
+    Image Gallery: $
+    Video Embedding: $
     HTML Tables: $
-    Media Elements: $
