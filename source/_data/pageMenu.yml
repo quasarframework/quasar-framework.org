@@ -45,8 +45,6 @@ api:
     Shadows: css-$
     Visibility: css-$
     Positioning: css-$
-    HTML Tables: css-$
-    Media Elements: css-$
     Other Helper Classes: css-$
 components:
   root:
@@ -85,3 +83,5 @@ components:
     Grid: $-component
     Collapsible: $
     Tooltips: $
+    HTML Tables: $
+    Media Elements: $
