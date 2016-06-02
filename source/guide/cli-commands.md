@@ -131,7 +131,7 @@ $ quasar layout [current-layout-name] [new-layout-name]
 You can use Cordova to wrap your Quasar App into a native mobile App.
 
 ### Wrap your App
-So you want to be able to produce native apps for the mobile platforms:
+So you want to be able to produce native apps for the mobile platforms with Cordova (make sure you have it installed: `npm install -g cordova`):
 ``` bash
 $ quasar wrap
 ```

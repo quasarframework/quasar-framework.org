@@ -63,6 +63,7 @@ FABs are Web Components defined by `<fab>` and `<small-fab>` HTML tags with the 
 When used on a Page with **no** Layout, you can use the [CSS Quasar Positioning](/api/css-positioning.html) classes.
 
 ``` html
+<!-- on a Page WITH NO Layout -->
 <fab
   class="fixed-bottom-right"
   direction="up"
@@ -77,6 +78,7 @@ When used on a Page with **no** Layout, you can use the [CSS Quasar Positioning]
 When used on a Page with a Layout, in order to make the FAB fixed positioned you need to make use of the `v-layout-page-sticky` Vue directive embedded in Quasar and add an absolute (not fixed) CSS Quasar Positioning class.
 
 ``` html
+<!-- on a Page with Layout -->
 <fab
   v-layout-page-sticky
   class="absolute-bottom-right"

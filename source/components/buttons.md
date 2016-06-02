@@ -10,7 +10,7 @@ For circular buttons only use icons as content.
 
 ```html
 <!-- Regular shaped -->
-<button class="primary" @click="clickMethod">
+<button class="primary" @click="clickMethod()">
   Button Label
 </button>
 
