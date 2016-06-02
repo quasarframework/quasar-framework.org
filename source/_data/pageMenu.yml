@@ -56,7 +56,7 @@ components:
     Action Sheet: $
     Dialog: $
     Modal: $
-  Layout Components:
+  Layout:
     Layout Overview: $
     Layout Headers: $
     Layout Navigation Tabs: $
@@ -75,3 +75,4 @@ components:
     Tabs: $
     Grid: $-component
     Collapsible: $
+    Tooltips: $
