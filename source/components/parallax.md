@@ -19,7 +19,7 @@ While the underlying image is being loaded you can display a specific message th
 
 ## Vue Properties
 
-| Vue Property | Type | Description |
+| Param Attributes | Type | Description |
 | --- | --- | --- |
 | `src` | String | Source for the image. |
 | `height` | Number | Height of Parallax in pixels. Default value is 500. |

@@ -67,7 +67,7 @@ data: {
 }
 ```
 
-| Vue Property | Default Value | Description |
+| Param Attributes | Default Value | Description |
 | --- | --- | --- | --- |
 | `columns` | *none* | *(required)* Configure columns to be displayed. |
 | `data` | *none* | *(required)*  Data to display on Grid. |

@@ -1,0 +1,30 @@
+<div class="screen-bar shadow-1 fixed-top">Quasar Number</div>
+
+<h5>Model: <em>{{number}}</em> [1, 7]</h5>
+
+<h5>Standalone</h5>
+<number :model.sync="number" :min="1" :max="7"></number>
+
+<h5>Inside of a List</h5>
+<div class="list inner-delimiter bordered">
+  <label class="item">
+    <div class="item-content">
+      <div class="item-label fixed-label">
+        Some number
+      </div>
+      <div class="item-value">
+        <number :model.sync="number" :min="1" :max="7"></number>
+      </div>
+    </div>
+  </label>
+  <label class="item">
+    <div class="item-content">
+      <div class="item-label fixed-label">
+        Some number
+      </div>
+      <div class="item-value">
+        <number :model.sync="number" :min="1" :max="7"></number>
+      </div>
+    </div>
+  </label>
+</div>

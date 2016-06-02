@@ -61,6 +61,15 @@ components:
     Layout Headers: $
     Layout Navigation Tabs: $
     Layout Drawer: $
+  Form:
+    Input Textbox: $
+    Textarea: $
+    Checkbox: $
+    Radio: $
+    Number: $
+    Range: $
+    Toggle: $
+    Selectbox: $
   Web Components:
     Buttons: $
     Progress Bars: $

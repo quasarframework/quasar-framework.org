@@ -1,0 +1,42 @@
+<div class="screen-bar shadow-1 fixed-top">Quasar Toggle</div>
+
+<h5>Model: <em>{{checked}}</em></h5>
+
+<h5>Standalone</h5>
+<label>
+  <toggle :model.sync="checked"></toggle>
+  Toggle Label
+</label>
+
+<h5>Inside of a List</h5>
+<div class="list inner-delimiter bordered">
+  <label class="item">
+    <i>mail</i>
+    <div class="item-content">
+      <div class="item-label">Toggle Label</div>
+      <toggle :model.sync="checked"></toggle>
+    </div>
+  </label>
+  <label class="item">
+    <i>mail</i>
+    <div class="item-content">
+      <div class="item-label">Toggle Label</div>
+      <toggle :model.sync="checked"></toggle>
+    </div>
+  </label>
+</div>
+<br>
+<div class="list inner-delimiter bordered">
+  <label class="item">
+    <toggle :model.sync="checked"></toggle>
+    <div class="item-content">
+      Toggle Label
+    </div>
+  </label>
+  <label class="item">
+    <toggle :model.sync="checked"></toggle>
+    <div class="item-content">
+      Toggle Label
+    </div>
+  </label>
+</div>

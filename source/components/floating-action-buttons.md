@@ -25,7 +25,7 @@ We'll continue describing only the expandable ones, as the non-expandable are si
 
 FABs are Web Components defined by `<fab>` and `<small-fab>` HTML tags with the following Vue properties:
 
-| Vue Property | Default Value | Description |
+| Param Attributes | Default Value | Description |
 | --- | --- | --- |
 | `type` | "primary" | One of the main colors in Quasar Color Palette; can also be an array of colors or CSS classes. Check second inline usage example below. |
 | `icon` | "add" | Icon to use when not expanded |

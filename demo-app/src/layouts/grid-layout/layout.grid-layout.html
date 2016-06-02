@@ -10,37 +10,37 @@
       <div class="list-header">
         Selection
       </div>
-      <div class="item item-link">
+      <label class="item item-link">
         <i>view_module</i>
-        <label class="item-content">
+        <div class="item-content">
           <div class="item-label">No Selection</div>
           <radio :model.sync="grid.selection" value="none"></radio>
-        </label>
-      </div>
-      <div class="item item-link">
+        </div>
+      </label>
+      <label class="item item-link">
         <i>done</i>
-        <label class="item-content">
+        <div class="item-content">
           <div class="item-label">Single</div>
           <radio :model.sync="grid.selection" value="single"></radio>
-        </label>
-      </div>
-      <div class="item item-link">
+        </div>
+      </label>
+      <label class="item item-link">
         <i>done_all</i>
-        <label class="item-content">
+        <div class="item-content">
           <div class="item-label">Multiple</div>
           <radio :model.sync="grid.selection" value="multiple"></radio>
-        </label>
-      </div>
+        </div>
+      </label>
       <div class="list-header">
         Other Options
       </div>
-      <div class="item item-link">
+      <label class="item item-link">
         <i>swap_vert</i>
-        <label class="item-content">
+        <div class="item-content">
           <div class="item-label">Sortable</div>
           <checkbox :model.sync="grid.sortable"></checkbox>
-        </label>
-      </div>
+        </div>
+      </label>
     </div>
   </drawer>
 

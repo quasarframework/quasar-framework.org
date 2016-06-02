@@ -14,7 +14,7 @@ Quasar Rating is a Web Component which allows users to rate items, usually knows
 
 ## Vue Properties
 
-| Vue Property | Type | Description |
+| Param Attributes | Type | Description |
 | --- | --- | --- |
 | `model` | Number | Model for Rating Component. |
 | `max-grade` | Number | Number of icons to display. |

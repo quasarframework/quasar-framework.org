@@ -10,7 +10,7 @@ Quasar Pagination is a Web Component ready to use where a pagination system is n
 <pagination :model.sync="page" :max="17"></pagination>
 ```
 
-| Vue Property | Required | Description |
+| Param Attributes | Required | Description |
 | --- | --- | --- |
 | `model` | Yes | The model (a Number) used for Pagination |
 | `min` | | Number of the first page; Default: "1" |
