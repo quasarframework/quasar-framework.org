@@ -1,9 +1,46 @@
-title: Vue State Management
+title: VueModel Communication
 ---
 
 As you should know, Pages and Layouts are essentially Vue instances. So they have a data object. It is good to learn how to efficiently share parts of the data object between components.
 
-*The following is an extract (and adaptation) from [VueJS official website](http://vuejs.org)*.
+We'll start with an example of how to communicate between a Page and a Layout and then explaining how things work in the subsequent section.
+
+## Page-Layout Communication Example
+You can make use of the `quasar.current.page` and `quasar.current.layout` globals.
+
+``` js
+// Page Script file (defining its VueModel):
+module.exports = function(done) {
+  done({
+    ...,
+    data: {
+      ...,
+      checkboxModel: quasar.current.layout.vm.$data.checkboxModel
+    }
+  });
+
+// Layout Script file (defining its VueModel):
+module.exports = function(done) {
+  done({
+    ...,
+    data: {
+      ...,
+      checkboxModel: false
+    }
+  });
+};
+```
+
+> **IMPORTANT**
+> Please note that we are using a Function to define the Page's VueModel. This allows us to connect Layout's VM to Page's VM each time the respective Page is loaded.
+> -
+> If we wouldn't have used a Function in Page's script file, then the link would have been made only when the Page is first loaded. Subsequent loads of the Page would maintain previous connections, which would render the functionality useless.
+> -
+> When defining a Layout or a Page through a Function, that Function is being run every time the Layout/Page is loaded.
+
+## Explaining the Communication Design
+
+*The following is an extract (and adaptation) from [VueJS official website &gt; State Management](http://vuejs.org/guide/application.html#State-Management)*.
 
 In large applications, state management often becomes complex due to multiple pieces of state scattered across many components and the interactions between them. It is often overlooked that the source of truth in Vue instances is the raw data object - a Vue instances simply proxies access to it. Therefore, if you have a piece of state that should be shared by multiple instances, you should avoid duplicating it and share it by identity:
 

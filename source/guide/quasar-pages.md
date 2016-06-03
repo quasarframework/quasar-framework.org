@@ -113,6 +113,8 @@ Read more about the [Build System](/guide/quasar-build-system.html) and [Require
 
 5. Make sure you sanitize intervals, timeouts, requestAnimationFrames or anything else at `beforeDestroy` point, otherwise you may end up with bugs when user switches to another Page or Layout.
 
+6. Read about how to communicate between Page and Layouts  [here](/guide/vue-model-communication.html). It's important to know how to share VueModel data between the two.
+
 ### Global Page Variables
 
 Global variables are available for you to use to access pages:
@@ -133,6 +135,7 @@ icon: 'dashboard'
 layout: 'main'
 navigation:
   group: 'typography'
+  order: 3
   hide: 'icon'
 ```
 
@@ -140,8 +143,8 @@ Let's look at all properties:
 
 | Property | Description |
 | --- | --- |
-| `label` | Text to display on navigation links (sidebar or layout tabs). |
-| `icon` | Icon to display on navigation links (sidebar or layout tabs); see [Icons](/api/css-icons.html) |
+| `label` | Text to display on navigation links (drawer or layout navigational tabs). |
+| `icon` | Icon to display on navigation links (drawer or layout navigational tabs); see [Icons](/api/css-icons.html) |
 | `layout` | Optional. Specify which layout does the page belongs to, if any. |
 | `navigation` | Help layout tabs determine when and how to display a link for this page. See sub-properties below. |
 | `css` | This property gets computed by default if the `.styl` file exists in the page folder (**so it is optional!**), but it can be overridden to point to other CSS files. The path must start with the folder where app root *index.html* file exists. |
@@ -150,7 +153,7 @@ Sub-properties for `navigation` object:
 
 | Property | Description |
 | --- | --- |
-| `group` | Which group does the page belongs to. Only one group can be displayed at one time in the navigation tabs. So you can have multiple pages but in the navigation tabs display them by groups. The group displayed when visiting a page is that page's group only.  |
+| `group` | Which group does the page belongs to. Only one group can be displayed at one time in the [Automatic Navigation Tabs](/components/layout-automatic-navigation-tabs.html). So you can have multiple pages but in the navigation tabs display them by groups. The group displayed when visiting a page is that page's group only.  |
 | `order` | You can also change the order in which the groups' links are displayed. |
 | `hide` | Possible values: `icon` or `label`. Hide one of the two when displaying link in navigation tabs. |
 

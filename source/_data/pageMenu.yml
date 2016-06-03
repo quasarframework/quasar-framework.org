@@ -12,9 +12,9 @@ guide:
     Starting Point: quasar-app-$
     Pages: quasar-$
     Layouts: quasar-$
+    Vue Model Communication: $
     Build System: quasar-$
     Theming: quasar-$
-    Vue State Management: $
   Miscellaneous:
     CommonJS Format: $
     Mobile Wrapper Tips: quasar-$
@@ -57,9 +57,9 @@ components:
     Modal: $
   Layout:
     Layout Overview: $
-    Layout Headers: $
-    Layout Navigation Tabs: $
+    Automatic Navigation Tabs: layout-$
     Layout Drawer: $
+    Layout Header and Footer: $
   Form Inputs:
     Input Textbox: $
     Textarea: $

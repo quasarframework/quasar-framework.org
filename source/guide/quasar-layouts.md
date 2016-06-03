@@ -1,7 +1,7 @@
 title: Quasar App Layouts
 ---
 
-Layouts are the elements that wrap page content, like navigational bar or sidebar. Multiple pages can share the same Layout, which is one of the main reason for their existence.
+Layouts are the elements that wrap page content, like navigational bar or drawers. Multiple pages can share the same Layout, which is one of the main reason for their existence.
 
 Because it's easier and it ensures you're using the Quasar standard, use [Quasar CLI](/guide/cli-commands.html#Layouts) to build a Layout.
 
@@ -106,6 +106,8 @@ Read more about the [Build System](/guide/quasar-build-system.html) to understan
 
 5. Make sure you sanitize intervals, timeouts, requestAnimationFrames or anything else at `beforeDestroy` point, otherwise you may end up with bugs when user switches to another Layout.
 
+6. Read about how to communicate between Page and Layouts  [here](/guide/vue-model-communication.html). It's important to know how to share VueModel data between the two.
+
 ### Global Layout Variable
 
 There is a global variable available for you to use called `quasar.current.layout` which holds properties like `name` and `vm` (current layout's VueModel Object - good place to change VM's reactive data).
@@ -113,53 +115,8 @@ There is a global variable available for you to use called `quasar.current.layou
 ## Layout Template
 The Quasar App Layout HTML represents a Vue instance template. Read more about the [Build System](/guide/quasar-build-system.html#HTML-Files) to understand.
 
-There are several Web Components that you can use. Some of them are mandatory. A quick example:
-
-``` html
-<!-- layout.example.html -->
-
-<screen>
-
-  <screen-tabs slot="navigation"></screen-tabs>
-
-  <div slot="header" class="row items-center">
-    <button class="left-drawer-toggle"><i>menu</i></button>
-    <p>Title</p>
-    <div class="group">
-      <button class="small" v-exit-app><i>power_settings_new</i></button>
-      <button class="small right-drawer-toggle"><i>menu</i></button>
-    </div>
-  </div>
-
-  <div slot="footer" class="row items-center">
-    <p>Footer Title</p>
-  </div>
-
-  <drawer>
-    <div class="list platform-delimiter">
-      <div class="list-header">
-        Menu
-      </div>
-      <drawer-link v-for="page in pages" :page="page"></drawer-link>
-    </div>
-  </drawer>
-
-  <page class="smart-container"></page>
-
-  <drawer right-side swipe-only>
-    <div class="list platform-delimiter">
-      <div class="list-header">
-        Right Side
-      </div>
-      <drawer-link page="index"></drawer-link>
-      <drawer-link page="typography"></drawer-link>
-    </div>
-  </drawer>
-
-</screen>
-```
-
-Read more about the Components and how to use them in the [Web Components - Layout](/components/web-components-layout.html) section.
+> **IMPORTANT**
+> There are several Web Components that you can use. Some of them are mandatory. Read more about them and how to use them starting with [Components &gt; Layout Overview](/components/layout-overview.html) documentation page.
 
 ## Layout CSS
 Each Layout can use its own CSS. Notice that all CSS files have the *.styl* extension. This is because you can use Stylus (with NIB extension). Read more about the [Build System](/guide/quasar-build-system.html) to understand.

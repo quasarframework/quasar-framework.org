@@ -3,7 +3,6 @@
 var html = require('raw!./view.grid-component.html');
 
 module.exports = function(done) {
-  console.log('LAYOUT:', quasar.current.layout.vm);
   quasar.make.a.get.request({
     url: 'pages/grid-component/assets/grid-data.json',
     local: true

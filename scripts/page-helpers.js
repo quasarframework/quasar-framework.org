@@ -101,4 +101,8 @@
     }
   });
 
+  hexo.extend.helper.register('latest_quasar_version', function() {
+    return require('../demo-app/node_modules/quasar-framework/package.json').version;
+  });
+
 }());
