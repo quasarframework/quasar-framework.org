@@ -69,6 +69,7 @@ components:
     Toggle: $
     Selectbox: $
   Web Components:
+    Cards: $
     Buttons: $
     List: $
     Progress Bars: $
