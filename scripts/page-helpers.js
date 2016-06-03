@@ -1,7 +1,5 @@
 (function() {
 
-  var each = [].forEach;
-
   hexo.extend.helper.register('body_class', function(page) {
     if (page.path === 'index.html') {
       return 'index';
@@ -32,21 +30,22 @@
     var self = this;
     var previous, foundPosition, tmpPath;
     var type = this.page_type(page);
+
     var categories = this.site.data.pageMenu[type];
 
     if (!categories) {
       return;
     }
 
-    each.call(categories, function(category) {
+    Object.keys(categories).forEach(function(categoryName) {
       if (foundPosition) {
         return;
       }
-      category.forEach(function(html, name) {
+      Object.keys(categories[categoryName]).forEach(function(name) {
         if (foundPosition) {
           return;
         }
-        tmpPath = self.page_path_from_menu(type, html, name);
+        tmpPath = self.page_path_from_menu(type, categories[categoryName][name], name);
         if (tmpPath == page.path) {
           foundPosition = true;
           return;
@@ -73,15 +72,15 @@
       return;
     }
 
-    each.call(categories, function(category) {
+    Object.keys(categories).forEach(function(categoryName) {
       if (foundPosition) {
         return;
       }
-      category.forEach(function(html, name) {
+      Object.keys(categories[categoryName]).forEach(function(name) {
         if (foundPosition) {
           return;
         }
-        tmpPath = self.page_path_from_menu(type, html, name);
+        tmpPath = self.page_path_from_menu(type, categories[categoryName][name], name);
         if (nextPosition) {
           foundPosition = true;
           next = {

@@ -2,6 +2,7 @@ guide:
   root:
     Getting Started: index
     Installation: $
+    Create App: $
     CLI Commands: $
     Contributing to Quasar: $
     Built-in Stack: $
