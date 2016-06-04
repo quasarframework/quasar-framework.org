@@ -46,8 +46,3 @@ No need for an introduction. Mind that you should not be required to use it thou
 
 > **IMPORTANT**
 > Good Quasar App code uses jQuery or touches DOM elements directly in extreme cases only. Vue should (and it does so efficiently) handle the DOM update for you through the data scope. If you're using too much jQuery it means you missed the point with Quasar Framework and Vue.
-
-## Fastclick
-FastClick is a simple, easy-to-use library for eliminating the 300ms delay between a physical tap and the firing of a click event on mobile browsers. The aim is to make your Quasar App feel less laggy and more responsive while avoiding any interference with your current logic.
-
-Read more about it [here](https://ftlabs.github.io/fastclick/).

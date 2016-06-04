@@ -4,8 +4,8 @@ guide:
     Installation: $
     Create App: $
     CLI Commands: $
-    Contributing to Quasar: $
     Built-in Stack: $
+    Contributing to Quasar: $
   App:
     App Structure: quasar-$
     App Configuration: quasar-$
