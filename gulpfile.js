@@ -7,9 +7,8 @@ var
   del = require('del'),
   imagemin = require('gulp-imagemin'),
   pngquant = require('imagemin-pngquant'),
-
-  spawn = require('child_process').spawn,
-  path = require('path')
+  LineByLine = require('line-by-line'),
+  fs = require('fs')
   ;
 
 var htmlMinifierOptions = {
@@ -61,15 +60,56 @@ gulp.task('copy-assets', function() {
     .pipe(gulp.dest('public/'));
 });
 
-gulp.task('demo', function(done) {
-  var cwd = path.join(process.cwd(), 'demo-app');
-
-  spawn('quasar', ['build', '-p'], {cwd: cwd, stdio: 'inherit'})
-    .on('error', function(err) {
-      console.error('Could NOT build demo app!!!!!');
-      process.exit(1);
-    })
-    .on('close', done);
-});
-
 gulp.task('default', ['useref', 'images', 'clean-unused-files', 'copy-assets']);
+
+
+var
+  parsedFiles = 0,
+  stylusVariables = {}
+  ;
+
+function parseStylusLine(theme) {
+  return function(line) {
+    if (line.indexOf(' ?= ') === -1) {
+      return;
+    }
+
+    var
+      definition = line.split(' ?= '),
+      name = definition[0].trim(),
+      value = definition[1].trim()
+      ;
+
+    if (name === '$colors') {
+      return;
+    }
+
+    if (!stylusVariables[name]) {
+      stylusVariables[name] = {};
+    }
+
+    stylusVariables[name][theme] = value;
+  };
+}
+
+function finalizeStylusParse() {
+  parsedFiles++;
+  if (parsedFiles < 2) {
+    return;
+  }
+
+  fs.writeFileSync('assets/stylus-variables.json', JSON.stringify(stylusVariables));
+}
+
+gulp.task('variables', function() {
+  var
+    mat = new LineByLine('./demo-app/node_modules/quasar-framework/dist/css/quasar.mat.styl'),
+    ios = new LineByLine('./demo-app/node_modules/quasar-framework/dist/css/quasar.ios.styl')
+    ;
+
+  mat.on('line', parseStylusLine('mat'));
+  ios.on('line', parseStylusLine('ios'));
+
+  mat.on('end', finalizeStylusParse);
+  ios.on('end', finalizeStylusParse);
+});

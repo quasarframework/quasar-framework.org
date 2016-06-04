@@ -5,3 +5,7 @@ Quasar CSS is a blank slate that you can easily customize and modify to fit your
 Quasar is built on top of Stylus, which allows it to set some default styles for your App but makes it extremely easy for you to change the defaults in your App code.
 
 Customizing a theme means overriding Stylus variables which can hold colors, sizes, border types and so on. To understand how and where to make use of the full list of variables below, read [Guide &gt; Theming](/guide/quasar-theming.html).
+
+## Variables
+
+<input id="search-variable" type="text" placeholder="Loading Stylus Variables..." disabled="disabled">

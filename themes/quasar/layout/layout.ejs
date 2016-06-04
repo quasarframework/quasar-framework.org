@@ -42,6 +42,11 @@
           <script src="<%- config.root %>js/preview.js"></script>
           <script src="<%- config.root %>js/search.js"></script>
           <!-- endbuild -->
+          <% if (page.title === 'Stylus Variables') { %>
+            <!-- build:js js/search-stylus-combined.js -->
+            <script src="<%- config.root %>js/stylus-variables.js"></script>
+            <!-- endbuild -->
+          <% } %>
         <% } else { %>
           <!-- build:js js/index-combined.js -->
           <script src="<%- config.root %>js/page.js"></script>

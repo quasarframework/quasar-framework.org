@@ -1,6 +1,7 @@
 #!/bin/bash
 
 hexo clean
-gulp demo
+cd ./demo-app; quasar build -p; cd ..
+gulp variables
 hexo generate
 gulp
