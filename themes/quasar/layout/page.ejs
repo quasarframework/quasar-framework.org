@@ -14,12 +14,19 @@
   <%- page.content %>
 
   <% if (page.title === 'Stylus Variables') { %>
+    <input
+      id="search-variable"
+      type="text"
+      placeholder="Loading Stylus Variables..."
+      disabled="disabled"
+    >
+
     <table style="margin-top: 20px; width: 100%;">
       <thead>
         <tr>
-            <th>Variable Name</th>
-            <th>Material Value</th>
-            <th>iOS Value</th>
+            <th>Stylus Variable Name</th>
+            <th>Material Default Value</th>
+            <th>iOS Default Value</th>
         </tr>
       </thead>
 

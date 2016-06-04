@@ -6,6 +6,5 @@ Quasar is built on top of Stylus, which allows it to set some default styles for
 
 Customizing a theme means overriding Stylus variables which can hold colors, sizes, border types and so on. To understand how and where to make use of the full list of variables below, read [Guide &gt; Theming](/guide/quasar-theming.html).
 
-## Variables
-
-<input id="search-variable" type="text" placeholder="Loading Stylus Variables..." disabled="disabled">
+## Variables List
+<!-- DO NOT WRITE ANYTHING BELOW THIS LINE -->

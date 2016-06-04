@@ -35,10 +35,7 @@ $(function() {
 
   function fillTable(rows) {
     table.html(rows.map(function(row) {
-      return '<tr>' +
-        '<td>' + row[0] + '</td>' +
-        '<td>' + row[1] + '</td>' +
-        '<td>' + row[2] + '</td>';
+      return '<tr><td>' + row[0] + '</td><td>' + row[1] + '</td><td>' + row[2] + '</td></tr>';
     }).join(''));
   }
 
