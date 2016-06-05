@@ -10,5 +10,10 @@ module.exports = {
       'layout-drawer',
       'layout-marginals'
     ]
+  },
+  methods: {
+    openSource: function() {
+      quasar.open.url('https://github.com/rstoenescu/quasar-site/tree/master/demo-app/src/layouts/layout-example');
+    }
   }
 };

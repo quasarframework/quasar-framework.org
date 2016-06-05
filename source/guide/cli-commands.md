@@ -113,6 +113,12 @@ $ quasar page [page-name]
 $ quasar page [current-page-name] [new-page-name]
 ```
 
+### Copy Page
+Create a new Page using another Page as template.
+``` bash
+$ quasar page -c [source-page-name] [new-page-name]
+```
+
 ## Layouts
 
 Layouts are the elements that wrap one or multiple pages (like navigational bar).
@@ -125,6 +131,12 @@ $ quasar layout [layout-name]
 ### Rename Layout
 ``` bash
 $ quasar layout [current-layout-name] [new-layout-name]
+```
+
+### Copy Layout
+Create a new Layout using another Layout as template.
+``` bash
+$ quasar layout -c [source-layout-name] [new-layout-name]
 ```
 
 ## Native Mobile App Wrapper

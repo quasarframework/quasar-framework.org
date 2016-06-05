@@ -34,3 +34,4 @@ The list below is not complete. Also check the other CSS documentation pages lik
 | `flip-horizontal` | Flip DOM element horizontally |
 | `flip-vertical` | Flip DOM element vertically |
 | `spin` | Apply a continuous spin/rotation to the DOM element |
+| `blink` | Apply a blinking effect to the DOM element |
