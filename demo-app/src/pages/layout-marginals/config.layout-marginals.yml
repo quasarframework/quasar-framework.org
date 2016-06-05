@@ -1,0 +1,5 @@
+label: 'Header & Footer'
+icon: 'view_day'
+layout: 'layout-example'
+navigation:
+  group: 'components'

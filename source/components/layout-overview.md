@@ -2,6 +2,8 @@ title: Quasar Layout Components Overview
 ---
 Layouts are the elements that wrap page content, like navigational bar or drawer. Multiple pages can share the same Layout, which is one of the main reason for their existence.
 
+<input type="hidden" data-fullpage-demo="layout-overview">
+
 ## Basic Usage
 A Layout is constructed by `<screen>` Web Component. It is mandatory unless you really know what you are doing.
 
@@ -82,6 +84,11 @@ An example of Layout, containing all possible elements: a header, a footer, auto
 4. It's best to use Quasar Lists for the Drawer links, but this is not mandatory.
 
 5. You can include automatic navigation tabs (through `<screen-tabs>` Web Component) or simply use a [Quasar Tab](/components/tabs.html) (through `<tabs>` and `<tab>`).
+
+6. The component which dictates where the App Pages' content goes on the Layout is `<page>`. If you want your Page content to have margins and padding calculated automatically (responsive) add CSS class `smart-container`.
+  ``` html
+  <page class="smart-container"></page>
+  ```
 
 ## Linking a Page to a Layout
 Make sure you read the Quasar App Pages documentation (from Guide) first, especially the section regarding [Page Manifest](/guide/quasar-pages.html#Page-Manifest). You will notice there that a Page manifest contains `layout` property, which specifies which (if any) Layout to use for the respective page.

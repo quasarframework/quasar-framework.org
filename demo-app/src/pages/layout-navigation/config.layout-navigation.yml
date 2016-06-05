@@ -1,0 +1,5 @@
+label: 'Navigation'
+icon: 'assignment'
+layout: 'layout-example'
+navigation:
+  group: 'main'

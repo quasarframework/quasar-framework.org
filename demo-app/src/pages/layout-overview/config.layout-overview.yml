@@ -1,0 +1,6 @@
+label: 'Overview'
+icon: 'web'
+layout: 'layout-example'
+navigation:
+  group: 'main'
+  order: 1

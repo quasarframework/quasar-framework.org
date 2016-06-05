@@ -1,6 +1,8 @@
 title: Layout Automatic Navigation Tabs
 ---
-Quasar Automatic Navigation Tabs are links to Page App. They get displayed below the Layout Header with Material Theme and above the Layout Footer in iOS Theme.
+Quasar Automatic Navigation Tabs are links to Page Apps. They get displayed below the Layout Header with Material Theme and above the Layout Footer in iOS Theme.
+
+<input type="hidden" data-fullpage-demo="layout-navigation">
 
 The Automatic Navigation Tabs are defined by `<screen-tabs>` Web Component. This is how you include them in your Layout:
 

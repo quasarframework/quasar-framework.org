@@ -4,6 +4,8 @@ The Quasar Layout Drawer (also known as a Sidebar) is the element on the left si
 
 There are two types of Drawers: left-side or right-side. Check the HTML markup to learn how to declare each of them.
 
+<input type="hidden" data-fullpage-demo="layout-drawer">
+
 ## Basic Usage
 In your Layout template file, you can declare up to two drawers, but they must differ in type (one must be left-side and one right-side) otherwise they'll be one on top of each other.
 

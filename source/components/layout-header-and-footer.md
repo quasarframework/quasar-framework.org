@@ -2,6 +2,8 @@ title: Quasar Layout Header and Footer
 ---
 A Quasar Layout can have have a Header and/or a Footer (also called Marginals), which will always be visible to the user at all times as long as the Layout gets being used.
 
+<input type="hidden" data-fullpage-demo="layout-marginals">
+
 ## Basic Usage
 The marginals are DOM elements that must be defined inside the `<screen>` tag of your Layout template, and they must contain the `slot` HTML attribute with either `header` or `footer` as value.
 
