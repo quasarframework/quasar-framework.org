@@ -3,5 +3,8 @@
 var html = require('raw!./view.collapsible.html');
 
 module.exports = {
-  template: html
+  template: html,
+  ready: function() {
+    quasar.current.layout.vm.$data.title = 'Collapsible';
+  }
 };

@@ -33,5 +33,8 @@ module.exports = {
         hidden: true
       }
     ]
+  },
+  ready: function() {
+    quasar.current.layout.vm.$data.title = 'Tabs';
   }
 };

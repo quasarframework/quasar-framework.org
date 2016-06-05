@@ -29,5 +29,8 @@ module.exports = {
         value: 'ora'
       }
     ]
+  },
+  ready: function() {
+    quasar.current.layout.vm.$data.title = 'Selectbox';
   }
 };

@@ -14,5 +14,8 @@ module.exports = {
         stagger: 200
       });
     }
+  },
+  ready: function() {
+    quasar.current.layout.vm.$data.title = 'Scroll Fire';
   }
 };

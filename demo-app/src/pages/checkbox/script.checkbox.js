@@ -6,5 +6,8 @@ module.exports = {
   template: html,
   data: {
     checked: false
+  },
+  ready: function() {
+    quasar.current.layout.vm.$data.title = 'Checkbox';
   }
 };

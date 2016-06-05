@@ -74,6 +74,9 @@ function openMaximizedModal() {
 
 module.exports = {
   template: html,
+  ready: function() {
+    quasar.current.layout.vm.$data.title = 'Modals';
+  },
   data: {
     types: [
       {

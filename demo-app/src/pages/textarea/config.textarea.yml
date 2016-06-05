@@ -1,2 +1,3 @@
-label: 'Page Label'
-icon: 'pages'
+label: 'Textarea'
+icon: 'label'
+layout: 'default'

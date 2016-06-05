@@ -1,4 +1,3 @@
-label: 'Page Label'
-icon: 'pages'
-navigation:
-  group: 'main'
+label: 'Buttons'
+icon: 'mail'
+layout: 'default'

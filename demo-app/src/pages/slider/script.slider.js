@@ -13,5 +13,8 @@ module.exports = {
         maximized: true
       }).show();
     }
+  },
+  ready: function() {
+    quasar.current.layout.vm.$data.title = 'Slider';
   }
 };

@@ -1,2 +1,3 @@
-label: 'Page Label'
-icon: 'pages'
+label: 'Input Textbox'
+icon: 'label_outline'
+layout: 'default'

@@ -6,5 +6,8 @@ module.exports = {
   template: html,
   data: {
     option: 'opt1'
+  },
+  ready: function() {
+    quasar.current.layout.vm.$data.title = 'Radio';
   }
 };

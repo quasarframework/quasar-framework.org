@@ -4,6 +4,9 @@ var html = require('raw!./view.action-sheet.html');
 
 module.exports = {
   template: html,
+  ready: function() {
+    quasar.current.layout.vm.$data.title = 'Action Sheet';
+  },
   methods: {
     showActionSheet: function() {
       quasar.action.sheet({

@@ -4,6 +4,9 @@ var html = require('raw!./view.dialog.html');
 
 module.exports = {
   template: html,
+  ready: function() {
+    quasar.current.layout.vm.$data.title = 'Dialogs';
+  },
   data: {
     types: [
       {

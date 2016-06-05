@@ -8,5 +8,8 @@ module.exports = {
     dismissMe: function() {
       quasar.notify('Card dismissed.');
     }
+  },
+  ready: function() {
+    quasar.current.layout.vm.$data.title = 'Cards Minimization';
   }
 };

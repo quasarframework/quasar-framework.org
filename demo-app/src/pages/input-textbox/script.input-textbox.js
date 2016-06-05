@@ -7,5 +7,8 @@ module.exports = {
   data: {
     username: '',
     password: ''
+  },
+  ready: function() {
+    quasar.current.layout.vm.$data.title = 'Input Textbox';
   }
 };

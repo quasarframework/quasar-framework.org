@@ -9,5 +9,8 @@ module.exports = {
     checkboxModel: false,
     toggleModel: false,
     rangeModel: 4
+  },
+  ready: function() {
+    quasar.current.layout.vm.$data.title = 'List with Form Components';
   }
 };

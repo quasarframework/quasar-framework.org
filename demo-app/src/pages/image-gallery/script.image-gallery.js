@@ -4,6 +4,9 @@ var html = require('raw!./view.image-gallery.html');
 
 module.exports = {
   template: html,
+  ready: function() {
+    quasar.current.layout.vm.$data.title = 'Image Gallery';
+  },
   data: {
     gallery: [
       'assets/mountains.jpg',

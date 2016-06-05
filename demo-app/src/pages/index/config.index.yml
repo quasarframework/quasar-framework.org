@@ -1,4 +1,3 @@
-label: 'Page Label'
+label: 'Index'
 icon: 'pages'
-navigation:
-  group: 'main'
+layout: 'default'

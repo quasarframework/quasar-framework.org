@@ -11,5 +11,8 @@ module.exports = {
         message: 'Good job! Keep it going.'
       });
     }
+  },
+  ready: function() {
+    quasar.current.layout.vm.$data.title = 'Floating Action Buttons';
   }
 };

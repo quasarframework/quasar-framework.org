@@ -14,5 +14,8 @@ module.exports = {
       'centered',
       'compact'
     ]
+  },
+  ready: function() {
+    quasar.current.layout.vm.$data.title = 'HTML Tables';
   }
 };

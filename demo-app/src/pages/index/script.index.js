@@ -18,5 +18,8 @@ module.exports = {
     navigateTo: function(pageName) {
       quasar.navigate.to.route('#/' + pageName);
     }
+  },
+  ready: function() {
+    quasar.current.layout.vm.$data.title = 'Framework';
   }
 };

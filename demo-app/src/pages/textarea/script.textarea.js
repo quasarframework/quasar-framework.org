@@ -6,5 +6,8 @@ module.exports = {
   template: html,
   data: {
     message: ''
+  },
+  ready: function() {
+    quasar.current.layout.vm.$data.title = 'Textarea';
   }
 };

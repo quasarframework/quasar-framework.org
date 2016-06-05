@@ -1,4 +1,3 @@
-label: 'Page Label'
-icon: 'pages'
-navigation:
-  group: 'main'
+label: 'Dialog'
+icon: 'all_out'
+layout: 'default'

@@ -11,5 +11,8 @@ module.exports = {
     randomize: function() {
       this.progress = Math.round(Math.random() * 100);
     }
+  },
+  ready: function() {
+    quasar.current.layout.vm.$data.title = 'Progress Bars';
   }
 };

@@ -6,5 +6,8 @@ module.exports = {
   template: html,
   data: {
     ratingModel: 1
+  },
+  ready: function() {
+    quasar.current.layout.vm.$data.title = 'Rating';
   }
 };

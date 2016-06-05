@@ -6,5 +6,8 @@ module.exports = {
   template: html,
   data: {
     number: 3
+  },
+  ready: function() {
+    quasar.current.layout.vm.$data.title = 'Range';
   }
 };

@@ -11,5 +11,8 @@ module.exports = {
     toggleVisibility: function() {
       this.visible = !this.visible;
     }
+  },
+  ready: function() {
+    quasar.current.layout.vm.$data.title = 'Vue Transitions';
   }
 };

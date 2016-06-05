@@ -30,5 +30,8 @@ module.exports = {
         value: '#0000ff'
       }
     ]
+  },
+  ready: function() {
+    quasar.current.layout.vm.$data.title = 'Spinners';
   }
 };
