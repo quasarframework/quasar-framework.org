@@ -9,6 +9,12 @@
 <a href="https://david-dm.org/rstoenescu/quasar-site#info=devDependencies" title="devDependency status"><img src="https://david-dm.org/rstoenescu/quasar-site/dev-status.svg"/></a>
 <a href="https://david-dm.org/rstoenescu/quasar-site#info=optionalDependencies" title="optionalDependency status"><img src="https://david-dm.org/rstoenescu/quasar-site/optional-status.svg"/></a>
 
+## What is Quasar Framework?
+
+* Modern HTML5 SPA front-end framework on steroids.
+* Desktop and Mobile. Native Mobile Apps included.
+* Full Stack Toolkit.
+
 ## Quasar Components
 
 * [Quasar Framework](https://github.com/rstoenescu/quasar-framework)
@@ -22,6 +28,6 @@ I'm only asking that you [read this](http://quasar-framework.org/guide/contribut
 
 ## License
 
-Copyright (c) 2015 Razvan Stoenescu
+Copyright (c) 2016 Razvan Stoenescu
 
 [MIT License](http://en.wikipedia.org/wiki/MIT_License)

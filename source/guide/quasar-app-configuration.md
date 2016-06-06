@@ -47,8 +47,8 @@ responsive:
 ```
 
 ### 'test' Object
-This object's properties override any of the <a href="https://github.com/rstoenescu/quasar-cli/blob/master/lib/gulp/gulp-config.js#L14-L100" target="_blank">default Karma configuration</a> options.
-See the full list of <a href="http://karma-runner.github.io/0.8/config/configuration-file.html" target="_blank">Karma configuration properties</a> that you can use.
+This object's properties override any of the [default Karma configuration](https://github.com/rstoenescu/quasar-cli/blob/master/lib/gulp/gulp-config.js#L11-L97) options.
+See the full list of [Karma configuration properties](http://karma-runner.github.io/0.8/config/configuration-file.html) that you can use.
 
 ### 'forceTheme' String
-By default, Quasar builds all available themes for your App. This is costly while writing code, so you can force the build of only one theme to speed up your development.
+By default, Quasar builds all available themes for your App. This is costly while writing code, so you can force the build of only one theme to speed up your development. Works only for **development** builds. A production build will always contain both themes.

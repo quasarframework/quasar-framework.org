@@ -97,7 +97,7 @@ Write tests and run them with the out of the box test-pack which includes Karma,
 ``` bash
 $ quasar test
 ```
-For more details on how to tweak testing see [App Structure - quasar.build.yml](/guide/quasar-app-configuration.html#quasar-build-yml) and look for `test` property description.
+For more details on how to tweak testing see [Configuring Quasar App](/guide/quasar-app-configuration.html) and look for `test` property description.
 
 ## Pages
 
@@ -175,7 +175,7 @@ Output example:
 $ quasar info
 
  Runtime
- Quasar CLI:	 v0.0.17
+ Quasar CLI:	 v0.1.0
  Node JS:	 v4.2.0
 
  Operating System

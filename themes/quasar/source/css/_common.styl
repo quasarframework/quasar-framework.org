@@ -82,8 +82,22 @@ iframe
   box-shadow $header-shadow
   height $header-height
   z-index 100
+  overflow hidden
+
+  display -webkit-flex
+  display -ms-flexbox
   display flex
+  -webkit-flex-direction row
+  -ms-flex-direction row
+  flex-direction row
+
+  -webkit-align-items stretch
+  -ms-flex-align stretch // @stylint ignore
+  -ms-grid-row-align stretch  // @stylint ignore
   align-items stretch
+
+  -webkit-justify-content flex-start
+  -ms-flex-pack start
   justify-content flex-start
 
   a
@@ -158,6 +172,7 @@ a.button
   overflow-y auto
   -webkit-overflow-scrolling touch
   -ms-overflow-style none
+  background-color $white
   h2
       margin-top .2em
       margin-bottom 7px
@@ -218,6 +233,8 @@ a.button
 
 @media screen and (min-width $small-screen + 1px)
   .sidebar-backdrop
+    display none !important
+  body.index .sidebar
     display none !important
   #header .menu-button, .sidebar-menu
     display none

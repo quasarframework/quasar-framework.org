@@ -1,8 +1,13 @@
-<h5>Model: <em>{{number}}</em> [1, 7]</h5>
+<div class="badge bg-secondary text-white">
+  Model <span class="right-detail"><em>{{number}}</em> &nbsp;&nbsp;(1-7)</span>
+</div>
+
+<br><br>
 
 <h5>Standalone</h5>
-<number :model.sync="number" :min="1" :max="7"></number>
+<number :model.sync="number" :min="1" :max="17"></number>
 
+<br><br>
 <h5>Inside of a List</h5>
 <div class="list inner-delimiter bordered">
   <label class="item">
@@ -11,7 +16,7 @@
         Some number
       </div>
       <div class="item-value">
-        <number :model.sync="number" :min="1" :max="7"></number>
+        <number :model.sync="number" :min="1" :max="17"></number>
       </div>
     </div>
   </label>
@@ -21,7 +26,7 @@
         Some number
       </div>
       <div class="item-value">
-        <number :model.sync="number" :min="1" :max="7"></number>
+        <number :model.sync="number" :min="1" :max="17"></number>
       </div>
     </div>
   </label>

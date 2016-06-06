@@ -1,6 +1,12 @@
-<h5>Page Model: {{page}}</h5>
+<div class="badge bg-secondary text-white">
+  Model <span class="right-detail"><em>{{page}}</em></span>
+</div>
+
+<br><br><br>
+
 <pagination :model.sync="page" :max="17"></pagination>
 
+<br><br>
 <h5>
   Click/Tap on the Input box and type out another page number
   then hit &lt;ENTER&gt;

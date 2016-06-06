@@ -1,4 +1,4 @@
-title: Quasar Themes
+title: Quasar Theming
 ---
 Every website or mobile app needs a specific design to differentiate from the competition. This is where Quasar Framework excels, because:
 

@@ -1,7 +1,6 @@
-<h5>
-  Model Value:
-  <strong>{{ratingModel}}</strong>
-</h5>
+<div class="badge bg-secondary text-white">
+  Model <span class="right-detail"><em>{{ratingModel}}</em></span>
+</div>
 
 <div style="font-size: 2rem; margin-top: 20px;">
   <rating :model.sync="ratingModel" :max-grade="3"></rating>

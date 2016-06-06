@@ -23,10 +23,10 @@ You can display text in a variety of ways.
 <sup>Supertext</sup>
 
 <!-- Paragraphs -->
-<p><strong>Default Paragraph</strong></p>
-<p class="caption"><strong>Caption Paragraph</strong></p>
-<p class="text-light"><strong>Light Paragraph</strong></p>
-<p class="text-thin"><strong>Thin Paragraph</strong></p>
+<p>Default Paragraph</p>
+<p class="caption">Caption Paragraph</p>
+<p class="light-paragraph">Light Paragraph</p>
+<p class="thin-paragraph">Thin Paragraph</p>
 
 <!-- Blockquotes -->
 <blockquote>
@@ -63,8 +63,9 @@ You can display text in a variety of ways.
 | `text-center` | Align text to the center |
 | `text-justify` | Text will be justified |
 | `text-truncate` | Applies all CSS tweaks to truncate text when container is too small |
-| `text-light` | Applies a font-weight of 300 |
-| `text-thin` | Applies a font-weight of 200 |
+| `caption` | For use on caption parapgraphs |
+| `light-paragraph` | Applies a font-weight of 300 |
+| `thin-paragraph` | Applies a font-weight of 200 |
 | `uppercase` | Transform text to uppercase |
 | `lowercase` | Transform text to lowercase |
 | `capitalize` | Capitalize first letter of the text |

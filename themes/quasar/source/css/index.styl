@@ -8,10 +8,21 @@ html, body
 
 #hero
   height 500px
+
+  display -webkit-flex
+  display -ms-flexbox
   display flex
-  flex-flow column
+  -webkit-flex-direction column
+  -ms-flex-direction column
+  flex-direction column
+  -webkit-align-items center
+  -ms-flex-align center
+  -ms-grid-row-align center // @stylint ignore
   align-items center
+  -webkit-justify-content center
+  -ms-flex-pack center
   justify-content center
+
   margin-top 50px
   img
     max-width 90%

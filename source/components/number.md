@@ -5,7 +5,7 @@ title: Quasar Number
 ## Basic Usage
 
 ``` html
-<number :model.sync="number" :min="1" :max="7"></number>
+<number :model.sync="number" :min="1" :max="17"></number>
 ```
 
 Vue DOM attribute properties you can use:
@@ -14,7 +14,7 @@ Vue DOM attribute properties you can use:
 | --- | --- | --- |
 | `model` | 0 | Model for Number Web Component |
 | `step` | 1 | Value of increment / decrement |
-| `lazy` | *none* | Change model after Web Component loses focus |
+| `lazy` | *none* | If present and set to `false` it change model after Web Component loses focus |
 | `debounce` | *none* | Change model with a debouncing timing |
 | `min` | *none* | Minimum value of the model |
 | `max` | *none* | Maximum value of the model |
@@ -29,7 +29,7 @@ Vue DOM attribute properties you can use:
         Some number
       </div>
       <div class="item-value">
-        <number :model.sync="number" :min="1" :max="7"></number>
+        <number :model.sync="number" :min="1" :max="17"></number>
       </div>
     </div>
   </label>

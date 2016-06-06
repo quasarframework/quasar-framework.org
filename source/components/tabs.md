@@ -69,4 +69,4 @@ module.exports = {
 ```
 
 ## Layout Usage
-You can use the Web Component above in a Layout as is, but if you want the Tabs to be filled in automatically, read [Layout Navigation Tabs](/components/layout-navigation-tabs.html) page.
+You can use the Web Component above in a Layout as is, but if you want the Tabs to be filled in automatically, read [Layout Automatic Navigation Tabs](/components/layout-automatic-navigation-tabs.html) page.

@@ -1,5 +1,10 @@
-<div v-for="style in styles" style="margin-bottom: 30px; max-width: 400px">
-  <h5>{{style ? 'Class "' + style + '"' : 'Default'}}</h5>
+<div v-for="style in styles" style="margin-bottom: 30px; max-width: 400px;">
+  <div class="badge bg-secondary text-white">
+    Class <span class="right-detail"><em>{{style ? style : '*none*'}}</em></span>
+  </div>
+
+  <br><br>
+
   <table :class="style">
     <thead>
       <tr>

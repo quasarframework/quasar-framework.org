@@ -15,8 +15,10 @@
 a.spawn-demo
   padding 10px 15px !important
 
-span.demo-links
-  display none
+div.demo-links
+  margin 30px 0
+  &:not(.demo-always-visible)
+    display none
 
 #apple-preview, #android-preview
   width 467px
@@ -87,8 +89,19 @@ span.demo-links
 
 #preview-chooser
   height $header-height
+
+  display -webkit-flex
+  display -ms-flexbox
   display flex
+  -webkit-flex-direction row
+  -ms-flex-direction row
+  flex-direction row
+  -webkit-align-items center
+  -ms-flex-align center
+  -ms-grid-row-align center // @stylint ignore
   align-items center
+  -webkit-justify-content center
+  -ms-flex-pack center
   justify-content center
 
   a
@@ -109,7 +122,7 @@ span.demo-links
 @media screen and (max-width 1099px)
   #preview
     display none !important
-  span.demo-links
+  div.demo-links
     display block
 
 @media screen and (min-width 1100px)

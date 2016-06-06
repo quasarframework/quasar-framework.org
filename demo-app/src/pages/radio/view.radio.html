@@ -1,4 +1,8 @@
-<h5>Model: <em>{{option}}</em></h5>
+<div class="badge bg-secondary text-white">
+  Model <span class="right-detail"><em>{{option}}</em></span>
+</div>
+
+<br><br>
 
 <h5>Standalone</h5>
 <div class="column">
@@ -16,6 +20,7 @@
   </label>
 </div>
 
+<br>
 <h5>Inside of a List</h5>
 <div class="list bordered inner-delimiter">
   <label class="item">
@@ -40,7 +45,6 @@
     </div>
   </label>
 </div>
-<br>
 <div class="list bordered inner-delimiter">
   <label class="item">
     <radio :model.sync="option" value="opt1"></radio>
