@@ -60,12 +60,13 @@ $(function() {
         page = $this.data('demo')
         ;
 
-      $this.replaceWith(getExternalLinks(page));
+      $this.replaceWith(getExternalLinks(page, true));
     });
 
     fullPageDemo.replaceWith(
       getExternalLinks(
-        fullPageDemo.data('fullpage-demo')
+        fullPageDemo.data('fullpage-demo'),
+        true
       )
     );
 
