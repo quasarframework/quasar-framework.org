@@ -6,3 +6,4 @@ node_modules/
 public/
 .deploy*/
 assets/stylus-variables.json
+demo-app/wrapper
