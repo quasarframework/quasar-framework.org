@@ -17,6 +17,9 @@ module.exports = {
   methods: {
     navigateTo: function(pageName) {
       quasar.navigate.to.route('#/' + pageName);
+    },
+    toggleTheme: function() {
+      quasar.swap.theme();
     }
   },
   ready: function() {
