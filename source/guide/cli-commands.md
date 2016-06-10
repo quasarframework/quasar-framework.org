@@ -149,6 +149,8 @@ $ quasar wrap
 ```
 This command generates a folder inside your App called `/wrapper`. It contains the assets of a Cordova project mapped to your Quasar App's source code.
 
+It also installs the Crosswalk plugin `cordova-plugin-crosswalk-webview` which wraps your App with latest Chromium browser. This ensures that your App will have the same runtime on all platforms. Read more [here](https://crosswalk-project.org/documentation/about.html) about Crosswalk.
+
 ### Execute Cordova Command
 You surely want to add a platform or perform useful Cordova commands:
 ``` bash
