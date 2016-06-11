@@ -7,7 +7,7 @@ html, body
   padding-top $header-height
 
 #hero
-  height 500px
+  height 600px
 
   display -webkit-flex
   display -ms-flexbox
@@ -40,8 +40,6 @@ html, body
     margin-top 25px
     a
       margin 10px
-  .social-links
-    margin-bottom 15px
 
 .feats
   max-width 1200px
@@ -102,9 +100,41 @@ html, body
   .written-by
     margin-top 1.3rem
 
+.social-links
+  text-align center
+  list-style-type none
+  margin 0 auto
+  padding 0
+  margin 1.5em auto
+  li
+    display inline-block
+    margin 0 5px
+    vertical-align middle
+    &.support-link
+      vertical-align top
+      height 20px
+      border 1px solid #d4d4d4 // @stylint ignore
+      display inline-block
+      box-sizing border-box
+      line-height 16px
+      border-radius 3px
+      cursor pointer
+      background-image linear-gradient(to bottom, #fcfcfc 0, #eee 100%) // @stylint ignore
+      position relative
+      width 128px
+      &:hover
+        border-color #ccc // @stylint ignore
+        background-image linear-gradient(to bottom, #eee 0, #ddd 100%) // @stylint ignore
+      i
+        vertical-align middle
+      a
+        font 700 11px/14px 'Helvetica Neue', Helvetica, Arial, sans-serif
+        color #333 // @stylint ignore
+        text-shadow 0 1px 0 #fff // @stylint ignore
+
 @media screen and (max-width 550px)
   #hero
-    height 400px
+    height 500px
     h1
       font-size 2em
       font-weight 400

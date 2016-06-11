@@ -22,6 +22,8 @@
                 <%- partial('partials/blog') %>
             <% } else if (page.search_index) { %>
                 <%- partial('partials/search') %>
+            <% } else if (page.support_index) { %>
+                <%- partial('partials/support') %>
             <% } else { %>
                 <%- body %>
             <% } %>

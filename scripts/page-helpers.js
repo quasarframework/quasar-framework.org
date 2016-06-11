@@ -1,7 +1,7 @@
 (function() {
 
   hexo.extend.helper.register('body_class', function(page) {
-    if (page.path === 'index.html') {
+    if (page.path === 'index.html' || page.support_index) {
       return 'index';
     }
     else if (page.layout === 'post') {

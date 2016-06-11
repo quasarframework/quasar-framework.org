@@ -41,7 +41,7 @@ When making a request, you can use the properties below:
 | ---- | ---- | ----- |
 | url | String | URL or relative path to base URL (see [Configuring Requests](#Configuring-Requests)) |
 | query | String or Object | Query String |
-| data | Object | Data to be sent along with the request |
+| data | Object/Array/String | Data to be sent along with the request. Read more below this table. |
 | cachable | Boolean | Should the response be cached? *Only for GET requests* |
 | requestName | String | See Request Name |
 | persistent | Boolean | Cannot be aborted by `quasar.abort.all.requests()` |
@@ -49,6 +49,15 @@ When making a request, you can use the properties below:
 | timeout | Number | Number of milliseconds before timeout |
 
 ... and any jQuery [$.ajax() properties](http://api.jquery.com/jquery.ajax/). Some examples: `dataFilter`, `dataType`, `converters`, `contentType`, `headers`, `processData`, `xhrFields`. See [More Request Properties](#More-Request-Properties).
+
+#### `data` property
+When using an Object or Array as data for your POST request then the data is JSON stringified. If on the other hand your data is already a String, it will be sent as-is.
+
+```
+data: {some: 'value'} --> {"some": "value"}
+data: ['one', 'two'] --> ["one","two"]
+data: 'wow=true&some=value' --> wow=true&some=value
+```
 
 > **NOTE**
 > Only the `url` property is mandatory.
