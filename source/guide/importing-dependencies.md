@@ -1,6 +1,6 @@
 title: Importing External Dependencies
 ---
-Use the [App Configuration](/guide/quasar-app-configuration.html) file (`quasar.build.yml`) to specify your dependencies. You are interested in `deps` property.
+Use the [App Configuration](/guide/quasar-app-configuration.html) file (`quasar.build.yml`) to specify your dependencies. You are interested in `deps` property which features both the Javascript dependecy files as well as the CSS ones too.
 
 1. First npm install your dependencies.
 2. Configure `quasar.build.yml`:
@@ -42,7 +42,7 @@ Use the [App Configuration](/guide/quasar-app-configuration.html) file (`quasar.
   Vue.component('google-map', VueGoogleMap.Map);
   ```
 
-  You have three options for including the declarations above.
+  You have three options for including the declarations above. Be creative about how to deal with this.
 
   A) You can include these declarations in `src/index.html` inside `quasar.boot()` before you start your App:
 

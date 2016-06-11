@@ -140,7 +140,7 @@ $ quasar layout -c [source-layout-name] [new-layout-name]
 ```
 
 ## Native Mobile App Wrapper
-You can use Cordova to wrap your Quasar App into a native mobile App.
+You can use Cordova to wrap your Quasar App into a native mobile App. Make sure you have the platform SDK installed on your machine, like [Android SDK](https://developer.android.com/studio/index.html#download).
 
 ### Wrap your App
 So you want to be able to produce native apps for the mobile platforms with Cordova (make sure you have it installed: `npm install -g cordova`):
@@ -153,6 +153,11 @@ It also installs the Crosswalk plugin `cordova-plugin-crosswalk-webview` which w
 
 > **NOTE for Windows Developers**
 > It is possible that you get `Error: EPERM: operation not permitted, symlink '..\dist'`, in which case you need to add privileges for your user to be able to create symlinks. Read [here](http://superuser.com/questions/104845/permission-to-make-symbolic-links-in-windows-7).
+
+After making the wrapper and making sure you have the platform's SDK installed on your machine, you need to add at least a platform to your App, like this:
+``` bash
+$ quasar wrap platform add android
+```
 
 ### Execute Cordova Command
 You surely want to add a platform or perform useful Cordova commands:
