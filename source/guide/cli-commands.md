@@ -151,6 +151,9 @@ This command generates a folder inside your App called `/wrapper`. It contains t
 
 It also installs the Crosswalk plugin `cordova-plugin-crosswalk-webview` which wraps your App with latest Chromium browser. This ensures that your App will have the same runtime on all platforms. Read more [here](https://crosswalk-project.org/documentation/about.html) about Crosswalk.
 
+> **NOTE for Windows Developers**
+> It is possible that you get `Error: EPERM: operation not permitted, symlink '..\dist'`, in which case you need to add privileges for your user to be able to create symlinks. Read [here](http://superuser.com/questions/104845/permission-to-make-symbolic-links-in-windows-7).
+
 ### Execute Cordova Command
 You surely want to add a platform or perform useful Cordova commands:
 ``` bash
