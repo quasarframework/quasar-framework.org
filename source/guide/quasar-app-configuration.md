@@ -24,6 +24,8 @@ test:
 ### 'deps' Object
 Specify the dependencies of your App. You can use NPM to install different packages, or Bower, or just download some file from somewhere and store it inside the App's folder. In the end, all you need is a path. The Build System takes care of the rest. Mind the order as it may be important.
 
+Read more on how to import dependencies [here](/guide/importing-dependencies.html).
+
 ### 'preview' Object
 [Live Preview](/guide/cli-commands.html#Live-Preview) configuration. Read more about configuration properties  [here](http://www.browsersync.io/docs/options/). Example of default configuration which is merged with user specific one:
 ``` yml

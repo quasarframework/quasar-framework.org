@@ -15,6 +15,7 @@ guide:
     Vue Model Communication: $
     Build System: quasar-$
     Theming: quasar-$
+    Importing Dependencies: $
   Miscellaneous:
     CommonJS Format: $
     Mobile Wrapper Tips: quasar-$
