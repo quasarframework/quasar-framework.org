@@ -15,10 +15,10 @@ guide:
     Vue Model Communication: $
     Build System: quasar-$
     Theming: quasar-$
+    Native Mobile App Wrapper: $
     Importing Dependencies: $
   Miscellaneous:
     CommonJS Format: $
-    Mobile Wrapper Tips: quasar-$
 api:
   root:
     Overview: index

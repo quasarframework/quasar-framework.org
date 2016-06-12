@@ -1,20 +1,69 @@
-title: Quasar Mobile Wrapper Tips
+title: Native Mobile App Wrapper
 ---
-Make sure you read the CLI section called [Native Mobile App Wrapper](/guide/cli-commands.html#Native-Mobile-App-Wrapper) first. This will give you a starting point. But here are some tips:
+You can use Cordova to wrap your Quasar App into a native mobile App. We'll be using Quasar CLI to manage this, including issuing Cordova commands for your wrapped up App.
 
-## Browser Simulator
+First install Cordova globally on your machine:
+``` bash
+$ npm install -g cordova
+```
+
+Then make sure you have the platform SDK installed on your machine, like [Android SDK](https://developer.android.com/studio/index.html#download).
+``` bash
+$ cordova requirements
+```
+
+## Wrap your App
+Now let's create the Wrapper for your App.
+``` bash
+$ quasar wrap
+```
+
+This command generates a folder inside your App called `/wrapper`. It contains the assets of a Cordova project mapped to your Quasar App's source code.
+
+It also installs the Crosswalk plugin `cordova-plugin-crosswalk-webview` which wraps your App with latest Chromium browser. This ensures that your App will have the same runtime on all platforms. Read more [here](https://crosswalk-project.org/documentation/about.html) about Crosswalk.
+
+> **NOTE for Windows Developers**
+> It is possible that you get `Error: EPERM: operation not permitted, symlink '..\dist'`, in which case you need to add privileges for your user to be able to create symlinks. Read [here](http://superuser.com/questions/104845/permission-to-make-symbolic-links-in-windows-7).
+
+After making the wrapper and making sure you have the platform's SDK installed on your machine, you need to add at least a platform to your App, like this:
+``` bash
+$ quasar wrap platform add android
+```
+
+## Execute Cordova Command
+You surely want to add a platform or perform useful Cordova commands:
+``` bash
+$ quasar wrap [Cordova command arguments]
+
+# examples:
+$ quasar wrap platform add android
+$ quasar wrap run
+$ quasar wrap build
+```
+
+> **TIP**
+> Use it in conjunction with `quasar build` when you frequently test on your mobile: `quasar build && quasar wrap run`
+
+## Cordova Plugins
+There are lots of Cordova plugins available which enables to you access the Camera, NFC, Battery Status, Contacts, Geolocation, Device motion and orientation and many more. Check out Cordova's website (example for Battery Status [here](https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-battery-status/index.html)).
+
+Remember all Cordova commands can be issued with `quasar wrap [cordova command]`.
+
+## Tips
+
+### Browser Simulator
 Use Google Chrome's emulator from Developer Tools. It's a fantastic tool. You can select which device to emulate, but keep in mind that it's an *emulator* and not the real deal.
 
 ![Google Chrome emulator](/images/chrome.png "Google Chrome emulator")
 
-## Debug on Android
+### Debug on Android
 When something goes wrong with your App when running on a mobile platform, what do you do? Write a bunch of `console.log()s`? Where should this be displayed? Use `alert()s`? This may interfere with the application's flow.
 
 So what do you do? The solution is to make use of the `tools/monitor` tool from the SDK.
 
 ![tools/monitor screen](/images/monitor.png "tools/monitor screen")
 
-## Setting Up Device on Linux
+### Setting Up Device on Linux
 You may bump into `?????? no permissions` problem when trying to run your App directly on an Android phone/tablet.
 
 Here's how you fix this:

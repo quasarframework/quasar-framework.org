@@ -1,62 +1,81 @@
 title: Importing External Dependencies
 ---
-Use the [App Configuration](/guide/quasar-app-configuration.html) file (`quasar.build.yml`) to specify your dependencies. You are interested in `deps` property which features both the Javascript dependecy files as well as the CSS ones too.
+Quasar easily allows you to import external dependencies from NPM. Here are the few steps to follow to achieve this:
 
-1. First npm install your dependencies.
-2. Configure `quasar.build.yml`:
+1. NPM install your dependency.
+  > It may be the case that the package you are installing also depends on other packages. NPM install them too, but ignore the ones already supplied by Quasar (see [Built-In Stack](/guide/built-in-stack.html)) so you won't duplicate them.
 
-  Example for `vue-google-maps` (not the whole file, just what you are interested in):
-  ``` yaml
-  deps:
-    js: [
-      'node_modules/q/q.js',
-      'node_modules/lodash/index.js',
-      'node_modules/vue-google-maps/index.js'
-      ]
-  ```
+2. Configure `quasar.build.yml` (the [App Configuration file](/guide/quasar-app-configuration.html)) so Quasar will embed these dependencies.
 
-  As dependency string needed for `quasar.build.yml`, look into the node_modules folder of your installed component and check for the `main` entry point (usually in a `dist` folder). You can read the component's `package.json` for this property.
+  You are interested in `deps` property which features both the Javascript dependency files as well as the CSS ones.
+  Take a look inside the `node_modules/[package_name]` folder and see what files to include for Quasar. The Javascript file is usually specified in `package.json` under the "main" property. Most packages have a `dist` folder featuring the files you need.
 
-  Example:
-  ``` js
-  // package.json of component
-  {
-    "name": "quasar-cli",
-    ...
-    "main": "index.js", // <<<<<<<
-    ...
-  }
-  ```
+  > The order in which dependencies are specified matters!
 
-3. Use your Dependency:
+3. Use your dependency. Check out your dependency's website and look on how to use the dependency as "standalone", meaning look for the global Objects that they inject.
 
-  Generally speaking, look at `standalone usage` for the Dependency you want to use on their website. They may export globals you can use.
+## Study Case
 
-  Take `vue-google-maps` case: it exports `VueGoogleMap` global. In this particular case you should declare its components yourself before using them. Here is an extract from their website:
+Let's embed `vue-google-maps` as a study case.
 
-  ``` js
-  // they inject VueGoogleMap global:
+First we npm install it and see it depends on Q, Lodash and Vue. Vue is already supplied, so we only npm install Q and Lodash.
+
+Then we take a look into `node_modules/lodash` and `node_modules/q` folders to see what to tell Quasar to embed in `quasar.build.yml`.
+
+``` yaml
+deps:
+  js: [
+    'node_modules/q/q.js',
+    'node_modules/lodash/index.js',
+    'node_modules/vue-google-maps/index.js'
+    ]
+```
+
+Now all we have to do is use our new dependency. Looking on their website for a "standalone" use case, we see that the package exports `VueGoogleMap` global.
+
+``` js
+VueGoogleMap.load({
+  'key': 'YOUR_API_KEY',
+});
+
+// this package requires us to declare the components
+// we are going to use from it, so here it is:
+Vue.component('google-map', VueGoogleMap.Map);
+```
+
+Now be creative on where to include the code above.
+
+#### Option A
+If multiple Pages use the package, then include it in `src/index.html` under the `quasar.boot()` call, right before `quasar.start.app()`, like this:
+
+```js
+quasar.boot(function() {
   VueGoogleMap.load({
     'key': 'YOUR_API_KEY',
   });
   Vue.component('google-map', VueGoogleMap.Map);
-  ```
 
-  You have three options for including the declarations above. Be creative about how to deal with this.
+  quasar.start.app();
+});
+```
 
-  A) You can include these declarations in `src/index.html` inside `quasar.boot()` before you start your App:
+Or you can add a new file, let's say `js/app.js`:
+``` js
+VueGoogleMap.load({
+  'key': 'YOUR_API_KEY',
+});
+Vue.component('google-map', VueGoogleMap.Map);
 
-    ```js
-    quasar.boot(function() {
-      VueGoogleMap.load({
-        'key': 'YOUR_API_KEY',
-      });
-      Vue.component('google-map', VueGoogleMap.Map);
+quasar.start.app();
+```
+and in your `src/index.html` you'll write:
+``` js
+quasar.boot(function() {
+  quasar.require.script('js/app');
+});
+```
 
-      quasar.start.app();
-    });
-    ```
+Read more about [Quasar Starting Point](/guide/quasar-app-starting-point.html).
 
-   B) ... or you can make a JS file like `src/js/app.js` and require it from `src/index.html`. Read about the   Quasar [Starting Point](/guide/quasar-app-starting-point.html).
-
-  C) Include the declarations in a Page script file (script.*page-name*.js) before `module.exports` if you are using the Component just for that Page.
+#### Option B
+If only one Page uses it, then embed the code in the script file of your Page (`script.*page-name*.js`), before defining `module.exports`.

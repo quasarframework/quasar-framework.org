@@ -142,36 +142,28 @@ $ quasar layout -c [source-layout-name] [new-layout-name]
 ## Native Mobile App Wrapper
 You can use Cordova to wrap your Quasar App into a native mobile App. Make sure you have the platform SDK installed on your machine, like [Android SDK](https://developer.android.com/studio/index.html#download).
 
-### Wrap your App
-So you want to be able to produce native apps for the mobile platforms with Cordova (make sure you have it installed: `npm install -g cordova`):
+**Read more about how to use Quasar CLI to manage the Cordova wrapper [here](/guide/native-mobile-app-wrapper.html).**
+
+Some of the CLI commands available:
+
 ``` bash
+# wrapping your App
 $ quasar wrap
-```
-This command generates a folder inside your App called `/wrapper`. It contains the assets of a Cordova project mapped to your Quasar App's source code.
 
-It also installs the Crosswalk plugin `cordova-plugin-crosswalk-webview` which wraps your App with latest Chromium browser. This ensures that your App will have the same runtime on all platforms. Read more [here](https://crosswalk-project.org/documentation/about.html) about Crosswalk.
-
-> **NOTE for Windows Developers**
-> It is possible that you get `Error: EPERM: operation not permitted, symlink '..\dist'`, in which case you need to add privileges for your user to be able to create symlinks. Read [here](http://superuser.com/questions/104845/permission-to-make-symbolic-links-in-windows-7).
-
-After making the wrapper and making sure you have the platform's SDK installed on your machine, you need to add at least a platform to your App, like this:
-``` bash
+# add a platform
 $ quasar wrap platform add android
-```
 
-### Execute Cordova Command
-You surely want to add a platform or perform useful Cordova commands:
-``` bash
+# executing a Cordova command
 $ quasar wrap [Cordova command arguments]
 
-# examples:
-$ quasar wrap platform add android
+# some more Cordova commands examples:
+$ quasar wrap plugin add cordova-plugin-battery-status
 $ quasar wrap run
 $ quasar wrap build
 ```
 
 > **TIP**
-> Use it in conjunction with `quasar build` when you frequently test on your mobile: `quasar build && quasar wrap run`
+> Use `quasar build` in conjunction with `quasar wrap run` when you frequently test on your mobile: `quasar build && quasar wrap run`.
 
 ## Runtime Information
 Display information about your runtime, including operating system, nodejs version, Quasar CLI version and more.
