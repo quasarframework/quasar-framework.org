@@ -4,7 +4,7 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "deploy": "hexo clean && hexo generate && gulp && hexo deploy"
+    "deploy": "./build && hexo deploy"
   },
   "hexo": {
     "version": "3.2.0"
