@@ -159,6 +159,50 @@ module.exports = {
         }
       },
       {
+        label: 'Pick Multiple Options #2',
+        icon: 'playlist_add_check',
+        handler: function() {
+          quasar.dialog({
+            title: 'Toggles',
+            toggles: [
+              {
+                label: 'Option 1',
+                value: 'opt1',
+                checked: true
+              },
+              {
+                label: 'Option 2',
+                value: 'opt2'
+              },
+              {
+                label: 'Option 3',
+                value: 'opt3'
+              },
+              {
+                label: 'Option 4',
+                value: 'opt4'
+              },
+              {
+                label: 'Option 5',
+                value: 'opt5'
+              }
+            ],
+            buttons: [
+              {
+                label: 'Cancel',
+                handler: $.noop
+              },
+              {
+                label: 'Ok',
+                handler: function(data) {
+                  quasar.notify('Returned ' + JSON.stringify(data));
+                }
+              }
+            ]
+          });
+        }
+      },
+      {
         label: 'Pick Range',
         icon: 'warning',
         handler: function() {

@@ -15,12 +15,24 @@ $ cordova requirements
 ## Wrap your App
 Now let's create the Wrapper for your App.
 ``` bash
+# With Crosswalk plugin
+# which is the recommended way
 $ quasar wrap
+
+# Without Crosswalk plugin
+$ quasar wrap -s
+# or
+$ quasar wrap --slim
 ```
 
 This command generates a folder inside your App called `/wrapper`. It contains the assets of a Cordova project mapped to your Quasar App's source code.
 
-It also installs the Crosswalk plugin `cordova-plugin-crosswalk-webview` which wraps your App with latest Chromium browser. This ensures that your App will have the same runtime on all platforms. Read more [here](https://crosswalk-project.org/documentation/about.html) about Crosswalk.
+Wrapping with Crosswalk ensures that your App will have the same runtime on all platforms (which is also the latest and greatest), but will also make your package file bigger. Read more [here](https://crosswalk-project.org/documentation/about.html) about Crosswalk. **It is recommended that you opt for the Crosswalk plugin to be installed.**
+
+If however you opt for the slim (non-Crosswalk) wrapper, you can add it later with:
+``` bash
+$ quasar wrap plugin add cordova-plugin-crosswalk-webview
+```
 
 > **NOTE for Windows Developers**
 > It is possible that you get `Error: EPERM: operation not permitted, symlink '..\dist'`, in which case you need to add privileges for your user to be able to create symlinks. Read [here](http://superuser.com/questions/104845/permission-to-make-symbolic-links-in-windows-7).

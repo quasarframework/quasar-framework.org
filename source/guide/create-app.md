@@ -24,6 +24,8 @@ $ quasar preview
 
 You're mostly set now. Make a thorough reading about the Quasar CLI [here](/guide/cli-commands.html). The Quasar CLI is the primary tool used during the process of developing a Quasar App. It's like a Swiss Army Knife as it brings together a bunch of miscellaneous tools under a single interface. Get to know how powerful it is so you can leverage it.
 
+> You can check what Quasar Framework version it is being currently used by accessing the browser console and looking at `quasar.VERSION` property.
+
 Continue reading the **App** section of the Guide to understand how Quasar works and how you can use it.
 
 ## Generating Native Mobile Apps

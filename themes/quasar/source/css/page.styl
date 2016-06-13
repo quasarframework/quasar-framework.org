@@ -16,7 +16,7 @@
       line-height 1.4em
       ul, p
           margin .6em 0
-  a.button
+  a.button:not(.support-button)
       font-size .9em
       color $white
       margin .2em 0
@@ -63,7 +63,7 @@
       line-height 1.6em
   ul, ol
       padding-left 1.5em
-  a:not([data-scroll]):not(.search-result)
+  a:not([data-scroll]):not(.search-result):not(.support-button)
       color $main
       font-weight 700
       padding 3px 2px

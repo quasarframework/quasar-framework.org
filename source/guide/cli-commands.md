@@ -165,6 +165,20 @@ $ quasar wrap build
 > **TIP**
 > Use `quasar build` in conjunction with `quasar wrap run` when you frequently test on your mobile: `quasar build && quasar wrap run`.
 
+## Serve Static-Content Folder
+You are able to create an ad-hoc web server to serve static-content web files from a folder. Browser sessions are automatically refreshed when content changes. User clicks/scroll can be synchronized.
+
+``` bash
+# Serve current folder:
+$ quasar serve
+
+# ..or serve a full or relative path
+$ quasar serve ./dist
+$ quasar serve /work/quasar-app/dist
+```
+
+This command does not rely on Quasar Framework. Any folder with any web content can be served.
+
 ## Runtime Information
 Display information about your runtime, including operating system, nodejs version, Quasar CLI version and more.
 

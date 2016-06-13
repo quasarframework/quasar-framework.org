@@ -119,18 +119,40 @@ quasar.dialog({
       label: 'Option 2',
       value: 'opt2'
     },
+    ...
+  ],
+  buttons: [
     {
-      label: 'Option 3',
-      value: 'opt3'
+      label: 'Cancel',
+      handler: $.noop
     },
     {
-      label: 'Option 4',
-      value: 'opt4'
-    },
-    {
-      label: 'Option 5',
-      value: 'opt5'
+      label: 'Ok',
+      handler: function(data) {
+        quasar.notify('Returned ' + JSON.stringify(data));
+      }
     }
+  ]
+});
+```
+
+## Pick Multiple Options #2 (Toggles)
+Same as previous but using Toggles instead of Checkboxes.
+
+``` js
+quasar.dialog({
+  title: 'Toggles',
+  toggles: [
+    {
+      label: 'Option 1',
+      value: 'opt1',
+      checked: true
+    },
+    {
+      label: 'Option 2',
+      value: 'opt2'
+    },
+    ...
   ],
   buttons: [
     {

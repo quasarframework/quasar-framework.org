@@ -17,6 +17,10 @@ guide:
     Theming: quasar-$
     Native Mobile App Wrapper: $
     Importing Dependencies: $
+  Release Notes:
+    Quasar CLI: $-release-notes
+    Quasar Framework: $-release-notes
+    Development Plans: $
   Miscellaneous:
     CommonJS Format: $
 api:
