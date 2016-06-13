@@ -22,6 +22,7 @@ guide:
     Quasar Framework: $-release-notes
     Development Plans: $
   Miscellaneous:
+    Upgrade App to Latest Quasar: $
     CommonJS Format: $
 api:
   root:
