@@ -2,7 +2,7 @@ title: Quasar Framework Release Notes
 ---
 NPM package holding Quasar Framework is `quasar-framework`.
 
-#### v0.1.1 / 2016-06-13
+#### v0.1.2 / 2016-06-13
 
   * Updated some dependencies: jQuery to v3, Roboto font face to v0.5.0
   * fix: Trigger Parallax events in the right order
