@@ -2,6 +2,10 @@ title: Quasar CLI Release Notes
 ---
 NPM package holding Quasar CLI is `quasar-cli`.
 
+#### v0.1.4 / 2016-06-14
+
+  * CLI Update Notifier. When new CLI version is released it will notify the user.
+
 #### v0.1.3 / 2016-06-13
 
   * Serve Static-Content Folders (`quasar serve`). Read more [here](/guide/cli-commands.html#Serve-Static-Content-Folder).
