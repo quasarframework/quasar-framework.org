@@ -4,11 +4,15 @@ NPM package holding Quasar Framework is `quasar-framework`.
 
 #### v0.1.3 / 2016-06-14
 
-  * Parameterized Routes for Pages
+  A revisit of the [Quasar Pages](/guide/quasar-pages.html) would be good.
 
-  this.route from #/book to $
-  this.hash
-  this.parameterized
+  * Parameterized Page Routes
+    Learn how to register a Page with multiple routes, like `#/library/:book/:page'. Read more [here](/guide/parameterized-page-routes.html) how to handle this scenario.
+  * New properties available for `this` when exporting a function from Page script file (instead of an Object):
+    * this.route (eg. `:book/:chapter` or default route '$')
+    * this.hash (eg. `#/book`)
+    * this.parameterized (Boolean; tells whether the page was accessed through a parameterized route and/or with a Query String)
+  * Added `within-iframe-only` CSS visibility class. When entire website/app is within an IFRAME tag, the `<body>` tag will now have `within-iframe` class.
 
 #### v0.1.2 / 2016-06-13
 
