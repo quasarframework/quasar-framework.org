@@ -27,15 +27,17 @@ div.demo-links
   background-size 467px
   margin 20px auto 0
   a
-    color #a1a1a1 // @stylint ignore
+    color #eee // @stylint ignore
     background-color transparent
     box-shadow none
     font-size .8rem
     padding 10px
+    border-radius 5px
+    transition .2s color, .2s background-color
     &:hover
-      color $white
+      background-color #555 // @stylint ignore
     i
-      font-size 140%
+      font-size 170%
 
 #apple-preview
   iframe
@@ -45,7 +47,10 @@ div.demo-links
   a
     position absolute
     bottom 70px
-    right 100px
+  a.view-source
+    left 90px
+  a.desktop-launcher
+    right 90px
 
 #android-preview
   background-position center center
@@ -55,37 +60,12 @@ div.demo-links
     height 590px
   a
     position absolute
-    bottom 25px
-    right 175px
-    left 180px
-
-#desktop-preview
-  position fixed
-  top 0
-  right 0
-  bottom 0
-  left 0
-  background center center no-repeat url("/images/desktop.jpg")
-  background-size 100% 100%
-  pointer-events none
-  div, iframe
-    pointer-events all
-  iframe
-    margin-top 30px
-    width 95%
-    height 82%
-  div
-    position absolute
-    bottom 16px
-    right 16px
-    a, i
-      margin-left 10px
-
-#btn-close-desktop-view
-  border-radius 50%
-  i
-    margin-left 0 !important
-    font-size 25px
+    bottom 30px
+    width 80px
+  a.view-source
+    left 125px
+  a.desktop-launcher
+    right 125px
 
 #preview-chooser
   height $header-height

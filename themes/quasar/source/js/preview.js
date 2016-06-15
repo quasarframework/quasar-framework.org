@@ -9,7 +9,8 @@ $(function() {
     demoPoints = contentNode.find('input[data-demo]'),
     fullPageDemo = contentNode.find('input[data-fullpage-demo]'),
     externalPoints = contentNode.find('input[data-external-demo]'),
-    viewSourceButtons = $('.view-source'),
+    viewSourceButtons = previewNode.find('.view-source'),
+    desktopLauncher = previewNode.find('.desktop-launcher'),
     currentPage,
     mobileThemes = ['android', 'apple']
     ;
@@ -81,10 +82,6 @@ $(function() {
     window.themePreview.selectTheme($(this).data('theme'));
   });
 
-  $('#btn-close-desktop-view').click(function() {
-    window.themePreview.selectTheme('desktop');
-  });
-
   window.themePreview = {
     show: function(page) {
       previewNode.css('display', 'block');
@@ -111,36 +108,31 @@ $(function() {
 
         if (page) {
           $this.attr('src', getDemoURL(theme, page));
+
           viewSourceButtons
-            .css('display', page.indexOf('http') === 0 ? 'none' : 'inline-block')
-            .attr('href', getSourceURL(page));
+            .add(desktopLauncher)
+            .css('display', page.indexOf('http') === 0 ? 'none' : 'inline-block');
+
+          viewSourceButtons.attr('href', getSourceURL(page));
+          desktopLauncher.attr('href', getDemoURL(theme, page));
         }
         else {
           $this.attr('src', '');
-          viewSourceButtons.css('display', 'none');
+          viewSourceButtons
+            .add(desktopLauncher)
+            .css('display', 'none');
         }
       });
     },
     selectTheme: function(theme) {
       themePicker.removeClass('active');
 
-      if (theme === 'desktop' && selectedTheme === 'desktop') {
-        theme = 'android';
-        $('body').css('overflow', '');
-      }
-
       $('#preview #preview-chooser a[data-theme="' + theme + '"]').addClass('active');
 
       themeNodes.css('display', 'none');
       $('#' + theme + '-preview').css('display', 'block');
 
-      if (theme !== 'desktop') {
-        $.cookie('theme', theme);
-      }
-      else if (selectedTheme !== 'desktop') {
-        $('body').css('overflow', 'hidden');
-      }
-
+      $.cookie('theme', theme);
       selectedTheme = theme;
       this.selectPage(currentPage);
     }
