@@ -14,7 +14,6 @@ NPM package holding Quasar CLI is `quasar-cli`.
 #### v0.1.2 / 2016-06-11
 
   * fix: Cannot use 'quasar wrap' on Windows
-    This closes [#1](https://github.com/rstoenescu/quasar-cli/issues/1)
 
 #### v0.1.1 / 2016-06-10
 

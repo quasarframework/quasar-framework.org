@@ -8,6 +8,9 @@ We will be calling a Page as being *parameterized* if it handles the Query Strin
 
 <input type="hidden" data-fullpage-demo="library">
 
+> **NOTE**
+> Non-default routes for `index` will be automatically disabled. This is because the default route for `index` page is `#/` so a parameterized route would possibly overwrite routes for other pages.
+
 ## Example of Basic Usage
 
 Let's create a parameterized Page called *library* (`quasar page library`) which handles multiple routes: `#/library`, `#/library/:book` and `#/library/:book/:page` as an example. Click on *View Source* for a complete example like the demo on this page.

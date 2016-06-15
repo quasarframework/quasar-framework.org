@@ -13,6 +13,7 @@ NPM package holding Quasar Framework is `quasar-framework`.
     * this.hash (eg. `#/book`)
     * this.parameterized (Boolean; tells whether the page was accessed through a parameterized route and/or with a Query String)
   * Added `within-iframe-only` CSS visibility class. When entire website/app is within an IFRAME tag, the `<body>` tag will now have `within-iframe` class.
+  * fix: Avoid infinite loop on non numeric input values on Pagination Web Component
 
 #### v0.1.2 / 2016-06-13
 
