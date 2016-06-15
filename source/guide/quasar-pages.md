@@ -50,7 +50,14 @@ module.exports = function(done) {
   this.query // [Object] Route query string -- see API > Router
   this.name // [String] Page name (eg. 'index')
   this.manifest // [Object] Page manifest (config.page-name.yml)
-  this.route // [String] Route name (eg. '#/login' or '#/book/:chapter/:page')
+  this.route // [String] Route name (eg. '$' or ':chapter/:page')
+  this.hash // [String] Hash (eg. "#/book")
+  this.parameterized // [Boolean] Page has Query String or
+                    // is on a parameterized (non-default) route
+
+  // There are also some globals you can use:
+  quasar.current.page
+  quasar.current.layout
 
   // ...
   // asynchronous operations
@@ -70,7 +77,7 @@ module.exports = function(done) {
 2. Include other JS files for modularity by *require()*-ing them. Take full advantage of Webpack.
 Read more about the [Build System](/guide/quasar-build-system.html) and [Require API](/api/js-require-script-or-css.html#Require-a-Script-file) to understand.
 
-3. Make sure you use `require('raw!.....')` syntax for the template so that it will get bundled automatically into your JS file with the help of the Build System. This saves one precious HTTP request. **Do not require the template within the exporting function (if you use one) because Webpack won't know it needs to be handled at compile time**. So require it outside to avoid issues.
+3. Make sure you use `require('raw!.....')` syntax for the template so that it will get bundled automatically into your JS file with the help of the Build System. This saves one precious HTTP request. **Do not require the template within a function (if you use one) because Webpack won't know it needs to be handled at compile time**. So require it outside of any function to avoid issues.
 
   ``` js
   // do
@@ -81,7 +88,7 @@ Read more about the [Build System](/guide/quasar-build-system.html) and [Require
     });
   };
 
-  // don't!
+  // DON'T!!!
   module.exports = function(done) {
     done({
       template: require('raw!./some.html') // <<<
@@ -100,20 +107,88 @@ Read more about the [Build System](/guide/quasar-build-system.html) and [Require
 
   module.exports = { // Vue instance
     template: html,
-    beforeCompile: {
+    beforeCompile: function() {
       // Before template compiling
       // ...
     },
-    ready: {
+    ready: function() {
       // Template has been rendered into view
       // ...
     }
   };
   ```
 
-5. Make sure you sanitize intervals, timeouts, requestAnimationFrames or anything else at `beforeDestroy` point, otherwise you may end up with bugs when user switches to another Page or Layout.
+5. Make sure you sanitize intervals, timeouts, requestAnimationFrames or anything else at `beforeDestroy` or `destroy` point, otherwise you may end up with bugs when user switches to another Page or Layout.
 
-6. Read about how to communicate between Page and Layouts  [here](/guide/vue-model-communication.html). It's important to know how to share VueModel data between the two.
+  ``` js
+  // Sanitization example within Page
+
+  var html = require('raw!./view.page-name.html');
+
+  module.exports = {
+    template: html,
+    ready: function() {
+      this.timeout = setInterval(function() {
+        // do something;
+      });
+    },
+    destroy: function() {
+      clearInterval(this.timeout);
+    }
+  };
+  ```
+
+  > **IMPORTANT**
+  > Sanitization is essential otherwise unforeseen effects may occur leading to hard to track bugs.
+
+6. Example for when you want a certain Page (with Layout specified) functionality to be available only while that Page is currently being displayed. Note that it makes sense to do this effort only if Page has a Layout, otherwise a sanitization described above will suffice.
+
+  ``` js
+  var html = require('raw!./view.page-name.html');
+
+  module.exports = {
+    template: html,
+    ready: function() {
+      // First let's register this Page's name
+      // ... or you can hard-code it and skip this
+      this.pageName = quasar.current.page.name;
+
+      // Remember reference to the function
+      // so we can unregister it later on "destroy"
+      this.onPageActive = function(page) {
+        // if Page to be displayed is this one:
+        if (page.name === this.pageName) {
+          this.timeout = setInterval(function() {
+            // do something;
+          });
+        }
+        // User navigated to another Page
+        // So we do the cleanup:
+        else if (this.timeout) {
+          clearInterval(this.timeout);
+        }
+      }.bind(this);
+
+      // Whenever this Page is being displayed:
+      quasar.events.on('app:page:ready', this.onPageActive);
+    },
+    destroy: function() {
+      // Unregister the event
+      quasar.events.off('app:page:ready', this.onPageActive);
+
+      // Do required cleanup
+      if (this.timeout) {
+        clearInterval(this.timeout);
+      }
+    }
+  };
+  ```
+
+7. Read about how to communicate between Layouts and Pages [here](/guide/vue-model-communication.html). It's important to know how to share VueModel data between the two.
+
+8. Page component (with a Layout specified) once loaded it will live in memory and DOM as long as the user does not navigates away to a Page with other or no Layout. This means amongst other things that it will maintain its VueModel state and scrolling position.
+
+9. You can use parameterized routes for your Page (eg. `#/library/:book/:chapter`). Read [Parameterized Page Routes](/guide/parameterized-page-routes.html) to see how it's done.
 
 ### Global Page Variables
 
@@ -121,7 +196,7 @@ Global variables are available for you to use to access pages:
 
 | Global Variable | Description |
 | --- | --- |
-| `quasar.current.page` | Access current page's properties, like `name`, `hash`, `manifest`, `pageContainer` (jQuery Node), `scrollContainer` (jQuery Node), `vm` (current page's VueModel Object - good place to change VM's reactive data) |
+| `quasar.current.page` | Access current page's properties, like `name`, `hash`, `manifest`, `pageContainer` (jQuery Node), `scrollContainer` (jQuery Node), `vm` (current page's VueModel Object - good place to change VM's reactive data). |
 | `quasar.data.manifest.pages` | Manifest of all pages registered in your App |
 
 ## Page Manifest
@@ -133,6 +208,9 @@ Example:
 label: 'Control Panel'
 icon: 'dashboard'
 layout: 'main'
+routes:
+  - '$'
+  - ':book/:chapter'
 navigation:
   group: 'typography'
   order: 3
@@ -141,13 +219,14 @@ navigation:
 
 Let's look at all properties:
 
-| Property | Description |
-| --- | --- |
-| `label` | Text to display on navigation links (drawer or layout navigational tabs). |
-| `icon` | Icon to display on navigation links (drawer or layout navigational tabs); see [Icons](/api/css-icons.html) |
-| `layout` | Optional. Specify which layout does the page belongs to, if any. |
-| `navigation` | Help layout tabs determine when and how to display a link for this page. See sub-properties below. |
-| `css` | This property gets computed by default if the `.styl` file exists in the page folder (**so it is optional!**), but it can be overridden to point to other CSS files. The path must start with the folder where app root *index.html* file exists. |
+| Property | Optional | Description |
+| --- | --- | --- |
+| `label` | | Text to display on navigation links (drawer or layout navigational tabs). |
+| `icon` | | Icon to display on navigation links (drawer or layout navigational tabs); see [Icons](/api/css-icons.html) |
+| `layout` | Yes | Specify which layout does the page belongs to, if any. |
+| `navigation` | Yes | Help layout tabs determine when and how to display a link for this page. See sub-properties below. |
+| `css` | Yes | This property gets computed by default if the `.styl` file exists in the page folder (**so it is optional!**), but it can be overridden to point to other CSS files. The path must start with the folder where app root *index.html* file exists. |
+| `routes` | Yes | Array of routes to be registered for the Page. Eg. for Page 'library', `$` means (default) route `#/library`, and `:book/:chapter` means `#/library/:book/:chapter`. Not specifying `routes` property is the same as `routes: ['$']`. |
 
 Sub-properties for `navigation` object:
 

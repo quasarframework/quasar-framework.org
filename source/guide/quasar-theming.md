@@ -65,6 +65,7 @@ The platform in which your App runs is automatically detected and the `<body>` t
 | `cordova` | Standalone Mobile App wrapped with Apache Cordova |
 | `touch` | Touch capable platform |
 | `no-touch` | Touch capability not present |
+| `within-iframe` | For when entire website is under an IFRAME tag |
 
 So you can write specific Stylus code for your App like this:
 

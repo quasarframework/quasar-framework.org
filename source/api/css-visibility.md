@@ -19,6 +19,7 @@ There are some CSS classes that you can use out of the box for common functional
 | `no-touch-only` | Visible only on non-touch platforms |
 | `mat-only` | Visible only for Material Quasar Theme |
 | `ios-only` | Visible only for iOS Quasar Theme |
+| `within-iframe-only` | Visible only when entire website is under an IFRAME tag |
 
 Also check [Quasar Theming &gt; Platform Specific Styles](/guide/quasar-theming.html#Platform-Specific-Styles).
 

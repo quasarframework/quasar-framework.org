@@ -2,6 +2,14 @@ title: Quasar Framework Release Notes
 ---
 NPM package holding Quasar Framework is `quasar-framework`.
 
+#### v0.1.3 / 2016-06-14
+
+  * Parameterized Routes for Pages
+
+  this.route from #/book to $
+  this.hash
+  this.parameterized
+
 #### v0.1.2 / 2016-06-13
 
   * Updated some dependencies: jQuery to v3, Roboto font face to v0.5.0

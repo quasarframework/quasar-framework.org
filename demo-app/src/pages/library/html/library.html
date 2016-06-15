@@ -1,0 +1,29 @@
+<p class="caption bg-secondary text-white" style="padding: 10px;margin-bottom:10px;">
+  Route <em>{{route}}</em>
+</p>
+
+<div class="list inner-delimiter">
+  <div class="list-header">
+    <h5>Library Books</h5>
+  </div>
+  <div
+    class="item item-link"
+    v-for="book in books"
+    @click="navigateTo('book', book.name)"
+  >
+    <i>book</i>
+    <div class="item-content">
+      <div class="item-label">
+        <p class="item-title">{{book.title}}</p>
+        <p>by <em>{{book.author}}</em></p>
+      </div>
+      <i>keyboard_arrow_right</i>
+    </div>
+  </div>
+</div>
+
+<br>
+<div class="desktop-only within-iframe-only">
+  For a better inspection of demo:
+  <button class="primary clear" @click="openWindow()">Open Demo in New Window</button>
+</div>

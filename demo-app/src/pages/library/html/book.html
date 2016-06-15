@@ -1,0 +1,24 @@
+<p class="caption bg-secondary text-white" style="padding: 10px;margin-bottom:10px;">
+  Route <em>{{route}}</em>
+</p>
+
+<p>
+  <button
+    class="primary circular small"
+    @click="navigateTo('library')"
+  >
+    <i>keyboard_arrow_left</i>
+  </button>
+</p>
+
+<h5>{{title}}</h5>
+<p>by <em>{{author}}</em></p>
+
+<p>
+  <button class="primary clear" @click="navigateTo('page', name)">
+    <i class="on-left">chrome_reader_mode</i>
+    Start reading
+  </button>
+</p>
+
+<p>{{{summary}}}</p>

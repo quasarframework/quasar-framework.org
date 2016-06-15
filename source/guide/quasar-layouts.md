@@ -44,7 +44,11 @@ var html = require('raw!./layout.layout-name.html');
 
 module.exports = function(done) {
   /*
-   * 'this' contains Layout manifest;
+   * Properties available:
+   */
+  this.name // [String] Layout name (eg. 'main')
+  /*
+   * 'this' also contains Layout manifest;
    * for example if you have specific
    * CSS for the layout, then:
    * 'this.css' will contain the URL
@@ -104,7 +108,28 @@ Read more about the [Build System](/guide/quasar-build-system.html) to understan
   };
   ```
 
-5. Make sure you sanitize intervals, timeouts, requestAnimationFrames or anything else at `beforeDestroy` point, otherwise you may end up with bugs when user switches to another Layout.
+5. Make sure you sanitize intervals, timeouts, requestAnimationFrames or anything else at `beforeDestroy` or `destroy` point, otherwise you may end up with bugs when user switches to another Layout.
+
+  ``` js
+  // Sanitization example within Layout
+
+  var html = require('raw!./view.layout-name.html');
+
+  module.exports = {
+    template: html,
+    ready: function() {
+      this.timeout = setInterval(function() {
+        // do something;
+      });
+    },
+    destroy: function() {
+      clearInterval(this.timeout);
+    }
+  };
+  ```
+
+  > **IMPORTANT**
+  > Sanitization is essential otherwise unforeseen effects may occur leading to hard to track bugs.
 
 6. Read about how to communicate between Page and Layouts  [here](/guide/vue-model-communication.html). It's important to know how to share VueModel data between the two.
 

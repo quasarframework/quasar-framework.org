@@ -17,6 +17,7 @@ guide:
     Theming: quasar-$
     Native Mobile App Wrapper: $
     Importing Dependencies: $
+    Parameterized Page Routes: $
   Release Notes:
     Quasar CLI: $-release-notes
     Quasar Framework: $-release-notes

@@ -1,0 +1,7 @@
+{
+  "title": "Maintainable JavaScript",
+  "author": "Nicholas C. Zakas",
+  "rating": "3.85",
+  "name": "maintainable-javascript",
+  "summary": "<p>When you're writing code alone, you have a lot of leeway. But when you start writing code as part of a team, you need to think harder about the decisions you make. This book will help you do that.</p><p>When you write code in a team setting, will other developers be able to understand what you did? Did you organize your code in such a way that it's easy to adapt and extend? Will your code survive once you're gone?</p><p>Maintainable JavaScript doesn't just recommend a set of guidelines, it examines guidelines being used and recommended by others in the industry, so you get a feel for what's common in well-run JavaScript projects.</p><p>Save a copy of this book now. It's the only resource that focus solely on JavaScript conventions.</p>"
+}

@@ -1,0 +1,24 @@
+{
+  "books": [
+    {
+      "title": "Clean Code",
+      "author": "Robert C. Martin",
+      "name": "clean-code"
+    },
+    {
+      "title": "Maintainable JavaScript",
+      "author": "Nicholas C. Zakas",
+      "name": "maintainable-javascript"
+    },
+    {
+      "title": "Nodejs Programming",
+      "author": "Agus Kurniawan",
+      "name": "nodejs-programming-by-example"
+    },
+    {
+      "title": "Think Python",
+      "author": "Allen B. Downey",
+      "name": "think-python"
+    }
+  ]
+}
