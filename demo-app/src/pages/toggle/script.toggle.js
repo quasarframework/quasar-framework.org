@@ -2,12 +2,13 @@
 
 var html = require('raw!./view.toggle.html');
 
-module.exports = {
-  template: html,
-  data: {
-    checked: false
-  },
-  ready: function() {
-    quasar.current.layout.vm.$data.title = 'Toggle';
-  }
+module.exports = function(done) {
+  quasar.current.layout.vm.$data.title = 'Toggle';
+
+  done({
+    template: html,
+    data: {
+      checked: false
+    }
+  });
 };

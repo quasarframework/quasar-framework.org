@@ -2,9 +2,10 @@
 
 var html = require('raw!./view.card-coloring.html');
 
-module.exports = {
-  template: html,
-  ready: function() {
-    quasar.current.layout.vm.$data.title = 'Coloring Cards';
-  }
+module.exports = function(done) {
+  quasar.current.layout.vm.$data.title = 'Coloring Cards';
+
+  done({
+    template: html
+  });
 };

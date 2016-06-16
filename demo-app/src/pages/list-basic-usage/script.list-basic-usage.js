@@ -2,9 +2,10 @@
 
 var html = require('raw!./view.list-basic-usage.html');
 
-module.exports = {
-  template: html,
-  ready: function() {
-    quasar.current.layout.vm.$data.title = 'Basic Lists';
-  }
+module.exports = function(done) {
+  quasar.current.layout.vm.$data.title = 'Basic Lists';
+
+  done({
+    template: html
+  });
 };

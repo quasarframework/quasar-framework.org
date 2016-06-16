@@ -2,9 +2,10 @@
 
 var html = require('raw!./view.card-fab.html');
 
-module.exports = {
-  template: html,
-  ready: function() {
-    quasar.current.layout.vm.$data.title = 'Cards with FAB';
-  }
+module.exports = function(done) {
+  quasar.current.layout.vm.$data.title = 'Cards with FAB';
+
+  done({
+    template: html
+  });
 };

@@ -9,20 +9,21 @@ function getPages() {
   return pages;
 }
 
-module.exports = {
-  template: html,
-  data: {
-    pages: getPages()
-  },
-  methods: {
-    navigateTo: function(pageName) {
-      quasar.navigate.to.route('#/' + pageName);
+module.exports = function(done) {
+  quasar.current.layout.vm.$data.title = 'Framework';
+
+  done({
+    template: html,
+    data: {
+      pages: getPages()
     },
-    toggleTheme: function() {
-      quasar.swap.theme();
+    methods: {
+      navigateTo: function(pageName) {
+        quasar.navigate.to.route('#/' + pageName);
+      },
+      toggleTheme: function() {
+        quasar.swap.theme();
+      }
     }
-  },
-  ready: function() {
-    quasar.current.layout.vm.$data.title = 'Framework';
-  }
+  });
 };

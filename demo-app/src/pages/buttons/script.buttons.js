@@ -2,9 +2,10 @@
 
 var html = require('raw!./view.buttons.html');
 
-module.exports = {
-  template: html,
-  ready: function() {
-    quasar.current.layout.vm.$data.title = 'Buttons';
-  }
+module.exports = function(done) {
+  quasar.current.layout.vm.$data.title = 'Buttons';
+
+  done({
+    template: html
+  });
 };

@@ -2,12 +2,13 @@
 
 var html = require('raw!./view.checkbox.html');
 
-module.exports = {
-  template: html,
-  data: {
-    checked: false
-  },
-  ready: function() {
-    quasar.current.layout.vm.$data.title = 'Checkbox';
-  }
+module.exports = function(done) {
+  quasar.current.layout.vm.$data.title = 'Checkbox';
+
+  done({
+    template: html,
+    data: {
+      checked: false
+    }
+  });
 };

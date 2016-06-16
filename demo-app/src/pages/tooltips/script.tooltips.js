@@ -2,9 +2,10 @@
 
 var html = require('raw!./view.tooltips.html');
 
-module.exports = {
-  template: html,
-  ready: function() {
-    quasar.current.layout.vm.$data.title = 'Tooltips';
-  }
+module.exports = function(done) {
+  quasar.current.layout.vm.$data.title = 'Tooltips';
+
+  done({
+    template: html
+  });
 };

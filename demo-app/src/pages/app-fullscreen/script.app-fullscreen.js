@@ -2,14 +2,15 @@
 
 var html = require('raw!./view.app-fullscreen.html');
 
-module.exports = {
-  template: html,
-  ready: function() {
-    quasar.current.layout.vm.$data.title = 'App Fullscreen';
-  },
-  methods: {
-    toggleFullscreen: function() {
-      quasar.toggle.fullscreen();
+module.exports = function(done) {
+  quasar.current.layout.vm.$data.title = 'App Fullscreen';
+
+  done({
+    template: html,
+    methods: {
+      toggleFullscreen: function() {
+        quasar.toggle.fullscreen();
+      }
     }
-  }
+  });
 };

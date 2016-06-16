@@ -2,9 +2,10 @@
 
 var html = require('raw!./view.card-list.html');
 
-module.exports = {
-  template: html,
-  ready: function() {
-    quasar.current.layout.vm.$data.title = 'Cards with List';
-  }
+module.exports = function(done) {
+  quasar.current.layout.vm.$data.title = 'Cards with List';
+
+  done({
+    template: html
+  });
 };

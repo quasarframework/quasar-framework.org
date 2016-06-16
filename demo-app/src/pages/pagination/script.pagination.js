@@ -2,12 +2,13 @@
 
 var html = require('raw!./view.pagination.html');
 
-module.exports = {
-  template: html,
-  data: {
-    page: 1
-  },
-  ready: function() {
-    quasar.current.layout.vm.$data.title = 'Pagination';
-  }
+module.exports = function(done) {
+  quasar.current.layout.vm.$data.title = 'Pagination';
+
+  done({
+    template: html,
+    data: {
+      page: 1
+    }
+  });
 };

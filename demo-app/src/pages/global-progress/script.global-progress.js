@@ -4,6 +4,8 @@ var html = require('raw!./view.global-progress.html');
 
 module.exports = function(done) {
   setTimeout(function() {
+    quasar.current.layout.vm.$data.title = 'Global Progress';
+
     done({
       template: html,
       methods: {

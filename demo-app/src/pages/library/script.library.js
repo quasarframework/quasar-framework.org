@@ -16,6 +16,8 @@ module.exports = function(loadPage) {
     urlPrefix = '/demo-app/pages/' + pageName + '/assets/'
     ;
 
+  quasar.current.layout.vm.$data.title = 'Parameterized Page Routes';
+
   if (this.params.page) {
     apiURL = 'books/' + this.params.book + '-pages.json';
     template = templates.page;
@@ -58,11 +60,6 @@ module.exports = function(loadPage) {
         openWindow: function() {
           quasar.open.url(window.location.href);
         }
-      },
-
-      // Disregard this; part of the Layout
-      ready: function() {
-        quasar.current.layout.vm.$data.title = 'Parameterized Page Routes';
       }
     };
 

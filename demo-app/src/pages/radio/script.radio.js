@@ -2,12 +2,13 @@
 
 var html = require('raw!./view.radio.html');
 
-module.exports = {
-  template: html,
-  data: {
-    option: 'opt1'
-  },
-  ready: function() {
-    quasar.current.layout.vm.$data.title = 'Radio';
-  }
+module.exports = function(done) {
+  quasar.current.layout.vm.$data.title = 'Radio';
+
+  done({
+    template: html,
+    data: {
+      option: 'opt1'
+    }
+  });
 };

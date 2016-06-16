@@ -72,33 +72,34 @@ function openMaximizedModal() {
   }).show();
 }
 
-module.exports = {
-  template: html,
-  ready: function() {
-    quasar.current.layout.vm.$data.title = 'Modals';
-  },
-  data: {
-    types: [
-      {
-        label: 'Basic Modal',
-        handler: openBasicModal
-      },
-      {
-        label: 'Basic Modal with Events',
-        handler: openBasicModalWithEvents
-      },
-      {
-        label: 'Screen Modal',
-        handler: openScreenModal
-      },
-      {
-        label: 'Always Minimized Modal',
-        handler: openMinimizedModal
-      },
-      {
-        label: 'Always Maximized Modal',
-        handler: openMaximizedModal
-      }
-    ]
-  }
+module.exports = function(done) {
+  quasar.current.layout.vm.$data.title = 'Modals';
+
+  done({
+    template: html,
+    data: {
+      types: [
+        {
+          label: 'Basic Modal',
+          handler: openBasicModal
+        },
+        {
+          label: 'Basic Modal with Events',
+          handler: openBasicModalWithEvents
+        },
+        {
+          label: 'Screen Modal',
+          handler: openScreenModal
+        },
+        {
+          label: 'Always Minimized Modal',
+          handler: openMinimizedModal
+        },
+        {
+          label: 'Always Maximized Modal',
+          handler: openMaximizedModal
+        }
+      ]
+    }
+  });
 };
