@@ -17,6 +17,7 @@ NPM package holding Quasar Framework is `quasar-framework`.
   * fix: Avoid infinite loop on non numeric input values on Pagination Web Component
   * `app:error` event, which is triggered when **any** Javascript error occurs. Read more [here](/api/js-events-list.html#Parameter-supplied-by-app-error).
   * Global Progress feature; overlay with spinner API. Quasar also uses it now when loading a Page. Read more [here](/api/js-global-progress.html).
+  * `dimmed` and `light-dimmed` CSS classes. Read more [here](/api/css-visibility.html).
 
 #### v0.1.2 / 2016-06-13
 
