@@ -1,26 +1,14 @@
-<p class="caption bg-secondary text-white" style="padding: 10px;margin-bottom:10px;">
-  Route <em>{{route}}</em>
-</p>
+<h5>
+  {{book.title}}
+</h5>
+<small>
+  Page &nbsp;
+  <span class="badge bg-primary text-white">
+    {{pageNumber}}
+  </span>
+</small>
 
-<p>
-  <button
-    class="primary circular small"
-    @click="navigateTo('book', book.name)"
-  >
-    <i>keyboard_arrow_left</i>
-  </button>
-</p>
-
-<blockquote>
-  <h4>{{book.title}}</h4>
-  <small>
-    Page &nbsp;
-    <span class="badge bg-primary text-white">
-      {{pageNumber}}
-    </span>
-  </small>
-</blockquote>
-
+<br><br>
 <p>{{{ pages[pageNumber - 1] }}}</p>
 
 <pagination :model.sync="pageNumber" :max="book.pages"></pagination>

@@ -11,31 +11,41 @@ module.exports = function(loadPage) {
   var
     apiURL,
     template,
+    title,
+    backButton,
     pageName = this.name,
     params = this.params,
     urlPrefix = '/demo-app/pages/' + pageName + '/assets/'
     ;
 
-  quasar.current.layout.vm.$data.title = 'Parameterized Page Routes';
-
   if (this.params.page) {
     apiURL = 'books/' + this.params.book + '-pages.json';
     template = templates.page;
+    title = 'Book Pages';
+    backButton = '#/' + this.name + '/' + this.params.book;
   }
   else if (this.params.book) {
     apiURL = 'books/' + this.params.book + '-description.json';
     template = templates.book;
+    title = 'Book';
+    backButton = '#/' + this.name;
   }
   else {
     apiURL = 'library.json';
     template = templates.library;
+    title = 'Library Books';
+    backButton = '';
   }
+
+  var layoutVM = quasar.current.layout.vm;
+
+  layoutVM.$data.title = title;
+  layoutVM.$data.backButton = backButton;
+  layoutVM.$data.route = quasar.get.current.route();
 
   quasar.make.a.get.request({
     url: urlPrefix + apiURL
   }).done(function(data) {
-    data.route = quasar.get.current.route();
-
     var pageComponent = {
       template: template,
       data: data,
