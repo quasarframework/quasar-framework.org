@@ -10,6 +10,11 @@ Quasar easily allows you to import external dependencies from NPM. Here are the 
   You are interested in `deps` property which features both the Javascript dependency files as well as the CSS ones.
   Take a look inside the `node_modules/[package_name]` folder and see what files to include for Quasar. The Javascript file is usually specified in `package.json` under the "main" property. Most packages have a `dist` folder featuring the files you need.
 
+  > **IMPORTANT**
+  > Do **not** include the file extension for your JS or CSS imports. For example specify *node_modules/vue-google-maps/vue-google-maps* instead of *node_modules/vue-google-maps/vue-google-maps.js*.
+
+  > Depending on the build type (development or production), Quasar will embed, for example `vue-google-maps.js` or `vue-google-maps.min.js` (if this latter file exists). Remember not to end your import string with `.js` in `quasar.build.yml`. Same thing for CSS imports too.
+
   > The order in which dependencies are specified matters!
 
 3. Use your dependency. Check out your dependency's website and look on how to use the dependency as "standalone", meaning look for the global Objects that they inject.
@@ -25,9 +30,9 @@ Then we take a look into `node_modules/lodash` and `node_modules/q` folders to s
 ``` yaml
 deps:
   js: [
-    'node_modules/q/q.js',
-    'node_modules/lodash/index.js',
-    'node_modules/vue-google-maps/index.js'
+    'node_modules/q/q',
+    'node_modules/lodash/index',
+    'node_modules/vue-google-maps/index'
     ]
 ```
 
@@ -79,3 +84,15 @@ Read more about [Quasar Starting Point](/guide/quasar-app-starting-point.html).
 
 #### Option B
 If only one Page uses it, then embed the code in the script file of your Page (`script.*page-name*.js`), before defining `module.exports`.
+
+Or you can specify `components` property in your Page VueModel declaration:
+
+``` js
+...
+module.exports = {
+  ...,
+  components: {
+    'google-map': VueGoogleMap.Map
+  }
+};
+```
