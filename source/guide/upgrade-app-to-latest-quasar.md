@@ -4,7 +4,7 @@ Upgrading an App to use the latest and greatest Quasar Framework version is easy
 
 ``` bash
 # within your App's folder:
-$ npm update
+$ npm update quasar-framework
 
 # or
 $ npm install --save quasar-framework

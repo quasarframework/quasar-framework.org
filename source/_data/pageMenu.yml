@@ -35,6 +35,7 @@ api:
     Events List: js-$
     Ajax Requests: js-$
     Require Script or CSS: js-$
+    Global Progress: js-$
     Cookies: js-$
     Web Storage: js-$
     App Visibility: js-$

@@ -11,6 +11,23 @@ quasar.events.on('Event-Name', function(Object/Array/String/Anything) {
 });
 ```
 
+## Global Events
+
+| Event Name | Description |
+| --- | --- |
+| app:error | Triggered for any Javascript error. See parameters below. |
+
+### Parameter supplied by `app:error`
+`app:error` event is triggerd with one parameter, an Object containing the following properties:
+
+| Property Name | Type | Description |
+| --- | --- | --- |
+| message | String | Error message |
+| source | String | URL of the script where the error was raised |
+| lineno | Number | Line number where error was raised |
+| colno | Number | Column number for the line where the error occurred |
+| error | Object | Error Object containing amongst other things the stack trace |
+
 ## Page Events
 
 | Event Name | Description |
@@ -78,3 +95,11 @@ Read more about it [here](/api/js-app-visibility.html).
 | app:notify | (String) html | Is triggered when `quasar.notify()` is used. |
 
 Read more about it [here](/components/app-notify.html).
+
+## Global Progress
+
+| Event Name | Parameters | Description |
+| --- | --- | --- |
+| app:global-progress | (Boolean) status | Triggered when Global Progress is displayed (with `true` as param) or hidden (with `false` as param). |
+
+Read more about it [here](/api/js-global-progress.html).

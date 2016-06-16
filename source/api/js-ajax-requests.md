@@ -229,12 +229,12 @@ This refers to the boolean `processData`. By default, data passed in to the data
 #### XHR Fields
 This refers to `xhrFields` which is an object of fieldName-fieldValue pairs to set on the native XHR object.
 
-For example, you can use it to set withCredentials to true for cross-domain requests if needed, *which is the default behavior for Quasar out of the box*.
+For example, you can use it to set *withCredentials* to *false* when you don't need cross-domain requests. **Out of the box, Quasar sets `withCredentials` to `true`**.
 ``` js
 quasar.make.a.get.request({
    url: a_cross_domain_url,
    xhrFields: {
-      withCredentials: true
+      withCredentials: false
    }
 });
 ```
@@ -252,14 +252,18 @@ quasar.config.requests.failFnHandler = function(jqXHR, textStatus, errorThrown) 
 You can `return true;` if you want to override the request's own failure handler(s).
 
 ## Request Cache
-Cache response for GET requests (only) using `cachable` property:
+> **NOTE**
+> All GET requests are configured by default to cache their response, because `quasar.config.requests.use.cache` is by default set to `true`.
+
+Disable cache response for GET requests using `cachable` property:
 ``` js
 quasar.make.a.get.request({
   url: '/articles.php',
-  cachable: true
+  cachable: false
 });
 ```
-You can also configure all GET requests to be cached by default, so you won't have to specify `cachable` property:
+
+You can also configure all GET requests to NOT be cached by default, so you won't have to specify `cachable` property:
 ``` js
 quasar.config.requests.use.cache = false;
 ```
@@ -268,9 +272,6 @@ At some point you may want to clear the cache for all requests:
 ``` js
 quasar.clear.requests.cache();
 ```
-
-> **NOTE**
-> All GET requests are configured by default to cache their response, because `quasar.config.requests.use.cache` is by default set to `true`.
 
 ## Group Requests
 Sometimes you need to wait for multiple requests until you proceed further:

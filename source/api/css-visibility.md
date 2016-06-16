@@ -8,6 +8,8 @@ There are some CSS classes that you can use out of the box for common functional
 | `hidden` | Set `display` to `none` |
 | `invisible` | Set `visibility` to `none` |
 | `transparent` | Background color is transparent |
+| `dimmed` | Apply dark transparent overlay on top of your element. Do not use on elements which already have **:after** pseudoelement. |
+| `light-dimmed` | Apply white transparent overlay on top of your element. Do not use on elements which already have **:after** pseudoelement. |
 
 ### Platform Related
 | Class Name | Description |

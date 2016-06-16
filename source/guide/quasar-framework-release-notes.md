@@ -2,9 +2,10 @@ title: Quasar Framework Release Notes
 ---
 NPM package holding Quasar Framework is `quasar-framework`.
 
-#### v0.1.3 / 2016-06-14
+#### v0.2.0 / 2016-06-16
 
-  A revisit of the [Quasar Pages](/guide/quasar-pages.html) would be good.
+   No breaking changes but lots of additions.
+   A revisit of the [Quasar Pages](/guide/quasar-pages.html) would be good.
 
   * Parameterized Page Routes
     Learn how to register a Page with multiple routes, like `#/library/:book/:page'. Read more [here](/guide/parameterized-page-routes.html) how to handle this scenario.
@@ -14,6 +15,8 @@ NPM package holding Quasar Framework is `quasar-framework`.
     * this.parameterized (Boolean; tells whether the page was accessed through a parameterized route and/or with a Query String)
   * Added `within-iframe-only` CSS visibility class. When entire website/app is within an IFRAME tag, the `<body>` tag will now have `within-iframe` class.
   * fix: Avoid infinite loop on non numeric input values on Pagination Web Component
+  * `app:error` event, which is triggered when **any** Javascript error occurs. Read more [here](/api/js-events-list.html#Parameter-supplied-by-app-error).
+  * Global Progress feature; overlay with spinner API. Quasar also uses it now when loading a Page. Read more [here](/api/js-global-progress.html).
 
 #### v0.1.2 / 2016-06-13
 
