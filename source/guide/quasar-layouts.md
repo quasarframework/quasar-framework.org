@@ -108,33 +108,34 @@ Read more about the [Build System](/guide/quasar-build-system.html) to understan
   };
   ```
 
-5. Make sure you sanitize intervals, timeouts, requestAnimationFrames or anything else at `beforeDestroy` or `destroy` point, otherwise you may end up with bugs when user switches to another Layout.
+### Layout Resources Cleanup
+Make sure you sanitize intervals, timeouts, requestAnimationFrames or anything else at `beforeDestroy` or `destroy` point, otherwise you may end up with bugs when user switches to another Layout.
 
-  ``` js
-  // Sanitization example within Layout
+``` js
+// Sanitization example within Layout
 
-  var html = require('raw!./view.layout-name.html');
+var html = require('raw!./view.layout-name.html');
 
-  module.exports = {
-    template: html,
-    ready: function() {
-      this.timeout = setInterval(function() {
-        // do something;
-      });
-    },
-    destroy: function() {
-      clearInterval(this.timeout);
-    }
-  };
-  ```
+module.exports = {
+  template: html,
+  ready: function() {
+    this.timeout = setInterval(function() {
+      // do something;
+    });
+  },
+  destroy: function() {
+    clearInterval(this.timeout);
+  }
+};
+```
 
-  > **IMPORTANT**
-  > Sanitization is essential otherwise unforeseen effects may occur leading to hard to track bugs.
+> **IMPORTANT**
+> Layout resources cleanup is essential otherwise unforeseen effects may occur leading to hard to track bugs.
 
-6. Read about how to communicate between Page and Layouts  [here](/guide/vue-model-communication.html). It's important to know how to share VueModel data between the two.
+### Communicating with Page
+Read about how to communicate between Page and Layouts  [here](/guide/vue-model-communication.html). It's important to know how to share VueModel data between the two.
 
 ### Global Layout Variable
-
 There is a global variable available for you to use called `quasar.current.layout` which holds properties like `name` and `vm` (current layout's VueModel Object - good place to change VM's reactive data).
 
 ## Layout Template

@@ -63,6 +63,12 @@ module.exports = function(done) {
   // asynchronous operations
   // ...
 
+  // --- IMPORTANT ---
+  // Code placed here before calling done()
+  // is ALWAYS executed when user navigates
+  // to this Page
+  // -----------------
+
   done({ // Vue instance
     template: html,
     ...
@@ -118,77 +124,92 @@ Read more about the [Build System](/guide/quasar-build-system.html) and [Require
   };
   ```
 
-5. Make sure you sanitize intervals, timeouts, requestAnimationFrames or anything else at `beforeDestroy` or `destroy` point, otherwise you may end up with bugs when user switches to another Page or Layout.
+### Page Resources Cleanup
+Make sure you sanitize intervals, timeouts, requestAnimationFrames or anything else at `beforeDestroy` or `destroy` point, otherwise you may end up with bugs when user switches to another Page or Layout.
 
-  ``` js
-  // Sanitization example within Page
+``` js
+// Sanitization example within Page
 
-  var html = require('raw!./view.page-name.html');
+var html = require('raw!./view.page-name.html');
 
-  module.exports = {
-    template: html,
-    ready: function() {
-      this.timeout = setInterval(function() {
-        // do something;
-      });
-    },
-    destroy: function() {
-      clearInterval(this.timeout);
-    }
-  };
-  ```
+module.exports = {
+  template: html,
+  ready: function() {
+    this.timeout = setInterval(function() {
+      // do something;
+    });
+  },
+  destroy: function() {
+    clearInterval(this.timeout);
+  }
+};
+```
 
-  > **IMPORTANT**
-  > Sanitization is essential otherwise unforeseen effects may occur leading to hard to track bugs.
+> **IMPORTANT**
+> Page resources cleanup is essential otherwise unforeseen effects may occur leading to hard to track bugs.
 
-6. Example for when you want a certain Page (with Layout specified) functionality to be available only while that Page is currently being displayed. Note that it makes sense to do this effort only if Page has a Layout, otherwise a sanitization described above will suffice.
+### Functionality Available Only While Page is Visible
+Example for when you want a certain Page (with Layout specified) functionality to be available only while that Page is currently being displayed. Note that it makes sense to do this effort only if Page has a Layout, otherwise a sanitization described above will suffice.
 
-  ``` js
-  var html = require('raw!./view.page-name.html');
+``` js
+var html = require('raw!./view.page-name.html');
 
-  module.exports = {
-    template: html,
-    ready: function() {
-      // First let's register this Page's name
-      // ... or you can hard-code it and skip this
-      this.pageName = quasar.current.page.name;
+module.exports = {
+  template: html,
+  ready: function() {
+    // First let's register this Page's name
+    // ... or you can hard-code it and skip this
+    this.pageName = quasar.current.page.name;
 
-      // Remember reference to the function
-      // so we can unregister it later on "destroy"
-      this.onPageActive = function(page) {
-        // if Page to be displayed is this one:
-        if (page.name === this.pageName) {
-          this.timeout = setInterval(function() {
-            // do something;
-          });
-        }
-        // User navigated to another Page
-        // So we do the cleanup:
-        else if (this.timeout) {
-          clearInterval(this.timeout);
-        }
-      }.bind(this);
-
-      // Whenever this Page is being displayed:
-      quasar.events.on('app:page:ready', this.onPageActive);
-    },
-    destroy: function() {
-      // Unregister the event
-      quasar.events.off('app:page:ready', this.onPageActive);
-
-      // Do required cleanup
-      if (this.timeout) {
+    // Remember reference to the function
+    // so we can unregister it later on "destroy"
+    this.onPageActive = function(page) {
+      // if Page to be displayed is this one:
+      if (page.name === this.pageName) {
+        this.timeout = setInterval(function() {
+          // do something;
+        });
+      }
+      // User navigated to another Page
+      // So we do the cleanup:
+      else if (this.timeout) {
         clearInterval(this.timeout);
       }
+    }.bind(this);
+
+    // Whenever this Page is being displayed:
+    quasar.events.on('app:page:ready', this.onPageActive);
+  },
+  destroy: function() {
+    // Unregister the event
+    quasar.events.off('app:page:ready', this.onPageActive);
+
+    // Do required cleanup
+    if (this.timeout) {
+      clearInterval(this.timeout);
     }
-  };
-  ```
+  }
+};
+```
 
-7. Read about how to communicate between Layouts and Pages [here](/guide/vue-model-communication.html). It's important to know how to share VueModel data between the two.
+### Communicating with Layout
+Read about how to communicate between Layouts and Pages [here](/guide/vue-model-communication.html). It's important to know how to share VueModel data between the two.
 
-8. Page component (with a Layout specified) once loaded it will live in memory and DOM as long as the user does not navigates away to a Page with other or no Layout. This means amongst other things that it will maintain its VueModel state and scrolling position.
+### Parameterized Routes for Page
+You can use parameterized routes for your Page (eg. `#/library/:book/:chapter`). Read [Parameterized Page Routes](/guide/parameterized-page-routes.html) to see how it's done.
 
-9. You can use parameterized routes for your Page (eg. `#/library/:book/:chapter`). Read [Parameterized Page Routes](/guide/parameterized-page-routes.html) to see how it's done.
+### Resident Pages
+There are scenarios where your Page VueModel and DOM lives in memory even when the user navigates to another Page. We call them **resident Pages**. It is important for you to know the scenarios when a Page becomes a resident one:
+* Page has Layout and user navigates to a Page with same Layout
+* Default route ('$') for a parameterized Page with no Query String.
+
+Any other scenario, like having a Page with no Layout or user navigates to a parameterized route, or user navigates to a Page on any route with a Query String makes Quasar create a new instance of your Page (meaning new VueModel and DOM node).
+
+Having a Page maintain its VueModel and DOM allows us to maintain its state and scrolling position, amongst other things.
+
+On your Page's script export a function when you have code that needs to be run every time the user navigates to that Page, regardless if it's in one of the scenarios where it will maintain its VueModel and DOM or not. For example, when you need to communicate with the Page's Layout before displaying the Page.
+
+Having this in mind note that you must not place code (which needs to ALWAYS be executed when user navigates to it) on `ready` method of your Page's VueModel if the Page is a resident one. Be aware when you switch from a non-resident Page type to a resident one and backwards too.
 
 ### Global Page Variables
 
