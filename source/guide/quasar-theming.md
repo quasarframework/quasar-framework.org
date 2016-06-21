@@ -86,7 +86,25 @@ body
 
 ## Speed Up Build Time
 
-By default, Quasar CLI builds your App with all available themes. You can speed up build time when developing by forcing only one theme rather than building all of them. See [forceTheme](/guide/quasar-app-configuration.html#‘forceTheme’-String) property in [App Configuration](/guide/quasar-app-configuration.html).
+By default, Quasar CLI builds your App with all available themes. You can speed up build time when developing by forcing only one theme build rather than building all of them. See [forceTheme](/guide/quasar-app-configuration.html#‘forceTheme’-String) property in [App Configuration](/guide/quasar-app-configuration.html).
+
+## Forcing a Theme
+
+You can also force Quasar use a specific theme regardless of the platform. In *index.html* replace the *class* attribute value from `@@theme` to `mat` or `ios`.
+
+``` html
+<!-- original index.html -->
+...
+<body class="@@theme">
+...
+
+<!-- theme forced App index.html -->
+...
+<body class="mat">
+...
+```
+
+Combine this with building one theme only in the section above, [Speed Up Built Time](#Speed-Up-Build-Time).
 
 ## Stylus Variables
 

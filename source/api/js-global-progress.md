@@ -7,7 +7,7 @@ This feature is also used by Quasar when it loads Pages.
 <input type="hidden" data-fullpage-demo="global-progress">
 
 ## Basic Usage
-Global Progress uses a delay (300ms) to display itself so that quick operations won't make the screen flicker. This happens by showing and then quickly hiding the progress spinner without the user having a chance to see what happens. The delay before showing it eliminates confusion.
+Global Progress uses a delay (500ms) to display itself so that quick operations won't make the screen flicker. This happens by showing and then quickly hiding the progress spinner without the user having a chance to see what happens. The delay before showing it eliminates confusion.
 
 The default spinner used is `tail`. Read more about Spinners [here](/components/spinners.html).
 
@@ -18,7 +18,7 @@ quasar.show.global.progress();
 
 // with a custom delay
 quasar.show.global.progress({
-  delay: 500 // milliseconds
+  delay: 300 // milliseconds
 });
 
 // with a custom spinner

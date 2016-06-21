@@ -31,7 +31,7 @@ Then we take a look into `node_modules/lodash` and `node_modules/q` folders to s
 deps:
   js: [
     'node_modules/q/q',
-    'node_modules/lodash/index',
+    'node_modules/lodash/lodash',
     'node_modules/vue-google-maps/index'
     ]
 ```
@@ -50,7 +50,7 @@ Vue.component('google-map', VueGoogleMap.Map);
 
 Now be creative on where to include the code above.
 
-#### Option A
+#### Option A - Global Availability
 If multiple Pages use the package, then include it in `src/index.html` under the `quasar.boot()` call, right before `quasar.start.app()`, like this:
 
 ```js
@@ -82,7 +82,7 @@ quasar.boot(function() {
 
 Read more about [Quasar Starting Point](/guide/quasar-app-starting-point.html).
 
-#### Option B
+#### Option B - Local Availability
 If only one Page uses it, then embed the code in the script file of your Page (`script.*page-name*.js`), before defining `module.exports`.
 
 Or you can specify `components` property in your Page VueModel declaration:

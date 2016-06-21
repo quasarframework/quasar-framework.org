@@ -87,6 +87,11 @@ components:
     Rating: $
     Badge: $
     Breadcrumb: $
+    Chat: $
+    Dropdown: $
+    Context Dropdown: $
+    Infinite Scroll: $
+    Pull Down to Refresh: $
     Tree: $
     Pagination: $
     Floating Action Buttons: $

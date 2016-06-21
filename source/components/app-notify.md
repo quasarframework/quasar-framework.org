@@ -1,7 +1,8 @@
 title: Quasar App Notify
 ---
-Quasar App Notifiers appear on top of the screen above any other components to signal the user with a message and sometimes with an action too.
-On mobile platforms they show up at the bottom edge of the screen and on desktop platforms they are shown on the top right edge of the screen.
+Quasar App Notifiers appear on top of the screen above any other components to signal the user with a message and sometimes with an action too. They can be dismissed by clicking on the right side button or by swiping to left or right. On desktop, they can be dragged with the mouse.
+
+On mobile platforms they show up either at the bottom (for Material theme) or top (for iOS theme) edge of the screen and on desktop platforms they are shown on the top right edge of the screen.
 
 <input type="hidden" data-fullpage-demo="app-notify">
 

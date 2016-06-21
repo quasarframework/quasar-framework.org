@@ -2,6 +2,24 @@ title: Quasar Framework Release Notes
 ---
 NPM package holding Quasar Framework is `quasar-framework`.
 
+#### v0.3.0 / 2016-06-21
+
+No breaking changes.
+New features:
+  * Pull down to refresh
+  * Infinite scroll
+  * Chat CSS
+  * Dropdown
+  * Context Dropdown
+  * `highlight-and-fade` CSS class
+
+Others changes:
+  * App Notifies are now displayed at the top edge of the screen for iOS theme
+  * fix: quasar.current.page containers properties (height: 100%)
+  * Increased default global progress delay from 300 to 500ms
+  * fix: Default spinner for iOS is now different than Material
+  * Touch directive (`v-touch`) is now available for desktop too where touch actions can be simulated by dragging the mouse on the DOM elements.
+
 #### v0.2.0 / 2016-06-16
 
    No breaking changes but lots of additions.
