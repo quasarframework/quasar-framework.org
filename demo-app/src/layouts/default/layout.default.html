@@ -1,7 +1,19 @@
 <screen>
 
   <div slot="header" class="row items-center shadow-1">
+    <button
+      v-show="indexButton"
+      @click="goToIndex"
+      class="cordova-only"
+    >
+      <i>home</i>
+    </button>
+
     <p>Quasar {{title}}</p>
+
+    <button @click="toggleTheme" class="cordova-only">
+      <i>swap_vertical_circle</i>
+    </button>
   </div>
 
   <page class="smart-container"></page>

@@ -15,7 +15,7 @@ module.exports = function(loadPage) {
     backButton,
     pageName = this.name,
     params = this.params,
-    urlPrefix = '/demo-app/pages/' + pageName + '/assets/'
+    urlPrefix = (quasar.runs.within.iframe ? '/demo-app/' : '') + 'pages/' + pageName + '/assets/'
     ;
 
   if (this.params.page) {

@@ -7,6 +7,14 @@
     >
       <i style="font-size: 2.5rem;">keyboard_arrow_left</i>
     </button>
+    <button
+      v-else
+      @click="goToIndex"
+      class="cordova-only"
+    >
+      <i>home</i>
+    </button>
+
     <p :style="{'text-align': backButton ? 'left' : 'center'}">
       {{title}}
     </p>

@@ -9,6 +9,11 @@ module.exports = function(done) {
         sortable: true,
         selection: 'none'
       }
+    },
+    methods: {
+      goToIndex: function() {
+        quasar.navigate.to.route('#/');
+      }
     }
   });
 };

@@ -15,6 +15,9 @@ module.exports = {
       }
 
       quasar.navigate.to.route(this.backButton);
+    },
+    goToIndex: function() {
+      quasar.navigate.to.route('#/');
     }
   }
 };
