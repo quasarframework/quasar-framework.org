@@ -20,6 +20,9 @@ module.exports = function(done) {
     methods: {
       navigateTo: function(pageName) {
         quasar.navigate.to.route('#/' + pageName);
+      },
+      visitQuasar: function() {
+        quasar.open.url('http://quasar-framework.org');
       }
     }
   });
