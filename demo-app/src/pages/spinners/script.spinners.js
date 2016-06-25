@@ -11,9 +11,9 @@ module.exports = function(done) {
       size: 36,
       color: '#000000',
       spinners: [
-        'audio', 'ball', 'bars', 'circles', 'dots',
-        'grid', 'hearts', 'ios', 'oval', 'puff',
-        'rings', 'tail'
+        'tail', 'audio', 'ball', 'bars', 'circles',
+        'dots', 'grid', 'hearts', 'ios', 'oval',
+        'puff', 'rings'
       ],
       colorOptions: [
         {
