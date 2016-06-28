@@ -11,6 +11,13 @@ Just add the `responsive` CSS class to it.
 <img src="assets/quasar.jpg" class="responsive">
 ```
 
+## Avatar Images
+Just add the `avatar` CSS class to it.
+
+``` html
+<img src="assets/quasar-avatar.jpg" class="avatar">
+```
+
 ## Image Gallery
 Use this Web Component when you want to display multiple images together.
 

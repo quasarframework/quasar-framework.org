@@ -6,14 +6,24 @@ The Action Sheet always appears above any other components on the page, and must
 
 <input type="hidden" data-fullpage-demo="action-sheet">
 
+> Action Sheets can be displayed as a List or as a gallery, with icons or with avatars.
+
 ## Basic Usage
 ``` js
 quasar.action.sheet({
   title: 'Article Actions',
+
+  // specify ONLY IF you want gallery mode:
+  gallery: true,
+
   buttons: [
     {
       label: 'Delete',
-      icon: 'delete',
+
+      // Choose one of the following two:
+      icon: 'delete', // specify ONLY IF using icon
+      avatar: 'assets/some-avatar.png', // specify ONLY IF using avatar
+
       handler: function() {
         quasar.notify.positive('Deleted Article');
       }

@@ -285,6 +285,17 @@ Example:
 <pagination :model.sync="page" :max="17"></pagination>
 ```
 
+### $quasar variable
+From within the template you can directly access `quasar` global. Example below:
+
+``` html
+<button @click="$quasar.navigate.to.route('#/book')">
+  Go to library
+</button>
+```
+
+So rather than injecting a method in your VueModel which handles the `quasar` global and then attaching the method to the button from your template, you can specify the `quasar` handling within your templates.
+
 ## Page CSS
 Each page can use its own CSS. Notice that all CSS files have the *.styl* extension. This is because you can use Stylus (with NIB extension). Read more about the [Build System](/guide/quasar-build-system.html) to understand.
 

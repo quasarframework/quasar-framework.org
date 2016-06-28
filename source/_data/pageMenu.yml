@@ -85,7 +85,7 @@ components:
     Spinners: $
     Parallax: $
     Rating: $
-    Badge: $
+    Label: $
     Breadcrumb: $
     Chat: $
     Dropdown: $
@@ -99,6 +99,7 @@ components:
     Grid: $-component
     Collapsible: $
     Tooltips: $
+    Timeline: $
     State Component: $
     Slider: $
     Image Gallery: $

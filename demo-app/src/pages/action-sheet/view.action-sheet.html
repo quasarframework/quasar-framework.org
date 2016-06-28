@@ -1,12 +1,17 @@
-<h5>Lorel Ipsum</h5>
-<p>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-  enim ad minim veniam, quis nostrud exercitation ullamco laboris
-  nisi ut aliquip ex ea commodo consequat.
+<p class="caption">
+  Click/Tap on each type to see an Action Sheet in action.
 </p>
 
-<button class="teal glossy" @click="showActionSheet()">
-  <i class="on-left">settings</i>
-  Show Action Sheet
-</button>
+<div class="list item-delimiter highlight">
+  <div
+    class="item item-link"
+    v-for="dialog in types"
+    @click="dialog.handler()"
+  >
+    <i class="text-primary">settings</i>
+    <div class="item-content">
+      <div class="item-label">{{dialog.label}}</div>
+      <i>keyboard_arrow_right</i>
+    </div>
+  </div>
+</div>

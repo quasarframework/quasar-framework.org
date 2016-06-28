@@ -2,12 +2,12 @@ title: Quasar Cards
 ---
 Quasar Cards are a great way to display important pieces of content, and are quickly emerging as a core design pattern for Apps. They're are a great way to contain and organize information, while also setting up predictable expectations for the user. With so much content to display at once, and often so little screen real-estate, Cards have fast become the design pattern of choice for many companies, including the likes of Google and Twitter.
 
-Quasar Cards are all about HTML markup with some exception where Quasar Vue directive need to be used. It's all about being creative. Experiment with different Web Components by embedding them in Cards to create awesome results.
+Quasar Cards are all about HTML markup with some exception where some Quasar Vue directives need to be used. It's all about being creative. Experiment with different Web Components by embedding them in Cards to create awesome results.
 
 > **NOTE**
 > Quasar Cards have by default a width set to 100%, so make sure you either set them a `max-width` or wrap them in DOM element with maximum width.
 
-Scroll down to on how to use Cards and see the demos (if on desktop).
+Scroll down to check out how to use Cards HTML syntax and if on desktop see the demos.
 
 ## Basic Cards
 <input type="hidden" data-demo="card-basic">
@@ -168,9 +168,7 @@ Use social cards to present posts on a wall like on Facebook or Twitter.
 ``` html
 <div class="card">
   <div class="item">
-    <div class="item-avatar">
-      <img src="assets/linux-avatar.png">
-    </div>
+    <img class="avatar" src="assets/linux-avatar.png">
     <div class="item-content">
       <div class="item-label">
         <p class="item-title">Joe</p>

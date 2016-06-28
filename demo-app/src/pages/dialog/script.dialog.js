@@ -73,6 +73,66 @@ module.exports = function(done) {
           }
         },
         {
+          label: 'Determined Progress',
+          icon: 'hourglass_empty',
+          handler: function() {
+            var progress = {
+              model: 25
+              //indeterminate: true
+            };
+
+            var dialog = quasar.dialog({
+              title: 'Progress',
+              message: 'Computing...',
+              progress: progress,
+              buttons: [
+                {
+                  label: 'Cancel',
+                  handler: function(data) {
+                    clearInterval(timeout);
+                    quasar.notify('Canceled on progress ' + data);
+                  }
+                }
+              ]
+            });
+
+            var timeout = setInterval(function() {
+              progress.model++;
+              if (progress.model === 50) {
+                clearInterval(timeout);
+                dialog.close();
+              }
+            }, 1000);
+          }
+        },
+        {
+          label: 'Indeterminate Progress',
+          icon: 'hourglass_full',
+          handler: function() {
+            var dialog = quasar.dialog({
+              title: 'Progress',
+              message: 'Computing...',
+              progress: {
+                indeterminate: true
+              },
+              buttons: [
+                {
+                  label: 'Cancel',
+                  handler: function(data) {
+                    clearTimeout(timeout);
+                    quasar.notify('Canceled...');
+                  }
+                }
+              ]
+            });
+
+            var timeout = setTimeout(function() {
+              clearInterval(timeout);
+              dialog.close();
+            }, 3000);
+          }
+        },
+        {
           label: 'Pick One Option',
           icon: 'warning',
           handler: function() {
@@ -240,6 +300,31 @@ module.exports = function(done) {
                   label: 'Change',
                   handler: function(data) {
                     quasar.notify('Returned ' + JSON.stringify(data));
+                  }
+                }
+              ]
+            });
+          }
+        },
+        {
+          label: 'Stacked Buttons Example',
+          icon: 'reorder',
+          handler: function() {
+            quasar.dialog({
+              title: 'Confirm',
+              message: 'Quasar Framework is performance optimized by default, but you can use a speed boost by disabling some of its unused features.',
+              stackButtons: true,
+              buttons: [
+                {
+                  label: 'Turn on speed boost',
+                  handler: function() {
+                    console.log('Turning on speed boost.');
+                  }
+                },
+                {
+                  label: 'No Thanks',
+                  handler: function() {
+                    console.log('Ok, no speed boost.');
                   }
                 }
               ]

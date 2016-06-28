@@ -28,6 +28,10 @@ You can display text in a variety of ways.
 <p class="light-paragraph">Light Paragraph</p>
 <p class="thin-paragraph">Thin Paragraph</p>
 
+<!-- Bold or italic -->
+<p class="text-bold">Bold text</p>
+<p class="text-italic">Italic text</p>
+
 <!-- Blockquotes -->
 <blockquote>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
@@ -63,6 +67,8 @@ You can display text in a variety of ways.
 | `text-center` | Align text to the center |
 | `text-justify` | Text will be justified |
 | `text-truncate` | Applies all CSS tweaks to truncate text when container is too small |
+| `text-bold` | Text will be in bold |
+| `text-italic` | Text will be in italic |
 | `caption` | For use on caption parapgraphs |
 | `light-paragraph` | Applies a font-weight of 300 |
 | `thin-paragraph` | Applies a font-weight of 200 |

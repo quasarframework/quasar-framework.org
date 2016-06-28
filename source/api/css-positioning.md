@@ -13,3 +13,9 @@ There are CSS classes supplied by Quasar to help you position a DOM element easi
 | `fixed-right`, `absolute-right` | Fixed or absolute position to the right edge of screen |
 | `fixed-bottom`, `absolute-bottom` | Fixed or absolute position to bottom of screen |
 | `fixed-left`, `absolute-left` | Fixed or absolute position to the left edge of screen |
+| `relative-position` | Set position to `relative` |
+| `vertical-top` | Set vertical alignment to `top` |
+| `vertical-middle` | Set vertical alignment to `middle` |
+| `vertical-bottom` | Set vertical alignment to `bottom` |
+| `on-left` | Sets a small margin to the right; commonly used for icon elements with other siblings |
+| `on-right` | Sets a small margin to the left; commonly used for icon elements with other siblings |

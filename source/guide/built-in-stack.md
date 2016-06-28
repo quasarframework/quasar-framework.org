@@ -24,6 +24,11 @@ var demo = new Vue({
 
 Changing the *input* element content automatically updates `data.message` (called *scope*). Works the other way around too if you programmatically change `data.message` property. But this is just the tip of the iceberg.
 
+### Vuex
+Vuex (see documentation [here](http://vuex.vuejs.org/) and Github page [here](https://github.com/vuejs/vuex)) is an application architecture for centralized state management when dealing with VueJS. A *must-use* for medium to large Apps.
+
+Read more about its purpose on the [Vue Model Communication](/guide/vue-model-communication.html#Best-Solution-Vuex) documentation page.
+
 ## Apache Cordova
 Wrap your App in Cordova so it can be installed on a mobile phone. It offers access to native device APIs, which is awesome. It integrates perfectly with Quasar Framework.
 

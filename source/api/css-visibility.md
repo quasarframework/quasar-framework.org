@@ -13,6 +13,8 @@ There are some CSS classes that you can use out of the box for common functional
 | `highlight-and-fade` | Adds a yellow background color and fades it away upon element is displayed. |
 
 ### Platform Related
+Visible only on:
+
 | Class Name | Description |
 | --- | --- |
 | `desktop-only` | Visible only on desktop |
@@ -24,10 +26,29 @@ There are some CSS classes that you can use out of the box for common functional
 | `ios-only` | Visible only for iOS Quasar Theme |
 | `within-iframe-only` | Visible only when entire website is under an IFRAME tag |
 
+Hide on:
+
+| Class Name | Description |
+| --- | --- |
+| `desktop-hide` | Hide on desktop |
+| `mobile-hide` | Hide on mobile |
+| `cordova-hide` | Hide on Cordova wrapped Apps |
+| `touch-hide` | Hide on touch capable platforms |
+| `no-touch-hide` | Hide on non-touch platforms |
+| `mat-hide` | Hide for Material Quasar Theme |
+| `ios-hide` | Hide for iOS Quasar Theme |
+| `within-iframe-hide` | Hide only when entire website is under an IFRAME tag |
+
 Also check [Quasar Theming &gt; Platform Specific Styles](/guide/quasar-theming.html#Platform-Specific-Styles).
 
 > **NOTE**
 > There is also a non-recommended way to hide DOM elements through Javascript. Read more on [Javascript &gt; Environment](/api/js-environment.html) page.
+
+### Orientation Related
+| Class Name | Description |
+| --- | --- |
+| `orientation-portrait` | Visible only when screen orientation is *Portrait* |
+| `orientation-landscape` | Visible only when screen orientation is *Landscape* |
 
 ### Window Width Related
 First of all, let's define what does a small, medium, big or large window means:

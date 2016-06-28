@@ -144,6 +144,17 @@ The Quasar App Layout HTML represents a Vue instance template. Read more about t
 > **IMPORTANT**
 > There are several Web Components that you can use. Some of them are mandatory. Read more about them and how to use them starting with [Components &gt; Layout Overview](/components/layout-overview.html) documentation page.
 
+### $quasar variable
+From within the template you can directly access `quasar` global. Example below:
+
+``` html
+<button @click="$quasar.navigate.to.route('#/book')">
+  Go to library
+</button>
+```
+
+So rather than injecting a method in your VueModel which handles the `quasar` global and then attaching the method to the button from your template, you can specify the `quasar` handling within your templates.
+
 ## Layout CSS
 Each Layout can use its own CSS. Notice that all CSS files have the *.styl* extension. This is because you can use Stylus (with NIB extension). Read more about the [Build System](/guide/quasar-build-system.html) to understand.
 

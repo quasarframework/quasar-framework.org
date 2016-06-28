@@ -2,6 +2,35 @@ title: Quasar Framework Release Notes
 ---
 NPM package holding Quasar Framework is `quasar-framework`.
 
+#### v0.4.0 / 2016-06-28
+Breaking change:
+  * [Label](/components/label.html) replaces Badge.
+  * Simplified [image (avatar and thumbnail) HTML syntax for Lists](/components/list.html#List-with-Images).
+    * Images are no longer required to be wrapped inside `<div class="item-avatar">` or `<div class="item-thumbnail">`. Simply add `avatar` or `thumbnail` CSS classes to the images and DO not wrap them anymore.
+
+New features:
+  * [Timeline CSS](/components/timeline.html)
+  * [Progress Dialog](/components/dialog.html#Progress)
+  * Dialog [stacked buttons](/components/dialog.html#Components) option
+  * New [spinners](/components/spinners.html): `facebook`, `gears`, `hourglass`, `infinity`, `pie`, `radio`
+  * [Action Sheet with gallery mode](/components/action-sheet.html#Basic-Usage) instead of using Lists
+  * Slightly differentiate [Chat CSS](/components/chat.html) for iOS theme
+  * [Vuex](/guide/vue-model-communication.html#Best-Solution-Vuex) now supplied by default
+  * [$quasar variable](/guide/quasar-pages.html#quasar-variable) available within Vue templates
+
+New [Positioning CSS classes](/api/css-positioning.html):
+  * `relative-position`
+  * `vertical-top`, `vertical-middle`, `vertical-bottom`
+  * `on-left`, `on-right`
+
+New [Visibility CSS classes](/api/css-visibility.html):
+  * `orientation-landscape` and `orientation-portrait`
+  * Hide elements for a specific platform, like: `desktop-hide`, `cordova-hide`
+
+New [Typography CSS classes](/api/css-typography.html#CSS-Helper-Classes):
+  * `text-italic`, `text-bold`
+  * [**avatar** image CSS class](/components/image-gallery.html#Avatar-Images)
+
 #### v0.3.0 / 2016-06-21
 
 No breaking changes.

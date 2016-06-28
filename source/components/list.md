@@ -277,9 +277,7 @@ Quasar List items can also contain an avatar or a thumbnail.
 <!-- List with Avatars -->
 <div class="list inner-delimiter">
   <div class="item">
-    <div class="item-avatar">
-      <img src="assets/linux-avatar.png">
-    </div>
+    <img class="avatar" src="assets/linux-avatar.png">
     <div class="item-content">
       <div class="item-label">
         <p class="item-title">Jack</p>
@@ -289,9 +287,7 @@ Quasar List items can also contain an avatar or a thumbnail.
   </div>
   <div class="list-header">Header</div>
   <div class="item">
-    <div class="item-avatar">
-      <img src="assets/guy-avatar.png">
-    </div>
+    <img class="avatar" src="assets/guy-avatar.png">
     <div class="item-content">
       <div class="item-label">
         <p class="item-title">John</p>
@@ -302,9 +298,7 @@ Quasar List items can also contain an avatar or a thumbnail.
     </div>
   </div>
   <div class="item">
-    <div class="item-avatar">
-      <img src="assets/boy-avatar.png">
-    </div>
+    <img class="avatar" src="assets/boy-avatar.png">
     <div class="item-content">
       <div class="item-label">
         <p class="item-title">Joe</p>
@@ -314,9 +308,7 @@ Quasar List items can also contain an avatar or a thumbnail.
     </div>
   </div>
   <div class="item">
-    <div class="item-avatar">
-      <img src="assets/linux-avatar-2.png">
-    </div>
+    <img class="avatar" src="assets/linux-avatar-2.png">
     <div class="item-content">
       <div class="item-label">
         <p class="item-title">Linux Lover</p>
@@ -333,9 +325,7 @@ Quasar List items can also contain an avatar or a thumbnail.
 <!-- List with Thumbnails -->
 <div class="list inner-delimiter">
   <div class="item">
-    <div class="item-thumbnail">
-      <img src="assets/linux-avatar.png">
-    </div>
+    <img class="thumbnail" src="assets/linux-avatar.png">
     <div class="item-content">
       <div class="item-label">
         <p class="item-title">Jack</p>
@@ -345,9 +335,7 @@ Quasar List items can also contain an avatar or a thumbnail.
   </div>
   <div class="list-header">Header</div>
   <div class="item">
-    <div class="item-thumbnail">
-      <img src="assets/guy-avatar.png">
-    </div>
+    <img class="thumbnail" src="assets/guy-avatar.png">
     <div class="item-content">
       <div class="item-label">
         <p class="item-title">John</p>
@@ -358,9 +346,7 @@ Quasar List items can also contain an avatar or a thumbnail.
     </div>
   </div>
   <div class="item">
-    <div class="item-thumbnail">
-      <img src="assets/boy-avatar.png">
-    </div>
+    <img class="thumbnail" src="assets/boy-avatar.png">
     <div class="item-content">
       <div class="item-label">
         <p class="item-title">Joe</p>
@@ -370,9 +356,7 @@ Quasar List items can also contain an avatar or a thumbnail.
     </div>
   </div>
   <div class="item">
-    <div class="item-thumbnail">
-      <img src="assets/linux-avatar-2.png">
-    </div>
+    <img class="thumbnail" src="assets/linux-avatar-2.png">
     <div class="item-content">
       <div class="item-label">
         <p class="item-title">Linux Lover</p>
