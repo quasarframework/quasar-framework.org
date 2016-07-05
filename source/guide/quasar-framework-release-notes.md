@@ -2,7 +2,12 @@ title: Quasar Framework Release Notes
 ---
 NPM package holding Quasar Framework is `quasar-framework`.
 
-#### v0.4.0 / 2016-06-28
+## v0.4.1 / 2016-07-05
+
+No breaking changes.
+Fixed some bugs for iOS platform including [blank screen  one](https://github.com/rstoenescu/quasar-framework/issues/10).
+
+## v0.4.0 / 2016-06-28
 Breaking change:
   * [Label](/components/label.html) replaces Badge.
   * Simplified [image (avatar and thumbnail) HTML syntax for Lists](/components/list.html#List-with-Images).
@@ -31,7 +36,7 @@ New [Typography CSS classes](/api/css-typography.html#CSS-Helper-Classes):
   * `text-italic`, `text-bold`
   * [**avatar** image CSS class](/components/image-gallery.html#Avatar-Images)
 
-#### v0.3.0 / 2016-06-21
+## v0.3.0 / 2016-06-21
 
 No breaking changes.
 New features:
@@ -49,7 +54,7 @@ Others changes:
   * fix: Default spinner for iOS is now different than Material
   * Touch directive (`v-touch`) is now available for desktop too where touch actions can be simulated by dragging the mouse on the DOM elements.
 
-#### v0.2.0 / 2016-06-16
+## v0.2.0 / 2016-06-16
 
    No breaking changes but lots of additions.
    A revisit of the [Quasar Pages](/guide/quasar-pages.html) would be good.
@@ -66,7 +71,7 @@ Others changes:
   * Global Progress feature; overlay with spinner API. Quasar also uses it now when loading a Page. Read more [here](/api/js-global-progress.html).
   * `dimmed` and `light-dimmed` CSS classes. Read more [here](/api/css-visibility.html).
 
-#### v0.1.2 / 2016-06-13
+## v0.1.2 / 2016-06-13
 
   * Updated some dependencies: jQuery to v3, Roboto font face to v0.5.0
   * fix: Trigger Parallax events in the right order
@@ -74,6 +79,6 @@ Others changes:
   * feat: Dialog with Toggles
   * style: Improve design for Tree web component
 
-#### v0.1.0 / 2016-06-06
+## v0.1.0 / 2016-06-06
 
   * First public-ready release.

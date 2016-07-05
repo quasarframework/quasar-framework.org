@@ -41,6 +41,9 @@ Adds click event to close the App when running under Cordova wrapper, otherwise 
 <button v-exit-app><i>close<i></button>
 ```
 
+> **NOTE**
+> It works ONLY for Android apps. iOS App Store policy forbids an App to self close. On any other platform it just hides the element used upon.
+
 ### Directive "v-scroll"
 This one takes one parameter (a Function) and fires when user scrolls the Page containing that DOM node.
 
