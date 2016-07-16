@@ -172,6 +172,11 @@ iframe
     font-size 1.6rem
     vertical-align middle
     margin-right 5px
+  &.small
+    font-size .8rem
+    padding 4px 9px
+    i
+      font-size 1.2rem
 
 .sidebar
   position fixed
@@ -277,6 +282,28 @@ $color-idea   = #00C853
     border-color darken($color-idea, 25%) darken($color-idea, 20%) darken($color-idea, 10%)
     box-shadow inset 0 1px 3px rgba(black, .2), 0 1px rgba(white, .4)
     background-image linear-gradient(to bottom, darken($color-idea, 13%), lighten($color-idea, 5%))
+
+.support-link
+  height 20px
+  border 1px solid #d4d4d4 // @stylint ignore
+  display inline-block
+  box-sizing border-box
+  line-height 16px
+  border-radius 3px
+  cursor pointer
+  background-image linear-gradient(to bottom, #fcfcfc 0, #eee 100%) // @stylint ignore
+  position relative
+  width 128px
+  text-align center
+  &:hover
+    border-color #ccc // @stylint ignore
+    background-image linear-gradient(to bottom, #eee 0, #ddd 100%) // @stylint ignore
+  i
+    vertical-align middle
+  a
+    font 700 11px/14px 'Helvetica Neue', Helvetica, Arial, sans-serif
+    color #333 // @stylint ignore
+    text-shadow 0 1px 0 #fff // @stylint ignore
 
 
 @media screen and (min-width $small-screen + 1px)
