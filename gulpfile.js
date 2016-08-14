@@ -25,7 +25,7 @@ var htmlMinifierOptions = {
 gulp.task('useref', function() {
   var assets = plugins.useref.assets();
 
-  return gulp.src(['public/**/*.html', '!public/demo-app/**/*.html'])
+  return gulp.src(['public/**/*.html', '!public/quasar-play/**/*.html'])
     .pipe(assets)
     .pipe(plugins.if('*.css', plugins.cssBase64()))
     .pipe(plugins.if('*.css', plugins.minifyCss()))
@@ -51,8 +51,8 @@ gulp.task('images', function() {
 });
 
 gulp.task('clean-unused-files', ['useref'], function() {
-  del.sync(['public/**/*.js', '!public/**/*combined*.js', '!public/demo-app/**/*.js']);
-  del.sync(['public/**/*.css', '!public/**/*combined*.css', '!public/demo-app/**/*.css']);
+  del.sync(['public/**/*.js', '!public/**/*combined*.js', '!public/quasar-play/**/*']);
+  del.sync(['public/**/*.css', '!public/**/*combined*.css', '!public/quasar-play/**/*']);
 });
 
 gulp.task('copy-assets', function() {
@@ -103,8 +103,8 @@ function finalizeStylusParse() {
 
 gulp.task('variables', function() {
   var
-    mat = new LineByLine('./demo-app/node_modules/quasar-framework/dist/css/quasar.mat.styl'),
-    ios = new LineByLine('./demo-app/node_modules/quasar-framework/dist/css/quasar.ios.styl')
+    mat = new LineByLine('/work/quasar-play/node_modules/quasar-framework/dist/quasar.mat.styl'),
+    ios = new LineByLine('/work/quasar-play/node_modules/quasar-framework/dist/quasar.ios.styl')
     ;
 
   mat.on('line', parseStylusLine('mat'));

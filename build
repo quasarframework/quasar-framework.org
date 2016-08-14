@@ -1,7 +1,12 @@
 #!/bin/bash
 
 hexo clean
-#cd ./demo-app; quasar clean; quasar build -p; cd ..
-#gulp variables
+rm -rf assets/quasar-play
+mkdir -p assets/quasar-play
+mkdir -p assets/quasar-play/android
+mkdir -p assets/quasar-play/apple
+cd /work/quasar-play; quasar clean; quasar build mat; cp -R dist/* /work/quasar-site/assets/quasar-play/android/
+quasar clean; quasar build ios; cp -R dist/* /work/quasar-site/assets/quasar-play/apple/; cd /work/quasar-site
+gulp variables
 hexo generate
 gulp

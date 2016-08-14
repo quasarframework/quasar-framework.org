@@ -1,7 +1,0 @@
-{
-  "title": "Nodejs Programming by Example",
-  "author": "Agus Kurniawan",
-  "rating": "3.88",
-  "name": "nodejs-programming",
-  "summary": "<p>This book is a reference to the nodejs programming language. It describes all the elements of the language and illustrates their use with code examples.</p>The book covers topics such as:</p><p>* Basic nodejs programming language</p><p>* File operations</p><p>* Functions</p><p>* String operations</p><p>* Building own module</p><p>* Error handling</p><p>* Events</p><p>* Database programming</p><p>* Web application</p><p>* Socket programming</p><p>* Socket.io</p>"
-}

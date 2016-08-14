@@ -1,7 +1,0 @@
-label: 'Parameterized Page Routes'
-icon: 'photo_filter'
-layout: 'library-layout'
-routes:
-  - '$'
-  - ':book'
-  - ':book/:page'
