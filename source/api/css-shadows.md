@@ -3,7 +3,7 @@ title: Quasar CSS Shadows
 Simple yet effective way to add shadows to create a depth effect.
 The shadows are in accordance to Material Design speifications.
 Don't forget to check the demo.
-<input type="hidden" data-fullpage-demo="shadows">
+<input type="hidden" data-fullpage-demo="css/shadows">
 
 | CSS Class Name | Description |
 | --- | --- |

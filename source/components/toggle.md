@@ -1,12 +1,12 @@
-title: Quasar Toggle
+title: Toggle
 ---
-<input type="hidden" data-fullpage-demo="toggle">
+<input type="hidden" data-fullpage-demo="form/toggle">
 
 ## Basic Usage
 
 ``` html
 <label>
-  <toggle :model.sync="checked"></toggle>
+  <quasar-toggle :model.sync="checked"></quasar-toggle>
   Toggle Label
 </label>
 ```
@@ -19,7 +19,7 @@ title: Quasar Toggle
     <i>mail</i>
     <div class="item-content">
       <div class="item-label">Toggle Label</div>
-      <toggle :model.sync="checked"></toggle>
+      <quasar-toggle :model.sync="checked"></quasar-toggle>
     </div>
   </label>
 </div>
@@ -28,10 +28,17 @@ title: Quasar Toggle
 ``` html
 <div class="list inner-delimiter bordered">
   <label class="item">
-    <toggle :model.sync="checked"></toggle>
+    <quasar-toggle :model.sync="checked"></quasar-toggle>
     <div class="item-content">
       Toggle Label
     </div>
   </label>
 </div>
+```
+
+## Coloring
+Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`, `orange`, `teal` as CSS class:
+
+``` html
+<quasar-toggle class="orange" :model.sync="checked"></quasar-toggle>
 ```

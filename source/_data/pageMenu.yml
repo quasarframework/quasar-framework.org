@@ -1,107 +1,96 @@
 guide:
   root:
     Getting Started: index
-    Installation: $
-    Create App: $
-    CLI Commands: $
-    Built-in Stack: $
-    Contributing to Quasar: $
-  App:
-    App Structure: quasar-$
-    App Configuration: quasar-$
-    Starting Point: quasar-app-$
-    Pages: quasar-$
-    Layouts: quasar-$
-    Vue Model Communication: $
-    Build System: quasar-$
-    Theming: quasar-$
-    Native Mobile App Wrapper: $
-    Importing Dependencies: $
-    Parameterized Page Routes: $
-  Release Notes:
-    Quasar CLI: $-release-notes
-    Quasar Framework: $-release-notes
+    Quasar CLI: $
+    Quasar Play App: $
     Development Plans: $
-  Miscellaneous:
-    Upgrade App to Latest Quasar: $
-    CommonJS Format: $
+    Contributing: $
+  Boilerplate:
+    Overview: app-boilerplate
+    Structure: app-$
+    Build Commands: app-$
+    Linter Configuration: app-$
+    Pre-Processors: app-$
+    Handling Static Assets: app-$
+    API Proxying for Dev: app-$
+    Unit Testing: app-$
+    End-to-end Testing: app-$
+    Prerendering for SEO: app-$
+  Development:
+    Ajax Requests: $
+    Components Sharing State: $
+    Cordova Wrapper: $
+    Router: $
+    Theming: quasar-$
+    Touch Events: $
 api:
-  root:
-    Overview: index
   Javascript:
-    Environment: js-$
-    Router: js-$
-    Events: js-$
-    Events List: js-$
-    Ajax Requests: js-$
-    Require Script or CSS: js-$
-    Global Progress: js-$
-    Cookies: js-$
-    Web Storage: js-$
     App Visibility: js-$
     App Fullscreen: js-$
-    Touch Events: js-$
+    Cookies: js-$
+    Events: js-$
+    Platform Detection: js-$
+    Utils: js-$
     Vue Directives: js-$
-    Vue Transitions: js-$
-    Scroll Fire: js-$-directive
-    Helpers and Utils: js-$
+    Web Storage: js-$
   CSS:
     Stylus Variables: css-$
     Color Palette: css-$
     Icons: css-$
     Typography: css-$
-    Grid Layout: css-$
     Shadows: css-$
+    Grid Layout: css-$
     Visibility: css-$
     Positioning: css-$
     Other Helper Classes: css-$
 components:
   root:
-    Overview: index
-  Generic:
-    App Notify: $
     Action Sheet: $
     Dialog: $
+    Loading: $
     Modal: $
+    Toast: $
   Layout:
-    Layout Overview: $
-    Automatic Navigation Tabs: layout-$
-    Layout Drawer: $
-    Layout Header and Footer: $
-  Form Inputs:
-    Input Textbox: $
-    Textarea: $
-    Checkbox: $
-    Radio: $
-    Number: $
-    Range: $
-    Toggle: $
-    Selectbox: $
-  Web Components:
-    Cards: $
-    Buttons: $
-    List: $
-    Progress Bars: $
-    Spinners: $
-    Parallax: $
-    Rating: $
-    Label: $
-    Breadcrumb: $
-    Chat: $
-    Dropdown: $
-    Context Dropdown: $
-    Infinite Scroll: $
-    Pull Down to Refresh: $
-    Tree: $
-    Pagination: $
-    Floating Action Buttons: $
+    Overview: layout-$
+    Drawer: $
+    Toolbar: $
     Tabs: $
-    Grid: $-component
-    Collapsible: $
-    Tooltips: $
-    Timeline: $
-    State Component: $
-    Slider: $
-    Image Gallery: $
-    Video Embedding: $
+  CSS:
+    Breadcrumb: $
+    Buttons: $
+    Cards: $
+    Chat: $
     HTML Tables: $
+    Label: $
+    List: $
+    Timeline: $
+  Form Inputs:
+    Checkbox: $
+    Input Textbox: $
+    Numeric: $
+    Radio: $
+    Range: $
+    Rating: $
+    Search: $
+    Select: $
+    Textarea: $
+    Toggle: $
+  Vue Components:
+    Collapsible: $
+    Context Menu: $
+    Dropdown: $
+    Floating Action Buttons: $
+    Grid: $-component
+    Infinite Scroll: $
+    Image Gallery: $
+    Pagination: $
+    Parallax: $
+    Progress Bar: $
+    Pull to Refresh: $
+    Scroll Fire: $
+    Slider: $
+    Spinners: $
+    State: $
+    Tooltip: $
+    Tree: $
+    Video Embedding: $

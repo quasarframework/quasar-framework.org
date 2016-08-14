@@ -1,13 +1,13 @@
-title: Quasar Pagination
+title: Pagination
 ---
 Quasar Pagination is a Web Component ready to use where a pagination system is needed.
 
-<input type="hidden" data-fullpage-demo="pagination">
+<input type="hidden" data-fullpage-demo="web-components/pagination">
 
 ## Basic Usage
 
 ``` html
-<pagination :model.sync="page" :max="17"></pagination>
+<quasar-pagination :model.sync="page" :max="17"></quasar-pagination>
 ```
 
 | Param Attributes | Required | Description |

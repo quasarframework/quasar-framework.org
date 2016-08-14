@@ -4,13 +4,23 @@ Action Sheets slide up from the bottom edge of the device screen, and display a 
 
 The Action Sheet always appears above any other components on the page, and must be dismissed in order to interact with the underlying content. When it is triggered, the rest of the page darkens to give more focus to the Action Sheet options.
 
-<input type="hidden" data-fullpage-demo="action-sheet">
+<input type="hidden" data-fullpage-demo="global/action-sheet">
 
 > Action Sheets can be displayed as a List or as a gallery, with icons or with avatars.
 
 ## Basic Usage
 ``` js
-quasar.action.sheet({
+import { ActionSheet } from 'quasar'
+
+(Modal Object) ActionSheet.create(configObj).show()
+```
+
+You can access the Dialog's VueModel through the returned *Modal Object*. Read about its properties on [Quasar Modal](/components/modal.html#Basic-Usage) documentation page.
+
+``` js
+import { ActionSheet } from 'quasar'
+
+ActionSheet.create({
   title: 'Article Actions',
 
   // specify ONLY IF you want gallery mode:
@@ -38,7 +48,10 @@ quasar.action.sheet({
       }
     }
   ]
-});
+}).show() // <<< DO NOT forget
 ```
+
+> **NOTE**
+> `ActionSheet.create()` returns a Modal (which you can configure if you wish), so don't forget to call `.show()`
 
 The last button specified is always used as a *Cancel* option to dismiss the Action Sheet and is displayed distinctively from the rest of the buttons.

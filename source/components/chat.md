@@ -2,7 +2,7 @@ title: Chat CSS
 ---
 Quasar supplies CSS classes for making a chat. Loot at the syntax below.
 
-<input type="hidden" data-fullpage-demo="chat">
+<input type="hidden" data-fullpage-demo="css/chat">
 
 ## Basic Usage
 ``` html

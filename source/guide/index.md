@@ -1,18 +1,58 @@
 title: Getting Started
 ---
-Following the following steps will familiarize yourself with Quasar Framework fast. You'll write Quasar Apps in no time.
-
-1. Make sure you know to write code with [Vue](http://vuejs.org) and you have an idea about the [NPM](http://npmjs.org) ecosystem.
-2. Install Quasar CLI on your development machine [here](/guide/installation.html).
-3. Read about Quasar CLI [here](/guide/cli-commands.html).
-  If you are going to write (native) mobile Apps, check the section about [Native Mobile App Wrapper](/guide/native-mobile-app-wrapper.html).
-4. Read about the [Built-in Stack](/guide/built-in-stack.html) of technologies that you can use out of the box.
-5. Read about how App code is structured (the "Guide &gt; App" section - see menu). Start with [App Structure](/guide/quasar-app-structure.html).
-6. Read about [theming your App](/guide/quasar-theming.html). Great starting point to understand how to write your CSS (Stylus) code.
-7. Learn about the built-in [API](/api/) (includes Quasar CSS Framework) and [Quasar Web Components](/components).
+Quasar CLI allows you to start new projects in no time by generating a starter boilerplate filled with everything that you need. It also does most of the heavy-lifting so you don't have to take care of the redundant tasks. You must install it to generate and manage a Quasar App.
 
 ``` bash
-$ quasar new app-name
+$ npm install -g quasar-cli
 ```
 
-And don't forget to have fun :)
+## Create your first App
+
+``` bash
+$ quasar init <folder name>
+```
+
+Start a development server of your first App, equipped with hot reload:
+
+``` bash
+$ quasar dev [theme]
+
+# start with 'mat' theme
+$ quasar dev
+# or
+$ quasar dev mat
+
+# start with 'ios' theme
+$ quasar dev ios
+```
+
+Create `*.vue` components from ready to use component templates folder (`/templates`):
+
+``` bash
+$ quasar new [type] <name of your component with optional subfolder>
+```
+
+Type can be `layout`, `view` (page content), `component` (generic `*.vue` component).
+You can even make your own component templates and use CLI to generate them in your App.
+
+## Quasar Play App
+If you want to **develop mobile Apps with hot reload directly on your mobile phone**, install [Quasar Play](/guide/quasar-play-app.html) app, currently only on Google Play Store.
+
+``` bash
+$ quasar dev --play
+```
+
+This generates a QR code that you can scan with Quasar Play app and you'll have your App on the phone as long as the development server is running.
+
+## Things to read about
+You should be familiar with these awesome tools/technologies:
+
+* [ES6 Javascript](http://www.2ality.com/2015/08/getting-started-es6.html)
+* [Vue Js](http://vuejs.org) and [NPM](http://npmjs.org) ecosystems
+* [Vue Router](http://router.vuejs.org/), [Vue Touch](https://github.com/vuejs/vue-touch), [Vue Resource](https://github.com/vuejs/vue-resource)
+* Writing [.vue files](http://vue-loader.vuejs.org/en/index.html)
+* [Optional] [Vuex](http://vuex.vuejs.org/) if building large scale Apps.
+* [Optional] [Webpack](http://webpack.github.io/) for tweaking the build system to your specific needs
+* [Optional] [Cordova](https://cordova.apache.org/) for building native mobile phone Apps out of your Quasar App
+
+> That's it. You're set now. Continue to read the guide about Quasar and don't forget to have fun :)

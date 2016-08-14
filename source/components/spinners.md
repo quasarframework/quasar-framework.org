@@ -1,8 +1,8 @@
-title: Quasar Spinners
+title: Spinners
 ---
-A spinner is used to show the user a process is currently taking place. You can pick their size without a loss of quality due to the fact that SVGs are used.
+A Spinner is used to show the user a process is currently taking place. You can pick their size without a loss of quality due to the fact that SVGs are used.
 
-<input type="hidden" data-fullpage-demo="spinners">
+<input type="hidden" data-fullpage-demo="web-components/spinner">
 
 ## Basic Usage
 ``` html

@@ -1,6 +1,7 @@
 title: Quasar Grid Layout
 ---
-<input type="hidden" data-fullpage-demo="grid-layout">
+<input type="hidden" data-fullpage-demo="layout/grid-layout">
+
 Back in the ol' days web developers used HTML tables to style their web pages. Then came along powerful CSS features. Latest in the arena entered [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
 
 Quasar provides lots of CSS classes to help you deal easily with managing a layout. Long story short, think of it like operating with rows and columns with many options at hand.

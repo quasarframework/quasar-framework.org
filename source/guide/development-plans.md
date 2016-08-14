@@ -6,17 +6,15 @@ Feel free to contribute if you like. Read how to do it [here](/guide/contributin
 High Level Plans
 ===
 
+* Windows Phone theme.
 * [Electron](http://electron.atom.io/) support.
 * [Chrome Extension](https://developer.chrome.com/extensions/getstarted) support.
+* [Progressive Web App](https://developers.google.com/web/progressive-web-apps/) template.
 * Example Apps
 * Tutorials
 * Forum
-* Improve debugging capabilities for native mobile Apps
-* Upgrade to VueJS 2.0
-* Experimenting with `vue-loader` or making similar loader specifically for Quasar.
-* Further improving Quasar CLI performance.
-* Experimenting Webpack build system to replace Gulp completely.
-* ES6 support
+* Upgrade to VueJS 2.0 once it's considered to be stable enough with rich ecosystem
+* Continuously improve Quasar Framework performance.
 
 Features
 ===

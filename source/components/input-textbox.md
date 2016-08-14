@@ -1,6 +1,6 @@
 title: Quasar Input Textbox
 ---
-<input type="hidden" data-fullpage-demo="input-textbox">
+<input type="hidden" data-fullpage-demo="form/text-input/textbox">
 
 ## Basic Usage
 

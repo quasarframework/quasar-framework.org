@@ -1,16 +1,16 @@
-title: Quasar Radio
+title: Radio
 ---
-<input type="hidden" data-fullpage-demo="radio">
+<input type="hidden" data-fullpage-demo="form/radio">
 
 ## Basic Usage
 
 ``` html
 <label>
-  <radio :model.sync="option" value="opt1"></radio>
+  <quasar-radio :model.sync="option" value="opt1"></quasar-radio>
   Option 1
 </label>
 <label>
-  <radio :model.sync="option" value="opt2"></radio>
+  <quasar-radio :model.sync="option" value="opt2"></quasar-radio>
   Option 2
 </label>
 ```
@@ -23,14 +23,14 @@ title: Quasar Radio
     <i>mail</i>
     <div class="item-content">
       <div class="item-label">Option 1</div>
-      <radio :model.sync="option" value="opt1"></radio>
+      <quasar-radio :model.sync="option" value="opt1"></quasar-radio>
     </div>
   </label>
   <label class="item">
     <i>mail</i>
     <div class="item-content">
       <div class="item-label">Option 2</div>
-      <radio :model.sync="option" value="opt2"></radio>
+      <quasar-radio :model.sync="option" value="opt2"></quasar-radio>
     </div>
   </label>
 </div>
@@ -39,16 +39,23 @@ title: Quasar Radio
 ``` html
 <div class="list bordered inner-delimiter">
   <label class="item">
-    <radio :model.sync="option" value="opt1"></radio>
+    <quasar-radio :model.sync="option" value="opt1"></quasar-radio>
     <div class="item-content">
         Option 1
     </div>
   </label>
   <label class="item">
-    <radio :model.sync="option" value="opt2"></radio>
+    <quasar-radio :model.sync="option" value="opt2"></quasar-radio>
     <div class="item-content">
         Option 2
     </div>
   </label>
 </div>
+```
+
+## Coloring
+Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`, `orange`, `teal` as CSS class:
+
+``` html
+<quasar-radio class="orange">...</quasar-radio>
 ```

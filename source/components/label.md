@@ -1,10 +1,10 @@
-title: Quasar Labels
+title: Labels
 ---
 Quasar Labels are small graphical elements used to indicate something like the number of likes an article has, the new or unread messages in an inbox and so on.
 
 This component only has CSS code, so you just have to follow the below HTML syntax in your templates for it.
 
-<input type="hidden" data-fullpage-demo="label">
+<input type="hidden" data-fullpage-demo="css/label">
 
 ## Basic Usage
 

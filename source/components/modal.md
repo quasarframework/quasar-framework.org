@@ -1,20 +1,31 @@
-title: Quasar Modal
+title: Modal
 ---
 Quasar Modals slide in off screen to display a temporary UI, often used for login or signup pages, message composition, and option selection.
 
-<input type="hidden" data-fullpage-demo="modal">
+<input type="hidden" data-fullpage-demo="global/modal">
 
 ## Basic Usage
 ``` js
+import { Modal } from 'quasar'
+
 // syntax
-(Modal Object) new quasar.Modal(VueModel Object);
+(Modal Object) Modal.create(VueModel Object)
 
 // basic example:
-var modal = new quasar.Modal({
+var modal = Modal.create({
   template: 'This is a basic modal. <button class="secondary" @click="close()">Close Me</button>'
-});
+})
 
-modal.show();
+// do NOT forget to call:
+modal.show()
+```
+
+Since Modal requires a VueModel object, you can also import a `*.vue` file and use it:
+``` js
+import { Modal } from 'quasar'
+import LoginScreen from './login.vue'
+
+Modal.create(LoginScreen).show()
 ```
 
 The *Modal Object* returned has the following methods:
@@ -43,9 +54,12 @@ On the Modal Object you can use the `set()` method to change any of these proper
 
 Example:
 ``` js
-var modal = new quasar.Modal(...);
+import { Modal } from 'quasar'
 
-modal.set('selfDestroy', false);
+let modal = Modal.create(...)
+
+modal.set('selfDestroy', false)
+modal.show()
 ```
 
 > **IMPORTANT**
@@ -53,71 +67,98 @@ modal.set('selfDestroy', false);
 
 ## Triggering Events
 ``` js
-new quasar.Modal({
+import { Modal } from 'quasar'
+
+Modal.create({
   template: '...'
 })
 .onShow(function() {
-  quasar.notify('onShow triggered');
+  console.log('onShow triggered')
 })
 .onClose(function() {
-  quasar.notify('onClose triggered');
+  console.log('onClose triggered')
 })
-.show();
+.show()
 ```
 
 ## Styling Modals
 ``` js
-new quasar.Modal({
+import { Modal } from 'quasar'
+
+Modal.create({
   template: '...'
 })
 .css({
   padding: '50px',
   minWidth: '50vw'
 })
-.show();
+.show()
 ```
 
-## Screen Modals
+## Layout Modals
 ``` js
-new quasar.Modal({
+import { Modal } from 'quasar'
+
+Modal.create({
   template: '...' // see below for template
 }).css({
   minWidth: '80vw',
   minHeight: '80vh'
-}).show();
+}).show()
 ```
 
 ``` html
 <!-- template for Screen Modal above -->
-<screen>
-  <div slot="header" class="row items-center">
-    <button @click="close()"><i>keyboard_arrow_left</i></button>
-    <p>Header</p>
-  </div>
-  <div slot="footer" class="row items-center">
-    <p>Footer</p>
+<quasar-layout>
+
+  <div slot="header" class="toolbar">
+    <button @click="close()">
+      <i>keyboard_arrow_left</i>
+    </button>
+    <quasar-toolbar-title :padding="1">
+      Header
+    </quasar-toolbar-title>
+    <button @click="openModal()"><i>open_in_new</i></button>
   </div>
 
-  <div style="padding: 20px">
-    <h1>Screen Modal Content</h1>
+  <div slot="footer" class="toolbar">
+    <quasar-toolbar-title :padding="1">
+      Footer
+    </quasar-toolbar-title>
   </div>
-</screen>
+
+  <div class="layout-view">
+    <div class="layout-padding">
+      <h1>Modal</h1>
+      <p>
+        <button class="primary" @click="openModal()">Open Another Modal</button>
+      </p>
+      <br>
+      <p class="caption" v-for="n in 15">This is a Modal presenting a Screen.</p>
+    </div>
+  </div>
+
+</quasar-layout>
 ```
 
 ## Always Minimized Modal
 ``` js
-new quasar.Modal({
+import { Modal } from 'quasar'
+
+Modal.create({
   template: '...'
 }).set({
   minimized: true
-}).show();
+}).show()
 ```
 
 ## Always Maximized Modal
 ``` js
-new quasar.Modal({
+import { Modal } from 'quasar'
+
+Modal.create({
   template: '...'
 }).set({
   maximized: true
-}).show();
+}).show()
 ```

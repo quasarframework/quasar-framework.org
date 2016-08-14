@@ -3,22 +3,17 @@
     <img src="<%- config.root %>images/responsive-logo.png">
   </p>
   <p class="framework-name">
-    Quasar Framework
+    Quasar Framework <small>v<%- latest_quasar_version() %></small>
   </p>
   <p>
-    Modern HTML5 SPA front-end framework on steroids. With VueJS.
-  </p>
-  <p>
-    Desktop and Mobile. Native Mobile Apps included. Full Stack Toolkit.
+    SPA front-end framework on steroids, <strong>with VueJS</strong>.
+    <br>
+    Websites & native mobile Apps. Full Stack Toolkit.
   </p>
   <p class="buttons">
     <a href="<%- config.root %>guide/index.html" class="button">
-      <i class="fa fa-briefcase"></i>
-      Get Started
-    </a>
-    <a href="<%- config.root %>guide/installation.html" class="button">
-      <i class="fa fa-hand-o-down"></i>
-      Install v<%- latest_quasar_version() %>
+      <i class="fa fa-flash"></i>
+      Get started in under a minute
     </a>
   </p>
   <ul class="social-links">
@@ -43,28 +38,21 @@
       <i class="icon fa fa-code-fork"></i>
       <h2>All Platforms in One Go</h2>
       <p>
-        Learn the Quasar way and the framework takes care of the quirks for each platform.
-        You'll have just one source code for all platforms simultaneously: desktop/mobile website, native mobile apps (iOS, Android, and so on).
+        One source code for all platforms simultaneously: desktop/mobile website, native mobile apps.
       </p>
     </div>
     <div class="feat">
-      <i class="icon fa fa-bolt"></i>
-      <h2>Speed and Efficiency</h2>
+      <i class="icon fa fa-thumbs-o-up"></i>
+      <h2>VueJs & ES6</h2>
       <p>
-        Most of the heavy-lifting is already done through Quasar CLI.
-        Your focus is on your App content rather how the App is built and optimized
-        for each platform.
-        Quasar takes care of the redundant tasks allowing you to be the most efficient possible.
+        ES6 Javascript. Leverage VueJs & NPM ecosystem easily. Support for *.vue single file components.
       </p>
     </div>
     <div class="feat">
-      <i class="icon fa fa-cogs"></i>
-      <h2>Web Components</h2>
+      <i class="icon fa fa-gamepad"></i>
+      <h2>Quasar Play App</h2>
       <p>
-        Quasar Web Components are at the heart of the framework.
-        Contribute or use one from the built-in ecosystem. Write as few lines of code
-        as possible and yet enrich your App with beautifully crafted functionality with
-        a unified user experience across mobile/desktop platforms.
+        Develop Apps with Hot Reload directly on your phone.
       </p>
     </div>
   </div>
@@ -74,27 +62,16 @@
   <div class="feats">
     <div class="feat">
       <i class="icon fa fa-hourglass-half"></i>
-      <h2>Time Saver</h2>
+      <h2>Boilerplate</h2>
       <p>
-        Out of the box code boilerplating, build system, live preview, test setup, image optimizations and many more.
-        You don’t have to worry about a lot of things, including how your content is being displayed to best leverages
-        the screen real-estate. The built-in components are responsive by default.
+        Out of the box App code boilerplate, build system, hot reload, linter, test setup, auto minification and more.
       </p>
     </div>
     <div class="feat">
-      <i class="icon fa fa-exchange"></i>
-      <h2>Two-Way Data Binding</h2>
+      <i class="icon fa fa-bolt"></i>
+      <h2>Speed & Efficiency</h2>
       <p>
-        Write smart reactive apps. No need to directly touch DOM. Write custom HTML tags or use the built-in ones.
-        Javascript files use CommonJS format to ensure encapsulation and a clear separation of concerns.
-      </p>
-    </div>
-    <div class="feat">
-      <i class="icon fa fa-industry"></i>
-      <h2>Build System (& CLI)</h2>
-      <p>
-        Development with sourcemaps or minified & optimized for production out of the box, no configuration needed.
-        Bundles the source code in such a way that it ensures the smallest footprint possible and best performance.
+        Quasar focuses on low memory footprint, efficiency and making Apps run really fast.
       </p>
     </div>
     <div class="feat">
@@ -103,73 +80,31 @@
       <p>iOS, Android, Windows Phone, Blackberry, Google Chrome, Firefox, IE/Edge.</p>
     </div>
     <div class="feat">
-      <i class="icon fa fa-arrows-alt"></i>
+      <i class="icon fa fa-magic"></i>
       <h2>Themes</h2>
       <p>
-        Quasar uses its own full-featured CSS Framework. You can tweak it and build your own theme to make your App’s design distinctive.
-        The <strong>built-in themes</strong> are Android and iOS which can be extended within each App. Don't worry about auto-prefixing
-        browser specific CSS properties as this is taken care of by default.
+        Full-featured Quasar CSS Framework. <strong>Material Design</strong> and <strong>iOS</strong> themes included.
       </p>
     </div>
     <div class="feat">
-      <i class="icon fa fa-line-chart"></i>
-      <h2>Built for Performance</h2>
+      <i class="icon fa fa-refresh"></i>
+      <h2>Dev Hot Reload</h2>
       <p>
-        Quasar has a lot of optimizations behind the scenes to make your App run really fast (and consume the lowest possible
-        battery power). It was carefully crafted with latest Web performance recommendations in mind.
-      </p>
-    </div>
-    <div class="feat">
-      <i class="icon fa fa-trophy"></i>
-      <h2>Ensures Code Quality</h2>
-      <p>Quasar CLI ensures code quality out of the box (linters, app validators, a ready to use automation testing setup).</p>
-    </div>
-    <div class="feat">
-      <i class="icon fa fa-refresh fa-spin"></i>
-      <h2>Live Preview</h2>
-      <p>
-        Watch multiple browsers on multiple machines auto-refresh on source code change. Complex tool included in Quasar
-        CLI to speed up your development. Responsive Live Preview is a also a feature built to help you quickly see how your App
-        looks on different screen sizes.
-      </p>
-    </div>
-    <div class="feat">
-      <i class="icon fa fa-graduation-cap"></i>
-      <h2>Write Reusable Code</h2>
-      <p>
-        Use built-in reactive HTML tags as web components or write your own. It's easy to reuse them, even across
-        multiple Apps.
+        More than just Live Reload. Preserve App state while updating in the browser.
       </p>
     </div>
     <div class="feat">
       <i class="icon fa fa-gears"></i>
-      <h2>Built-in Widgets</h2>
+      <h2>Built-in Components</h2>
       <p>
-        Use a large variety of built-in widgets/plugins or write your own and share them.
-      </p>
-    </div>
-    <div class="feat">
-      <i class="icon fa fa-newspaper-o"></i>
-      <h2>Powerful Layouts</h2>
-      <p>
-        Out of the box multiple layouts. Highly Customizable.
-        Let Quasar worry about the layout for each environment (browser, Android, iOS and all others).
-        <strong>You just focus on the content.</strong>
-      </p>
-    </div>
-    <div class="feat">
-      <i class="icon fa fa-cubes"></i>
-      <h2>Complete Toolkit</h2>
-      <p>
-        Quasar offers API for Routers, Environment detection, Events, Ajax, Touch Events, Cookies, Web Storage,
-        App Visibility, and many more! Everything you need in one place.
+        Leverage large variety of built-in VueJs Quasar components which do most of the heavy-lifting of your App.
       </p>
     </div>
     <div class="feat">
       <i class="icon fa fa-book"></i>
       <h2>Great Documentation</h2>
       <p>
-        Everything is documented in crystal clear fashion, with examples, guides, tips and demos with source code available.
+        Crystal clear documentation with examples, guides, tips and demos with source code available.
       </p>
     </div>
     <div class="feat">
@@ -177,15 +112,7 @@
       <h2>Open Source</h2>
       <p>
         Visit <strong><a href="<%- config.github %>" target="_blank">Github <i class="fa fa-github"></i></a></strong> page.
-        Help with fixing bugs or write new features/widgets/plugins. Any suggestion is appreciated.
-        Read how to <strong><a href="/guide/contributing-to-quasar.html">contribute</a></strong>.
-      </p>
-    </div>
-    <div class="feat">
-      <i class="icon fa fa-book"></i>
-      <h2>Dependencies</h2>
-      <p>
-        Quasar depends on Vue, Apache Cordova, HammerJS, VelocityJS, jQuery. Read more <strong><a href="/guide/built-in-stack.html">here</a></strong>.
+        Contributions are welcomed.
       </p>
     </div>
   </div>

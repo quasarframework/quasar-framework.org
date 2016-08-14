@@ -1,17 +1,17 @@
-title: Quasar Slider
+title: Slider
 ---
-Quasar Slider is a Web Component which you can use to display more information with less real estate, using slides.
+Quasar Slider is a Vue Component which you can use to display more information with less real estate, using slides.
 
 The Slider height is determined by the slide with biggest height.
 
-<input type="hidden" data-fullpage-demo="slider">
+<input type="hidden" data-fullpage-demo="web-components/slider">
 
 ## Basic Slider
 Basic Slider. No controls. Just swipe between slides or
 use you mouse to drag slides to left or right.
 
 ``` html
-<slider class="text-white">
+<quasar-slider class="text-white">
   <div slot="slide" class="bg-primary">
     Slide 1
   </div>
@@ -21,7 +21,7 @@ use you mouse to drag slides to left or right.
   <div slot="slide" class="bg-tertiary">
     Slide 3
   </div>
-</slider>
+</quasar-slider>
 ```
 
 ## Slider with Arrows, Dots and Fullscreen Controls
@@ -33,35 +33,35 @@ Sliders can contain button controls, like:
 To show these controls simply add `arrows`, `dots` and/or `fullscreen` DOM node attributes.
 
 ``` html
-<slider arrows dots fullscreen class="text-white">
+<quasar-slider arrows dots fullscreen class="text-white">
   <div slot="slide" class="bg-primary">
     Slide 1
   </div>
   <div slot="slide" class="bg-secondary">
     Slide 2
   </div>
-</slider>
+</quasar-slider>
 ```
 
 ## Slider with Centered Content
 Add CSS class `centered` to the slide that you want to center its content.
 
 ``` html
-<slider arrows dots class="text-white">
+<quasar-slider arrows dots class="text-white">
   <div slot="slide" class="bg-primary centered">
     Slide 1
   </div>
   <div slot="slide" class="bg-secondary centered">
     Slide 2
   </div>
-</slider>
+</quasar-slider>
 ```
 
 ## Slider with Custom Actions
 Put icons on the same DOM hierarchical level as the slides.
 
 ``` html
-<slider arrows dots actions class="text-white">
+<quasar-slider arrows dots actions class="text-white">
   <div slot="slide" class="bg-primary">
     Slide 1
   </div>
@@ -81,18 +81,20 @@ Put icons on the same DOM hierarchical level as the slides.
   <i slot="action" @click="thirdMethod()">
     add_shopping_cart
   </i>
-</slider>
+</quasar-slider>
 ```
 
 ## Launch Slider in Fullscreen
 You can launch a Slider in Fullscreen by using [Modals](/components/modal.html):
 
 ``` js
-new quasar.Modal({
+import { Modal } from 'quasar'
+
+Modal.create({
   template: modalTemplate
 }).set({
   maximized: true
-}).show();
+}).show()
 ```
 
-Your modal template should only contain a slider like ones above.
+Your modal template should only contain at most one slider like ones above, and not more.

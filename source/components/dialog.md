@@ -4,11 +4,13 @@ Quasar Dialogs are a great way to offer the user the ability to choose a specifi
 
 From a UI perspective, you can think of Alerts as a type of “floating” modal, that covers only a portion of the screen. This means Alerts should only be used for quick actions like password verification, small App notifications, or quick options. More in depth user flows should be reserved for full screen ​Modals​.
 
-<input type="hidden" data-fullpage-demo="dialog">
+<input type="hidden" data-fullpage-demo="global/dialog">
 
 ## Basic Usage
 ``` js
-(Modal Object) quasar.dialog(objectWithComponents);
+import { Dialog } from 'quasar'
+
+(Modal Object) Dialog(configObj).show()
 ```
 
 You can access the Dialog's VueModel through the returned *Modal Object*. Read about its properties on [Quasar Modal](/components/modal.html#Basic-Usage) documentation page.
@@ -36,19 +38,26 @@ The following properties set the type of the Dialog and you can only use one for
 
 ## Types
 
-The type is determined by the properties you instantiate a `quasar.dialog()` with.
+The type is determined by the object properties you instantiate a `Dialog.create()` with.
+
+> **NOTE**
+> `Dialog.create()` returns a Modal (which you can configure if you wish), so don't forget to call `.show()`
 
 ### Alert
 ``` js
-quasar.dialog({
+import { Dialog } from 'quasar'
+
+Dialog.create({
   title: 'Alert',
   message: 'Modern HTML5 Single Page Application front-end framework on steroids.'
-});
+}).show()
 ```
 
 ### Prompt
 ``` js
-quasar.dialog({
+import { Dialog } from 'quasar'
+
+Dialog.create({
   title: 'Prompt',
   message: 'Modern HTML5 Single Page Application front-end framework on steroids.',
   inputs: [ // <<<<--------
@@ -65,36 +74,38 @@ quasar.dialog({
     'Cancel',
     {
       label: 'Ok',
-      handler: function(data) {
-        quasar.notify('Returned ' + JSON.stringify(data));
+      handler (data) {
+        console.log('Returned ' + JSON.stringify(data))
       }
     }
   ]
-});
+}).show()
 ```
 
 Also set `stackButtons` to `true` if you want your buttons one below the previous one. Useful when the label is verbose.
 
 ### Confirm
 ``` js
-quasar.dialog({
+import { Dialog } from 'quasar'
+
+Dialog.create({
   title: 'Confirm',
   message: 'Modern HTML5 Single Page Application front-end framework on steroids.',
   buttons: [
     {
       label: 'Disagree',
-      handler: function() {
-        quasar.notify('Disagreed...');
+      handler () {
+        console.log('Disagreed...')
       }
     },
     {
       label: 'Agree',
-      handler: function() {
-        quasar.notify('Agreed!');
+      handler () {
+        console.log('Agreed!')
       }
     }
   ]
-});
+}).show()
 ```
 
 ### Progress
@@ -102,12 +113,13 @@ There are two types of progress you can display: determinate (when you can quant
 
 ``` js
 // determinate mode
+import { Dialog } from 'quasar'
 
 var progress = {
   model: 25
-};
+}
 
-var dialog = quasar.dialog({
+var dialog = Dialog.create({
   title: 'Progress',
   message: 'Computing...',
   progress: progress, // <<<----
@@ -115,26 +127,27 @@ var dialog = quasar.dialog({
     {
       label: 'Cancel',
       handler: function(data) {
-        clearInterval(timeout);
-        quasar.notify('Canceled on progress ' + data);
+        clearInterval(timeout)
+        console.log('Canceled on progress ' + data)
       }
     }
   ]
-});
+}).show()
 
-var timeout = setInterval(function() {
-  progress.model++;
+var timeout = setInterval(() => {
+  progress.model++
   if (progress.model === 50) {
-    clearInterval(timeout);
-    dialog.close();
+    clearInterval(timeout)
+    dialog.close()
   }
-}, 1000);
+}, 1000)
 ```
 
 ``` js
 // indeterminate mode
+import { Dialog } from 'quasar'
 
-var dialog = quasar.dialog({
+var dialog = Dialog.create({
   title: 'Progress',
   message: 'Computing...',
   progress: {  // <<<---------
@@ -143,23 +156,25 @@ var dialog = quasar.dialog({
   buttons: [
     {
       label: 'Cancel',
-      handler: function(data) {
-        clearTimeout(timeout);
-        quasar.notify('Canceled...');
+      handler (data) {
+        clearTimeout(timeout)
+        console.log('Canceled...')
       }
     }
   ]
-});
+}).show()
 
-var timeout = setTimeout(function() {
-  clearInterval(timeout);
-  dialog.close();
-}, 3000);
+var timeout = setTimeout(() => {
+  clearInterval(timeout)
+  dialog.close()
+}, 3000)
 ```
 
 ### Pick One Option (Radios)
 ``` js
-quasar.dialog({
+import { Dialog } from 'quasar'
+
+Dialog.create({
   title: 'Radios',
   message: 'Message can be used for all types of Dialogs.',
   radios: [ // <<<----
@@ -189,17 +204,19 @@ quasar.dialog({
     'Cancel',
     {
       label: 'Ok',
-      handler: function(data) {
-        quasar.notify('Returned ' + JSON.stringify(data));
+      handler (data) {
+        console.log('Returned ' + JSON.stringify(data))
       }
     }
   ]
-});
+}).show()
 ```
 
 ### Pick Multiple Options (Checkboxes)
 ``` js
-quasar.dialog({
+import { Dialog } from 'quasar'
+
+Dialog.create({
   title: 'Checkboxes',
   checkboxes: [ // <<<----
     {
@@ -220,19 +237,21 @@ quasar.dialog({
     },
     {
       label: 'Ok',
-      handler: function(data) {
-        quasar.notify('Returned ' + JSON.stringify(data));
+      handler (data) {
+        console.log('Returned ' + JSON.stringify(data))
       }
     }
   ]
-});
+}).show()
 ```
 
 ### Pick Multiple Options #2 (Toggles)
 Same as previous but using Toggles instead of Checkboxes.
 
 ``` js
-quasar.dialog({
+import { Dialog } from 'quasar'
+
+Dialog.create({
   title: 'Toggles',
   toggles: [ // <<<----
     {
@@ -249,21 +268,23 @@ quasar.dialog({
   buttons: [
     {
       label: 'Cancel',
-      handler: $.noop
+      handler () {}
     },
     {
       label: 'Ok',
-      handler: function(data) {
-        quasar.notify('Returned ' + JSON.stringify(data));
+      handler (data) {
+        console.log('Returned ' + JSON.stringify(data))
       }
     }
   ]
-});
+}).show()
 ```
 
 ### Pick Range
 ``` js
-quasar.dialog({
+import { Dialog } from 'quasar'
+
+Dialog.create({
   title: 'Ranges',
   ranges: [ // <<<----
     {
@@ -295,10 +316,10 @@ quasar.dialog({
     'Cancel',
     {
       label: 'Change',
-      handler: function(data) {
-        quasar.notify('Returned ' + JSON.stringify(data));
+      handler (data) {
+        console.log('Returned ' + JSON.stringify(data))
       }
     }
   ]
-});
+}).show()
 ```

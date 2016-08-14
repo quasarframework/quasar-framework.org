@@ -1,9 +1,17 @@
-title: Quasar Video Embedding
+title: Video Embedding
 ---
 Embedding a video like Youtube is easy. It also resizes to fit the container by default.
 
-<input type="hidden" data-fullpage-demo="embed-videos">
+<input type="hidden" data-fullpage-demo="web-components/video-embedding">
 
+``` html
+<quasar-video
+  :src="https://www.youtube.com/embed/k3_tw44QsZQ?rel=0"
+  style="width: 853px; height: 480px"
+></quasar-video>
+```
+
+Or, if you prefer the "raw" version:
 ``` html
 <div class="video">
   <iframe

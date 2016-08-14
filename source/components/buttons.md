@@ -1,8 +1,8 @@
-title: Quasar Buttons
+title: Buttons
 ---
-Quasar buttons are of two shapes: rectangle (regular) and circular. They come in three sizes: small, medium (default) and big. As for the colors, use the ones from [Quasar CSS Color Palette](/api/css-color-palette.html). There are some more CSS classes that you can use to enhance the appearance of a button.
+Quasar Buttons are of two shapes: rectangle (regular) and circular. They come in three sizes: small, medium (default) and big. As for the colors, use the ones from [Quasar CSS Color Palette](/api/css-color-palette.html). There are some more CSS classes that you can use to enhance the appearance of a button.
 
-<input type="hidden" data-fullpage-demo="buttons">
+<input type="hidden" data-fullpage-demo="css/button">
 
 For circular buttons only use icons as content.
 
@@ -53,4 +53,4 @@ Use the ones from [Quasar CSS Color Palette](/api/css-color-palette.html). Examp
 ```
 
 ## More Button CSS Classes
-There are also the `glossy`, `raised`, `clear`, `outline` and `round` CSS classes that you can use.
+There are also the `glossy`, `raised`, `clear`, `outline`, `push`, `bordered` and `round` CSS classes that you can use.

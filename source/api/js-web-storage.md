@@ -11,11 +11,13 @@ Quasar provides a wrapper over [Web Storage API](https://developer.mozilla.org/e
 Quasar supports both Local and Session Storage.
 
 ``` js
-quasar.set.local.storage.item(key, value);
-var value = quasar.get.local.storage.item(key);
+import { LocalStorage, SessionStorage } from 'quasar'
 
-quasar.set.session.storage.item(key, value);
-var value = quasar.get.session.storage.item(key);
+LocalStorage.set(key, value)
+let value = LocalStorage.get.item(key)
+
+SessionStorage.set(key, value)
+let value = SessionStorage.get.item(key)
 ```
 
 Before we jump to discuss on the API, let's see what data types are supported out of the box.
@@ -39,55 +41,73 @@ So you can even store functions, but be careful that you need to eval() the retu
 
 ### Storing Data
 ``` js
-quasar.set.local.storage.item(key, value);
-quasar.set.session.storage.item(key, value);
+import { LocalStorage, SessionStorage } from 'quasar'
+
+LocalStorage.set(key, value)
+SessionStorage.set(key, value)
 ```
 
 ### Retrieving Data
 One item:
 ``` js
-var item = quasar.get.local.storage.item(key);
-var item = quasar.get.session.storage.item(key);
+import { LocalStorage, SessionStorage } from 'quasar'
+
+let item = LocalStorage.get.item(key)
+let item = SessionStorage.get.item(key)
 ```
 All items:
 ``` js
-var store = quasar.get.all.local.storage.items();
-var store = quasar.get.all.session.storage.items();
+import { LocalStorage, SessionStorage } from 'quasar'
+
+let item = LocalStorage.get.all()
+let item = SessionStorage.get.all()
 ```
 
 ### Iterating through Store
 Getting length of store:
 ``` js
-var length = quasar.get.local.storage.length();
-var length = quasar.get.session.storage.length();
+import { LocalStorage, SessionStorage } from 'quasar'
+
+let length = LocalStorage.get.length()
+let length = SessionStorage.get.length()
 ```
 Getting item at index:
 ``` js
-var item = quasar.get.local.storage.at.index(index);
-var item = quasar.get.session.storage.at.index(index);
+import { LocalStorage, SessionStorage } from 'quasar'
+
+let item = LocalStorage.get.index(index)
+let item = SessionStorage.get.index(index)
 ```
 Now you know how to loop through the store.
 
 ### Removing Data
 One item:
 ``` js
-quasar.remove.local.storage.item(key);
-quasar.remove.session.storage.item(key);
+import { LocalStorage, SessionStorage } from 'quasar'
+
+LocalStorage.remove(key)
+SessionStorage.remove(key)
 ```
 All items (clear the store):
 ``` js
-quasar.clear.local.storage();
-quasar.clear.session.storage();
+import { LocalStorage, SessionStorage } from 'quasar'
+
+LocalStorage.clear(key)
+SessionStorage.clear(key)
 ```
 
 ### Is Store Empty?
 ``` js
-(boolean) quasar.local.storage.is.empty()
-(boolean) quasar.session.storage.is.empty()
+import { LocalStorage, SessionStorage } from 'quasar'
+
+(boolean) LocalStorage.isEmpty()
+(boolean) SessionStorage.isEmpty()
 ```
 
 ### Is Key in Store?
 ``` js
-(boolean) quasar.has.local.storage.item()
-(boolean) quasar.has.session.storage.item()
+import { LocalStorage, SessionStorage } from 'quasar'
+
+(boolean) LocalStorage.has(key)
+(boolean) SessionStorage.has(key)
 ```

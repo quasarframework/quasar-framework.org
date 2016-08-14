@@ -3,11 +3,9 @@
 html, body
   height 100%
 
-#main
-  padding-top $header-height
-
 #hero
-  height 600px
+  height 100vh
+  max-height 650px
 
   display -webkit-flex
   display -ms-flexbox
@@ -23,11 +21,10 @@ html, body
   -ms-flex-pack center
   justify-content center
 
-  margin-top 50px
   img
     max-width 90%
   p
-    margin 5px 0 0 0
+    margin 5px 20px
     font-size 1.1rem
     text-align center
   .framework-name
@@ -36,6 +33,10 @@ html, body
     margin-top 15px
     margin-bottom 10px
     color $dark
+    text-shadow 0 0 2px
+    small
+      display block
+      font-size 2rem
   .buttons
     margin-top 25px
     a
@@ -112,21 +113,22 @@ html, body
     vertical-align bottom
 
 @media screen and (max-width 550px)
+  #main
+    padding-top 60px
   #hero
-    height 500px
     h1
       font-size 2em
       font-weight 400
     a.button
       width 260px
-      font-size .8em
+      font-size 1.2em
       margin .5em 0
     p
       font-size 95%
     .framework-name
       font-size 2rem
   .features
-    padding 2em 0 2em 0
+    padding 2em 0
     .feat
       font-size 12px
       margin .8em 0

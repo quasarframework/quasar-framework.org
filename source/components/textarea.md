@@ -1,6 +1,6 @@
-title: Quasar Textarea
+title: Textarea
 ---
-<input type="hidden" data-fullpage-demo="textarea">
+<input type="hidden" data-fullpage-demo="form/text-input/textarea">
 
 ``` html
 <textarea v-model="message" placeholder="Textarea Label"></textarea>

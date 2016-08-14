@@ -1,4 +1,4 @@
-title: Quasar Cookies
+title: Cookies
 ---
 This is a wrapper over the standardized `document.cookie`.
 
@@ -7,32 +7,42 @@ This is a wrapper over the standardized `document.cookie`.
 
 ## Read a Cookie
 ``` js
-var value = quasar.get.cookie('cookie_name');
+import { Cookies } from 'quasar'
+
+var value = Cookies.get('cookie_name')
 ```
 When cookie is not set, the return value is `undefined`.
 
 ## Read All Cookies
 ``` js
-var cookies = quasar.get.all.cookies();
+import { Cookies } from 'quasar'
+
+var cookies = Cookies.all()
 ```
 `cookies` variable will be an object with key-value pairs (cookie_name : cookie_value).
 
 ## Verify if Cookie is Set
 ``` js
-(Boolean) quasar.has.cookie('cookie_name');
+import { Cookies } from 'quasar'
+
+(Boolean) Cookies.has('cookie_name')
 ```
 
 ## Write a Cookie
 ``` js
-quasar.set.cookie('cookie_name', cookie_value, options);
+import { Cookies } from 'quasar'
+
+Cookies.set('cookie_name', cookie_value, options)
 ```
 
 `options` is an Object which can have the following properties: `expire`, `path`, `domain`, `secure`. They are explained below.
 
 ``` js
-quasar.set.cookie('quasar', 'framework', {
+import { Cookies } from 'quasar'
+
+Cookies.set('quasar', 'framework', {
   secure: true
-});
+})
 ```
 
 ### Option `expires`
@@ -61,5 +71,7 @@ If true, the cookie transmission requires a secure protocol (HTTPS) and will NOT
 
 ## Remove a Cookie
 ``` js
-quasar.remove.cookie('cookie_name');
+import { Cookies } from 'quasar'
+
+Cookies.remove('cookie_name')
 ```

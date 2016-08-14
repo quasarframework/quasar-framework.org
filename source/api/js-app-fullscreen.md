@@ -1,20 +1,22 @@
-title: Quasar Fullscreen
+title: Fullscreen
 ---
 There are times when you want your website or App to run in fullscreen.
 Quasar makes it easy by wrapping the [Fullscreen API](https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API).
 
-<input type="hidden" data-external-demo="app-fullscreen">
+<input type="hidden" data-external-demo="other/app-fullscreen">
 
 ``` js
+import { AppFullscreen } from 'quasar'
+
 // Determining if website is in fullscreen mode:
-(Boolean) quasar.is.fullscreen();
+(Boolean) AppFullscreen.isActive()
 
 // Requesting fullscreen mode:
-quasar.request.fullscreen();
+AppFullscreen.request()
 
 // Exiting fullscreen mode:
-quasar.exit.fullscreen();
+AppFullscreen.exit()
 
 // Toggle fullscreen mode:
-quasar.toggle.fullscreen();
+AppFullscreen.toggle()
 ```

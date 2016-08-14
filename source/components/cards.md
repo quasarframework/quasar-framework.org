@@ -1,4 +1,4 @@
-title: Quasar Cards
+title: Cards
 ---
 Quasar Cards are a great way to display important pieces of content, and are quickly emerging as a core design pattern for Apps. They're are a great way to contain and organize information, while also setting up predictable expectations for the user. With so much content to display at once, and often so little screen real-estate, Cards have fast become the design pattern of choice for many companies, including the likes of Google and Twitter.
 
@@ -10,7 +10,7 @@ Quasar Cards are all about HTML markup with some exception where some Quasar Vue
 Scroll down to check out how to use Cards HTML syntax and if on desktop see the demos.
 
 ## Basic Cards
-<input type="hidden" data-demo="card-basic">
+<input type="hidden" data-demo="css/card/basic">
 
 Familiarize yourself with Cards with these basic examples of card with only content and title.
 
@@ -34,7 +34,7 @@ Familiarize yourself with Cards with these basic examples of card with only cont
 ```
 
 ## Coloring Cards
-<input type="hidden" data-demo="card-coloring">
+<input type="hidden" data-demo="css/card/coloring">
 
 Use [Quasar CSS color classes](/api/css-color-palette.html) to set color for text and background.
 
@@ -60,42 +60,11 @@ Use [Quasar CSS color classes](/api/css-color-palette.html) to set color for tex
 </div>
 ```
 
-## Minimizing Cards
-<input type="hidden" data-demo="card-minimize">
-
-There's a way to make buttons minimize or close/dismiss Cards by using the Quasar Vue directives `v-card-minimize` and `v-card-close`. Make sure you use them on DOM elements from the Card's title.
-
-``` html
-<div class="card">
-  <div class="card-title row items-center">
-    <span class="auto">Card Title</span>
-    <div class="group">
-      <button
-        class="primary clear small"
-        v-card-minimize
-      >
-        <i>vertical_align_bottom</i>
-      </button>
-
-      <button
-        class="primary clear small"
-        v-card-close
-      >
-        <i>close</i>
-      </button>
-    </div>
-  </div>
-  <div class="card-content">
-    Card Content
-  </div>
-</div>
-```
-
 ## Embedding Other Web Components into Cards
 See how to embed images, maps, Collapsibles, Lists or how to write code for a Social Card, and many more. Just be creative! Experiment with different Web Components to achieve awesome Cards.
 
 ### Card with List
-<input type="hidden" data-demo="card-list">
+<input type="hidden" data-demo="css/card/with-list">
 
 ``` html
 <div class="card">
@@ -119,7 +88,7 @@ See how to embed images, maps, Collapsibles, Lists or how to write code for a So
 ```
 
 ### Card with Images
-<input type="hidden" data-demo="card-images">
+<input type="hidden" data-demo="css/card/with-images">
 
 ``` html
 <div class="card">
@@ -147,13 +116,13 @@ Be creative. You can embed a Parallax Web Component:
 ```
 
 ### Card with Videos
-<input type="hidden" data-demo="card-video">
+<input type="hidden" data-demo="css/card/with-videos">
 
 ``` html
 <div class="card">
-  <div class="video">
-    <iframe src="https://www.youtube.com/embed/k3_tw44QsZQ?rel=0" frameborder="0" allowfullscreen></iframe>
-  </div>
+  <quasar-video
+    :src="https://www.youtube.com/embed/k3_tw44QsZQ?rel=0"
+  ></quasar-video>
   <div class="card-content">
     Card Content
   </div>
@@ -161,7 +130,7 @@ Be creative. You can embed a Parallax Web Component:
 ```
 
 ### Social Cards
-<input type="hidden" data-demo="card-social">
+<input type="hidden" data-demo="css/card/social">
 
 Use social cards to present posts on a wall like on Facebook or Twitter.
 
@@ -196,7 +165,7 @@ Use social cards to present posts on a wall like on Facebook or Twitter.
 ```
 
 ### Card with Map
-<input type="hidden" data-demo="card-map">
+<input type="hidden" data-demo="css/card/map">
 
 Offer directions or present places with a nice Card.
 
@@ -249,7 +218,7 @@ Offer directions or present places with a nice Card.
 ```
 
 ### Card with Collapsible
-<input type="hidden" data-demo="card-collapsible">
+<input type="hidden" data-demo="css/card/with-collapsible">
 
 Imagine a Card with Collapsibles containing Cards. Inception :)
 
@@ -258,20 +227,20 @@ Imagine a Card with Collapsibles containing Cards. Inception :)
   <div class="card-title bg-primary text-white">
     Card with Collapsible
   </div>
-  <ul v-collapsible>
-    <li>
+  <ul class="collapsible">
+    <li v-collapsible>
       <div><i>perm_identity</i>First</div>
       <div>
         Collapsible Content
       </div>
     </li>
-    <li>
+    <li v-collapsible>
       <div><i>shopping_cart</i>Second</div>
       <div>
         Collapsible Content
       </div>
     </li>
-    <li>
+    <li v-collapsible>
       <div><i>whatshot</i>Third</div>
       <div>
         Collapsible Content
@@ -282,7 +251,7 @@ Imagine a Card with Collapsibles containing Cards. Inception :)
 ```
 
 ### Card with FAB
-<input type="hidden" data-demo="card-fab">
+<input type="hidden" data-demo="css/card/with-fab">
 
 In the example below we include a circular button which the user can tap/click for additional actions on the Card.
 
@@ -292,13 +261,9 @@ In the example below we include a circular button which the user can tap/click f
     Card with FAB
   </div>
   <div class="card-media">
-    <div class="video">
-      <iframe
-        src="https://www.youtube.com/embed/k3_tw44QsZQ?rel=0"
-        frameborder="0"
-        allowfullscreen
-      ></iframe>
-    </div>
+    <quasar-video
+      :src="https://www.youtube.com/embed/k3_tw44QsZQ?rel=0"
+    ></quasar-video>
     <button class="primary circular">
       <i>share</i>
     </button>

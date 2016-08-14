@@ -1,8 +1,8 @@
-title: Quasar Color Palette
+title: Color Palette
 ---
 Quasar Framework offers a wide selection of colors out of the box. You can use them both as Stylus variables in your CSS code or directly as CSS classes in your HTML templates.
 
-<input type="hidden" data-fullpage-demo="colors">
+<input type="hidden" data-fullpage-demo="css/colors">
 
 This page comes really handy after reading [Quasar Theming](/guide/quasar-theming.html).
 
@@ -13,7 +13,10 @@ Most of the colors that Quasar Components use are strongly linked with these thr
 
 ## Color List
 
-Here's the list of colors provided out of the box. Use them as CSS classes or as Stylus variables (preceded by `$` character).
+Here's the list of colors provided out of the box. Use them as CSS classes or as Stylus variables (preceded by `$` character) in files directly required by `themes/app.*theme*.styl`.
+
+> **IMPORTANT**
+> **Do not use them in Vue components `<style>` tags** as they are not available there. Use CSS classes described in the next section instead.
 
 `primary`, `secondary`, `tertiary`
 `neutral`, `neutral`, `positive`, `negative`, `info`, `warning`, `light`, `dark`, `faded`

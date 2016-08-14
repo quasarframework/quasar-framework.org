@@ -42,7 +42,7 @@ Hide on:
 Also check [Quasar Theming &gt; Platform Specific Styles](/guide/quasar-theming.html#Platform-Specific-Styles).
 
 > **NOTE**
-> There is also a non-recommended way to hide DOM elements through Javascript. Read more on [Javascript &gt; Environment](/api/js-environment.html) page.
+> There is also a non-recommended way to hide DOM elements through Javascript. Read more on [Javascript &gt; Environment](/api/js-platform-detection.html) page.
 
 ### Orientation Related
 | Class Name | Description |

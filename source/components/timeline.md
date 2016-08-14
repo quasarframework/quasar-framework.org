@@ -2,7 +2,7 @@ title: Timeline CSS
 ---
 Quasar supplies CSS classes for displaying a timeline. Loot at the syntax below.
 
-<input type="hidden" data-fullpage-demo="timeline">
+<input type="hidden" data-fullpage-demo="css/timeline">
 
 ## Basic Usage
 

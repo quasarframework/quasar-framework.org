@@ -1,8 +1,8 @@
-title: Quasar Image Gallery
+title: Image Gallery
 ---
-All Web Components below are responsive. They accommodate with the width of their container.
+All Components below are responsive. They accommodate to the width of their container.
 
-<input type="hidden" data-fullpage-demo="image-gallery">
+<input type="hidden" data-fullpage-demo="web-components/image-gallery">
 
 ## Responsive Images
 Just add the `responsive` CSS class to it.
@@ -23,13 +23,12 @@ Use this Web Component when you want to display multiple images together.
 
 ``` html
 <!-- Template for VueModel below -->
-<gallery :src="gallery"></gallery>
+<quasar-gallery :src="gallery"></quasar-gallery>
 ```
 
 ``` js
 // VueModel for template above
-
-module.exports = {
+{
   ...,
   data: {
     ...,
@@ -39,7 +38,7 @@ module.exports = {
       'assets/parallax2.jpg'
     ]
   }
-};
+}
 ```
 
 ## Image Gallery Slider
@@ -51,13 +50,12 @@ User can switch between images using the arrow buttons or through swipe actions.
 
 ``` html
 <!-- Template for VueModel below -->
-<gallery-slider :src="gallery"></gallery>
+<quasar-gallery-slider :src="gallery"></quasar-gallery-slider>
 ```
 
 ``` js
 // VueModel for template above
-
-module.exports = {
+{
   ...,
   data: {
     ...,

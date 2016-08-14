@@ -1,12 +1,12 @@
 title: Quasar Checkbox
 ---
-<input type="hidden" data-fullpage-demo="checkbox">
+<input type="hidden" data-fullpage-demo="form/checkbox">
 
 ## Basic Usage
 
 ``` html
 <label>
-  <checkbox :model.sync="checked"></checkbox>
+  <quasar-checkbox :model.sync="checked"></quasar-checkbox>
   Checkbox Label
 </label>
 ```
@@ -16,7 +16,7 @@ title: Quasar Checkbox
 ``` html
 <div class="list bordered inner-delimiter">
   <label class="item">
-    <checkbox :model.sync="checked"></checkbox>
+    <quasar-checkbox :model.sync="checked"></quasar-checkbox>
     <div class="item-content">
       Checkbox Label
     </div>
@@ -31,8 +31,15 @@ title: Quasar Checkbox
       <div class="item-label">
         Checkbox Label
       </div>
-      <checkbox :model.sync="checked"></checkbox>
+      <quasar-checkbox :model.sync="checked"></quasar-checkbox>
     </div>
   </label>
 </div>
+```
+
+## Coloring
+Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`, `orange`, `teal` as CSS class:
+
+``` html
+<quasar-checkbox class="orange">...</quasar-checkbox>
 ```

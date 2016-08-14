@@ -1,2 +1,4 @@
+---
 title: {{ title }}
+date: {{ date }}
 ---

@@ -1,7 +1,7 @@
-title: Quasar HTML Tables
+title: HTML Tables
 ---
 HTML tables don`t need to look bad. Quasar takes care of them by default.
-<input type="hidden" data-fullpage-demo="html-tables">
+<input type="hidden" data-fullpage-demo="css/html-table">
 
 If the default table style is not enough, use following CSS classes to best suit your needs: `inner-delimiter`, `bordered`, `striped`, `highlight`, `centered`, `compact`.
 

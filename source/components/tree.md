@@ -1,20 +1,20 @@
-title: Quasar Tree
+title: Tree
 ----
 Quasar Tree represents a highly configurable component that displays hierarchical data, such as a table of contents in a tree structure.
 
 Trees are stripped out of any design by default so you can
 easily stylize and turn them into anything you want.
 
-<input type="hidden" data-fullpage-demo="tree">
+<input type="hidden" data-fullpage-demo="web-components/tree">
 
 ## Basic Usage
 
 ``` html
-<tree
+<quasar-tree
   :model="treeModel"
   contract-html="<i>remove_circle</i>"
   expand-html="<i>add_circle</i>"
-></tree>
+></quasar-tree>
 ```
 
 ### Tree model structure
@@ -43,7 +43,7 @@ treeModel: [
           {
             title: 'Item 1.1.2',
             expanded: false,
-            handler: function() { quasar.notify('Tapped on Item 1.1.2'); },
+            handler () { console.log('Tapped on Item 1.1.2') },
             children: []
           }
         ]

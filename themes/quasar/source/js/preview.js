@@ -16,14 +16,15 @@ $(function() {
     ;
 
   function getSourceURL(page) {
-    return 'https://github.com/rstoenescu/quasar-site/tree/master/demo-app/src/pages/' + page;
+    return 'https://github.com/rstoenescu/quasar-site/tree/master/demo-app/src/components/showcase/' + page;
   }
 
   function getDemoURL(theme, page) {
     if (page.indexOf('http') === 0) {
       return page;
     }
-    return '/demo-app/' + theme + '.html#/' + (page === 'index' ? '' : page);
+    return 'http://localhost:8080/index.html#!/showcase/' + page;
+    //return '/demo-app/index.html#!/showcase/' + page;
   }
 
   function getExternalLinks(page, alwaysVisible) {

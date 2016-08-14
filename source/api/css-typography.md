@@ -1,19 +1,25 @@
 title: Quasar Typography
 ---
-<input type="hidden" data-fullpage-demo="typography">
+<input type="hidden" data-fullpage-demo="css/typography">
 See how headings, blockquotes, definitions lists and more are displayed in the demo. At the end of this page you can read about CSS helper classes.
 
-### Default Font
-The default font embedded in any Quasar App is the latest iteration of Roboto Google has released. It comes with 5 different font weights you can use: 200, 300, 400, 500, 600. Below is an image from Google's Roboto Specimen document displaying the different font weights:
+### Default MD Font
+The default font embedded in Quasar App *when built with Material Design Theme* is Roboto. It comes with 5 different font weights you can use: 200, 300, 400, 500, 600. Below is an image from Google's Roboto Specimen document displaying the different font weights:
 
 <div style="max-width: 550px">
 ![Roboto Font](/images/roboto.png "Roboto Font")
 </div>
 
+> **NOTE**
+> You can embed it for iOS theme too by copying font related code from `themes/app.mat.styl` to `themes/app.ios.styl` and requiring the `.styl` version of CSS in `src/app.js`
+
 ### Text Types
 You can display text in a variety of ways.
 
 ``` html
+<!-- Token (as CSS class) -->
+<span class="token">blue</span>
+
 <!-- Small and Big text -->
 <small>Text</small>
 <big>Text</big>

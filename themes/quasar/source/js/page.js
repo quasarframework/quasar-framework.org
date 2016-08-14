@@ -86,8 +86,6 @@
     var top = doc && doc.scrollTop || body.scrollTop;
     var headerHeight = header.offsetHeight;
 
-    main.className = top > headerHeight ? 'fix-sidebar' : '';
-
     if (animating || !allLinks) {
       return;
     }
