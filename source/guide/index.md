@@ -9,7 +9,11 @@ $ npm install -g quasar-cli
 ## Create your first App
 
 ``` bash
+# create starter boilerplate folder
 $ quasar init <folder name>
+
+# npm install deps
+$ npm install
 ```
 
 Start a development server of your first App, equipped with hot reload:

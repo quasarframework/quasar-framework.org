@@ -1,7 +1,7 @@
 title: Quasar Development Plans
 ---
 There are lots of features waiting to get into Quasar.
-Feel free to contribute if you like. Read how to do it [here](/guide/contributing-to-quasar.html).
+Feel free to contribute if you like. Read how to do it [here](/guide/contributing.html).
 
 High Level Plans
 ===
