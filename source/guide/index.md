@@ -11,6 +11,7 @@ $ npm install -g quasar-cli
 ``` bash
 # create starter boilerplate folder
 $ quasar init <folder name>
+$ cd <folder name>
 
 # npm install deps
 $ npm install
