@@ -102,7 +102,7 @@
   });
 
   hexo.extend.helper.register('latest_quasar_version', function() {
-    return '0.5.0'; //require('../demo-app/node_modules/quasar-framework/package.json').version;
+    return '0.6.0';
   });
 
 }());

@@ -69,6 +69,14 @@ let newObject = Utils.extend([Boolean deepCopy], targetObj, obj, ...)
 ```
 Watch out for methods within objects.
 
+## Generate UID
+Generate unique identifiers:
+``` js
+import { Utils } from 'quasar'
+
+let uid = Utils.uid()
+```
+
 ## DOM methods
 ``` js
 import { Utils } from 'quasar'

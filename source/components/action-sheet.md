@@ -1,4 +1,4 @@
-title: Quasar Action Sheet
+title: Action Sheet
 ---
 Action Sheets slide up from the bottom edge of the device screen, and display a set of options with the ability to confirm or cancel an action. Action Sheets can sometimes be used as an alternative to menus, however, they should not be used for navigation.
 
@@ -55,3 +55,6 @@ ActionSheet.create({
 > `ActionSheet.create()` returns a Modal (which you can configure if you wish), so don't forget to call `.show()`
 
 The last button specified is always used as a *Cancel* option to dismiss the Action Sheet and is displayed distinctively from the rest of the buttons.
+
+> **IMPORTANT**
+> When user hits the browser/phone/tablet back button, the Action Sheet will get closed automatically. This behavior is disabled when running your App within an iframe though.

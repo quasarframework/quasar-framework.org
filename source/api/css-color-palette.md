@@ -19,7 +19,7 @@ Here's the list of colors provided out of the box. Use them as CSS classes or as
 > **Do not use them in Vue components `<style>` tags** as they are not available there. Use CSS classes described in the next section instead.
 
 `primary`, `secondary`, `tertiary`
-`neutral`, `neutral`, `positive`, `negative`, `info`, `warning`, `light`, `dark`, `faded`
+`positive`, `negative`, `info`, `warning`, `white`, `light`, `dark`, `faded`
 
 On the following colors there are variations available:
 `red`, `pink`, `purple`, `deep-purple`, `indigo`, `blue`, `light-blue`, `cyan`, `teal`, `green`, `light-green`, `lime`, `yellow`, `amber`, `orange`, `deep-orange`, `brown`, `grey`, `blue-grey`
@@ -50,16 +50,16 @@ The full list of colors is stored in the `$colors` array. You can change it to a
 
 ``` stylus
 $colors ?= {
-  neutral: $neutral
-  primary: $primary
-  secondary: $secondary
-  tertiary: $tertiary
-  positive: $positive
-  negative: $negative
-  warning: $warning
-  info: $info
-  light: $light
+  primary: $primary,
+  secondary: $secondary,
+  tertiary: $tertiary,
+  positive: $positive,
+  negative: $negative,
+  warning: $warning,
+  info: $info,
+  light: $light,
   dark: $dark,
+  white: $white,
 
   red: $red,
   pink: $pink,

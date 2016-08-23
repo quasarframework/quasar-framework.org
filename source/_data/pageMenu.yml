@@ -66,6 +66,7 @@ components:
     Timeline: $
   Form Inputs:
     Checkbox: $
+    Chips Textbox: $
     Input Textbox: $
     Numeric: $
     Radio: $
@@ -78,19 +79,20 @@ components:
   Vue Components:
     Collapsible: $
     Context Menu: $
-    Dropdown: $
     Floating Action Buttons: $
     Grid: $-component
     Infinite Scroll: $
     Image Gallery: $
     Pagination: $
     Parallax: $
+    Popover: $
     Progress Bar: $
     Pull to Refresh: $
     Scroll Fire: $
     Slider: $
     Spinners: $
     State: $
+    Stepper: $
     Tooltip: $
     Tree: $
     Video Embedding: $

@@ -25,6 +25,11 @@ Quasar supplies CSS classes for displaying a timeline. Loot at the syntax below.
       <i>alarm</i>
     </div>
 
+    <!-- title -->
+    <div class="timeline-title">
+      Trip to mountains
+    </div>
+
     <!-- date timestamp -->
     <div class="timeline-date text-italic">
       <div>17:01</div>

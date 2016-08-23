@@ -15,6 +15,9 @@ import { Dialog } from 'quasar'
 
 You can access the Dialog's VueModel through the returned *Modal Object*. Read about its properties on [Quasar Modal](/components/modal.html#Basic-Usage) documentation page.
 
+> **IMPORTANT**
+> When user hits the browser/phone/tablet back button, the Dialog will get closed automatically..
+
 ## Components
 The following components are properties of the *objectWithComponents* parameter from above and can be used for all Dialog types available.
 
@@ -280,46 +283,15 @@ Dialog.create({
 }).show()
 ```
 
-### Pick Range
+### Stacked Buttons
+If you have many buttons or buttons with lots of text, you can use set `stackButtons` property to `true` when creating your Dialog. This will make your buttons be displayed on separate rows:
+
 ``` js
 import { Dialog } from 'quasar'
 
 Dialog.create({
-  title: 'Ranges',
-  ranges: [ // <<<----
-    {
-      label: 'Volume',
-      min: 1,
-      max: 5,
-      iconMin: 'volume_down',
-      iconMax: 'volume_up'
-    },
-    {
-      label: 'Brightness',
-      min: 1,
-      max: 5,
-      value: 2
-    },
-    {
-      label: 'Speed',
-      min: 1,
-      max: 10,
-      value: 6
-    },
-    {
-      label: 'Noise Level',
-      min: 4,
-      max: 15
-    }
-  ],
-  buttons: [
-    'Cancel',
-    {
-      label: 'Change',
-      handler (data) {
-        console.log('Returned ' + JSON.stringify(data))
-      }
-    }
-  ]
+  // ...
+  stackButtons: true,
+  buttons: [......]
 }).show()
 ```

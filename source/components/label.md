@@ -23,6 +23,21 @@ This component only has CSS code, so you just have to follow the below HTML synt
   <span class="floating label bg-dark">22</span>
 </button>
 
+<!-- Chip Labels -->
+<span class="chip label bg-grey-4">
+  John
+</span>
+<!-- Chip Label with image/avatar -->
+<span class="chip label bg-grey-4">
+  <img :src="'statics/boy-avatar.png'">
+  John
+</span>
+<!-- Chip Label with close button -->
+<span class="chip label bg-light">
+  John
+  <i class="on-right">close</i>
+</span>
+
 <!-- Tag Labels -->
 <span class="tag label tag bg-light">New <i class="on-right">mail</i></span>
 <span class="tag label bg-red text-white">Upcoming</span>

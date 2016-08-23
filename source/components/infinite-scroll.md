@@ -20,6 +20,9 @@ When you want to progressively load new content as the user scrolls down your Pa
 </quasar-infinite-scroll>
 ```
 
+> **IMPORTANT**
+> Infinite Scroll loads items in advance when less than one screen height is left to be seen. If the content you fetch has height less than the container's height on screen then Infinite Scroll will continue loading more content. So make sure you load enough content.
+
 ## Attributes
 | Attribute | Required | Type | Description |
 | --- | --- | --- | --- |
