@@ -37,7 +37,6 @@ The following properties set the type of the Dialog and you can only use one for
 | `radios` | Object | See ["Pick one option"](#Pick-One-Option-Radios) example. |
 | `checkboxes` | Object | See ["Pick multiple options" with Checkboxes](#Pick-Multiple-Options-Checkboxes) example. |
 | `toggles` | Object | See ["Pick multiple options" with Toggles](#Pick-Multiple-Options-2-Toggles) example. |
-| `ranges` | Object | See ["Pick Range"](#Pick-Range) example. |
 
 ## Types
 
