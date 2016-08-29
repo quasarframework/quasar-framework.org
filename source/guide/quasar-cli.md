@@ -34,7 +34,7 @@ $ quasar list
 ```
 
 ## Development Server
-Developing your App by compiling and maintaining code in-memory. A web server will serve your App while offering hot-reload out of the box. Runnin in-memory offers faster rebuild times when you change your code.
+Developing your App by compiling and maintaining code in-memory. A web server will serve your App while offering hot-reload out of the box. Running in-memory offers faster rebuilds when you change your code.
 
 > Hot Reload is much more than just refreshing your browser when code changes. It skips the refresh and updates your code on the fly while maintaining your App's state (like your VueModel's data). Please note that there are cases when this is impossible, so the dev webserver will simply refresh your browser.
 
