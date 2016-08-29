@@ -1,6 +1,6 @@
 title: Quasar CLI
 ---
-Quasar CLI allows you to start new projects in no time by generating a starter boilerplate filled with everything that you need. It also does most of the heavy-lifting so you don’t have to take care of the redundant tasks. You must install it to generate and manage a Quasar App.
+Quasar CLI allows you to start new projects in no time by generating a starter boilerplate filled with everything you need. It also does most of the heavy-lifting so you don’t have to take care of the redundant tasks. You must install it to generate and manage a Quasar App.
 
 ``` bash
 $ npm install -g quasar-cli
