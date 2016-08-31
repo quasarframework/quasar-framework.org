@@ -5,7 +5,7 @@ title: Quasar Input Textbox
 ## Basic Usage
 
 ``` html
-<input id="user1" v-model="username">
+<input v-model="username">
 ```
 
 Vue DOM attribute properties you can use:
