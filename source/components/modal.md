@@ -77,7 +77,7 @@ let modal = Modal.create(...)
 
 // we want to reuse the Modal after showing it,
 // so we set "selfDestroy" to "false"
-modal.set('selfDestroy', false)
+modal.set({selfDestroy: false})
 modal.show()
 
 // now we can close it and open it up again
@@ -111,7 +111,7 @@ import { Modal } from 'quasar'
 
 let modal = Modal.create(...)
 
-modal.set('minimized', true)
+modal.set({minimized: true})
 modal.show()
 ```
 
