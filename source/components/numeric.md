@@ -5,7 +5,7 @@ title: Numeric
 ## Basic Usage
 
 ``` html
-<quasar-number :model.sync="number" :min="1" :max="17"></quasar-number>
+<quasar-numeric :model.sync="number" :min="1" :max="17"></quasar-numeric>
 ```
 
 Vue DOM attribute properties you can use:
@@ -28,7 +28,7 @@ Vue DOM attribute properties you can use:
         Some number
       </div>
       <div class="item-value">
-        <quasar-number :model.sync="number" :min="1" :max="17"></quasar-number>
+        <quasar-numeric :model.sync="number" :min="1" :max="17"></quasar-numeric>
       </div>
     </div>
   </label>
