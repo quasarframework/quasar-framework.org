@@ -26,6 +26,45 @@ The navigation is handled by Quasar. User is able to go forward, back and to fin
 </quasar-stepper>
 ```
 
+## Container Vue Methods & Events
+
+*Applies to `<quasar-stepper>` only:*
+
+Methods:
+
+| Vue Method | Description |
+| --- | --- |
+| `reset()` | Resets progress |
+| `redraw()` | When adding/removing steps in DOM, this method is automatically called |
+| `nextStep()` | Stepper goes to next step. |
+| `previousStep()` | Stepper goes to previous step. |
+| `finish()` | Stepper goes to "complete" state. |
+
+Events:
+
+| Vue Event | Type | Description |
+| --- | --- | --- |
+| `finish` | Function | Function to call when user completes all steps. |
+
+## Step Vue Properties & Methods
+
+*Applies to `<quasar-step>`:*
+
+Properties:
+
+| Vue Property | Type | Description |
+| --- | --- | --- |
+| `title` | String | Step title |
+| `ready` | Boolean | Can user continue with next step? Default is `true`. |
+
+Methods:
+
+| Vue Method | Description |
+| --- | --- |
+| `nextStep()` | Stepper goes to next step. |
+| `previousStep()` | Stepper goes to previous step. |
+| `finish()` | Stepper goes to "complete" state. |
+
 ## Handling Jump to Next Step
 Specifying the `ready` dom attribute property (Boolean) makes Stepper activate or deactivate the `Next` or `Finish` button. See step #2 in the demo.
 

@@ -20,3 +20,13 @@ Example:
 ``` html
 <div class="shadow-1">...</div>
 ```
+
+The shadows above point towards the bottom of the element. If you want them to point towards the top of the element, add `up` before the number:
+
+| CSS Class Name | Description |
+| --- | --- |
+| `shadow-up-1`, `hoverable-up`, `hoverable-up-1` | Set a depth of 1 - always or on element hover |
+| `shadow-up-2`, `hoverable-up-2` | Set a depth of 2 - always or on element hover |
+| `shadow-up-3`, `hoverable-up-3` | Set a depth of 3 - always or on element hover |
+| `shadow-up-4`, `hoverable-up-4` | Set a depth of 4 - always or on element hover |
+| `shadow-up-5`, `hoverable-up-5` | Set a depth of 5 - always or on element hover |

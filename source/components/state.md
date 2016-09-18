@@ -27,9 +27,11 @@ Quasar State Component helps you when you have two states (called "default" and 
 // VueModel for template above
 {
   ...,
-  data: {
-    ...,
-    state: false
+  data () {
+    return {
+      ...,
+      state: false
+    }
   },
   methods: {
     ...,
@@ -43,3 +45,9 @@ Quasar State Component helps you when you have two states (called "default" and 
   }
 }
 ```
+
+## Vue Properties
+
+| Vue Property | Type | Description |
+| --- | --- | --- |
+| `model` | Boolean | Show default (when `false`) or "active" state (when `true`) |

@@ -23,7 +23,7 @@ The list below is not complete. Also check the other CSS documentation pages lik
 | `full-width` | Width is set to 100% |
 | `window-height` | Height is set to 100vh with top and bottom margins 0 |
 | `window-width` | Width is set to 100vw with left and right margins 0 |
-| `block` | Same as `full-width` and with `display` property set to `block` |
+| `block` | Sets `display` property set to `block` |
 
 ### Orientation Related
 | Class Name | Description |
@@ -35,3 +35,14 @@ The list below is not complete. Also check the other CSS documentation pages lik
 | `flip-vertical` | Flip DOM element vertically |
 | `spin` | Apply a continuous spin/rotation to the DOM element |
 | `blink` | Apply a blinking effect to the DOM element |
+
+## Border Related
+| Class Name | Description |
+| --- | --- |
+| `no-border` | Removes any border |
+| `round-borders` | Applies a generic border radius based on theme |
+
+## Groups
+There's are two special CSS class named `group` and `generic-margin`.
+
+`group` applies a small margin to all children DOM elements, while `generic-margin` applies same margin to the respective DOM element.

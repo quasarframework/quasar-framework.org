@@ -36,7 +36,9 @@ You can display text in a variety of ways.
 
 <!-- Bold or italic -->
 <p class="text-bold">Bold text</p>
+<!-- or: --><strong>Bold text</strong>
 <p class="text-italic">Italic text</p>
+<!-- or: --><em>Italic text</em>
 
 <!-- Blockquotes -->
 <blockquote>
@@ -63,6 +65,9 @@ You can display text in a variety of ways.
   <dt>Euismod</dt>
   <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
 </dl>
+
+<!-- Tokens; alternative: Chips -->
+<span class="token">Some token</span>
 ```
 
 ### CSS Helper Classes
@@ -83,7 +88,7 @@ You can display text in a variety of ways.
 | `capitalize` | Capitalize first letter of the text |
 | `strong` | DOM element's font becomes **bold** |
 | `emphasize` | DOM element's font becomes *italic* |
-| `block` | Same as `full-width` and with `display` property set to `block` |
 | `round-borders` | Every Quasar Theme has a generic border radius. This radius is applied to the DOM node |
+| `block` | `display` property set to `block` |
 | `no-margin` | Margins are set to 0 |
 | `no-padding` | Padding is set to 0 |

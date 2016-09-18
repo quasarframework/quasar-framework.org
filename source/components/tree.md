@@ -67,7 +67,7 @@ Items containing a `handler` method will make those items trigger the handler me
 
 ### Vue Properties
 
-| Param Attributes | Description |
+| Vue Property | Description |
 | --- | --- |
 | `model` | Vue model for the Tree |
 | `contract-html` | HTML to display at the end of each item; when user clicks on it its branch contracts |

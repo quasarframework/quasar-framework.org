@@ -38,3 +38,17 @@ Quasar supplies CSS classes for making a chat. Loot at the syntax below.
   </div>
 </div>
 ```
+
+## Coloring
+Apply `bg-*` or `text-*` CSS classes (from [Quasar CSS Color Palette](/api/css-color-palette.html)) to color a Chat like this:
+
+``` html
+<div class="chat-other">
+  ...
+  <div class="chat-message">
+    <p class="bg-orange text-black">
+      hey, if you type in your pw, it will show as stars
+    </p>
+  </div>
+</div>
+```

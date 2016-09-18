@@ -16,7 +16,8 @@ import { Dialog } from 'quasar'
 You can access the Dialog's VueModel through the returned *Modal Object*. Read about its properties on [Quasar Modal](/components/modal.html#Basic-Usage) documentation page.
 
 > **IMPORTANT**
-> When user hits the browser/phone/tablet back button, the Dialog will get closed automatically..
+> <br>When user hits the browser/phone/tablet back button, the Dialog will get closed automatically..
+> <br>Also, when on a browser, hitting the &lt;ESCAPE&gt; key also closes the Dialog.
 
 ## Components
 The following components are properties of the *objectWithComponents* parameter from above and can be used for all Dialog types available.
@@ -128,7 +129,7 @@ var dialog = Dialog.create({
   buttons: [
     {
       label: 'Cancel',
-      handler: function(data) {
+      handler (data) {
         clearInterval(timeout)
         console.log('Canceled on progress ' + data)
       }

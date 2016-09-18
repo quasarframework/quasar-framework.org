@@ -2,499 +2,1063 @@ title: Lists
 ---
 Quasar Lists are used to display rows of information, such as a contact list, a playlist, or menu. Each row is called an item. Items can also be used outside of a list.
 
-Lists can also be used (and it's also recommended) on Quasar Drawers.
+Lists can also be used (and it's also recommended) on Quasar Drawers. There's even a `<quasar-drawer-link>` component based on List Items.
+
+> We'll learn to use Lists and List Items gradually. Make sure you don't skip steps and follow this page.
 
 Scroll down to see the demos if on desktop.
 
-## Basic Usage
+## List Basics
 <input type="hidden" data-demo="css/list/basic">
 
 ``` html
-<!-- Default List -->
+<p class="caption">Basic List</p>
+  <div class="list">
+    <div class="item" v-for="n in 2">
+      <div class="item-content">
+        List Item
+      </div>
+    </div>
+  </div>
+
+  <p class="caption">No Border</p>
+  <div class="list no-border">
+    <div class="item" v-for="n in 2">
+      <div class="item-content">
+        List Item
+      </div>
+    </div>
+  </div>
+
+  <p class="caption">Striped</p>
+  <div class="list striped">
+    <div class="item" v-for="n in 6">
+      <div class="item-content">
+        List Item
+      </div>
+    </div>
+  </div>
+
+  <p class="caption">Delimiter Between Items</p>
+  <div class="list">
+    <div class="item">
+      <div class="item-content">
+        List Item
+      </div>
+    </div>
+    <hr>
+    <div class="item">
+      <div class="item-content">
+        List Item
+      </div>
+    </div>
+    <hr>
+    <div class="item">
+      <div class="item-content">
+        List Item
+      </div>
+    </div>
+  </div>
+
+  <p class="caption">Delimiter within Items</p>
+  <div class="list item-delimiter">
+    <div class="item" v-for="n in 3">
+      <div class="item-content">
+        List Item
+      </div>
+    </div>
+  </div>
+
+  <p class="caption">Platform Delimiter - changes based on Theme</p>
+  <div class="list platform-delimiter">
+    <div class="item" v-for="n in 3">
+      <div class="item-content">
+        List Item
+      </div>
+    </div>
+  </div>
+
+  <p class="caption">Inset Delimiter within Items</p>
+  <div class="list item-inset-delimiter">
+    <div class="item" v-for="n in 3">
+      <div class="item-content inset">
+        List Item
+      </div>
+    </div>
+  </div>
+
+  <p class="caption">List Labels</p>
+  <div class="list">
+    <div class="list-label">List Label</div>
+    <div class="item" v-for="n in 2">
+      <div class="item-content">
+        List Item
+      </div>
+    </div>
+    <hr>
+    <div class="list-label">Another List Label</div>
+    <div class="item" v-for="n in 3">
+      <div class="item-content">
+        List Item
+      </div>
+    </div>
+  </div>
+
+  <p class="caption">Inset: Items, Delimiters and Labels</p>
+  <div class="list">
+    <div class="item">
+      <div class="item-content inset">
+        List Item
+      </div>
+    </div>
+    <hr class="inset">
+    <div class="list-label inset">Inset List Label</div>
+    <div class="item" v-for="n in 2">
+      <div class="item-content inset">
+        List Item
+      </div>
+    </div>
+    <hr class="inset">
+    <div class="item">
+      <div class="item-content inset">
+        List Item
+      </div>
+    </div>
+  </div>
+
+  <p class="caption">
+    Highlight (Desktop only)
+    <small>
+      <br>
+      <span class="mobile-only">
+        On desktop, hovering the list items will change their background
+        color temporarily.
+      </span>
+      <span class="desktop-only">
+        Hover the list items to change their background color temporarily.
+      </span>
+    </small>
+  </p>
+  <div class="list highlight">
+    <div class="item" v-for="n in 2">
+      <div class="item-content">
+        List Item
+      </div>
+    </div>
+  </div>
+
+  <p class="caption">
+    Link Items (Desktop only)
+    <small>
+      <br>
+      <span class="mobile-only">
+        On desktop, hovering the list items will change their background
+        color temporarily and the cursor will be a pointer.
+      </span>
+      <span class="desktop-only">
+        Hover the list items to change their background color temporarily
+        and change cursor to pointer.
+      </span>
+    </small>
+  </p>
+  <div class="list">
+    <div class="item item-link" v-for="n in 2">
+      <div class="item-content">
+        List Item
+      </div>
+    </div>
+  </div>
+```
+
+## List Items
+<input type="hidden" data-demo="css/list/item">
+
+``` html
+<p class="caption">Primary</p>
+<div class="list item-inset-delimiter">
+  <div class="item">
+    <i class="item-primary">assignment_ind</i>
+    <div class="item-content">Icon as Primary</div>
+  </div>
+  <div class="item">
+    <img class="item-primary" :src="'statics/boy-avatar.png'">
+    <div class="item-content">Avatar as Primary</div>
+  </div>
+  <div class="item">
+    <img class="item-primary thumbnail" :src="'statics/mountains.jpg'">
+    <div class="item-content">Thumbnail as Primary</div>
+  </div>
+  <div class="item">
+    <div class="item-primary">Q</div>
+    <div class="item-content">One character as Primary</div>
+  </div>
+</div>
+
+<p class="caption">Secondary</p>
 <div class="list">
-  <div class="item">Quasar Framework</div>
-  <div class="item">Quasar Framework</div>
-  <div class="item">Quasar Framework</div>
+  <div class="item">
+    <div class="item-content has-secondary">Icon as Secondary</div>
+    <i class="item-secondary">info</i>
+  </div>
+  <hr>
+  <div class="item">
+    <div class="item-content has-secondary">Avatar as Secondary</div>
+    <img class="item-secondary" :src="'statics/boy-avatar.png'">
+  </div>
+  <hr>
+  <div class="item">
+    <div class="item-content has-secondary">Thumbnail as Secondary</div>
+    <img class="item-secondary thumbnail" :src="'statics/mountains.jpg'">
+  </div>
+  <hr>
+  <div class="item">
+    <div class="item-content has-secondary">One character as Secondary</div>
+    <div class="item-secondary">Q</div>
+  </div>
 </div>
-```
-``` html
-<!-- Striped List -->
-<div class="list striped">
-  <div class="item">Quasar Framework</div>
-  <div class="item">Quasar Framework</div>
-  <div class="item">Quasar Framework</div>
-</div>
-```
 
-``` html
-<!-- Inset List -->
-<div class="list inset">
-  <div class="item">Quasar Framework</div>
-  <div class="item">Quasar Framework</div>
-  <div class="item">Quasar Framework</div>
+<p class="caption">Example Items with Primary and Secondary</p>
+<div class="list item-inset-delimiter">
+  <div class="item">
+    <img class="item-primary" :src="'statics/boy-avatar.png'">
+    <div class="item-content has-secondary">Jack</div>
+    <i class="item-secondary">chat_bubble</i>
+  </div>
+  <div class="item">
+    <img class="item-primary" :src="'statics/linux-avatar.png'">
+    <div class="item-content has-secondary">Jim's Photos</div>
+    <img class="item-secondary thumbnail" :src="'statics/mountains.jpg'">
+  </div>
+  <div class="item">
+    <i class="item-primary">voice_chat</i>
+    <div class="item-content has-secondary">Voice Chat with Joe</div>
+    <img class="item-secondary" :src="'statics/boy-avatar.png'">
+  </div>
+  <div class="item">
+    <div class="item-primary">J</div>
+    <div class="item-content has-secondary">John Doe</div>
+    <img class="item-secondary" :src="'statics/guy-avatar.png'">
+  </div>
 </div>
-```
 
-``` html
-<!-- Highlight List (Hover over Items) -->
-<div class="list highlight">
-  <div class="item">Quasar Framework</div>
-  <div class="item">Quasar Framework</div>
-  <div class="item">Quasar Framework</div>
+<p class="caption">Stamp and Truncated Content</p>
+<div class="list" style="max-width: 400px">
+  <div class="item">
+    <img class="item-primary" :src="'statics/boy-avatar.png'">
+    <div class="item-content has-secondary">
+      <div>Brunch this weekend? Brunch this weekend? Brunch this weekend?</div>
+    </div>
+    <div class="item-secondary stamp">
+      1 week
+    </div>
+  </div>
+  <div class="item two-lines">
+    <img class="item-primary" :src="'statics/boy-avatar.png'">
+    <div class="item-content has-secondary">
+      <div>Brunch this weekend? Brunch this weekend? Brunch this weekend?</div>
+      <div>John Doe John Doe John Doe John Doe John Doe John Doe John Doe John Doe </div>
+    </div>
+    <div class="item-secondary stamp">
+      10 min
+    </div>
+  </div>
+  <div class="item three-lines">
+    <img class="item-primary" :src="'statics/boy-avatar.png'">
+    <div class="item-content has-secondary">
+      <div>Brunch this weekend? Brunch this weekend? Brunch this weekend?</div>
+      <div>
+        <span>John Doe</span>
+        -- I'll be in your neighborhood doing errands this
+        weekend. Do you want to grab brunch?
+      </div>
+    </div>
+    <div class="item-secondary stamp">
+      2 years
+    </div>
+    <i class="item-secondary">mail</i>
+  </div>
+  <div class="item three-lines">
+    <img class="item-primary" :src="'statics/boy-avatar.png'">
+    <div class="item-content has-secondary">
+      <div>Brunch this weekend? Brunch this weekend? Brunch this weekend?</div>
+      <div>
+        <span>John Doe</span>
+        -- I'll be in your neighborhood doing errands this
+        weekend. Do you want to grab brunch?
+      </div>
+    </div>
+    <div class="item-secondary stamp">
+      1 week ago
+    </div>
+    <i class="item-secondary">mail</i>
+  </div>
 </div>
-```
 
-``` html
-<!-- List with a Divider -->
+<p class="caption">Item with Actions</p>
 <div class="list">
-  <div class="item">Quasar Framework</div>
-  <div class="item">Quasar Framework</div>
-  <div class="list-divider"></div>
-  <div class="item">Quasar Framework</div>
-</div>
-```
-
-``` html
-<!-- List with Item Delimiters -->
-<div class="list item-delimiter">
-  <div class="item">Quasar Framework</div>
-  <div class="item">Quasar Framework</div>
-  <div class="item">Quasar Framework</div>
-</div>
-```
-
-``` html
-<!-- List with Border (and Item Delimiters) -->
-<div class="list bordered item-delimiter">
-  <div class="item">Quasar Framework</div>
-  <div class="item">Quasar Framework</div>
-  <div class="item">Quasar Framework</div>
-</div>
-```
-
-## Complex Usage
-<input type="hidden" data-demo="css/list/complex">
-
-Quasar Lists are able to carry items with labels and values, icons and more, all these in many forms of display it.
-
-``` html
-<!-- List with Item Label and Item Value -->
-<div class="list">
   <div class="item">
-    <div class="item-content">
-      <div class="item-label">Label</div>
-      <div class="item-value">Value</div>
+    <img class="item-primary" :src="'statics/boy-avatar.png'">
+    <div class="item-content has-secondary">
+      <div>Brunch this weekend?</div>
     </div>
-  </div>
-  <div class="item">
-    <div class="item-content">
-      <div class="item-label">Label</div>
-      <div class="item-value">
-        <i>pages</i>
-      </div>
-    </div>
-  </div>
-  <div class="item">
-    <div class="item-content">
-      <div class="item-label">Label</div>
-      <div class="item-value">
-        <i>perm_identity</i>
-      </div>
+    <div class="item-secondary">
+      <quasar-popover v-ref:popover>
+        <i slot="target">
+          more_vert
+        </i>
+
+        <div class="list">
+          <div class="item item-link" @click="$refs.popover.close()">
+            <div class="item-content">Reply</div>
+          </div>
+          <div class="item item-link" @click="$refs.popover.close()">
+            <div class="item-content">Forward</div>
+          </div>
+          <div class="item item-link" @click="$refs.popover.close()">
+            <div class="item-content">Delete</div>
+          </div>
+        </div>
+      </quasar-popover>
     </div>
   </div>
 </div>
 ```
 
-``` html
-<!-- List with Inner Delimiters -->
-<div class="list inner-delimiter">
-  <div class="item">
-    <div class="item-content">
-      <div class="item-label">Label</div>
-      <div class="item-value">Value</div>
-    </div>
-  </div>
-  <div class="item">
-    <div class="item-content">
-      <div class="item-label">Label</div>
-      <div class="item-value">Value</div>
-    </div>
-  </div>
-  <div class="item">
-    <div class="item-content">
-      <div class="item-label">Label</div>
-      <div class="item-value">
-        <button class="primary clear">View</button>
-      </div>
-    </div>
-  </div>
-</div>
-```
-
-``` html
-<!-- List with Icons -->
-
-<div class="list bordered inner-delimiter">
-  <div class="item">
-    <i>mail</i>
-    <div class="item-content">
-      Quasar Framework
-    </div>
-  </div>
-  <div class="item">
-    <i>perm_identity</i>
-    <div class="item-content">
-      Quasar Framework
-    </div>
-  </div>
-  <div class="item">
-    <i>query_builder</i>
-    <div class="item-content">
-      <div class="item-label">Quasar Framework</div>
-      <div class="item-value">
-        <button class="primary clear">View</button>
-      </div>
-    </div>
-    </div>
-  </div>
-</div>
-
-<div class="list bordered inner-delimiter">
-  <div class="item">
-    <div class="item-content">
-      <div class="item-label">Label</div>
-      <i>explore</i>
-    </div>
-  </div>
-  <div class="item">
-    <div class="item-content">
-      <div class="item-label">Label</div>
-      <i>alarm</i>
-    </div>
-  </div>
-  <div class="item">
-    <div class="item-content">
-      <div class="item-label">Label</div>
-      <i>shopping_cart</i>
-    </div>
-  </div>
-</div>
-```
-
-## List Headers
-<input type="hidden" data-demo="css/list/headers">
-
-Quasar Lists can also have headers (default or inverted) to better separate contents.
-
-``` html
-<!-- Default Header -->
-<div class="list item-delimiter">
-  <div class="list-header">
-    <h3>H3 Header</h3>
-  </div>
-  <div class="item">Quasar Framework</div>
-  <div class="item">Quasar Framework</div>
-  <div class="list-header">
-    Normal Text Header
-  </div>
-  <div class="item">Quasar Framework</div>
-  <div class="item">Quasar Framework</div>
-</div>
-```
-
-``` html
-<!-- Inverted Header -->
-<div class="list item-delimiter">
-  <div class="list-header inverted">
-    <h3>H3 Header</h3>
-  </div>
-  <div class="item">Quasar Framework</div>
-  <div class="item">Quasar Framework</div>
-  <div class="list-header inverted">
-    Normal Text Header
-  </div>
-  <div class="item">Quasar Framework</div>
-  <div class="item">Quasar Framework</div>
-</div>
-```
-
-## List Multiline
+## Multi-line Items
 <input type="hidden" data-demo="css/list/multiline">
 
-Quasar Labels are able to support multi-line labels, with possible a line as title of the item.
+Multiple line items are usually for some Form components that exceed the height of a predefined one, two or three lines item.
 
 ``` html
-<div class="list inner-delimiter">
+<div class="list">
   <div class="item">
-    <i>perm_identity</i>
-    <div class="item-content">
-      <div class="item-label">
-        <p class="item-title">Jack</p>
-        <p>Linux Lover</p>
-      </div>
+    <img class="item-primary" :src="'statics/boy-avatar.png'">
+    <div class="item-content has-secondary">
+      One line item
+    </div>
+    <div class="item-secondary stamp">
+      1 week
     </div>
   </div>
-  <div class="item">
-    <i>perm_identity</i>
-    <div class="item-content">
-      <div class="item-label">
-        <p class="item-title">John</p>
-        <p>Web Developer</p>
-        <p>Quasar Framework</p>
-      </div>
-      <i>mail</i>
+  <hr>
+  <div class="item two-lines">
+    <img class="item-primary" :src="'statics/boy-avatar.png'">
+    <div class="item-content has-secondary">
+      <div>Two line item</div>
+      <div>Second line</div>
+    </div>
+    <div class="item-secondary stamp">
+      10 min
     </div>
   </div>
-  <div class="item">
-    <i>perm_identity</i>
-    <div class="item-content">
-      <div class="item-label">
-        <p class="item-title">Joe</p>
-        <p>Newbie</p>
+  <hr>
+  <div class="item three-lines">
+    <img class="item-primary" :src="'statics/boy-avatar.png'">
+    <div class="item-content has-secondary">
+      <div>Three line item</div>
+      <div>
+        <span>Second & Third line</span>
+        -- I'll be in your neighborhood doing errands this
+        weekend. Do you want to grab brunch?
       </div>
     </div>
+    <div class="item-secondary stamp">
+      2 years
+    </div>
+    <i class="item-secondary">mail</i>
   </div>
-  <div class="item">
-    <i>perm_identity</i>
-    <div class="item-content">
-      <div class="item-label">
-        <p class="item-title">Linux Lover</p>
-        <p>Linux rulz!</p>
-        <p>Quasar rulz!</p>
-      </div>
-      <i>mail</i>
+  <hr>
+  <div class="item multiple-lines">
+    <img class="item-primary" :src="'statics/boy-avatar.png'">
+    <div class="item-content has-secondary">
+      <div>Multiple lines item</div>
+      <div class="item-label item-smaller">Second line</div>
+      <div class="item-label item-smaller">Third line</div>
+      <div class="item-label item-smaller">Fourth line</div>
+      <div class="item-label item-smaller">...as many as you need!</div>
+    </div>
+    <div class="item-secondary">
+      <quasar-popover v-ref:popover>
+        <i slot="target">
+          more_vert
+        </i>
+
+        <div class="list">
+          <div class="item item-link" @click="$refs.popover.close()">
+            <div class="item-content">Reply</div>
+          </div>
+          <div class="item item-link" @click="$refs.popover.close()">
+            <div class="item-content">Forward</div>
+          </div>
+          <div class="item item-link" @click="$refs.popover.close()">
+            <div class="item-content">Delete</div>
+          </div>
+        </div>
+      </quasar-popover>
     </div>
   </div>
 </div>
 ```
 
-## List with Images
-<input type="hidden" data-demo="css/list/with-images">
+## Collapsible Items
+<input type="hidden" data-demo="css/list/collapsible">
 
-Quasar List items can also contain an avatar or a thumbnail.
+Collapsible Items make use of the Collapsible Component. Read more about it [here](/guide/collapsible.html).
 
+You can nest collapsibles within collapsibles within collapsibles within...
 ``` html
-<!-- List with Avatars -->
-<div class="list inner-delimiter">
-  <div class="item">
-    <img class="avatar" src="assets/linux-avatar.png">
+<div class="list">
+  <quasar-collapsible icon="inbox" label="Inbox">
+    <div class="item" v-for="n in 3">
+      <i class="item-primary">mail</i>
+      <div class="item-content">
+        Email {{ n + 1 }}
+      </div>
+    </div>
+    <quasar-collapsible icon="favorites" label="Favorites">
+      <div class="item" v-for="n in 3">
+        <i class="item-primary">mail</i>
+        <div class="item-content">
+          Favorite {{ n + 1 }}
+        </div>
+      </div>
+    </quasar-collapsible>
+  </quasar-collapsible>
+  <quasar-collapsible icon="send" label="Sent">
+    <div class="item" v-for="n in 3">
+      <i class="item-primary">mail</i>
+      <div class="item-content">
+        Email {{ n + 1 }}
+      </div>
+    </div>
+  </quasar-collapsible>
+  <quasar-collapsible icon="delete" label="Trash">
+    <div class="item" v-for="n in 3">
+      <i class="item-primary">mail</i>
+      <div class="item-content">
+        Email {{ n + 1 }}
+      </div>
+    </div>
+  </quasar-collapsible>
+</div>
+```
+
+## List with Textfields
+<input type="hidden" data-demo="css/list/example-textfields">
+
+Some predefined forumals you can use to nest Textfields in List Items.
+``` html
+<div class="list">
+  <div class="list-label">Textboxes</div>
+  <div class="item two-lines">
+    <i class="item-primary">edit</i>
     <div class="item-content">
-      <div class="item-label">
-        <p class="item-title">Jack</p>
-        <p>Linux Lover</p>
+      <input class="full-width">
+    </div>
+  </div>
+
+  <hr>
+  <div class="item two-lines">
+    <i class="item-primary">edit</i>
+    <div class="item-content">
+      <input placeholder="Placeholder" class="full-width">
+    </div>
+  </div>
+
+  <hr>
+  <div class="item multiple-lines">
+    <i class="item-primary">edit</i>
+    <div class="item-content row items-center wrap">
+      <div style="margin-right: 10px;" class="item-label">Label:</div>
+      <input class="auto">
+    </div>
+  </div>
+
+  <hr>
+  <div class="item three-lines">
+    <i class="item-primary">edit</i>
+    <div class="item-content">
+      <div class="stacked-label">
+        <input class="full-width">
+        <label>Stacked Label</label>
       </div>
     </div>
   </div>
-  <div class="list-header">Header</div>
-  <div class="item">
-    <img class="avatar" src="assets/guy-avatar.png">
+
+  <hr>
+  <div class="item three-lines">
+    <i class="item-primary">edit</i>
     <div class="item-content">
-      <div class="item-label">
-        <p class="item-title">John</p>
-        <p>Web Developer</p>
-        <p>Quasar Framework enthusiast</p>
+      <div class="floating-label">
+        <input required class="full-width">
+        <label>Floating Label</label>
       </div>
-      <i>supervisor_account</i>
     </div>
   </div>
-  <div class="item">
-    <img class="avatar" src="assets/boy-avatar.png">
+
+  <hr>
+  <div class="list-label">Textareas</div>
+  <div class="item multiple-lines">
+    <i class="item-primary">edit</i>
     <div class="item-content">
-      <div class="item-label">
-        <p class="item-title">Joe</p>
-        <p>Newbie</p>
-      </div>
-      <i>supervisor_account</i>
+      <textarea class="full-width"></textarea>
     </div>
   </div>
-  <div class="item">
-    <img class="avatar" src="assets/linux-avatar-2.png">
+
+  <hr>
+  <div class="item multiple-lines">
+    <i class="item-primary">edit</i>
     <div class="item-content">
-      <div class="item-label">
-        <p class="item-title">Linux Lover</p>
-        <p>Linux rulz!</p>
-        <p>Quasar rulz!</p>
+      <div style="margin-right: 10px;" class="item-label">Label:</div>
+      <textarea class="full-width"></textarea>
+    </div>
+  </div>
+
+  <hr>
+  <div class="item multiple-lines">
+    <i class="item-primary">edit</i>
+    <div class="item-content">
+      <div class="stacked-label">
+        <textarea class="full-width"></textarea>
+        <label>Stacked Label</label>
       </div>
-      <i>supervisor_account</i>
+    </div>
+  </div>
+
+  <hr>
+  <div class="item multiple-lines">
+    <i class="item-primary">edit</i>
+    <div class="item-content">
+      <div class="floating-label">
+        <textarea required class="full-width"></textarea>
+        <label>Floating Label</label>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="list-label">Numeric</div>
+  <div class="item multiple-lines">
+    <i class="item-primary">edit</i>
+    <div class="item-content">
+      <span class="item-label">Number:</span>
+      <quasar-numeric :model.sync="number"></quasar-numeric>
+    </div>
+  </div>
+  <hr class="inset">
+  <div class="item multiple-lines">
+    <i class="item-primary">edit</i>
+    <div class="item-content">
+      <span class="item-label">Number:</span>
+      <quasar-numeric :model.sync="number"></quasar-numeric>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="list-label">Chips Textbox</div>
+  <div class="item multiple-lines">
+    <i class="item-primary">edit</i>
+    <div class="item-content">
+      <quasar-chips :model.sync="chips" placeholder="Type names"></quasar-chips>
     </div>
   </div>
 </div>
 ```
 
-``` html
-<!-- List with Thumbnails -->
-<div class="list inner-delimiter">
-  <div class="item">
-    <img class="thumbnail" src="assets/linux-avatar.png">
-    <div class="item-content">
-      <div class="item-label">
-        <p class="item-title">Jack</p>
-        <p>Linux Lover</p>
-      </div>
-    </div>
-  </div>
-  <div class="list-header">Header</div>
-  <div class="item">
-    <img class="thumbnail" src="assets/guy-avatar.png">
-    <div class="item-content">
-      <div class="item-label">
-        <p class="item-title">John</p>
-        <p>Web Developer</p>
-        <p>Quasar Framework enthusiast</p>
-      </div>
-      <i>supervisor_account</i>
-    </div>
-  </div>
-  <div class="item">
-    <img class="thumbnail" src="assets/boy-avatar.png">
-    <div class="item-content">
-      <div class="item-label">
-        <p class="item-title">Joe</p>
-        <p>Newbie</p>
-      </div>
-      <i>supervisor_account</i>
-    </div>
-  </div>
-  <div class="item">
-    <img class="thumbnail" src="assets/linux-avatar-2.png">
-    <div class="item-content">
-      <div class="item-label">
-        <p class="item-title">Linux Lover</p>
-        <p>Linux rulz!</p>
-        <p>Quasar rulz!</p>
-      </div>
-      <i>supervisor_account</i>
-    </div>
-  </div>
-</div>
-```
+## List with Form Components
+<input type="hidden" data-demo="css/list/example-form">
 
-## List with Form Web Components
-<input type="hidden" data-demo="css/list/with-form-components">
-
-Quasar Lists can contain Web Components such as Checkboxes, Radios, Toggles, Ranges and more. Good for using them on a settings menu, for example.
+Some predefined formulas you can use to nest Form Components within List Items.
 
 ``` html
-<!-- List with Radios -->
-<div class="list inner-delimiter bordered">
+<p class="caption">Checkboxes</p>
+<div class="list">
   <label class="item">
-    <i>mail</i>
+    <div class="item-primary">
+      <quasar-checkbox :model.sync="checked"></quasar-checkbox>
+    </div>
     <div class="item-content">
-      <div class="item-label">Option 1</div>
-      <quasar-radio :model.sync="radioModel" value="opt1"></quasar-radio>
+      Notifications
     </div>
   </label>
-  <label class="item">
-    <i>mail</i>
+  <label class="item two-lines">
+    <div class="item-primary">
+      <quasar-checkbox :model.sync="checked"></quasar-checkbox>
+    </div>
     <div class="item-content">
-      <div class="item-label">Option 2</div>
-      <quasar-radio :model.sync="radioModel" value="opt2"></quasar-radio>
+      <div>Notifications</div>
+      <div>Allow notifications</div>
+    </div>
+  </label>
+  <label class="item three-lines">
+    <div class="item-primary">
+      <quasar-checkbox :model.sync="checked"></quasar-checkbox>
+    </div>
+    <div class="item-content">
+      <div>Notifications</div>
+      <div>Allow notifications Allow notifications Allow notifications Allow notifications Allow notifications </div>
     </div>
   </label>
 </div>
 
-<div class="list inner-delimiter bordered">
+<p class="caption">Radios</p>
+<div class="list">
   <label class="item">
-    <quasar-radio :model.sync="radioModel" value="opt1"></quasar-radio>
+    <div class="item-primary">
+      <quasar-radio :model.sync="option" value="opt1"></quasar-radio>
+    </div>
     <div class="item-content">
       Option 1
     </div>
   </label>
-  <label class="item">
-    <quasar-radio :model.sync="radioModel" value="opt2"></quasar-radio>
+  <label class="item two-lines">
+    <div class="item-primary">
+      <quasar-radio :model.sync="option" value="opt2"></quasar-radio>
+    </div>
     <div class="item-content">
-      Option 2
+      <div>Option 2</div>
+      <div>Allows notifications</div>
     </div>
   </label>
+  <label class="item three-lines">
+    <div class="item-primary">
+      <quasar-radio :model.sync="option" value="opt3"></quasar-radio>
+    </div>
+    <div class="item-content">
+      <div>Option 3</div>
+      <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+    </div>
+  </label>
+</div>
+
+<p class="caption">Toggles</p>
+<div class="list">
+  <label class="item">
+    <div class="item-content has-secondary">
+      Events and reminders
+    </div>
+    <div class="item-secondary">
+      <quasar-toggle :model.sync="checked"></quasar-toggle>
+    </div>
+  </label>
+  <label class="item two-lines">
+    <div class="item-content has-secondary">
+      <div>Events and reminders</div>
+      <div>Lorem ipsum</div>
+    </div>
+    <div class="item-secondary">
+      <quasar-toggle :model.sync="checked" class="purple"></quasar-toggle>
+    </div>
+  </label>
+  <label class="item three-lines">
+    <div class="item-content has-secondary">
+      <div>Events and reminders</div>
+      <div>Lorem ipsum dolor sit amet...</div>
+    </div>
+    <div class="item-secondary">
+      <quasar-toggle :model.sync="checked" class="red"></quasar-toggle>
+    </div>
+  </label>
+</div>
+
+<p class="caption">Select</p>
+<div class="list">
+  <div class="list-label">Single Selection</div>
+  <div class="item multiple-lines">
+    <i class="item-primary">supervisor_account</i>
+    <div class="item-content">
+      <quasar-select class="full-width" type="radio" :model.sync="select" :options="selectOptions" ok-label="Pick" cancel-label="Neah" title="Company"></quasar-select>
+    </div>
+  </div>
+  <hr>
+  <div class="list-label">Multiple Selection</div>
+  <div class="item multiple-lines">
+    <i class="item-primary">supervisor_account</i>
+    <div class="item-content">
+      <quasar-select class="full-width" type="checkbox" :model.sync="multipleSelect" :options="selectOptions" ok-label="Pick" title="Companies"></quasar-select>
+    </div>
+  </div>
+  <div class="item multiple-lines">
+    <i class="item-primary">supervisor_account</i>
+    <div class="item-content">
+      <quasar-select class="full-width" type="toggle" :model.sync="multipleSelect" :options="selectOptions" ok-label="Pick" title="Companies"></quasar-select>
+    </div>
+  </div>
+</div>
+
+<p class="caption">Ranges</p>
+<div class="list">
+  <div class="item two-lines">
+    <i class="item-primary">volume_up</i>
+    <div class="item-content">
+      <quasar-range :model.sync="standalone" :min="0" :max="50" label></quasar-range>
+    </div>
+  </div>
+  <div class="item two-lines">
+    <i class="item-primary">brightness_medium</i>
+    <div class="item-content">
+      <quasar-range :model.sync="standalone" :min="0" :max="50" label></quasar-range>
+    </div>
+  </div>
+  <hr>
+  <div class="list-label">Double Range</div>
+  <div class="item two-lines">
+    <i class="item-primary">local_atm</i>
+    <div class="item-content">
+      <quasar-double-range :model-min.sync="standaloneMin" :model-max.sync="standaloneMax" :min="0" :max="50" label></quasar-double-range>
+    </div>
+  </div>
+  <div class="item two-lines">
+    <i class="item-primary">euro_symbol</i>
+    <div class="item-content">
+      <quasar-double-range :model-min.sync="standaloneMin" :model-max.sync="standaloneMax" :min="0" :max="50" label></quasar-double-range>
+    </div>
+  </div>
+</div>
+
+<p class="caption">Date and Time</p>
+<div class="list">
+  <div class="list-label">Date or Time</div>
+  <div class="item two-lines">
+    <i class="item-primary">access_time</i>
+    <div class="item-content">
+      <quasar-datetime class="full-width" :model.sync="timestamp" type="time"></quasar-datetime>
+    </div>
+  </div>
+  <div class="item two-lines">
+    <i class="item-primary">update</i>
+    <div class="item-content row items-baseline">
+      <quasar-datetime class="full-width" :model.sync="timestamp" type="date"></quasar-datetime>
+    </div>
+  </div>
+  <hr>
+  <div class="list-label">Date & Time</div>
+  <div class="item two-lines">
+    <i class="item-primary">notifications</i>
+    <div class="item-content row items-baseline">
+      <quasar-datetime class="full-width" :model.sync="timestamp" type="datetime"></quasar-datetime>
+    </div>
+  </div>
 </div>
 ```
 
-``` html
-<!-- List with Checkboxes -->
-<div class="list inner-delimiter bordered">
-  <label class="item">
-    <i>mail</i>
-    <div class="item-content">
-      <div class="item-label">Quasar Framework</div>
-      <quasar-checkbox :model.sync="checkboxModel"></quasar-checkbox>
-    </div>
-  </label>
-  <label class="item">
-    <i>mail</i>
-    <div class="item-content">
-      <div class="item-label">Quasar Framework</div>
-      <quasar-checkbox :model.sync="checkboxModel"></quasar-checkbox>
-    </div>
-  </label>
-</div>
+## Examples
+Let's explore some ready to use templates using what we've learned above.
 
-<div class="list inner-delimiter bordered">
-  <label class="item">
-    <quasar-checkbox :model.sync="checkboxModel"></quasar-checkbox>
-    <div class="item-content">
-      Quasar Framework
-    </div>
-  </label>
-  <label class="item">
-    <quasar-checkbox :model.sync="checkboxModel"></quasar-checkbox>
-    <div class="item-content">
-      Quasar Framework
-    </div>
-  </label>
-</div>
-```
+### Simple List
+<input type="hidden" data-demo="css/list/example-simple">
 
 ``` html
-<!-- List with Toggles -->
-<div class="list inner-delimiter bordered">
-  <label class="item">
-    <i>mail</i>
-    <div class="item-content">
-      <div class="item-label">Quasar Framework</div>
-      <quasar-toggle :model.sync="toggleModel"></quasar-toggle>
-    </div>
-  </label>
-  <label class="item">
-    <i>mail</i>
-    <div class="item-content">
-      <div class="item-label">Quasar Framework</div>
-      <quasar-toggle :model.sync="toggleModel"></quasar-toggle>
-    </div>
-  </label>
-</div>
-
-<div class="list inner-delimiter bordered">
-  <label class="item">
-    <quasar-toggle :model.sync="toggleModel"></quasar-toggle>
-    <div class="item-content">
-      Quasar Framework
-    </div>
-  </label>
-  <label class="item">
-    <quasar-toggle :model.sync="toggleModel"></quasar-toggle>
-    <div class="item-content">
-      Quasar Framework
-    </div>
-  </label>
-</div>
-```
-
-``` html
-<!-- List with Ranges -->
-<div class="list item-delimiter bordered">
+<div class="list">
   <div class="item">
-    <i>volume_up</i>
+    <i class="item-primary">inbox</i>
     <div class="item-content">
-      <span class="item-value item-right-margin">1</span>
-      <quasar-range :model.sync="rangeModel" :min="1" :max="10"></quasar-range>
-      <span class="item-value item-left-margin">10</span>
-      <div class="item-left-margin" style="font-weight: bold">{{rangeModel}}</div>
+      Inbox
     </div>
   </div>
   <div class="item">
-    <i class="item-right-margin">volume_down</i>
-    <quasar-range :model.sync="rangeModel" :min="1" :max="10"></quasar-range>
-    <i class="item-left-margin">volume_up</i>
+    <i class="item-primary">send</i>
+    <div class="item-content">
+      Sent
+    </div>
+  </div>
+  <div class="item">
+    <i class="item-primary">delete</i>
+    <div class="item-content">
+      Trash
+    </div>
+  </div>
+  <hr>
+  <div class="item">
+    <div class="item-content has-secondary">
+      Inbox
+    </div>
+    <i class="item-secondary">
+      inbox
+    </i>
+  </div>
+  <div class="item">
+    <div class="item-content has-secondary">
+      Sent
+    </div>
+    <i class="item-secondary">
+      send
+    </i>
+  </div>
+  <div class="item">
+    <div class="item-content has-secondary">
+      Trash
+    </div>
+    <i class="item-secondary">
+      delete
+    </i>
+  </div>
+</div>
+```
+
+### Persons List
+<input type="hidden" data-demo="css/list/example-persons">
+
+``` html
+<div class="list">
+  <div class="list-label">People</div>
+  <div class="item">
+    <img class="item-primary" :src="'statics/boy-avatar.png'">
+    <div class="item-content has-secondary">
+      John
+    </div>
+    <i class="item-secondary">
+      chat_bubble
+    </i>
+  </div>
+  <div class="item two-lines">
+    <img class="item-primary" :src="'statics/boy-avatar.png'">
+    <div class="item-content has-secondary">
+      <div>Jim</div>
+      <div>Javascript wiz kid</div>
+    </div>
+    <i class="item-secondary">
+      chat_bubble
+    </i>
+  </div>
+  <div class="item three-lines">
+    <img class="item-primary" :src="'statics/boy-avatar.png'">
+    <div class="item-content has-secondary">
+      <div>Jake</div>
+      <div>Passionate about Quasar</div>
+    </div>
+    <i class="item-secondary">
+      chat_bubble
+    </i>
+  </div>
+</div>
+```
+
+### Chat List
+<input type="hidden" data-demo="css/list/example-chat">
+
+``` html
+<div class="list">
+  <div class="list-label">Recent chats</div>
+  <div class="item" v-for="n in 3">
+    <img class="item-primary" :src="'statics/boy-avatar.png'">
+    <div class="item-content has-secondary">
+      John Doe
+    </div>
+    <i class="item-secondary">
+      chat_bubble
+    </i>
+  </div>
+  <hr>
+  <div class="list-label">Previous chats</div>
+  <div class="item" v-for="n in 3">
+    <img class="item-primary" :src="'statics/guy-avatar.png'">
+    <div class="item-content">
+      Jack Doe
+    </div>
+  </div>
+</div>
+```
+
+### Movies List
+<input type="hidden" data-demo="css/list/example-movies">
+
+``` html
+<div class="list">
+  <div class="list-label">Movies</div>
+  <div class="item">
+    <img class="item-primary thumbnail" :src="'statics/mountains.jpg'">
+    <div class="item-content has-secondary">
+      <div>Mountains Documentary</div>
+    </div>
+    <i class="item-secondary">
+      movie
+    </i>
+  </div>
+  <div class="item two-lines">
+    <img class="item-primary thumbnail" :src="'statics/mountains.jpg'">
+    <div class="item-content has-secondary">
+      <div>Mountains Documentary</div>
+      <div>For passionates only</div>
+    </div>
+    <i class="item-secondary">
+      movie
+    </i>
+  </div>
+  <div class="item three-lines">
+    <img class="item-primary thumbnail" :src="'statics/mountains.jpg'">
+    <div class="item-content has-secondary">
+      <div>Mountains Documentary</div>
+      <div>For passionates only For passionates only For passionates only For passionates only For passionates only </div>
+    </div>
+    <i class="item-secondary">
+      movie
+    </i>
+  </div>
+</div>
+```
+
+### Contact List
+<input type="hidden" data-demo="css/list/example-contacts">
+
+``` html
+<div class="list">
+  <div class="item" v-for="n in 3">
+    <i class="item-primary" v-if="n === 0">star</i>
+    <div class="item-content inset has-secondary">
+      John Joe
+    </div>
+    <img class="item-secondary" :src="'statics/boy-avatar.png'">
+  </div>
+  <hr class="inset">
+  <div class="item" v-for="n in 3">
+    <div class="item-primary" v-if="n === 0">A</div>
+    <div class="item-content inset has-secondary">
+      John Joe
+    </div>
+    <img class="item-secondary" :src="'statics/boy-avatar.png'">
+  </div>
+</div>
+```
+
+### Folder List
+<input type="hidden" data-demo="css/list/example-folders">
+
+``` html
+<div class="list">
+  <div class="list-label inset">Folders</div>
+  <div class="item two-lines" v-for="n in 3">
+    <div class="item-primary bg-grey-6 text-white">
+      <i>folder</i>
+    </div>
+    <div class="item-content has-secondary">
+      <div>Photos</div>
+      <div>February 22, 2016</div>
+    </div>
+    <i class="item-secondary">info</i>
+  </div>
+  <hr class="inset">
+  <div class="list-label inset">Files</div>
+  <div class="item two-lines" v-for="n in 3">
+    <div class="item-primary bg-primary text-white">
+      <i>assignment</i>
+    </div>
+    <div class="item-content has-secondary">
+      <div>Vacation</div>
+      <div>February 22, 2016</div>
+    </div>
+    <i class="item-secondary">info</i>
+  </div>
+</div>
+```
+
+### Phonebook List
+<input type="hidden" data-demo="css/list/example-phonebook">
+
+``` html
+<div class="list">
+  <div class="item two-lines" v-for="n in 3">
+    <i class="item-primary" v-if="n === 0">phone</i>
+    <div class="item-content inset has-secondary">
+      <div>(650) 555 - 1234</div>
+      <div>Mobile</div>
+    </div>
+    <i class="item-secondary">chat_bubble</i>
+  </div>
+  <hr class="inset">
+  <div class="item two-lines" v-for="n in 3">
+    <i class="item-primary">mail</i>
+    <div class="item-content">
+      <div>john@doe.com</div>
+      <div>Personal</div>
+    </div>
+  </div>
+</div>
+```
+
+### Messages List
+<input type="hidden" data-demo="css/list/example-messages">
+
+``` html
+<div class="list">
+  <div class="list-label">Today</div>
+  <div class="item three-lines">
+    <img class="item-primary" :src="'statics/boy-avatar.png'">
+    <div class="item-content inset has-secondary">
+      <div>Brunch this weekend?</div>
+      <div>
+        <span>John Doe</span>
+        -- I'll be in your neighborhood doing errands this
+        weekend. Do you want to grab brunch?
+      </div>
+    </div>
+    <div class="item-secondary stamp">
+      1 week
+    </div>
+  </div>
+  <hr class="inset">
+  <div class="item three-lines">
+    <img class="item-primary" :src="'statics/boy-avatar.png'">
+    <div class="item-content inset has-secondary">
+      <div>Brunch this weekend?</div>
+      <div>
+        <span>John Doe</span>
+        -- I'll be in your neighborhood doing errands this
+        weekend. Do you want to grab brunch?
+      </div>
+    </div>
+    <i class="item-secondary">info</i>
+  </div>
+  <hr>
+  <div class="list-label">Yesterday</div>
+  <div class="item three-lines">
+    <img class="item-primary" :src="'statics/boy-avatar.png'">
+    <div class="item-content inset">
+      <div>Brunch this weekend?</div>
+      <div>
+        <span>John Doe</span>
+        <br>
+        I'll be in your neighborhood doing errands this
+        weekend. Do you want to grab brunch?
+      </div>
+    </div>
+  </div>
+  <hr class="inset">
+  <div class="item three-lines">
+    <img class="item-primary" :src="'statics/boy-avatar.png'">
+    <div class="item-content inset has-secondary">
+      <div>Brunch this weekend?</div>
+      <div>
+        <span>John Doe</span>
+        <br>
+        I'll be in your neighborhood doing errands this
+        weekend. Do you want to grab brunch?
+      </div>
+    </div>
+    <div class="item-secondary stamp">
+      1 week
+    </div>
+    <div class="item-secondary">
+      <quasar-popover v-ref:popover>
+        <i slot="target">
+          more_vert
+        </i>
+
+        <div class="list">
+          <div class="item item-link" @click="$refs.popover.close()">
+            <div class="item-content">Reply</div>
+          </div>
+          <div class="item item-link" @click="$refs.popover.close()">
+            <div class="item-content">Forward</div>
+          </div>
+          <div class="item item-link" @click="$refs.popover.close()">
+            <div class="item-content">Delete</div>
+          </div>
+        </div>
+      </quasar-popover>
+    </div>
   </div>
 </div>
 ```

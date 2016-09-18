@@ -4,8 +4,8 @@ There are CSS classes supplied by Quasar to help you position a DOM element easi
 
 | Class Name | Description |
 | --- | --- |
-| `pull-left` | Float to the left |
-| `pull-right` | Float to the right |
+| `float-left` | Float to the left |
+| `float-right` | Float to the right |
 | `fullscreen` | Fix position covering all window real-estate |
 | `fixed` | Set `position` to `fixed` without specifying `top`, `left`, `right` or `bottom` properties |
 | `absolute` | Set `position` to `absolute` without specifying `top`, `left`, `right` or `bottom` properties |
@@ -13,6 +13,10 @@ There are CSS classes supplied by Quasar to help you position a DOM element easi
 | `fixed-right`, `absolute-right` | Fixed or absolute position to the right edge of screen |
 | `fixed-bottom`, `absolute-bottom` | Fixed or absolute position to bottom of screen |
 | `fixed-left`, `absolute-left` | Fixed or absolute position to the left edge of screen |
+| `fixed-top-left`, `absolute-top-left` | Fixed or absolute position to top left of screen |
+| `fixed-top-right`, `absolute-top-right` | Fixed or absolute position to top right of screen |
+| `fixed-bottom-left`, `absolute-bottom-left` | Fixed or absolute position to bottom left of screen |
+| `fixed-bottom-right`, `absolute-bottom-right` | Fixed or absolute position to bottom right of screen |
 | `relative-position` | Set position to `relative` |
 | `vertical-top` | Set vertical alignment to `top` |
 | `vertical-middle` | Set vertical alignment to `middle` |

@@ -11,6 +11,7 @@ There are some CSS classes that you can use out of the box for common functional
 | `dimmed` | Apply dark transparent overlay on top of your element. Do not use on elements which already have **:after** pseudoelement. |
 | `light-dimmed` | Apply white transparent overlay on top of your element. Do not use on elements which already have **:after** pseudoelement. |
 | `highlight-and-fade` | Adds a yellow background color and fades it away upon element is displayed. |
+| `ellipsis` | Truncates text and shows ellipsis when not enough space available. |
 
 ### Platform Related
 Visible only on:

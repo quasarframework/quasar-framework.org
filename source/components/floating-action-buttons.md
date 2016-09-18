@@ -23,9 +23,13 @@ So there are two types: expandable (has sub-actions) and non-expandable. **If no
 
 We'll continue describing only the expandable ones, as the non-expandable are simple circular buttons and you can read about them in the Buttons documentation page.
 
-FABs are Web Components defined by `<quasar-fab>` and `<quasar-small-fab>` HTML tags with the following Vue properties:
+## Vue Properties & Methods
 
-| Param Attributes | Default Value | Description |
+> These properties and methods apply to `<quasar-fab>` only.
+
+Properties:
+
+| Vue Property | Default Value | Description |
 | --- | --- | --- |
 | `type` | "primary" | One of the main colors in Quasar Color Palette; can also be an array of colors or CSS classes. Check second inline usage example below. |
 | `icon` | "add" | Icon to use when not expanded |
@@ -34,6 +38,11 @@ FABs are Web Components defined by `<quasar-fab>` and `<quasar-small-fab>` HTML 
 | `activeIcon` | "close" | The icon to change to when expanded. |
 | `backdrop` | *none* | Empty attribute; Use a backdrop behind it when expanded. |
 
+Methods:
+
+| Vue Method | Description |
+| --- | --- |
+| `toggle()` | Toggle open/close state |
 
 ## Inline Usage
 

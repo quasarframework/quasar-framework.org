@@ -41,7 +41,7 @@ An example of Layout, containing all possible elements: toolbars (used on header
       </quasar-toolbar-title>
     </div>
 
-    <div class="list platform-delimiter">
+    <div class="list no-border platform-delimiter">
       <quasar-drawer-link v-link="{path: '/', exact: true}" icon="mail">
         Link
       </quasar-drawer-link>

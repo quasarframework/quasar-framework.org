@@ -8,23 +8,32 @@ Quasar Search bars lazy evaluate the input with a debounce of 300ms by default.
 ## Basic Usage
 
 ``` html
-<!-- VueModel contains data property "ratingModel" -->
 <quasar-search :model.sync="searchModel"></quasar-search>
+
+<!-- Disabled state -->
+<quasar-search
+  disable
+  :model.sync="searchModel"
+></quasar-search>
 ```
 
-## Attributes
+## Vue Properties
 
-| Param Attributes | Type | Description |
+| Vue Property | Type | Description |
 | --- | --- | --- |
 | `model` | Number | Model for Search Component. |
 | `debounce` | Number | Number of ms to debounce input. Default to 300. |
+| `icon` | String | Icon to use. |
+| `placeholder` | String | Placeholder to use. |
+| `disable` | Boolean | When set to `true` user can not change model value. |
 
 Example:
 ``` html
-<!-- VueModel contains data property "searchModel" and "debounce" -->
 <quasar-search
   :model.sync="searchModel"
   :debounce="600"
+  placeholder="Hotels"
+  icon="local_hotel"
 ></quasar-search>
 ```
 
@@ -44,7 +53,10 @@ If you want to place on Layout header or footer:
 <quasar-layout>
   ...
   <div slot="header" class="toolbar orange">
-    <quasar-search class="orange" :model.sync="searchModel"></quasar-search>
+    <quasar-search
+      class="orange"
+      :model.sync="searchModel"
+    ></quasar-search>
   </div>
   ...
 </quasar-layout>

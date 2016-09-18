@@ -12,6 +12,8 @@ It will take care of the quirks involved when running under Cordova or on a brow
 ## Debounce Function
 If your App uses JavaScript to accomplish taxing tasks, a debounce function is essential to ensuring a given task doesn't fire so often that it bricks browser performance. Debouncing a function limits the rate at which the function can fire.
 
+Debouncing enforces that a function not be called again until a certain amount of time has passed without it being called. As in "execute this function only if 100 milliseconds have passed without it being called."
+
 A quick example: you have a resize listener on the window which does some element dimension calculations and (possibly) repositions a few elements. That isn't a heavy task in itself but being repeatedly fired after numerous resizes will really slow your App down. So why not limit the rate at which the function can fire?
 
 ``` js
@@ -29,6 +31,27 @@ window.addEventListener(
   Utils.debounce(function() {
     .... things to do ...
   }, 300 /*ms to wait*/)
+)
+```
+
+## Throttle Function
+Throttling enforces a maximum number of times a function can be called over time. As in "execute this function at most once every 300 milliseconds."
+
+``` js
+// Returns a function, that, as long as it continues to be invoked, will not
+// be triggered. The function will be called after it stops being called for
+// N milliseconds. If `immediate` is passed, trigger the function on the
+// leading edge, instead of the trailing.
+import { Utils } from 'quasar'
+
+(Throttled Function) Utils.throttle(Function fn, Number limit_in_milliseconds)
+
+// Example:
+window.addEventListener(
+  'resize',
+  Utils.throttle(function() {
+    .... things to do ...
+  }, 300 /* execute at most once every 0.3s */)
 )
 ```
 
@@ -116,5 +139,33 @@ console.log(
 // Execute a Function when DOM is ready:
 Utils.dom.ready(function () {
   // ....
+})
+
+// Determine if DomNode (target) is child of another DomNode (parent)
+(Boolean) Utils.dom.childOf(target, parent)
+
+// Get parent DomNode that handles page scrolling
+// Usually this is element with classname ".layout-view" or "window"
+(DOM Element) Utils.dom.getScrollTarget(DomElement)
+
+// Get scroll position of a page. Use it in conjunction with `Utils.dom.getScrollTarget()`
+(Number pixels) Utils.dom.getScrollPosition(scrollTargetDomElement)
+```
+
+## Handling "event" on a DOM event handler
+It's cross-browser.
+
+``` js
+node.addEventListener('click', event => {
+  // right clicked?
+  (Boolean) Utils.event.rightClick(event)
+
+  // position on viewport
+  // works both for mouse and touch events!
+  (Object {top, left}) Utils.event.position(event)
+
+  // get target DOM Element on which mouse or touch
+  // event has fired upon
+  (DOM Element) Utils.event.targetElement(event)
 })
 ```

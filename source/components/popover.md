@@ -32,6 +32,28 @@ You can replace the Button and the List with any DOM elements or Quasar Web Comp
 </quasar-popover>
 ```
 
+> **IMPORTANT**
+> When on a browser, hitting the &lt;ESCAPE&gt; key also closes the Popover.
+
+## Vue Properties & Methods
+
+Properties:
+
+| Vue Property | Type | Description |
+| --- | --- | --- |
+| `touchPosition` | Boolean | Open Popover from the position where user clicked/tapped. |
+| `disable` | Boolean | When set to `true`, Popover won't be triggered. |
+| `position` | String | Force Popover to appear on `top`, `left`, `right` or `bottom`. Examples: 'top', 'top left', 'bottom right'. |
+| `cover` | Boolean | Force Popover width to at least cover the Popover target when opened. |
+
+Methods:
+
+| Vue Method | Description |
+| --- | --- |
+| `toggle()` | Toggle open/close state. |
+| `open()` | Open Popover. |
+| `close()` | Close Popover. |
+
 ## Handling Popover Dismissal
 Use a Vue reference on `<quasar-popover>` to call `close()` method if you want an element to be able to close the Popover, like on the example above.
 

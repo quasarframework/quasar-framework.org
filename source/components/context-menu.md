@@ -9,15 +9,15 @@ This component allows you to display a context menu (popup) instead of the defau
 ## Basic Usage
 ``` html
 <quasar-context-menu v-ref:context>
-  <div class="list item-delimiter highlight">
+  <div class="list highlight">
     <div
-      class="item item-link"
+      class="item item-link two-lines item-delimiter"
       v-for="n in 30"
-      @click="yourMethod(), $refs.context.close()"
+      @click="showToast(), $refs.context.close()"
     >
       <div class="item-content">
-        <div class="item-label">Label</div>
-        <div class="item-value">Value</div>
+        <div>Label</div>
+        <div>Value</div>
       </div>
     </div>
   </div>
@@ -31,4 +31,21 @@ On a mobile device, clicking outside of the minimized Modal will close the Conte
 > Use a Vue reference on `<quasar-context-menu>` to call `close()` method if you want an element to be able to close the Context Menu.
 
 > **IMPORTANT**
-> When on a mobile device and user hits the phone/tablet back button, the Context Menu will get closed automatically.
+> <br>When on a mobile device and user hits the phone/tablet back button, the Context Menu will get closed automatically.
+> <br>When on a desktop browser and user hits the &lt;ESCAPE&gt; key, the Context Menu will get close automatically.
+
+## Vue Properties & Methods
+
+Properties:
+
+| Vue Property | Type | Description |
+| --- | --- | --- |
+| `disable` | Boolean | Disabled or not |
+
+Methods:
+
+| Vue Method | Description |
+| --- | --- |
+| `open()` | Open Context Menu |
+| `close()` | Close Context Menu |
+| `toggle()` | Toggle open/close state for  Context Menu |
