@@ -20,6 +20,9 @@ URLs prefixed with `~` are treated as a module request, similar to `require('som
 
 Root-relative URLs, e.g. `/assets/logo.png` are not processed at all. This should be placed in `src/statics/`.
 
+> **IMPORTANT**
+> <br>You can force serving static assets by using `src` as a Vue property. Instead of `src="statics/path/to/image"` use `:src="'statics/path/to/image'"`. Please note the usage of single and double quotes.
+
 ## Getting Asset Paths in JavaScript
 
 In order for Webpack to return the correct asset paths, you need to use `require('./relative/path/to/file.jpg')`, which will get processed by `file-loader` and returns the resolved URL. For example:

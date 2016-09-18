@@ -55,34 +55,6 @@ window.addEventListener(
 )
 ```
 
-## Key Codes
-Sometimes you need to attach an event related to user pressing a key. These keys have ASCII codes that you can access from Quasar:
-
-``` js
-import { Keycodes } from 'quasar'
-
-// Keycodes.enter
-// Keycodes.g
-// Keycodes.backspace
-// ....
-```
-
-You can extend the `on` Vue directive like this:
-
-``` js
-import Vue from 'vue'
-import { Utils } from 'quasar'
-
-Vue.directive('on').keyCodes.f1 = Utils.keycodes.f1
-```
-
-Now you can use it like so in a component template:
-``` html
-<input @keyup.f1="submit">
-```
-
-For a complete list of keys just console.log() `Utils.keycodes`.
-
 ## (Deep) Copy Objects
 A basic respawn of `jQuery.extend()`. Takes same parameters:
 ``` js
