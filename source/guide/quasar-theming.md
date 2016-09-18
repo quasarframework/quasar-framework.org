@@ -53,7 +53,7 @@ src
     └── app.variables.styl
 ```
 
-Open them. They are documented inside.
+You will find more documentation and steps in these files.
 
 | File | Description |
 | --- | --- |
