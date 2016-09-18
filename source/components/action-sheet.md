@@ -35,7 +35,7 @@ ActionSheet.create({
       avatar: 'assets/some-avatar.png', // specify ONLY IF using avatar
 
       handler: function() {
-        quasar.notify.positive('Deleted Article');
+        console.log('Deleted Article')
       }
     },
     ...,
@@ -44,7 +44,7 @@ ActionSheet.create({
       icon: 'cancel',
       classes: 'text-primary',
       handler: function() {
-        // quasar.notify('Cancelled...');
+        // console.log('Cancelled...')
       }
     }
   ]
@@ -57,4 +57,5 @@ ActionSheet.create({
 The last button specified is always used as a *Cancel* option to dismiss the Action Sheet and is displayed distinctively from the rest of the buttons.
 
 > **IMPORTANT**
-> When user hits the browser/phone/tablet back button, the Action Sheet will get closed automatically. This behavior is disabled when running your App within an iframe though.
+> <br>When user hits the browser/phone/tablet back button, the Action Sheet will get closed automatically. This behavior is disabled when running your App within an iframe though.
+> <br>Also, when on a browser, hitting the &lt;ESCAPE&gt; key also closes the Action Sheet.

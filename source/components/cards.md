@@ -223,30 +223,29 @@ Offer directions or present places with a nice Card.
 Imagine a Card with Collapsibles containing Cards. Inception :)
 
 ``` html
-<div class="card">
-  <div class="card-title bg-primary text-white">
-    Card with Collapsible
+<div class="card" style="margin-top: 25px;">
+  <div class="card-title">
+    Card with Collapsible List
   </div>
-  <ul class="collapsible">
-    <li v-collapsible>
-      <div><i>perm_identity</i>First</div>
+  <div class="list item-delimiter">
+    <quasar-collapsible icon="explore" label="First">
       <div>
-        Collapsible Content
+        Lorem ipsum dolor sit amet...
       </div>
-    </li>
-    <li v-collapsible>
-      <div><i>shopping_cart</i>Second</div>
+    </quasar-collapsible>
+
+    <quasar-collapsible icon="perm_identity" label="Second">
       <div>
-        Collapsible Content
+        Lorem ipsum dolor sit amet...
       </div>
-    </li>
-    <li v-collapsible>
-      <div><i>whatshot</i>Third</div>
+    </quasar-collapsible>
+
+    <quasar-collapsible icon="shopping_cart" label="Third">
       <div>
-        Collapsible Content
+        Lorem ipsum dolor sit amet...
       </div>
-    </li>
-  </ul>
+    </quasar-collapsible>
+  </div>
 </div>
 ```
 

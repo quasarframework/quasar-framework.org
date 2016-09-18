@@ -53,4 +53,9 @@ Use the ones from [Quasar CSS Color Palette](/api/css-color-palette.html). Examp
 ```
 
 ## More Button CSS Classes
-There are also the `glossy`, `raised`, `clear`, `outline`, `push`, `bordered` and `round` CSS classes that you can use.
+There are also the `raised`, `clear`, `outline`, `push`, `bordered`, `round` and `glossy` CSS classes that you can use.
+
+Make use of globally available `disabled`, `block` (sets CSS `display` property to `block`) or `full-width`.
+
+## Progress Buttons
+There's also a type of button that has its own Quasar Component named `<quasar-progress-button>`. Check documentation [here](/components/progress-button.html).

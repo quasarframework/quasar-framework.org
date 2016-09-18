@@ -5,32 +5,42 @@ title: Numeric
 ## Basic Usage
 
 ``` html
-<quasar-numeric :model.sync="number" :min="1" :max="17"></quasar-numeric>
+<quasar-numeric
+  :model.sync="number"
+  :min="1"
+  :max="17"
+></quasar-numeric>
+
+<!-- Disabled state -->
+<quasar-numeric
+  disable
+  :model.sync="number"
+  :min="1"
+  :max="17"
+></quasar-numeric>
 ```
 
-Vue DOM attribute properties you can use:
+## Vue Properties
 
-| Param Attributes | Default Value | Description |
+| Vue Property | Default Value | Description |
 | --- | --- | --- |
-| `model` | 0 | Model for Number Web Component |
+| `model` | 0 | (**Required**) Model for Number Web Component |
 | `step` | 1 | Value of increment / decrement |
 | `debounce` | *none* | Change model with a debouncing timing |
 | `min` | *none* | Minimum value of the model |
 | `max` | *none* | Maximum value of the model |
+| `disable` | `false` | Disable input from user. |
 
 ## Inside of a List Usage
 
 ``` html
-<div class="list inner-delimiter bordered">
-  <label class="item">
+<div class="list">
+  <div class="item two-lines">
+    <i class="item-primary">edit</i>
     <div class="item-content">
-      <div class="item-label fixed-label">
-        Some number
-      </div>
-      <div class="item-value">
-        <quasar-numeric :model.sync="number" :min="1" :max="17"></quasar-numeric>
-      </div>
+      <span class="item-label">Number: </span>
+      <quasar-numeric :model.sync="number"></quasar-numeric>
     </div>
-  </label>
+  </div>
 </div>
 ```

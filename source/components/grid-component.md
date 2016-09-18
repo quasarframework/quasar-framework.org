@@ -19,56 +19,60 @@ Quasar Grid is a Vue Component which allows you to display data in a tabular man
 ```
 
 ``` js
-data: {
-  data: data,
-  rowsPerPage: 5,
-  sortable: true,
-  columns: [
-    {
-      label: 'Date',
-      field: 'isodate',
-      style: 'width: 100px',
-      formatter: function(value) {
-        return new Date(value).toLocaleString()
-      }
-    },
-    {
-      label: 'Source',
-      field: 'source',
-      style: 'width: 100px'
-    },
-    {
-      label: 'Service',
-      field: 'serviceable',
-      formatter: function(value) {
-        if (value === 'Informational') {
-          return '<i>info</i>'
+data () {
+  return {
+    data,
+    rowsPerPage: 5,
+    sortable: true,
+    columns: [
+      {
+        label: 'Date',
+        field: 'isodate',
+        style: 'width: 100px',
+        formatter (value) {
+          return new Date(value).toLocaleString()
         }
-        return value
       },
-      style: 'color: green; width: 100px',
-      classes: 'text-center'
-    }
-  ],
-  selectionMode: 'single',
-  selectionActions: [
-    {
-      label: 'View 1',
-      handler (selectedRows) {
-        console.dir(selectedRows)
+      {
+        label: 'Source',
+        field: 'source',
+        style: 'width: 100px'
+      },
+      {
+        label: 'Service',
+        field: 'serviceable',
+        formatter (value) {
+          if (value === 'Informational') {
+            return '<i>info</i>'
+          }
+          return value
+        },
+        style: 'color: green; width: 100px',
+        classes: 'text-center'
       }
-    },
-    {
-      label: 'View 2',
-      handler (selectedRows) {
-        console.dir(selectedRows)
+    ],
+    selectionMode: 'single',
+    selectionActions: [
+      {
+        label: 'View 1',
+        handler (selectedRows) {
+          console.dir(selectedRows)
+        }
+      },
+      {
+        label: 'View 2',
+        handler (selectedRows) {
+          console.dir(selectedRows)
+        }
       }
-    }
-  ]
+    ]
+  }
 }
 ```
 
-| Param Attributes | Default Value | Description |
+## Vue Properties
+
+| Vue Property | Default Value | Description |
 | --- | --- | --- | --- |
 | `columns` | *none* | *(required)* Configure columns to be displayed. |
 | `data` | *none* | *(required)*  Data to display on Grid. |

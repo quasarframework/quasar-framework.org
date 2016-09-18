@@ -3,111 +3,100 @@ title: Quasar Input Textbox
 <input type="hidden" data-fullpage-demo="form/text-input/textbox">
 
 ## Basic Usage
+This is not a component per say. It's the HTML `<input>` element.
 
 ``` html
 <input v-model="username">
+
+<!-- With placeholder -->
+<input v-model="username" placeholder="Type something">
 ```
 
-Vue DOM attribute properties you can use:
+Check next sections to see how you can use a stacked or floating label for it.
 
-| Param Attributes | Type | Description |
+## Vue Properties
+
+| Vue Property | Type | Description |
 | --- | --- | --- |
-| `lazy` | Empty Attribute | Change model after Web Component loses focus |
+| `lazy` | Empty Attribute | Change model after input loses focus |
 | `debounce` | Number | Change model with a debouncing timing |
+| `disabled` | Boolean | Disables input. |
 
-## Fixed Label Usage
+## Stacked Label
 
 ``` html
-<div class="list inner-delimiter bordered">
-  <div class="list-header">Fixed</div>
-  <div class="item fixed-label">
-    <div class="item-content">
-      <label for="user1" class="item-label">Username</label>
-      <input id="user1" v-model="username">
-    </div>
-  </div>
-  <div class="item fixed-label">
-    <div class="item-content">
-      <label for="pass1" class="item-label">Password</label>
-      <input id="pass1" v-model="password" type="password">
-    </div>
-  </div>
+<div class="stacked-label">
+  <input>
+  <label>Stacked Label</label>
 </div>
 ```
 
-## Floating Label Usage
+## Floating Label
 
 ``` html
-<div class="list inner-delimiter bordered">
-  <div class="list-header">Floating</div>
-  <div class="item floating-label">
-    <div class="item-content">
-      <input v-model="username" required>
-      <label>Username</label>
-    </div>
-  </div>
-  <div class="item floating-label">
-    <div class="item-content">
-      <input v-model="password" type="password" required>
-      <label>Password</label>
-    </div>
-  </div>
+<div class="floating-label">
+  <input required class="full-width">
+  <label>Floating Label</label>
 </div>
 ```
 
-## Inline Label Usage
+## Inside of a List Usage
 
 ``` html
-<div class="list inner-delimiter bordered">
-  <div class="list-header">Inline</div>
-  <div class="item inline-label">
-    <label class="item-content">
-      Username
-      <input v-model="username">
-    </label>
+<div class="list">
+  <div class="item two-lines">
+    <i class="item-primary">edit</i>
+    <div class="item-content">
+      <input class="full-width">
+    </div>
   </div>
-  <div class="item inline-label">
-    <label class="item-content">
-      Password
-      <input v-model="password" type="password">
-    </label>
+
+  <hr>
+  <div class="item two-lines">
+    <i class="item-primary">edit</i>
+    <div class="item-content">
+      <input placeholder="Placeholder" class="full-width">
+    </div>
+  </div>
+
+  <hr>
+  <div class="item two-lines">
+    <i class="item-primary">edit</i>
+    <div class="item-content row items-center wrap">
+      <div style="margin-right: 10px;" class="item-label">Label:</div>
+      <input class="auto">
+    </div>
+  </div>
+
+  <hr>
+  <div class="item multiple-lines">
+    <i class="item-primary">edit</i>
+    <div class="item-content">
+      <div class="stacked-label">
+        <input class="full-width">
+        <label>Stacked Label</label>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+  <div class="item multiple-lines">
+    <i class="item-primary">edit</i>
+    <div class="item-content">
+      <div class="floating-label">
+        <input required class="full-width">
+        <label>Floating Label</label>
+      </div>
+    </div>
   </div>
 </div>
-```
 
-## Placeholder Usage
-
-``` html
-<div class="list inner-delimiter bordered">
-  <div class="list-header">Placeholder</div>
-  <div class="item">
+<p class="caption">Textbox and Textarea with No Borders</p>
+<div class="list">
+  <div class="item multiple-lines item-delimiter">
     <div class="item-content">
-      <input v-model="username" placeholder="Username">
-    </div>
-  </div>
-  <div class="item">
-    <div class="item-content">
-      <input v-model="password" type="password" placeholder="Password">
-    </div>
-  </div>
-</div>
-```
-
-## Stacked Usage
-
-``` html
-<div class="list inner-delimiter bordered">
-  <div class="list-header">Stacked</div>
-  <div class="item stacked-label">
-    <div class="item-content">
-      <input id="user4" v-model="username" required>
-      <label for="user4">Username</label>
-    </div>
-  </div>
-  <div class="item stacked-label">
-    <div class="item-content">
-      <input id="pass4" v-model="password" type="password" required>
-      <label for="pass4">Password</label>
+      <!-- Notice "no-border" CSS class -->
+      <input class="full-width no-border">
     </div>
   </div>
 </div>

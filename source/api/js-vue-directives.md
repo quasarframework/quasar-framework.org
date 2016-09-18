@@ -2,7 +2,7 @@ title: Vue Directives
 ---
 Quasar provides some useful ready to use Vue directives. If you don't know what a directive is, read [here](http://vuejs.org/guide/custom-directive.html).
 
-This is not a complete list. The missing ones are specific to some Quasar Components and are described on their documentation pages.
+This is not a complete list. The missing ones are specific to some Quasar Components and are described on their documentation pages. For example, see [Handling Back Button](/guide/handling-back-button.html).
 
 ### Directive "v-scroll"
 This one takes one parameter (a Function) and fires when user scrolls the page containing that DOM node.

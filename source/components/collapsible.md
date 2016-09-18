@@ -2,86 +2,79 @@ title: Collapsibles
 ---
 Quasar Collapsibles allow the hiding of content that is not immediately relevant to the user. Think of them as accordion elements that expand when clicked on.
 
-There are two types of Collapsibles: **Regular** and **Popout**. And two types of behavior: **Default** (only one opened accordion element at a time) and **Free** (user can open multiple accordion elements at a time). And also there are two ways of implementing a Collapsible: through a Vue Directive or through a Web Component.
-
 <input type="hidden" data-fullpage-demo="web-components/collapsible">
 
-## Basic Usage - Directive
-The usage below implies you won't add or remove items from the Collapsibles. If this is the case though, use the Web Component in the next section (Advanced Usage).
-
+## Basic Usage
 ``` html
-<!-- Regular collapsible -->
-<ul class="collapsible">
-  <li v-collapsible>
-    <div><i>assignment_ind</i>First</div>
+<div class="list">
+  <quasar-collapsible icon="explore" label="First">
     <div>
-      Content 1
+      Content
     </div>
-  </li>
-  <li v-collapsible>
-    <div><i>explore</i>Second</div>
+  </quasar-collapsible>
+  <quasar-collapsible icon="perm_identity" label="Second">
     <div>
-      Content 2
+      Content
     </div>
-  </li>
-  <li v-collapsible>
-    <div><i>shopping_cart</i>Third</div>
+  </quasar-collapsible>
+  <quasar-collapsible icon="shopping_cart" label="Third">
     <div>
-      Content 3
+      Content
     </div>
-  </li>
-</ul>
+  </quasar-collapsible>
+</div>
 ```
 
-For Popouts, add class `popout` to the `<ul>` DOM element.
-``` html
-<!-- Popout collapsible -->
-<ul class="collapsible popout">...</ul>
-```
-
-For **Free** type (user can open multiple accordion elements at a time), use a slightly different version of the `v-collapsible` directive:
-
-``` html
-<ul class="collapsible">
-  <li v-collapsible.free>...</li>
-  <li v-collapsible.free>...</li>
-</ul>
-<ul class="collapsible popout">
-  <li v-collapsible.free>...</li>
-  <li v-collapsible.free>...</li>
-</ul>
-```
+You can add `item-delimiter` class on the list `<div>` element if you want separators between Collapsibles.
 
 ## Preselecting Items
-Accordion items can be opened by default. For this, add CSS class `active` to them. If opening multiple items at once by default then make sure that the Collapsible is in *Freely* mode.
+Collapsible items can be opened by default:
 
 ``` html
-<ul class="collapsible">
-  ...
-  <li v-collapsible class="active">...</li>
-  ...
-</ul>
+<quasar-collapsible active icon="explore" label="First">
+  <div>
+    Content
+  </div>
+</quasar-collapsible>
 
-<ul class="collapsible">
-  ...
-  <li class="active" v-collapsible.free>...</li>
-  <li class="active" v-collapsible.free>...</li>
-  ...
-</ul>
+<!-- or -->
+<quasar-collapsible :active="boolean_variable" icon="explore" label="First">
+  <div>
+    Content
+  </div>
+</quasar-collapsible>
 ```
 
-## Ubiquity - Use Cards As Content
+## Properties & Methods
+
+Properties:
+
+| Vue Property | Type | Description |
+| --- | --- | --- |
+| `active` | Boolean | Control if Collapsible is opened or not. |
+| `icon` | String | Icon to use. Either use an icon, image or avatar. |
+| `img` | String | URL to image to use. Either use an icon, image or avatar. |
+| `avatar` | String | URL to avatar to use. Either use an icon, image or avatar. |
+| `label` | String | Label besides icon, image or avatar. |
+
+Methods:
+
+| Vue Methods | Description |
+| --- | --- |
+| `toggle` | Toggle open/close state. |
+
+## Ubiquity
+Be creative. In the example below we're using a Card as Collapsible content.
 
 ``` html
-<ul class="collapsible">
-  <li v-collapsible>
-    <div><i>explore</i>Second Card</div>
-    <div class="card">
-      <img src="assets/mountains.jpg">
-      <div class="card-content">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      </div>
+<quasar-collapsible icon="explore" label="First Card">
+  <div class="card bg-primary text-white">
+    <div class="card-title">
+      Card Title
     </div>
-  </li>
-</ul>
+    <div class="card-content">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </div>
+  </div>
+</quasar-collapsible>
 ```

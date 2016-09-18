@@ -24,6 +24,15 @@ use you mouse to drag slides to left or right.
 </quasar-slider>
 ```
 
+## Vue Properties
+
+| Vue Property | Type | Description |
+| --- | --- | --- |
+| `arrows` | Boolean | Show arrows |
+| `dots` | Boolean | Show dots at bottom |
+| `fullscreen` | Boolean | Shows Fullscreen button |
+| `actions` | Boolean | Show Actions slot |
+
 ## Slider with Arrows, Dots and Fullscreen Controls
 Sliders can contain button controls, like:
 * Arrows so user can switch between slides if swipe actions are not enough.

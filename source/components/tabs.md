@@ -30,15 +30,27 @@ Example of a `*.vue` file using Tabs.
 </div>
 ```
 
-## Attributes
-| Attribute | Type | Description |
+## Vue Properties & Methods
+
+> Please note that these properties and methods apply to `<quasar-tab>` and NOT their container `<quasar-tabs>`.
+
+Tab Properties:
+
+| Vue Property | Type | Description |
 | --- | --- | --- |
 | `hidden` | Boolean | Show or hide it |
-| `disabled` | Boolean | Make it disabled or not |
+| `disable` | Boolean | Make it disabled or not |
 | `icon` | String | Icon to use for it |
 | `target` | String | DOM element selector for target. It makes it be displayed when Tab is active and hides target when other Tab is selected instead. |
 | `hide` | String | Possible values: `icon` (hides icon) or `label` (hides label and only displays icon) |
 | `active` | Boolean | Just one Tab can be active. Use this attribute to auto-select a Tab by default. |
+
+Tab Methods:
+
+| Vue Method | Description |
+| --- | --- |
+| `activate()` | Select the respective Tab |
+| `setTargetVisibility(Boolean)` | Set target visibility. `true` means visible, `false` means hidden |
 
 ## Usage with Vue Router
 ``` html

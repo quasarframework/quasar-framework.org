@@ -3,7 +3,6 @@ guide:
     Getting Started: index
     Quasar CLI: $
     Quasar Play App: $
-    Development Plans: $
     Contributing: $
   Boilerplate:
     Overview: app-boilerplate
@@ -20,6 +19,7 @@ guide:
     Ajax Requests: $
     Components Sharing State: $
     Cordova Wrapper: $
+    Handling Back Button: $
     Router: $
     Theming: quasar-$
     Touch Events: $
@@ -67,13 +67,18 @@ components:
   Form Inputs:
     Checkbox: $
     Chips Textbox: $
+    Datetime: $
+    Inline Datetime: $
     Input Textbox: $
+    Knob: $
     Numeric: $
     Radio: $
     Range: $
+    Double Range: $
     Rating: $
     Search: $
     Select: $
+    Dialog Select: $
     Textarea: $
     Toggle: $
   Vue Components:
@@ -87,6 +92,7 @@ components:
     Parallax: $
     Popover: $
     Progress Bar: $
+    Progress Button: $
     Pull to Refresh: $
     Scroll Fire: $
     Slider: $

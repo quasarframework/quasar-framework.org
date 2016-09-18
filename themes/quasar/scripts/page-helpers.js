@@ -46,7 +46,7 @@
           return;
         }
         tmpPath = self.page_path_from_menu(type, categories[categoryName][name], name);
-        if (tmpPath == page.path) {
+        if (tmpPath === page.path) {
           foundPosition = true;
           return;
         }
@@ -57,7 +57,7 @@
       });
     });
 
-    if (previous) {
+    if (foundPosition && previous) {
       return previous;
     }
   });
@@ -96,13 +96,13 @@
       });
     });
 
-    if (next) {
+    if (foundPosition && next) {
       return next;
     }
   });
 
   hexo.extend.helper.register('latest_quasar_version', function() {
-    return '0.6.0';
+    return '0.7.0';
   });
 
 }());

@@ -1,43 +1,46 @@
-title: Select
+title: Dialog Select
 ---
-A Quasar Select box can be of two types: single selection (using Radios) or multiple selection (using Checkboxes or Toggles). This component opens up a Popover. If for some reason you want it to open a Dialog, use the "sibling" [Dialog Select](/components/dialog-select.html) component.
+A Quasar Dialog Select box can be of two types: single selection (using Radios) or multiple selection (using Checkboxes or Toggles).
 
-<input type="hidden" data-fullpage-demo="form/select/basic">
+This component opens up a Dialog Modal. If for some reason you want it to open a Popover, use the "sibling" basic [Select](/components/select.html) component.
+
+<input type="hidden" data-fullpage-demo="form/select/dialog">
 
 ## Basic Usage
 
 ``` html
-<!-- Single Selection using Radios -->
-<quasar-select
+<!-- With Radios -->
+<quasar-dialog-select
   type="radio"
   :model.sync="select"
   :options="selectOptions"
-></quasar-select>
+  ok-label="Pick"
+  cancel-label="Neah"
+  title="Radios"
+></quasar-dialog-select>
 
-<!-- Multiple Selection using Checkboxes-->
-<quasar-select
+<!-- With Checkboxes -->
+<quasar-dialog-select
   type="checkbox"
   :model.sync="select"
   :options="selectOptions"
-></quasar-select>
+  ok-label="Pick"
+  cancel-label="Neah"
+  title="Checkboxes"
+></quasar-dialog-select>
 
-<!-- Multiple Selection using Toggles-->
-<quasar-select
+<!-- With Toggles -->
+<quasar-dialog-select
   type="toggle"
   :model.sync="select"
   :options="selectOptions"
-></quasar-select>
-
-<!-- Disabled state -->
-<quasar-select
-  disable
-  type="checkbox"
-  :model.sync="select"
-  :options="selectOptions"
-></quasar-select>
+  ok-label="Pick"
+  cancel-label="Neah"
+  title="Toggles"
+></quasar-dialog-select>
 ```
 
-## Vue Properties & Methods
+## Vue Properties && Properties
 
 Properties:
 
@@ -46,22 +49,24 @@ Properties:
 | `model` | Yes | Model for the Select Component. |
 | `options` | Yes | Array of options (Object with `label` and `value` properties). |
 | `type` | Yes | One of `radio`, `checkbox` or `toggle` strings. |
+| `okLabel` | | Label for "OK" button on Dialog. |
+| `cancelLabel` | | Label for "Cancel" button on Dialog. |
+| `title` | | Title of Dialog. |
+| `message` | | Message of Dialog. |
 | `placeholder` | | Placeholder to use. |
 | `disable` | | When set to `true` the model cannot be altered. |
 
 Methods:
 
-| Vue Method | Description |
+| Vue Property | Description |
 | --- | --- |
-| `open()` | Opens the Popover |
-| `close()` | Closes the Popover |
+| `pick()` | Opens up the Dialog so user can pick options. |
 
 ## Inside of a List Usage
 
 ``` html
 <div class="list">
   <div class="list-label">Single Selection</div>
-
   <div class="item multiple-lines">
     <i class="item-primary">supervisor_account</i>
     <div class="item-content">

@@ -1,6 +1,6 @@
 title: Quasar Framework Contributing Guide
 ---
-I’m really excited if you are interested in contributing to Quasar Framework. There are [lots of features waiting](/guide/development-plans.html) for someone to write them. Check [Github](https://github.com/rstoenescu/quasar-framework) or contact [Razvan Stoenescu](https://github.com/rstoenescu) through email.
+I’m really excited if you are interested in contributing to Quasar Framework. There are [lots of features waiting](https://github.com/rstoenescu/quasar-framework/issues?q=is%3Aissue+is%3Aopen+label%3Aproposal) for someone to write them. Check [Github](https://github.com/rstoenescu/quasar-framework) or contact [Razvan Stoenescu](https://github.com/rstoenescu) through email.
 
 Before submitting your contribution though, please make sure to take a moment and read through the following guidelines.
 

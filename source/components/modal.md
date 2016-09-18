@@ -4,6 +4,8 @@ Quasar Modals slide in off screen to display a temporary UI, often used for logi
 
 <input type="hidden" data-fullpage-demo="global/modal">
 
+> Check bottom of this page to learn about `<quasar-modal>` component for inlining a Modal into your Component's template.
+
 ## Basic Usage
 ``` js
 import { Modal } from 'quasar'
@@ -41,7 +43,8 @@ The *Modal Object* returned has the following methods:
 | `destroy` | *none* | Destroys your Modal and frees up the memory. Is called automatically if `selfDestroy` property is set to `true`. |
 
 > **IMPORTANT**
-> When user hits the browser/phone/tablet back button, the Modal will get closed automatically. This behavior is disabled when running your App within an iframe though.
+> <br>When user hits the browser/phone/tablet back button, the Modal will get closed automatically. This behavior is disabled when running your App within an iframe though.
+> <br>Also, when on a browser, hitting the &lt;ESCAPE&gt; key also closes the Modal.
 
 ### Communicating with Modal VM
 The Modal VueModel can be accessed as `vm` property of the returned *Modal Object*:
@@ -104,6 +107,8 @@ On the Modal Object you can use the `set()` method to change any of these proper
 | `transitionOut` | Object | VelocityJS effect when Modal is displayed. Example: `{translateX: ['101%', 0]}` |
 | `selfDestroy` | Boolean | Modal gets destroyed when closed and memory is freed up. Default value is `true`. |
 | `onBackButton` | Function | Function to execute if user clicks on back browser/phone/tablet button. |
+| `onEscapeKey` | Function | Function to execute if user is on desktop and hits &lt;ESCAPE&gt; key. |
+| `closeWithBackdrop` | Boolean | Modal can be closed by clicking/tapping on the backdrop. |
 
 Example:
 ``` js
@@ -211,4 +216,31 @@ Modal.create({
 }).set({
   maximized: true
 }).show()
+```
+
+## Template Inline Modal
+``` html
+<quasar-modal
+  v-ref:modal
+  :set="{minimized: true}"
+  :css="{minWidth: '30vw', minHeight: '30vh'}"
+>
+  <div style="padding: 50px">
+    <h4>Template Inline Modal</h4>
+    <p>Variable from parent Vue scope: {{ modalVariable }}</p>
+    <br><br>
+    <button class="primary" @click="$refs.modal.close()">Close</button>
+  </div>
+</quasar-modal>
+
+<!--
+  Also inject a way to show it to the user.
+  In this case, a button. You can show/hide it from Vue methods too, obviously.
+-->
+<button
+  class="primary"
+  @click="$refs.modal.show()"
+>
+  Show Inline Modal
+</button>
 ```

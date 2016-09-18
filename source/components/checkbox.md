@@ -9,32 +9,15 @@ title: Quasar Checkbox
   <quasar-checkbox :model.sync="checked"></quasar-checkbox>
   Checkbox Label
 </label>
-```
 
-## Inside of a List Usage
+<!-- Disabled: -->
+<label>
+  <quasar-checkbox :model.sync="checked" disable></quasar-checkbox>
+  Checkbox Label
+</label>
 
-``` html
-<div class="list bordered inner-delimiter">
-  <label class="item">
-    <quasar-checkbox :model.sync="checked"></quasar-checkbox>
-    <div class="item-content">
-      Checkbox Label
-    </div>
-  </label>
-</div>
-```
-
-``` html
-<div class="list bordered inner-delimiter">
-  <label class="item">
-    <div class="item-content">
-      <div class="item-label">
-        Checkbox Label
-      </div>
-      <quasar-checkbox :model.sync="checked"></quasar-checkbox>
-    </div>
-  </label>
-</div>
+<!-- No label: -->
+<quasar-checkbox :model.sync="checked"></quasar-checkbox>
 ```
 
 ## Coloring
@@ -42,4 +25,46 @@ Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`
 
 ``` html
 <quasar-checkbox class="orange">...</quasar-checkbox>
+```
+
+## Vue Properties
+
+| Vue Property | Type | Description |
+| --- | --- | --- |
+| `model` | Boolean | Checked or not. |
+| `disable` | Boolean | If disabled user can not change state. |
+
+## Inside of a List Usage
+
+``` html
+<div class="list">
+  <label class="item">
+    <div class="item-primary">
+      <quasar-checkbox :model.sync="checked"></quasar-checkbox>
+    </div>
+    <div class="item-content">
+      Notifications
+    </div>
+  </label>
+
+  <label class="item two-lines">
+    <div class="item-primary">
+      <quasar-checkbox :model.sync="checked"></quasar-checkbox>
+    </div>
+    <div class="item-content">
+      <div>Notifications</div>
+      <div>Allow notifications</div>
+    </div>
+  </label>
+
+  <label class="item three-lines">
+    <div class="item-primary">
+      <quasar-checkbox :model.sync="checked"></quasar-checkbox>
+    </div>
+    <div class="item-content">
+      <div>Notifications</div>
+      <div>Allow notifications Allow notifications Allow notifications Allow notifications Allow notifications </div>
+    </div>
+  </label>
+</div>
 ```
