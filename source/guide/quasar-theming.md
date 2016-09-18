@@ -59,7 +59,7 @@ Open them. They are documented inside.
 | --- | --- |
 | app.ios.styl | iOS entry point. It includes app.variables.styl and Quasar iOS theme. |
 | app.mat.styl | Material Design entry point. It includes app.variables.styl and Quasar Material theme. |
-| app.theme.styl | (Common code for all themes) Place to override Stylus variables which define the primary color, the secondary color, the list border radius and so many properties.. You can easily make good use of Quasar Themes and customize your App so it will have a distinct overall design. |
+| app.variables.styl | (Common code for all themes) Place to override Stylus variables which define the primary color, the secondary color, the list border radius and so many properties.. You can easily make good use of Quasar Themes and customize your App so it will have a distinct overall design. |
 
 The Build System expects just `app.ios.styl` and `app.mat.styl` to exist, so feel free to dig in into the `src/themes` folder to understand how and what is rendered by Stylus and change whatever you like and best suits your needs. Just make sure you have those two files there.
 
