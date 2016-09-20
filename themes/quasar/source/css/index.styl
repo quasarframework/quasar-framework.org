@@ -1,134 +1,307 @@
-@import '_common'
+@import '_variables'
 
-html, body
-  height 100%
+$primary = #2699ec
 
-#hero
-  height 100vh
-  max-height 750px
+body
+  font-family $body-font
+  font-size $body-font-size
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
 
-  display -webkit-flex
-  display -ms-flexbox
-  display flex
-  -webkit-flex-direction column
-  -ms-flex-direction column
-  flex-direction column
-  -webkit-align-items center
-  -ms-flex-align center
-  -ms-grid-row-align center // @stylint ignore
-  align-items center
-  -webkit-justify-content center
-  -ms-flex-pack center
-  justify-content center
-
-  img
-    max-width 90%
-  p
-    margin 5px 20px
-    font-size 1.1rem
-    text-align center
-  .framework-name
-    font-family $logo-font
-    font-size 4.5rem
-    margin-top 15px
-    margin-bottom 10px
-    color $dark
-    a
-      display block
-      color $dark
-      font-size 1.6rem
-  .buttons
-    margin-top 25px
-    a
-      margin 10px
-
-.feats
-  max-width 1200px
-  margin 1rem auto
-
-.main-features
-  margin-bottom 40px
-
-.detailed-features
-  border-top 1px solid #eee // @stylint ignore
-  background #e3e3e3 url(../images/features-delimiter.gif) top repeat-x // @stylint ignore
-
-.features
-  padding 1rem 0
-  text-align center
-  .feat .icon
-    text-align center
-    display inline-block
-    vertical-align middle
-    position relative
-    top 20px
-    left -5px
-    width 40px
-    height 40px
-    font-size 40px
-    margin-right 10px
-    float left
-    color $main
-  .feat
-    box-sizing border-box
-    -moz-box-sizing border-box
-    display inline-block
-    text-align left
-    vertical-align top
-    width 285px
-    margin 25px 40px
-    h2
-      color $main
-      line-height 40px
-      margin-bottom 0
-    p
-      padding-left 52px
-      margin .4em 0
-
-#footer
-  text-align center
-  color #fff // @stylint ignore
-  padding 5rem 0 3rem
-  background $header-bg url(../images/footer-delimiter.gif) top repeat-x // @stylint ignore
-  a
-    color white
-    font-weight bold
-  p
-    margin .3rem 0
-    i
-      vertical-align middle
-      font-size 1.2rem
-  .written-by
-    margin-top 1.3rem
-
-.social-links
-  text-align center
-  margin 0 auto
+  margin 0
   padding 0
-  margin 1.5em auto
-  > a
-    margin 3px
+  font-weight 300
+  color #7E96B3
+  line-height 1.5
+  font-size 16px
 
-@media screen and (max-width 550px)
-  #main
-    padding-top 60px
-  #hero
-    height 650px
-    max-height 750px
+h1
+  font-size 60px
+  font-weight 300
+
+h2
+  font-size 36px
+  font-weight 300
+  color $primary
+
+a
+  color #B0BED1
+  &:hover
+    color $primary
+
+a.button, button
+  cursor pointer
+  text-transform uppercase
+  font-size 14px
+  font-weight normal
+  color #7E96B3
+  background white
+  border 2px solid #CCD6E4
+  border-radius 6px
+  padding 15px 30px
+  display inline-block
+  line-height 1
+  text-decoration none
+  transition all .2s
+  &:hover
+    color $primary
+    border-color $primary
+  i
+    font-size 150%
+    margin-right 5px
+    vertical-align middle
+
+.playstore
+  border 0 !important
+  background 0 0 !important
+  padding 0 !important
+  img
+    width 160px
+
+
+.q-header
+  padding 0
+  border 0
+  text-align center
+
+.q-container
+  max-width 1040px
+  margin 0 auto
+  padding 0 20px
+  overflow hidden
+
+.q-header-navbar
+  margin-top 30px
+
+.q-header-navbar, .q-footer-navbar
+  a
+    border 0
+    color #B0BED1
+    margin 0 10px 5px
+    display inline-block
+    text-decoration none
+    padding-bottom 1px
+    transition all .2s
+    &:hover
+      color $primary
+
+
+.q-body
+  text-align center
+  padding-top 100px
+  padding-bottom 100px
+  h2
+    color #7e96b3
+    margin-top 0
+    margin-bottom 15px
+  img + h2
+    margin-top 15px
+  p
+    text-align left
+  .q-container
+    max-width 600px
+
+.q-intro
+  text-align center
+  padding-top 100px
+  padding-bottom 150px
+  h1
+    margin 25px 0 0
+    color #3c5675
+  h2
+    color #7e96b3
+    margin-top 0
+    margin-bottom 15px
+  p
+    max-width 450px
+    font-size 20px
+    margin 0 auto 40px
+    a
+      text-decoration none
+      i
+        margin-right 10px
+  img.arrow
+    margin-top 25px
+    width 20px
+
+.q-intro-actions a
+  margin 0 4px 10px
+
+
+
+.q-feature
+  padding 50px 0 0
+  background-image linear-gradient(to bottom, #eff2f6 0%, rgba(239, 242, 246, 0) 250px)
+
+.q-feature-header
+  text-align center
+  h3
+    font-size 37px
+    color $primary
+    font-weight 300
+    margin .25rem 0
+  p
+    font-size 20px
+    color #536F90
+
+figure
+  height 591px
+  background-size 689px 591px
+
+.q-screenshot-text
+  margin-top 50px
+
+.q-screenshot
+  color #888
+  margin 75px 0
+  overflow hidden
+
+  h4
+    color #444
+    font-size 18px
+    font-weight 600
+    margin 4em 0 0
+    &:first-child
+      margin-top 0
+
+  p
+    margin .5em 0 1em
+    font-size 1.1em
+
+  &.dark
+    color #fff
+    background #272722
+    margin-bottom 0
+
+  &.left
+    figure
+      float left
+      width 50%
+      background-repeat no-repeat
+      background-position top right
+      margin 0
+    .q-screenshot-text
+      width 300px
+      float left
+      margin 15px 0 0 100px
+
+  &.right
+    figure
+      float right
+      width 50%
+      background-repeat no-repeat
+      background-position top left
+      margin 0
+    .q-screenshot-text
+      width 300px
+      float right
+      margin 15px 100px 0 0
+
+
+.q-feature-list
+  overflow hidden
+  margin-top 25px
+
+.q-feature-item
+  float left
+  width 50%
+  height 325px
+  box-sizing border-box
+  padding 0 50px
+  color #888
+  font-size 1.1em
+  i
+    font-size 64px
+    color $primary
+    vertical-align middle
+    margin-right 5px
+  h4
+    color #444
+    font-size 18px
+    font-weight 600
+    margin 1em 0 0
+
+
+
+
+
+.q-actions
+  padding 60px 0
+  background-image linear-gradient(to bottom, #eff2f6 0%, rgba(239, 242, 246, 0) 250px)
+
+.q-actions-item
+  width 33%
+  padding 0 35px
+  box-sizing border-box
+  float left
+  text-align center
+  h3
+    font-weight 300
+    font-size 30px
+    color $primary
+    margin 0 0 10px
+  h4
+    font-weight 300
+    font-size 20px
+    color #3C5675
+    margin 0
+  p
+    margin .5em 0 1.5em
+    height 125px
+
+.q-footer
+  text-align center
+  margin 100px 0
+  line-height 2em
+.q-footer-navbar
+  margin-bottom 5px
+  a
+    margin 0 8px
+
+
+@media only screen and (max-width 700px)
+  .q-intro
     h1
-      font-size 2em
-      font-weight 400
-    a.button
-      width 260px
-      font-size 1.2em
-      margin .5em 0
+      font-size 35px
+    h2
+      font-size 25px
     p
-      font-size 95%
-    .framework-name
-      font-size 2rem
-  .features
-    padding 2em 0
-    .feat
-      font-size 12px
-      margin .8em 0
-      width 252px
+      font-size 16px
+  .q-intro, .q-body
+    > img
+      max-width 80%
+
+  .q-actions
+    padding 30px 0
+  .q-actions-item
+    width auto
+    float none
+    margin-bottom 50px
+    padding 0
+    p
+      height auto
+  .q-intro
+    padding-bottom 100px
+  img.arrow
+    display none
+
+@media only screen and (max-width 790px)
+  .q-body
+    padding-top 50px
+    padding-bottom 0
+    img
+      max-width 80%
+    form
+      button, a
+        display block
+        margin 10px
+  .q-intro-actions a
+    display block
+    padding 10px 15px
+  .q-feature-item
+    display block
+    float none
+    width 100%
+    height auto
+    margin-bottom 60px
+    text-align center

@@ -1,5 +1,5 @@
 <%
-  var isIndex = page.path === 'index.html';
+  var isIndex = page.path === 'index.html' || page.support_index;
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +16,9 @@
         <!-- endbuild -->
     </head>
     <body class="<%- body_class(page) %>">
-        <%- partial('partials/header') %>
+        <% if (!isIndex) { %>
+          <%- partial('partials/header') %>
+        <% } %>
         <div id="main">
             <% if (page.blog_index) { %>
                 <%- partial('partials/blog') %>
@@ -28,14 +30,13 @@
                 <%- body %>
             <% } %>
         </div>
-        <%- partial('partials/ga') %>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          FastClick.attach(document.body);
+        }, false);
+        </script>
         <% if (!isIndex) { %>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
-          <script>
-          document.addEventListener('DOMContentLoaded', function() {
-            FastClick.attach(document.body);
-          }, false);
-          </script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/7.1.1/js/smooth-scroll.min.js"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
@@ -49,12 +50,7 @@
             <script src="<%- config.root %>js/stylus-variables.js"></script>
             <!-- endbuild -->
           <% } %>
-        <% } else { %>
-          <!-- build:js js/index-combined.js -->
-          <script src="<%- config.root %>js/page.js"></script>
-          <!-- endbuild -->
-          <script async defer src="https://buttons.github.io/buttons.js"></script>
-          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
         <% } %>
+        <%- partial('partials/ga') %>
     </body>
 </html>
