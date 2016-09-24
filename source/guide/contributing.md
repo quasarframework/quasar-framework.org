@@ -13,10 +13,13 @@ You can also help with the documentation if you catch a mistake or want to add a
 * [Quasar Framework](https://github.com/rstoenescu/quasar-framework)
 * [Quasar CLI](https://github.com/rstoenescu/quasar-cli)
 * [Quasar App Templates](https://github.com/rstoenescu/quasar-templates)
+* [Quasar Play App](https://github.com/rstoenescu/quasar-play)
 
 ## Issue Reporting Guidelines
 
-- The issue list of the repository is **exclusively** for bug reports and feature requests.
+**Please use the appropriate Github repo to report issues. See "Github Repositories" above.** For example, a bug related to CLI should be reported to the CLI repo, one related to build issues to Quasar Framework Templates repo and so on.
+
+- The issue list of the repository is **exclusively** for bug reports and feature requests. For anything else please use the [Community Forum](http://forum.quasar-framework.org).
 
 - Try to search for your issue, it may have already been fixed in the development branch or it may have a resolution.
 
@@ -35,8 +38,6 @@ You can also help with the documentation if you catch a mistake or want to add a
 - Squash the commit if there are too many small ones.
 
 - Follow the [code style](#Code-Style) in next section.
-
-- Make sure that running "npm test" passes all tests.
 
 - If adding new feature, provide convincing reason to add this feature. Ideally you should open a suggestion issue first and have it greenlighted before working on it.
 
