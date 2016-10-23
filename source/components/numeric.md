@@ -6,7 +6,7 @@ title: Numeric
 
 ``` html
 <quasar-numeric
-  :model.sync="number"
+  v-model="number"
   :min="1"
   :max="17"
 ></quasar-numeric>
@@ -14,7 +14,7 @@ title: Numeric
 <!-- Disabled state -->
 <quasar-numeric
   disable
-  :model.sync="number"
+  v-model="number"
   :min="1"
   :max="17"
 ></quasar-numeric>
@@ -24,9 +24,7 @@ title: Numeric
 
 | Vue Property | Default Value | Description |
 | --- | --- | --- |
-| `model` | 0 | (**Required**) Model for Number Web Component |
 | `step` | 1 | Value of increment / decrement |
-| `debounce` | *none* | Change model with a debouncing timing |
 | `min` | *none* | Minimum value of the model |
 | `max` | *none* | Maximum value of the model |
 | `disable` | `false` | Disable input from user. |
@@ -39,7 +37,7 @@ title: Numeric
     <i class="item-primary">edit</i>
     <div class="item-content">
       <span class="item-label">Number: </span>
-      <quasar-numeric :model.sync="number"></quasar-numeric>
+      <quasar-numeric v-model="number"></quasar-numeric>
     </div>
   </div>
 </div>

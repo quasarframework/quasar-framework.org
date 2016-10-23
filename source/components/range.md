@@ -9,14 +9,13 @@ Also check its "sibling", the [Double Range](/components/double-range.html) comp
 ## Basic Usage
 
 ``` html
-<quasar-range :model.sync="number" :min="1" :max="7"></quasar-range>
+<quasar-range v-model="number" :min="1" :max="7"></quasar-range>
 ```
 
 ## Vue Properties
 
 | Vue Property | Type | Description |
 | --- | --- | --- |
-| `model` | Number | Model for the Range Component |
 | `min` | Number | Minimum value of the model |
 | `max` | Number | Maximum value of the model |
 | `label` | Boolean | Popup a label when user clicks/taps on the Range |
@@ -28,7 +27,7 @@ Also check its "sibling", the [Double Range](/components/double-range.html) comp
 Example with `step`, `label` and `snap`:
 ``` html
 <quasar-range
-  :model.sync="number"
+  v-model="number"
   :min="min"
   :max="max"
   :step="step"
@@ -44,7 +43,7 @@ Example with `step`, `label` and `snap`:
 Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`, `orange`, `teal` as CSS class:
 
 ``` html
-<quasar-range class="orange" :model.sync="model"></quasar-range>
+<quasar-range class="orange" v-model="model"></quasar-range>
 ```
 
 ## Inside of a List Usage
@@ -55,7 +54,7 @@ Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`
     <i class="item-primary">volume_up</i>
     <div class="item-content">
       <quasar-range
-        :model.sync="standalone"
+        v-model="standalone"
         :min="0"
         :max="50"
         label

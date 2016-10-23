@@ -8,17 +8,22 @@ Quasar Tooltips offer additional information to the user that otherwise would be
 
 ``` html
 <!-- Some examples -->
-<div v-tooltip.literal="Quasar Rulz!">...</div>
-<button class="indigo" v-tooltip.wrap.inline.literal="Tooltip">...</button>
-<button class="red" v-tooltip.wrap.literal="Tooltip for the user">...</button>
-<div v-tooltip="vmProperty">...</div>
-<div v-tooltip.inline.literal="Lorem Ipsum...">...</div>
+<div v-tooltip="'Quasar Rulz!'">...</div>
+
+<div v-tooltip.inline="'Tooltip'">
+  <button class="indigo">Hover</button>
+</div>
+<div v-tooltip.inline="'Tooltip for the user'">
+  <button class="red">Over</button>
+</div>
+<div v-tooltip.inline="'Lorem Ipsum... Some long tooltip...'">
+  <button class="purple">These</button>
+</div>
+<div v-tooltip.inline="'Lorem Ipsum...'">
+  <button class="amber">Buttons</button>
+</div>
 ```
 
-Tooltips use `:before` and `:after` CSS pseudo-elements. When used on a DOM element that already has these pseudo-elements, then add the `wrap` directive modifier so they won't be overriden. If you need that wrapped element to be inline, then also add the `inline` directive modifier.
+Tooltips use `:before` and `:after` CSS pseudo-elements. When used on a DOM element that already has these pseudo-elements, wrap it yourself and apply `v-tooltip` on the wrapper element.
 
-| Directive Modifier | Description |
-| --- | --- |
-| `literal` | Use the literal string instead of interpreting it as a variable name from VueModel. |
-| `inline` | Make the element inline. |
-| `wrap` | Wrap the element so the `:before` and `:after` CSS pseudo-elements won't be overriden. |
+If you need that wrapped element to be inline, then add the `inline` directive modifier.

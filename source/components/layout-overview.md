@@ -13,28 +13,28 @@ An example of Layout, containing all possible elements: toolbars (used on header
 <quasar-layout>
   <!-- Header -->
   <div slot="header" class="toolbar">
-    <!-- opens left-side drawer -->
-    <button class="left-drawer-opener">
+    <!-- opens left-side drawer using its ref -->
+    <button class="hide-on-drawer-visible" @click="$refs.leftDrawer.open()">
       <i>menu</i>
     </button>
     <quasar-toolbar-title :padding="1">
       Title
     </quasar-toolbar-title>
-    <!-- opens right-side drawer -->
-    <button class="right-drawer-opener">
-      <i>menu</i>
-    </button>
+    <!-- opens right-side drawer using its ref -->
+    <button class="hide-on-drawer-visible" @click="$refs.rightDrawer.open()">
+        <i>menu</i>
+      </button>
   </div>
 
   <!-- Navigation Tabs -->
-  <quasar-tabs slot="navigation" class="primary">
-    <quasar-tab icon="mail" v-link="{path: '/layout', exact: true}">Mails</quasar-tab>
-    <quasar-tab icon="alarm" v-link="'/layout/alarm'">Alarms</quasar-tab>
-    <quasar-tab icon="help" v-link="'/layout/help'">Help</quasar-tab>
+  <quasar-tabs slot="navigation">
+    <quasar-tab icon="mail" route="/layout" exact replace>Mails</quasar-tab>
+    <quasar-tab icon="alarm" route="/layout/alarm" exact replace>Alarms</quasar-tab>
+    <quasar-tab icon="help" route="/layout/help" exact replace>Help</quasar-tab>
   </quasar-tabs>
 
   <!-- Left-side Drawer -->
-  <quasar-drawer>
+  <quasar-drawer ref="leftDrawer">
     <div class="toolbar">
       <quasar-toolbar-title>
         Drawer Title
@@ -42,7 +42,7 @@ An example of Layout, containing all possible elements: toolbars (used on header
     </div>
 
     <div class="list no-border platform-delimiter">
-      <quasar-drawer-link v-link="{path: '/', exact: true}" icon="mail">
+      <quasar-drawer-link icon="mail" to="/" exact>
         Link
       </quasar-drawer-link>
     </div>
@@ -54,7 +54,7 @@ An example of Layout, containing all possible elements: toolbars (used on header
   <div class="layout-view"></div>
 
   <!-- Right-side Drawer -->
-  <quasar-drawer>
+  <quasar-drawer ref="rightDrawer">
     ...
   </quasar-drawer>
 
@@ -134,7 +134,7 @@ components:
   </div>
   ```
 
-7. You can create Modals with Layout templates for great effect. Read about [Modals](/components/modal.html). Goes great with `*.vue` files.
+7. You can create Modals with Layout templates for great effect. Read about [Modals](/components/modal.html).
 
 8. You can make navigation Tabs work great with Vue Router if you register the routes correctly and specify `v-link` directive on each Tab. Read more about Tabs [here](/components/tabs.html).
 
@@ -143,7 +143,7 @@ components:
   <quasar-layout>
     ...
     <div slot="header" class="toolbar primary">
-      <quasar-search :model.sync="searchModel" class="primary"></quasar-search>
+      <quasar-search v-model="searchModel" class="primary"></quasar-search>
     </div>
     ...
   </quasar-layout>

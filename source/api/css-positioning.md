@@ -4,8 +4,8 @@ There are CSS classes supplied by Quasar to help you position a DOM element easi
 
 | Class Name | Description |
 | --- | --- |
-| `float-left` | Float to the left |
-| `float-right` | Float to the right |
+| `float-left`/`pull-left` | Float to the left |
+| `float-right`/`pull-right` | Float to the right |
 | `fullscreen` | Fix position covering all window real-estate |
 | `fixed` | Set `position` to `fixed` without specifying `top`, `left`, `right` or `bottom` properties |
 | `absolute` | Set `position` to `absolute` without specifying `top`, `left`, `right` or `bottom` properties |
@@ -18,8 +18,19 @@ There are CSS classes supplied by Quasar to help you position a DOM element easi
 | `fixed-bottom-left`, `absolute-bottom-left` | Fixed or absolute position to bottom left of screen |
 | `fixed-bottom-right`, `absolute-bottom-right` | Fixed or absolute position to bottom right of screen |
 | `relative-position` | Set position to `relative` |
+
+## Alignment
+| Class Name | Description |
+| --- | --- |
+| `float-left`/`pull-left` | Float to the left |
+| `float-right`/`pull-right` | Float to the right |
+| `on-left` | Sets a small margin to the right; commonly used for icon elements with other siblings |
+| `on-right` | Sets a small margin to the left; commonly used for icon elements with other siblings |
+
+Vertical alignment:
+
+| Class Name | Description |
+| --- | --- |
 | `vertical-top` | Set vertical alignment to `top` |
 | `vertical-middle` | Set vertical alignment to `middle` |
 | `vertical-bottom` | Set vertical alignment to `bottom` |
-| `on-left` | Sets a small margin to the right; commonly used for icon elements with other siblings |
-| `on-right` | Sets a small margin to the left; commonly used for icon elements with other siblings |

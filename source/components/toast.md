@@ -46,11 +46,11 @@ Toast.create({
 
 | Property | Type | Description |
 | --- | --- | --- | --- |
-| `html` | *none* | (**Required**) HTML to display. |
-| `icon` | *none* | Icon to use. See [Icons](/api/css-icons.html). |
-| `image` | *none* | Image to include. |
-| `timeout` | 7000 | Timeout in milliseconds until being automatically dissmissed. |
-| `button` | *none* | Place a button with an action, like "Undo". Specify `label` (String) and `handler` (Function). Optionally, specify a CSS color. |
+| `html` | String | (**Required**) HTML to display. |
+| `icon` | String | Icon to use. See [Icons](/api/css-icons.html). |
+| `image` | String | Image to include. |
+| `timeout` | 2500 | Timeout in milliseconds until being automatically dissmissed. |
+| `button` | Object | Place a button with an action, like "Undo". Specify `label` (String) and `handler` (Function). Optionally, specify `color` with a CSS color. |
 | `color` | String | CSS color of Toast text |
 | `bgColor` | String | CSS color of Toast background |
 | `onDismiss` | Function | Function to execute when Toast gets dismissed. |

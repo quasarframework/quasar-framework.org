@@ -11,42 +11,37 @@ The iOS and Material Datetime pickers look and act totally different, just like 
 ``` html
 <!-- Only Date -->
 <quasar-inline-datetime
-  :model.sync="model"
+  v-model="model"
   type="date"
 ></quasar-inline-datetime>
 
 <!-- Only Time -->
 <quasar-inline-datetime
-  :model.sync="model"
+  v-model="model"
   type="time"
 ></quasar-inline-datetime>
 
 <!-- Date & Time -->
 <quasar-inline-datetime
-  :model.sync="model"
+  v-model="model"
   type="datetime"
 ></quasar-inline-datetime>
 
 <!-- Disabled state -->
 <quasar-inline-datetime
   disable
-  :model.sync="model"
+  v-model="model"
   type="date"
 ></quasar-inline-datetime>
 ```
 
-## Vue Properties & Methods
-
-Properties:
-
+## Vue Properties
 | Vue Property | Required | Description |
 | --- | --- | --- |
-| `model` | Yes | Model for the Select Component. |
 | `type` | Yes | One of `date`, `time` or `datetime` strings. |
 | `disable` | | When set to `true` the model cannot be altered. |
 
-Methods:
-
+## Vue Methods
 | Vue Method | Description |
 | --- | --- |
 | `setYear()` | Sets the year. |

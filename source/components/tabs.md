@@ -7,77 +7,188 @@ Quasar Tabs are a way of displaying more information using less window real-esta
 On desktop, Tabs will use clickable arrows to indicate to the user that they can scroll to see them all, if they don't all fit on the screen. Tabs are responsive and on small screens (like on a phone) if they can all fit on the screen they will share all screen width, otherwise user can swipe through the Tabs.
 
 ## Basic Usage
-Example of a `*.vue` file using Tabs.
+A basic example of Tabs (they are more complex as you will see in next sections where you'll learn to use Vue Routes or `v-model` with it):
 
 ``` html
 <!-- Tabs -->
-<quasar-tabs>
-  <quasar-tab icon="mail" target="#tab-1">
+<quasar-tabs
+  :refs="$refs"
+  default-tab="tab-4"
+>
+  <quasar-tab name="tab-1" icon="message">
     Tab 1
   </quasar-tab>
-
-  <quasar-tab icon="alarm" target="#tab-2">
+  <quasar-tab name="tab-2" disable icon="fingerprint">
     Tab 2
+  </quasar-tab>
+  <quasar-tab name="tab-3" icon="alarm">
+    Tab 3
+  </quasar-tab>
+  <quasar-tab name="tab-4" icon="accessibility">
+    Tab 4
+  </quasar-tab>
+  <quasar-tab name="tab-5" hidden icon="accessibility">
+    Tab 5
   </quasar-tab>
 </quasar-tabs>
 
 <!-- Targets -->
-<div id="tab-1">
-  ...tab content...
-</div>
-<div id="tab-2">
-  ...tab content...
-</div>
+<div ref="tab-1">...</div>
+<div ref="tab-2">...</div>
+<div ref="tab-3">...</div>
+<div ref="tab-4">...</div>
+<div ref="tab-5">...</div>
 ```
 
-## Vue Properties & Methods
+The `name` attribute on `<quasar-tab>`s links this Tab to the DOM element using a Vue reference with same name.
 
-> Please note that these properties and methods apply to `<quasar-tab>` and NOT their container `<quasar-tabs>`.
+As you can see, we have a container (`<quasar-tabs>`) and Tabs themselves (`<quasar-tab>`). Let's dissect each:
 
-Tab Properties:
+## Tabs Container Component
+Use `<quasar-tabs>` component to wrap your Tabs.
+
+### Vue Properties
+| Vue Property | Type | Description |
+| --- | --- | --- |
+| `refs` | Object | (**Required**) Tell component which Vue $refs object to use for its targets. |
+| `default-tab` | String | Default Tab to be selected. Do not use it along with `v-model`. |
+
+> Supports `v-model` which holds the active Tab's name. When using `v-model` it's pointless to also use `default-tab` property, since you can initialize the model with a name.
+
+### Vue Methods
+| Vue Method | Description |
+| --- | --- |
+| `setActiveTab(name)` | Set active Tab using its name. |
+
+### Vue Events
+| Event | Description |
+| --- | --- |
+| `@change` | Triggered whenever selected Tab changes. |
+
+## Tab Component
+
+### Vue Properties
+| Vue Property | Type | Description |
+| --- | --- | --- |
+| `label` | String | Label to use. |
+| `icon` | String | Icon to use. |
+| `disable` | Boolean | If disabled user won't be able to select it. |
+| `hidden` | Boolean | Hide it.. or not. |
+| `hide` | String | Possible values: `icon` or `label`. On narrow screens one of the two will be hidden. |
+
+> Supports `v-model` which holds the active Tab's name. When using `v-model` it's pointless to also use `default-tab` property, since you can initialize the model with a name.
+
+If using routes for each Tab:
 
 | Vue Property | Type | Description |
 | --- | --- | --- |
-| `hidden` | Boolean | Show or hide it |
-| `disable` | Boolean | Make it disabled or not |
-| `icon` | String | Icon to use for it |
-| `target` | String | DOM element selector for target. It makes it be displayed when Tab is active and hides target when other Tab is selected instead. |
-| `hide` | String | Possible values: `icon` (hides icon) or `label` (hides label and only displays icon) |
-| `active` | Boolean | Just one Tab can be active. Use this attribute to auto-select a Tab by default. |
+| `route` | String | Configure Vue Route "to" property. |
+| `replace` | Boolean | Configure Vue Router to replace current route rather than push a new one. |
+| `exact` | Boolean | Exact match of the route, just as described for `<router-link>`. |
+| `append` | Boolean | Append route to current one, just as described for `<router-link>`. |
 
-Tab Methods:
-
+### Vue Methods
 | Vue Method | Description |
 | --- | --- |
-| `activate()` | Select the respective Tab |
-| `setTargetVisibility(Boolean)` | Set target visibility. `true` means visible, `false` means hidden |
+| `activate()` | Make this Tab the selected one. |
+| `deactivate()` | Unselect this Tab as the active one. |
+| `setTargetVisibility(Bool)` | Sets the target as visible (true) or hides it (false). |
+
+### Vue Events
+| Event | Description |
+| --- | --- |
+| `@selected` | Triggered whenever Tab is selected. |
 
 ## Usage with Vue Router
 ``` html
 <!-- Tabs -->
 <quasar-tabs>
-  <quasar-tab icon="mail" v-link="{path: '/mails', exact: true}">
+  <quasar-tab
+    icon="mail"
+    route="/mails"
+    exact
+  >
     Mails
   </quasar-tab>
 
-  <quasar-tab icon="alarm" v-link="{path: '/alarms', exact: true}">
+  <quasar-tab
+    icon="alarm"
+    route="/alarms"
+    exact
+  >
     Alarms
   </quasar-tab>
 </quasar-tabs>
 ```
 
-Your Tabs will be auto-selected when user navigates to the specified routes (through `v-link` Vue directive).
+Your Tabs will be auto-selected when user navigates to the specified routes.
+
+## Usage with "v-model"
+Best way to programmatically switch between Tabs is by using a `v-model`:
+
+``` html
+<quasar-tabs
+  :refs="$refs"
+  v-model="xTabsModel"
+>
+  <quasar-tab
+    name="xtab-1"
+    icon="message"
+  >Tab 1</quasar-tab>
+
+  <quasar-tab
+    name="xtab-2"
+    icon="alarm"
+  >Tab 2</quasar-tab>
+
+  <quasar-tab
+    name="xtab-3"
+    icon="accessibility"
+  >Tab 3</quasar-tab>
+</quasar-tabs>
+
+<quasar-select
+  type="radio"
+  v-model="xTabsModel" :options="xTabsOptions"
+></quasar-select>
+
+<div ref="xtab-1">...</div>
+<div ref="xtab-2">...</div>
+<div ref="xtab-3">...</div>
+```
+
+``` js
+// Data for template above
+data () {
+  return {
+    xTabsModel: 'xtab-2',
+    xTabsOptions: [
+      {label: 'Tab 1', value: 'xtab-1'},
+      {label: 'Tab 2', value: 'xtab-2'},
+      {label: 'Tab 3', value: 'xtab-3'}
+    ]
+  }
+}
+```
 
 ## Usage on a Layout
 ``` html
 <quasar-layout>
   ...
   <quasar-tabs slot="navigation">
-    <quasar-tab icon="mail" v-link="{path: '/mails', exact: true}">
+    <quasar-tab
+      icon="mail"
+      route="/mails"
+      exact
+    >
       Mails
     </quasar-tab>
 
-    <quasar-tab icon="alarm" v-link="{path: '/alarms', exact: true}">
+    <quasar-tab
+      icon="alarm"
+      route="/alarms"
+      exact
+    >
       Alarms
     </quasar-tab>
   </quasar-tabs>

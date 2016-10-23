@@ -12,7 +12,7 @@ Two examples below. Read about Vue properties in the next section.
 <quasar-progress-button
   class="primary"
   :percentage="model"
-  @click="startWorking()"
+  @click.native="startWorking()"
 >
   Work it!
 </quasar-progress-button>
@@ -23,7 +23,7 @@ Two examples below. Read about Vue properties in the next section.
   class="yellow"
   dark-filler
   :percentage="model"
-  @click="startWorking()"
+  @click.native="startWorking()"
 >
   Work it!
 </quasar-progress-button>
@@ -31,14 +31,12 @@ Two examples below. Read about Vue properties in the next section.
 
 ## Vue Properties
 
-Properties:
-
 | Vue Property | Type | Default Value | Description |
 | --- | --- | --- | --- |
 | `percentage` | Number | | (**Required**) Model to use to determine Progress Button's state. |
-| `errorIcon` | String | `warning` | Icon to use in case the outcome is an error. |
-| `successIcon` | String | `done` | Icon to use in case the outcome is a success. |
-| `darkFiller` | Boolean | `false` | In case your button has a light color, the filler should be darkened. |
+| `error-icon` | String | `warning` | Icon to use in case the outcome is an error. |
+| `success-icon` | String | `done` | Icon to use in case the outcome is a success. |
+| `dark-filler` | Boolean | `false` | In case your button has a light color, the filler should be darkened. |
 | `indeterminate` | Boolean | `false` | Should we display an indeterminate state? |
 
 ## Handling Outcome

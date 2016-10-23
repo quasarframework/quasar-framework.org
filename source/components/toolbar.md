@@ -27,12 +27,14 @@ Example on using a Toolbar on Layout header:
 <quasar-layout>
   ...
   <div slot="header" class="toolbar">
-    <!-- opens left-side drawer -->
-    <button class="left-drawer-opener">
+    <!-- opens drawer using its ref -->
+    <button
+      class="hide-on-drawer-visible"
+      @click="$refs.drawer.open()"
+    >
       <i>menu</i>
     </button>
 
-    <!-- Toolbar title/text -->
     <quasar-toolbar-title :padding="2">
       Title
     </quasar-toolbar-title>

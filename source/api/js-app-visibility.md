@@ -10,7 +10,7 @@ import { AppVisibility } from 'quasar'
 (Boolean) AppVisibility.isVisible()
 ```
 
-There is also an event triggered when focus changes:
+There is also an event triggered when focus changes (read about Events [here](/api/js-events.html)):
 
 | Event Name | Parameters | Description |
 | --- | --- | --- |

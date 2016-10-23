@@ -1,8 +1,8 @@
-title: Vue Directives
+title: Other Quasar Vue Directives
 ---
 Quasar provides some useful ready to use Vue directives. If you don't know what a directive is, read [here](http://vuejs.org/guide/custom-directive.html).
 
-This is not a complete list. The missing ones are specific to some Quasar Components and are described on their documentation pages. For example, see [Handling Back Button](/guide/handling-back-button.html).
+This is not a complete list. The missing ones are specific to some Quasar Components and are described on their documentation pages. For example, see [Handling Back Button](/guide/handling-back-button.html) or [Touch Directives](/api/js-touch-directives.html).
 
 ### Directive "v-scroll"
 This one takes one parameter (a Function) and fires when user scrolls the page containing that DOM node.
@@ -55,28 +55,28 @@ export default {
 > **NOTE**
 > There is one more scrolling-related directive available called "Scroll Fire" described on its own documentation page. Read more [here](/components/scroll-fire.html).
 
-### Directive "v-attr"
-This directive sets HTML attributes (with no value) on the respective DOM node.
-
-> **NOTE**
-> Do not mistake this directive with the one that Vue had on its early releases up to v0.11.
+### Directive "v-link"
+Vue 2 has dropped `v-link` directive, but Quasar offers one with limited functionality.
+Use this directive instead of `<router-link>` for cases like the following one **when you don't want your Vue component wrapped by another DOM element** (like an `<a>` tag):
 
 ``` html
-<div v-attr="attributes">...</div>
+<some-component v-link=" '/home' ">...</some-component>
+// renders `some-component`'s template
+
+// instead of:
+<router-link to="/home">
+  <some-component>...</some-component>
+</router-link>
+// which renders:
+// <a> ...some component template...</a>
 ```
 
-In the example above `attributes` is a variable from VM data. It can be a String or an Array of Strings. Some examples of its effects:
+Basically, just specify the route as parameter. It adds an `onclick` event on the respective DOM which tells Vue Router to push to that route.
 
-``` js
-// `attributes` has value 'close-me' then DIV below
-// has empty HTML attribute 'close-me' added.
-<div close-me>...</div>
+The default behavior is for the router to push a new entry in history. If however you want current route to be replaced (instead of pushed to `window.history`) then add `.replace` modifier:
 
-// Changing `attributes` to value "active" makes
-// the DIV's DOM node look like this:
-<div active>...</div>
-
-// If `attributes` is an Array of String, like
-// ['close-me', 'active'] then DIV's DOM node looks like this:
-<div active close-me>...</div>
+``` html
+<div v-link.replace=" '/home' ">...</div>
 ```
+
+> You DOM element won't receive `router-link-active` CSS class when using `v-link` though.

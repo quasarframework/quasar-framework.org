@@ -25,13 +25,18 @@ use you mouse to drag slides to left or right.
 ```
 
 ## Vue Properties
-
 | Vue Property | Type | Description |
 | --- | --- | --- |
 | `arrows` | Boolean | Show arrows |
 | `dots` | Boolean | Show dots at bottom |
 | `fullscreen` | Boolean | Shows Fullscreen button |
 | `actions` | Boolean | Show Actions slot |
+
+## Vue Methods
+| Vue Method | Description |
+| --- | --- |
+| `goToSlide(slide, Bool noAnimation)` | Go to respective slide, optionally with no animation (instantly). |
+| `toggleFullscreen()` | Toggles fullscreen mode. |
 
 ## Slider with Arrows, Dots and Fullscreen Controls
 Sliders can contain button controls, like:
@@ -94,16 +99,26 @@ Put icons on the same DOM hierarchical level as the slides.
 ```
 
 ## Launch Slider in Fullscreen
-You can launch a Slider in Fullscreen by using [Modals](/components/modal.html):
+You can launch a Slider in Fullscreen by using a [Modal](/components/modal.html) component:
 
-``` js
-import { Modal } from 'quasar'
-
-Modal.create({
-  template: modalTemplate
-}).set({
-  maximized: true
-}).show()
+``` html
+<button class="primary glossy" @click="$refs.modal.open()">
+  Launch
+</button>
+<quasar-modal ref="modal" class="maximized">
+  <quasar-slider arrows dots class="text-white full-height">
+    <div slot="slide" class="bg-primary centered">
+      <h1>Slide 1</h1>
+      <button class="dark glossy" @click="$refs.modal.close()">Close Me</button>
+    </div>
+    <div slot="slide" class="bg-secondary centered">
+      <h1>Slide 2</h1>
+      <button class="dark glossy" @click="$refs.modal.close()">Close Me</button>
+    </div>
+    <div slot="slide" class="bg-tertiary centered">
+      <h1>Slide 3</h1>
+      <button class="dark glossy" @click="$refs.modal.close()">Close Me</button>
+    </div>
+  </quasar-slider>
+</quasar-modal>
 ```
-
-Your modal template should only contain at most one slider like ones above, and not more.

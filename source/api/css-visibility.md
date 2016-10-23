@@ -12,6 +12,16 @@ There are some CSS classes that you can use out of the box for common functional
 | `light-dimmed` | Apply white transparent overlay on top of your element. Do not use on elements which already have **:after** pseudoelement. |
 | `highlight-and-fade` | Adds a yellow background color and fades it away upon element is displayed. |
 | `ellipsis` | Truncates text and shows ellipsis when not enough space available. |
+| `z-absolute` | Positions your element on top of any other component (including Drawer, Modals, Toasts, Layout header/footer, ...) |
+
+### Animating
+| Class Name | Description |
+| --- | --- |
+| `animate-spin` | Applies a continously spin. |
+| `animate-blink` | Makes your element blink - alternate between show/hide every 1s. |
+| `animate-pop` | When element is rendered it will scale in with a nice bounce animation. |
+| `animate-scale` | When element is rendered it will scale in. |
+| `animate-fade` | When element is rendered it will fade it in. |
 
 ### Platform Related
 Visible only on:

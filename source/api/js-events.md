@@ -5,143 +5,77 @@ Sometimes you need an event bus or a publish/subscribe channel. Quasar provides 
 
 ``` js
 import { Events } from 'quasar'
+
+Events.$on('app:visibility', state => {
+  console.log('App became', state)
+})
 ```
+
+Essentially, Events is just a Vue event bus that you can use throughout your App. If you know how to use Vue events, then you're all set to go.
 
 ## Methods
 
-> **NOTE**
-> Event name must *NOT* contain space characters, otherwise the string will be considered as containing multiple events names.
-
-### Registering an Event/Callback
-`Events.on(String eventNames, Function callback [, Object context])`
+### Registering for an Event
+`Events.$on(String eventName, Function callback)`
 
 Example:
 ``` js
 import { Events } from 'quasar'
 
-let context = {...} // will be used as *this* within callback
-Events.on('event-name', function(param1, param2, ...paramN) { ... }, context)
-
-// The params that are used when triggering the event are passed on
-// to each callback.
-
-// We can register multiple events at once:
-Events.on('event1 event2 eventN', callback)
+Events.$on('some-event', (param1, param2) => {
+  //...
+})
 ```
 
-### Removing an Event/Callback
-`Events.off(String eventNames [, Function callback])`
+### Removing Callback for an Event
+`Events.$off(String eventName [, Function callback])`
 
 ``` js
 import { Events } from 'quasar'
 
 // Unregistering an event:
-Events.off('event-name')
+Events.$off('event-name')
 // 'event-name' does no longer has any callbacks
 
 // Unregistering a specific callback for an event:
 let callback = function(...) {...}
-Events.on('event-name', callback)
-Events.off('event-name', callback)
+Events.$on('event-name', callback)
+Events.$off('event-name', callback)
 // 'event-name' still exists (if other callbacks are registered to this event),
 // but does not contain the above callback anymore
-
-// We can remove callback from multiple events at once:
-Events.off('event1 event2 eventN', callback)
-
-// or we can remove all callbacks from multiple events at once:
-Events.off('event1 event2 eventN')
-
-// or we can remove all callbacks and all events at once:
-Events.off()
 ```
 
 ### Registering a Callback to Be Run Only Once
-`Events.once(String eventNames, Function callback [, Object context])`
+`Events.$once(String eventName, Function callback)`
 
 Sometimes you need to trigger a callback only once. Example:
 ``` js
 import { Events } from 'quasar'
 
 let callback = function(...) {...}
-Events.once('event-name', callback)
+Events.$once('event-name', callback)
 // callback will be triggered only once
-
-// We can also register callback to be triggered once
-// for multiple events at once:
-Events.once('event1 event2', callback)
-// callback will be triggered only once for 'event1'
-// AND only once more for 'event2'
-// ... so triggering 'event1' and 'event2' multiple times
-// will run callback a total of 2 times
 ```
 
 ### Triggering an Event
-`Events.trigger(String eventNames [, Anything *args])`
+`Events.$emit(String eventName [, Anything *arg])`
 
 Example:
 ``` js
 import { Events } from 'quasar'
 
-Events.trigger('event-name')
+Events.$emit('event-name')
 // All callbacks associated with 'event-name' will be triggered
 // in the order that they were registered.
 
 // Trigger with parameters (as many as you want):
-Events.trigger('event-name', 10, 'wow', {obj: true})
-// These parameters will be used when calling all registered
-// callbacks for 'event-name' --> callback(10, 'wow', {obj: true});
-
-// We can also trigger multiple events at once:
-Events.trigger('event1 event2 event3')
-Events.trigger('event1 event2 event3', 10, 'wow', {obj: true})
-
-// We can also trigger ALL registered events at once:
-Events.trigger()
-```
-
-### Checking for Subscribers
-`Boolean Events.hasSubscriber(String eventNames [, Function callback])`
-or
-`Boolean Events.hasSubscriber(Function callback)`
-
-Example:
-``` js
-import { Events } from 'quasar'
-
-// Check if 'event-name' has any callbacks associated
-let exists = Events.hasSubscriber('event-name')
-
-// Check if a callback is registered for an event:
-function myFunction() {...};
-let exists = Events.hasSubscriber('event-name', myFunction)
-
-// Check if a callback is registered for any of the specified events
-let exists = Events.hasSubscriber('event1 event2', myFunction)
-
-// Check if a callback is registered for any events
-let exists = Events.hasSubscriber(myFunction)
-
-// Check if an emitter has any events/callbacks at all:
-let exists = Events.hasSubscriber()
-```
-
-### Getting List of Events
-`Array Events.getEventsList()`
-
-Example:
-``` js
-import { Events } from 'quasar'
-
-let eventsList = Events.getList()
-```
-
-
-## Events List
-``` js
-import { Events } from 'quasar'
-
-Events.on('event-name', callback)
+Events.$emit('event-name', {
+  status: 10,
+  message: 'wow',
+  {obj: true}
+)
+// The parameters will be used when calling all registered
+// callbacks for 'event-name' --> callback({status: 10, message: 'wow',...});
 ```
 
 ### Global Events

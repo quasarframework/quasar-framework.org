@@ -8,14 +8,14 @@ Quasar Knob is another way of making the user select a Number value from a prede
 
 ``` html
 <quasar-knob
-  :model.sync="model"
+  v-model="model"
   :min="min"
   :max="max"
 ></quasar-knob>
 
 <!-- With custom placeholder -->
 <quasar-knob
-  :model.sync="model"
+  v-model="model"
   :min="min"
   :max="max"
   :placeholder="'$ ' + model"
@@ -24,7 +24,7 @@ Quasar Knob is another way of making the user select a Number value from a prede
 <!-- Disabled state -->
 <quasar-knob
   disable
-  :model.sync="model"
+  v-model="model"
   :min="min"
   :max="max"
 ></quasar-knob>
@@ -34,7 +34,6 @@ Quasar Knob is another way of making the user select a Number value from a prede
 
 | Vue Property | Description |
 | --- | --- |
-| `model` | Model for the Knob Component. |
 | `step` | Number representing difference between two values that the model can take. Default: `1`. |
 | `min` | Minimum value that the model can take. |
 | `max` | Maximum value that the model can take. |

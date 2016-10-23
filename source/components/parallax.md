@@ -29,6 +29,7 @@ While the underlying image is being loaded you can display a specific message th
 | --- | --- | --- |
 | `src` | String | Source for the image. |
 | `height` | Number | Height of Parallax in pixels. Default value is 500. |
+| `speed` | Number | Float between 0 and 1. |
 
 Example:
 ``` html

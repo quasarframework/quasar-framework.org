@@ -6,18 +6,18 @@ title: Quasar Checkbox
 
 ``` html
 <label>
-  <quasar-checkbox :model.sync="checked"></quasar-checkbox>
+  <quasar-checkbox v-model="checked"></quasar-checkbox>
   Checkbox Label
 </label>
 
 <!-- Disabled: -->
 <label>
-  <quasar-checkbox :model.sync="checked" disable></quasar-checkbox>
+  <quasar-checkbox v-model="checked" disable></quasar-checkbox>
   Checkbox Label
 </label>
 
 <!-- No label: -->
-<quasar-checkbox :model.sync="checked"></quasar-checkbox>
+<quasar-checkbox v-model="checked"></quasar-checkbox>
 ```
 
 ## Coloring
@@ -31,7 +31,6 @@ Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`
 
 | Vue Property | Type | Description |
 | --- | --- | --- |
-| `model` | Boolean | Checked or not. |
 | `disable` | Boolean | If disabled user can not change state. |
 
 ## Inside of a List Usage
@@ -40,7 +39,7 @@ Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`
 <div class="list">
   <label class="item">
     <div class="item-primary">
-      <quasar-checkbox :model.sync="checked"></quasar-checkbox>
+      <quasar-checkbox v-model="checked"></quasar-checkbox>
     </div>
     <div class="item-content">
       Notifications
@@ -49,7 +48,7 @@ Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`
 
   <label class="item two-lines">
     <div class="item-primary">
-      <quasar-checkbox :model.sync="checked"></quasar-checkbox>
+      <quasar-checkbox v-model="checked"></quasar-checkbox>
     </div>
     <div class="item-content">
       <div>Notifications</div>
@@ -59,7 +58,7 @@ Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`
 
   <label class="item three-lines">
     <div class="item-primary">
-      <quasar-checkbox :model.sync="checked"></quasar-checkbox>
+      <quasar-checkbox v-model="checked"></quasar-checkbox>
     </div>
     <div class="item-content">
       <div>Notifications</div>

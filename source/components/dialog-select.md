@@ -12,7 +12,7 @@ This component opens up a Dialog Modal. If for some reason you want it to open a
 <!-- With Radios -->
 <quasar-dialog-select
   type="radio"
-  :model.sync="select"
+  v-model="select"
   :options="selectOptions"
   ok-label="Pick"
   cancel-label="Neah"
@@ -22,7 +22,7 @@ This component opens up a Dialog Modal. If for some reason you want it to open a
 <!-- With Checkboxes -->
 <quasar-dialog-select
   type="checkbox"
-  :model.sync="select"
+  v-model="select"
   :options="selectOptions"
   ok-label="Pick"
   cancel-label="Neah"
@@ -32,7 +32,7 @@ This component opens up a Dialog Modal. If for some reason you want it to open a
 <!-- With Toggles -->
 <quasar-dialog-select
   type="toggle"
-  :model.sync="select"
+  v-model="select"
   :options="selectOptions"
   ok-label="Pick"
   cancel-label="Neah"
@@ -40,10 +40,22 @@ This component opens up a Dialog Modal. If for some reason you want it to open a
 ></quasar-dialog-select>
 ```
 
-## Vue Properties && Properties
+Options Object example:
+``` js
+selectOptions: [
+  {
+    label: 'Google',
+    value: 'goog'
+  },
+  {
+    label: 'Facebook',
+    value: 'fb'
+  },
+  ...
+]
+```
 
-Properties:
-
+## Vue Properties
 | Vue Property | Required | Description |
 | --- | --- | --- |
 | `model` | Yes | Model for the Select Component. |
@@ -56,9 +68,8 @@ Properties:
 | `placeholder` | | Placeholder to use. |
 | `disable` | | When set to `true` the model cannot be altered. |
 
-Methods:
-
-| Vue Property | Description |
+## Vue Methods
+| Vue Method | Description |
 | --- | --- |
 | `pick()` | Opens up the Dialog so user can pick options. |
 
@@ -73,7 +84,7 @@ Methods:
       <quasar-select
         class="full-width"
         type="radio"
-        :model.sync="select"
+        v-model="select"
         :options="selectOptions"
       ></quasar-select>
     </div>
@@ -88,7 +99,7 @@ Methods:
       <quasar-select
         class="full-width"
         type="checkbox"
-        :model.sync="multipleSelect"
+        v-model="multipleSelect"
         :options="selectOptions"
       ></quasar-select>
     </div>
@@ -100,7 +111,7 @@ Methods:
       <quasar-select
         class="full-width"
         type="toggle"
-        :model.sync="multipleSelect"
+        v-model="multipleSelect"
         :options="selectOptions"
       ></quasar-select>
     </div>

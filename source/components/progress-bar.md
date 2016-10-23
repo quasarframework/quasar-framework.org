@@ -6,8 +6,10 @@ A Progress bar is used to show a user how far along he/she is in a process.
 
 ## Basic usage
 ``` html
-<quasar-progress :model="progressModel"></quasar-progress>
+<quasar-progress :percentage="progressModel"></quasar-progress>
 ```
+
+Percentage must obviously be between 0 and 100. If it's outside this interval the component will parse it and make it be within interval.
 
 ## Options
 Configure how your progress bar is shown. Add one of these CSS classes:
@@ -22,16 +24,16 @@ For color, use one of the main colors. See [API &gt; CSS &gt; Color Palette](/ap
 
 Examples:
 ``` html
-<quasar-progress :model="progress" class="positive"></quasar-progress>
-<quasar-progress :model="progress" class="info"></quasar-progress>
-<quasar-progress :model="progress" class="warning"></quasar-progress>
-<quasar-progress :model="progress" class="secondary"></quasar-progress>
-<quasar-progress :model="progress" class="tertiary"></quasar-progress>
-<quasar-progress :model="progress" class="dark"></quasar-progress>
+<quasar-progress :percentage="progress" class="positive"></quasar-progress>
+<quasar-progress :percentage="progress" class="info"></quasar-progress>
+<quasar-progress :percentage="progress" class="warning"></quasar-progress>
+<quasar-progress :percentage="progress" class="secondary"></quasar-progress>
+<quasar-progress :percentage="progress" class="tertiary"></quasar-progress>
+<quasar-progress :percentage="progress" class="dark"></quasar-progress>
 
-<quasar-progress :model="progress" class="orange"></quasar-progress>
-<quasar-progress :model="progress" class="red"></quasar-progress>
-<quasar-progress :model="progress" class="light-blue"></quasar-progress>
+<quasar-progress :percentage="progress" class="orange"></quasar-progress>
+<quasar-progress :percentage="progress" class="red"></quasar-progress>
+<quasar-progress :percentage="progress" class="light-blue"></quasar-progress>
 ```
 
 Specific height:
@@ -39,6 +41,6 @@ Specific height:
 <quasar-progress
   style="height: 45px"
   class="indeterminate stripe"
-  :model="progress"
+  :percentage="progress"
 ></quasar-progress>
 ```

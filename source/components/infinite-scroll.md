@@ -23,25 +23,21 @@ When you want to progressively load new content as the user scrolls down your Pa
 > **IMPORTANT**
 > Infinite Scroll loads items in advance when less than one screen height is left to be seen. If the content you fetch has height less than the container's height on screen then Infinite Scroll will continue loading more content. So make sure you load enough content.
 
-## Vue Properties & Methods
-Properties:
-
+## Vue Properties
 | Vue Property | Required | Type | Description |
 | --- | --- | --- | --- |
 | `handler` | *Yes* | Function | Method from VM to be called to load more content |
 | `inline` | | *Empty* | Use it when you place your infinite scroll within an overflowed DOM element |
 | `offset` | | Number | Offset (pixels) to bottom of Infinite Scroll container from which the component should start loading more content in advance. Default it's one container height. |
-| `working` | | Boolean | Should Infinite Scroll be active and load more content or halt its activity. |
 
-Methods:
-
+## Vue Methods
 | Vue Method | Description |
 | --- | --- |
 | `loadMore()` | Tells Infinite Scroll to load more content, regardless of the scroll position. |
 | `reset()` | Resets calling index to 0. |
 | `stop()` | Stops working, regardless of scroll position. |
 | `resume()` | Starts working. Checks scroll position upon call and if trigger is hit, it loads more content. |
-| `scroll()` | Checks scroll position and loads more content if necessary. |
+| `poll()` | Checks scroll position and loads more content if necessary. |
 
 ## Handler
 The handler Function takes two parameters:

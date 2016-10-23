@@ -22,7 +22,6 @@ guide:
     Handling Back Button: $
     Router: $
     Theming: quasar-$
-    Touch Events: $
 api:
   Javascript:
     App Visibility: js-$
@@ -31,7 +30,8 @@ api:
     Events: js-$
     Platform Detection: js-$
     Utils: js-$
-    Vue Directives: js-$
+    Touch Directives: js-$
+    Other Directives: js-$
     Web Storage: js-$
   CSS:
     Stylus Variables: css-$
@@ -48,7 +48,6 @@ components:
     Action Sheet: $
     Dialog: $
     Loading: $
-    Modal: $
     Toast: $
   Layout:
     Overview: layout-$
@@ -85,8 +84,8 @@ components:
     Collapsible: $
     Context Menu: $
     Floating Action Buttons: $
-    Grid: $-component
     Infinite Scroll: $
+    Modal: $
     Image Gallery: $
     Pagination: $
     Parallax: $
@@ -102,3 +101,4 @@ components:
     Tooltip: $
     Tree: $
     Video Embedding: $
+    Vue Transitions: $

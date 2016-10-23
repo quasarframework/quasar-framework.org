@@ -23,7 +23,7 @@ $(function() {
     if (page.indexOf('http') === 0) {
       return page;
     }
-    return '/quasar-play/' + theme + '/index.html#!/showcase/' + page;
+    return '/quasar-play/' + theme + '/index.html#/showcase/' + page;
   }
 
   function getExternalLinks(page, alwaysVisible) {

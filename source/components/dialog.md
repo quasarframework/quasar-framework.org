@@ -10,84 +10,331 @@ From a UI perspective, you can think of Alerts as a type of “floating” modal
 ``` js
 import { Dialog } from 'quasar'
 
-(Modal Object) Dialog(configObj).show()
+(Object with `close` method) Dialog.create(configObj)
 ```
 
-You can access the Dialog's VueModel through the returned *Modal Object*. Read about its properties on [Quasar Modal](/components/modal.html#Basic-Usage) documentation page.
+A real life example:
+``` js
+import { Dialog } from 'quasar'
+
+Dialog.create({
+  title: 'Warning',
+  message: 'You are about to run out of disk space.',
+  buttons: [
+    'Cancel',
+    {
+      label: 'Empty Trash Bin',
+      handler () {
+        // empty the trash bin, yo
+      }
+    }
+  ]
+})
+```
 
 > **IMPORTANT**
 > <br>When user hits the browser/phone/tablet back button, the Dialog will get closed automatically..
 > <br>Also, when on a browser, hitting the &lt;ESCAPE&gt; key also closes the Dialog.
 
-## Components
-The following components are properties of the *objectWithComponents* parameter from above and can be used for all Dialog types available.
+## Configuring Dialog
+Creating a Dialog uses an Object as parameter to configure it (*configObj* above). Properties of this Object (all are optional):
 
 | Property Name | Type | Description |
 | --- | --- | --- |
 | `title` | String | Title of the Dialog. |
 | `message` | String | Additional message below the title. |
-| `buttons` | Array of Objects | Bottom buttons for the Dialog. Regardless of the `handler` that you specify, each button closes the Dialog. You can also specify a String instead of an Object as part of your Array for buttons that only close the Dialog. See [Confirm](#Confirm) example. |
+| `buttons` | Array of Objects | Bottom buttons for the Dialog. Regardless of the `handler` that you specify, each button closes the Dialog. You can also specify a String instead of an Object as part of your Array for buttons that only closes the Dialog. |
 | `stackButtons` | Boolean | If you want your buttons placed one below the previous one instead of on the same row. |
+| `nobuttons` | Boolean | When you don't want any buttons on your Dialog. By default, if no buttons are specified, an "OK" button is added. This property avoids this default addition. |
+| `progress` | Object | When you want to make your Dialog display a progress bar. Check [Progress Dialog](#Progress-Dialog) below. |
+| `form` | Object | Configure what types of form components to show. |
 
-The following properties set the type of the Dialog and you can only use one for each Dialog:
+## Progress Dialog
+There are two types of progress you can display: determinate (when you can quantify the progress) or indeterminate (when you don't know the moment you're done).
 
-| Property Name | Type | Description |
-| --- | --- | --- |
-| `inputs` | Object | Set as Prompt type, requesting user to fill in input textboxes. See [Prompt](#Prompt) example. |
-| `progress` | Object | See [Progress](#Progress) example. |
-| `radios` | Object | See ["Pick one option"](#Pick-One-Option-Radios) example. |
-| `checkboxes` | Object | See ["Pick multiple options" with Checkboxes](#Pick-Multiple-Options-Checkboxes) example. |
-| `toggles` | Object | See ["Pick multiple options" with Toggles](#Pick-Multiple-Options-2-Toggles) example. |
+### Determinate Mode
+``` js
+import { Dialog } from 'quasar'
 
-## Types
+// "progress" property from "configObj"
+let progress = {
+  model: 25
+}
 
-The type is determined by the object properties you instantiate a `Dialog.create()` with.
+const dialog = Dialog.create({
+  title: 'Progress',
+  message: 'Computing...',
+  progress,
+  buttons: [
+    {
+      label: 'Cancel',
+      handler () {
+        clearInterval(timeout)
+        Toast.create('Canceled on progress ' + progress.model)
+      }
+    }
+  ]
+})
 
-> **NOTE**
-> `Dialog.create()` returns a Modal (which you can configure if you wish), so don't forget to call `.show()`
+const timeout = setInterval(() => {
+  progress.model += Math.floor(Math.random() * 5) + 1
+  if (progress.model >= 42) {
+    clearInterval(timeout)
+    dialog.close()
+  }
+}, 500)
+```
 
-### Alert
+### Indeterminate Mode
+``` js
+import { Dialog } from 'quasar'
+
+const dialog = Dialog.create({
+  title: 'Progress',
+  message: 'Computing...',
+  progress: { // <<<<<<<<<<<<<<<<<
+    indeterminate: true
+  },
+  buttons: [
+    {
+      label: 'Cancel',
+      handler (data) {
+        clearTimeout(timeout)
+        Toast.create('Canceled...')
+      }
+    }
+  ]
+})
+
+const timeout = setTimeout(() => {
+  clearInterval(timeout)
+  dialog.close()
+}, 3000)
+```
+
+## Dialog with Form Components
+You can combine multiple form components (textfields, chips, radios, checkboxes, ...) together to configure your Dialog through the `form` Object property.
+
+Each property of `form` is an Object itself. The key will be used later when user closes the Dialog. For example:
+``` js
+{form: {name: {...}}}
+// will pass a "name" property later:
+handler (data) {
+  // data.name --> model of your form component
+}
+```
+
+Each Form Component has a certain syntax that you must follow as described below. At the end you'll learn how to separate these into sections by using a "heading".
+
+> Default value for following Form Components is taken from the `model` property.
+
+### Textfields
+You can configure input textboxes, textareas, numeric input textboxes and chips:
+
+``` js
+import { Dialog } from 'quasar'
+
+Dialog.create({
+  title: 'Prompt',
+  form: {
+    name: {
+      type: 'textbox',
+      label: 'Textbox',
+      model: ''
+    },
+    age: {
+      type: 'numeric',
+      label: 'Numeric',
+      model: 10,
+      min: 1,
+      max: 100
+    },
+    tags: {
+      type: 'chips',
+      label: 'Chips',
+      model: ['Joe', 'John']
+    },
+    comments: {
+      type: 'textarea',
+      label: 'Textarea',
+      model: ''
+    }
+  },
+  buttons: [
+    'Cancel',
+    {
+      label: 'Ok',
+      handler (data) {
+        Toast.create('Returned ' + JSON.stringify(data))
+        // data.name is 'Quasar'
+        // data.age is 1
+        // data.tags is ['Joe', 'John'],
+        // data.comments is 'Some comments...'
+      }
+    }
+  ]
+})
+```
+
+### Radios
+``` js
+import { Dialog } from 'quasar'
+
+Dialog.create({
+  title: 'Radios',
+  message: 'Message can be used for all types of Dialogs.',
+  form: {
+    option: {
+      type: 'radio',
+      model: 'opt1',
+      items: [
+        {label: 'Option 1', value: 'opt1'},
+        {label: 'Option 2', value: 'opt2'},
+        {label: 'Option 3', value: 'opt3'}
+      ]
+    }
+  },
+  buttons: [
+    'Cancel',
+    {
+      label: 'Ok',
+      handler (data) {
+        Toast.create('Returned ' + JSON.stringify(data))
+        // data.option is 'opt1'
+      }
+    }
+  ]
+})
+```
+
+### Checkboxes & Toggles
+``` js
+import { Dialog } from 'quasar'
+
+Dialog.create({
+  title: 'Checkbox & Toggle',
+  message: 'Message can be used for all types of Dialogs.',
+  form: {
+    group1: {
+      type: 'checkbox',
+      items: [
+        {label: 'Option 1', value: 'opt1', model: true},
+        {label: 'Option 2', value: 'opt2', model: false},
+        {label: 'Option 3', value: 'opt3', model: false}
+      ]
+    },
+    group2: {
+      type: 'toggle',
+      items: [
+        {label: 'Option 1', value: 'opt1', model: true},
+        {label: 'Option 2', value: 'opt2', model: false},
+        {label: 'Option 3', value: 'opt3', model: true}
+      ]
+    }
+  },
+  buttons: [
+    'Cancel',
+    {
+      label: 'Ok',
+      handler (data) {
+        Toast.create('Returned ' + JSON.stringify(data))
+        // data.group1 is ['opt1']
+        // data.group2 is ['opt1', 'opt3']
+      }
+    }
+  ]
+})
+```
+
+### Rating
+``` js
+import { Dialog } from 'quasar'
+
+Dialog.create({
+  title: 'Rating',
+  form: {
+    rating: {
+      type: 'rating',
+      label: 'How many stars?',
+      model: 0,
+      max: 5
+    },
+    rating2: {
+      type: 'rating',
+      label: 'How many pencils?',
+      model: 3,
+      max: 6,
+      icon: 'create'
+    }
+  },
+  buttons: [
+    'Cancel',
+    {
+      label: 'Ok',
+      handler (data) {
+        Toast.create('Returned ' + JSON.stringify(data))
+        // data.rating is 0
+        // data.rating2 is 3
+      }
+    }
+  ]
+})
+```
+
+### Headings
+Since you can combine components however you want, sometimes you may need to separate into sections so Quasar comes to our help with a "heading" type:
+``` js
+import { Dialog } from 'quasar'
+
+Dialog.create({
+  ...,
+  form: {
+    header1: {
+      type: 'heading',
+      label: 'Checkboxes'
+    },
+    group1: {
+      type: 'checkbox',
+      items: [...]
+    },
+    ...,
+    header2: {
+      type: 'heading',
+      label: 'Toggles'
+    },
+    group2: {
+      type: 'toggle',
+      items: [...]
+    },
+    ...
+  },
+  buttons: [
+    'Cancel',
+    {
+      label: 'Ok',
+      handler (data) {
+        Toast.create('Returned ' + JSON.stringify(data))
+      }
+    }
+  ]
+})
+```
+
+See demo with "Multiple Selections".
+
+## More Examples
+
+### Alert Example
 ``` js
 import { Dialog } from 'quasar'
 
 Dialog.create({
   title: 'Alert',
   message: 'Modern HTML5 Single Page Application front-end framework on steroids.'
-}).show()
+})
 ```
 
-### Prompt
-``` js
-import { Dialog } from 'quasar'
-
-Dialog.create({
-  title: 'Prompt',
-  message: 'Modern HTML5 Single Page Application front-end framework on steroids.',
-  inputs: [ // <<<<--------
-    {
-      name: 'input1',
-      label: 'Placeholder 1'
-    },
-    {
-      name: 'input2',
-      label: 'Placeholder 2'
-    }
-  ],
-  buttons: [
-    'Cancel',
-    {
-      label: 'Ok',
-      handler (data) {
-        console.log('Returned ' + JSON.stringify(data))
-      }
-    }
-  ]
-}).show()
-```
-
-Also set `stackButtons` to `true` if you want your buttons one below the previous one. Useful when the label is verbose.
-
-### Confirm
+### Confirm Example
 ``` js
 import { Dialog } from 'quasar'
 
@@ -108,179 +355,7 @@ Dialog.create({
       }
     }
   ]
-}).show()
-```
-
-### Progress
-There are two types of progress you can display: determinate (when you can quantify the progress) or indeterminate (when you don't know the moment you're done).
-
-``` js
-// determinate mode
-import { Dialog } from 'quasar'
-
-var progress = {
-  model: 25
-}
-
-var dialog = Dialog.create({
-  title: 'Progress',
-  message: 'Computing...',
-  progress: progress, // <<<----
-  buttons: [
-    {
-      label: 'Cancel',
-      handler (data) {
-        clearInterval(timeout)
-        console.log('Canceled on progress ' + data)
-      }
-    }
-  ]
-}).show()
-
-var timeout = setInterval(() => {
-  progress.model++
-  if (progress.model === 50) {
-    clearInterval(timeout)
-    dialog.close()
-  }
-}, 1000)
-```
-
-``` js
-// indeterminate mode
-import { Dialog } from 'quasar'
-
-var dialog = Dialog.create({
-  title: 'Progress',
-  message: 'Computing...',
-  progress: {  // <<<---------
-    indeterminate: true
-  },
-  buttons: [
-    {
-      label: 'Cancel',
-      handler (data) {
-        clearTimeout(timeout)
-        console.log('Canceled...')
-      }
-    }
-  ]
-}).show()
-
-var timeout = setTimeout(() => {
-  clearInterval(timeout)
-  dialog.close()
-}, 3000)
-```
-
-### Pick One Option (Radios)
-``` js
-import { Dialog } from 'quasar'
-
-Dialog.create({
-  title: 'Radios',
-  message: 'Message can be used for all types of Dialogs.',
-  radios: [ // <<<----
-    {
-      label: 'Option 1',
-      value: 'opt1'
-    },
-    {
-      label: 'Option 2',
-      value: 'opt2',
-      selected: true
-    },
-    {
-      label: 'Option 3',
-      value: 'opt3'
-    },
-    {
-      label: 'Option 4',
-      value: 'opt4'
-    },
-    {
-      label: 'Option 5',
-      value: 'opt5'
-    }
-  ],
-  buttons: [
-    'Cancel',
-    {
-      label: 'Ok',
-      handler (data) {
-        console.log('Returned ' + JSON.stringify(data))
-      }
-    }
-  ]
-}).show()
-```
-
-### Pick Multiple Options (Checkboxes)
-``` js
-import { Dialog } from 'quasar'
-
-Dialog.create({
-  title: 'Checkboxes',
-  checkboxes: [ // <<<----
-    {
-      label: 'Option 1',
-      value: 'opt1',
-      checked: true
-    },
-    {
-      label: 'Option 2',
-      value: 'opt2'
-    },
-    ...
-  ],
-  buttons: [
-    {
-      label: 'Cancel',
-      handler: $.noop
-    },
-    {
-      label: 'Ok',
-      handler (data) {
-        console.log('Returned ' + JSON.stringify(data))
-      }
-    }
-  ]
-}).show()
-```
-
-### Pick Multiple Options #2 (Toggles)
-Same as previous but using Toggles instead of Checkboxes.
-
-``` js
-import { Dialog } from 'quasar'
-
-Dialog.create({
-  title: 'Toggles',
-  toggles: [ // <<<----
-    {
-      label: 'Option 1',
-      value: 'opt1',
-      checked: true
-    },
-    {
-      label: 'Option 2',
-      value: 'opt2'
-    },
-    ...
-  ],
-  buttons: [
-    {
-      label: 'Cancel',
-      handler () {}
-    },
-    {
-      label: 'Ok',
-      handler (data) {
-        console.log('Returned ' + JSON.stringify(data))
-      }
-    }
-  ]
-}).show()
+})
 ```
 
 ### Stacked Buttons
@@ -293,5 +368,62 @@ Dialog.create({
   // ...
   stackButtons: true,
   buttons: [......]
-}).show()
+})
+```
+
+### Complex Dialog with Form Components
+``` js
+import { Dialog } from 'quasar'
+
+Dialog.create({
+  title: 'Prompt',
+  message: 'Modern HTML5 Single Page Application front-end framework on steroids.',
+  form: {
+    name: {
+      type: 'textbox',
+      label: 'Textbox',
+      model: ''
+    },
+    age: {
+      type: 'numeric',
+      label: 'Numeric',
+      model: 10,
+      min: 5,
+      max: 90
+    },
+    rating: {
+      type: 'rating',
+      label: 'How many stars?',
+      model: 0,
+      max: 5
+    },
+    tags: {
+      type: 'chips',
+      label: 'Chips',
+      model: ['Joe', 'John']
+    },
+    group1: {
+      type: 'checkbox',
+      items: [
+        {label: 'Option 1', value: 'opt1', model: true},
+        {label: 'Option 2', value: 'opt2', model: false},
+        {label: 'Option 3', value: 'opt3', model: false}
+      ]
+    },
+    comments: {
+      type: 'textarea',
+      label: 'Textarea',
+      model: ''
+    }
+  },
+  buttons: [
+    'Cancel',
+    {
+      label: 'Ok',
+      handler (data) {
+        Toast.create('Returned ' + JSON.stringify(data))
+      }
+    }
+  ]
+})
 ```

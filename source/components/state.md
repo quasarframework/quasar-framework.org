@@ -8,7 +8,7 @@ Quasar State Component helps you when you have two states (called "default" and 
 
 ``` html
 <!-- Template for VueModel below -->
-<quasar-state :model.sync="state">
+<quasar-state :active="state">
   <div slot="active">
     <spinner :size="51"></spinner> Active State
   </div>

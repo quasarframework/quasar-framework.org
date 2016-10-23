@@ -10,21 +10,21 @@ A Quasar Select box can be of two types: single selection (using Radios) or mult
 <!-- Single Selection using Radios -->
 <quasar-select
   type="radio"
-  :model.sync="select"
+  v-model="select"
   :options="selectOptions"
 ></quasar-select>
 
 <!-- Multiple Selection using Checkboxes-->
 <quasar-select
   type="checkbox"
-  :model.sync="select"
+  v-model="select"
   :options="selectOptions"
 ></quasar-select>
 
 <!-- Multiple Selection using Toggles-->
 <quasar-select
   type="toggle"
-  :model.sync="select"
+  v-model="select"
   :options="selectOptions"
 ></quasar-select>
 
@@ -32,24 +32,35 @@ A Quasar Select box can be of two types: single selection (using Radios) or mult
 <quasar-select
   disable
   type="checkbox"
-  :model.sync="select"
+  v-model="select"
   :options="selectOptions"
 ></quasar-select>
 ```
 
-## Vue Properties & Methods
+Options Object example:
+``` js
+selectOptions: [
+  {
+    label: 'Google',
+    value: 'goog'
+  },
+  {
+    label: 'Facebook',
+    value: 'fb'
+  },
+  ...
+]
+```
 
-Properties:
-
+## Vue Properties
 | Vue Property | Required | Description |
 | --- | --- | --- |
-| `model` | Yes | Model for the Select Component. |
 | `options` | Yes | Array of options (Object with `label` and `value` properties). |
 | `type` | Yes | One of `radio`, `checkbox` or `toggle` strings. |
 | `placeholder` | | Placeholder to use. |
 | `disable` | | When set to `true` the model cannot be altered. |
 
-Methods:
+## Vue Methods
 
 | Vue Method | Description |
 | --- | --- |
@@ -68,7 +79,7 @@ Methods:
       <quasar-select
         class="full-width"
         type="radio"
-        :model.sync="select"
+        v-model="select"
         :options="selectOptions"
       ></quasar-select>
     </div>
@@ -83,7 +94,7 @@ Methods:
       <quasar-select
         class="full-width"
         type="checkbox"
-        :model.sync="multipleSelect"
+        v-model="multipleSelect"
         :options="selectOptions"
       ></quasar-select>
     </div>
@@ -95,7 +106,7 @@ Methods:
       <quasar-select
         class="full-width"
         type="toggle"
-        :model.sync="multipleSelect"
+        v-model="multipleSelect"
         :options="selectOptions"
       ></quasar-select>
     </div>

@@ -6,7 +6,7 @@ title: Scroll Fire
 For ease of use, its implementation is through a Vue Directive called `v-scroll-fire`.
 
 > **NOTE**
-> There is also a `v-scroll` directive which fires whenever user scrolls the page, available to read [here](/api/js-vue-directives.html#Directive-“v-scroll”).
+> There is also a `v-scroll` directive which fires whenever user scrolls the page, available to read [here](/api/js-other-directives.html#Directive-“v-scroll”).
 
 ``` html
 <!-- Template for VueModel below -->

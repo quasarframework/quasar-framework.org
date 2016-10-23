@@ -21,9 +21,13 @@ Loading.show({
   delay: 300 // milliseconds
 })
 
-// with a custom spinner
+// customizable
 Loading.show({
-  spinner: 'dots'
+  message: 'Some message',
+  messageColor: '#00ff00',
+  spinner: 'dots',
+  spinnerSize: 250, // in pixels
+  spinnerColor: '#f034a3'
 })
 ```
 

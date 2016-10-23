@@ -43,6 +43,19 @@ By default, PostCSS is configured to use Autoprefixer.
 
 Also, see [vue-loader's related documentation](http://vue-loader.vuejs.org/en/features/postcss.html) for more details.
 
+## A note on Coffeescript
+If you are using Coffeescript then you need to disable ESLint. Open up `/build/webpack.base.conf.js` and remove the following section:
+``` js
+preLoaders: [
+  {
+    test: /\.(vue|js)$/,
+    loader: 'eslint',
+    include: projectRoot,
+    exclude: /node_modules/
+  }
+]
+```
+
 ## Standalone CSS Files
 
 To ensure consistent extraction and processing it is recommended that you import global, standalone style files from your root component, for example:

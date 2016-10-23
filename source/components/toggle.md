@@ -7,26 +7,26 @@ title: Toggle
 ``` html
 <label>
   <quasar-toggle
-    :model.sync="checked"
+    v-model="checked"
   ></quasar-toggle>
   Toggle Label
 </label>
 
 <!-- With no label -->
 <quasar-toggle
-  :model.sync="checked"
+  v-model="checked"
 ></quasar-toggle>
 
 <!-- With icon -->
 <quasar-toggle
   icon="alarm"
-  :model.sync="checked"
+  v-model="checked"
 ></quasar-toggle>
 
 <!-- Disabled state -->
 <quasar-toggle
   disable
-  :model.sync="checked"
+  v-model="checked"
 ></quasar-toggle>
 ```
 
@@ -36,7 +36,7 @@ Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`
 ``` html
 <quasar-toggle
   class="orange"
-  :model.sync="checked"
+  v-model="checked"
 ></quasar-toggle>
 ```
 
@@ -44,7 +44,6 @@ Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`
 
 | Vue Property | Type | Description |
 | --- | --- | --- |
-| `model` | Boolean | Checked or not. |
 | `icon` | String | Optional icon to use. |
 | `disable` | Boolean | If disabled user can not change state. |
 
@@ -57,7 +56,7 @@ Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`
       Events and reminders
     </div>
     <div class="item-secondary">
-      <quasar-toggle :model.sync="checked"></quasar-toggle>
+      <quasar-toggle v-model="checked"></quasar-toggle>
     </div>
   </label>
 
@@ -67,7 +66,7 @@ Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`
       <div>Lorem ipsum...</div>
     </div>
     <div class="item-secondary">
-      <quasar-toggle :model.sync="checked" class="purple"></quasar-toggle>
+      <quasar-toggle v-model="checked" class="purple"></quasar-toggle>
     </div>
   </label>
 
@@ -77,7 +76,7 @@ Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`
       <div>Lorem ipsum...</div>
     </div>
     <div class="item-secondary">
-      <quasar-toggle :model.sync="checked" class="red"></quasar-toggle>
+      <quasar-toggle v-model="checked" class="red"></quasar-toggle>
     </div>
   </label>
 </div>

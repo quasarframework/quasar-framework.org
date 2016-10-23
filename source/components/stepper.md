@@ -9,7 +9,7 @@ The navigation is handled by Quasar. User is able to go forward, back and to fin
 ## Basic Usage
 
 ``` html
-<quasar-stepper @finish="finish()" v-ref:stepper>
+<quasar-stepper @finish="finish()" ref="stepper">
   <quasar-step title="Select campaign settings">
     Content, DOM Elements, Components, ...
   </quasar-step>
@@ -26,39 +26,33 @@ The navigation is handled by Quasar. User is able to go forward, back and to fin
 </quasar-stepper>
 ```
 
-## Container Vue Methods & Events
+## Stepper Container Component
+> Following Vue methods and events apply only to `<quasar-stepper>` container component.
 
-*Applies to `<quasar-stepper>` only:*
-
-Methods:
-
+### Vue Methods
 | Vue Method | Description |
 | --- | --- |
 | `reset()` | Resets progress |
-| `redraw()` | When adding/removing steps in DOM, this method is automatically called |
 | `nextStep()` | Stepper goes to next step. |
 | `previousStep()` | Stepper goes to previous step. |
 | `finish()` | Stepper goes to "complete" state. |
 
-Events:
+### Vue Events
+| Vue Event | Description |
+| --- | --- |
+| `@finish` | Stepper has finished all steps. |
 
-| Vue Event | Type | Description |
-| --- | --- | --- |
-| `finish` | Function | Function to call when user completes all steps. |
 
 ## Step Vue Properties & Methods
+> Following Vue properties and methods apply only to `<quasar-step>` child component.
 
-*Applies to `<quasar-step>`:*
-
-Properties:
-
+### Vue Properties
 | Vue Property | Type | Description |
 | --- | --- | --- |
 | `title` | String | Step title |
 | `ready` | Boolean | Can user continue with next step? Default is `true`. |
 
-Methods:
-
+### Vue Methods
 | Vue Method | Description |
 | --- | --- |
 | `nextStep()` | Stepper goes to next step. |

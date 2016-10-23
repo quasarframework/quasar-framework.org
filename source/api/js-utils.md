@@ -70,6 +70,7 @@ Generate unique identifiers:
 import { Utils } from 'quasar'
 
 let uid = Utils.uid()
+// Example: 501e7ae1-7e6f-b923-3e84-4e946bff31a8
 ```
 
 ## DOM methods
@@ -102,19 +103,14 @@ Utils.dom.css({
 })
 
 // Get Window height and width
-console.log(
-  Utils.dom.viewport().height,
-  Utils.dom.viewport().width
-)
+let {height, width} = Utils.dom.viewport()
+console.log(height, width)
 // 800 600
 
 // Execute a Function when DOM is ready:
 Utils.dom.ready(function () {
   // ....
 })
-
-// Determine if DomNode (target) is child of another DomNode (parent)
-(Boolean) Utils.dom.childOf(target, parent)
 
 // Get parent DomNode that handles page scrolling
 // Usually this is element with classname ".layout-view" or "window"

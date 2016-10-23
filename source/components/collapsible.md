@@ -31,37 +31,35 @@ You can add `item-delimiter` class on the list `<div>` element if you want separ
 Collapsible items can be opened by default:
 
 ``` html
-<quasar-collapsible active icon="explore" label="First">
+<quasar-collapsible opened icon="explore" label="First">
   <div>
     Content
   </div>
 </quasar-collapsible>
 
 <!-- or -->
-<quasar-collapsible :active="boolean_variable" icon="explore" label="First">
+<quasar-collapsible :opened="boolean_variable" icon="explore" label="First">
   <div>
     Content
   </div>
 </quasar-collapsible>
 ```
 
-## Properties & Methods
-
-Properties:
-
+## Vue Properties
 | Vue Property | Type | Description |
 | --- | --- | --- |
-| `active` | Boolean | Control if Collapsible is opened or not. |
+| `opened` | Boolean | Control if Collapsible is opened or not. |
 | `icon` | String | Icon to use. Either use an icon, image or avatar. |
 | `img` | String | URL to image to use. Either use an icon, image or avatar. |
 | `avatar` | String | URL to avatar to use. Either use an icon, image or avatar. |
 | `label` | String | Label besides icon, image or avatar. |
 
-Methods:
-
+## Vue Methods
 | Vue Methods | Description |
 | --- | --- |
-| `toggle` | Toggle open/close state. |
+| `toggle()` | Toggle open/close state. |
+| `open()` | Open it. |
+| `close()` | Close it. |
 
 ## Ubiquity
 Be creative. In the example below we're using a Card as Collapsible content.

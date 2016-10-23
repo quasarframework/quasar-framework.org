@@ -6,17 +6,17 @@ Quasar Popovers should be used when you want a menu/popup to be displayed when u
 
 ## Basic Usage
 In the example below we use a Button (as a target) and when clicking/tapping on it Quasar will display a List.
-You can replace the Button and the List with any DOM elements or Quasar Web Components you like.
+You can replace the Button and the List with any DOM elements or components you like.
 ``` html
-<quasar-popover v-ref:popover>
-  <!--
-    slot="target" for DOM element that when clicked
-    it will open the dropdown; in this case a button
-  -->
-  <button slot="target" class="primary">
-    <i>mail</i>
-  </button>
+<!--
+Anchor DOM element that when clicked
+it will open the dropdown; in this case a button
+-->
+<button ref="target" class="primary">
+  <i>mail</i>
+</button>
 
+<quasar-popover ref="popover" anchor-ref="target">
   <!--
     The DOM element(s) that make up the Dropdown menu,
     in this case a list
@@ -35,18 +35,17 @@ You can replace the Button and the List with any DOM elements or Quasar Web Comp
 > **IMPORTANT**
 > When on a browser, hitting the &lt;ESCAPE&gt; key also closes the Popover.
 
-## Vue Properties & Methods
-
-Properties:
-
+## Vue Properties
 | Vue Property | Type | Description |
 | --- | --- | --- |
-| `touchPosition` | Boolean | Open Popover from the position where user clicked/tapped. |
+| `anchor-ref` | String | (**Required**) String defining the name of the Vue reference on the element which should trigger the Popover. |
+| `anchor-origin` | Object | Object of form `{vertical: 'bottom', horizontal: 'left'}` |
+| `target-origin` | Object | Object of form `{vertical: 'top', horizontal: 'left'}` |
+| `max-height` | String | Optional maximum height of Popover content. Example: `500px` |
+| `touch-position` | Boolean | Open Popover from the position where user clicked/tapped on anchor. |
 | `disable` | Boolean | When set to `true`, Popover won't be triggered. |
-| `position` | String | Force Popover to appear on `top`, `left`, `right` or `bottom`. Examples: 'top', 'top left', 'bottom right'. |
-| `cover` | Boolean | Force Popover width to at least cover the Popover target when opened. |
 
-Methods:
+## Vue Methods
 
 | Vue Method | Description |
 | --- | --- |
@@ -58,9 +57,11 @@ Methods:
 Use a Vue reference on `<quasar-popover>` to call `close()` method if you want an element to be able to close the Popover, like on the example above.
 
 ## Handling Positioning
-The position of the Popover popup is calculated so that it will be displayed on the available screen real estate, switching to right-side and/or top-side when necessary.
+Position of the Popover can be customized. It keeps account of the `anchor-origin` and `target-origin` optional Vue properties. See demo and play with them.
 
-By default, the Popover position will be placed on top of your target, but there is also the Boolean `touch-position` DOM attribute that you can use if you want the Popover to popup right from the position where user clicked/tapped on screen:
+The final position of the Popover popup is calculated so that it will be displayed on the available screen real estate, switching to right-side and/or top-side when necessary.
+
+If you would like the Popover to appear from the touch/click point triggering the Popover open, then use the Boolean `touch-position` Vue property:
 ``` html
 <quasar-popover touch-position>
   ...

@@ -11,19 +11,21 @@ Also check its "sibling", the simple [Range](/components/range.html) component.
 Notice we are using two models, one for the beginning of the interval and one for the end of it.
 ``` html
 <quasar-double-range
-  :model-min.sync="modelMin"
-  :model-max.sync="modelMax"
+  v-model="model"
   :min="1"
   :max="7"
 ></quasar-double-range>
+
+<!--
+  "model" is an Object of this form:
+  {min: 0, max: 100}
+-->
 ```
 
 ## Vue Properties
 
 | Vue Property | Type | Description |
 | --- | --- | --- |
-| `modelMin` | Number | Model for the beginning of interval |
-| `modelMax` | Number | Model for the end of interval |
 | `min` | Number | Minimum value for beginning of interval |
 | `max` | Number | Maximum value for end of interval |
 | `label` | Boolean | Popup a label when user clicks/taps on the Range |
@@ -38,14 +40,18 @@ Notice we are using two models, one for the beginning of the interval and one fo
 Example with `step`, `label` and `snap`:
 ``` html
 <quasar-double-range
-  :model-min.sync="modelMin"
-  :model-max.sync="modelMax"
+  v-model="model"
   :min="min"
   :max="max"
   :step="step"
   label
   snap
 ></quasar-double-range>
+
+<!--
+  "model" is an Object of this form:
+  {min: 0, max: 100}
+-->
 ```
 
 ## Coloring
@@ -54,8 +60,7 @@ Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`
 ``` html
 <quasar-double-range
   class="orange"
-  :model-min.sync="modelMin"
-  :model-max.sync="modelMax"
+  v-model="model"
 ></quasar-double-range>
 ```
 
@@ -67,8 +72,7 @@ Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`
     <i class="item-primary">local_atm</i>
     <div class="item-content">
       <quasar-double-range
-        :model-min.sync="modelMin"
-        :model-max.sync="modelMax"
+        v-model="model"
         :min="0" :max="50" label
       ></quasar-double-range>
     </div>
