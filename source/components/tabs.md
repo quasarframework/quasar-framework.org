@@ -70,6 +70,7 @@ Use `<quasar-tabs>` component to wrap your Tabs.
 ### Vue Properties
 | Vue Property | Type | Description |
 | --- | --- | --- |
+| `name` | String | Configure a name for tab. This name is used to find $refs as target too. |
 | `label` | String | Label to use. |
 | `icon` | String | Icon to use. |
 | `disable` | Boolean | If disabled user won't be able to select it. |
@@ -83,9 +84,16 @@ If using routes for each Tab:
 | Vue Property | Type | Description |
 | --- | --- | --- |
 | `route` | String | Configure Vue Route "to" property. |
+| `label` | String | Label to display. |
+| `icon` | String | Icon to display. |
 | `replace` | Boolean | Configure Vue Router to replace current route rather than push a new one. |
 | `exact` | Boolean | Exact match of the route, just as described for `<router-link>`. |
 | `append` | Boolean | Append route to current one, just as described for `<router-link>`. |
+| `disable` | Boolean | If disabled user won't be able to select it. |
+| `hidden` | Boolean | Hide it.. or not. |
+| `hide` | String | Possible values: `icon` or `label`. On narrow screens one of the two will be hidden. |
+
+> Either use a `route` or a `name`, but not both.
 
 ### Vue Methods
 | Vue Method | Description |
