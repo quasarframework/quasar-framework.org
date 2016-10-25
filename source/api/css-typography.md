@@ -11,7 +11,7 @@ The default font embedded in Quasar App *when built with Material Design Theme* 
 </div>
 
 > **NOTE**
-> You can embed it for iOS theme too by copying font related code from `themes/app.mat.styl` to `themes/app.ios.styl` and requiring the `.styl` version of CSS in `src/app.js`
+> You can embed it for iOS theme too by copying font related code from `themes/app.mat.styl` to `themes/app.ios.styl` and requiring the `.styl` version of CSS in `src/App.vue`
 
 ### Text Types
 You can display text in a variety of ways.

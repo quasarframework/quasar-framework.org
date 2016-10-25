@@ -17,8 +17,9 @@ title: App Structure
 │   │   ├── app.ios.styl
 │   │   ├── app.mat.styl
 │   │   └── app.variables.styl
-│   ├── app.js                    # app entry file
+│   ├── App.vue                   # root Vue component of your App
 │   ├── index.html                # boilerplate for webpack to inject deps
+│   ├── main.js                   # app entry file
 │   └── router.js                 # app router logic
 ├── templates/                    # templates for quickly generating components
 │   ├── component.vue             # generic .vue component file

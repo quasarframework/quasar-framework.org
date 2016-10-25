@@ -22,21 +22,15 @@ Please note the following:
   $ PORT=3000 quasar dev ios
   ```
 
-2. By default your App will include the compiled Quasar themes (`.css` files instead of `.styl` from `node_modules/quasar-framework`). The reason is the build speed. This is how your `src/app.js` file looks:
+2. By default your App will include the compiled Quasar themes (`.css` files instead of `.styl` from `node_modules/quasar-framework`). The reason is the build speed. This is a section from `src/App.vue` related to importing the theme:
   ``` js
-  /*
-    If overriding Quasar style, leave uncommented
-    just the first line.
-
-    If NOT overriding Quasar style, leave uncommented
-    just the second line. This option make compiling faster.
-
-    WARNING!
-    Leave just one of the two require() calls below
-    uncommented.
-   */
+  // === DEFAULT / CUSTOM STYLE ===
+  // WARNING! always comment out ONE of the two require() calls below.
+  // 1. use next line to activate CUSTOM STYLE (./src/themes)
   // require('./themes/app.' + __THEME + '.styl')
+  // 2. or, use next line to activate DEFAULT QUASAR STYLE
   require('quasar/dist/quasar.' + __THEME + '.css')
+  // ==============================
   ```
 
   > If you want to override Quasar variables, comment the second line containing `.css` and uncomment the first one ending with `.styl`. The build speed will be slower. **DO NOT** leave both lines uncommented.

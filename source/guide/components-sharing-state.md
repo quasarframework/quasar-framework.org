@@ -58,7 +58,7 @@ The Flux architecture is commonly used in React applications. Turns out the core
 
 Vuex (see documentation [here](http://vuex.vuejs.org/) and Github page [here](https://github.com/vuejs/vuex)) is an application architecture for centralized state management in Vue.js applications. It is inspired by Flux and Redux, but with simplified concepts and an implementation that is designed specifically to take advantage of Vue.js' reactivity system.
 
-> Vuex is not supplied by default with Quasar Framework. NPM install it and import it from `src/app.js` in order to use it.
+> Vuex is not supplied by default with Quasar Framework. NPM install it and import it from `src/main.js` in order to use it.
 
 ### Why using Vuex
 
