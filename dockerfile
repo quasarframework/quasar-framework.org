@@ -1,11 +1,6 @@
-FROM  mhart/alpine-node:latest
+FROM  quasarframework/quasar-org:latest
 
 MAINTAINER Scott Molinari <scott.molinari@adduco.de>
-
-ENV PATH /usr/lib/node_modules:$PATH
-
-RUN apk add --no-cache bash &&\
-    npm install hexo-cli -g
 
 WORKDIR /opt/app
 
