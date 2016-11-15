@@ -3,6 +3,7 @@ guide:
     Getting Started: index
     Quasar CLI: $
     Quasar Play App: $
+    Quasar Development with Docker: $
     Contributing: $
   Boilerplate:
     Overview: app-boilerplate
