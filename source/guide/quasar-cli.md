@@ -127,6 +127,8 @@ $ quasar test -u
 $ quasar test -e
 ```
 
+Note: You may have to [install Java](https://www.java.com/download/) on your hosting OS to run the end to end tests, because of a Selenium dependancy.
+
 ## Serve Static-Content Folder
 You are able to create an ad-hoc web server to serve static-content web files from a folder. Browser sessions are automatically refreshed when content changes. User click/scroll can be synchronized.
 
