@@ -73,7 +73,7 @@ If for some reason you need to control the working state of Infinite Scroll comp
 ``` html
 <quasar-infinite-scroll
   :handler="loadMore"
-  v-ref:infinite-scroll
+  ref="infinite-scroll"
 >
   ...
   <button @click="$refs.infiniteScroll.stop()">
