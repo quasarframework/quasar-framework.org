@@ -7,20 +7,20 @@ Quasar Rating is a Web Component which allows users to rate items, usually knows
 ## Basic Usage
 
 ``` html
-<quasar-rating v-model="ratingModel" :max-grade="3"></quasar-rating>
+<quasar-rating v-model="ratingModel" :max="3"></quasar-rating>
 
 <!-- Disabled State -->
 <quasar-rating
   disable
   v-model="ratingModel"
-  :max-grade="3"
+  :max="3"
 ></quasar-rating>
 ```
 
 ## Vue Properties
 | Vue Property | Type | Description |
 | --- | --- | --- |
-| `max-grade` | Number | Number of icons to display. |
+| `max` | Number | Number of icons to display. |
 | `icon` | String | Icon to use as grade. Default value: `grade`. |
 | `disable` | Boolean | When set to `true` user can not change model value. |
 
@@ -36,6 +36,6 @@ Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`
 <quasar-rating
   class="orange"
   v-model="ratingModel"
-  :max-grade="5"
+  :max="5"
 ></quasar-rating>
 ```
