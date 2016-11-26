@@ -1,29 +1,48 @@
-title: Tooltips
+title: Tooltip
 ---
-Quasar Tooltips offer additional information to the user that otherwise would be hidden. The implementation is through a Quasar directive called `v-tooltip`.
+Quasar Tooltips should be used when you want to offer the user more information about a certain item in your App. When mouse hovering (or tapping on mobile platforms) the target element the Tooltip appears.
 
 <input type="hidden" data-fullpage-demo="web-components/tooltip">
 
 ## Basic Usage
-
+In the example below we use a Button (as a target) and when hovering it Quasar will display a List.
+You can replace the Button and the List with any DOM elements or components you like.
 ``` html
-<!-- Some examples -->
-<div v-tooltip="'Quasar Rulz!'">...</div>
+<button ref="target" class="primary">
+  <i>mail</i>
 
-<div v-tooltip.inline="'Tooltip'">
-  <button class="indigo">Hover</button>
-</div>
-<div v-tooltip.inline="'Tooltip for the user'">
-  <button class="red">Over</button>
-</div>
-<div v-tooltip.inline="'Lorem Ipsum... Some long tooltip...'">
-  <button class="purple">These</button>
-</div>
-<div v-tooltip.inline="'Lorem Ipsum...'">
-  <button class="amber">Buttons</button>
-</div>
+  <q-tooltip>
+    <div class="list item-delimiter highlight">
+      <div
+        class="item item-link"
+        @click="doSomething(), $refs.popover.close()"
+      >
+        ...
+      </div>
+    </div>
+  </q-tooltip>
+</button>
 ```
 
-Tooltips use `:before` and `:after` CSS pseudo-elements. When used on a DOM element that already has these pseudo-elements, wrap it yourself and apply `v-tooltip` on the wrapper element.
+The idea is to place `<q-tooltip>` inside your DOM element / component that you want to be the trigger. Don't worry about Tooltip content inheriting CSS from the container as the Tooltip will be injected as a direct child of `<body>`.
 
-If you need that wrapped element to be inline, then add the `inline` directive modifier.
+## Vue Properties
+| Vue Property | Type | Description |
+| --- | --- | --- |
+| `anchor` | Object | String of form `bottom left` (vertical horizontal) |
+| `self` | Object | String of form `top left` (vertical horizontal) |
+| `max-height` | String | Optional maximum height of Popover content. Example: `500px` |
+| `disable` | Boolean | When set to `true`, Popover won't be triggered. |
+
+## Vue Methods
+
+| Vue Method | Description |
+| --- | --- |
+| `toggle()` | Toggle open/close state. |
+| `open()` | Open Popover. |
+| `close()` | Close Popover. |
+
+## Handling Positioning
+Position of the Tooltip can be customized. It keeps account of the `anchor` and `self` optional Vue properties. See demo and play with them.
+
+The final position of the Tooltip popup is calculated so that it will be displayed on the available screen real estate, switching to right-side and/or top-side when necessary.

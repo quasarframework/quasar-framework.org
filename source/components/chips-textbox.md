@@ -5,22 +5,29 @@ title: Quasar Chips Textbox
 ## Basic Usage
 
 ``` html
-<quasar-chips v-model="model"></quasar-chips>
+<q-chips v-model="model"></q-chips>
 
 <!-- Disabled -->
-<quasar-chips v-model="model" disable></quasar-chips>
+<q-chips v-model="model" disable></q-chips>
 
 <!-- With custom placeholder -->
-<quasar-chips v-model="model" placeholder="Type some names"></quasar-chips>
+<q-chips v-model="model" placeholder="Type some names"></q-chips>
 ```
 
 > The model variable must be an Array.
 
 User can remove a Chip by clicking/tapping on the `close` icon. Adding a Chip is done by clicking/tapping on the component, typing and then hitting the `send` icon or `<ENTER>` key.
 
+### Error State
+Add `has-error` CSS class:
+``` html
+<q-chips v-model="model" class="has-error"></q-chips>
+```
+
 ## Vue Properties
 | Vue Property | Type | Description |
 | --- | --- | --- |
+| `readonly` | Boolean | If readonly user can not add or remove chips. |
 | `disable` | Boolean | If disabled user can not add or remove chips. |
 | `placeholder` | String | Placeholder for the textfield. |
 
@@ -37,7 +44,7 @@ User can remove a Chip by clicking/tapping on the `close` icon. Adding a Chip is
   <div class="item multiple-lines">
     <i class="item-primary">edit</i>
     <div class="item-content">
-      <quasar-chips v-model="model"></quasar-chips>
+      <q-chips v-model="model"></q-chips>
     </div>
   </div>
 </div>

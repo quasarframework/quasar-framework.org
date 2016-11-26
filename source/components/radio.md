@@ -6,23 +6,23 @@ title: Radio
 
 ``` html
 <label>
-  <quasar-radio v-model="option" val="opt1"></quasar-radio>
+  <q-radio v-model="option" val="opt1"></q-radio>
   Option 1
 </label>
 <label>
-  <quasar-radio v-model="option" val="opt2"></quasar-radio>
+  <q-radio v-model="option" val="opt2"></q-radio>
   Option 2
 </label>
 
 <!-- With no label: -->
-<quasar-radio v-model="option" val="opt3"></quasar-radio>
+<q-radio v-model="option" val="opt3"></q-radio>
 ```
 
 ## Coloring
 Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`, `orange`, `teal` as CSS class:
 
 ``` html
-<quasar-radio class="orange"></quasar-radio>
+<q-radio class="orange"></q-radio>
 ```
 
 ## Vue Properties
@@ -38,7 +38,7 @@ Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`
 <div class="list">
   <label class="item">
     <div class="item-primary">
-      <quasar-radio v-model="option" val="opt1"></quasar-radio>
+      <q-radio v-model="option" val="opt1"></q-radio>
     </div>
     <div class="item-content">
       Option 1
@@ -47,7 +47,7 @@ Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`
 
   <label class="item two-lines">
     <div class="item-primary">
-      <quasar-radio v-model="option" val="opt2"></quasar-radio>
+      <q-radio v-model="option" val="opt2"></q-radio>
     </div>
     <div class="item-content">
       <div>Option 2</div>
@@ -57,7 +57,7 @@ Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`
 
   <label class="item three-lines">
     <div class="item-primary">
-      <quasar-radio v-model="option" val="opt3"></quasar-radio>
+      <q-radio v-model="option" val="opt3"></q-radio>
     </div>
     <div class="item-content">
       <div>Option 3</div>

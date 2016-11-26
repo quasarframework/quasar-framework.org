@@ -7,21 +7,21 @@ Quasar Collapsibles allow the hiding of content that is not immediately relevant
 ## Basic Usage
 ``` html
 <div class="list">
-  <quasar-collapsible icon="explore" label="First">
+  <q-collapsible icon="explore" label="First">
     <div>
       Content
     </div>
-  </quasar-collapsible>
-  <quasar-collapsible icon="perm_identity" label="Second">
+  </q-collapsible>
+  <q-collapsible icon="perm_identity" label="Second">
     <div>
       Content
     </div>
-  </quasar-collapsible>
-  <quasar-collapsible icon="shopping_cart" label="Third">
+  </q-collapsible>
+  <q-collapsible icon="shopping_cart" label="Third">
     <div>
       Content
     </div>
-  </quasar-collapsible>
+  </q-collapsible>
 </div>
 ```
 
@@ -31,18 +31,18 @@ You can add `item-delimiter` class on the list `<div>` element if you want separ
 Collapsible items can be opened by default:
 
 ``` html
-<quasar-collapsible opened icon="explore" label="First">
+<q-collapsible opened icon="explore" label="First">
   <div>
     Content
   </div>
-</quasar-collapsible>
+</q-collapsible>
 
 <!-- or -->
-<quasar-collapsible :opened="boolean_variable" icon="explore" label="First">
+<q-collapsible :opened="boolean_variable" icon="explore" label="First">
   <div>
     Content
   </div>
-</quasar-collapsible>
+</q-collapsible>
 ```
 
 ## Vue Properties
@@ -53,6 +53,7 @@ Collapsible items can be opened by default:
 | `img` | String | URL to image to use. Either use an icon, image or avatar. |
 | `avatar` | String | URL to avatar to use. Either use an icon, image or avatar. |
 | `label` | String | Label besides icon, image or avatar. |
+| `icon-toggle` | Boolean | Allows user to toggle open/close state by clicking/tapping only on the Collapsible icon on the right. |
 
 ## Vue Methods
 | Vue Methods | Description |
@@ -65,7 +66,7 @@ Collapsible items can be opened by default:
 Be creative. In the example below we're using a Card as Collapsible content.
 
 ``` html
-<quasar-collapsible icon="explore" label="First Card">
+<q-collapsible icon="explore" label="First Card">
   <div class="card bg-primary text-white">
     <div class="card-title">
       Card Title
@@ -74,5 +75,5 @@ Be creative. In the example below we're using a Card as Collapsible content.
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     </div>
   </div>
-</quasar-collapsible>
+</q-collapsible>
 ```

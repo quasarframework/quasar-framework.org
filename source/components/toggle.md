@@ -6,38 +6,38 @@ title: Toggle
 
 ``` html
 <label>
-  <quasar-toggle
+  <q-toggle
     v-model="checked"
-  ></quasar-toggle>
+  ></q-toggle>
   Toggle Label
 </label>
 
 <!-- With no label -->
-<quasar-toggle
+<q-toggle
   v-model="checked"
-></quasar-toggle>
+></q-toggle>
 
 <!-- With icon -->
-<quasar-toggle
+<q-toggle
   icon="alarm"
   v-model="checked"
-></quasar-toggle>
+></q-toggle>
 
 <!-- Disabled state -->
-<quasar-toggle
+<q-toggle
   disable
   v-model="checked"
-></quasar-toggle>
+></q-toggle>
 ```
 
 ## Coloring
 Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`, `orange`, `teal` as CSS class:
 
 ``` html
-<quasar-toggle
+<q-toggle
   class="orange"
   v-model="checked"
-></quasar-toggle>
+></q-toggle>
 ```
 
 ## Vue Properties
@@ -56,7 +56,7 @@ Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`
       Events and reminders
     </div>
     <div class="item-secondary">
-      <quasar-toggle v-model="checked"></quasar-toggle>
+      <q-toggle v-model="checked"></q-toggle>
     </div>
   </label>
 
@@ -66,7 +66,7 @@ Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`
       <div>Lorem ipsum...</div>
     </div>
     <div class="item-secondary">
-      <quasar-toggle v-model="checked" class="purple"></quasar-toggle>
+      <q-toggle v-model="checked" class="purple"></q-toggle>
     </div>
   </label>
 
@@ -76,7 +76,7 @@ Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`
       <div>Lorem ipsum...</div>
     </div>
     <div class="item-secondary">
-      <quasar-toggle v-model="checked" class="red"></quasar-toggle>
+      <q-toggle v-model="checked" class="red"></q-toggle>
     </div>
   </label>
 </div>

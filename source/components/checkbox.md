@@ -6,25 +6,25 @@ title: Quasar Checkbox
 
 ``` html
 <label>
-  <quasar-checkbox v-model="checked"></quasar-checkbox>
+  <q-checkbox v-model="checked"></q-checkbox>
   Checkbox Label
 </label>
 
 <!-- Disabled: -->
 <label>
-  <quasar-checkbox v-model="checked" disable></quasar-checkbox>
+  <q-checkbox v-model="checked" disable></q-checkbox>
   Checkbox Label
 </label>
 
 <!-- No label: -->
-<quasar-checkbox v-model="checked"></quasar-checkbox>
+<q-checkbox v-model="checked"></q-checkbox>
 ```
 
 ## Coloring
 Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`, `orange`, `teal` as CSS class:
 
 ``` html
-<quasar-checkbox class="orange">...</quasar-checkbox>
+<q-checkbox class="orange">...</q-checkbox>
 ```
 
 ## Vue Properties
@@ -39,7 +39,7 @@ Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`
 <div class="list">
   <label class="item">
     <div class="item-primary">
-      <quasar-checkbox v-model="checked"></quasar-checkbox>
+      <q-checkbox v-model="checked"></q-checkbox>
     </div>
     <div class="item-content">
       Notifications
@@ -48,7 +48,7 @@ Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`
 
   <label class="item two-lines">
     <div class="item-primary">
-      <quasar-checkbox v-model="checked"></quasar-checkbox>
+      <q-checkbox v-model="checked"></q-checkbox>
     </div>
     <div class="item-content">
       <div>Notifications</div>
@@ -58,7 +58,7 @@ Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`
 
   <label class="item three-lines">
     <div class="item-primary">
-      <quasar-checkbox v-model="checked"></quasar-checkbox>
+      <q-checkbox v-model="checked"></q-checkbox>
     </div>
     <div class="item-content">
       <div>Notifications</div>

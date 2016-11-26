@@ -31,6 +31,7 @@ Visible only on:
 | `desktop-only` | Visible only on desktop |
 | `mobile-only` | Visible only on mobile |
 | `cordova-only` | Visible only on Cordova wrapped Apps |
+| `electron-only` | Visible only on Electron wrapped Apps |
 | `touch-only` | Visible only on touch capable platforms |
 | `no-touch-only` | Visible only on non-touch platforms |
 | `mat-only` | Visible only for Material Quasar Theme |
@@ -44,6 +45,7 @@ Hide on:
 | `desktop-hide` | Hide on desktop |
 | `mobile-hide` | Hide on mobile |
 | `cordova-hide` | Hide on Cordova wrapped Apps |
+| `electron-hide` | Hide on Electron wrapped Apps |
 | `touch-hide` | Hide on touch capable platforms |
 | `no-touch-hide` | Hide on non-touch platforms |
 | `mat-hide` | Hide for Material Quasar Theme |

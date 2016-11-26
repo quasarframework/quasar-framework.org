@@ -78,6 +78,9 @@ Events.$emit('event-name', {
 // callbacks for 'event-name' --> callback({status: 10, message: 'wow',...});
 ```
 
+## Quasar Events List
+There are some events emitted by Quasar already that you can hook into.
+
 ### Global Events
 
 | Event Name | Description |

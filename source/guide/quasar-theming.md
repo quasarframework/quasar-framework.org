@@ -22,7 +22,7 @@ Please note the following:
   $ PORT=3000 quasar dev ios
   ```
 
-2. By default your App will include the compiled Quasar themes (`.css` files instead of `.styl` from `node_modules/quasar-framework`). The reason is the build speed. This is a section from `src/App.vue` related to importing the theme:
+2. By default your App will include the compiled Quasar themes (`.css` files instead of `.styl` from `node_modules/quasar-framework`). The reason is the build speed. This is a section from `src/main.js` related to importing the theme:
   ``` js
   // === DEFAULT / CUSTOM STYLE ===
   // WARNING! always comment out ONE of the two require() calls below.
@@ -80,6 +80,7 @@ The platform in which your App runs is automatically detected and the `<body>` t
 | `desktop` | App runs on a desktop browser |
 | `mobile` | App runs on a mobile browser |
 | `cordova` | Standalone Mobile App wrapped with Apache Cordova |
+| `electron` | App runs under Electron |
 | `touch` | Touch capable platform |
 | `no-touch` | Touch capability not present |
 | `within-iframe` | For when entire website is under an IFRAME tag |

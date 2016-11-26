@@ -11,8 +11,8 @@
 
 ## Quasar Components
 
-* [Quasar Framework](https://github.com/rstoenescu/quasar-framework)
-* [Quasar Framework CLI](https://github.com/rstoenescu/quasar-cli)
+* [Quasar Framework](https://github.com/quasarframework/quasar)
+* [Quasar Framework CLI](https://github.com/quasarframework/quasar-cli)
 
 ## Contributing
 

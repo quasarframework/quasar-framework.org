@@ -124,6 +124,8 @@ Utils.dom.ready(function () {
 It's cross-browser.
 
 ``` js
+import { Utils } from 'quasar'
+
 node.addEventListener('click', event => {
   // right clicked?
   (Boolean) Utils.event.rightClick(event)
@@ -136,4 +138,23 @@ node.addEventListener('click', event => {
   // event has fired upon
   (DOM Element) Utils.event.targetElement(event)
 })
+```
+
+## Determining Scrollbar Width
+Computes the width of scrollbar in pixels.
+
+``` js
+import { Utils } from 'quasar'
+
+console.log(Utils.scrollbar.width()) // 16
+```
+
+## Colors
+You can change colors from RGB to Hex format (and reverse too).
+
+``` js
+import { Utils } from 'quasar'
+
+console.log(Utils.colors.rgbToHex(85, 165, 1)) // #55a532
+console.log(Utils.colors.hexToRgb('#55a532')) // [85, 165, 1]
 ```

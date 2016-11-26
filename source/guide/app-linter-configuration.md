@@ -11,6 +11,14 @@ If you are not happy with the default linting rules, you have several options:
   "semi": [2, "always"]
   ```
 
-  Pick a different ESLint preset when generating the project, for example [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb).
+2. Remove linter by editing `/build/webpack.base.conf.js` and removing the lines below from `module/rules`:
 
-2. Pick "none" for ESLint preset when generating the project and define your own rules. See [ESLint documentation](http://eslint.org/docs/rules/) for more details.
+  ``` js
+  { // eslint
+    enforce: 'pre',
+    test: /\.(vue|js)$/,
+    loader: 'eslint-loader',
+    include: projectRoot,
+    exclude: /node_modules/
+  },
+  ```

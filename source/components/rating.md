@@ -7,14 +7,14 @@ Quasar Rating is a Web Component which allows users to rate items, usually knows
 ## Basic Usage
 
 ``` html
-<quasar-rating v-model="ratingModel" :max="3"></quasar-rating>
+<q-rating v-model="ratingModel" :max="3"></q-rating>
 
 <!-- Disabled State -->
-<quasar-rating
+<q-rating
   disable
   v-model="ratingModel"
   :max="3"
-></quasar-rating>
+></q-rating>
 ```
 
 ## Vue Properties
@@ -33,9 +33,9 @@ Quasar Rating is a Web Component which allows users to rate items, usually knows
 Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`, `orange`, `teal` as CSS class:
 
 ``` html
-<quasar-rating
+<q-rating
   class="orange"
   v-model="ratingModel"
   :max="5"
-></quasar-rating>
+></q-rating>
 ```

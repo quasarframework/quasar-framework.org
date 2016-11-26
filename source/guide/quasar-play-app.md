@@ -2,7 +2,7 @@ title: Quasar Play App
 ---
 We have the dev server which offers hot-reload. We can build and test Apps on a desktop machine. If we want to release a native App we can use emulators directly in the browser (read about debugging methods [here](/guide/cordova-wrapper.html#Tips)). It's cool. But what if we want to develop our Apps directly on phone, tap, swipe items on it. Wouldn't it be way cooler to have hot-reload working on a phone too?
 
-**Well, now you can.** Download and install Quasar Play App (currently available only on the Google Play Store). This App (written with Quasar) will get you working in no time.
+**Well, now you can.** Download and install Quasar Play App (currently available only on the Google Play Store -- App Store will follow soon). This App (written with Quasar) will get you working in no time.
 
 <a class="playstore" href='https://play.google.com/store/apps/details?id=com.quasarframework.quasarplay&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a>
 

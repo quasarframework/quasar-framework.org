@@ -98,33 +98,22 @@ $ quasar new layout layout/about/help/Hello
 
 > Add your own component templates. Quasar will be able to handle them.
 
-## App Wrappers - Cordova
-Current App Wrappers available is for Cordova only. More will be added in the future, to allow you to build an Electron App, a Google Chrome extension, or a standalone progressive Web App, to name a few examples.
+## App Wrappers
+Current App Wrappers available are for Cordova & Electron. More will be added in the future, to allow you to build a Google Chrome extension or a Progressive Web App, to name a few examples.
 
 The CLI command is like this:
 ``` bash
 $ quasar wrap <wrapper name>
 ```
 
-Further reading on Cordova wrapper is available [here](/guide/cordova-wrapper.html).
+Further reading on **Cordova** wrapper is available [here](/guide/cordova-wrapper.html).
+Further reading on **Electron** wrapper is available [here](/guide/electron-wrapper.html).
 
 ## Lint App Code
 ESlint is used to check your ES6 Javascript files.
 
 ``` bash
 $ quasar lint
-```
-
-## Run Test Suites
-The starter boilerplate comes packed with both Unit and End to end testing.
-
-``` bash
-# Run both unit and e2e tests
-$ quasar test
-
-# Run either unit or e2e tests
-$ quasar test -u
-$ quasar test -e
 ```
 
 ## Serve Static-Content Folder
@@ -137,8 +126,9 @@ This command comes in really handy after building your Quasar App for production
 $ quasar serve
 
 # ..or serve a full or relative path
+$ quasar serve dist
 $ quasar serve ./dist
 $ quasar serve /work/quasar-app/dist
 ```
 
-This command does not rely on Quasar Framework. Any folder with any web content can be served.
+> This command does not rely on Quasar Framework. Any folder with any web content can be served.

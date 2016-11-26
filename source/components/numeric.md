@@ -5,19 +5,30 @@ title: Numeric
 ## Basic Usage
 
 ``` html
-<quasar-numeric
+<q-numeric
   v-model="number"
   :min="1"
   :max="17"
-></quasar-numeric>
+></q-numeric>
 
 <!-- Disabled state -->
-<quasar-numeric
+<q-numeric
   disable
   v-model="number"
   :min="1"
   :max="17"
-></quasar-numeric>
+></q-numeric>
+```
+
+### Error State
+Add `has-error` CSS class:
+``` html
+<q-numeric
+  class="has-error"
+  v-model="number"
+  :min="1"
+  :max="17"
+></q-numeric>
 ```
 
 ## Vue Properties
@@ -27,6 +38,7 @@ title: Numeric
 | `step` | 1 | Value of increment / decrement |
 | `min` | *none* | Minimum value of the model |
 | `max` | *none* | Maximum value of the model |
+| `readonly` | `false` | Make field read-only. |
 | `disable` | `false` | Disable input from user. |
 
 ## Inside of a List Usage
@@ -37,7 +49,7 @@ title: Numeric
     <i class="item-primary">edit</i>
     <div class="item-content">
       <span class="item-label">Number: </span>
-      <quasar-numeric v-model="number"></quasar-numeric>
+      <q-numeric v-model="number"></q-numeric>
     </div>
   </div>
 </div>

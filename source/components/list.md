@@ -2,7 +2,7 @@ title: Lists
 ---
 Quasar Lists are used to display rows of information, such as a contact list, a playlist, or menu. Each row is called an item. Items can also be used outside of a list.
 
-Lists can also be used (and it's also recommended) on Quasar Drawers. There's even a `<quasar-drawer-link>` component based on List Items.
+Lists can also be used (and it's also recommended) on Quasar Drawers. There's even a `<q-drawer-link>` component based on List Items.
 
 > We'll learn to use Lists and List Items gradually. Make sure you don't skip steps and follow this page.
 
@@ -307,7 +307,7 @@ Scroll down to see the demos if on desktop.
       </i>
     </div>
   </div>
-  <quasar-popover ref="popover" anchor-ref="item">
+  <q-popover ref="popover" anchor-ref="item">
     <div class="list">
       <div class="item item-link" @click="$refs.popover.close()">
         <div class="item-content">Reply</div>
@@ -319,7 +319,7 @@ Scroll down to see the demos if on desktop.
         <div class="item-content">Delete</div>
       </div>
     </div>
-  </quasar-popover>
+  </q-popover>
 </div>
 ```
 
@@ -382,7 +382,7 @@ Multiple line items are usually for some Form components that exceed the height 
       </i>
     </div>
   </div>
-  <quasar-popover ref="popover" anchor-ref="item">
+  <q-popover ref="popover" anchor-ref="item">
     <div class="list">
       <div class="item item-link" @click="$refs.popover.close()">
         <div class="item-content">Reply</div>
@@ -394,7 +394,7 @@ Multiple line items are usually for some Form components that exceed the height 
         <div class="item-content">Delete</div>
       </div>
     </div>
-  </quasar-popover>
+  </q-popover>
 </div>
 ```
 
@@ -406,38 +406,38 @@ Collapsible Items make use of the Collapsible Component. Read more about it [her
 You can nest collapsibles within collapsibles within collapsibles within...
 ``` html
 <div class="list">
-  <quasar-collapsible icon="inbox" label="Inbox">
+  <q-collapsible icon="inbox" label="Inbox">
     <div class="item" v-for="n in 3">
       <i class="item-primary">mail</i>
       <div class="item-content">
         Email {{ n + 1 }}
       </div>
     </div>
-    <quasar-collapsible icon="favorites" label="Favorites">
+    <q-collapsible icon="favorites" label="Favorites">
       <div class="item" v-for="n in 3">
         <i class="item-primary">mail</i>
         <div class="item-content">
           Favorite {{ n + 1 }}
         </div>
       </div>
-    </quasar-collapsible>
-  </quasar-collapsible>
-  <quasar-collapsible icon="send" label="Sent">
+    </q-collapsible>
+  </q-collapsible>
+  <q-collapsible icon="send" label="Sent">
     <div class="item" v-for="n in 3">
       <i class="item-primary">mail</i>
       <div class="item-content">
         Email {{ n + 1 }}
       </div>
     </div>
-  </quasar-collapsible>
-  <quasar-collapsible icon="delete" label="Trash">
+  </q-collapsible>
+  <q-collapsible icon="delete" label="Trash">
     <div class="item" v-for="n in 3">
       <i class="item-primary">mail</i>
       <div class="item-content">
         Email {{ n + 1 }}
       </div>
     </div>
-  </quasar-collapsible>
+  </q-collapsible>
 </div>
 ```
 
@@ -541,7 +541,7 @@ Some predefined forumals you can use to nest Textfields in List Items.
     <i class="item-primary">edit</i>
     <div class="item-content">
       <span class="item-label">Number:</span>
-      <quasar-numeric v-model="number"></quasar-numeric>
+      <q-numeric v-model="number"></q-numeric>
     </div>
   </div>
   <hr class="inset">
@@ -549,7 +549,7 @@ Some predefined forumals you can use to nest Textfields in List Items.
     <i class="item-primary">edit</i>
     <div class="item-content">
       <span class="item-label">Number:</span>
-      <quasar-numeric v-model="number"></quasar-numeric>
+      <q-numeric v-model="number"></q-numeric>
     </div>
   </div>
 
@@ -559,7 +559,7 @@ Some predefined forumals you can use to nest Textfields in List Items.
   <div class="item multiple-lines">
     <i class="item-primary">edit</i>
     <div class="item-content">
-      <quasar-chips v-model="chips" placeholder="Type names"></quasar-chips>
+      <q-chips v-model="chips" placeholder="Type names"></q-chips>
     </div>
   </div>
 </div>
@@ -575,7 +575,7 @@ Some predefined formulas you can use to nest Form Components within List Items.
 <div class="list">
   <label class="item">
     <div class="item-primary">
-      <quasar-checkbox v-model="checked"></quasar-checkbox>
+      <q-checkbox v-model="checked"></q-checkbox>
     </div>
     <div class="item-content">
       Notifications
@@ -583,7 +583,7 @@ Some predefined formulas you can use to nest Form Components within List Items.
   </label>
   <label class="item two-lines">
     <div class="item-primary">
-      <quasar-checkbox v-model="checked"></quasar-checkbox>
+      <q-checkbox v-model="checked"></q-checkbox>
     </div>
     <div class="item-content">
       <div>Notifications</div>
@@ -592,7 +592,7 @@ Some predefined formulas you can use to nest Form Components within List Items.
   </label>
   <label class="item three-lines">
     <div class="item-primary">
-      <quasar-checkbox v-model="checked"></quasar-checkbox>
+      <q-checkbox v-model="checked"></q-checkbox>
     </div>
     <div class="item-content">
       <div>Notifications</div>
@@ -605,7 +605,7 @@ Some predefined formulas you can use to nest Form Components within List Items.
 <div class="list">
   <label class="item">
     <div class="item-primary">
-      <quasar-radio v-model="option" val="opt1"></quasar-radio>
+      <q-radio v-model="option" val="opt1"></q-radio>
     </div>
     <div class="item-content">
       Option 1
@@ -613,7 +613,7 @@ Some predefined formulas you can use to nest Form Components within List Items.
   </label>
   <label class="item two-lines">
     <div class="item-primary">
-      <quasar-radio v-model="option" val="opt2"></quasar-radio>
+      <q-radio v-model="option" val="opt2"></q-radio>
     </div>
     <div class="item-content">
       <div>Option 2</div>
@@ -622,7 +622,7 @@ Some predefined formulas you can use to nest Form Components within List Items.
   </label>
   <label class="item three-lines">
     <div class="item-primary">
-      <quasar-radio v-model="option" val="opt3"></quasar-radio>
+      <q-radio v-model="option" val="opt3"></q-radio>
     </div>
     <div class="item-content">
       <div>Option 3</div>
@@ -638,7 +638,7 @@ Some predefined formulas you can use to nest Form Components within List Items.
       Events and reminders
     </div>
     <div class="item-secondary">
-      <quasar-toggle v-model="checked"></quasar-toggle>
+      <q-toggle v-model="checked"></q-toggle>
     </div>
   </label>
   <label class="item two-lines">
@@ -647,7 +647,7 @@ Some predefined formulas you can use to nest Form Components within List Items.
       <div>Lorem ipsum</div>
     </div>
     <div class="item-secondary">
-      <quasar-toggle v-model="checked" class="purple"></quasar-toggle>
+      <q-toggle v-model="checked" class="purple"></q-toggle>
     </div>
   </label>
   <label class="item three-lines">
@@ -656,7 +656,7 @@ Some predefined formulas you can use to nest Form Components within List Items.
       <div>Lorem ipsum dolor sit amet...</div>
     </div>
     <div class="item-secondary">
-      <quasar-toggle v-model="checked" class="red"></quasar-toggle>
+      <q-toggle v-model="checked" class="red"></q-toggle>
     </div>
   </label>
 </div>
@@ -667,7 +667,7 @@ Some predefined formulas you can use to nest Form Components within List Items.
   <div class="item multiple-lines">
     <i class="item-primary">supervisor_account</i>
     <div class="item-content">
-      <quasar-select class="full-width" type="radio" v-model="select" :options="selectOptions" ok-label="Pick" cancel-label="Neah" title="Company"></quasar-select>
+      <q-select class="full-width" type="radio" v-model="select" :options="selectOptions" ok-label="Pick" cancel-label="Neah" title="Company"></q-select>
     </div>
   </div>
   <hr>
@@ -675,13 +675,13 @@ Some predefined formulas you can use to nest Form Components within List Items.
   <div class="item multiple-lines">
     <i class="item-primary">supervisor_account</i>
     <div class="item-content">
-      <quasar-select class="full-width" type="checkbox" v-model="multipleSelect" :options="selectOptions" ok-label="Pick" title="Companies"></quasar-select>
+      <q-select class="full-width" type="checkbox" v-model="multipleSelect" :options="selectOptions" ok-label="Pick" title="Companies"></q-select>
     </div>
   </div>
   <div class="item multiple-lines">
     <i class="item-primary">supervisor_account</i>
     <div class="item-content">
-      <quasar-select class="full-width" type="toggle" v-model="multipleSelect" :options="selectOptions" ok-label="Pick" title="Companies"></quasar-select>
+      <q-select class="full-width" type="toggle" v-model="multipleSelect" :options="selectOptions" ok-label="Pick" title="Companies"></q-select>
     </div>
   </div>
 </div>
@@ -691,13 +691,13 @@ Some predefined formulas you can use to nest Form Components within List Items.
   <div class="item two-lines">
     <i class="item-primary">volume_up</i>
     <div class="item-content">
-      <quasar-range v-model="standalone" :min="0" :max="50" label></quasar-range>
+      <q-range v-model="standalone" :min="0" :max="50" label></q-range>
     </div>
   </div>
   <div class="item two-lines">
     <i class="item-primary">brightness_medium</i>
     <div class="item-content">
-      <quasar-range v-model="standalone" :min="0" :max="50" label></quasar-range>
+      <q-range v-model="standalone" :min="0" :max="50" label></q-range>
     </div>
   </div>
   <hr>
@@ -705,13 +705,13 @@ Some predefined formulas you can use to nest Form Components within List Items.
   <div class="item two-lines">
     <i class="item-primary">local_atm</i>
     <div class="item-content">
-      <quasar-double-range :model-min.sync="standaloneMin" :model-max.sync="standaloneMax" :min="0" :max="50" label></quasar-double-range>
+      <q-double-range :model-min.sync="standaloneMin" :model-max.sync="standaloneMax" :min="0" :max="50" label></q-double-range>
     </div>
   </div>
   <div class="item two-lines">
     <i class="item-primary">euro_symbol</i>
     <div class="item-content">
-      <quasar-double-range :model-min.sync="standaloneMin" :model-max.sync="standaloneMax" :min="0" :max="50" label></quasar-double-range>
+      <q-double-range :model-min.sync="standaloneMin" :model-max.sync="standaloneMax" :min="0" :max="50" label></q-double-range>
     </div>
   </div>
 </div>
@@ -722,13 +722,13 @@ Some predefined formulas you can use to nest Form Components within List Items.
   <div class="item two-lines">
     <i class="item-primary">access_time</i>
     <div class="item-content">
-      <quasar-datetime class="full-width" v-model="timestamp" type="time"></quasar-datetime>
+      <q-datetime class="full-width" v-model="timestamp" type="time"></q-datetime>
     </div>
   </div>
   <div class="item two-lines">
     <i class="item-primary">update</i>
     <div class="item-content row items-baseline">
-      <quasar-datetime class="full-width" v-model="timestamp" type="date"></quasar-datetime>
+      <q-datetime class="full-width" v-model="timestamp" type="date"></q-datetime>
     </div>
   </div>
   <hr>
@@ -736,7 +736,7 @@ Some predefined formulas you can use to nest Form Components within List Items.
   <div class="item two-lines">
     <i class="item-primary">notifications</i>
     <div class="item-content row items-baseline">
-      <quasar-datetime class="full-width" v-model="timestamp" type="datetime"></quasar-datetime>
+      <q-datetime class="full-width" v-model="timestamp" type="datetime"></q-datetime>
     </div>
   </div>
 </div>
@@ -1045,7 +1045,7 @@ Let's explore some ready to use templates using what we've learned above.
 
     </div>
   </div>
-  <quasar-popover ref="popover" anchor-ref="item">
+  <q-popover ref="popover" anchor-ref="item">
     <div class="list">
       <div class="item item-link" @click="$refs.popover.close()">
         <div class="item-content">Reply</div>
@@ -1057,6 +1057,6 @@ Let's explore some ready to use templates using what we've learned above.
         <div class="item-content">Delete</div>
       </div>
     </div>
-  </quasar-popover>
+  </q-popover>
 </div>
 ```

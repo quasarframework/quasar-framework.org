@@ -11,26 +11,26 @@ A basic example of Tabs (they are more complex as you will see in next sections 
 
 ``` html
 <!-- Tabs -->
-<quasar-tabs
+<q-tabs
   :refs="$refs"
   default-tab="tab-4"
 >
-  <quasar-tab name="tab-1" icon="message">
+  <q-tab name="tab-1" icon="message">
     Tab 1
-  </quasar-tab>
-  <quasar-tab name="tab-2" disable icon="fingerprint">
+  </q-tab>
+  <q-tab name="tab-2" disable icon="fingerprint">
     Tab 2
-  </quasar-tab>
-  <quasar-tab name="tab-3" icon="alarm">
+  </q-tab>
+  <q-tab name="tab-3" icon="alarm">
     Tab 3
-  </quasar-tab>
-  <quasar-tab name="tab-4" icon="accessibility">
+  </q-tab>
+  <q-tab name="tab-4" icon="accessibility">
     Tab 4
-  </quasar-tab>
-  <quasar-tab name="tab-5" hidden icon="accessibility">
+  </q-tab>
+  <q-tab name="tab-5" hidden icon="accessibility">
     Tab 5
-  </quasar-tab>
-</quasar-tabs>
+  </q-tab>
+</q-tabs>
 
 <!-- Targets -->
 <div ref="tab-1">...</div>
@@ -40,12 +40,12 @@ A basic example of Tabs (they are more complex as you will see in next sections 
 <div ref="tab-5">...</div>
 ```
 
-The `name` attribute on `<quasar-tab>`s links this Tab to the DOM element using a Vue reference with same name.
+The `name` attribute on `<q-tab>`s links this Tab to the DOM element using a Vue reference with same name.
 
-As you can see, we have a container (`<quasar-tabs>`) and Tabs themselves (`<quasar-tab>`). Let's dissect each:
+As you can see, we have a container (`<q-tabs>`) and Tabs themselves (`<q-tab>`). Let's dissect each:
 
 ## Tabs Container Component
-Use `<quasar-tabs>` component to wrap your Tabs.
+Use `<q-tabs>` component to wrap your Tabs.
 
 ### Vue Properties
 | Vue Property | Type | Description |
@@ -110,23 +110,23 @@ If using routes for each Tab:
 ## Usage with Vue Router
 ``` html
 <!-- Tabs -->
-<quasar-tabs>
-  <quasar-tab
+<q-tabs>
+  <q-tab
     icon="mail"
     route="/mails"
     exact
   >
     Mails
-  </quasar-tab>
+  </q-tab>
 
-  <quasar-tab
+  <q-tab
     icon="alarm"
     route="/alarms"
     exact
   >
     Alarms
-  </quasar-tab>
-</quasar-tabs>
+  </q-tab>
+</q-tabs>
 ```
 
 Your Tabs will be auto-selected when user navigates to the specified routes.
@@ -135,30 +135,30 @@ Your Tabs will be auto-selected when user navigates to the specified routes.
 Best way to programmatically switch between Tabs is by using a `v-model`:
 
 ``` html
-<quasar-tabs
+<q-tabs
   :refs="$refs"
   v-model="xTabsModel"
 >
-  <quasar-tab
+  <q-tab
     name="xtab-1"
     icon="message"
-  >Tab 1</quasar-tab>
+  >Tab 1</q-tab>
 
-  <quasar-tab
+  <q-tab
     name="xtab-2"
     icon="alarm"
-  >Tab 2</quasar-tab>
+  >Tab 2</q-tab>
 
-  <quasar-tab
+  <q-tab
     name="xtab-3"
     icon="accessibility"
-  >Tab 3</quasar-tab>
-</quasar-tabs>
+  >Tab 3</q-tab>
+</q-tabs>
 
-<quasar-select
+<q-select
   type="radio"
   v-model="xTabsModel" :options="xTabsOptions"
-></quasar-select>
+></q-select>
 
 <div ref="xtab-1">...</div>
 <div ref="xtab-2">...</div>
@@ -181,27 +181,27 @@ data () {
 
 ## Usage on a Layout
 ``` html
-<quasar-layout>
+<q-layout>
   ...
-  <quasar-tabs slot="navigation">
-    <quasar-tab
+  <q-tabs slot="navigation">
+    <q-tab
       icon="mail"
       route="/mails"
       exact
     >
       Mails
-    </quasar-tab>
+    </q-tab>
 
-    <quasar-tab
+    <q-tab
       icon="alarm"
       route="/alarms"
       exact
     >
       Alarms
-    </quasar-tab>
-  </quasar-tabs>
+    </q-tab>
+  </q-tabs>
   ...
-</quasar-layout>
+</q-layout>
 ```
 
 Notice the `slot="navigation"` attribute. This makes Quasar know where to place your Tabs depending on the theme. On Material Design theme it will place them between Layout header and page view, and on iOS theme between page view and Layout footer.
@@ -210,11 +210,11 @@ Notice the `slot="navigation"` attribute. This makes Quasar know where to place 
 Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`, `orange`, `teal` as CSS class:
 
 ``` html
-<quasar-tabs class="orange">...</quasar-tabs>
+<q-tabs class="orange">...</q-tabs>
 ```
 
 You can also invert the colors (see demo for example) by adding the color and `inverted` as CSS classes:
 
 ``` html
-<quasar-tabs class="inverted orange">...</quasar-tabs>
+<q-tabs class="inverted orange">...</q-tabs>
 ```

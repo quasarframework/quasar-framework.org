@@ -1,6 +1,6 @@
 title: Quasar Framework Contributing Guide
 ---
-I’m really excited if you are interested in contributing to Quasar Framework. There are [lots of features waiting](https://github.com/rstoenescu/quasar-framework/issues?q=is%3Aissue+is%3Aopen+label%3Aproposal) for someone to write them. Check [Github](https://github.com/rstoenescu/quasar-framework) or contact [Razvan Stoenescu](https://github.com/rstoenescu) through email.
+I’m really excited if you are interested in contributing to Quasar Framework. There are [lots of features waiting](https://github.com/quasarframework/quasar/issues?q=is%3Aissue+is%3Aopen+label%3Aproposal) for someone to write them. Check [Github](https://github.com/quasarframework/quasar) or contact [Razvan Stoenescu](https://github.com/rstoenescu) through email.
 
 Before submitting your contribution though, please make sure to take a moment and read through the following guidelines.
 
@@ -10,10 +10,10 @@ You can also help with the documentation if you catch a mistake or want to add a
 
 ## Github Repositories
 
-* [Quasar Framework](https://github.com/rstoenescu/quasar-framework)
-* [Quasar CLI](https://github.com/rstoenescu/quasar-cli)
-* [Quasar App Templates](https://github.com/rstoenescu/quasar-templates)
-* [Quasar Play App](https://github.com/rstoenescu/quasar-play)
+* [Quasar Framework](https://github.com/quasarframework/quasar)
+* [Quasar CLI](https://github.com/quasarframework/quasar-cli)
+* [Quasar Play App](https://github.com/quasarframework/quasar-play)
+* [Quasar Default App Template](https://github.com/quasarframework/app-template-default)
 
 ## Issue Reporting Guidelines
 

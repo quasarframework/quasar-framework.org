@@ -48,6 +48,9 @@ Creating a Dialog uses an Object as parameter to configure it (*configObj* above
 | `nobuttons` | Boolean | When you don't want any buttons on your Dialog. By default, if no buttons are specified, an "OK" button is added. This property avoids this default addition. |
 | `progress` | Object | When you want to make your Dialog display a progress bar. Check [Progress Dialog](#Progress-Dialog) below. |
 | `form` | Object | Configure what types of form components to show. |
+| `onDismiss` | Function | Function to be called when Dialog gets closed (or dismissed). |
+| `noBackdropDismiss` | Boolean | Can Dialog be dismissed by clicking/tapping on backdrop? |
+| `noEscDismiss` | Boolean | Can Dialog be dismissed by hitting Escape key? |
 
 ## Progress Dialog
 There are two types of progress you can display: determinate (when you can quantify the progress) or indeterminate (when you don't know the moment you're done).
@@ -65,15 +68,13 @@ const dialog = Dialog.create({
   title: 'Progress',
   message: 'Computing...',
   progress,
-  buttons: [
-    {
-      label: 'Cancel',
-      handler () {
-        clearInterval(timeout)
-        Toast.create('Canceled on progress ' + progress.model)
-      }
-    }
-  ]
+  buttons: ['Cancel'],
+  onDismiss () {
+    clearInterval(timeout)
+    Toast.create('Canceled on progress ' + progress.model)
+  },
+  noBackdropDismiss: true,
+  noEscDismiss: true
 })
 
 const timeout = setInterval(() => {
@@ -92,18 +93,16 @@ import { Dialog } from 'quasar'
 const dialog = Dialog.create({
   title: 'Progress',
   message: 'Computing...',
-  progress: { // <<<<<<<<<<<<<<<<<
+  progress: { // <<<<<<<
     indeterminate: true
   },
-  buttons: [
-    {
-      label: 'Cancel',
-      handler (data) {
-        clearTimeout(timeout)
-        Toast.create('Canceled...')
-      }
-    }
-  ]
+  buttons: ['Cancel'],
+  onDismiss () {
+    clearTimeout(timeout)
+    Toast.create('Canceled...')
+  },
+  noBackdropDismiss: true,
+  noEscDismiss: true
 })
 
 const timeout = setTimeout(() => {

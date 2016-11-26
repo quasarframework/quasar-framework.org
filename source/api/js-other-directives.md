@@ -79,4 +79,7 @@ The default behavior is for the router to push a new entry in history. If howeve
 <div v-link.replace=" '/home' ">...</div>
 ```
 
-> You DOM element won't receive `router-link-active` CSS class when using `v-link` though.
+If you want for some reason to delay the route change (like on Drawer elements which close it), use `delay` modifier. Route will change with a delay of 100ms.
+``` html
+<div v-link.delay=" '/home' ">...</div>
+```
