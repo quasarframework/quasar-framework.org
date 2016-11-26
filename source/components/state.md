@@ -8,7 +8,7 @@ Quasar State Component helps you when you have two states (called "default" and 
 
 ``` html
 <!-- Template for VueModel below -->
-<quasar-state :active="state">
+<q-state :active="state">
   <div slot="active">
     <spinner :size="51"></spinner> Active State
   </div>
@@ -20,7 +20,7 @@ Quasar State Component helps you when you have two states (called "default" and 
   <button class="primary" @click="changeState()">
     Default State - Hit me!
   </button>
-</quasar-state>
+</q-state>
 ```
 
 ``` js

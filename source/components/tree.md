@@ -10,11 +10,11 @@ easily stylize and turn them into anything you want.
 ## Basic Usage
 
 ``` html
-<quasar-tree
+<q-tree
   :model="treeModel"
   contract-html="<i>remove_circle</i>"
   expand-html="<i>add_circle</i>"
-></quasar-tree>
+></q-tree>
 ```
 
 ### Tree model structure

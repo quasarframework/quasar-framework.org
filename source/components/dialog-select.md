@@ -10,34 +10,34 @@ This component opens up a Dialog Modal. If for some reason you want it to open a
 
 ``` html
 <!-- With Radios -->
-<quasar-dialog-select
+<q-dialog-select
   type="radio"
   v-model="select"
   :options="selectOptions"
   ok-label="Pick"
   cancel-label="Neah"
   title="Radios"
-></quasar-dialog-select>
+></q-dialog-select>
 
 <!-- With Checkboxes -->
-<quasar-dialog-select
+<q-dialog-select
   type="checkbox"
   v-model="select"
   :options="selectOptions"
   ok-label="Pick"
   cancel-label="Neah"
   title="Checkboxes"
-></quasar-dialog-select>
+></q-dialog-select>
 
 <!-- With Toggles -->
-<quasar-dialog-select
+<q-dialog-select
   type="toggle"
   v-model="select"
   :options="selectOptions"
   ok-label="Pick"
   cancel-label="Neah"
   title="Toggles"
-></quasar-dialog-select>
+></q-dialog-select>
 ```
 
 Options Object example:
@@ -55,6 +55,17 @@ selectOptions: [
 ]
 ```
 
+### Error State
+Add `has-error` CSS class:
+``` html
+<q-dialog-select
+  class="has-error"
+  type="radio"
+  v-model="select"
+  :options="selectOptions"
+></q-dialog-select>
+```
+
 ## Vue Properties
 | Vue Property | Required | Description |
 | --- | --- | --- |
@@ -66,6 +77,7 @@ selectOptions: [
 | `title` | | Title of Dialog. |
 | `message` | | Message of Dialog. |
 | `placeholder` | | Placeholder to use. |
+| `readonly` | | When set to `true` the model cannot be altered. |
 | `disable` | | When set to `true` the model cannot be altered. |
 
 ## Vue Methods
@@ -81,12 +93,12 @@ selectOptions: [
   <div class="item multiple-lines">
     <i class="item-primary">supervisor_account</i>
     <div class="item-content">
-      <quasar-select
+      <q-select
         class="full-width"
         type="radio"
         v-model="select"
         :options="selectOptions"
-      ></quasar-select>
+      ></q-select>
     </div>
   </div>
 
@@ -96,24 +108,24 @@ selectOptions: [
   <div class="item multiple-lines">
     <i class="item-primary">supervisor_account</i>
     <div class="item-content">
-      <quasar-select
+      <q-select
         class="full-width"
         type="checkbox"
         v-model="multipleSelect"
         :options="selectOptions"
-      ></quasar-select>
+      ></q-select>
     </div>
   </div>
 
   <div class="item multiple-lines">
     <i class="item-primary">supervisor_account</i>
     <div class="item-content">
-      <quasar-select
+      <q-select
         class="full-width"
         type="toggle"
         v-model="multipleSelect"
         :options="selectOptions"
-      ></quasar-select>
+      ></q-select>
     </div>
   </div>
 </div>

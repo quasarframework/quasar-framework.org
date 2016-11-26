@@ -15,7 +15,7 @@ Just add the `responsive` CSS class to it.
 Just add the `avatar` CSS class to it.
 
 ``` html
-<img src="assets/quasar-avatar.jpg" class="avatar">
+<img src="assets/q-avatar.jpg" class="avatar">
 ```
 
 ## Image Gallery
@@ -23,7 +23,7 @@ Use this Web Component when you want to display multiple images together.
 
 ``` html
 <!-- Template for VueModel below -->
-<quasar-gallery :src="gallery"></quasar-gallery>
+<q-gallery :src="gallery"></q-gallery>
 ```
 
 ``` js
@@ -50,7 +50,7 @@ User can switch between images using the arrow buttons or through swipe actions.
 
 ``` html
 <!-- Template for VueModel below -->
-<quasar-gallery-slider :src="gallery"></quasar-gallery-slider>
+<q-gallery-slider :src="gallery"></q-gallery-slider>
 ```
 
 ``` js

@@ -6,12 +6,12 @@ When you want to allow the user to refresh the content or add newest content.
 
 ## Basic Usage
 ``` html
-<quasar-pull-to-refresh :handler="refresher">
+<q-pull-to-refresh :handler="refresher">
   <!-- Content, whatever you like -->
   <p v-for="item in items">
     Lorem ipsum dolor sit amet...
   </p>
-</quasar-pull-to-refresh>
+</q-pull-to-refresh>
 ```
 
 ## Vue Properties

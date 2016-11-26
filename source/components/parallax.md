@@ -9,7 +9,7 @@ Quasar provides an out of the box Vue Component you can use. It takes care of a 
 ## Basic Usage
 
 ``` html
-<quasar-parallax src="assets/mountains.jpg">
+<q-parallax src="assets/mountains.jpg">
   <!-- Dom elements to display while loading image -->
   <div slot="loading">Loading...</div>
 
@@ -18,7 +18,7 @@ Quasar provides an out of the box Vue Component you can use. It takes care of a 
     top of the Parallax image after it's loaded
   -->
   <h1>Parallax</h1>
-</quasar-parallax>
+</q-parallax>
 ```
 
 While the underlying image is being loaded you can display a specific message through `<div slot="loading">...</div>`. After image has loaded, you can also display some content on top of the Parallax image (in the example above an `<h1>` tag).
@@ -34,8 +34,8 @@ While the underlying image is being loaded you can display a specific message th
 Example:
 ``` html
 <!-- VueModel contains data property "imageURL" -->
-<quasar-parallax :src="imageURL" :height="300">
+<q-parallax :src="imageURL" :height="300">
   <div slot="loading">Loading...</div>
   <h1>Parallax</h1>
-</quasar-parallax>
+</q-parallax>
 ```

@@ -7,27 +7,27 @@ Quasar Knob is another way of making the user select a Number value from a prede
 ## Basic Usage
 
 ``` html
-<quasar-knob
+<q-knob
   v-model="model"
   :min="min"
   :max="max"
-></quasar-knob>
+></q-knob>
 
 <!-- With custom placeholder -->
-<quasar-knob
+<q-knob
   v-model="model"
   :min="min"
   :max="max"
   :placeholder="'$ ' + model"
-></quasar-knob>
+></q-knob>
 
 <!-- Disabled state -->
-<quasar-knob
+<q-knob
   disable
   v-model="model"
   :min="min"
   :max="max"
-></quasar-knob>
+></q-knob>
 ```
 
 ## Vue Properties

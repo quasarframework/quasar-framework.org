@@ -11,7 +11,7 @@ Basic Slider. No controls. Just swipe between slides or
 use you mouse to drag slides to left or right.
 
 ``` html
-<quasar-slider class="text-white">
+<q-slider class="text-white">
   <div slot="slide" class="bg-primary">
     Slide 1
   </div>
@@ -21,7 +21,7 @@ use you mouse to drag slides to left or right.
   <div slot="slide" class="bg-tertiary">
     Slide 3
   </div>
-</quasar-slider>
+</q-slider>
 ```
 
 ## Vue Properties
@@ -47,35 +47,35 @@ Sliders can contain button controls, like:
 To show these controls simply add `arrows`, `dots` and/or `fullscreen` DOM node attributes.
 
 ``` html
-<quasar-slider arrows dots fullscreen class="text-white">
+<q-slider arrows dots fullscreen class="text-white">
   <div slot="slide" class="bg-primary">
     Slide 1
   </div>
   <div slot="slide" class="bg-secondary">
     Slide 2
   </div>
-</quasar-slider>
+</q-slider>
 ```
 
 ## Slider with Centered Content
 Add CSS class `centered` to the slide that you want to center its content.
 
 ``` html
-<quasar-slider arrows dots class="text-white">
+<q-slider arrows dots class="text-white">
   <div slot="slide" class="bg-primary centered">
     Slide 1
   </div>
   <div slot="slide" class="bg-secondary centered">
     Slide 2
   </div>
-</quasar-slider>
+</q-slider>
 ```
 
 ## Slider with Custom Actions
 Put icons on the same DOM hierarchical level as the slides.
 
 ``` html
-<quasar-slider arrows dots actions class="text-white">
+<q-slider arrows dots actions class="text-white">
   <div slot="slide" class="bg-primary">
     Slide 1
   </div>
@@ -95,7 +95,7 @@ Put icons on the same DOM hierarchical level as the slides.
   <i slot="action" @click="thirdMethod()">
     add_shopping_cart
   </i>
-</quasar-slider>
+</q-slider>
 ```
 
 ## Launch Slider in Fullscreen
@@ -105,8 +105,8 @@ You can launch a Slider in Fullscreen by using a [Modal](/components/modal.html)
 <button class="primary glossy" @click="$refs.modal.open()">
   Launch
 </button>
-<quasar-modal ref="modal" class="maximized">
-  <quasar-slider arrows dots class="text-white full-height">
+<q-modal ref="modal" class="maximized">
+  <q-slider arrows dots class="text-white full-height">
     <div slot="slide" class="bg-primary centered">
       <h1>Slide 1</h1>
       <button class="dark glossy" @click="$refs.modal.close()">Close Me</button>
@@ -119,6 +119,6 @@ You can launch a Slider in Fullscreen by using a [Modal](/components/modal.html)
       <h1>Slide 3</h1>
       <button class="dark glossy" @click="$refs.modal.close()">Close Me</button>
     </div>
-  </quasar-slider>
-</quasar-modal>
+  </q-slider>
+</q-modal>
 ```

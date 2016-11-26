@@ -56,6 +56,7 @@ This command comes in really handy after building your Quasar App for production
 $ quasar serve
 
 # ..or serve a full or relative path
+$ quasar serve dist
 $ quasar serve ./dist
 $ quasar serve /work/quasar-app/dist
 ```
@@ -78,26 +79,3 @@ $ quasar build ios
 * HTML minified with [html-minifier](https://github.com/kangax/html-minifier)
 * CSS across all components extracted into a single file and minified with [cssnano](https://github.com/ben-eb/cssnano)
 * All static assets compiled with version hashes for efficient long-term caching, and a production index.html is auto-generated with proper URLs to these generated assets
-
-### Unit Testing
-> Run unit tests in PhantomJS with [Karma](http://karma-runner.github.io/0.13/index.html). See [Unit Testing](/guide/app-unit-testing.html) for more details.
-
-``` bash
-$ quasar test -u
-```
-
-* Supports ES2015 in test files
-* Supports all webpack loaders
-* Easy mock injection
-
-### End-to-end Testing
-> Run end-to-end tests with [Nightwatch](http://nightwatchjs.org/). See [End-to-end Testing](/guide/app-end-to-end-testing.html) for more details.
-
-``` bash
-$ quasar test -e
-```
-
-* Run tests in multiple browsers in parallel
-* Works with one command out of the box:
-  * Selenium and chromedriver dependencies automatically handled
-  * Automatically spawns the Selenium driver

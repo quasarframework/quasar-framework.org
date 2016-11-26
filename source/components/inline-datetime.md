@@ -10,36 +10,52 @@ The iOS and Material Datetime pickers look and act totally different, just like 
 
 ``` html
 <!-- Only Date -->
-<quasar-inline-datetime
+<q-inline-datetime
   v-model="model"
   type="date"
-></quasar-inline-datetime>
+></q-inline-datetime>
 
 <!-- Only Time -->
-<quasar-inline-datetime
+<q-inline-datetime
   v-model="model"
   type="time"
-></quasar-inline-datetime>
+></q-inline-datetime>
 
 <!-- Date & Time -->
-<quasar-inline-datetime
+<q-inline-datetime
   v-model="model"
   type="datetime"
-></quasar-inline-datetime>
+></q-inline-datetime>
 
 <!-- Disabled state -->
-<quasar-inline-datetime
+<q-inline-datetime
   disable
   v-model="model"
   type="date"
-></quasar-inline-datetime>
+></q-inline-datetime>
+```
+
+> **IMPORTANT**
+> Model must be either an empty string (unfilled state) or a string of form `2016-10-24T10:40:14.674Z`.
+
+### Error State
+Add `has-error` CSS class:
+``` html
+<q-dinline-atetime
+  class="has-error"
+  v-model="model"
+  type="time"
+></q-inline-datetime>
 ```
 
 ## Vue Properties
-| Vue Property | Required | Description |
+| Vue Property | Description |
 | --- | --- | --- |
-| `type` | Yes | One of `date`, `time` or `datetime` strings. |
-| `disable` | | When set to `true` the model cannot be altered. |
+| `type` | (**Required**) One of `date`, `time` or `datetime` strings. |
+| `min` | String; Minimum value it can take. Has same format as Datetime model. |
+| `max` | String; Maximum value it can take. Has same format as Datetime model. |
+| `readonly` | When set to `true` the model cannot be altered. |
+| `disable` | When set to `true` the model cannot be altered. |
 
 ## Vue Methods
 | Vue Method | Description |

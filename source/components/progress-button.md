@@ -9,16 +9,16 @@ Two examples below. Read about Vue properties in the next section.
 
 ``` html
 <!-- Determined Progress Button -->
-<quasar-progress-button
+<q-progress-button
   class="primary"
   :percentage="model"
   @click.native="startWorking()"
 >
   Work it!
-</quasar-progress-button>
+</q-progress-button>
 
 <!-- Indetermined Progress Button -->
-<quasar-progress-button
+<q-progress-button
   indeterminate
   class="yellow"
   dark-filler
@@ -26,7 +26,7 @@ Two examples below. Read about Vue properties in the next section.
   @click.native="startWorking()"
 >
   Work it!
-</quasar-progress-button>
+</q-progress-button>
 ```
 
 ## Vue Properties

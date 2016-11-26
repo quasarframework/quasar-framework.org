@@ -6,7 +6,7 @@ When you want to progressively load new content as the user scrolls down your Pa
 
 ## Basic Usage
 ``` html
-<quasar-infinite-scroll :handler="loadMore">
+<q-infinite-scroll :handler="loadMore">
   <!-- Content, in this case some <p> tags -->
   <p v-for="item in items" class="caption">
     Lorem ipsum dolor sit amet...
@@ -17,7 +17,7 @@ When you want to progressively load new content as the user scrolls down your Pa
     a spinner) when loading additional content
   -->
   <spinner slot="message" name="dots" :size="40"></spinner>
-</quasar-infinite-scroll>
+</q-infinite-scroll>
 ```
 
 > **IMPORTANT**
@@ -58,20 +58,20 @@ The `index` parameter can be used to make some sort of pagination on the content
 Use it when you place your infinite scroll within an overflowed DOM element.
 
 ``` html
-<quasar-infinite-scroll
+<q-infinite-scroll
   :handler="loadMore"
   inline
   style="height: 400px; overflow: auto;"
 >
   ...
-</quasar-infinite-scroll>
+</q-infinite-scroll>
 ```
 
 ## Controlling Infinite Scroll
 If for some reason you need to control the working state of Infinite Scroll component, use a Vue reference and call methods from above.
 
 ``` html
-<quasar-infinite-scroll
+<q-infinite-scroll
   :handler="loadMore"
   ref="infiniteScroll"
 >
@@ -80,5 +80,5 @@ If for some reason you need to control the working state of Infinite Scroll comp
     Stop Loading More
   </button>
   ...
-</quasar-infinite-scroll>
+</q-infinite-scroll>
 ```

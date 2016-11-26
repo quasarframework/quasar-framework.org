@@ -7,7 +7,7 @@ Quasar Grid is a Vue Component which allows you to display data in a tabular man
 ## Basic Usage
 
 ``` html
-<quasar-grid
+<q-grid
   :columns="columns"
   :data="data"
   :rows-per-page="rowsPerPage"
@@ -15,7 +15,7 @@ Quasar Grid is a Vue Component which allows you to display data in a tabular man
   :selection-actions="selectionActions"
   :sortable="sortable"
   id-property="unique_id"
-></quasar-grid>
+></q-grid>
 ```
 
 ``` js

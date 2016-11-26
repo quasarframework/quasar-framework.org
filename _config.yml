@@ -79,14 +79,14 @@ pagination_dir: page
 theme: quasar
 
 # Accounts
-github: https://github.com/rstoenescu/quasar-framework
+github: https://github.com/quasarframework/quasar
 twitter: https://twitter.com/quasarframework
 google_analytics: UA-6317975-4
 
 # Deployment
 deploy:
   type: git
-  repo: git@github.com:rstoenescu/quasar-framework.git
+  repo: git@github.com:quasarframework/quasar.git
   branch: gh-pages
 
 sitemap:

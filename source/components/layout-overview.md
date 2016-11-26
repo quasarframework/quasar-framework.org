@@ -5,21 +5,21 @@ Layouts are the elements that wrap page content, like navigational bar or drawer
 <input type="hidden" data-fullpage-demo="layout">
 
 ## Basic Usage
-A Layout is constructed by `<quasar-layout>` Component. It is mandatory unless you really know what you are doing.
+A Layout is constructed by `<q-layout>` Component. It is mandatory unless you really know what you are doing.
 
 An example of Layout, containing all possible elements: toolbars (used on header and footer), navigational tabs, a drawer on the left side (which is shown alongside page content on wide screens) and a drawer on the right side (which is always hidden regardless of the screen width and can only be activated by swiping it into view or by clicking a button):
 
 ``` html
-<quasar-layout>
+<q-layout>
   <!-- Header -->
   <div slot="header" class="toolbar">
     <!-- opens left-side drawer using its ref -->
     <button class="hide-on-drawer-visible" @click="$refs.leftDrawer.open()">
       <i>menu</i>
     </button>
-    <quasar-toolbar-title :padding="1">
+    <q-toolbar-title :padding="1">
       Title
-    </quasar-toolbar-title>
+    </q-toolbar-title>
     <!-- opens right-side drawer using its ref -->
     <button class="hide-on-drawer-visible" @click="$refs.rightDrawer.open()">
         <i>menu</i>
@@ -27,26 +27,26 @@ An example of Layout, containing all possible elements: toolbars (used on header
   </div>
 
   <!-- Navigation Tabs -->
-  <quasar-tabs slot="navigation">
-    <quasar-tab icon="mail" route="/layout" exact replace>Mails</quasar-tab>
-    <quasar-tab icon="alarm" route="/layout/alarm" exact replace>Alarms</quasar-tab>
-    <quasar-tab icon="help" route="/layout/help" exact replace>Help</quasar-tab>
-  </quasar-tabs>
+  <q-tabs slot="navigation">
+    <q-tab icon="mail" route="/layout" exact replace>Mails</q-tab>
+    <q-tab icon="alarm" route="/layout/alarm" exact replace>Alarms</q-tab>
+    <q-tab icon="help" route="/layout/help" exact replace>Help</q-tab>
+  </q-tabs>
 
   <!-- Left-side Drawer -->
-  <quasar-drawer ref="leftDrawer">
+  <q-drawer ref="leftDrawer">
     <div class="toolbar">
-      <quasar-toolbar-title>
+      <q-toolbar-title>
         Drawer Title
-      </quasar-toolbar-title>
+      </q-toolbar-title>
     </div>
 
     <div class="list no-border platform-delimiter">
-      <quasar-drawer-link icon="mail" to="/" exact>
+      <q-drawer-link icon="mail" :to="{path: '/', exact: true}">
         Link
-      </quasar-drawer-link>
+      </q-drawer-link>
     </div>
-  </quasar-drawer>
+  </q-drawer>
 
   <!-- IF USING subRoutes only: -->
   <router-view class="layout-view"></router-view>
@@ -54,24 +54,24 @@ An example of Layout, containing all possible elements: toolbars (used on header
   <div class="layout-view"></div>
 
   <!-- Right-side Drawer -->
-  <quasar-drawer ref="rightDrawer">
+  <q-drawer ref="rightDrawer">
     ...
-  </quasar-drawer>
+  </q-drawer>
 
   <!-- Footer -->
   <div slot="footer" class="toolbar">
     ....
   </div>
-</quasar-layout>
+</q-layout>
 ```
 
 ## Understanding Layouts
 
-1. Make sure that your Layout template DOM elements are wrapped by one (and **only one**) DOM element, like for example `<quasar-layout>`. Do not add more than one DOM element at the highest hierarchical level of your Layout template.
+1. Make sure that your Layout template DOM elements are wrapped by one (and **only one**) DOM element, like for example `<q-layout>`. Do not add more than one DOM element at the highest hierarchical level of your Layout template.
 
 2. If your layout uses subRoutes, then it makes sense to use `<router-view>` component (but with `layout-view` CSS class). Else use whatever element you want, as long as you also specify `layout-view` CSS class.
 
-3. The `<quasar-layout>` Component uses the following slots: `header`, `footer` and `navigation`. You can specify your content for these slots with the `slot` HTML attribute: `slot="footer"`.
+3. The `<q-layout>` Component uses the following slots: `header`, `footer` and `navigation`. You can specify your content for these slots with the `slot` HTML attribute: `slot="footer"`.
   ``` html
   <div slot="footer">
     ...Your Content...
@@ -119,12 +119,12 @@ An example of Layout, containing all possible elements: toolbars (used on header
 5. The order of inclusion of the drawers and `layout-view` classed DOM element matters on a desktop view (and even on wide screen tablets) where if the window is wide enough, drawers are displayed side by side with layout view content. For example, you can actually decide that your left-side drawer should be displayed on the right-side of your page content on a wide window by manipulating the order of
 components:
   ``` html
-  <quasar-layout>
+  <q-layout>
     ...
     <router-view class="layout-view"></router-view>
-    <quasar-drawer>
+    <q-drawer>
       ...Drawer Content...
-    </quasar-drawer>
+    </q-drawer>
   ```
 
 6. A great place to use [Toolbars](/components/toolbar.html) is for header and footer slots.
@@ -140,11 +140,11 @@ components:
 
 9. Example of placing a Search bar on header:
   ``` html
-  <quasar-layout>
+  <q-layout>
     ...
     <div slot="header" class="toolbar primary">
-      <quasar-search v-model="searchModel" class="primary"></quasar-search>
+      <q-search v-model="searchModel" class="primary"></q-search>
     </div>
     ...
-  </quasar-layout>
+  </q-layout>
   ```

@@ -25,14 +25,3 @@ Developing for production (`$quasar build`):
 * HTML minified with [html-minifier](https://github.com/kangax/html-minifier)
 * CSS across all components extracted into a single file and minified with [cssnano](https://github.com/ben-eb/cssnano)
 * All static assets compiled with version hashes for efficient long-term caching, and a production index.html is auto-generated with proper URLs to these generated assets
-
-Unit testing (`$ quasar test -u`):
-* Supports ES2015 in test files
-* Supports all webpack loaders
-* Easy mock injection
-
-End-to-end testing with [Nightwatch](http://nightwatchjs.org/) (`$ quasar test -e`):
-* Run tests in multiple browsers in parallel
-* Works with one command out of the box:
-  * Selenium and chromedriver dependencies automatically handled
-  * Automatically spawns the Selenium driver

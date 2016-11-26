@@ -11,9 +11,9 @@ Standalone example (within a page template, not on a Layout):
 ``` html
 <div slot="header" class="toolbar">
   <!-- Toolbar title -->
-  <quasar-toolbar-title :padding="1">
+  <q-toolbar-title :padding="1">
     Title
-  </quasar-toolbar-title>
+  </q-toolbar-title>
 
   <button>
     <i>mail</i>
@@ -24,7 +24,7 @@ Standalone example (within a page template, not on a Layout):
 Example on using a Toolbar on Layout header:
 
 ``` html
-<quasar-layout>
+<q-layout>
   ...
   <div slot="header" class="toolbar">
     <!-- opens drawer using its ref -->
@@ -35,9 +35,9 @@ Example on using a Toolbar on Layout header:
       <i>menu</i>
     </button>
 
-    <quasar-toolbar-title :padding="2">
+    <q-toolbar-title :padding="2">
       Title
-    </quasar-toolbar-title>
+    </q-toolbar-title>
 
     <button>
       <i>mail</i>
@@ -47,11 +47,11 @@ Example on using a Toolbar on Layout header:
     </button>
   </div>
   ...
-</quasar-layout>
+</q-layout>
 ```
 
 ## Toolbar Title/Text
-As you've seen in the examples above, there's the `<quasar-toolbar-title>` component which wraps the title/text of a Toolbar.
+As you've seen in the examples above, there's the `<q-toolbar-title>` component which wraps the title/text of a Toolbar.
 
 In order to successfully place it in the horizontal middle of your Toolbar on iOS theme (which is specific for iOS Apps), then you need to specify the maximum number of buttons on the left or right side of the title through the `padding` attribute.
 

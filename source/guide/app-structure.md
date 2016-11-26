@@ -9,6 +9,7 @@ title: App Structure
 │   └── ...
 ├── cordova/                      # where cordova boilerplate goes if you wrap app
 ├── dist/                         # where production build will go
+├── electron/                     # where electron boilerplate goes if you wrap app
 ├── src/
 │   ├── assets/                   # dynamic assets (processed by webpack)
 │   ├── components/               # .vue components
@@ -25,18 +26,6 @@ title: App Structure
 │   ├── component.vue             # generic .vue component file
 │   ├── layout.vue                # generic .vue for a Layout
 │   └── view.vue                  # generic .vue for a Page
-├── test
-│   ├── e2e                       # e2e testing
-│   │   ├── custom-assertions/    # e2e custom assertions
-│   │   ├── specs/                # test spec files
-│   │   ├── nightwatch.conf.js    # test runner config file
-│   │   └── runner.js             # test runner script
-│   └── unit                      # unit testing
-│       ├── coverage/             # where coverage report will go
-│       ├── specs/                # unit test spec files
-│       ├── .eslintrc             # eslint for test files
-│       ├── index.js              # test build entry file
-│       └── karma.conf.js         # test runner config file
 ├── .babelrc                      # babel config
 ├── .editorconfig                 # editor config
 ├── .eslintignore                 # ESlint ignore paths
@@ -66,12 +55,6 @@ See [Handling Static Assets](/guide/app-handling-static-assets.html) for more de
 
 ### templates/
 Component templates that you can use along Quasar CLI to generate `*.vue` files for your App. See [Generating Components](/guide/quasar-cli.html#Generating-Components).
-
-### test/unit/
-Contains unit test related files. See [Unit Testing](/guide/app-unit-testing.html) for more details.
-
-### test/e2e/
-Contains e2e test related files. See [End-to-end Testing](/guide/app-end-to-end-testing.html) for more details.
 
 ### package.json
 The NPM package meta file that contains all the build dependencies and scripts (including build scripts used by Quasar CLI).

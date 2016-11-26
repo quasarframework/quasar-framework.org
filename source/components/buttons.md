@@ -58,4 +58,4 @@ There are also the `raised`, `clear`, `outline`, `push`, `bordered`, `round` and
 Make use of globally available `disabled`, `block` (sets CSS `display` property to `block`) or `full-width`.
 
 ## Progress Buttons
-There's also a type of button that has its own Quasar Component named `<quasar-progress-button>`. Check documentation [here](/components/progress-button.html).
+There's also a type of button that has its own Quasar Component named `<q-progress-button>`. Check documentation [here](/components/progress-button.html).

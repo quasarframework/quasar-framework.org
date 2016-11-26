@@ -40,6 +40,15 @@ You can display text in a variety of ways.
 <p class="text-italic">Italic text</p>
 <!-- or: --><em>Italic text</em>
 
+<!-- Quotes -->
+<div class="quote">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+</div>
+
+<div class="quote text-right">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+</div>
+
 <!-- Blockquotes -->
 <blockquote>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>

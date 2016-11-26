@@ -7,10 +7,10 @@ Quasar Pagination is a Web Component ready to use where a pagination system is n
 ## Basic Usage
 
 ``` html
-<quasar-pagination
+<q-pagination
   v-model="page"
   :max="17"
-></quasar-pagination>
+></q-pagination>
 ```
 
 ## Vue Properties
@@ -23,5 +23,5 @@ Quasar Pagination is a Web Component ready to use where a pagination system is n
 ## Vue Methods
 | Vue Method | Description |
 | --- | --- |
-| `@set(value)` | Parses and sets page number to `value`. |
-| `@setByOffset(value)` | Parses and sets page number to current value + `value`. Negative values allowed. |
+| `set(value)` | Parses and sets page number to `value`. |
+| `setByOffset(value)` | Parses and sets page number to current value + `value`. Negative values allowed. |

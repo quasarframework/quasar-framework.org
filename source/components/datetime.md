@@ -10,39 +10,57 @@ The iOS and Material Datetime pickers look and act totally different, just like 
 
 ``` html
 <!-- Only Date -->
-<quasar-datetime
+<q-datetime
   v-model="model"
   type="date"
-></quasar-datetime>
+></q-datetime>
 
 <!-- Only Time -->
-<quasar-datetime
+<q-datetime
   v-model="model"
   type="time"
-></quasar-datetime>
+></q-datetime>
 
 <!-- Date & Time -->
-<quasar-datetime
+<q-datetime
   v-model="model"
   type="datetime"
-></quasar-datetime>
+></q-datetime>
 
 <!-- Disabled state -->
-<quasar-datetime
+<q-datetime
   disable
   v-model="model"
   type="date"
-></quasar-datetime>
+></q-datetime>
+```
+
+> **IMPORTANT**
+> Model must be either an empty string (unfilled state) or a string of form `2016-10-24T10:40:14.674Z`.
+
+### Error State
+Add `has-error` CSS class:
+``` html
+<q-datetime
+  class="has-error"
+  v-model="model"
+  type="time"
+></q-datetime>
 ```
 
 ## Vue Properties
-| Vue Property | Required | Description |
+| Vue Property | Description |
 | --- | --- | --- |
-| `type` | Yes | One of `date`, `time` or `datetime` strings. |
-| `format` | | Format in MomentJs style of how input displays date and/or time. |
-| `okLabel` | | Label for "OK" button on mobile Dialog. |
-| `cancelLabel` | | Label for "Cancel" button on mobile Dialog. |
-| `disable` | | When set to `true` the model cannot be altered. |
+| `type` | (**Required**) One of `date`, `time` or `datetime` strings. |
+| `format` | Format in MomentJs style of how input displays date and/or time. |
+| `okLabel` | Label for "OK" button on mobile Dialog. |
+| `cancelLabel` | Label for "Cancel" button on mobile Dialog. |
+| `min` | String; Minimum value it can take. Has same format as Datetime model. |
+| `max` | String; Maximum value it can take. Has same format as Datetime model. |
+| `label` | (Floating) label to use. |
+| `placeholder` | Placeholder text to use. |
+| `readonly` | When set to `true` the model cannot be altered. |
+| `disable` | When set to `true` the model cannot be altered. |
 
 ## Vue Methods
 | Vue Method | Description |
@@ -58,11 +76,11 @@ The iOS and Material Datetime pickers look and act totally different, just like 
   <div class="item multiple-lines">
     <i class="item-primary">access_time</i>
     <div class="item-content">
-      <quasar-datetime
+      <q-datetime
         class="full-width"
         type="time"
         v-model="model"
-      ></quasar-datetime>
+      ></q-datetime>
     </div>
   </div>
 
@@ -70,11 +88,11 @@ The iOS and Material Datetime pickers look and act totally different, just like 
   <div class="item multiple-lines">
     <i class="item-primary">update</i>
     <div class="item-content row items-baseline">
-      <quasar-datetime
+      <q-datetime
         class="full-width"
         type="date"
         v-model="model"
-      ></quasar-datetime>
+      ></q-datetime>
     </div>
   </div>
 
@@ -82,11 +100,11 @@ The iOS and Material Datetime pickers look and act totally different, just like 
   <div class="item multiple-lines">
     <i class="item-primary">notifications</i>
     <div class="item-content row items-baseline">
-      <quasar-datetime
+      <q-datetime
         class="full-width"
         type="datetime"
         v-model="model"
-      ></quasar-datetime>
+      ></q-datetime>
     </div>
   </div>
 </div>

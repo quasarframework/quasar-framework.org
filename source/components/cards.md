@@ -120,9 +120,9 @@ Be creative. You can embed a Parallax Web Component:
 
 ``` html
 <div class="card">
-  <quasar-video
+  <q-video
     :src="https://www.youtube.com/embed/k3_tw44QsZQ?rel=0"
-  ></quasar-video>
+  ></q-video>
   <div class="card-content">
     Card Content
   </div>
@@ -228,23 +228,23 @@ Imagine a Card with Collapsibles containing Cards. Inception :)
     Card with Collapsible List
   </div>
   <div class="list item-delimiter">
-    <quasar-collapsible icon="explore" label="First">
+    <q-collapsible icon="explore" label="First">
       <div>
         Lorem ipsum dolor sit amet...
       </div>
-    </quasar-collapsible>
+    </q-collapsible>
 
-    <quasar-collapsible icon="perm_identity" label="Second">
+    <q-collapsible icon="perm_identity" label="Second">
       <div>
         Lorem ipsum dolor sit amet...
       </div>
-    </quasar-collapsible>
+    </q-collapsible>
 
-    <quasar-collapsible icon="shopping_cart" label="Third">
+    <q-collapsible icon="shopping_cart" label="Third">
       <div>
         Lorem ipsum dolor sit amet...
       </div>
-    </quasar-collapsible>
+    </q-collapsible>
   </div>
 </div>
 ```
@@ -260,9 +260,9 @@ In the example below we include a circular button which the user can tap/click f
     Card with FAB
   </div>
   <div class="card-media">
-    <quasar-video
+    <q-video
       :src="https://www.youtube.com/embed/k3_tw44QsZQ?rel=0"
-    ></quasar-video>
+    ></q-video>
     <button class="primary circular">
       <i>share</i>
     </button>

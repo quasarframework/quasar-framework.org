@@ -7,6 +7,32 @@ $ npm install sass-loader node-sass --save-dev
 ```
 Note you also need to install node-sass because sass-loader depends on it as a peer dependency.
 
+## Installing CSS related loaders
+By default, if you will use LESS, SASS/SCSS you only need to install the loader. If however you want another CSS preprocessor, install the loader then edit `build/css-utils.js` by adding an entry to `styleLoaders` besides the standard following ones:
+``` js
+{
+  css: generateLoaders(['css']),
+  less: generateLoaders(['css', 'less']),
+  sass: generateLoaders(['css', 'sass?indentedSyntax']),
+  scss: generateLoaders(['css', 'sass']),
+  styl: generateLoaders(['css', 'stylus']),
+  stylus: generateLoaders(['css', 'stylus'])
+}
+```
+
+## Installing non-CSS related loaders:
+
+After installing your loaders, make sure you edit `build/webpack.base.config.js` and add entries to `module/rules` for each new loader. Example of a loader:
+
+``` js
+{
+  test: /\.js$/,
+  loader: 'babel-loader',
+  include: projectRoot,
+  exclude: /node_modules/
+},
+```
+
 ## Using Pre-Processors inside Components
 
 Once installed, you can use the pre-processors inside your `*.vue` components using the lang attribute on `<style>` tags:
@@ -26,34 +52,18 @@ Once installed, you can use the pre-processors inside your `*.vue` components us
 
 Styles in `*.vue` files (and all other style files) are piped through PostCSS by default, so you don't need to use a specific loader for it.
 
-For `*.vue` files you can simply add PostCSS plugins you want to use in `build/webpack.base.conf.js` under the vue block, and for the other files under postcss block:
-
-``` js
-module.exports = {
-  // ...
-  vue: {
-    postcss: [/* your plugins */]
-  },
-  // ...
-  postcss: []
-}
-```
-
 By default, PostCSS is configured to use Autoprefixer.
 
-Also, see [vue-loader's related documentation](http://vue-loader.vuejs.org/en/features/postcss.html) for more details.
-
 ## A note on Coffeescript
-If you are using Coffeescript then you need to disable ESLint. Open up `/build/webpack.base.conf.js` and remove the following section:
+If you are using Coffeescript then you need to disable ESLint. Open up `/build/webpack.base.conf.js` and remove the following section from `module/rules`:
 ``` js
-preLoaders: [
-  {
-    test: /\.(vue|js)$/,
-    loader: 'eslint',
-    include: projectRoot,
-    exclude: /node_modules/
-  }
-]
+{ // eslint
+  enforce: 'pre',
+  test: /\.(vue|js)$/,
+  loader: 'eslint-loader',
+  include: projectRoot,
+  exclude: /node_modules/
+}
 ```
 
 ## Standalone CSS Files

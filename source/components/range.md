@@ -9,7 +9,13 @@ Also check its "sibling", the [Double Range](/components/double-range.html) comp
 ## Basic Usage
 
 ``` html
-<quasar-range v-model="number" :min="1" :max="7"></quasar-range>
+<q-range v-model="number" :min="1" :max="7"></q-range>
+```
+
+### Error State
+Add `has-error` CSS class:
+``` html
+<q-range class="has-error" v-model="number" :min="1" :max="7"></q-range>
 ```
 
 ## Vue Properties
@@ -19,6 +25,7 @@ Also check its "sibling", the [Double Range](/components/double-range.html) comp
 | `min` | Number | Minimum value of the model |
 | `max` | Number | Maximum value of the model |
 | `label` | Boolean | Popup a label when user clicks/taps on the Range |
+| `labelAlways` | Boolean | Always display the label |
 | `step` | Number | Specify step amount between valid values |
 | `snap` | Boolean | Range handler will snap on values, rather than walking freely; good to use along `step`; also displays step markers on the Range |
 | `markers` | Boolean | Display markers on background, one for each possible value for the model. |
@@ -26,14 +33,14 @@ Also check its "sibling", the [Double Range](/components/double-range.html) comp
 
 Example with `step`, `label` and `snap`:
 ``` html
-<quasar-range
+<q-range
   v-model="number"
   :min="min"
   :max="max"
   :step="step"
   label
   snap
-></quasar-range>
+></q-range>
 ```
 
 > **IMPORTANT**
@@ -43,7 +50,7 @@ Example with `step`, `label` and `snap`:
 Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`, `orange`, `teal` as CSS class:
 
 ``` html
-<quasar-range class="orange" v-model="model"></quasar-range>
+<q-range class="orange" v-model="model"></q-range>
 ```
 
 ## Inside of a List Usage
@@ -53,12 +60,12 @@ Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`
   <div class="item two-lines">
     <i class="item-primary">volume_up</i>
     <div class="item-content">
-      <quasar-range
+      <q-range
         v-model="standalone"
         :min="0"
         :max="50"
         label
-      ></quasar-range>
+      ></q-range>
     </div>
   </div>
 </div>

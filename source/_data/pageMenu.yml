@@ -3,7 +3,6 @@ guide:
     Getting Started: index
     Quasar CLI: $
     Quasar Play App: $
-    Quasar Development with Docker: $
     Contributing: $
   Boilerplate:
     Overview: app-boilerplate
@@ -13,13 +12,13 @@ guide:
     Pre-Processors: app-$
     Handling Static Assets: app-$
     API Proxying for Dev: app-$
-    Unit Testing: app-$
-    End-to-end Testing: app-$
     Prerendering for SEO: app-$
   Development:
     Ajax Requests: $
     Components Sharing State: $
     Cordova Wrapper: $
+    Electron Wrapper: $
+    Form Validation: $
     Handling Back Button: $
     Router: $
     Theming: quasar-$

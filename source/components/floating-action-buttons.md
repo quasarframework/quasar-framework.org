@@ -15,27 +15,27 @@ So there are two types: expandable (has sub-actions) and non-expandable. **If no
 </button>
 
 <!-- Expandable -->
-<quasar-fab
+<q-fab
   classNames="purple"
   icon="keyboard_arrow_up"
   direction="up"
 >
-  <quasar-small-fab
+  <q-small-fab
     class="white"
     @click.native="someMethod()"
-  >mail</quasar-small-fab>
+  >mail</q-small-fab>
 
-  <quasar-small-fab
+  <q-small-fab
     class="white"
     @click.native="someMethod()"
-  >alarm</quasar-small-fab>
-</quasar-fab>
+  >alarm</q-small-fab>
+</q-fab>
 ```
 
 We'll continue describing only the expandable ones, as the non-expandable are simple circular buttons and you can read about them in the Buttons documentation page.
 
 ## Vue Properties
-> These properties and methods apply to `<quasar-fab>` only.
+> These properties and methods apply to `<q-fab>` only.
 
 | Vue Property | Default Value | Description |
 | --- | --- | --- |
@@ -68,7 +68,7 @@ Simply use the [Quasar CSS Positioning](/api/css-positioning.html) classes.
   Button label
 </button>
 
-<quasar-fab
+<q-fab
   class="absolute-bottom-right"
   @click="alert()"
   classNames="primary"
@@ -76,14 +76,14 @@ Simply use the [Quasar CSS Positioning](/api/css-positioning.html) classes.
   direction="up"
   style="right: 18px; bottom: 18px;"
 >
-  <quasar-small-fab
+  <q-small-fab
     class="white"
     @click.native="someMethod()"
-  >mail</quasar-small-fab>
+  >mail</q-small-fab>
 
-  <quasar-small-fab
+  <q-small-fab
     class="white"
     @click.native="someMethod()"
-  >alarm</quasar-small-fab>
-</quasar-fab>
+  >alarm</q-small-fab>
+</q-fab>
 ```

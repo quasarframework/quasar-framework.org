@@ -8,33 +8,33 @@ A Quasar Select box can be of two types: single selection (using Radios) or mult
 
 ``` html
 <!-- Single Selection using Radios -->
-<quasar-select
+<q-select
   type="radio"
   v-model="select"
   :options="selectOptions"
-></quasar-select>
+></q-select>
 
 <!-- Multiple Selection using Checkboxes-->
-<quasar-select
+<q-select
   type="checkbox"
   v-model="select"
   :options="selectOptions"
-></quasar-select>
+></q-select>
 
 <!-- Multiple Selection using Toggles-->
-<quasar-select
+<q-select
   type="toggle"
   v-model="select"
   :options="selectOptions"
-></quasar-select>
+></q-select>
 
 <!-- Disabled state -->
-<quasar-select
+<q-select
   disable
   type="checkbox"
   v-model="select"
   :options="selectOptions"
-></quasar-select>
+></q-select>
 ```
 
 Options Object example:
@@ -52,12 +52,24 @@ selectOptions: [
 ]
 ```
 
+### Error State
+Add `has-error` CSS class:
+``` html
+<q-select
+  class="has-error"
+  type="radio"
+  v-model="select"
+  :options="selectOptions"
+></q-select>
+```
+
 ## Vue Properties
 | Vue Property | Required | Description |
 | --- | --- | --- |
 | `options` | Yes | Array of options (Object with `label` and `value` properties). |
 | `type` | Yes | One of `radio`, `checkbox` or `toggle` strings. |
 | `placeholder` | | Placeholder to use. |
+| `readonly` | | When set to `true` the model cannot be altered. |
 | `disable` | | When set to `true` the model cannot be altered. |
 
 ## Vue Methods
@@ -76,12 +88,12 @@ selectOptions: [
   <div class="item multiple-lines">
     <i class="item-primary">supervisor_account</i>
     <div class="item-content">
-      <quasar-select
+      <q-select
         class="full-width"
         type="radio"
         v-model="select"
         :options="selectOptions"
-      ></quasar-select>
+      ></q-select>
     </div>
   </div>
 
@@ -91,24 +103,24 @@ selectOptions: [
   <div class="item multiple-lines">
     <i class="item-primary">supervisor_account</i>
     <div class="item-content">
-      <quasar-select
+      <q-select
         class="full-width"
         type="checkbox"
         v-model="multipleSelect"
         :options="selectOptions"
-      ></quasar-select>
+      ></q-select>
     </div>
   </div>
 
   <div class="item multiple-lines">
     <i class="item-primary">supervisor_account</i>
     <div class="item-content">
-      <quasar-select
+      <q-select
         class="full-width"
         type="toggle"
         v-model="multipleSelect"
         :options="selectOptions"
-      ></quasar-select>
+      ></q-select>
     </div>
   </div>
 </div>

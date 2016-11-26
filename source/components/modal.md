@@ -6,17 +6,17 @@ Quasar Modals slide in off screen to display a temporary UI, often used for logi
 
 ## Basic Usage
 ``` html
-<quasar-modal ref="basicModal">
+<q-modal ref="basicModal">
   <h4>Basic Modal</h4>
   <button class="primary" @click="$refs.basicModal.close()">Close</button>
-</quasar-modal>
+</q-modal>
 ```
 
 Modals are responsive to the width of the window (see demo on a desktop and resize browser window). Sometimes you need to always have a Modal maximized or always minimized. For this case, add `minimized` or `maximized` CSS class:
 ``` html
-<quasar-modal class="maximized">
+<q-modal class="maximized">
   ...
-</quasar-modal>
+</q-modal>
 ```
 
 ## Vue Properties
@@ -24,7 +24,9 @@ Modals are responsive to the width of the window (see demo on a desktop and resi
 | --- | --- | --- |
 | `position-classes` | String | Space delimited CSS classes that overwrite the default 'items-center justify-center' classes. |
 | `content-css` | Object | Applies CSS style Object to Modal container. |
-| `transition` | String | Vue transition to use. Quasar comes with `quasar-modal` out of the box. But you can write your own Vue transitions using CSS and use them. |
+| `transition` | String | Vue transition to use. Quasar comes with `q-modal` out of the box. But you can write your own Vue transitions using CSS and use them. |
+| `noBackdropDismiss` | Boolean | Disable Modal dismissal by clicking/tapping on backdrop. |
+| `noEscDismiss` | Boolean | Disable Modal dismissal by hitting Escape key. |
 
 ## Vue Methods
 | Method | Description |
@@ -43,45 +45,45 @@ Modals are responsive to the width of the window (see demo on a desktop and resi
 
 ### Capturing Events
 ``` html
-<quasar-modal
+<q-modal
   @open="notify('open')"
   @escape-key="notify('escape-key')"
   @close="notify('close')"
 >
   ...
-</quasar-modal>
+</q-modal>
 ```
 ### Styling Modal
 ``` html
-<quasar-modal :content-css="{padding: '50px'}">
+<q-modal :content-css="{padding: '50px'}">
   ...
-</quasar-modal>
+</q-modal>
 ```
 
 ### Modal with Layout
 ``` html
-<quasar-modal
+<q-modal
   ref="layoutModal"
   :content-css="{minWidth: '80vw', minHeight: '80vh'}"
 >
-  <quasar-layout>
+  <q-layout>
     <div slot="header" class="toolbar">
       <button @click="$refs.layoutModal.close()">
         <i>keyboard_arrow_left</i>
       </button>
-      <quasar-toolbar-title :padding="1">
+      <q-toolbar-title :padding="1">
         Header
-      </quasar-toolbar-title>
+      </q-toolbar-title>
     </div>
 
     <div slot="header" class="toolbar primary">
-      <quasar-search class="primary"></quasar-search>
+      <q-search class="primary"></q-search>
     </div>
 
     <div slot="footer" class="toolbar">
-      <quasar-toolbar-title :padding="1">
+      <q-toolbar-title :padding="1">
         Footer
-      </quasar-toolbar-title>
+      </q-toolbar-title>
     </div>
 
     <div class="layout-view">
@@ -91,6 +93,6 @@ Modals are responsive to the width of the window (see demo on a desktop and resi
         <p class="caption" v-for="n in 15">This is a Modal presenting a Layout.</p>
       </div>
     </div>
-  </quasar-layout>
-</quasar-modal>
+  </q-layout>
+</q-modal>
 ```
