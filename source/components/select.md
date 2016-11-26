@@ -68,6 +68,7 @@ Add `has-error` CSS class:
 | --- | --- | --- |
 | `options` | Yes | Array of options (Object with `label` and `value` properties). |
 | `type` | Yes | One of `radio`, `checkbox` or `toggle` strings. |
+| `label` | | (Floating) Label to use. |
 | `placeholder` | | Placeholder to use. |
 | `readonly` | | When set to `true` the model cannot be altered. |
 | `disable` | | When set to `true` the model cannot be altered. |

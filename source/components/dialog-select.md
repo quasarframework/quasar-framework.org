@@ -76,6 +76,7 @@ Add `has-error` CSS class:
 | `cancelLabel` | | Label for "Cancel" button on Dialog. |
 | `title` | | Title of Dialog. |
 | `message` | | Message of Dialog. |
+| `label` | | (Floating) Label to use. |
 | `placeholder` | | Placeholder to use. |
 | `readonly` | | When set to `true` the model cannot be altered. |
 | `disable` | | When set to `true` the model cannot be altered. |

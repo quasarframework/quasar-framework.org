@@ -14,6 +14,9 @@ When you want to allow the user to refresh the content or add newest content.
 </q-pull-to-refresh>
 ```
 
+> **IMPORTANT**
+> Do not wrap `<q-pull-to-refresh>` by a `<div class="layout-padding>"`. If you must, place that `<div>` as direct child of `<q-pull-to-refresh>`.
+
 ## Vue Properties
 | Vue Property | Type | Default Value | Description |
 | --- | --- | --- | --- | --- |
