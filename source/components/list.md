@@ -302,24 +302,25 @@ Scroll down to see the demos if on desktop.
       <div>Brunch this weekend?</div>
     </div>
     <div class="item-secondary">
-      <i slot="target" ref="item">
+      <i slot="target">
         more_vert
+
+        <q-popover ref="popover">
+          <div class="list">
+            <div class="item item-link" @click="$refs.popover.close()">
+              <div class="item-content">Reply</div>
+            </div>
+            <div class="item item-link" @click="$refs.popover.close()">
+              <div class="item-content">Forward</div>
+            </div>
+            <div class="item item-link" @click="$refs.popover.close()">
+              <div class="item-content">Delete</div>
+            </div>
+          </div>
+        </q-popover>
       </i>
     </div>
   </div>
-  <q-popover ref="popover" anchor-ref="item">
-    <div class="list">
-      <div class="item item-link" @click="$refs.popover.close()">
-        <div class="item-content">Reply</div>
-      </div>
-      <div class="item item-link" @click="$refs.popover.close()">
-        <div class="item-content">Forward</div>
-      </div>
-      <div class="item item-link" @click="$refs.popover.close()">
-        <div class="item-content">Delete</div>
-      </div>
-    </div>
-  </q-popover>
 </div>
 ```
 
@@ -377,24 +378,25 @@ Multiple line items are usually for some Form components that exceed the height 
       <div class="item-label item-smaller">...as many as you need!</div>
     </div>
     <div class="item-secondary">
-      <i slot="target" ref="item">
+      <i slot="target">
         more_vert
+
+        <q-popover ref="popover">
+          <div class="list">
+            <div class="item item-link" @click="$refs.popover.close()">
+              <div class="item-content">Reply</div>
+            </div>
+            <div class="item item-link" @click="$refs.popover.close()">
+              <div class="item-content">Forward</div>
+            </div>
+            <div class="item item-link" @click="$refs.popover.close()">
+              <div class="item-content">Delete</div>
+            </div>
+          </div>
+        </q-popover>
       </i>
     </div>
   </div>
-  <q-popover ref="popover" anchor-ref="item">
-    <div class="list">
-      <div class="item item-link" @click="$refs.popover.close()">
-        <div class="item-content">Reply</div>
-      </div>
-      <div class="item item-link" @click="$refs.popover.close()">
-        <div class="item-content">Forward</div>
-      </div>
-      <div class="item item-link" @click="$refs.popover.close()">
-        <div class="item-content">Delete</div>
-      </div>
-    </div>
-  </q-popover>
 </div>
 ```
 
@@ -1039,24 +1041,24 @@ Let's explore some ready to use templates using what we've learned above.
       1 week
     </div>
     <div class="item-secondary">
-      <i slot="target" ref="item">
+      <i slot="target">
         more_vert
-      </i>
 
+        <q-popover ref="popover">
+          <div class="list">
+            <div class="item item-link" @click="$refs.popover.close()">
+              <div class="item-content">Reply</div>
+            </div>
+            <div class="item item-link" @click="$refs.popover.close()">
+              <div class="item-content">Forward</div>
+            </div>
+            <div class="item item-link" @click="$refs.popover.close()">
+              <div class="item-content">Delete</div>
+            </div>
+          </div>
+        </q-popover>
+      </i>
     </div>
   </div>
-  <q-popover ref="popover" anchor-ref="item">
-    <div class="list">
-      <div class="item item-link" @click="$refs.popover.close()">
-        <div class="item-content">Reply</div>
-      </div>
-      <div class="item item-link" @click="$refs.popover.close()">
-        <div class="item-content">Forward</div>
-      </div>
-      <div class="item item-link" @click="$refs.popover.close()">
-        <div class="item-content">Delete</div>
-      </div>
-    </div>
-  </q-popover>
 </div>
 ```
