@@ -8,22 +8,22 @@ Quasar Search bars lazy evaluate the input with a debounce of 300ms by default.
 ## Basic Usage
 
 ``` html
-<q-search v-model="searchModel"></q-search>
+<quasar-search v-model="searchModel"></quasar-search>
 
 <!-- Disabled state -->
-<q-search
+<quasar-search
   disable
   v-model="searchModel"
-></q-search>
+></quasar-search>
 ```
 
 ### Error State
 Add `has-error` CSS class:
 ``` html
-<q-search
+<quasar-search
   class="has-error"
   v-model="searchModel"
-></q-search>
+></quasar-search>
 ```
 
 ## Vue Properties
@@ -38,12 +38,12 @@ Add `has-error` CSS class:
 
 Example:
 ``` html
-<q-search
+<quasar-search
   v-model="searchModel"
   :debounce="600"
   placeholder="Hotels"
   icon="local_hotel"
-></q-search>
+></quasar-search>
 ```
 
 ## Vue Methods
@@ -55,10 +55,10 @@ Example:
 Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`, `orange`, `teal` as CSS class:
 
 ``` html
-<q-search
+<quasar-search
   class="orange"
   v-model="searchModel"
-></q-search>
+></quasar-search>
 ```
 
 ## Usage with Layout
@@ -67,10 +67,10 @@ If you want to place on Layout header or footer:
 <q-layout>
   ...
   <div slot="header" class="toolbar orange">
-    <q-search
+    <quasar-search
       class="orange"
       v-model="searchModel"
-    ></q-search>
+    ></quasar-search>
   </div>
   ...
 </q-layout>
