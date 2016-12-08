@@ -403,7 +403,7 @@ Multiple line items are usually for some Form components that exceed the height 
 ## Collapsible Items
 <input type="hidden" data-demo="css/list/collapsible">
 
-Collapsible Items make use of the Collapsible Component. Read more about it [here](/guide/collapsible.html).
+Collapsible Items make use of the Collapsible Component. Read more about it [here](/components/collapsible.html).
 
 You can nest collapsibles within collapsibles within collapsibles within...
 ``` html
