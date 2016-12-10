@@ -81,8 +81,10 @@ components:
     Textarea: $
     Toggle: $
   Vue Components:
+    Ajax Bar: $
     Collapsible: $
     Context Menu: $
+    Data Table: $
     Floating Action Buttons: $
     Infinite Scroll: $
     Modal: $

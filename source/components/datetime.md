@@ -59,6 +59,7 @@ Add `has-error` CSS class:
 | `max` | String; Maximum value it can take. Has same format as Datetime model. |
 | `label` | (Floating) label to use. |
 | `placeholder` | Placeholder text to use. |
+| `static-label` | | Overrides `label` and `placeholder` and selected value. Display this label always regardless of selection status. |
 | `readonly` | When set to `true` the model cannot be altered. |
 | `disable` | When set to `true` the model cannot be altered. |
 

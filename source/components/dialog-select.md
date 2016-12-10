@@ -78,6 +78,7 @@ Add `has-error` CSS class:
 | `message` | | Message of Dialog. |
 | `label` | | (Floating) Label to use. |
 | `placeholder` | | Placeholder to use. |
+| `static-label` | | Overrides `label` and `placeholder` and selected value. Display this label always regardless of selection status. |
 | `readonly` | | When set to `true` the model cannot be altered. |
 | `disable` | | When set to `true` the model cannot be altered. |
 
