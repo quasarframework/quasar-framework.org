@@ -141,6 +141,11 @@ Dialog.create({
       label: 'Textbox',
       model: ''
     },
+    pass: {
+      type: 'password',
+      label: 'Password',
+      model: ''
+    },
     age: {
       type: 'numeric',
       label: 'Numeric',
@@ -166,6 +171,7 @@ Dialog.create({
       handler (data) {
         Toast.create('Returned ' + JSON.stringify(data))
         // data.name is 'Quasar'
+        // data.pass is 'rulz!'
         // data.age is 1
         // data.tags is ['Joe', 'John'],
         // data.comments is 'Some comments...'
