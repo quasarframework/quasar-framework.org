@@ -154,9 +154,15 @@ columns = [
 
     // (optional) Column CSS style
     style: {color: '#ff09fa'},
+    // "style" can be a function too if you want to apply
+    // certain CSS style based on cell value:
+    // style (cell_value) { return .... }
 
     // (optional) Column CSS classes
     classes: 'bg-primary',
+    // "classes" can be a function too if you want to apply
+    // certain CSS class based on cell value:
+    // classes (cell_value) { return .... }
 
     // (optional) Sortable column?
     sort: true,
