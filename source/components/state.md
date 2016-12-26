@@ -4,6 +4,8 @@ Quasar State Component helps you when you have two states (called "default" and 
 
 <input type="hidden" data-fullpage-demo="web-components/state">
 
+What else can you build with State component? Inline editor as an example.
+
 ## Basic Usage
 
 ``` html
