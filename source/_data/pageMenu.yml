@@ -13,6 +13,7 @@ guide:
     Handling Static Assets: app-$
     API Proxying for Dev: app-$
     Prerendering for SEO: app-$
+    Dev vs Production Code: app-$
   Development:
     Ajax Requests: $
     Components Sharing State: $
