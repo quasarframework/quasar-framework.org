@@ -24,6 +24,7 @@ guide:
     Components Sharing State: $
     Form Validation: $
     Handling Back Button: $
+    Nightly Build: quasar-$
     Router: $
     Theming: quasar-$
 api:
