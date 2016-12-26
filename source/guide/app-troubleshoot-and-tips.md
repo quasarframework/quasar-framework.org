@@ -35,3 +35,11 @@ When on **Windows 10 (the 64bits version)** you may get this error. This is due 
 npm install -g npm-windows-upgrade
 npm-windows-upgrade
 ```
+
+### Disabling iOS rubber band effect
+
+When building an iOS app with Cordova and you want to disable the rubber band effect (https://www.youtube.com/watch?v=UjuNGpU29Mk), add this to your `config.xml` from the `cordova` wrapper folder inside your project:
+
+``` xml
+<Preference name = "DisallowOverscroll" value = "true" />
+```
