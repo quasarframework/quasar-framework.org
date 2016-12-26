@@ -324,6 +324,21 @@ Scroll down to see the demos if on desktop.
 </div>
 ```
 
+### Router-Link with List Items
+``` html
+<router-link
+  tag="div"
+  class="item item-link item-inset-delimiter"
+  to="/some/path/in/your/app"
+>
+  <i class="item-primary">alarm</i>
+  <div class="item-content has-secondary">
+    <div>Some content</div>
+  </div>
+  <i class="item-secondary">chevron_right</i>
+</router-link>
+```
+
 ## Multi-line Items
 <input type="hidden" data-demo="css/list/multiline">
 
