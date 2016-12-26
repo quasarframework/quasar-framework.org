@@ -54,3 +54,12 @@ import moment from 'moment'
 // 'de' for German localization, as an example
 moment.locale('de')
 ```
+
+### Adding support for IE11
+Webpack2 requires Promise polyfill which does not come out of the box with IE11+. As a result, npm install `es6-promise` and then at the top of your `src/main.js` add the following code:
+
+``` js
+require('es6-promise').polyfill()
+```
+
+Due to the fact that it adds about 6KB to the bundle size (and we care about bundle size!), this is not added for you by default in the boilerplating.
