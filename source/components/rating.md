@@ -29,6 +29,11 @@ Quasar Rating is a Web Component which allows users to rate items, usually knows
 | --- | --- |
 | `set(value)` | Parses and sets that value. |
 
+## Vue Events
+| Vue Event | Description |
+| --- | --- |
+| `@input` | Triggered on model value change with the new value. |
+
 ## Coloring
 Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`, `orange`, `teal` as CSS class:
 

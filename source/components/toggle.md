@@ -47,6 +47,11 @@ Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`
 | `icon` | String | Optional icon to use. |
 | `disable` | Boolean | If disabled user can not change state. |
 
+## Vue Events
+| Vue Event | Description |
+| --- | --- |
+| `@input` | Triggered on model value change with the new value. |
+
 ## Inside of a List Usage
 
 ``` html

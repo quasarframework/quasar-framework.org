@@ -38,6 +38,11 @@ Add `has-error` CSS class:
 | `remove(index)` | Removes value at `index` in model. |
 | `focus()` | Focuses the input text field. |
 
+## Vue Events
+| Vue Event | Description |
+| --- | --- |
+| `@input` | Triggered on model value change with the new value. |
+
 ## Inside of a List Usage
 ``` html
 <div class="list">

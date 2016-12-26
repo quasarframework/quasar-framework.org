@@ -46,6 +46,11 @@ Example with `step`, `label` and `snap`:
 > **IMPORTANT**
 > Make sure you choose the `min`, `max` and `step` value correctly. `step` must be a divisor of `max - min`, otherwise it might mess things up. This is because all valid steps must be able to hold an equal position within the `min`-`max` interval.
 
+## Vue Events
+| Vue Event | Description |
+| --- | --- |
+| `@input` | Triggered on model value change with the new value. |
+
 ## Coloring
 Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`, `orange`, `teal` as CSS class:
 

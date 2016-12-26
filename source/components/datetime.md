@@ -69,6 +69,11 @@ Add `has-error` CSS class:
 | `open()` | Show Popover (on desktop) and Dialog (on mobile) to select date and/or time. |
 | `close()` | Hide Popover (on desktop) and Dialog (on mobile) to select date and/or time. |
 
+## Vue Events
+| Vue Event | Description |
+| --- | --- |
+| `@input` | Triggered on model value change with the new value. |
+
 ## Inside of a List Usage
 
 ``` html

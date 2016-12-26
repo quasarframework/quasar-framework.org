@@ -66,3 +66,8 @@ Add `has-error` CSS class:
 | `toggleAmPm()` | Toggles between AM and PM. |
 | `setHour()` | Sets hour (0-23). |
 | `setMinute()` | Sets minute (0-59). |
+
+## Vue Events
+| Vue Event | Description |
+| --- | --- |
+| `@input` | Triggered on model value change with the new value. |

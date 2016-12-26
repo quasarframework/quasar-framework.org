@@ -51,6 +51,11 @@ Example:
 | --- | --- |
 | `clear()` | Resets the model to an empty string. |
 
+## Vue Events
+| Vue Event | Description |
+| --- | --- |
+| `@input` | Triggered on model value change with the new value. |
+
 ## Coloring
 Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`, `orange`, `teal` as CSS class:
 

@@ -32,6 +32,11 @@ Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`
 | `val` | String | Value for the respective option. When model holds this value, the Radio becomes selected. |
 | `disable` | Boolean | If disabled user can not change model to its value. |
 
+## Vue Events
+| Vue Event | Description |
+| --- | --- |
+| `@input` | Triggered on model value change with the new value. |
+
 ## Inside of a List Usage
 
 ``` html

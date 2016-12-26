@@ -25,3 +25,8 @@ Quasar Pagination is a Web Component ready to use where a pagination system is n
 | --- | --- |
 | `set(value)` | Parses and sets page number to `value`. |
 | `setByOffset(value)` | Parses and sets page number to current value + `value`. Negative values allowed. |
+
+## Vue Events
+| Vue Event | Description |
+| --- | --- |
+| `@input` | Triggered on model value change with the new value. |

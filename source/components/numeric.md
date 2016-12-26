@@ -41,6 +41,11 @@ Add `has-error` CSS class:
 | `readonly` | `false` | Make field read-only. |
 | `disable` | `false` | Disable input from user. |
 
+## Vue Events
+| Vue Event | Description |
+| --- | --- |
+| `@input` | Triggered on model value change with the new value. |
+
 ## Inside of a List Usage
 
 ``` html

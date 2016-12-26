@@ -87,6 +87,11 @@ Add `has-error` CSS class:
 | --- | --- |
 | `pick()` | Opens up the Dialog so user can pick options. |
 
+## Vue Events
+| Vue Event | Description |
+| --- | --- |
+| `@input` | Triggered on model value change with the new value. |
+
 ## Inside of a List Usage
 
 ``` html
