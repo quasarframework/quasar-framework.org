@@ -38,6 +38,24 @@ The iOS and Material Datetime pickers look and act totally different, just like 
 > **IMPORTANT**
 > Model must be either an empty string (unfilled state) or a string of form `2016-10-24T10:40:14.674Z`.
 
+#### Model Variable
+The model used by DateTime must be a String. Either an empty one, or a Momentjs formatted one, like in the example below:
+
+``` js
+import moment from 'moment'
+
+// ....
+export default {
+  data () {
+    return {
+      model: moment().format(),
+      // ...
+    }
+  },
+  // ...
+}
+```
+
 ### Error State
 Add `has-error` CSS class:
 ``` html
@@ -59,7 +77,7 @@ Add `has-error` CSS class:
 | `max` | String; Maximum value it can take. Has same format as Datetime model. |
 | `label` | (Floating) label to use. |
 | `placeholder` | Placeholder text to use. |
-| `static-label` | | Overrides `label` and `placeholder` and selected value. Display this label always regardless of selection status. |
+| `static-label` | Overrides `label` and `placeholder` and selected value. Display this label always regardless of selection status. |
 | `readonly` | When set to `true` the model cannot be altered. |
 | `disable` | When set to `true` the model cannot be altered. |
 
