@@ -15,11 +15,13 @@ guide:
     Prerendering for SEO: app-$
     Using Fonts from CDN: app-$
     Dev vs Production Code: app-$
+    Troubleshoot and Tips: app-$
+  Wrappers:
+    Cordova Wrapper: $
+    Electron Wrapper: $
   Development:
     Ajax Requests: $
     Components Sharing State: $
-    Cordova Wrapper: $
-    Electron Wrapper: $
     Form Validation: $
     Handling Back Button: $
     Router: $

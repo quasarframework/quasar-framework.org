@@ -79,6 +79,3 @@ $ quasar build ios
 * HTML minified with [html-minifier](https://github.com/kangax/html-minifier)
 * CSS across all components extracted into a single file and minified with [cssnano](https://github.com/ben-eb/cssnano)
 * All static assets compiled with version hashes for efficient long-term caching, and a production index.html is auto-generated with proper URLs to these generated assets
-
-### Troubleshoot
-> At some point you might notice that the build takes an unusual long time to finish (if it even finishes). Due to how Webpack and its loaders work, this is a clear indication that **your HTML Vue templates have a syntax error somewhere**. Example: `<span<>`, where an extra character breaks HTML: `<`.
