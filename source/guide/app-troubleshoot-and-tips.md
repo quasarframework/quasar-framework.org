@@ -43,3 +43,14 @@ When building an iOS app with Cordova and you want to disable the rubber band ef
 ``` xml
 <Preference name = "DisallowOverscroll" value = "true" />
 ```
+
+### Configuring Momentjs Localization
+
+In `src/main.js` file, add this:
+
+``` js
+import moment from 'moment'
+
+// 'de' for German localization, as an example
+moment.locale('de')
+```
