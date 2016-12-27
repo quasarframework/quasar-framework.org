@@ -120,6 +120,20 @@ Utils.dom.ready(function () {
 (Number pixels) Utils.dom.getScrollPosition(scrollTargetDomElement)
 ```
 
+You can also generate an object with cross-browser props for CSS `transform`s:
+``` js
+let props = Utils.dom.cssTransform('rotateX(30deg)')
+// props = {
+//   transform: 'rotateX(30deg)',
+//   '-webkit-transform': 'rotateX(30deg)',
+//   '-ms-transform': 'rotateX(30deg)',
+//   '-o-transform': 'rotateX(30deg)',
+//   '-moz-transform': 'rotateX(30deg)'
+// }
+
+// Then you can apply it with Utils.css(el, props)
+```
+
 ## Handling "event" on a DOM event handler
 It's cross-browser.
 
@@ -157,4 +171,15 @@ import { Utils } from 'quasar'
 
 console.log(Utils.colors.rgbToHex(85, 165, 1)) // #55a532
 console.log(Utils.colors.hexToRgb('#55a532')) // [85, 165, 1]
+```
+
+## Filter
+Filter out an array of Objects based on a certain field:
+
+``` js
+import { Utils } from 'quasar'
+
+let data = [{fee: 5, desc: 'Bla bla'}, {fee: 10, desc: 'Bla bla'}, {fee: 1, desc: 'Bla bla'}]
+console.log(Utils.filter('5', {field: 'fee', list: data})
+// {fee: 5, desc: 'Bla bla'}
 ```

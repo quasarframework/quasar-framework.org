@@ -14,6 +14,13 @@ A Quasar Select box can be of two types: single selection (using Radios) or mult
   :options="selectOptions"
 ></q-select>
 
+<!-- Single Selection using List -->
+<q-select
+  type="list"
+  v-model="select"
+  :options="selectOptions"
+></q-select>
+
 <!-- Multiple Selection using Checkboxes-->
 <q-select
   type="checkbox"

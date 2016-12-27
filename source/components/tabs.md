@@ -218,3 +218,10 @@ You can also invert the colors (see demo for example) by adding the color and `i
 ``` html
 <q-tabs class="inverted orange">...</q-tabs>
 ```
+
+## Always Justified Alignment
+By default, on large width windows the Tabs get aligned to the left. If you wish to maintain a justified alignment (filling all available space on the width), then add `justified` CSS class on the Tabs:
+
+``` html
+<q-tabs class="justified">...</q-tabs>
+```

@@ -363,6 +363,25 @@ Dialog.create({
 })
 ```
 
+### Styling Buttons
+``` js
+Dialog.create({
+  title: 'Confirm',
+  message: 'Custom button classes.',
+  buttons: [
+    {
+      label: 'Disagree',
+      classes: 'negative clear',
+      style: 'text-decoration: underline'
+    },
+    {
+      label: 'Agree',
+      classes: 'positive'
+    }
+  ]
+})
+```
+
 ### Stacked Buttons
 If you have many buttons or buttons with lots of text, you can use set `stackButtons` property to `true` when creating your Dialog. This will make your buttons be displayed on separate rows:
 

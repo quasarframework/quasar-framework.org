@@ -69,6 +69,7 @@ components:
     List: $
     Timeline: $
   Form Inputs:
+    Autocomplete: $
     Checkbox: $
     Chips Textbox: $
     Datetime: $
@@ -94,6 +95,7 @@ components:
     Infinite Scroll: $
     Modal: $
     Image Gallery: $
+    List Item: $
     Pagination: $
     Parallax: $
     Popover: $

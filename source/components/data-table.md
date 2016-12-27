@@ -166,6 +166,18 @@ columns = [
 
     // (optional) Sortable column?
     sort: true,
+    // or you can specify a custom sorting method;
+    // works same as Array.prototype.sort().
+    // Return codes:
+    //   < 0 --> "a" should be before "b"
+    //   0   --> "a" is same as "b"
+    //   > 0 --> "a" should be after "b"
+    sort (a, b) {
+      return (new Date(a)) - (new Date(b))
+    },
+    // or you have a third option to use a built-in sorting method:
+    // string, number, date, moment, boolean
+    sort: 'string',
 
     // (optional)
     // use a formatter for this column;

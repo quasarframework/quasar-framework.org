@@ -1,8 +1,9 @@
 title: Lists
 ---
 Quasar Lists are used to display rows of information, such as a contact list, a playlist, or menu. Each row is called an item. Items can also be used outside of a list.
-
 Lists can also be used (and it's also recommended) on Quasar Drawers. There's even a `<q-drawer-link>` component based on List Items.
+
+If you have some basic lists that you wish to diplay, you can also use the [ListItem component](/components/list-item.html).
 
 > We'll learn to use Lists and List Items gradually. Make sure you don't skip steps and follow this page.
 

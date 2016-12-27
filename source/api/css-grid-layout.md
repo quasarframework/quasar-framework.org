@@ -108,7 +108,7 @@ Example:
 The width of a column can be set as `width-XofY` (where *Y* is 1 to 5 and *X* is 1 to Y).
 It's a wrapper over `flex 0 1 X%`.
 
-Example: `width-1of3` for a 33% width for the cell.
+Example: `width-1of3` for a 33% width for the cell. `sm-width-1of3` when on a narrow screen only.
 
 ``` html
 <div class="row">
@@ -121,7 +121,7 @@ Example: `width-1of3` for a 33% width for the cell.
 
 CSS class `auto` makes the cell expand to the remaining unused width.
 
-There's also the possible to offset a cell with `offset-`
+There's also the possible to offset a cell with `offset-XofY`. Example: 'offset-1of3', `sm-offset-1of3` (when on narrow screen only), `offset-0` (for no offset, useful when using different offsets based on screen size).
 
 ### Grow
 **An item can grow if it's enough space available** by using `grow-i` classes, where *i* is between 1-10. This defines the ability for a flex item to grow if necessary. It accepts a unit-less value that serves as a proportion. It dictates what amount of the available space inside the flex container the item should take up.
@@ -180,6 +180,6 @@ One more example:
 </div>
 ```
 
-Prefixes also work with `order-i`, `shrink-i`, `width-XofY`, on gutters and so on.
+Prefixes also work with `order-i`, `shrink-i`, `width-XofY`, `offset-XofY`, on gutters and so on.
 
 What does small, medium, big or large windows mean? Check [CSS &gt; Visibility](/api/css-visibility.html#Window-Width-Related) page to see thresholds on window width.
