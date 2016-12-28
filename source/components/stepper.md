@@ -37,6 +37,13 @@ The navigation is handled by Quasar. User is able to go forward, back and to fin
 | `previousStep()` | Stepper goes to previous step. |
 | `finish()` | Stepper goes to "complete" state. |
 
+### Vue Properties
+| Vue Property | Type | Description |
+| --- | --- | --- |
+| `back-label` | String | Text to display instead of default 'Back' |
+| `next-label` | String | Text to display instead of default 'Continue' |
+| `finish-label` | String | Text to display instead of default 'Finish' |
+
 ### Vue Events
 | Vue Event | Description |
 | --- | --- |
