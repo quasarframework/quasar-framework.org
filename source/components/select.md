@@ -1,6 +1,6 @@
 title: Select
 ---
-A Quasar Select box can be of two types: single selection (using Radios) or multiple selection (using Checkboxes or Toggles). This component opens up a Popover. If for some reason you want it to open a Dialog, use the "sibling" [Dialog Select](/components/dialog-select.html) component.
+A Quasar Select box can be of two types: single selection (using Radios or Lists) or multiple selection (using Checkboxes or Toggles). This component opens up a Popover. If for some reason you want it to open a Dialog, use the "sibling" [Dialog Select](/components/dialog-select.html) component.
 
 <input type="hidden" data-fullpage-demo="form/select/basic">
 
