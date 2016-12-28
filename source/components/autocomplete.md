@@ -27,8 +27,8 @@ As long as this component is rendered by Vue it will capture all Ajax calls.
 | `max-results` | Number | 6 | How many results can we display at a time? |
 | `delay` | Number | 500 | How many milliseconds to wait before triggering a suggestion? |
 | `static-data` | Array | *None* | Use static suggestions. No need to do an Ajax call. Filtering is provided by Autocomplete component. |
-| `set-width` | Boolean | Suggestions popover should have at least the width of the binded text field. |
-| `delimiter` | Boolean | Should suggestions popover display a delimiter between results? |
+| `set-width` | Boolean | false | Suggestions popover should have at least the width of the binded text field. |
+| `delimiter` | Boolean | false | Should suggestions popover display a delimiter between results? |
 
 When using static data, specify an array like this (notice that it uses [ListItem component props](/components/list-item.html)):
 ``` js
