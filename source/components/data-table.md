@@ -164,7 +164,7 @@ columns = [
     // certain CSS class based on cell value:
     // classes (cell_value) { return .... }
 
-    // (optional) Sortable column?
+    // (optional) Sortable column? Type is inferred automatically
     sort: true,
     // or you can specify a custom sorting method;
     // works same as Array.prototype.sort().
@@ -176,7 +176,7 @@ columns = [
       return (new Date(a)) - (new Date(b))
     },
     // or you have a third option to use a built-in sorting method:
-    // string, number, date, moment, boolean
+    // "string", "number", "date", "moment", "boolean"
     sort: 'string',
 
     // (optional)
