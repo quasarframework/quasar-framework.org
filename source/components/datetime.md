@@ -71,8 +71,8 @@ Add `has-error` CSS class:
 | --- | --- | --- |
 | `type` | (**Required**) One of `date`, `time` or `datetime` strings. |
 | `format` | Format in MomentJs style of how input displays date and/or time. |
-| `okLabel` | Label for "OK" button on mobile Dialog. |
-| `cancelLabel` | Label for "Cancel" button on mobile Dialog. |
+| `ok-label` | Label for "OK" button on mobile Dialog. |
+| `cancel-label` | Label for "Cancel" button on mobile Dialog. |
 | `min` | String; Minimum value it can take. Has same format as Datetime model. |
 | `max` | String; Maximum value it can take. Has same format as Datetime model. |
 | `label` | (Floating) label to use. |
