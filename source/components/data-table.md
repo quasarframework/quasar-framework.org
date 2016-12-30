@@ -88,9 +88,6 @@ config = {
   // (optional) Title to display
   title: 'Data Table',
 
-  // (optional) Display filter button
-  filter: true,
-
   // (optional) Display refresh button
   refresh: true,
 
@@ -163,6 +160,9 @@ columns = [
     // "classes" can be a function too if you want to apply
     // certain CSS class based on cell value:
     // classes (cell_value) { return .... }
+
+    // (optional) Can filter be applied to this column?
+    filter: true,
 
     // (optional) Sortable column? Type is inferred automatically
     sort: true,
