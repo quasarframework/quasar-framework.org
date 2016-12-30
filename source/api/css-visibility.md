@@ -17,11 +17,13 @@ There are some CSS classes that you can use out of the box for common functional
 ### Animating
 | Class Name | Description |
 | --- | --- |
-| `animate-spin` | Applies a continously spin. |
-| `animate-blink` | Makes your element blink - alternate between show/hide every 1s. |
-| `animate-pop` | When element is rendered it will scale in with a nice bounce animation. |
-| `animate-scale` | When element is rendered it will scale in. |
-| `animate-fade` | When element is rendered it will fade it in. |
+| `animate-spin` | Apply a continuous spin/rotation to the DOM element |
+| `animate-spin-reverse` | Apply a continuous spin/rotation (opposite direction to `animate-spin`) to the DOM element |
+| `animate-blink` | Apply a blinking effect to the DOM element |
+| `animate-pop` | Apply a pop-in effect to the DOM element |
+| `animate-scale` | Apply a scale-in effect to the DOM element |
+| `animate-fade` | Apply a fade-in effect to the DOM element |
+| `animate-bounce` | Apply a continuous bouncing effect to the DOM element |
 
 ### Platform Related
 Visible only on:

@@ -395,6 +395,41 @@ Dialog.create({
 })
 ```
 
+### Buttons Preventing Dialog Close
+You can prevent a button from closing the Dialog. Useful when you need to do some validations on form fields.
+
+Add `preventClose: true` to the button definition. This will make the `handler()` method receive a second parameter which when called it closes the Dialog. Not calling it obviously keeps the Dialog opened.
+
+``` js
+Dialog.create({
+  title: 'Prevent Close',
+  message: 'Having "Prevent" checkbox ticked and then hitting "Try to Close" button will prevent the dialog from closing.',
+  form: {
+    prevent: {
+      type: 'checkbox',
+      items: [
+        {label: 'Prevent dialog close', value: 'prevent', model: true}
+      ]
+    }
+  },
+  buttons: [
+    {
+      label: 'Try to Close',
+      preventClose: true, // <<<<<<<
+      handler (data, close) {
+        if (!data.prevent.length) {
+          close(() => { // <<<<<<<
+            Toast.create(`Finally. It's closed now.`)
+          })
+          return
+        }
+        Toast.create('Untick "Prevent" checkbox to be able to close the Dialog.')
+      }
+    }
+  ]
+})
+```
+
 ### Complex Dialog with Form Components
 ``` js
 import { Dialog } from 'quasar'

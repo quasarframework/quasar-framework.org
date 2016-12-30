@@ -73,6 +73,7 @@ components:
     Checkbox: $
     Chips Textbox: $
     Datetime: $
+    Datetime Range: $
     Inline Datetime: $
     Input Textbox: $
     Knob: $
@@ -88,6 +89,7 @@ components:
     Toggle: $
   Vue Components:
     Ajax Bar: $
+    Back to Top: $
     Collapsible: $
     Context Menu: $
     Data Table: $
@@ -109,5 +111,6 @@ components:
     Stepper: $
     Tooltip: $
     Tree: $
+    Uploader: $
     Video Embedding: $
     Vue Transitions: $

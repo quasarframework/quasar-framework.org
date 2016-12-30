@@ -34,16 +34,6 @@ The list below is not complete. Also check the other CSS documentation pages lik
 | `flip-horizontal` | Flip DOM element horizontally |
 | `flip-vertical` | Flip DOM element vertically |
 
-### Animations
-| Class Name | Description |
-| --- | --- |
-| `animate-spin` | Apply a continuous spin/rotation to the DOM element |
-| `animate-spin-reverse` | Apply a continuous spin/rotation (opposite direction to `animate-spin`) to the DOM element |
-| `animate-blink` | Apply a blinking effect to the DOM element |
-| `animate-pop` | Apply a pop-in effect to the DOM element |
-| `animate-scale` | Apply a scale-in effect to the DOM element |
-| `animate-fade` | Apply a fade-in effect to the DOM element |
-
 ## Border Related
 | Class Name | Description |
 | --- | --- |

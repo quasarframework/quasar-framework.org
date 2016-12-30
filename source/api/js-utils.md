@@ -116,8 +116,12 @@ Utils.dom.ready(function () {
 // Usually this is element with classname ".layout-view" or "window"
 (DOM Element) Utils.dom.getScrollTarget(DomElement)
 
-// Get scroll position of a page. Use it in conjunction with `Utils.dom.getScrollTarget()`
+// Get scroll position of a element or page. Use it in conjunction with `Utils.dom.getScrollTarget()`
 (Number pixels) Utils.dom.getScrollPosition(scrollTargetDomElement)
+
+// Setting scroll position of an element or page:
+Utils.dom.setScrollPosition (scrollTargetElement, offset[, duration])
+// if "duration" is specified then it will animate the scrolling
 ```
 
 You can also generate an object with cross-browser props for CSS `transform`s:
@@ -171,6 +175,13 @@ import { Utils } from 'quasar'
 
 console.log(Utils.colors.rgbToHex(85, 165, 1)) // #55a532
 console.log(Utils.colors.hexToRgb('#55a532')) // [85, 165, 1]
+```
+
+## Formatters
+There's currently only one formatter available, which turns numbers in human readable storage size:
+``` js
+console.log( Utils.format.humanSize(13087) )
+// 12.78 kB
 ```
 
 ## Filter

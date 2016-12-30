@@ -69,7 +69,7 @@ Add `has-error` CSS class:
 ## Vue Properties
 | Vue Property | Description |
 | --- | --- | --- |
-| `type` | (**Required**) One of `date`, `time` or `datetime` strings. |
+| `type` | One of `date`, `time` or `datetime` strings. |
 | `format` | Format in MomentJs style of how input displays date and/or time. |
 | `ok-label` | Label for "OK" button on mobile Dialog. |
 | `cancel-label` | Label for "Cancel" button on mobile Dialog. |
