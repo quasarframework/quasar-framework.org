@@ -93,3 +93,7 @@ Now on to the window width related CSS classes:
 | `gt-sm` | Display only on greater than small windows |
 | `gt-md` | Display only on greater than medium windows |
 | `gt-bg` | Display only on greater than big windows |
+
+> **NOTE**
+> You can combine the visibility classes with the `inline` class for inline-blocks.
+> Example : `<span class="gt-sm inline">&nbsp;and here is the end of this long sentence.</span>`
