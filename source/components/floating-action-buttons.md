@@ -23,12 +23,14 @@ So there are two types: expandable (has sub-actions) and non-expandable. **If no
   <q-small-fab
     class="white"
     @click.native="someMethod()"
-  >mail</q-small-fab>
+    icon="mail"
+  ></q-small-fab>
 
   <q-small-fab
     class="white"
     @click.native="someMethod()"
-  >alarm</q-small-fab>
+    icon="alarm"
+  ></q-small-fab>
 </q-fab>
 ```
 
@@ -79,11 +81,13 @@ Simply use the [Quasar CSS Positioning](/api/css-positioning.html) classes.
   <q-small-fab
     class="white"
     @click.native="someMethod()"
-  >mail</q-small-fab>
+    icon="mail"
+  ></q-small-fab>
 
   <q-small-fab
     class="white"
     @click.native="someMethod()"
-  >alarm</q-small-fab>
+    icon="alarm"
+  ></q-small-fab>
 </q-fab>
 ```
