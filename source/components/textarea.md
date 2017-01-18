@@ -3,7 +3,7 @@ title: Textarea
 <input type="hidden" data-fullpage-demo="form/text-input/textarea">
 
 ## Basic Usage
-This is not a component per say. It's the HTML `<textarea>` element.
+This is not a component per se. It's the HTML `<textarea>` element.
 
 ``` html
 <textarea v-model="model"></textarea>
