@@ -107,3 +107,10 @@ Use `@finish` event on `<q-stepper>` to execute a method when user hits the `Fin
   ...
 </q-stepper>
 ```
+
+## Coloring
+Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`, `orange`, `teal` as CSS class:
+
+``` html
+<q-stepper class="orange">...</q-stepper>
+```
