@@ -40,6 +40,7 @@ The idea is to place `<q-popover>` inside your DOM element / component that you 
 | `self` | Object | String of form `top left` (vertical horizontal) |
 | `max-height` | String | Optional maximum height of Popover content. Example: `500px` |
 | `touch-position` | Boolean | Open Popover from the position where user clicked/tapped on anchor. |
+| `fit` | Boolean | Popover has `min-width` set as same as the `width` of the container. |
 | `disable` | Boolean | When set to `true`, Popover won't be triggered. |
 
 ## Vue Methods

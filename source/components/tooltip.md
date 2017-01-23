@@ -29,8 +29,9 @@ The idea is to place `<q-tooltip>` inside your DOM element / component that you 
 ## Vue Properties
 | Vue Property | Type | Description |
 | --- | --- | --- |
-| `anchor` | Object | String of form `bottom left` (vertical horizontal) |
-| `self` | Object | String of form `top left` (vertical horizontal) |
+| `anchor` | Object | String of form `bottom left` (vertical horizontal). |
+| `self` | Object | String of form `top left` (vertical horizontal). |
+| `offset` | Array | Array with two numbers. Offset on horizontal and vertical (in pixels). |
 | `max-height` | String | Optional maximum height of Popover content. Example: `500px` |
 | `disable` | Boolean | When set to `true`, Popover won't be triggered. |
 

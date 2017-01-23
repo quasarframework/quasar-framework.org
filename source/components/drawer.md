@@ -45,10 +45,11 @@ In your Layout template, you can declare up to two drawers, but they must differ
 Specifying `right-side` attribute only places the Drawer in the right side of screen when it is hidden and can be swiped in. If the window is wide enough your Drawer will be displayed along your page view, depending on where you've included `<q-drawer>` besides `<router-view>` or `<div class="layout-view">`, which is before or after (which translates to left or right to the page view). So it is possible to place Drawer content on the left side on wide enough windows and on right-side (waiting to be swiped in) on smaller windows.
 
 ## Vue Properties
-| Property | Description |
-| --- | --- |
-| `right-side` | User can swipe the Drawer into view from the right side of the screen. |
-| `swipe-only` | By default, Drawers get hidden on smaller screens but they get displayed on wide enough ones. Adding `swipe-only` attribute makes the Drawer hidden on bigger screens too. Rest assured, in this case the user can still bring them into view by swiping on the edge of the screen or by clicking/tapping on menu buttons. |
+| Property | Type | Description |
+| --- | --- | --- |
+| `right-side` | Boolean | (Optional) User can swipe the Drawer into view from the right side of the screen. |
+| `swipe-only` | Boolean | (Optional) By default, Drawers get hidden on smaller screens but they get displayed on wide enough ones. Adding `swipe-only` attribute makes the Drawer hidden on bigger screens too. Rest assured, in this case the user can still bring them into view by swiping on the edge of the screen or by clicking/tapping on menu buttons. |
+| `backdrop-opacity` | Number | Specify opacity for the backdrop as a floating Number between 0 and 1. |
 
 ## Vue Methods
 | Method | Params | Description |

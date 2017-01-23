@@ -78,6 +78,7 @@ Add `has-error` CSS class:
 | `label` | (Floating) label to use. |
 | `placeholder` | Placeholder text to use. |
 | `static-label` | Overrides `label` and `placeholder` and selected value. Display this label always regardless of selection status. |
+| `default-selection` | Set default date/time (as Momentjs string) when Popover is shown and no value is yet selected. |
 | `readonly` | When set to `true` the model cannot be altered. |
 | `disable` | When set to `true` the model cannot be altered. |
 

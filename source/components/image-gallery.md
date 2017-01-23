@@ -26,20 +26,10 @@ Use this Web Component when you want to display multiple images together.
 <q-gallery :src="gallery"></q-gallery>
 ```
 
-``` js
-// VueModel for template above
-{
-  ...,
-  data: {
-    ...,
-    gallery: [
-      'assets/mountains.jpg',
-      'assets/parallax1.jpg',
-      'assets/parallax2.jpg'
-    ]
-  }
-}
-```
+### Vue Properties
+| Property | Type | Description |
+| --- | --- | --- |
+| `src` | Array | Strings represting URLs. Use images from statics folder. |
 
 ## Image Gallery Slider
 When the real estate of the Page is an issue, use this Web Component which displays multiple images using a Slider Component. Read more about Sliders [here](/components/slider.html).
@@ -53,17 +43,18 @@ User can switch between images using the arrow buttons or through swipe actions.
 <q-gallery-slider :src="gallery"></q-gallery-slider>
 ```
 
-``` js
-// VueModel for template above
-{
-  ...,
-  data: {
-    ...,
-    gallery: [
-      'assets/mountains.jpg',
-      'assets/parallax1.jpg',
-      'assets/parallax2.jpg'
-    ]
-  }
-};
-```
+### Vue Properties
+| Property | Type | Description |
+| --- | --- | --- |
+| `src` | Array | Strings represting URLs. Use images from statics folder. |
+
+### Vue Methods
+| Property | Description |
+| --- | --- |
+| `toggleQuickView()` | Toggle thumbnails view. |
+| `goToSlide(Number index, Boolean animation)` | Go to a certain slide number (with animation or not). |
+
+### Vue Events
+| Property | Description |
+| --- | --- |
+| `@slide(slideNumber)` | Triggered when slide number changes. |

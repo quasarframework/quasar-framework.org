@@ -73,6 +73,48 @@ let uid = Utils.uid()
 // Example: 501e7ae1-7e6f-b923-3e84-4e946bff31a8
 ```
 
+## Animate
+You can create animations through Javascript (using RAF - `requestAnimationFrame()`).
+``` js
+import { Utils } from 'quasar'
+
+let id = Utils.animate.start({
+  name: 'unique-animation-name', // optional, if none is supplied a unique one is created and returned
+  finalPos: '100',
+  pos: '0', // current position
+  factor: 5, // on each step, it adds (finalPosition - currentPosition) / factor
+  done (finalPosition) {...}, // function to call when animation is done
+  apply (currentPosition) {...}, // function called on each step so you can apply changes
+
+  threshold: 0.1, // if Math.abs(finalPosition - currentPosition) < threshold
+    //then stop and we're done
+})
+// Starting an animation with same name will abort the previous one
+
+// Stop an animation using its name
+Utils.animate.stop('unique-animation-name')
+// or
+Utils.animate.stop(id) // id returned from above
+```
+
+Example:
+``` js
+import { Utils } from 'quasar'
+
+Utils.animate.start({
+  finalPos: 158,
+  pos: 6,
+  factor: 10,
+  threshold: 0.5,
+  apply (pos) {
+    el.style.maxHeight = `${pos}px`
+  },
+  done () {
+    // we're done!
+  }
+})
+```
+
 ## DOM methods
 ``` js
 import { Utils } from 'quasar'

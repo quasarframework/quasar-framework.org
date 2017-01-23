@@ -90,7 +90,7 @@ components:
   Vue Components:
     Ajax Bar: $
     Back to Top: $
-    Collapsible: $
+    Collapsible (+ Accordion): collapsible
     Context Menu: $
     Data Table: $
     Floating Action Buttons: $
