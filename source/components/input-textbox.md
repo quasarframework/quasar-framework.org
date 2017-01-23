@@ -67,6 +67,8 @@ If you want user input to be trimmed automatically, you can add the `trim` modif
 </div>
 ```
 
+> Note that "required" is mandatory. Don't think this will interfere with your validations. We're using Vue, so use something like Vuelidate instead of relying on the browser's form validations.
+
 ## Inside of a List Usage
 
 ``` html
