@@ -5,7 +5,7 @@ $(function() {
     themeNodes = $('#preview .theme'),
     iframes = $('#preview iframe'),
     contentNode = $('#main > .content'),
-    selectedTheme = $.cookie('theme') || 'android',
+    selectedTheme = localStorage.getItem('theme') || 'android',
     demoPoints = contentNode.find('input[data-demo]'),
     fullPageDemo = contentNode.find('input[data-fullpage-demo]'),
     externalPoints = contentNode.find('input[data-external-demo]'),
@@ -132,7 +132,7 @@ $(function() {
       themeNodes.css('display', 'none');
       $('#' + theme + '-preview').css('display', 'block');
 
-      $.cookie('theme', theme);
+      localStorage.setItem('theme', theme);
       selectedTheme = theme;
       this.selectPage(currentPage);
     }

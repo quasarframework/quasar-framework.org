@@ -63,3 +63,8 @@ require('es6-promise').polyfill()
 ```
 
 Due to the fact that it adds about 6KB to the bundle size (and we care about bundle size!), this is not added for you by default in the boilerplating.
+
+### Google Chrome shows scrollbars
+There are some Google Chrome extensions that interfere with website CSS, like WhatFont. Disable it. If this is not it, disable the extensions one by one to find the culprit.
+
+![Chrome extension interfering with website CSS](/images/chrome-scrollbar.png "Chrome extension interfering with website CSS")

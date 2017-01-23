@@ -3,6 +3,8 @@ guide:
     Getting Started: index
     Quasar CLI: $
     Quasar Play App: $
+    Roadmap: quasar-$
+    Changelog: quasar-framework-$
     Contributing: $
   Boilerplate:
     Overview: app-boilerplate
