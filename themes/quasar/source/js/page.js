@@ -6,7 +6,7 @@
     doc = document.documentElement,
     body = document.body,
     header = document.getElementById('header'),
-    menu = document.querySelector('.sidebar'),
+    menu = document.getElementById('sidebar'),
     content = document.querySelector('.content'),
     scrollSpeed = 400,
     menuButton = header.querySelector('.menu-button'),
@@ -19,6 +19,17 @@
   }
 
   if (menu) {
+    var
+      path = window.location.pathname.split('/')[1],
+      sidebarScrollTop = localStorage.getItem('sidebar-' + path)
+      ;
+
+    if (sidebarScrollTop) {
+      menu.scrollTop = sidebarScrollTop;
+    }
+    menu.addEventListener('scroll', function () {
+      localStorage.setItem('sidebar-' + path, menu.scrollTop);
+    })
     menuButton.addEventListener('click', toggleSidebar);
     sidebarBackdrop.addEventListener('click', toggleSidebar);
 
