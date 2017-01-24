@@ -36,7 +36,6 @@ $(function() {
       'Source <i class="fa fa-file-code-o"></i></a></div>';
   }
 
-
   externalPoints.each(function() {
     var
       $this = $(this),

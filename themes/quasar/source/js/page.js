@@ -21,14 +21,14 @@
   if (menu) {
     var
       path = window.location.pathname.split('/')[1],
-      sidebarScrollTop = localStorage.getItem('sidebar-' + path)
+      sidebarScrollTop = sessionStorage.getItem('sidebar-' + path)
       ;
 
     if (sidebarScrollTop) {
       menu.scrollTop = sidebarScrollTop;
     }
     menu.addEventListener('scroll', function () {
-      localStorage.setItem('sidebar-' + path, menu.scrollTop);
+      sessionStorage.setItem('sidebar-' + path, menu.scrollTop);
     })
     menuButton.addEventListener('click', toggleSidebar);
     sidebarBackdrop.addEventListener('click', toggleSidebar);
