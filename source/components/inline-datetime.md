@@ -59,7 +59,7 @@ export default {
 ### Error State
 Add `has-error` CSS class:
 ``` html
-<q-dinline-atetime
+<q-inline-datetime
   class="has-error"
   v-model="model"
   type="time"
