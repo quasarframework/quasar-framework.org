@@ -1,5 +1,8 @@
 title: State Component
 ---
+> **WARNING**
+> This component is **deprecated** and will soon be removed. Use v-if directive instead.
+
 Quasar State Component helps you when you have two states (called "default" and "active") to display using the same real estate of a page. Look at the demo which presents a button that when clicked it shifts to the "active" state and shows a spinner.
 
 <input type="hidden" data-fullpage-demo="web-components/state">
