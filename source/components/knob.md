@@ -42,6 +42,7 @@ Quasar Knob is another way of making the user select a Number value from a prede
 | `color` | Primary CSS color of the Knob. Example: "blue", "#ccc". |
 | `trackColor` | Track CSS color of the Knob. Example: "#e4e4e4", "rgb(224, 200, 200)". |
 | `lineWidth` | Line width of Knob. |
+| `readonly` | Sort of a "display" only mode. Model cannot be altered. |
 | `disable` | When set to `true` the model cannot be altered. |
 
 ## Vue Events

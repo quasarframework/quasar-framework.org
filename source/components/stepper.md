@@ -47,6 +47,7 @@ The navigation is handled by Quasar. User is able to go forward, back and to fin
 ### Vue Events
 | Vue Event | Description |
 | --- | --- |
+| `@step(stepNumber)` | Stepper has gone to a new step. |
 | `@finish` | Stepper has finished all steps. |
 
 
@@ -58,6 +59,9 @@ The navigation is handled by Quasar. User is able to go forward, back and to fin
 | --- | --- | --- |
 | `title` | String | Step title |
 | `ready` | Boolean | Can user continue with next step? Default is `true`. |
+| `beforeNext(next)` | Function | Function to call before jumping to next step. |
+
+> `beforeNext(next)` allows you to take some action (like validating some fields) and decide if Stepper can go to the next step (in which case `next()` must be called) or not.
 
 ### Vue Methods
 | Vue Method | Description |
@@ -67,7 +71,10 @@ The navigation is handled by Quasar. User is able to go forward, back and to fin
 | `finish()` | Stepper goes to "complete" state. |
 
 ## Handling Jump to Next Step
-Specifying the `ready` dom attribute property (Boolean) makes Stepper activate or deactivate the `Next` or `Finish` button. See step #2 in the demo.
+There are two options (or you can even combine them).
+
+### Boolean Vue Property
+Specify the `ready` Vue property (Boolean) makes Stepper activate or deactivate the `Next` or `Finish` button. See step #2 in the demo.
 
 ``` html
 <q-step title="Create an ad group" :ready="ready">
@@ -76,10 +83,34 @@ Specifying the `ready` dom attribute property (Boolean) makes Stepper activate o
 </q-step>
 ```
 
+### Function Vue Property
+Specify `beforeNext` Vue property by assigning it to a Function. This function is called and it's up to you the developer to decide if Stepper should go to the next step or not.
+
+``` html
+<q-step title="Create an ad group" :beforeNext="beforeNext">...</q-step>
+```
+``` js
+beforeNext (next) {
+  // do something here (async supported)... then
+
+  if (/* we can jump to next step*/) {
+    next()
+  }
+  // otherwise just don't call next()
+}
+```
+
 ## Handling Stepper Finish
 Use `@finish` event on `<q-stepper>` to execute a method when user hits the `Finish` button.
 ``` html
 <q-stepper @finish="doSomething()">
   ...
 </q-stepper>
+```
+
+## Coloring
+Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`, `orange`, `teal` as CSS class:
+
+``` html
+<q-stepper class="orange">...</q-stepper>
 ```

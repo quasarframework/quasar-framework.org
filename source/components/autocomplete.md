@@ -61,6 +61,7 @@ Only if you want to also trigger it manually. Ajax calls trigger these methods a
 | Vue Event | Description |
 | --- | --- |
 | `@search(terms, Function done)` | Triggered by the component when a search should start and offer some results. |
+| `@selected(item)` | Triggered when user has selected a suggestion. |
 
 Example for `search` event:
 

@@ -24,15 +24,18 @@ Modals are responsive to the width of the window (see demo on a desktop and resi
 | --- | --- | --- |
 | `position-classes` | String | Space delimited CSS classes that overwrite the default 'items-center justify-center' classes. |
 | `content-css` | Object | Applies CSS style Object to Modal container. |
+| `content-classes` | Object or String | Classes to apply to Modal inner content. |
 | `transition` | String | Vue transition to use. Quasar comes with `q-modal` out of the box. But you can write your own Vue transitions using CSS and use them. |
 | `noBackdropDismiss` | Boolean | Disable Modal dismissal by clicking/tapping on backdrop. |
 | `noEscDismiss` | Boolean | Disable Modal dismissal by hitting Escape key. |
+| `position` | String | Stick Modal to one of the screen edges (`top`, `right`, `bottom`, `left`). |
 
 ## Vue Methods
 | Method | Description |
 | --- | --- |
 | `open` | Open Modal. Takes one optional Function parameter to trigger after Modal is opened. |
 | `close` | Close Modal. Takes one optional Function parameter to trigger after Modal is closed. |
+| `toggle` | Toggle open/close Modal state. Takes one optional Function parameter to trigger after Modal is toggled. |
 
 ## Vue Events
 | Event Name | Description |

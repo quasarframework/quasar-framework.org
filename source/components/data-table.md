@@ -88,6 +88,9 @@ config = {
   // (optional) Title to display
   title: 'Data Table',
 
+  // (optional) No columns header
+  noHeader: true,
+
   // (optional) Display refresh button
   refresh: true,
 
@@ -182,7 +185,7 @@ columns = [
     // (optional)
     // use a formatter for this column;
     // transforms original String in another String
-    format (value) {
+    format (value, row) {
       return new Date(value).toLocaleString()
     }
   },

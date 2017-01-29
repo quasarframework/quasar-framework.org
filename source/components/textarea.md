@@ -3,7 +3,7 @@ title: Textarea
 <input type="hidden" data-fullpage-demo="form/text-input/textarea">
 
 ## Basic Usage
-This is not a component per say. It's the HTML `<textarea>` element.
+This is not a component per se. It's the HTML `<textarea>` element.
 
 ``` html
 <textarea v-model="model"></textarea>
@@ -66,6 +66,8 @@ If you want user input to be trimmed automatically, you can add the `trim` modif
   <label>Floating Label</label>
 </div>
 ```
+
+> Note that "required" is mandatory. Don't think this will interfere with your validations. We're using Vue, so use something like Vuelidate instead of relying on the browser's form validations.
 
 ## Inside of a List Usage
 
