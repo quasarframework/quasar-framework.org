@@ -25,25 +25,31 @@ As long as this component is rendered by Vue it will capture all Ajax calls.
 | --- | --- | --- | --- |
 | `min-characters` | Number | 1 | How many minimum characters can trigger component to suggest something? |
 | `max-results` | Number | 6 | How many results can we display at a time? |
-| `delay` | Number | 500 | How many milliseconds to wait before triggering a suggestion? |
-| `static-data` | Array | *None* | Use static suggestions. No need to do an Ajax call. Filtering is provided by Autocomplete component. |
+| `debounce` | Number | 500 | How many milliseconds to wait before triggering a suggestion? |
+| `static-data` | Object | *None* | Use static suggestions. No need to do an Ajax call. Filtering is provided by Autocomplete component. |
 | `set-width` | Boolean | false | Suggestions popover should have at least the width of the binded text field. |
 | `delimiter` | Boolean | false | Should suggestions popover display a delimiter between results? |
 
-When using static data, specify an array like this (notice that it uses [ListItem component props](/components/list-item.html)):
+When using static data, specify an Object this (notice that it uses [ListItem component props](/components/list-item.html)):
 ``` js
 // static-data
 [
-  {
-    value: 'Romania', // what gets Autocompleted with
-    label: 'Romania', // what gets displayed as main label for this suggestion
+  // Property name from array of objects below
+  // that will fill input box when suggestion is selected
+  field: 'value',
 
-    secondLabel: 'Continent: Europe', // optional
-    icon: 'location_city', // optional
-    stamp: '18 mil', // optional
+  list: [
+    {
+      value: 'Romania', // what gets Autocompleted with
+      label: 'Romania', // what gets displayed as main label for this suggestion
+
+      secondLabel: 'Continent: Europe', // optional
+      icon: 'location_city', // optional
+      stamp: '18 mil', // optional
+      ...
+    },
     ...
-  },
-  ...
+  ]
 ]
 ```
 
