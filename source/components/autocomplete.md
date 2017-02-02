@@ -15,7 +15,11 @@ As long as this component is rendered by Vue it will capture all Ajax calls.
 </q-autocomplete>
 
 <!-- Binds to a textfield from a component, like Search -->
-<q-autocomplete v-model="terms" @search="search" set-width :max-results="2">
+<q-autocomplete v-model="terms" :debounce="0" @search="search" :max-results="2">
+  <!--
+    Don't forget to set debounce to 0 ^^^
+    otherwise you'll get double debounced feedback
+  -->
   <q-search v-model="terms"></q-search>
 </q-autocomplete>
 ```
@@ -27,7 +31,6 @@ As long as this component is rendered by Vue it will capture all Ajax calls.
 | `max-results` | Number | 6 | How many results can we display at a time? |
 | `debounce` | Number | 500 | How many milliseconds to wait before triggering a suggestion? |
 | `static-data` | Object | *None* | Use static suggestions. No need to do an Ajax call. Filtering is provided by Autocomplete component. |
-| `set-width` | Boolean | false | Suggestions popover should have at least the width of the binded text field. |
 | `delimiter` | Boolean | false | Should suggestions popover display a delimiter between results? |
 
 When using static data, specify an Object this (notice that it uses [ListItem component props](/components/list-item.html)):
