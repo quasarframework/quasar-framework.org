@@ -25,3 +25,14 @@ $quasar-dont-import-fonts = true // <----
 
 > **IMPORTANT**
 > Make sure you declare the Stylus variable before the import statement, otherwise it won't work as intended.
+
+If you like to not import only Material Icons or only Roboto font, then use:
+
+``` styl
+// ...
+$quasar-dont-import-material-icons = true
+$quasar-dont-import-roboto = true
+// ...
+
+@import '~quasar-framework/dist/quasar.mat.styl'
+```
