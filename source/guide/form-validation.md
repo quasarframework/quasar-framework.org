@@ -36,7 +36,7 @@ export default {
   },
   methods: {
     submit () {
-      this.$v.form.touch()
+      this.$v.form.$touch()
 
       if (this.$v.form.$error) {
         Toast.create('Please review fields again.')
