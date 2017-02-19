@@ -9,7 +9,7 @@ A Quasar Layout can have have headers and/or footers (also called "marginals"), 
 ## Basic Usage
 Standalone example (within a page template, not on a Layout):
 ``` html
-<div slot="header" class="toolbar">
+<div class="toolbar">
   <!-- Toolbar title -->
   <q-toolbar-title :padding="1">
     Title
