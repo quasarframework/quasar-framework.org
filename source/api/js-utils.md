@@ -139,7 +139,7 @@ console.log(
 // 10 100
 
 // Apply a list of CSS properties to a DomNode
-Utils.dom.css({
+Utils.dom.css(DomElement, {
   height: '10px',
   display: 'flex'
 })
