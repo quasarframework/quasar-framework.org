@@ -44,6 +44,7 @@ Following properties are optional.
 | `format` | Format in MomentJs style of how input displays date and/or time. |
 | `ok-label` | Label for "OK" button on mobile Dialog. |
 | `cancel-label` | Label for "Cancel" button on mobile Dialog. |
+| `clear-label` | Label for "Clear" button on mobile Dialog. |
 | `label` | (Floating) label to use. |
 | `placeholder` | Placeholder text to use. |
 | `static-label` | Overrides `label` and `placeholder` and selected value. Display this label always regardless of selection status. |

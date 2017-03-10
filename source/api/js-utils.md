@@ -139,7 +139,7 @@ console.log(
 // 10 100
 
 // Apply a list of CSS properties to a DomNode
-Utils.dom.css({
+Utils.dom.css(DomElement, {
   height: '10px',
   display: 'flex'
 })
@@ -222,7 +222,7 @@ console.log(Utils.colors.hexToRgb('#55a532')) // [85, 165, 1]
 ## Formatters
 There's currently only one formatter available, which turns numbers in human readable storage size:
 ``` js
-console.log( Utils.format.humanSize(13087) )
+console.log( Utils.format.humanStorageSize(13087) )
 // 12.78 kB
 ```
 

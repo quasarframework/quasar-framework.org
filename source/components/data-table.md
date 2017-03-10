@@ -135,6 +135,20 @@ config = {
   messages: {
     noData: '<i>warning</i> No data available to show.',
     noDataAfterFiltering: '<i>warning</i> No results. Please refine your search terms.'
+  },
+
+  // (optional) Override default labels. Useful for I18n.
+  labels: {
+    columns: 'Coluuuuumns',
+    allCols: 'Eeeeeeeeevery Cols',
+    rows: 'Rooows',
+    selected: {
+      singular: 'item selected.',
+      plural: 'items selected.'
+    },
+    clear: 'clear',
+    search: 'Search',
+    all: 'All'
   }
 }
 ```
@@ -164,7 +178,7 @@ columns = [
     // certain CSS class based on cell value:
     // classes (cell_value) { return .... }
 
-    // (optional) Can filter be applied to this column?
+    // (optional) Can filter/search be applied to this column?
     filter: true,
 
     // (optional) Sortable column? Type is inferred automatically

@@ -29,6 +29,7 @@ Quasar supplies a way for you to upload files.
 | `multiple` | Boolean | Allow multiple file uploads |
 | `hide-upload-button` | Boolean | Hides the Upload button. You can then trigger it manually by calling `upload()` on the Vue ref |
 | `labels` | Object | You can overwrite default `add`, `remove`, `upload`, `failed` and `uploading` labels. Specify which prop to overwrite. |
+| `additionalFields` | Array | **Additional fields to send along the upload request.** Useful for authentication and so on. Array of Objects containing `name` and `value` props. |
 
 ## Vue Methods
 | Vue Method | Description |

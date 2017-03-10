@@ -1,6 +1,6 @@
 title: Cards
 ---
-Quasar Cards are a great way to display important pieces of content, and are quickly emerging as a core design pattern for Apps. They're are a great way to contain and organize information, while also setting up predictable expectations for the user. With so much content to display at once, and often so little screen real-estate, Cards have fast become the design pattern of choice for many companies, including the likes of Google and Twitter.
+Quasar Cards are a great way to display important pieces of content, and are quickly emerging as a core design pattern for Apps. They're a great way to contain and organize information, while also setting up predictable expectations for the user. With so much content to display at once, and often so little screen real-estate, Cards have fast become the design pattern of choice for many companies, including the likes of Google and Twitter.
 
 Quasar Cards are all about HTML markup with some exception where some Quasar Vue directives need to be used. It's all about being creative. Experiment with different Web Components by embedding them in Cards to create awesome results.
 
