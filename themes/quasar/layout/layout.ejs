@@ -1,5 +1,5 @@
 <%
-  var isIndex = page.path === 'index.html' || page.support_index;
+  var isIndex = page.path === 'index.html' || page.standalone;
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,6 +24,8 @@
                 <%- partial('partials/blog') %>
             <% } else if (page.search_index) { %>
                 <%- partial('partials/search') %>
+            <% } else if (page.privacy_policy_index) { %>
+                <%- partial('partials/privacy-policy') %>
             <% } else if (page.support_index) { %>
                 <%- partial('partials/support') %>
             <% } else { %>
