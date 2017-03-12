@@ -27,6 +27,8 @@ use you mouse to drag slides to left or right.
 ## Vue Properties
 | Vue Property | Type | Description |
 | --- | --- | --- |
+| `infinite` | Boolean | Infinite slides scrolling |
+| `autoplay` | Boolean/Number | Auto scrolls between slides. Works great along `infinite` prop (but `infinite` is not required). If used as a number, it represents the number of milliseconds between scrolls. |
 | `arrows` | Boolean | Show arrows |
 | `dots` | Boolean | Show dots at bottom |
 | `fullscreen` | Boolean | Shows Fullscreen button |
@@ -35,7 +37,9 @@ use you mouse to drag slides to left or right.
 ## Vue Methods
 | Vue Method | Description |
 | --- | --- |
-| `goToSlide(slide, Bool noAnimation)` | Go to respective slide, optionally with no animation (instantly). |
+| `next(doneFn)` | Goes to next slide. |
+| `previous(doneFn)` | Goes to previous slide. |
+| `goToSlide(slideNumber, doneFn)` | Go to the desired slide. `slideNumber` is 0-based. |
 | `toggleFullscreen()` | Toggles fullscreen mode. |
 
 ## Slider with Arrows, Dots and Fullscreen Controls
@@ -62,6 +66,34 @@ Add CSS class `centered` to the slide that you want to center its content.
 
 ``` html
 <q-slider arrows dots class="text-white">
+  <div slot="slide" class="bg-primary centered">
+    Slide 1
+  </div>
+  <div slot="slide" class="bg-secondary centered">
+    Slide 2
+  </div>
+</q-slider>
+```
+
+## Slider with Infinite Scrolling
+Use `infinite` Vue prop.
+
+``` html
+<q-slider infinite class="text-white">
+  <div slot="slide" class="bg-primary centered">
+    Slide 1
+  </div>
+  <div slot="slide" class="bg-secondary centered">
+    Slide 2
+  </div>
+</q-slider>
+```
+
+## Slider with Autoplay
+Use `autoplay` Vue prop. Works great with `infinite` prop too (but `infinite` is not required).
+
+``` html
+<q-slider autoplay class="text-white">
   <div slot="slide" class="bg-primary centered">
     Slide 1
   </div>

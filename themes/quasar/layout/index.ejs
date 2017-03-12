@@ -1,13 +1,5 @@
 <div class="q-header">
-  <div class="q-header-top q-container">
-    <nav class="q-header-navbar">
-      <a href="/guide">Documentation</a>
-      <a href="http://forum.quasar-framework.org" target="_blank">Forum</a>
-      <a href="https://github.com/quasarframework/quasar" target="_blank">Github</a>
-      <a href="mailto:razvan.stoenescu@gmail.com">Contact</a>
-      <a href="/support-quasar-framework.html">Donate</a>
-    </nav>
-  </div>
+  <%- partial('partials/standalone-top-navigation') %>
 
   <div class="q-intro">
     <img src="/images/responsive-logo.png">
@@ -204,17 +196,4 @@
   </div>
 </div>
 
-<div class="q-footer">
-  <div class="q-container">
-    <div class="q-footer-navbar">
-      <a href="/guide">Documentation</a>
-      <a href="http://forum.quasar-framework.org" target="_blank">Forum</a>
-      <a href="https://github.com/quasarframework/quasar" target="_blank">Github</a>
-      <a href="mailto:razvan.stoenescu@gmail.com">Contact</a>
-      <a href="/support-quasar-framework.html">Donate</a>
-    </div>
-    <div class="q-footer-copyright">
-      <span>Copyright &copy; Razvan Stoenescu</span>
-    </div>
-  </div>
-</div>
+<%- partial('partials/standalone-bottom-navigation') %>
