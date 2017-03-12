@@ -22,14 +22,22 @@ Just add the `avatar` CSS class to it.
 Use this Web Component when you want to display multiple images together.
 
 ``` html
-<!-- Template for VueModel below -->
 <q-gallery :src="gallery"></q-gallery>
+
+<!-- With infinite scrolling and autoplay and dots and fullscreen -->
+<q-gallery infinite autoplay dots fullscreen :src="gallery"></q-gallery>
 ```
 
 ### Vue Properties
 | Property | Type | Description |
 | --- | --- | --- |
 | `src` | Array | Strings represting URLs. Use images from statics folder. |
+| `infinite` | Boolean | Infinite slides scrolling |
+| `autoplay` | Boolean/Number | Auto scrolls between slides. Works great along `infinite` prop (but `infinite` is not required). If used as a number, it represents the number of milliseconds between scrolls. |
+| `arrows` | Boolean | Show arrows |
+| `dots` | Boolean | Show dots at bottom |
+| `fullscreen` | Boolean | Shows Fullscreen button |
+| `actions` | Boolean | Show Actions slot |
 
 ## Image Gallery Slider
 When the real estate of the Page is an issue, use this Web Component which displays multiple images using a Slider Component. Read more about Sliders [here](/components/slider.html).
