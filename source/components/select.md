@@ -74,7 +74,7 @@ Add `has-error` CSS class:
 | Vue Property | Required | Description |
 | --- | --- | --- |
 | `options` | Yes | Array of options (Object with `label` and `value` properties). |
-| `type` | Yes | One of `radio`, `checkbox` or `toggle` strings. |
+| `type` | Yes | One of `radio`, `list`, `checkbox` or `toggle` strings. |
 | `label` | | (Floating) Label to use. |
 | `placeholder` | | Placeholder to use. |
 | `static-label` | | Overrides `label` and `placeholder` and selected value. Display this label always regardless of selection status. |
