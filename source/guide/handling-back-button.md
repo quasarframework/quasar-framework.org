@@ -44,7 +44,7 @@ This directive determines if the Platform is Cordova, and if so, it performs a `
 ## Quirks
 Now you think everything will work smoothly, but you must be careful on how you build up window history. Remember we started by says that the List page has a layout with multiple tabs, each one with its own route ("/list/shoes", "/list/hats").
 
-If we'd use `route="/list/shoes" and `route="/list/hats'" on your Tabs (read more about Tabs [here](/components/tabs.html)), then window history will build up when switching between the tabs, simply because Vue Router pushes routes to the history. What you'd like instead is for your window history to stay the same, even if routes change. Fortunately, Vue Router comes to the rescue with the `replace` property which essentially replaces current route instead of pushing it further.
+If we'd use `route="/list/shoes"` and `route="/list/hats'"` on your Tabs (read more about Tabs [here](/components/tabs.html)), then window history will build up when switching between the tabs, simply because Vue Router pushes routes to the history. What you'd like instead is for your window history to stay the same, even if routes change. Fortunately, Vue Router comes to the rescue with the `replace` property which essentially replaces current route instead of pushing it further.
 
 So, besides `route=" '...route...' "` you should add the `replace` attribute (becoming `route=" '...route...' " replace`). This will replace the current route in window history rather than pushing it.
 
