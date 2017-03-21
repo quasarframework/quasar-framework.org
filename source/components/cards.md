@@ -106,9 +106,9 @@ Be creative. You can embed a Parallax Web Component:
   <div class="card-title">
     Card with Parallax Image
   </div>
-  <parallax src="assets/parallax2.jpg" :height="150">
+  <q-parallax src="assets/parallax2.jpg" :height="150">
     <div slot="loading">Loading...</div>
-  </parallax>
+  </q-parallax>
   <div class="card-content">
     Card Content
   </div>
