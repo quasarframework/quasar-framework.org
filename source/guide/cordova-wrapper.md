@@ -33,6 +33,8 @@ $ cordova plugin add cordova-plugin-crosswalk-webview
 > **NOTE for Windows Developers**
 > It is possible that you get `Error: EPERM: operation not permitted, symlink '..\dist'`, in which case you need to add privileges for your user to be able to create symlinks. Read [here](http://superuser.com/questions/104845/permission-to-make-symbolic-links-in-windows-7).
 
+> Another work-around and a quick solution is creating the symlink manually (after running `quasar wrap cordova`). To do so, start a command line as Administrator, change directory (`cd`) to the newly created `cordova` directory, run `mklink www ..\dist\`.
+
 After making the wrapper and making sure you have the platform's SDK installed on your machine, you need to add at least a platform to your App, like this:
 ``` bash
 $ cd cordova
