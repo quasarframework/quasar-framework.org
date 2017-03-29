@@ -1,40 +1,41 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="319" height="377" viewBox="0 0 319 377">
-    <path fill="#232447" d="M0 24h148.895v98H0z"/>
-    <path fill="#4e9bd4" d="M0 24h29.547v48.5H0zm39.119 0h29.547v59.5H39.119zm40.236 0h29.547v29.75H79.355zm39.992 0h29.547v48.5h-29.547z"/>
-    <text transform="translate(8 19)" fill="#34495e" font-family="'Source Sans Pro'" font-size="16">
-        items-start
-    </text>
-    <path fill="#232447" d="M0 155h148.895v98H0z"/>
-    <path fill="#4e9bd4" d="M0 178.281h29.547v48.5H0zm39.119-5.5h29.547v59.5H39.119zm40.236 14.875h29.547v29.75H79.355zm39.992-9.375h29.547v48.5h-29.547z"/>
-    <text transform="translate(8 150)" fill="#34495e" font-family="'Source Sans Pro'" font-size="16">
-        items-center
-    </text>
-    <path fill="#232447" d="M0 279h308.395v98H0z"/>
-    <path fill="#4e9bd4" d="M0 287.406h64v68.875H0zm70.121 6.156h64V337h-64zm72.152-7.156H221V350h-78.727zm86.766 3.641h78.727V367h-78.727z"/>
-    <text transform="translate(8 274)" fill="#34495e" font-family="'Source Sans Pro'" font-size="16">
-        items-baseline
-    </text>
-    <path fill="#232447" d="M159.5 155h148.895v98H159.5z"/>
-    <path fill="#4e9bd4" d="M159.5 154.031h29.547V253H159.5zm39.119.969h29.547v98h-29.547zm40.236 0h29.547v98h-29.547zm39.993 0h29.547v98h-29.547z"/>
-    <text transform="translate(167.5 150)" fill="#34495e" font-family="'Source Sans Pro'" font-size="16">
-        items-stretch
-    </text>
-    <path fill="#232447" d="M159.5 24h148.895v98H159.5z"/>
-    <path fill="#4e9bd4" d="M159.5 73.5h29.547V122H159.5zm39.119-11h29.547V122h-29.547zm40.236 29.75h29.547V122h-29.547zm39.993-18.75h29.547V122h-29.547z"/>
-    <text transform="translate(167.5 19)" fill="#34495e" font-family="'Source Sans Pro'" font-size="16">
-        items-end
-    </text>
-    <text transform="translate(5 308)" font-family="'Source Sans Pro'" font-size="13">
-        text text
-    </text>
-    <text transform="translate(243 308)" font-family="'Source Sans Pro'" font-size="13">
-        text text
-    </text>
-    <text transform="translate(81.666 308.73)" font-family="'Source Sans Pro'" font-size="10">
-        text text
-    </text>
-    <text transform="translate(149.197 307.272)" font-family="'Source Sans Pro'" font-size="16">
-        text text
-    </text>
-    <path fill="none" stroke="#fff" stroke-miterlimit="10" d="M0 308h308.395"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="319px" height="377px" viewBox="0 0 319 377" enable-background="new 0 0 319 377" xml:space="preserve">
+<rect y="24" fill="#232447" width="148.895" height="98"/>
+<rect y="24" fill="#4e9bd4" width="29.547" height="48.5"/>
+<rect x="39.119" y="24" fill="#4e9bd4" width="29.547" height="59.5"/>
+<rect x="79.355" y="24" fill="#4e9bd4" width="29.547" height="29.75"/>
+<rect x="119.347" y="24" fill="#4e9bd4" width="29.547" height="48.5"/>
+<text transform="matrix(1 0 0 1 8 19)" fill="#34495e" font-family="'Source Sans Pro'" font-size="16">items-start</text>
+<rect y="155" fill="#232447" width="148.895" height="98"/>
+<rect y="178.281" fill="#4e9bd4" width="29.547" height="48.5"/>
+<rect x="39.119" y="172.781" fill="#4e9bd4" width="29.547" height="59.5"/>
+<rect x="79.355" y="187.656" fill="#4e9bd4" width="29.547" height="29.75"/>
+<rect x="119.347" y="178.281" fill="#4e9bd4" width="29.547" height="48.5"/>
+<text transform="matrix(1 0 0 1 8 150)" fill="#34495e" font-family="'Source Sans Pro'" font-size="16">items-center</text>
+<rect y="279" fill="#232447" width="308.395" height="98"/>
+<rect y="287.406" fill="#4e9bd4" width="64" height="68.875"/>
+<rect x="70.121" y="293.562" fill="#4e9bd4" width="64" height="43.438"/>
+<rect x="142.273" y="286.406" fill="#4e9bd4" width="78.727" height="63.594"/>
+<rect x="229.039" y="290.047" fill="#4e9bd4" width="78.727" height="76.953"/>
+<text transform="matrix(1 0 0 1 8 274)" fill="#34495e" font-family="'Source Sans Pro'" font-size="16">items-baseline</text>
+<rect x="159.5" y="155" fill="#232447" width="148.895" height="98"/>
+<rect x="159.5" y="154.031" fill="#4e9bd4" width="29.547" height="98.969"/>
+<rect x="198.619" y="155" fill="#4e9bd4" width="29.547" height="98"/>
+<rect x="238.855" y="155" fill="#4e9bd4" width="29.547" height="98"/>
+<rect x="278.848" y="155" fill="#4e9bd4" width="29.547" height="98"/>
+<text transform="matrix(1 0 0 1 167.5 150)" fill="#34495e" font-family="'Source Sans Pro'" font-size="16">items-stretch</text>
+<rect x="159.5" y="24" fill="#232447" width="148.895" height="98"/>
+<rect x="159.5" y="73.5" fill="#4e9bd4" width="29.547" height="48.5"/>
+<rect x="198.619" y="62.5" fill="#4e9bd4" width="29.547" height="59.5"/>
+<rect x="238.855" y="92.25" fill="#4e9bd4" width="29.547" height="29.75"/>
+<rect x="278.848" y="73.5" fill="#4e9bd4" width="29.547" height="48.5"/>
+<text transform="matrix(1 0 0 1 167.5 19)" fill="#34495e" font-family="'Source Sans Pro'" font-size="16">items-end</text>
+<text transform="matrix(1 0 0 1 5 308)" font-family="'Source Sans Pro'" font-size="13">text text</text>
+<text transform="matrix(1 0 0 1 243 308)" font-family="'Source Sans Pro'" font-size="13">text text</text>
+<text transform="matrix(1 0 0 1 81.666 308.7295)" font-family="'Source Sans Pro'" font-size="10">text text</text>
+<text transform="matrix(1 0 0 1 149.1973 307.2715)" font-family="'Source Sans Pro'" font-size="16">text text</text>
+<line fill="none" stroke="#fff" stroke-miterlimit="10" x1="0" y1="308" x2="308.395" y2="308"/>
 </svg>

@@ -1,9 +1,9 @@
 <div class="q-header">
   <%- partial('partials/standalone-top-navigation') %>
 
-  <div class="q-intro q-inverted">
+  <div class="q-intro">
+    <img src="/images/responsive-logo.png">
     <div class="q-container">
-      <img class="q-logo animated pulse infinite" width="180" height="180" src="https://cdn.rawgit.com/quasarframework/quasar-art/4a472070/dist/svg/quasar-logo-gradient.svg"/>
       <h1>Quasar Framework</h1>
       <h2>SPA front-end on steroids.</h2>
       <p>
@@ -22,7 +22,7 @@
       <div class="q-intro-actions">
         <a class="button" href="/guide/index.html">
           <i class="fa fa-bolt"></i>
-          Get started
+          Get started in under a minute
         </a>
         <a class="button" href="https://github.com/quasarframework/quasar" target="_blank">
           <i class="fa fa-github"></i>
@@ -33,185 +33,125 @@
           Follow @quasarframework
         </a>
       </div>
-      <a href="#q-features"><img class="arrow animated tada" src="/images/down.svg"></a>
     </div>
+    <img class="arrow" src="/images/down.png">
   </div>
 </div>
 
 <div class="q-feature">
-  <a name="q-features"><!-- Anchor to feature list --></a>
   <div class="q-container q-feature-list">
-    <div class="q-feature-item q-responsive">
-      <div class="q-feature-anim-image">
-        <img class="desktop device" width="200" src="/images/desktop.svg"/>
-        <img class="laptop device" width="200" src="/images/laptop.svg"/>
-        <img class="tablet device" width="200" src="/images/tablet.svg"/>
-        <img class="mobile device" width="200" src="/images/mobile.svg"/>
-        <img class="logo" width="200" src="https://cdn.rawgit.com/quasarframework/quasar-art/4a472070/dist/svg/quasar-logo-gradient.svg"/>
-      </div>
-      <div class="q-feature-content">
-        <h4>
-          All Platforms in One Go
-        </h4>
-        <p>
-          One source code for all platforms simultaneously: responsive desktop/mobile website,
-          native mobile Apps (that really look native!).
-        </p>
-      </div>
+    <div class="q-feature-item">
+      <i class="icon fa fa-code-fork"></i>
+      <h4>
+        All Platforms in One Go
+      </h4>
+      <p>
+        One source code for all platforms simultaneously: responsive desktop/mobile website,
+        native mobile Apps (that really look native!).
+      </p>
     </div>
-    <div class="q-feature-item right q-play">
-      <div class="q-feature-anim-image">
-        <img class="animated laptop device" width="200" src="/images/laptop.svg"/>
-        <img class="animated play" width="200" src="/images/play.svg"/>
-        <img class="animated mobile device" width="200" src="/images/mobile.svg"/>
-        <img class="animated qrcode" width="200" src="/images/qrcode.svg"/>
-        <img class="animated logo" width="200" src="https://cdn.rawgit.com/quasarframework/quasar-art/4a472070/dist/svg/quasar-logo-gradient.svg"/>
-      </div>
-      <div class="q-feature-content">
-        <h4>
-          Quasar Play App
-        </h4>
-        <p>
-          Develop Quasar Apps with Hot Reload directly on your phone, without even installing them.
-        </p>
-        <p>
-          <a
-            class="playstore"
-            style="margin-left: -11px;"
-            href='https://play.google.com/store/apps/details?id=com.quasarframework.quasarplay&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'
-            target="_blank"
-          ></a>
-        </p>
-      </div>
+    <div class="q-feature-item">
+      <i class="icon fa fa-gamepad"></i>
+      <h4>
+        Quasar Play App
+      </h4>
+      <p>
+        Develop Quasar Apps with Hot Reload directly on your phone, without even installing them.
+        <a
+          class="playstore"
+          style="margin-left: -11px;"
+          href='https://play.google.com/store/apps/details?id=com.quasarframework.quasarplay&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'
+          target="_blank"
+        ></a>
+      </p>
     </div>
-    <div class="q-feature-item q-js-vue">
-      <div class="q-feature-anim-image">
-        <img class="animated jslogo" width="200" src="/images/jslogo.svg"/>
-        <img class="animated vuelogo" width="200" src="/images/vuelogo.svg"/>
-      </div>
-      <div class="q-feature-content">
-        <h4>
-          VueJs & ES6
-        </h4>
-        <p>
-          ES6 Javascript. Leverage VueJs & NPM ecosystem easily. Support for *.vue single file components.
-        </p>
-      </div>
+    <div class="q-feature-item">
+      <i class="icon fa fa-thumbs-o-up"></i>
+      <h4>
+        VueJs & ES6
+      </h4>
+      <p>
+        ES6 Javascript. Leverage VueJs & NPM ecosystem easily. Support for *.vue single file components.
+      </p>
     </div>
 
-    <div class="q-feature-item right q-boilerplate">
-      <div class="q-feature-anim-image">
-      <img class="animated rocket" width="200" src="/images/rocket.svg"/>
-      </div>
-      <div class="q-feature-content">
-        <h4>
-          Boilerplate
-        </h4>
-        <p>
-          Out of the box App code boilerplate, build system, hot reload, linter, test setup, auto minification and more.
-        </p>
-      </div>
+    <div class="q-feature-item">
+      <i class="icon fa fa-hourglass-half"></i>
+      <h4>
+        Boilerplate
+      </h4>
+      <p>
+        Out of the box App code boilerplate, build system, hot reload, linter, test setup, auto minification and more.
+      </p>
     </div>
-    <div class="q-feature-item q-components">
-      <div class="q-feature-anim-image">
-        <img class="tools" width="200" src="/images/tools.svg"/>
-      </div>
-      <div class="q-feature-content">
-        <h4>
-          Built-in Components
-        </h4>
-        <p>
-          Endless list of components which do most of the heavy-lifting:
-          Drawer, Action Sheet, Dialog, Modal, Toast, Tabs, Toolbar,
-          Card, Lists, Toggle, Chips Textbox, Datetime, Range,
-          Rating, Knob, Collapsibles, Popovers, Pull to Refresh,
-          Infinite Scroll, Parallax, Grid, Slider, Stepper, Tree, Chat, Timeline...
-        </p>
-      </div>
+    <div class="q-feature-item">
+      <i class="icon fa fa-gears"></i>
+      <h4>
+        Built-in Components
+      </h4>
+      <p>
+        Endless list of components which do most of the heavy-lifting:
+        Drawer, Action Sheet, Dialog, Modal, Toast, Tabs, Toolbar,
+        Card, Lists, Toggle, Chips Textbox, Datetime, Range,
+        Rating, Knob, Collapsibles, Popovers, Pull to Refresh,
+        Infinite Scroll, Parallax, Grid, Slider, Stepper, Tree, Chat, Timeline...
+      </p>
     </div>
-    <div class="q-feature-item right q-themes">
-      <div class="q-feature-anim-image">
-        <img class="themeroller" width="200" src="/images/themeroller.svg"/>
-      </div>
-      <div class="q-feature-content">
-        <h4>
-          Themes
-        </h4>
-        <p>
-          Full-featured Quasar CSS Framework. <strong>Material Design</strong> and
-          <strong>iOS</strong> themes (for now). Write once, deploy as looking native.
-        </p>
-      </div>
+    <div class="q-feature-item">
+      <i class="icon fa fa-magic"></i>
+      <h4>
+        Themes
+      </h4>
+      <p>
+        Full-featured Quasar CSS Framework. <strong>Material Design</strong> and
+        <strong>iOS</strong> themes (for now). Write once, deploy as looking native.
+      </p>
     </div>
-    <div class="q-feature-item q-speed">
-      <div class="q-feature-anim-image">
-      <img class="gauge" width="200" src="/images/gauge.svg"/>
-      <img class="animated needle" width="200" src="/images/needle.svg"/>
-      </div>
-      <div class="q-feature-content">
-        <h4>
-          Speed & Efficiency
-        </h4>
-        <p>
-          Quasar focuses on low memory footprint, efficiency and making Apps run really fast.
-        </p>
-      </div>
+    <div class="q-feature-item">
+      <i class="icon fa fa-bolt"></i>
+      <h4>
+        Speed & Efficiency
+      </h4>
+      <p>
+        Quasar focuses on low memory footprint, efficiency and making Apps run really fast.
+      </p>
     </div>
-    <div class="q-feature-item right q-platforms">
-      <div class="q-feature-anim-image">
-        <img class="animated androidlogo" width="200" src="/images/androidlogo.svg"/>
-        <img class="animated applelogo" width="200" src="/images/applelogo.svg"/>
-        <img class="animated winlogo" width="200" src="/images/winlogo.svg"/>
-      </div>
-      <div class="q-feature-content">
-        <h4>
-          Wide Platform Support
-        </h4>
-        <p>iOS, Android, Windows Phone, Blackberry, Google Chrome, Firefox, IE11/Edge, Safari, Opera.</p>
-      </div>
+    <div class="q-feature-item">
+      <i class="icon fa fa-arrows-alt"></i>
+      <h4>
+        Wide Platform Support
+      </h4>
+      <p>iOS, Android, Windows Phone, Blackberry, Google Chrome, Firefox, IE11/Edge, Safari, Opera.</p>
     </div>
-    <div class="q-feature-item q-hot-reload">
-      <div class="q-feature-anim-image">
-        <img class="desktop device" width="200" src="/images/desktop.svg"/>
-        <img class="animated logo" width="200" src="https://cdn.rawgit.com/quasarframework/quasar-art/4a472070/dist/svg/quasar-logo-gradient.svg"/>
-        <img class="mobile device" width="200" src="/images/mobile.svg"/>
-        <img class="animated logo" width="200" src="https://cdn.rawgit.com/quasarframework/quasar-art/4a472070/dist/svg/quasar-logo-gradient.svg"/>
-        <img class="cup" width="200" src="/images/cup.svg"/>
-        <img class="animated smoke" width="200" src="/images/smoke.svg"/>
-      </div>
-      <div class="q-feature-content">
-        <h4>
-          Dev Hot Reload
-        </h4>
-        <p>
-          More than just Live Reload. Preserve App state while updating in the browser or phone/tablet (through Quasar Play).
-        </p>
-      </div>
+    <div class="q-feature-item">
+      <i class="icon fa fa-refresh"></i>
+      <h4>
+        Dev Hot Reload
+      </h4>
+      <p>
+        More than just Live Reload. Preserve App state while updating in the browser or phone/tablet (through Quasar Play).
+      </p>
     </div>
-    <div class="q-feature-item right q-docs">
-      <div class="q-feature-anim-image">
-        <img class="docs" width="200" src="/images/docs.svg"/>
-      </div>
-      <div class="q-feature-content">
-        <h4>
-          Great Documentation
-        </h4>
-        <p>
-          Crystal clear documentation with examples, guides, tips and demos with source code available.
-        </p>
-      </div>
+    <div class="q-feature-item">
+      <i class="icon fa fa-book"></i>
+      <h4>
+        Great Documentation
+      </h4>
+      <p>
+        Crystal clear documentation with examples, guides, tips and demos with source code available.
+      </p>
     </div>
   </div>
 </div>
 
-<div class="q-actions q-inverted">
+<div class="q-actions">
   <div class="q-container">
     <div class="q-actions-item">
       <h3>Contribute</h3>
       <h4>Help Build Quasar</h4>
       <p>
         Quasar is and always will be 100% free and open-source under
-        the MIT license. Fork it on GitHub and help make it better.
+        the MIT license. Fork it on GitHub and help make it bettter.
       </p>
       <a
         class="button"
@@ -241,7 +181,7 @@
 
     <div class="q-actions-item">
       <h3>Feedback</h3>
-      <h4>Shout out your ideas</h4>
+      <h4>Shout out your ideas.</h4>
       <p>
         Ideas are very important. Can something be improved? Would you like a new
         feature? Does a feature has something that is bothering you? Open up a Github

@@ -1,5 +1,3 @@
-@import '_palette'
-
 // font faces
 $body-font = 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif
 $logo-font = $body-font
@@ -12,23 +10,25 @@ $body-font-size = 15px
 $code-font-size = .8em
 
 // colors
-$main  = $primary
+$main  = #4e9bd4
 
-$dark   = $dark-primary
-$medium = $primary
-$light  = $light-primary
-$bg = $divider
+$dark   = darken($main, 30%)
+$medium = #34495e
+$light  = lighten($main, 5%)
+$bg = #f8f8f8
 
-$border = $normal-text
+$border = #dddddd
 $radius = 7px
 $shadow = 1px 2px 2px 1px rgba(0, 0, 0, .125)
 
-$hr-color          = $normal-text
-$code-border       = 1px solid $normal-text
-$iframe-box-shadow = 0 0 5px 2px $secondary-text
+$hr-color          = #e5e5e5
+$code-border       = 1px solid #e6e6e6
+$iframe-box-shadow = 0 0 5px 2px #aaa
+$white             = #fff
+$black             = #000
 
 $header-height = 70px
-$header-color = $white
+$header-color = white
 $header-padding = 25px
-$header-bg = $dark-primary
+$header-bg = #0273D4
 $header-shadow = 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .4)
