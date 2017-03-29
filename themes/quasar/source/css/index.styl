@@ -1,307 +1,173 @@
-@import '_variables'
+@import '_anims'
+@import '_typography'
 
-$primary = #2699ec
-
-body
-  font-family $body-font
-  font-size $body-font-size
-  -webkit-font-smoothing antialiased
-  -moz-osx-font-smoothing grayscale
-
-  margin 0
-  padding 0
-  font-weight 300
-  color #7E96B3
-  line-height 1.5
-  font-size 16px
-
-h1
-  font-size 60px
-  font-weight 300
-
-h2
-  font-size 36px
-  font-weight 300
-  color $primary
-
-a
-  color #B0BED1
-  &:hover
-    color $primary
-
-a.button, button
-  cursor pointer
-  text-transform uppercase
-  font-size 14px
-  font-weight normal
-  color #7E96B3
-  background white
-  border 2px solid #CCD6E4
-  border-radius 6px
-  padding 15px 30px
-  display inline-block
-  line-height 1
-  text-decoration none
-  transition all .2s
-  &:hover
-    color $primary
-    border-color $primary
-  i
-    font-size 150%
-    margin-right 5px
-    vertical-align middle
-
-.playstore
-  border 0 !important
-  background 0 0 !important
-  padding 0 !important
-  img
-    width 160px
-
+.q-container
+  max-width 1040px
+  margin 0 auto
+  overflow hidden
 
 .q-header
   padding 0
   border 0
   text-align center
 
-.q-container
-  max-width 1040px
-  margin 0 auto
-  padding 0 20px
-  overflow hidden
-
 .q-header-navbar
-  margin-top 30px
+  margin 15px 0
 
 .q-header-navbar, .q-footer-navbar
   a
-    border 0
-    color #B0BED1
-    margin 0 10px 5px
     display inline-block
-    text-decoration none
+    margin 0 10px 5px
     padding-bottom 1px
-    transition all .2s
-    &:hover
-      color $primary
-
-
-.q-body
-  text-align center
-  padding-top 100px
-  padding-bottom 100px
-  h2
-    color #7e96b3
-    margin-top 0
-    margin-bottom 15px
-  img + h2
-    margin-top 15px
-  p
-    text-align left
-  .q-container
-    max-width 600px
+    border 0
+    text-decoration none
 
 .q-intro
+  position relative
+  padding 0
   text-align center
-  padding-top 100px
-  padding-bottom 150px
+  background-image url(../images/space.jpg)
+  background-attachment fixed
+  background-position center top
+  background-repeat no-repeat
+  background-size auto 100%
+  .q-container
+    padding 50px 20px
   h1
-    margin 25px 0 0
-    color #3c5675
+    margin .5em 0 0
   h2
-    color #7e96b3
     margin-top 0
-    margin-bottom 15px
+    margin-bottom .25em
   p
-    max-width 450px
-    font-size 20px
-    margin 0 auto 40px
-    a
-      text-decoration none
-      i
-        margin-right 10px
+    max-width 500px
+    margin 0 auto 1.5em
+    font-size 1.25em
   img.arrow
-    margin-top 25px
-    width 20px
+    width 30px
+    margin-top 50px
+  .q-logo
+    width 160px
+    height 160px
+    background-color #fff
+    box-shadow 0 2px 10px rgba(0,0,0,0.25)
+    border-radius 50%
+    animation-duration 2s
 
 .q-intro-actions a
-  margin 0 4px 10px
-
-
-
-.q-feature
-  padding 50px 0 0
-  background-image linear-gradient(to bottom, #eff2f6 0%, rgba(239, 242, 246, 0) 250px)
-
-.q-feature-header
-  text-align center
-  h3
-    font-size 37px
-    color $primary
-    font-weight 300
-    margin .25rem 0
-  p
-    font-size 20px
-    color #536F90
-
-figure
-  height 591px
-  background-size 689px 591px
-
-.q-screenshot-text
-  margin-top 50px
-
-.q-screenshot
-  color #888
-  margin 75px 0
-  overflow hidden
-
-  h4
-    color #444
-    font-size 18px
-    font-weight 600
-    margin 4em 0 0
-    &:first-child
-      margin-top 0
-
-  p
-    margin .5em 0 1em
-    font-size 1.1em
-
-  &.dark
-    color #fff
-    background #272722
-    margin-bottom 0
-
-  &.left
-    figure
-      float left
-      width 50%
-      background-repeat no-repeat
-      background-position top right
-      margin 0
-    .q-screenshot-text
-      width 300px
-      float left
-      margin 15px 0 0 100px
-
-  &.right
-    figure
-      float right
-      width 50%
-      background-repeat no-repeat
-      background-position top left
-      margin 0
-    .q-screenshot-text
-      width 300px
-      float right
-      margin 15px 100px 0 0
-
+  box-sizing border-box
+  margin 0 .5em 1em
 
 .q-feature-list
   overflow hidden
-  margin-top 25px
-
-.q-feature-item
-  float left
-  width 50%
-  height 325px
-  box-sizing border-box
-  padding 0 50px
-  color #888
-  font-size 1.1em
-  i
-    font-size 64px
-    color $primary
-    vertical-align middle
-    margin-right 5px
-  h4
-    color #444
-    font-size 18px
-    font-weight 600
-    margin 1em 0 0
-
-
-
-
+  .q-feature-item
+    display flex
+    padding 50px 0 100px
+    box-sizing border-box
+    overflow hidden
+    font-size 1.1em
+    &.right
+      flex-flow row-reverse
+    h4
+      color $primary-text
+      font-size 1.2em
+      font-weight 600
+      margin 1em 0 0
+    .q-feature-anim-image
+      position relative
+      box-sizing border-box
+      width 500px
+      height 333px
+      margin 0 auto
+    .q-feature-content
+      box-sizing border-box
+      width 50%
+      padding 50px
 
 .q-actions
-  padding 60px 0
-  background-image linear-gradient(to bottom, #eff2f6 0%, rgba(239, 242, 246, 0) 250px)
+  padding 50px 0
+  background-image url(../images/space.jpg)
+  background-attachment static
+  background-position center top
+  background-repeat no-repeat
+  background-size 100% auto
 
 .q-actions-item
+  float left
   width 33%
   padding 0 35px
   box-sizing border-box
-  float left
   text-align center
   h3
     font-weight 300
-    font-size 30px
-    color $primary
-    margin 0 0 10px
+    font-size 2em
+    margin 0
   h4
     font-weight 300
-    font-size 20px
-    color #3C5675
+    font-size 1.2em
     margin 0
   p
     margin .5em 0 1.5em
-    height 125px
+    height 8em
 
 .q-footer
   text-align center
-  margin 100px 0
+  margin 50px 0
   line-height 2em
-.q-footer-navbar
-  margin-bottom 5px
-  a
-    margin 0 8px
+  .q-footer-navbar
+    margin-bottom 5px
+    a
+      margin 0 10px
+
+.playstore
+  border 0 !important
+  background 0 0 !important
+  padding 0 !important
+  img
+    width 200px
 
 
 @media only screen and (max-width 700px)
   .q-intro
+    .q-logo
+      width 100px
+      height 100px
+    .q-container
+      padding 20px 10px 10px
+    .q-intro-actions
+      .button
+        width 100%
+        margin 0 0 10px
+    img.arrow
+      display none
     h1
-      font-size 35px
+      font-size 2em
     h2
-      font-size 25px
+      font-size 1.6em
     p
-      font-size 16px
-  .q-intro, .q-body
-    > img
-      max-width 80%
+      font-size 1em
+
+  .q-feature-list
+    .q-feature-item
+      flex-flow column !important
+      margin 0 10px
+      padding 0
+      text-align center
+      .q-feature-anim-image
+        width 300px
+        height 200px
+        margin 0 auto
+      .q-feature-content
+        width 100%
+        padding 25px 10px 50px
+        text-align center
 
   .q-actions
-    padding 30px 0
+    padding 20px
+    background-size auto 100%
   .q-actions-item
     width auto
     float none
-    margin-bottom 50px
     padding 0
+    margin-bottom 50px
     p
       height auto
-  .q-intro
-    padding-bottom 100px
-  img.arrow
-    display none
-
-@media only screen and (max-width 790px)
-  .q-body
-    padding-top 50px
-    padding-bottom 0
-    img
-      max-width 80%
-    form
-      button, a
-        display block
-        margin 10px
-  .q-intro-actions a
-    display block
-    padding 10px 15px
-  .q-feature-item
-    display block
-    float none
-    width 100%
-    height auto
-    margin-bottom 60px
-    text-align center

@@ -1,0 +1,64 @@
+@import '_variables'
+
+body
+  font-family $body-font
+  font-size $body-font-size
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+  margin 0
+  padding 0
+  font-weight 300
+  color $normal-text
+  line-height 1.5
+  font-size 16px
+
+h1
+  font-size 60px
+  font-weight 300
+  color $primary-text
+
+h2
+  font-size 36px
+  font-weight 300
+  color $secondary-text
+
+a, a.button, button
+  color $secondary-text
+  transition color .2s
+  &:hover
+    color $primary
+    text-decoration none
+
+a
+  text-decoration underline
+
+a.button, button
+  cursor pointer
+  text-transform uppercase
+  font-size 14px
+  font-weight normal
+  background $white
+  border-radius 6px
+  padding 15px 30px
+  display inline-block
+  line-height 1
+  text-decoration none
+  transition all .2s
+  i
+    font-size 150%
+    margin-right 5px
+    vertical-align middle
+
+.q-inverted
+  background-color $primary
+  color $inverted-text
+  h1, h3
+    color $inverted-primary-text
+    text-shadow 0 2px rgba(0,0,0,0.5)
+  h2, h4
+    color $inverted-secondary-text
+    text-shadow 0 2px rgba(0,0,0,0.5)
+  a:not(.button)
+    color $light-primary
+    &:hover
+      color $white

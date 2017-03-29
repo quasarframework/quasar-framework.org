@@ -1,0 +1,91 @@
+@keyframes logo-fade-in
+  0%
+    opacity 0
+  100%
+    opacity 1
+
+@keyframes logo-resize
+  0%
+    width 128px
+    height 128px
+  25%
+    width 128px
+    height 128px
+  35%
+    width 100px
+    height 100px
+  50%
+    width 100px
+    height 100px
+  60%
+    width 60px
+    height 60px
+  75%
+    width 60px
+    height 60px
+  85%
+    width 40px
+    height 40px
+  90%
+    width 40px
+    height 40px
+
+@keyframes device-fade-in-out
+  0%
+    opacity 0
+  25%
+    opacity 1
+  50%
+    opacity 0
+
+.device
+  opacity 0
+  animation-name device-fade-in-out
+  animation-duration 8s
+  animation-iteration-count infinite
+
+.logo
+  position absolute
+  opacity 1
+  width 128px
+  height 128px
+  left 50%
+  top 50%
+  transform translate(-50%, -50%)
+  animation logo-fade-in 2s linear 1, logo-resize 8s linear infinite
+
+.desktop
+  position absolute
+  width 400px
+  height 320px
+  left 50%
+  top 63%
+  transform translate(-50%, -50%)
+  animation-delay 0s
+
+.laptop
+  position absolute
+  width 300px
+  height 185px
+  left 50%
+  top 52%
+  transform translate(-50%, -50%)
+  animation-delay 2s
+
+.tablet
+  position absolute
+  width 125px
+  height 170px
+  left 50%
+  top 50%
+  transform translate(-50%, -50%)
+  animation-delay 4s
+
+.mobile
+  position absolute
+  width 60px
+  height 100px
+  left 50%
+  top 50%
+  transform translate(-50%, -50%)
+  animation-delay 6s
