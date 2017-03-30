@@ -1,28 +1,3 @@
-.content.blog
-  &:not(.post)
-    margin-left 20px
-
-  h1
-    margin 0 0 .5em
-  h2
-    margin .8em 0
-    padding-bottom 0
-    border-bottom none
-    a
-      color $dark
-      &:hover
-        border-bottom 2px solid $main
-  h4
-    color $light
-    margin 1.2em 0
-  figure, p
-    margin-left 0
-  .post
-    padding 1em 0 2em
-    border-bottom 1px solid $border
-    &:first-child
-      padding-top 0
-
-@media screen and (min-width $small-screen + 1px)
-  body.blog:not(.post) .sidebar
-    display none
+@import '_typography'
+@import '_grid'
+@import '_elements'

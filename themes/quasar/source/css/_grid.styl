@@ -1,0 +1,47 @@
+@import '_variables'
+
+
+/* Base */
+
+html, body
+  margin 0
+  padding 0
+
+
+/* Grid (based on Flexbox) */
+
+.qwb-container
+  display flex
+  flex-direction column
+  box-sizing border-box
+  width 100%
+  margin 0 auto
+
+  &.xs
+    max-width 32rem
+
+  &.sm
+    max-width 48rem
+
+  &.md
+    max-width 64rem
+
+  &.lg
+    max-width 80rem
+
+  &.xl
+    max-width 96rem
+
+.qwb-row
+  display flex
+  flex-flow column
+  box-sizing border-box
+
+.qwb-item
+  position relative
+  flex 1
+
+@media (min-width: 32rem)
+
+    .qwb-row
+      flex-flow row

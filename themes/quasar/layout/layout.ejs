@@ -3,56 +3,62 @@
 %>
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title><%- page.title ? page.title + ' - ' : '' %>Quasar Framework</title>
-        <meta charset="utf-8">
-        <meta name="description" content="Quasar Framework - Build desktop & phone/tablet apps simultaneously">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono|Source+Sans+Pro">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-        <link rel="icon" href="https://github.com/quasarframework/quasar-art/raw/master/dist/128/quasar-logo-flat.png" type="image/x-icon">
-        <!-- build:css css/<%- isIndex ? 'index' : 'page' %>-combined.css -->
-          <%- css(isIndex ? 'css/index' : 'css/page') %>
+  <head>
+    <meta charset="utf-8">
+    <title><%- page.title ? page.title + ' - ' : '' %>Quasar Framework</title>
+    <meta name="description" content="Quasar Framework - Build desktop &amp; phone/tablet apps simultaneously">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://github.com/quasarframework/quasar-art/raw/master/dist/128/quasar-logo-flat.png" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- build:css css/<%- isIndex ? 'index' : 'page' %>-combined.css -->
+    <%- css(isIndex ? 'css/index' : 'css/page') %>
+    <!-- endbuild -->
+  </head>
+
+  <body class="<%- body_class(page) %>">
+    <div id="main">
+        <% if (page.blog_index) { %>
+            <%- partial('partials/blog') %>
+        <% } else if (page.search_index) { %>
+            <%- partial('partials/search') %>
+        <% } else if (page.privacy_policy_index) { %>
+            <%- partial('partials/privacy-policy') %>
+        <% } else if (page.support_index) { %>
+            <%- partial('partials/support') %>
+        <% } else { %>
+            <%- body %>
+        <% } %>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        FastClick.attach(document.body);
+      }, false);
+    </script>
+    <% if (!isIndex) { %>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/7.1.1/js/smooth-scroll.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+      <!-- build:js js/page-combined.js -->
+      <script src="<%- config.root %>js/page.js"></script>
+      <script src="<%- config.root %>js/preview.js"></script>
+      <script src="<%- config.root %>js/search.js"></script>
+      <!-- endbuild -->
+      <% if (page.title === 'Stylus Variables') { %>
+        <!-- build:js js/search-stylus-combined.js -->
+        <script src="<%- config.root %>js/stylus-variables.js"></script>
         <!-- endbuild -->
-    </head>
-    <body class="<%- body_class(page) %>">
-        <% if (!isIndex) { %>
-          <%- partial('partials/header') %>
-        <% } %>
-        <div id="main">
-            <% if (page.blog_index) { %>
-                <%- partial('partials/blog') %>
-            <% } else if (page.search_index) { %>
-                <%- partial('partials/search') %>
-            <% } else if (page.privacy_policy_index) { %>
-                <%- partial('partials/privacy-policy') %>
-            <% } else if (page.support_index) { %>
-                <%- partial('partials/support') %>
-            <% } else { %>
-                <%- body %>
-            <% } %>
-        </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
-        <script>
-        document.addEventListener('DOMContentLoaded', function() {
-          FastClick.attach(document.body);
-        }, false);
-        </script>
-        <% if (!isIndex) { %>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/7.1.1/js/smooth-scroll.min.js"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-          <!-- build:js js/page-combined.js -->
-          <script src="<%- config.root %>js/page.js"></script>
-          <script src="<%- config.root %>js/preview.js"></script>
-          <script src="<%- config.root %>js/search.js"></script>
-          <!-- endbuild -->
-          <% if (page.title === 'Stylus Variables') { %>
-            <!-- build:js js/search-stylus-combined.js -->
-            <script src="<%- config.root %>js/stylus-variables.js"></script>
-            <!-- endbuild -->
-          <% } %>
-        <% } %>
-        <%- partial('partials/ga') %>
-    </body>
+      <% } %>
+    <% } %>
+    <%- partial('partials/ga') %>
+  </body>
 </html>

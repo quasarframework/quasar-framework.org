@@ -1,0 +1,130 @@
+@import '_variables'
+
+
+/* Buttons */
+
+.qwb-btn, a.qwb-btn
+  cursor pointer
+  display inline-block
+  padding .5rem 1rem
+  margin .25rem
+  border none
+  border-radius $border-radius
+  box-sizing border-box
+  background-color $white
+  box-shadow $shadow
+  font-size 1rem
+  font-family $base-font-family
+  line-height $base-line-height
+  color $secondary-text
+  text-decoration none
+  transition all .2s
+
+  &:hover
+    color $primary
+
+  i
+    margin-right .25em
+
+
+/* Navbar */
+
+.qwb-navbar
+  display flex
+  flex-flow column wrap
+  box-sizing border-box
+  transition height .2s
+
+  &.centered
+    align-items center
+    align-content center
+    justify-content center
+
+  a
+    width 100%
+    padding .5em 1em
+    box-sizing border-box
+    text-decoration none
+    text-align center
+
+
+/* Lead */
+
+.qwb-lead
+  display flex
+  position relative
+  padding 2rem 0
+  box-sizing border-box
+  background-image url(../images/space.jpg)
+  background-attachment fixed
+  background-position center top
+  background-repeat no-repeat
+  background-size auto 100%
+  text-align center
+
+  p
+    max-width 80%
+    margin-left auto
+    margin-right auto
+
+
+/* Feature items */
+
+.qwb-feature-item
+  display flex
+  flex-flow column
+  margin 0 auto
+  padding 2rem
+  box-sizing border-box
+  font-size 1.1em
+
+  .qwb-feature-image
+    position relative
+    box-sizing border-box
+    width 12rem
+    height 8rem
+    margin 0 auto 2rem
+
+  .qwb-feature-content
+    width 100%
+    margin 0 auto
+    box-sizing border-box
+    text-align center
+
+/* Copyright */
+
+.qwb-copyright
+  margin 1rem auto
+  box-sizing border-box
+
+
+/* Responsive */
+
+@media only screen and (min-width 48rem)
+
+  .qwb-navbar
+    flex-flow row wrap
+
+    &.collapsable
+
+      .qwb-menu-toggle
+        display none
+
+    a
+      width auto
+
+  .qwb-feature-item
+    flex-flow row
+
+    &.reverse
+      flex-flow row-reverse
+
+    .qwb-feature-image
+      width 20rem
+      height 13.32rem
+      margin 0 auto
+
+    .qwb-feature-content
+      width 50%
+      padding 2rem
+      text-align left

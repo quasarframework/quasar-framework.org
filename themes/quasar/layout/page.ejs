@@ -3,6 +3,21 @@
   var nextPage     = next_page(page);
 %>
 
+<div class="qwb-header" id="header">
+  <div class="qwb-header-top qwb-container">
+    <div class="qwb-header-navbar">
+      <a class="qwb-menu-button"><i class="fa fa-bars"></i></a>
+      <a id="qwb-logo" href="<%- config.root %>" title="v<%- latest_quasar_version() %>">
+        <img src="https://raw.githubusercontent.com/quasarframework/quasar-art/master/dist/svg/quasar-logo-gradient.svg">
+        Quasar
+      </a>
+      <%- partial('partials/menu') %>
+    </div>
+  </div>
+</div>
+
+<%- partial('partials/sidebar') %>
+
 <div class="content">
   <h1>
     <%- page.title %>

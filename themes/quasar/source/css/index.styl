@@ -1,173 +1,93 @@
-@import '_anims'
 @import '_typography'
+@import '_grid'
+@import '_elements'
+@import '_anims'
 
-.q-container
-  max-width 1040px
-  margin 0 auto
-  overflow hidden
-
-.q-header
-  padding 0
-  border 0
-  text-align center
-
-.q-header-navbar
-  margin 15px 0
-
-.q-header-navbar, .q-footer-navbar
-  a
-    display inline-block
-    margin 0 10px 5px
-    padding-bottom 1px
-    border 0
-    text-decoration none
-
-.q-intro
-  position relative
-  padding 0
-  text-align center
-  background-image url(../images/space.jpg)
-  background-attachment fixed
-  background-position center top
-  background-repeat no-repeat
-  background-size auto 100%
-  .q-container
-    padding 50px 20px
-  h1
-    margin .5em 0 0
-  h2
-    margin-top 0
-    margin-bottom .25em
-  p
-    max-width 500px
-    margin 0 auto 1.5em
-    font-size 1.25em
-  img.arrow
-    width 30px
-    margin-top 50px
-  .q-logo
-    width 160px
-    height 160px
-    background-color #fff
-    box-shadow 0 2px 10px rgba(0,0,0,0.25)
-    border-radius 50%
-    animation-duration 2s
-
-.q-intro-actions a
-  box-sizing border-box
-  margin 0 .5em 1em
-
-.q-feature-list
-  overflow hidden
-  .q-feature-item
-    display flex
-    padding 50px 0 100px
-    box-sizing border-box
-    overflow hidden
-    font-size 1.1em
-    &.right
-      flex-flow row-reverse
-    h4
-      color $primary-text
-      font-size 1.2em
-      font-weight 600
-      margin 1em 0 0
-    .q-feature-anim-image
-      position relative
-      box-sizing border-box
-      width 500px
-      height 333px
-      margin 0 auto
-    .q-feature-content
-      box-sizing border-box
-      width 50%
-      padding 50px
-
-.q-actions
-  padding 50px 0
-  background-image url(../images/space.jpg)
-  background-attachment static
-  background-position center top
-  background-repeat no-repeat
-  background-size 100% auto
-
-.q-actions-item
-  float left
-  width 33%
-  padding 0 35px
-  box-sizing border-box
-  text-align center
-  h3
-    font-weight 300
-    font-size 2em
-    margin 0
-  h4
-    font-weight 300
-    font-size 1.2em
-    margin 0
-  p
-    margin .5em 0 1.5em
-    height 8em
-
-.q-footer
-  text-align center
-  margin 50px 0
-  line-height 2em
-  .q-footer-navbar
-    margin-bottom 5px
-    a
-      margin 0 10px
 
 .playstore
-  border 0 !important
-  background 0 0 !important
-  padding 0 !important
+  display inline-block
+  width 100%
   img
+    display block
     width 200px
+    margin 0 auto
+
+img.arrow
+  width 1.5rem
+  margin 2rem auto 0
 
 
-@media only screen and (max-width 700px)
-  .q-intro
-    .q-logo
-      width 100px
-      height 100px
-    .q-container
-      padding 20px 10px 10px
-    .q-intro-actions
-      .button
-        width 100%
-        margin 0 0 10px
-    img.arrow
-      display none
-    h1
-      font-size 2em
-    h2
-      font-size 1.6em
+#qwb-logo
+  width 6rem
+  height 6rem
+  margin 0 auto
+  box-sizing border-box
+  background-color #fff
+  box-shadow $shadow
+  border-radius 50%
+  animation-duration 2s
+
+
+#qwb-intro
+  font-size 1.2em
+  h1
+    margin-top 1rem
+    font-size 2em
+    line-height 1.4em
+  h2
+    font-size 1.3em
+  p
+    max-width 13em
+    margin 2rem auto
+  p+p
+    margin-top 0
+
+
+#qwb-actions
+  .qwb-item
+    margin-bottom 2rem
     p
-      font-size 1em
-
-  .q-feature-list
-    .q-feature-item
-      flex-flow column !important
-      margin 0 10px
-      padding 0
+      max-width 72%
+      box-sizing border-box
       text-align center
-      .q-feature-anim-image
-        width 300px
-        height 200px
-        margin 0 auto
-      .q-feature-content
-        width 100%
-        padding 25px 10px 50px
-        text-align center
+      margin-left auto
+      margin-right auto
+    .qwb-btn
+      margin-bottom 2rem
 
-  .q-actions
-    padding 20px
-    background-size auto 100%
-  .q-actions-item
-    width auto
-    float none
-    padding 0
-    margin-bottom 50px
+
+#qwb-footer
+  margin 2rem 0
+  text-align center
+  box-sizing border-box
+
+
+@media only screen and (min-width 48rem)
+
+  #qwb-logo
+    width 10rem
+    height 10rem
+    margin-top 2rem
+    margin-bottom 2rem
+
+
+  #qwb-intro
+    h1
+      font-size 4.0em
+    h2
+      font-size 2.6em
     p
-      height auto
+      max-width 28em
+
+
+  #qwb-actions
+    .qwb-item
+      margin-bottom 0
+      p
+        margin-bottom 6em
+      .qwb-btn
+        position absolute
+        width 40%
+        left 50%
+        bottom 0
+        transform translate(-50%, 0)
