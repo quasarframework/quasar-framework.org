@@ -2,7 +2,7 @@ title: Toolbar
 ---
 Quasar Toolbars are non-wrappable DOM elements which usually contain buttons and text.
 
-A Quasar Layout can have have headers and/or footers (also called "marginals"), which will always be visible to the user at all times as long as the Layout is being used. This is a great place to use Toolbars, but you can also place Toolbars anywhere else you want.
+A Quasar Layout can have headers and/or footers (also called "marginals"), which will always be visible to the user at all times as long as the Layout is being used. This is a great place to use Toolbars, but you can also place Toolbars anywhere else you want.
 
 <input type="hidden" data-fullpage-demo="layout/toolbar">
 

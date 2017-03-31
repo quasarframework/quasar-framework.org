@@ -1,8 +1,8 @@
 title: Quasar Framework Contributing Guide
 ---
-I’m really excited if you are interested in contributing to Quasar Framework. There are [lots of features waiting](https://github.com/quasarframework/quasar/issues?q=is%3Aissue+is%3Aopen+label%3Aproposal) for someone to write them. Check [Github](https://github.com/quasarframework/quasar) or contact [Razvan Stoenescu](https://github.com/rstoenescu) through email.
+I’m really excited if you are interested in contributing to Quasar Framework. There are [lots of features waiting](https://github.com/quasarframework/quasar/issues?q=is%3Aissue+is%3Aopen+label%3Aproposal) for someone to write them. Check [Github](https://github.com/quasarframework/quasar) or contact [Razvan Stoenescu](https://github.com/rstoenescu) through Gitter/email.
 
-Before submitting your contribution though, please make sure to take a moment and read through the following guidelines.
+> Before submitting your contribution though, please make sure to take a moment and read through [the contributing guidelines](https://github.com/quasarframework/quasar/blob/dev/.github/CONTRIBUTING.md) and also [the code of conduct](https://github.com/quasarframework/quasar/blob/dev/.github/CODE_OF_CONDUCT.md).
 
 You can also help with the documentation if you catch a mistake or want to add a few lines to a page or write new pages. Use the link at the end of each page of this website (specifically the *Suggest an edit on Github*).
 
@@ -12,38 +12,12 @@ You can also help with the documentation if you catch a mistake or want to add a
 
 * [Quasar Framework](https://github.com/quasarframework/quasar)
 * [Quasar CLI](https://github.com/quasarframework/quasar-cli)
-* [Quasar Play App](https://github.com/quasarframework/quasar-play)
-* [Quasar Default App Template](https://github.com/quasarframework/app-template-default)
+* [Quasar Starter Kit (project folder template)](https://github.com/quasarframework/app-template-default)
+* [Electron Wrapper](https://github.com/quasarframework/electron-wrapper)
+* [Quasar Play](https://github.com/quasarframework/quasar-play)
+* [Documentation Website](https://github.com/quasarframework/quasar-framework.org)
 
-## Issue Reporting Guidelines
-
-**Please use the appropriate Github repo to report issues. See "Github Repositories" above.** For example, a bug related to CLI should be reported to the CLI repo, one related to build issues to Quasar Framework Templates repo and so on.
-
-- The issue list of the repository is **exclusively** for bug reports and feature requests. For anything else please use the [Community Forum](http://forum.quasar-framework.org).
-
-- Try to search for your issue, it may have already been fixed in the development branch or it may have a resolution.
-
-- Check if the issue is reproducible with the latest stable version of Quasar. If you are using a pre-release, please indicate the specific version you are using.
-
-- It is **required** that you clearly describe the steps necessary to reproduce the issue you are running into. Issues with no clear repro steps will not be triaged. If an issue labeled "need repro" receives no further input from the issue author for more than 5 days, it will be closed.
-
-- If your issue is resolved but still open, don’t hesitate to close it. In case you found a solution by yourself, it could be helpful to explain how you fixed it.
-
-## Pull Request Guidelines
-
-- Checkout a topic branch from `dev` and merge back against `dev`.
-
-- Work in the `src` folder and **DO NOT** checkin `/dist` in the commits or any other file or folder described in `.gitignore`.
-
-- Squash the commit if there are too many small ones.
-
-- Follow the [code style](#Code-Style) in next section.
-
-- If adding new feature, provide convincing reason to add this feature. Ideally you should open a suggestion issue first and have it greenlighted before working on it.
-
-- If fixing a bug:
-    - Provide detailed description of the bug in the PR. Live demo preferred. Use [jsFiddle](https://jsfiddle.net/), [Plunker](https://plnkr.co/), or [JsBin](http://jsbin.com/) with standalone Quasar version.
-    - Add appropriate test coverage if applicable.
+**Please use the appropriate Github repo to report issues. See "Github Repositories" above.** For example, a bug related to CLI should be reported to the CLI repo, one related to build issues to Quasar Starter Kit repo and so on.
 
 ## Code Style
 
@@ -76,10 +50,6 @@ You can also help with the documentation if you catch a mistake or want to add a
   }
   ```
 - When in doubt, read the source code.
-
-## Development Setup
-
-You will need [Node.js](http://nodejs.org) along NPM. Read `package.json` and take notice of the scripts you can use.
 
 ## Commit Message Format
 Each commit message consists of a **header**, a **body** and a **footer**.  The header has a special

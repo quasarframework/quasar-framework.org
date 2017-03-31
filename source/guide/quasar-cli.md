@@ -16,6 +16,13 @@ See help for any command:
 $ quasar [command name] --help
 ```
 
+## Version
+Check CLI version and if on a Quasar app folder also output Quasar version being used.
+
+``` bash
+$ quasar version
+```
+
 ## Create App
 
 Initializes an App folder with a starter boilerplate.
@@ -24,8 +31,6 @@ $ quasar init [template name] <folder-name>
 ```
 
 > By omitting the `template name` parameter the CLI will detect latest App template and generate the App folder with it.
-
-By convention, templates follow the syntax `v[number]`, where `number` is 1, 2, 3... The number designates the major version of Quasar you are using. Currently, only `v1` is available for 0.x and (soon to be released) 1.x versions.
 
 You can check available App template list at any time with:
 
