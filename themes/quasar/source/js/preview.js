@@ -1,10 +1,27 @@
-$(function() {
+(function() {
+
+  // Switch preview's theme.
+  var themePickers = document.querySelectorAll('#qwb-device-preview-chooser a');
+  themePickers.forEach(function(picker) {
+    picker.addEventListener('click', function(evt) {
+      var selectedThemeName = this.getAttribute('data-theme');
+      var selectedThemeId = '#qwb-' + selectedThemeName + '-preview';
+      var selectedTheme = document.querySelector(selectedThemeId);
+      var activeTheme = document.querySelector('.theme.active');
+
+      if (selectedTheme && activeTheme.id !== selectedThemeId) {
+        activeTheme.classList.remove('active');
+        selectedTheme.classList.add('active');
+      }
+    })
+  })
+/*
   var
-    previewNode = $('#preview'),
-    themePicker = $('#preview-chooser a'),
-    themeNodes = $('#preview .theme'),
-    iframes = $('#preview iframe'),
-    contentNode = $('#main > .content'),
+    previewNode = $('#qwb-device-preview'),
+    themePicker = $('#qwb-device-preview-chooser a'),
+    themeNodes = $('#qwb-device-preview .theme'),
+    iframes = $('#qwb-device-preview iframe'),
+    contentNode = $('#qwb-main > .content'),
     selectedTheme = localStorage.getItem('theme') || 'android',
     demoPoints = contentNode.find('input[data-demo]'),
     fullPageDemo = contentNode.find('input[data-fullpage-demo]'),
@@ -45,7 +62,7 @@ $(function() {
     $this.after(getExternalLinks(page, true));
   });
 
-  /* eslint-disable no-extra-parens */
+  /* eslint-disable no-extra-parens *//*
   if (
     !themePicker.length ||
     (!demoPoints.length && !fullPageDemo.length)
@@ -74,7 +91,7 @@ $(function() {
   }
 
   if (fullPageDemo.length === 0) {
-    $('#main .footer').css('margin-bottom', '100vh');
+    $('#qwb-main .footer').css('margin-bottom', '100vh');
   }
 
   themePicker.click(function() {
@@ -126,7 +143,7 @@ $(function() {
     selectTheme: function(theme) {
       themePicker.removeClass('active');
 
-      $('#preview #preview-chooser a[data-theme="' + theme + '"]').addClass('active');
+      $('#qwb-device-preview #qwb-device-preview-chooser a[data-theme="' + theme + '"]').addClass('active');
 
       themeNodes.css('display', 'none');
       $('#' + theme + '-preview').css('display', 'block');
@@ -144,4 +161,5 @@ $(function() {
   else {
     window.themePreview.show();
   }
-});
+*/
+}());

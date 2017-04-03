@@ -1,61 +1,62 @@
 <div class="sidebar-backdrop"></div>
 
-<div id="sidebar" class="sidebar">
-  <div class="list">
-    <div class="sidebar-menu">
-      <%- partial('partials/menu') %>
-    </div>
-
-    <div class="qwb-version">
-      v<%- latest_quasar_version() %>
-    </div>
-    <div class="support-link">
-      <a href="<%- config.root %>support-quasar-framework.html">
-        <i class="fa fa-ambulance"></i>
-        Support Quasar
-      </a>
-    </div>
-
-    <br><br>
-
-    <h2>
-      <% var type = page_type(page); %>
-      <%-
-        page.blog_index || page.search_index || page.layout === 'post' ?
-        '' : (type === 'api' ? 'API' : type.charAt(0).toUpperCase() + type.slice(1))
-      %>
-    </h2>
-    <%
-      var p, path;
-      _.forEach(site.data.pageMenu[type], function(pages, category) {
-        if (category !== 'root') {
-    %>
-          <h3><%- category %></h3>
-    <%  } %>
-        <ul class="menu-root">
-          <%
-            _.forEach(pages, function(html, name) {
-              path = page_path_from_menu(type, html, name);
-              p = site.pages.find({path: path});
-          %>
-            <li>
-              <a href="<%- config.root + path %>" class="sidebar-link<%- page.path === path ? ' current' : '' %>"><%- name %></a>
-            </li>
-          <% }); %>
-        </ul>
-    <% }); %>
+<div class="qwb-sidebar inverted">
+  <a
+    class="qwb-logo"
+    href="<%- config.root %>"
+    title="v<%- latest_quasar_version() %>"
+  >
+    <img
+    width="32" height="32" src="https://cdn.rawgit.com/quasarframework/quasar-art/4a472070/dist/svg/quasar-logo-gradient.svg"/>
+    <strong>Quasar Framework</strong>
+    <em>v<%- latest_quasar_version() %></em>
+  </a>
+  <div class="qwb-menu simple centered fluid">
+    <a href="<%- config.root %>search/" title="Search">
+      <i class="fa fa-search"></i>
+    </a>
+    <%- partial('partials/social-links') %>
   </div>
-
-  <% if (page.layout === 'post') { %>
-  <div class="list">
-    <h2>Recent Posts</h2>
-    <ul>
-      <% site.posts.sort('date', -1).limit(10).each(function (post) { %>
+  <!--<input
+    type="text"
+    title="Search"
+    placeholder="Search..."
+    class="qwb-search-input"
+  />-->
+  <div class="qwb-accordion">
+    <% for (section in site.data.pageMenu) { %>
+    <h4
+      class="qwb-toggle on"
+      href="<%- config.root %><%- section %>/"
+    >
+      <%- section %>
+      <i class="fa fa-chevron-down"></i>
+    </h4>
+    <div class="list">
+      <% for (category in site.data.pageMenu[section]) { %>
+      <% if (category !== 'root') { %>
+      <h5><%- category %></h5>
+      <% } %>
+      <ul>
+        <% for (name in site.data.pageMenu[section][category]) {
+            var
+              html = site.data.pageMenu[section][category][name]
+              path = page_path_from_menu(section, html, name),
+              p = site.pages.find({ path: path })
+            ;
+        %>
         <li>
-          <a href="<%- config.root + post.path %>" class="sidebar-link<%- page.title === post.title ? ' current' : '' %>"><%- post.title %></a>
+          <a
+            href="<%- config.root + path %>"
+            class="<%- page.path === path ? 'current' : '' %>"
+          >
+            <%- name %>
+          </a>
         </li>
-      <% }) %>
-    </ul>
-  </div>
+        <% } %>
+      </ul>
+    <% } %>
+    </div>
   <% } %>
+  </div>
 </div>

@@ -29,27 +29,6 @@ guide:
     Nightly Build: quasar-$
     Router: $
     Theming: quasar-$
-api:
-  Javascript:
-    App Visibility: js-$
-    App Fullscreen: js-$
-    Cookies: js-$
-    Events: js-$
-    Platform Detection: js-$
-    Utils: js-$
-    Touch Directives: js-$
-    Other Directives: js-$
-    Web Storage: js-$
-  CSS:
-    Stylus Variables: css-$
-    Color Palette: css-$
-    Icons: css-$
-    Typography: css-$
-    Shadows: css-$
-    Grid Layout: css-$
-    Visibility: css-$
-    Positioning: css-$
-    Other Helper Classes: css-$
 components:
   root:
     Action Sheet: $
@@ -116,3 +95,24 @@ components:
     Uploader: $
     Video Embedding: $
     Vue Transitions: $
+api:
+  Javascript:
+    App Visibility: js-$
+    App Fullscreen: js-$
+    Cookies: js-$
+    Events: js-$
+    Platform Detection: js-$
+    Utils: js-$
+    Touch Directives: js-$
+    Other Directives: js-$
+    Web Storage: js-$
+  CSS:
+    Stylus Variables: css-$
+    Color Palette: css-$
+    Icons: css-$
+    Typography: css-$
+    Shadows: css-$
+    Grid Layout: css-$
+    Visibility: css-$
+    Positioning: css-$
+    Other Helper Classes: css-$

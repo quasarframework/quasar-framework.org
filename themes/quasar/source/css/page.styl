@@ -1,140 +1,71 @@
+@import '_variables'
 @import '_typography'
 @import '_grid'
 @import '_elements'
+@import '_syntax'
 @import '_search'
+@import '_sidebar'
 @import '_preview'
 
-#main
-  padding-top ($header-height + 20px)
+#qwb-main
+  display flex
+  flex-direction column
+  width 100%
 
-.content
-  padding 0
-  margin 10px auto 0 300px
-  max-width 750px
-  &.with-previewer
-    max-width none
-  &.centered
-    margin 10px auto
-  ul
-      padding-left 1.25em
-      line-height 1.4em
-      ul, p
-          margin .6em 0
-  a.button:not(.support-button)
-      font-size .9em
-      color $white
-      margin .2em 0
-      width 180px
-      text-align center
-      padding 12px 24px
-      display inline-block
-      vertical-align middle
-  img
-      max-width 100%
-  span.light
-      color $light
-  span.info
-      font-size .85em
-      display inline-block
-      vertical-align middle
-      width 280px
-      margin-left 20px
-  h1
-      margin 0 0 .7em
-      a[target^="_blank"]
-        border 0 !important
-        float right
-  h2
-      margin 2em 0 .8em
-      padding-bottom .4em
-      border-bottom 1px solid $border
-  h3
-      margin 2em 0 1.2em
-      position relative
-      &:before
-          content ' #'
-          color $dark
-          position absolute
-          left -.7em
-          top -2px
-          font-size 1.2em
-          font-weight bold
-  h2, h3, h4, h5, h6
+  .qwb-container .qwb-row
+    padding-left $sidebar-max-width
+    background-color $white
+
+
+/* Sidebar */
+
+.qwb-item.sidebar
+  position fixed
+  width 100%
+  margin-left - $sidebar-max-width
+  max-width $sidebar-max-width
+  height 100%
+  overflow-y auto
+
+
+/* Page content */
+
+.qwb-item.page
+  min-width $sm
+  max-width $lg
+  margin-right $preview-max-width
+  background-color $white
+
+  .qwb-content
+    padding 2rem 4rem
+
+    h1, h2
+      padding-bottom $header-bottom-margin * 0.5
+      border-bottom 1px dotted $divider
+
+    h1, h2, h3, h4, h5, h6
+      cursor pointer
       &:hover:after
         content ' #'
-        color $dark
+        color $primary-text
         font-weight bold
-  figure, p, ul, ol
-      margin 1.2em 0
-  p, ul, ol
-      line-height 1.6em
-  ul, ol
-      padding-left 1.5em
-  a:not([data-scroll]):not(.search-result):not(.support-button):not(.headerlink)
-      color $main
-      font-weight 700
-      padding 0 2px
-      transition all .3s ease
-      border-bottom 1px dotted $main
-      &:hover:not(.button)
-          color $dark
-          background-color lighten($light, 70%)
-  blockquote
-      margin 2.5em 0
-      padding 0
-      p
-          padding 1.5em
-          border-left 5px solid $main
 
-  iframe
-      margin 1em 0
-  table
-    max-width 100%
-    border 1px solid #eee // @stylint ignore
-    border-radius 4px
-    border-spacing 0
-    box-shadow $shadow
-    th
-      font-weight bold
-      border-bottom 2px solid #eee // @stylint ignore
-      text-align left
-    th, td
-      padding 13px 15px
-    tr
-      &:nth-child(2n)
-        background $bg
-  figure
-    table
-      border 0
-      box-shadow none
-      th
-        border-bottom 0
-  .highlight pre
-    padding 0
-    .line
-      min-height 20px
-  > h1 i
-    font-size 70%
-    vertical-align middle
-    color $dark
+    .qwb-edit-page-btn
+      float right
 
-.guide-links
-  margin-top 4em
-  height 1em
-  i
-    vertical-align middle
-    color $main
-  a
-    padding 5px !important
-    border 0 !important
-    border-radius 5px
+  .qwb-guide-links
+    width 100%
+    overflow auto
+    margin 2rem 0
 
-.footer
-  color $medium
-  font-size .9em
-  hr
-    height 1px
-    margin-bottom 1.5em
 
-#main
-  padding ($header-height + 20px) 10px 30px 20px
+/* Mobile preview */
+
+.qwb-item.preview
+  position fixed
+  flex 0
+  width 100%
+  height 100%
+  max-width $preview-max-width
+  right 0
+  background-color $white

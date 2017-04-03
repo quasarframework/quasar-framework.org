@@ -1,14 +1,19 @@
+code,
+pre,
+.highlight
+  color $inverted-text // @stylint ignore
+  background-color $primary-text
+
 .gutter pre
-  color #999 // @stylint ignore
+  color $normal-text // @stylint ignore
 
 pre
-  color #525252 // @stylint ignore
   .function .keyword,
   .constant
-    color #0092db // @stylint ignore
+    color $primary // @stylint ignore
   .keyword,
   .attribute
-    color #e96900 // @stylint ignore
+    color $inverted-secondary-text // @stylint ignore
   .number,
   .literal
     color #AE81FF // @stylint ignore
@@ -21,14 +26,14 @@ pre
   .clojure .built_in,
   .nginx .title,
   .tex .special
-    color #2973b7 // @stylint ignore
+    color $dark-primary // @stylint ignore
   .class .title
-    color #fff // @stylint ignore
+    color $light-primary // @stylint ignore
   .symbol,
   .symbol .string,
   .value,
   .regexp
-    color $main // @stylint ignore
+    color $inverted-primary-text // @stylint ignore
   .title
     color #A6E22E // @stylint ignore
   .tag .value,
@@ -55,7 +60,7 @@ pre
   .apache .cbracket,
   .tex .command,
   .prompt
-    color $main // @stylint ignore
+    color $inverted-primary-text // @stylint ignore
   .comment,
   .java .annotation,
   .python .decorator,
@@ -66,7 +71,7 @@ pre
   .shebang,
   .apache .sqbracket,
   .tex .formula
-    color #b3b3b3 // @stylint ignore
+    color $normal-text // @stylint ignore
   .coffeescript .javascript,
   .javascript .xml,
   .tex .formula,
@@ -77,30 +82,35 @@ pre
     opacity .5
 
 .highlight
-  overflow-x auto
   position relative
-  background-color $bg
-  padding .8em
+  padding 0
+  margin 0
   line-height 1.1em
   border-radius 5px
   table, tr, td
     width 100%
     border-collapse collapse
-    padding 0
     margin 0
+  table
+    display block
+    padding 1.25rem
+    overflow auto
+    box-sizing border-box
+  tr, td
+    padding 0
   .gutter
     width 1.5em
   .code
     pre
-      padding 1.2em 1.4em
-      line-height 1.5em
       margin 0
+      padding 0
+      line-height 1.5em
   &.html, &.js, &.bash, &.css, &.yaml, &.json, &.stylus
     .code:after
       position absolute
       top 0
       right 0
-      color #ccc // @stylint ignore
+      color $normal-text // @stylint ignore
       text-align right
       font-size .75em
       padding 5px 10px 0

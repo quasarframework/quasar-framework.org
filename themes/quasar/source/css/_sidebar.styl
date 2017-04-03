@@ -1,0 +1,52 @@
+@import '_variables'
+@import '_mixins'
+
+
+.qwb-sidebar
+  display flex
+  flex-direction column
+
+  inverted()
+
+  .qwb-logo
+    text-align center
+    font-size 1.1em
+    margin-bottom 1rem
+
+    img
+      vertical-align middle
+
+  .qwb-menu
+    margin-top -1rem
+    margin-bottom 2rem
+
+  .qwb-accordion
+    margin -1rem
+    padding 0
+
+    h4.qwb-toggle
+      margin 1px 0 0
+      padding .5rem 1rem
+      box-shadow $shadow
+      background-color $primary
+      color $white
+      text-transform uppercase
+
+      &.on
+        i
+          transform rotateZ(180deg)
+          color $white
+
+      i
+        float right
+        font-size .8rem
+        margin-top 1em * $header-line-height * 0.5
+        transition transform .2s, color .2s
+
+  h4.qwb-toggle.on+.list
+    padding-top 1rem
+    padding-bottom 1rem
+
+  .list
+    padding-right 1rem
+    padding-left 1rem

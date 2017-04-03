@@ -1,5 +1,6 @@
 (function() {
 
+/*
   var
     each = [].forEach,
     main = document.getElementById('main'),
@@ -226,4 +227,5 @@
   if (window.isMobile) {
     $('.content table').wrap('<div style="overflow-x: auto;"></div>');
   }
+*/
 }());
