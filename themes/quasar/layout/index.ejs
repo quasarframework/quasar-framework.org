@@ -1,10 +1,4 @@
-<div id="qwb-header">
-  <a name="qwb-top-anchor"><!-- Anchor to top--></a>
-
-  <div class="qwb-container md">
-    <%- partial('partials/standalone-top-navigation') %>
-  </div>
-</div>
+<%- partial('partials/header') %>
 
 <div id="qwb-intro" class="qwb-lead inverted">
   <div class="qwb-container md">
@@ -38,13 +32,17 @@
         Follow @quasarframework
       </a>
     </div>
-    <a href="#qwb-feature-anchor"><img class="arrow animated tada infinite" src="/images/arrow.svg"></a>
+
+    <a
+      class="qwb-scroll-arrow"
+      data-scroll href="#qwb-features"
+    >
+      <i class="fa fa-chevron-down animated tada infinite"></i>
+    </a>
   </div>
 </div>
 
-<a name="qwb-feature-anchor"><!-- Anchor to feature list --></a>
-
-<div class="qwb-container md">
+<div id="qwb-features" class="qwb-container md">
   <div class="qwb-feature-item qwb-responsive">
     <div class="qwb-feature-image">
       <img class="desktop device" width="200" src="/images/desktop.svg"/>
@@ -215,7 +213,12 @@
 
 <div id="qwb-actions" class="qwb-lead inverted">
   <div class="qwb-container md">
-    <a href="#qwb-top-anchor" style="display: block; transform: scaleY(-1);"><img class="arrow animated tada infinite" src="/images/arrow.svg"></a>
+    <a
+      class="qwb-scroll-arrow"
+      data-scroll href="#qwb-header"
+    >
+      <i class="fa fa-chevron-up animated tada infinite"></i>
+    </a>
 
     <div class="qwb-row">
       <div class="qwb-item">

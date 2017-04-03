@@ -42,15 +42,10 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        FastClick.attach(document.body);
-      }, false);
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/7.1.1/js/smooth-scroll.min.js"></script>
     <script src="<%- config.root %>js/elements.js"></script>
     <% if (!isIndex) { %>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/7.1.1/js/smooth-scroll.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
       <!-- build:js js/page-combined.js -->
       <script src="<%- config.root %>js/page.js"></script>
@@ -63,6 +58,17 @@
         <!-- endbuild -->
       <% } %>
     <% } %>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+
+        // Init FastClick.
+        FastClick.attach(document.body);
+
+        // Init SmoothScroll.
+      	smoothScroll.init();
+
+      }, false);
+    </script>
     <%- partial('partials/ga') %>
   </body>
 </html>
