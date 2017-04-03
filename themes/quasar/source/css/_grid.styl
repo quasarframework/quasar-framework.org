@@ -11,10 +11,12 @@ html, body
 /* Grid (based on Flexbox) */
 
 .qwb-container
+  position relative
   display flex
   flex-direction column
   box-sizing border-box
   width 100%
+  height 100%
   margin 0 auto
 
   &.xs
@@ -33,15 +35,82 @@ html, body
     max-width 96rem
 
 .qwb-row
+  position relative
   display flex
   flex-flow column
+  justify-content space-between
   box-sizing border-box
+  height 100%
 
 .qwb-item
   position relative
+  display flex
+  flex-direction column
   flex 1
 
-@media (min-width: 32rem)
+  &.fluid
+    max-width 100%
 
-    .qwb-row
-      flex-flow row
+  &.half
+    max-width 50%
+
+  &.third
+    max-width 33.33%
+
+  &.fourth
+    max-width 25%
+
+  &.fifth
+    max-width 20%
+
+  &.tenth
+    max-width 10%
+
+
+/* Responsive */
+
+@media (min-width: $xs)
+
+  .qwb-row
+    flex-flow row
+
+@media (min-width: $sm)
+
+  .only.xs
+    display none !important
+
+@media (min-width: $md)
+
+  .only.sm
+    display none !important
+
+@media (min-width: $lg)
+
+  .only.md
+    display none !important
+
+@media (min-width: $xl)
+
+  .only.lg
+    display none !important
+
+
+@media (max-width: $sm)
+
+  .only.sm
+    display none !important
+
+@media (max-width: $md)
+
+  .only.md
+    display none !important
+
+@media (max-width: $lg)
+
+  .only.lg
+    display none !important
+
+@media (max-width: $xl)
+
+  .only.xl
+    display none !important

@@ -8,6 +8,15 @@
 .animated.infinite
   animation-iteration-count infinite
 
+@keyframes rotate-clockwise
+  from
+    transform rotateZ(0deg)
+  to
+    transform rotateZ(360deg)
+
+.rotate-clockwise
+  animation-name rotate-clockwise
+
 @keyframes pulse
   from
     transform scale3d(1, 1, 1)
@@ -177,56 +186,6 @@
     transform translate(-50%, -50%) rotateY(180deg)
     opacity 0
 
-@keyframes rocket-flight
-  0%
-    margin-top 0
-    margin-left 0
-  10%
-    margin-top 2px
-    margin-left -1px
-  20%
-    margin-top -2px
-    margin-left 2px
-  30%
-    margin-top 3px
-    margin-left -2px
-  40%
-    margin-top 2px
-    margin-left -1px
-  50%
-    margin-top -5px
-    margin-left 2px
-  60%
-    margin-top 3px
-    margin-left -2px
-    margin-left 2px
-  70%
-    margin-top 3px
-    margin-left -2px
-  80%
-    margin-top 5px
-    margin-left -1px
-  90%
-    margin-top -2px
-    margin-left 2px
-  100%
-    margin-top 2px
-    margin-left -1px
-
-@keyframes needle-speed
-  0%
-    transform translate(-50%, -74%) rotateZ(95deg)
-  20%
-    transform translate(-50%, -74%) rotateZ(100deg)
-  40%
-    transform translate(-50%, -74%) rotateZ(95deg)
-  60%
-    transform translate(-50%, -74%) rotateZ(105deg)
-  80%
-    transform translate(-50%, -74%) rotateZ(95deg)
-  100%
-    transform translate(-50%, -74%) rotateZ(100deg)
-
 @keyframes logo-slide-in-out
   0%
     left 80%
@@ -323,14 +282,12 @@
 .qwb-boilerplate
   .rocket
     width 35%
-    animation rocket-flight linear 1s infinite
 
 .qwb-speed
   .needle
     width 5%
     transform-origin 49% 73.8%
-    transform translate(-50%, -74%)
-    animation needle-speed linear .5s infinite
+    transform translate(-50%, -74%) rotateZ(45deg)
 
 .qwb-platforms
   .androidlogo
@@ -370,4 +327,4 @@
     left 75%
     animation smoke 4s infinite
   .logo
-    animation pulse 2s infinite
+    animation rotate-clockwise 30s linear infinite

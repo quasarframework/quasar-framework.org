@@ -6,80 +6,105 @@
 html
   color $normal-text
   font-family $base-font-family
-  font-size $base-font-size / 16 * 100%
+  font-size $base-font-size
   font-weight $base-font-weight
   letter-spacing $base-letter-spacing
   line-height $base-line-height
   font-smoothing antialiased
   text-size-adjust auto
 
+p, ul, ol, pre, table, blockquote
+  margin-top 0
+  margin-bottom 1em * $base-line-height
+  line-height $base-line-height
+
 
 /* Headers */
 
 h1, h2, h3, h4, h5, h6
   color $secondary-text
-  margin 0
+  margin 0 0 $header-bottom-margin
   font-weight inherit
   line-height $header-line-height
   letter-spacing $header-letter-spacing
 
 h1
-  color $primary-text
-  font-size 3.998em
+  font-size 1em * $base-font-scale ** 4
 
 h2
-  font-size 2.827em
+  font-size 1em * $base-font-scale ** 3
 
 h3
-  font-size 1.999em
+  font-size 1em * $base-font-scale ** 2
 
 h4
-  font-size 1.414em
+  font-size 1em * $base-font-scale ** 1
+
+h5, p
+  font-size 1em * $base-font-scale ** 0
+
+h6
+  font-size 1em * $base-font-scale ** -1
+
+h1+h2,
+h2+h3,
+h3+h4,
+h4+h5,
+h5+h6
+  margin-top - $header-bottom-margin
 
 
 /* Text */
 
-p
-  margin-bottom $base-line-height
-
-  &.lead
-    font-size 1.4em
+.lead
+  font-size 1em * $base-font-scale ** 1
 
 small
-  font-size 0.7em
+  font-size 1em * $base-font-scale ** -1
 
 em
   color $light
 
 b, strong
-  font-weight 700
+  font-weight 800
 
-blockquote
-  margin-top $leading-space
-  margin-bottom $leading-space
+sub, sup
+  position relative
+  line-height 0
+  vertical-align baseline
+
+sup
+  top -0.5em
+
+sub
+  bottom -0.25em
 
 code, pre
-  color $inverted-text
-  vertical-align bottom
+  color $primary-text
+  vertical-align middle
 
 
 /* Links & Buttons */
 
 a, button
   cursor pointer
-  color $secondary-text
+  text-decoration none
   transition all .2s
 
   &:hover
     color $primary
-    text-decoration none
+
+a
+  color $dark-primary
+
+button
+  color $secondary-text
 
 
 /* Lists */
 
 ul, ol
-  margin-top $leading-space
-  margin-bottom $leading-space
+  list-style-position outside
 
   ul, ol
     margin-top 0
@@ -109,6 +134,9 @@ table
     color $inverted-secondary-text
     text-shadow $shadow
 
+  h5, h6
+    color $inverted-text
+
   a
     color $light-primary
 
@@ -117,3 +145,6 @@ table
 
   p.lead
     text-shadow $shadow
+
+  code, pre
+    color $inverted-text

@@ -1,50 +1,50 @@
 <div id="qwb-header">
   <a name="qwb-top-anchor"><!-- Anchor to top--></a>
 
-  <div class="qwb-container lg">
+  <div class="qwb-container md">
     <%- partial('partials/standalone-top-navigation') %>
   </div>
+</div>
 
-  <div id="qwb-intro" class="qwb-lead inverted">
-    <div class="qwb-container lg">
-      <img id="qwb-logo" class="animated pulse infinite" src="https://cdn.rawgit.com/quasarframework/quasar-art/4a472070/dist/svg/quasar-logo-gradient.svg"/>
-      <h1>Quasar Framework</h1>
-      <h2>SPA front-end on steroids.</h2>
-      <p>
-        Build responsive websites, hybrid mobile Apps
-        (that look native!) and Electron apps using same code, with <strong>VueJs 2</strong>.
-      </p>
-      <p>
-        <a
-          href="https://github.com/quasarframework/quasar/releases"
-          target="_blank"
-        >
-          <i class="fa fa-send"></i>
-          Release notes (&amp; changelog) for v<%- latest_quasar_version() %>
-        </a>
-      </p>
-      <div class="qwb-intro-actions">
-        <a class="qwb-btn" href="/guide/index.html">
-          <i class="fa fa-bolt"></i>
-          Get started
-        </a>
-        <a class="qwb-btn" href="https://github.com/quasarframework/quasar" target="_blank">
-          <i class="fa fa-github"></i>
-          Github
-        </a>
-        <a class="qwb-btn" href="https://twitter.com/quasarframework" target="_blank">
-          <i class="fa fa-twitter"></i>
-          Follow @quasarframework
-        </a>
-      </div>
-      <a href="#qwb-feature-anchor"><img class="arrow animated tada infinite" src="/images/arrow.svg"></a>
+<div id="qwb-intro" class="qwb-lead inverted">
+  <div class="qwb-container md">
+    <img id="qwb-logo" class="animated rotate-clockwise infinite" src="https://cdn.rawgit.com/quasarframework/quasar-art/4a472070/dist/svg/quasar-logo-gradient.svg"/>
+    <h1>Quasar Framework</h1>
+    <h2>SPA front-end on steroids.</h2>
+    <p>
+      Build responsive websites, hybrid mobile Apps
+      (that look native!) and Electron apps using same code, with <strong>VueJs 2</strong>.
+    </p>
+    <p>
+      <a
+        href="https://github.com/quasarframework/quasar/releases"
+        target="_blank"
+      >
+        <i class="fa fa-send"></i>
+        Release notes (&amp; changelog) for v<%- latest_quasar_version() %>
+      </a>
+    </p>
+    <div class="qwb-intro-actions">
+      <a class="qwb-btn" href="/guide/index.html">
+        <i class="fa fa-bolt"></i>
+        Get started
+      </a>
+      <a class="qwb-btn" href="https://github.com/quasarframework/quasar" target="_blank">
+        <i class="fa fa-github"></i>
+        Github
+      </a>
+      <a class="qwb-btn" href="https://twitter.com/quasarframework" target="_blank">
+        <i class="fa fa-twitter"></i>
+        Follow @quasarframework
+      </a>
     </div>
+    <a href="#qwb-feature-anchor"><img class="arrow animated tada infinite" src="/images/arrow.svg"></a>
   </div>
 </div>
 
 <a name="qwb-feature-anchor"><!-- Anchor to feature list --></a>
 
-<div class="qwb-container lg">
+<div class="qwb-container md">
   <div class="qwb-feature-item qwb-responsive">
     <div class="qwb-feature-image">
       <img class="desktop device" width="200" src="/images/desktop.svg"/>
@@ -54,9 +54,9 @@
       <img class="logo" width="200" src="https://cdn.rawgit.com/quasarframework/quasar-art/4a472070/dist/svg/quasar-logo-gradient.svg"/>
     </div>
     <div class="qwb-feature-content">
-      <h4>
+      <h3>
         All Platforms in One Go
-      </h4>
+      </h3>
       <p>
         One source code for all platforms simultaneously: responsive desktop/mobile website,
         native mobile Apps (that really look native!).
@@ -64,7 +64,83 @@
     </div>
   </div>
 
-  <div class="qwb-feature-item reverse qwb-play">
+  <div class="qwb-feature-item reverse qwb-components">
+    <div class="qwb-feature-image">
+      <img class="tools" width="200" src="/images/tools.svg"/>
+    </div>
+    <div class="qwb-feature-content">
+      <h3>
+        Built-in Components
+      </h3>
+      <p>
+        Endless list of components which do most of the heavy-lifting:
+        Drawer, Action Sheet, Dialog, Modal, Toast, Tabs, Toolbar,
+        Card, Lists, Toggle, Chips Textbox, Datetime, Range,
+        Rating, Knob, Collapsibles, Popovers, Pull to Refresh,
+        Infinite Scroll, Parallax, Grid, Slider, Stepper, Tree, Chat, Timeline...
+      </p>
+    </div>
+  </div>
+
+  <div class="qwb-feature-item qwb-platforms">
+    <div class="qwb-feature-image">
+      <img class="animated androidlogo" width="200" src="/images/androidlogo.svg"/>
+      <img class="animated applelogo" width="200" src="/images/applelogo.svg"/>
+      <img class="animated winlogo" width="200" src="/images/winlogo.svg"/>
+    </div>
+    <div class="qwb-feature-content">
+      <h3>
+        Wide Platform Support
+      </h3>
+      <p>iOS, Android, Windows Phone, Blackberry, Google Chrome, Firefox, IE11/Edge, Safari, Opera.</p>
+    </div>
+  </div>
+
+  <div class="qwb-feature-item reverse qwb-boilerplate">
+    <div class="qwb-feature-image">
+    <img class="animated rocket" width="200" src="/images/rocket.svg"/>
+    </div>
+    <div class="qwb-feature-content">
+      <h3>
+        Boilerplate
+      </h3>
+      <p>
+        Out of the box App code boilerplate, build system, hot reload, linter, test setup, auto minification and more.
+      </p>
+    </div>
+  </div>
+
+  <div class="qwb-feature-item qwb-js-vue">
+    <div class="qwb-feature-image">
+      <img class="animated jslogo" width="200" src="/images/jslogo.svg"/>
+      <img class="animated vuelogo" width="200" src="/images/vuelogo.svg"/>
+    </div>
+    <div class="qwb-feature-content">
+      <h3>
+        VueJs &amp; ES6
+      </h3>
+      <p>
+        ES6 Javascript. Leverage VueJs &amp; NPM ecosystem easily. Support for *.vue single file components.
+      </p>
+    </div>
+  </div>
+
+  <div class="qwb-feature-item reverse qwb-themes">
+    <div class="qwb-feature-image">
+      <img class="themeroller" width="200" src="/images/themeroller.svg"/>
+    </div>
+    <div class="qwb-feature-content">
+      <h3>
+        Themes
+      </h3>
+      <p>
+        Full-featured Quasar CSS Framework. <strong>Material Design</strong> and
+        <strong>iOS</strong> themes (for now). Write once, deploy as looking native.
+      </p>
+    </div>
+  </div>
+
+  <div class="qwb-feature-item qwb-play">
     <div class="qwb-feature-image">
       <img class="animated laptop device" width="200" src="/images/laptop.svg"/>
       <img class="animated play" width="200" src="/images/play.svg"/>
@@ -73,9 +149,9 @@
       <img class="animated logo" width="200" src="https://cdn.rawgit.com/quasarframework/quasar-art/4a472070/dist/svg/quasar-logo-gradient.svg"/>
     </div>
     <div class="qwb-feature-content">
-      <h4>
+      <h3>
         Quasar Play App
-      </h4>
+      </h3>
       <p>
         Develop Quasar Apps with Hot Reload directly on your phone, without even installing them.
       </p>
@@ -89,94 +165,18 @@
     </div>
   </div>
 
-  <div class="qwb-feature-item qwb-js-vue">
-    <div class="qwb-feature-image">
-      <img class="animated jslogo" width="200" src="/images/jslogo.svg"/>
-      <img class="animated vuelogo" width="200" src="/images/vuelogo.svg"/>
-    </div>
-    <div class="qwb-feature-content">
-      <h4>
-        VueJs &amp; ES6
-      </h4>
-      <p>
-        ES6 Javascript. Leverage VueJs &amp; NPM ecosystem easily. Support for *.vue single file components.
-      </p>
-    </div>
-  </div>
-
-  <div class="qwb-feature-item reverse qwb-boilerplate">
-    <div class="qwb-feature-image">
-    <img class="animated rocket" width="200" src="/images/rocket.svg"/>
-    </div>
-    <div class="qwb-feature-content">
-      <h4>
-        Boilerplate
-      </h4>
-      <p>
-        Out of the box App code boilerplate, build system, hot reload, linter, test setup, auto minification and more.
-      </p>
-    </div>
-  </div>
-
-  <div class="qwb-feature-item qwb-components">
-    <div class="qwb-feature-image">
-      <img class="tools" width="200" src="/images/tools.svg"/>
-    </div>
-    <div class="qwb-feature-content">
-      <h4>
-        Built-in Components
-      </h4>
-      <p>
-        Endless list of components which do most of the heavy-lifting:
-        Drawer, Action Sheet, Dialog, Modal, Toast, Tabs, Toolbar,
-        Card, Lists, Toggle, Chips Textbox, Datetime, Range,
-        Rating, Knob, Collapsibles, Popovers, Pull to Refresh,
-        Infinite Scroll, Parallax, Grid, Slider, Stepper, Tree, Chat, Timeline...
-      </p>
-    </div>
-  </div>
-
-  <div class="qwb-feature-item reverse qwb-themes">
-    <div class="qwb-feature-image">
-      <img class="themeroller" width="200" src="/images/themeroller.svg"/>
-    </div>
-    <div class="qwb-feature-content">
-      <h4>
-        Themes
-      </h4>
-      <p>
-        Full-featured Quasar CSS Framework. <strong>Material Design</strong> and
-        <strong>iOS</strong> themes (for now). Write once, deploy as looking native.
-      </p>
-    </div>
-  </div>
-
-  <div class="qwb-feature-item qwb-speed">
+  <div class="qwb-feature-item reverse qwb-speed">
     <div class="qwb-feature-image">
     <img class="gauge" width="200" src="/images/gauge.svg"/>
     <img class="animated needle" width="200" src="/images/needle.svg"/>
     </div>
     <div class="qwb-feature-content">
-      <h4>
+      <h3>
         Speed &amp; Efficiency
-      </h4>
+      </h3>
       <p>
         Quasar focuses on low memory footprint, efficiency and making Apps run really fast.
       </p>
-    </div>
-  </div>
-
-  <div class="qwb-feature-item reverse qwb-platforms">
-    <div class="qwb-feature-image">
-      <img class="animated androidlogo" width="200" src="/images/androidlogo.svg"/>
-      <img class="animated applelogo" width="200" src="/images/applelogo.svg"/>
-      <img class="animated winlogo" width="200" src="/images/winlogo.svg"/>
-    </div>
-    <div class="qwb-feature-content">
-      <h4>
-        Wide Platform Support
-      </h4>
-      <p>iOS, Android, Windows Phone, Blackberry, Google Chrome, Firefox, IE11/Edge, Safari, Opera.</p>
     </div>
   </div>
 
@@ -190,9 +190,9 @@
       <img class="animated smoke" width="200" src="/images/smoke.svg"/>
     </div>
     <div class="qwb-feature-content">
-      <h4>
+      <h3>
         Dev Hot Reload
-      </h4>
+      </h3>
       <p>
         More than just Live Reload. Preserve App state while updating in the browser or phone/tablet (through Quasar Play).
       </p>
@@ -203,9 +203,9 @@
       <img class="docs" width="200" src="/images/docs.svg"/>
     </div>
     <div class="qwb-feature-content">
-      <h4>
+      <h3>
         Great Documentation
-      </h4>
+      </h3>
       <p>
         Crystal clear documentation with examples, guides, tips and demos with source code available.
       </p>
@@ -214,7 +214,7 @@
 </div>
 
 <div id="qwb-actions" class="qwb-lead inverted">
-  <div class="qwb-container lg">
+  <div class="qwb-container md">
     <a href="#qwb-top-anchor" style="display: block; transform: scaleY(-1);"><img class="arrow animated tada infinite" src="/images/arrow.svg"></a>
 
     <div class="qwb-row">
@@ -237,13 +237,14 @@
         <h4>Support Quasar Development</h4>
         <p>
           Help pay for dedicated dev time so that Quasar
-          can move forward and evolve.
-          <br>
+          can move forward and evolve quicker.
+        </p>
+        <p>
           There's a
           <a
             href="https://github.com/quasarframework/quasar/issues?q=is%3Aissue+is%3Aopen+label%3Aproposal"
             target="_blank"
-          >lot to look forward to</a>.
+          >lot to look forward to</a>!
         </p>
         <a
           class="qwb-btn"

@@ -18,13 +18,16 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
+    <!-- Normalize.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.min.css">
+
     <!-- build:css css/<%- isIndex ? 'index' : 'page' %>-combined.css -->
     <%- css(isIndex ? 'css/index' : 'css/page') %>
     <!-- endbuild -->
   </head>
 
   <body class="<%- body_class(page) %>">
-    <div id="main">
+    <div id="qwb-main">
         <% if (page.blog_index) { %>
             <%- partial('partials/blog') %>
         <% } else if (page.search_index) { %>
@@ -44,6 +47,7 @@
         FastClick.attach(document.body);
       }, false);
     </script>
+    <script src="<%- config.root %>js/elements.js"></script>
     <% if (!isIndex) { %>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/7.1.1/js/smooth-scroll.min.js"></script>

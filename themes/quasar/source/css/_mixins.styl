@@ -1,0 +1,33 @@
+@import '_variables'
+
+
+/* Mixins */
+
+inverted()
+  &.inverted
+    &
+      background-color $dark-primary
+
+    &, a, i
+      color $white
+
+      &:hover
+        color $light-primary
+
+dropdownHidden()
+  position absolute
+  opacity 0
+  top 100%
+  left 0
+  width 100%
+  transform translateY(-2em)
+  z-index -1
+  transition all .5s
+
+dropdownVisible()
+  position relative
+  top 0
+  opacity 1
+  z-index 1
+  transform translateY(0%)
+  transition all .5s
