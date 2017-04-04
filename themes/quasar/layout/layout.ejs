@@ -28,21 +28,23 @@
 
   <body class="<%- body_class(page) %>">
     <div id="qwb-main">
-        <% if (page.blog_index) { %>
-            <%- partial('partials/blog') %>
-        <% } else if (page.search_index) { %>
-            <%- partial('partials/search') %>
-        <% } else if (page.privacy_policy_index) { %>
-            <%- partial('partials/privacy-policy') %>
-        <% } else if (page.support_index) { %>
-            <%- partial('partials/support') %>
-        <% } else { %>
-            <%- body %>
-        <% } %>
+      <% if (page.blog_index) { %>
+        <%- partial('partials/blog') %>
+      <% } else if (page.search_index) { %>
+        <%- partial('partials/search') %>
+      <% } else if (page.privacy_policy_index) { %>
+        <%- partial('partials/privacy-policy') %>
+      <% } else if (page.support_index) { %>
+        <%- partial('partials/support') %>
+      <% } else { %>
+        <%- body %>
+      <% } %>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/7.1.1/js/smooth-scroll.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <script src="<%- config.root %>js/elements.js"></script>
     <% if (!isIndex) { %>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
