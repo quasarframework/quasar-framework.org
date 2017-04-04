@@ -13,7 +13,6 @@
   width 100%
 
   .qwb-container .qwb-row
-    padding-left $sidebar-max-width
     background-color $white
 
 
@@ -31,13 +30,12 @@
 /* Page content */
 
 .qwb-item.page
-  min-width $sm
+  min-width $xs
   max-width $lg
-  margin-right $preview-max-width
   background-color $white
 
   .qwb-content
-    padding 2rem 4rem
+    padding 1rem
 
     h1, h2
       padding-bottom $header-bottom-margin * 0.5
@@ -69,3 +67,20 @@
   max-width $preview-max-width
   right 0
   background-color $white
+
+
+/* Responsive */
+
+@media screen and (min-width $md)
+
+  #qwb-main
+    .qwb-container .qwb-row
+      padding-left $sidebar-max-width
+
+    .qwb-item.page .qwb-content
+      padding 2rem 4rem
+
+@media screen and (min-width $lg)
+
+  .qwb-item.page
+    margin-right $preview-max-width
