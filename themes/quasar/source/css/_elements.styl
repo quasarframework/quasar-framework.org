@@ -52,9 +52,39 @@ input, select, textarea
   border 1px solid $divider
   color $primary-text
 
-input.qwb-search-input
-  border-radius $border-radius * 4
-  padding-right 2em
+.qwb-input
+  position relative
+
+  input
+    width 100%
+    box-sizing border-box
+
+  &.search input
+    border-radius $border-radius * 4
+    padding-right 2em
+
+  &.icon
+    input+i
+      position absolute
+      top .5em
+      color $normal-text
+
+  &.left.icon
+    input
+      padding-left 25px
+
+    input+i
+      left 10px
+
+  &.right.icon
+    input
+      padding-right 25px
+
+    input+i
+      right 10px
+
+  input, select, textarea
+    display inline-block
 
 
 /* Buttons */
@@ -263,6 +293,68 @@ input.qwb-search-input
     max-width 80%
     margin-left auto
     margin-right auto
+
+
+/* Modals */
+
+.qwb-modal
+  display none
+  flex-direction column
+  justify-content center
+  align-content center
+  position fixed
+  top 0
+  left 0
+  width 100%
+  height 100%
+  z-index 200
+  background-color rgba(0, 0, 0, .5)
+
+  .qwb-modal-header,
+  .qwb-modal-content,
+  .qwb-modal-footer
+    display flex
+    min-width 300px
+    width 300px
+    margin 0 auto
+    padding 1rem
+    background-color $white
+    box-shadow $shadow
+
+  .qwb-modal-header,
+  .qwb-modal-footer
+    flex-direction row
+
+  .qwb-modal-header
+    vertical-align middle
+
+    inverted()
+
+    h1, h2, h3, h4, h5, h6, i, a
+      display inline-block
+      color $white
+      font-size 1em
+      line-height 1em
+      margin-bottom 0
+
+    i
+      margin-right 10px
+
+    .qwb-modal-close
+      i
+        margin-right 0
+
+    i+*
+      flex-grow 1
+
+  .qwb-modal-content
+    flex-direction column
+    min-height 3em
+    max-height 30em
+    overflow auto
+
+.qwb-modal:target
+  display flex
 
 
 /* Sidebars */

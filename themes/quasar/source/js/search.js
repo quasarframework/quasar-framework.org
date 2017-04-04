@@ -1,129 +1,99 @@
-$(function() {
-  'use strict';
+(function() {
+  window.searchTree = null;
 
-  if (window.location.pathname.indexOf('/search') !== 0) {
-    return;
-  }
+  window.search = function (keywords) {
+    var response = [];
+    var lowerKeywords = keywords.map(function (k) { return k.toLowerCase(); });
 
-  function titleCase(string) {
-    return string.replace(/\w\S*/g, function(txt) {return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
-  }
-
-  function parseResponse(xmlResponse) {
-    // get the contents from search data
-    var datas = $('entry', xmlResponse).map(function() {
-      return {
-        title: $('title', this).text(),
-        content: $('content', this).text(),
-        url: $('url', this).text().replace(/^.*\/\/[^\/]+/, '')
-      };
-    }).get();
-
-    var $input = document.getElementById('local-search-input');
-    var $resultContent = document.getElementById('local-search-result');
-
-    $('input#local-search-input').keyup(function(e) {
-      if (e.keyCode == 27) {
-        $(this).val('');
-        $resultContent.innerHTML = '';
-      }
-    });
-
-    $input.addEventListener('input', function() {
-      var str = '<ul>';
-      var keywords = this.value.trim();
-
-      $resultContent.innerHTML = '';
-      if (keywords.length <= 0) {
-        return;
-      }
-      keywords = keywords.toLowerCase().split(/[\s\-]+/);
-
-      // perform local searching
-      datas.forEach(function(data) {
-        var isMatch = true;
-        var contentIndex = [];
-        var dataTitle = data.title.trim().toLowerCase();
-        var dataContent = data.content.trim().replace(/<[^>]+>/g,'').toLowerCase();
+    if (window.searchTree) {
+      // Perform local searching
+      window.searchTree.forEach(function (data) {
+        var dataTitle = data.title.trim();
+        var dataContent = data.content.trim().replace(/<[^>]+>/g,'');
         var dataUrl = data.url;
-        var indexTitle = -1;
-        var indexContent = -1;
-        var firstOccur = -1;
 
-        console.log(dataUrl);
+        // Only match entries with not empty titles and contents
+        if (dataTitle !== '' && dataContent !== '') {
+          var indexTitle = -1;
+          var indexContent = -1;
+          var firstOccur = -1;
+          var matchedKeywords = [];
+          var lowerDataTitle = dataTitle.toLowerCase();
+          var lowerDataContent = dataContent.toLowerCase();
 
-        // only match artiles with not empty titles and contents
-        if(dataTitle != '' && dataContent != '') {
-          keywords.forEach(function(keyword, i) {
-            indexTitle = dataTitle.indexOf(keyword);
-            indexContent = dataContent.indexOf(keyword);
+          lowerKeywords.forEach(function (lowerKeyword, i) {
+            indexTitle = lowerDataTitle.indexOf(lowerKeyword);
+            indexContent = lowerDataContent.indexOf(lowerKeyword);
 
-            if (indexTitle < 0 && indexContent < 0) {
-              isMatch = false;
-            }
-            else {
+            if (indexTitle >= 0 || indexContent >= 0) {
+              matchedKeywords.push(keywords[i]);
+
               if (indexContent < 0) {
                 indexContent = 0;
               }
+
               if (i == 0) {
                 firstOccur = indexContent;
               }
             }
           });
-        }
 
-        // show search results
-        if (isMatch) {
-          var content = data.content.trim().replace(/<[^>]+>/g,'');
-
-          if (!content.length) {
-            return;
-          }
-
-          str += '<li><a href="' + dataUrl + '" class="search-result-title">' + titleCase(dataTitle) + '</a>';
-
-          if (firstOccur >= 0) {
-            // cut out 100 characters
-            var start = firstOccur - 100;
-            var end = firstOccur + 100;
-
-            if (start < 0) {
-              start = 0;
-            }
-
-            if (start == 0) {
-              end = 200;
-            }
-
-            if (end > content.length) {
-              end = content.length;
-            }
-
-            var matchContent = content.substring(start, end);
-
-            // highlight all keywords
-            keywords.forEach(function(keyword) {
-              var regS = new RegExp(keyword, 'gi');
-
-              matchContent = matchContent.replace(regS, '<code>' + keyword + '</code>');
+          // Store matched entry in response array
+          if (
+            matchedKeywords.length > 0 &&
+            dataContent.length > 0
+          ) {
+            response.push({
+              url: dataUrl,
+              title: dataTitle,
+              content: dataContent,
+              firstOccur: firstOccur,
+              keywords: matchedKeywords
             });
-
-            str += '<a class="search-result" href="' + dataUrl + '"><p>' + matchContent + '...</p></a>';
           }
-          str += '</li>';
         }
       });
-      str += '</ul>';
-      $resultContent.innerHTML = str;
-    });
 
-    $('#loading-search').slideToggle();
-    $('#search-content').slideToggle();
+      // Sort for relevance
+      response.sort(function(a, b) {
+        if (a.keywords.length > b.keywords.length)
+          return -1;
+        if (b.keywords.length > a.keywords.length)
+          return 1;
+
+        if (a.totalMatches > b.totalMatches)
+          return -1;
+        if (b.totalMatches > a.totalMatches)
+          return 1;
+
+        return a.firstOccur > b.firstOccur ? -1 : 1;
+      });
+    }
+
+    return response;
   }
 
-  $.ajax({
-    url: '/search.xml',
-    dataType: 'xml',
-    success: parseResponse
-  });
-});
+  // Retrieve local content.
+  // Convert data from XML to JS and store it in 'window.searchTree'.
+
+  axios
+    .get('/search.xml')
+    .then(function (response) {
+      var parser = new DOMParser();
+      var xmlDoc = parser.parseFromString(response.data, "text/xml");
+      var xmlEntries = Array.from(xmlDoc.getElementsByTagName("entry"));
+
+      window.searchTree = xmlEntries.map(function (xmlEntry) {
+        var jsonEntry = {}
+
+        Array.from(xmlEntry.children).forEach(function (node) {
+          jsonEntry[node.nodeName] = node.textContent;
+        });
+
+        return jsonEntry;
+      });
+    })
+    .catch(function (error) {
+      console.error(error);
+    });
+}());

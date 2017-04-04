@@ -1,5 +1,3 @@
-<div class="sidebar-backdrop"></div>
-
 <div class="qwb-sidebar inverted">
   <a
     class="qwb-logo"
@@ -11,18 +9,20 @@
     <strong>Quasar Framework</strong>
     <em>v<%- latest_quasar_version() %></em>
   </a>
+
+  <span class="qwb-input search right icon">
+    <input
+      type="text"
+      title="Type here and press ENTER to search"
+      placeholder="Search..."
+    />
+    <i class="fa fa-search"></i>
+  </span>
+
   <div class="qwb-menu simple centered fluid">
-    <a href="<%- config.root %>search/" title="Search">
-      <i class="fa fa-search"></i>
-    </a>
     <%- partial('partials/social-links') %>
   </div>
-  <!--<input
-    type="text"
-    title="Search"
-    placeholder="Search..."
-    class="qwb-search-input"
-  />-->
+
   <div class="qwb-accordion">
     <% for (section in site.data.pageMenu) { %>
     <h4
