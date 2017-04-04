@@ -127,7 +127,8 @@ You are able to create an ad-hoc web server to serve static-content web files fr
 This command comes in really handy after building your Quasar App for production. The `/dist` folder contains files that are meant to be served with a webserver. So here you go:
 
 ``` bash
-# Serve current folder:
+# Serve dist folder
+# (must build app before that or else current folder will be served):
 $ quasar serve
 
 # ..or serve a full or relative path
