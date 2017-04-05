@@ -3,6 +3,38 @@
 
 /* Mixins */
 
+round()
+  &.round
+    border-radius 50%
+
+fluid()
+  &.fluid
+    max-width 100%
+    margin-left 0
+    margin-right 0
+
+compact()
+  &.compact
+    padding 0
+
+fixed()
+  &.fixed
+    position fixed
+    margin 0
+    z-index 102 /* <-- Avoid to be covered */
+
+    &.top
+      top 0
+
+    &.left
+      left 0
+
+    &.right
+      right 0
+
+    &.bottom
+      bottom 0
+
 inverted()
   &.inverted
     &
@@ -14,20 +46,26 @@ inverted()
       &:hover
         color $light-primary
 
+simple()
+  &.simple
+    border none
+    background-color transparent
+    box-shadow none
+
 dropdownHidden()
-  position absolute
+  position relative
   opacity 0
-  top 100%
   left 0
-  width 100%
+  right 0
+  top 100%
+  height auto
+  max-height 0
   transform translateY(-2em)
-  z-index -1
-  transition all .5s
+  transition opacity .2s, max-height .2s, transform .2s, top .2s
 
 dropdownVisible()
-  position relative
   top 0
+  max-height 2999px
   opacity 1
-  z-index 1
-  transform translateY(0%)
-  transition all .5s
+  transform translateY(0)
+  transition opacity .2s, max-height .5s, transform .2s, top .2s

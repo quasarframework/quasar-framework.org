@@ -4,10 +4,12 @@
 
 /* Base */
 
+body
+  overflow-x hidden
+
 img
 
-  &.round
-    border-radius 50%
+  round()
 
   &.centered
     display block
@@ -94,7 +96,7 @@ input, select, textarea
   cursor pointer
   display inline-block
   padding .5rem 1.25rem
-  margin 0 .25rem 1rem
+  margin 0 .5rem 1rem
   border none
   border-radius $border-radius
   box-sizing border-box
@@ -108,23 +110,24 @@ input, select, textarea
   text-decoration none
   transition all .2s
 
+  round()
+
+  fixed()
+
+  fluid()
+
+  inverted()
+
+  simple()
+
+  compact()
+
   &:hover
     color $primary
-
-  &.simple
-    border-radius 0
 
   &:not(.icon-only)
     i
       margin-right .25em
-
-
-  &.fluid
-    margin-left 0
-    margin-right 0
-    width 100%
-
-  inverted()
 
   &.inverted:hover
     background-color $primary
@@ -183,17 +186,23 @@ input, select, textarea
   box-shadow $shadow
   transition height .2s
 
-  &.simple,
+  fixed()
+
+  inverted()
+
+  fluid()
+
+  simple()
+
+  compact()
+
   > .qwb-menu
     background-color transparent
     box-shadow none
 
-  &.compact
-    padding 0
-
-    *
-      padding-top 0
-      padding-bottom 0
+  &.compact *
+    padding-top 0
+    padding-bottom 0
 
   &.centered
   &.right
@@ -203,23 +212,13 @@ input, select, textarea
     margin-right auto
     justify-content center
 
-  &.fixed
-    position fixed
-    &.top
-      top 0
-    &.bottom
-      bottom 0
-
-  &.fluid
-    max-width 100%
-
-  inverted()
-
-  > a, > input, > select, > i
+  > a, > input, > select, > i, > .qwb-btn
     display inline-block
     width 100%
     padding .5em .75em
     vertical-align middle
+    margin-top 0
+    margin-bottom 0
     box-sizing border-box
     color $secondary-text
     text-decoration none
@@ -242,6 +241,12 @@ input, select, textarea
 
 .qwb-toggle+.qwb-menu.collapsible
   dropdownHidden()
+
+.qwb-toggle.fixed+.qwb-menu.collapsible
+  position fixed
+  max-width 100%
+  z-index 101
+  top 0
 
 .qwb-toggle.on+.qwb-menu.collapsible
   dropdownVisible()
@@ -370,6 +375,10 @@ input, select, textarea
   overflow-y auto
   z-index 101
 
+  fixed()
+
+  inverted()
+
   .qwb-lead,
   .qwb-accordion
     margin-left -1rem
@@ -387,7 +396,7 @@ input, select, textarea
 /* Content blocks */
 
 .qwb-content
-  padding 2rem
+  padding 2rem 0
   box-sizing border-box
   flex-grow 1
 
