@@ -86,7 +86,7 @@ html, body
   .qwb-row:not(.md, .lg, .xl)
     flex-flow row
 
-  .only.xs
+  .only.xs:not(.sm)
     display none
 
 @media (min-width: $md)
@@ -94,7 +94,7 @@ html, body
   .qwb-row:not(.lg, .xl)
     flex-flow row
 
-  .only.sm
+  .only.sm:not(.md)
     display none
 
 @media (min-width: $lg)
@@ -102,7 +102,7 @@ html, body
   .qwb-row:not(.xl)
     flex-flow row
 
-  .only.md
+  .only.md:not(.lg)
     display none
 
 @media (min-width: $xl)
@@ -110,39 +110,39 @@ html, body
   .qwb-row.xl
     flex-flow row
 
-  .only.lg
+  .only.lg:not(.xl)
     display none
 
 
 @media (max-width: $xs)
-  .sm, .md, .lg, .xl
+  .sm:not(.xs), .md:not(.xs), .lg:not(.xs), .xl:not(.xs)
     display none
 
 @media (max-width: $sm)
 
-  .only.sm
+  .only.sm:not(.xs)
     display none
 
-  .md, .lg, .xl
+  .md:not(.sm), .lg:not(.sm), .xl:not(.sm)
     display none
 
 @media (max-width: $md)
 
-  .only.md
+  .only.md:not(.sm)
     display none
 
-  .lg, .xl
+  .lg:not(.md), .xl:not(.md)
     display none
 
 @media (max-width: $lg)
 
-  .only.lg
+  .only.lg:not(.md)
     display none
 
-  .xl
+  .xl:not(.lg)
     display none
 
 @media (max-width: $xl)
 
-  .only.xl
+  .only.xl:not(.lg)
     display none

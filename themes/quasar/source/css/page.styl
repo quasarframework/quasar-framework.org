@@ -19,23 +19,35 @@
 /* Sidebar */
 
 .qwb-item.sidebar
+  display flex
   position fixed
   width 100%
+  z-index 101
   margin-left - $sidebar-max-width
   max-width $sidebar-max-width
   height 100%
+  overflow-x hidden
   overflow-y auto
+  transition margin-left .2s
+
+.qwb-toggle.on+.qwb-item.sidebar
+  display flex
+  margin-left 0
+  transition margin-left .2s
+
+.qwb-item.sidebar .qwb-sidebar
+  padding-top 2rem
 
 
 /* Page content */
 
 .qwb-item.page
-  min-width calc($xs - 2rem)
+  min-width $xs - 2rem
   max-width $lg
   background-color $white
 
   .qwb-content
-    padding 1rem
+    padding 2rem 1rem 1rem
 
     h1, h2
       padding-bottom $header-bottom-margin * 0.5
@@ -77,8 +89,14 @@
     .qwb-container .qwb-row
       padding-left $sidebar-max-width
 
-    .qwb-item.page .qwb-content
-      padding 2rem 4rem
+    .qwb-item.sidebar
+      margin-left - $sidebar-max-width
+      .qwb-sidebar
+        padding-top 1rem
+
+    .qwb-item.page
+      .qwb-content
+        padding 2rem 4rem
 
 @media screen and (min-width $lg)
 
