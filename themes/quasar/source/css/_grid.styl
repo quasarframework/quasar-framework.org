@@ -22,23 +22,23 @@ html, body
 
   &.xs
     display flex
-    max-width 32rem
+    max-width $xs
 
   &.sm
     display flex
-    max-width 48rem
+    max-width $sm
 
   &.md
     display flex
-    max-width 64rem
+    max-width $md
 
   &.lg
     display flex
-    max-width 80rem
+    max-width $lg
 
   &.xl
     display flex
-    max-width 96rem
+    max-width $xl
 
 .qwb-row
   position relative
@@ -46,8 +46,8 @@ html, body
   flex-flow column
   justify-content space-between
   box-sizing border-box
-  height 100%
   margin 0 -1rem
+  height 100%
 
 .qwb-item
   position relative
@@ -78,25 +78,37 @@ html, body
 
 @media (min-width: $xs)
 
-  .qwb-row
+  .qwb-row.xs
     flex-flow row
 
 @media (min-width: $sm)
+
+  .qwb-row:not(.md, .lg, .xl)
+    flex-flow row
 
   .only.xs
     display none
 
 @media (min-width: $md)
 
+  .qwb-row:not(.lg, .xl)
+    flex-flow row
+
   .only.sm
     display none
 
 @media (min-width: $lg)
 
+  .qwb-row:not(.xl)
+    flex-flow row
+
   .only.md
     display none
 
 @media (min-width: $xl)
+
+  .qwb-row.xl
+    flex-flow row
 
   .only.lg
     display none
