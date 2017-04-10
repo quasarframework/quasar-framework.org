@@ -54,7 +54,7 @@ An example of Layout, containing all possible elements: toolbars (used on header
   <div class="layout-view"></div>
 
   <!-- Right-side Drawer -->
-  <q-drawer ref="rightDrawer">
+  <q-drawer ref="rightDrawer" right-side>
     ...
   </q-drawer>
 
