@@ -136,13 +136,11 @@ Use social cards to present posts on a wall like on Facebook or Twitter.
 
 ``` html
 <div class="card">
-  <div class="item">
-    <img class="avatar" src="assets/linux-avatar.png">
+  <div class="item two-lines">
+    <img class="item-primary" src="assets/linux-avatar.png">
     <div class="item-content">
-      <div class="item-label">
-        <p class="item-title">Joe</p>
-        <p>Web Developer</p>
-      </div>
+      <div>Joe</div>
+      <div>Web Developer</div>      
     </div>
   </div>
   <img src="assets/mountains.jpg">
