@@ -37,9 +37,6 @@ Toast.create({
       // Specify what to do when button is clicked/tapped
     },
     color: '#000'
-  },
-  vm: {
-    // VueModel for the Toast
   }
 })
 ```
