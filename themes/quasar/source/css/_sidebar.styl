@@ -9,9 +9,17 @@
   inverted()
 
   .qwb-logo
+    position fixed
+    display inline-block
+    width 100%
+    padding .5rem
+    left 0
+    top 0
     text-align center
     font-size 1.3em
     margin-bottom 1rem
+    box-shadow $shadow
+    background-color $dark-primary
 
     img
       vertical-align middle
@@ -55,3 +63,11 @@
   .list
     padding-right 1rem
     padding-left 1rem
+
+@media screen and (min-width $md)
+  .qwb-sidebar .qwb-logo
+    position static
+    background none
+    box-shadow none
+    padding 0
+    left 0

@@ -18,7 +18,7 @@
 
 /* Sidebar */
 
-.qwb-item.sidebar
+#qwb-sidebar
   display flex
   position fixed
   width 100%
@@ -30,24 +30,28 @@
   overflow-y auto
   transition margin-left .2s
 
-.qwb-toggle.on+.qwb-item.sidebar
-  display flex
+#qwb-sidebar-toggle
+  height 3rem
+  line-height 2rem
+  background-color transparent !important
+
+#qwb-sidebar-toggle.on+#qwb-sidebar
   margin-left 0
   transition margin-left .2s
 
-.qwb-item.sidebar .qwb-sidebar
-  padding-top 2rem
+#qwb-sidebar .qwb-sidebar
+  padding-top 4rem
 
 
 /* Page content */
 
-.qwb-item.page
+#qwb-page
   min-width $xs - 2rem
   max-width $lg
   background-color $white
 
   .qwb-content
-    padding 2rem 1rem 1rem
+    padding 4rem 1rem 1rem
 
     h1, h2
       padding-bottom $header-bottom-margin * 0.5
@@ -71,7 +75,7 @@
 
 /* Mobile preview */
 
-.qwb-item.preview
+#qwb-preview
   position fixed
   flex 0
   width 100%
@@ -89,16 +93,16 @@
     .qwb-container .qwb-row
       padding-left $sidebar-max-width
 
-    .qwb-item.sidebar
-      margin-left - $sidebar-max-width
-      .qwb-sidebar
-        padding-top 1rem
+  #qwb-sidebar
+    margin-left - $sidebar-max-width !important
+    .qwb-sidebar
+      padding-top 1rem
 
-    .qwb-item.page
-      .qwb-content
-        padding 2rem 4rem
+  #qwb-page
+    .qwb-content
+      padding 2rem 4rem
 
 @media screen and (min-width $lg)
 
-  .qwb-item.page
+  #qwb-page
     margin-right $preview-max-width

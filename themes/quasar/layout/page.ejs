@@ -1,18 +1,18 @@
 <div class="qwb-container">
   <div class="qwb-row">
-    <div class="qwb-btn qwb-toggle only xs sm simple fixed top left">
+    <div id="qwb-sidebar-toggle" class="qwb-btn qwb-toggle only xs sm simple fixed top left inverted">
       <i class="fa fa-bars"></i>
     </div>
-    <div class="qwb-item sidebar md">
+    <div id="qwb-sidebar" class="qwb-item md">
       <%- partial('partials/sidebar') %>
     </div>
 
-    <div class="qwb-item page">
+    <div id="qwb-page" class="qwb-item">
       <%- partial('partials/page-content') %>
       <%- partial('partials/footer') %>
     </div>
 
-    <div class="qwb-item preview lg">
+    <div id="qwb-preview" class="qwb-item lg">
       <%- partial('partials/preview') %>
     </div>
   </div>
