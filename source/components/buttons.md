@@ -1,6 +1,29 @@
 title: Buttons
 ---
-Quasar Buttons are of two shapes: rectangle (regular) and circular. They come in three sizes: small, medium (default) and big. As for the colors, use the ones from [Quasar CSS Color Palette](/api/css-color-palette.html). There are some more CSS classes that you can use to enhance the appearance of a button.
+Quasar Buttons are of two shapes: rectangle (regular) and circular, and it may use a spinner if disabled instead of blurring the button.
+
+Quasar has its own button component called `q-btn`
+
+## Basic Usage
+``` html
+<q-btn icon='create'>New item</q-btn>
+```
+
+## Vue Properties
+| Vue Property | Description |
+| ---          | ---         | --- |
+| `disable`    | disabled on true | 
+| `spinner`    | make a spinner if true | 
+| `circular`   | set true if circular shape is required |
+| `icon`       | name of the icon to use |
+| `iconRight`  | name of the right icon to user |
+
+## Vue Events
+| Vue Event | Description |
+| ---       | ---         |
+| `click`   | Triggered on button click |
+
+It is also possible to use the html buttons and quasar classes, and these also has rectangle (regular) and circular shape. They come in three sizes: small, medium (default) and big. As for the colors, use the ones from [Quasar CSS Color Palette](/api/css-color-palette.html). There are some more CSS classes that you can use to enhance the appearance of a button.
 
 <input type="hidden" data-fullpage-demo="css/button">
 
