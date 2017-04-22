@@ -90,6 +90,7 @@ components:
     Textarea: $
     Toggle: $
   Vue Components:
+    Alert: $
     Ajax Bar: $
     Back to Top: $
     Collapsible (+ Accordion): collapsible
