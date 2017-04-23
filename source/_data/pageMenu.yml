@@ -94,6 +94,7 @@ components:
     Alert: $
     Ajax Bar: $
     Back to Top: $
+    Chip: $
     Collapsible (+ Accordion): collapsible
     Context Menu: $
     Data Table: $
