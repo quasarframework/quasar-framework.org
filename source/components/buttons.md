@@ -1,10 +1,12 @@
 title: Buttons
 ---
-Quasar button is as button with a few extra useful functions. `q-btn` has two shapes: rectangle (regular) and circular. When not disabled or spinning it will always emit a `click` event. The first argument of the click event is the original HTML event, and second argument is a function used when the spinning, to stop this.
+The Quasar button component is a button with a few extra useful features. For instance, `q-btn` comes in two shapes: rectangle (default) and circular.
 
-When using spinning button it will have a spinning animation when the user clicks the button, and this will not stop until the `done()` function are called, that is given by the `click` event.
+The button component also comes with a spinner effect, for times when app execution may cause a delay, and you want to give the user some feedback about that delay. The button will display a spinning animation, when the user clicks the button, and this will not stop until the `done()` function is called, which is available through the `click` event.
 
-The button come in three sizes: small, medium (default) and big. As for the colors, use the ones from [Quasar CSS Color Palette](/api/css-color-palette.html). There are some more CSS classes that you can use to enhance the appearance of a button.
+ When not disabled or spinning, a button component will always emit a `click` event, as soon as it is clicked or tapped. The first argument of the click event is the original HTML event. The second argument is a function used to end the spinner effect.
+
+The button comes in three different sizes: small, medium (default) and big. As for colors, all the colors available in the [Quasar CSS Color Palette](/api/css-color-palette.html) are at your disposal. There are some more CSS classes that you can use to enhance the appearance of a button too.
 
 <input type="hidden" data-fullpage-demo="css/button">
 
@@ -40,9 +42,9 @@ Primary button and spinning
 </q-btn>
 ```
 
-and the example javascript function could be something like this
+and the example JavaScript function could be something like this
 
-```javascript
+``` js
     ...
 
     clickMethod( e, done ) {
@@ -70,9 +72,9 @@ It is also possible to use the html buttons and quasar classes.
 
 ## more examples
 
-When adding an icon to a regular button there are really two ways, where the default is left :
+When adding an icon to a regular button, there are two possibilities for its position, where the default is left. Use `iconRight` to position the icon to the right:
 
-```html
+``` html
 <q-btn icon='mail' class="primary">
   Button Label
 </q-btn>
@@ -86,7 +88,7 @@ When adding an icon to a regular button there are really two ways, where the def
 
 Use `small` or `big` CSS classes. You don't need to specify `medium` because that's the default size.
 
-```html
+``` html
 <q-btn class="primary small">
   Small Button
 </q-btn>
@@ -97,17 +99,17 @@ Use `small` or `big` CSS classes. You don't need to specify `medium` because tha
 ```
 
 ## Button Colors
-Use the ones from [Quasar CSS Color Palette](/api/css-color-palette.html). Examples: `primary`, `orange`, `lime`.
+Use any color from the [Quasar CSS Color Palette](/api/css-color-palette.html). Examples: `primary`, `orange`, `lime`.
 
-```html
+``` html
 <q-btn class="primary">Primary Button</q-btn>
 <q-btn class="amber">Amber Button</q-btn>
 ```
 
 ## More Button CSS Classes
-There are also the `raised`, `clear`, `outline`, `push`, `bordered`, `round` and `glossy` CSS classes that you can use.
+There are also the `raised`, `clear`, `outline`, `push`, `bordered`, `round` and `glossy` CSS classes available for you to use.
 
 Make use of globally available `disabled`, `block` (sets CSS `display` property to `block`) or `full-width`.
 
 ## Progress Buttons
-There's also a type of button that has its own Quasar Component named `<q-progress-button>`. Check documentation [here](/components/progress-button.html).
+There is also another type of button that has its own Quasar Component called `<q-progress-button>`. For reference, check [the q-progress-button documentation](/components/progress-button.html).
