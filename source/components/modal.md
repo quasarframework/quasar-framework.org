@@ -29,6 +29,8 @@ Modals are responsive to the width of the window (see demo on a desktop and resi
 | `noBackdropDismiss` | Boolean | Disable Modal dismissal by clicking/tapping on backdrop. |
 | `noEscDismiss` | Boolean | Disable Modal dismissal by hitting Escape key. |
 | `position` | String | Stick Modal to one of the screen edges (`top`, `right`, `bottom`, `left`). |
+| `enterClass` | String | enter transition class name |
+| `leaveClass` | String | leave transition class name |
 
 ## Vue Methods
 | Method | Description |
@@ -64,23 +66,29 @@ Modals are responsive to the width of the window (see demo on a desktop and resi
 ```
 
 ### Modal with Layout
+
+When making layout inside a modal Quasar has a special component called `q-modal-layout` that takes
+care of all needed structure.
+
 ``` html
 <q-modal
   ref="layoutModal"
   :content-css="{minWidth: '80vw', minHeight: '80vh'}"
 >
-  <q-layout>
-    <div slot="header" class="toolbar">
+  <q-modal-layout>
+    <div slot='header' class="toolbar">
       <button @click="$refs.layoutModal.close()">
-        <i>keyboard_arrow_left</i>
+        <q-icon name="keyboard_arrow_left"/>
       </button>
       <q-toolbar-title :padding="1">
         Header
       </q-toolbar-title>
     </div>
 
-    <div slot="header" class="toolbar primary">
-      <q-search class="primary"></q-search>
+    <div class="layout-padding">
+      <h1>Modal</h1>
+      <button class="primary" @click="$refs.layoutModal.close()">Close</button>
+      <p class="caption" v-for="n in 15">This is a Modal presenting a Layout.</p>
     </div>
 
     <div slot="footer" class="toolbar">
@@ -88,14 +96,6 @@ Modals are responsive to the width of the window (see demo on a desktop and resi
         Footer
       </q-toolbar-title>
     </div>
-
-    <div class="layout-view">
-      <div class="layout-padding">
-        <h1>Modal</h1>
-        <button class="primary" @click="$refs.layoutModal.close()">Close</button>
-        <p class="caption" v-for="n in 15">This is a Modal presenting a Layout.</p>
-      </div>
-    </div>
-  </q-layout>
+  </q-modal-layout>
 </q-modal>
 ```
