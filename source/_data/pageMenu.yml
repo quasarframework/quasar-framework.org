@@ -70,6 +70,7 @@ components:
     Label: $
     List: $
     Timeline: $
+    Transition: $
   Form Inputs:
     Autocomplete: $
     Checkbox: $
@@ -90,8 +91,10 @@ components:
     Textarea: $
     Toggle: $
   Vue Components:
+    Alert: $
     Ajax Bar: $
     Back to Top: $
+    Chip: $
     Collapsible (+ Accordion): collapsible
     Context Menu: $
     Data Table: $
