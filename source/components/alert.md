@@ -65,7 +65,7 @@ To see this in action, click on the "Show Alert As Method" button in the example
 **Note**
 If you do not define any buttons, the alert method will automatically be dismissible i.e. there will be the "X" button available to dismiss the alert. 
 
-### Properties
+### Vue Properties
 Here are all of the properties of the Alert component, when used as a method:
 
 | Property | Type | Description |
@@ -117,7 +117,7 @@ Creating an alert like this isn't very pragmatic, because it will be shown direc
 
 However, you can also wrap the alert in [a transition](/components/transition.html). This will add the necessary behavior to your Alert's appearance and dismissal. Before we get into that, let's look at the options available in a Quasar's alert component. 
 
-### Properties
+### Vue Properties
 Here are the available properties, when using Alert as a component:
 
 | Property | Type | Description |
@@ -127,13 +127,8 @@ Here are the available properties, when using Alert as a component:
 | `v-model` | Boolean | Needs to be true, when using inside the transition component, for the alert to be shown. |
 | `position` | String | Controls the position of the alerts, when it is displayed. The available positions are `top`, `top-right`, `right`, `bottom-right`, `bottom`, `bottom-left`, `left` and `top-left`|
 | `button` | Array of Objects | Place one or more buttons within the alert, like "Snooze" or "Abort". Specify `label` (String) and `handler` (Function).|
-
-### Available Attributes
-
-| Attribute | Description |
-| --- | --- | --- |
-| `dismissible` | When added, the "X" button is added to the right to allow the dismissal of the alert. |
-  
+| `dismissible` | boolean | When used, the "X" button is added to the right to allow the dismissal of the alert. |
+ 
 ## An Alert Component Wrapped in a Transition
 
 To make your component alert work more like a proper alert, you can wrap it within a [transition component](/components/transition.html) and add some simple logic to it for it to appear, when you want it to. 

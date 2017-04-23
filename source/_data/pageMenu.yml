@@ -70,6 +70,7 @@ components:
     Label: $
     List: $
     Timeline: $
+    Transition: $
   Form Inputs:
     Autocomplete: $
     Checkbox: $
