@@ -1,7 +1,7 @@
 title: Ajax Requests
 ---
-Quasar recommends using `Axios`.
-This package is not provided by default so you will have to npm install it and import from `src/main.js`.
+Quasar recommends using `Axios` or `Vue-Ressource`.
+These packages are not provided by default so you will have to npm install them and import from `src/main.js`.
 
 
 ## Quickstart with axios
@@ -26,4 +26,5 @@ this.$http.get('/').then(res => {
 
 
 Get started with the documentation for [axios](https://github.com/mzabriskie/axios).
+Get started with the documentation for [vue-ressource](https://github.com/pagekit/vue-resource).
 Using libraries from npm with vue: (vuejsdevelopers.com)(http://vuejsdevelopers.com/2017/04/22/vue-js-libraries-plugins/)
