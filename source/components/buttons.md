@@ -38,7 +38,7 @@ Primary button and spinning
 
 <!-- Circular shaped; only use icon as content -->
 <q-btn  circular class="primary" @click="clickMethod">
-  <i>alarm</i>
+  <q-icon name="alarm"/>
 </q-btn>
 ```
 
