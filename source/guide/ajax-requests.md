@@ -1,6 +1,6 @@
 title: Ajax Requests
 ---
-Quasar recommends using `Vue Resource` plugin for VueJs or `Axios`. These package are not provided by default so you will have to npm install them and import them from `src/main.js`.
+Quasar recommends using `Axios`. These package are not provided by default so you will have to npm install them and import them from `src/main.js`.
 
 
 ## Quickstart with axios
