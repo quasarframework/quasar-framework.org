@@ -10,7 +10,7 @@ Installation: `npm install axios --save`
 First make the package globally available within Vue(main.js):
 ```
 import axios from 'axios';
-Object.definePrototype(Vue.prototype, '$http', { value: axios });
+Vue.prototype.$http = axios
 ```
 
 
@@ -27,4 +27,4 @@ this.$http.get('/').then(res => {
 
 Get started with the documentation for [axios](https://github.com/mzabriskie/axios).
 Get started with the documentation for [vue-ressource](https://github.com/pagekit/vue-resource).
-Using libraries from npm with vue: (vuejsdevelopers.com)(http://vuejsdevelopers.com/2017/04/22/vue-js-libraries-plugins/)
+Using libraries from npm with vue: [vuejsdevelopers.com](http://vuejsdevelopers.com/2017/04/22/vue-js-libraries-plugins/)
