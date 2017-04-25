@@ -7,13 +7,13 @@ A Spinner is used to show the user a process is currently taking place. You can 
 ## Basic Usage
 ``` html
 <!-- Default platform spinner with no options-->
-<spinner></spinner>
+<q-spinner></q-spinner>
 
-<!-- Specific spinner -->
-<spinner name="bars"></spinner>
+<!-- Specific q-spinner -->
+<q-spinner name="bars"></q-spinner>
 
 <!-- Spinner with options -->
-<spinner color="#ff00ee" :size="30"></spinner>
+<q-spinner color="#ff00ee" :size="30"></q-spinner>
 ```
 ## Vue Properties
 | Vue Property | Type | Description |
