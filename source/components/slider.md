@@ -42,6 +42,11 @@ use you mouse to drag slides to left or right.
 | `goToSlide(slideNumber, doneFn)` | Go to the desired slide. `slideNumber` is 0-based. |
 | `toggleFullscreen()` | Toggles fullscreen mode. |
 
+## Vue Events
+| Vue Event | Description |
+| --- | --- |
+| `slide` | Emits the index of the current slide when the transition animation finishes. Emits even if navigating to the same slide. |
+
 ## Slider with Arrows, Dots and Fullscreen Controls
 Sliders can contain button controls, like:
 * Arrows so user can switch between slides if swipe actions are not enough.
