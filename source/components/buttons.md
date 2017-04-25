@@ -10,6 +10,7 @@ The button comes in three different sizes: small, medium (default) and big. As f
 
 <input type="hidden" data-fullpage-demo="css/button">
 
+**Note**
 For circular buttons only use icons as content.
 
 
@@ -42,7 +43,7 @@ Primary button and spinning
 </q-btn>
 ```
 
-and the example JavaScript function could be something like this
+and an example JavaScript function could be something like this
 
 ``` js
     ...
@@ -68,11 +69,11 @@ and the example JavaScript function could be something like this
 | ---       | ---                       |
 | `click`   | Triggered on button click |
 
-It is also possible to use the html buttons and quasar classes.
+It is also possible to use html buttons and Quasar classes.
 
 ## more examples
 
-When adding an icon to a regular button, there are two possibilities for its position, where the default is left. Use `iconRight` to position the icon to the right:
+When adding an icon to a rectangular button, there are two possibilities for its position. The left position is the default. Use `iconRight` to position the icon to the right:
 
 ``` html
 <q-btn icon='mail' class="primary">
@@ -86,7 +87,7 @@ When adding an icon to a regular button, there are two possibilities for its pos
 
 ## Button Sizes
 
-Use `small` or `big` CSS classes. You don't need to specify `medium` because that's the default size.
+To set the size of a button, use the `small` or `big` CSS classes. You don't need to specify `medium`, as that's the default size.
 
 ``` html
 <q-btn class="primary small">

@@ -101,6 +101,7 @@ components:
     Floating Action Buttons: $
     Infinite Scroll: $
     Modal: $
+    Icon: $
     Image Gallery: $
     List Item: $
     Pagination: $
