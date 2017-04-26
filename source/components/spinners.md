@@ -6,20 +6,24 @@ A Spinner is used to show the user a process is currently taking place. You can 
 
 ## Basic Usage
 ``` html
-<!-- Default platform spinner with no options-->
-<spinner></spinner>
-
-<!-- Specific spinner -->
-<spinner name="bars"></spinner>
+<!-- Default platform spinner-->
+<q-spinner></q-spinner>
 
 <!-- Spinner with options -->
-<spinner color="#ff00ee" :size="30"></spinner>
+<q-spinner color="#ff00ee" :size="30"></q-spinner>
+
+<!-- Specific spinner icon -->
+<q-spinner-audio></q-spinner-audio>
+
+<!-- Specific spinner icon with options -->
+<q-spinner-audio color="#ff00ee" :size="30"></q-spinner-audio>
+
 ```
+
 ## Vue Properties
 | Vue Property | Type | Description |
 | --- | --- | --- |
-| `name` | String | One of the values described below this table. |
 | `size` | Number | Number defining the size in pixels. |
 | `color` | String | CSS color string. |
 
-Following names are available: `audio`, `ball`, `bars`, `circles`, `dots`, `grid`, `hearts`, `ios`, `oval`, `puff`, `rings`, `tail`, `facebook`, `gears`, `hourglass`, `infinity`, `pie`, `radio`.
+Following spinners components are available: `q-spinner-audio`, `q-spinner-ball`, `q-spinner-bars`, `q-spinner-circles`, `q-spinner-dots`, `q-spinner-grid`, `q-spinner-hearts`, `q-spinner-ios`, `q-spinner-mat`, `q-spinner-oval`, `q-spinner-puff`, `q-spinner-rings`, `q-spinner-tail`, `q-spinner-facebook`, `q-spinner-gears`, `q-spinner-hourglass`, `q-spinner-infinity`, `q-spinner-pie`, `q-spinner-radio`.
