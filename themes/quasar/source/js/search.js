@@ -61,11 +61,6 @@
         if (b.keywords.length > a.keywords.length)
           return 1;
 
-        if (a.totalMatches > b.totalMatches)
-          return -1;
-        if (b.totalMatches > a.totalMatches)
-          return 1;
-
         return a.firstOccur > b.firstOccur ? -1 : 1;
       });
     }
