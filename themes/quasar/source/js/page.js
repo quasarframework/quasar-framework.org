@@ -6,10 +6,6 @@
     h3s = document.querySelectorAll('#qwb-page .qwb-content h3')
     ;
 
-  function getHeaderRef (header) {
-
-  }
-
   function makeHeaderClickable (header) {
     var
       wrapper = document.createElement('a')
