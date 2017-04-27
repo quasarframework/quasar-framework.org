@@ -81,7 +81,6 @@ sub
 
 code, pre
   color $primary-text
-  vertical-align middle
 
 
 /* Links & Buttons */
@@ -118,8 +117,24 @@ table
   border-spacing 0
   border-collapse collapse
 
+  &, tr
+    border-bottom 1px solid $divider
+
+  thead
+    color $inverted-primary-text
+    background-color $dark-primary
+    border 1px solid $dark-primary
+
+  tbody, tfooter
+    border-left 1px solid $divider
+    border-right 1px solid $divider
+
   td, th
-    padding 0
+    padding 1rem
+    text-align left
+
+  td
+    vertical-align top
 
 
 /* Variations */

@@ -1,4 +1,7 @@
-code,
+code
+  color $primary-text // @stylint ignore
+  background-color $inverted-text
+
 pre,
 .highlight
   color $inverted-text // @stylint ignore
@@ -96,8 +99,10 @@ pre
     padding 1.25rem
     overflow auto
     box-sizing border-box
-  tr, td
+  tr, td, tbody, thead, tfooter
     padding 0
+    border none
+    background none
   .gutter
     width 1.5em
   .code
