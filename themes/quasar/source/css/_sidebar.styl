@@ -64,6 +64,19 @@
     padding-right 1rem
     padding-left 1rem
 
+    a
+      &+.list
+        display none
+
+      &.current
+        font-weight bold
+
+        &:before
+          content '# '
+
+        &+.list
+          display flex
+
 @media screen and (min-width $md)
   .qwb-sidebar .qwb-logo
     position static

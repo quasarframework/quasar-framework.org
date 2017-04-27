@@ -27,7 +27,7 @@
   max-width $sidebar-max-width
   height 100%
   overflow-x hidden
-  overflow-y auto
+  overflow-y hidden
   transition margin-left .2s
 
 #qwb-sidebar-toggle
@@ -41,6 +41,11 @@
 
 #qwb-sidebar .qwb-sidebar
   padding-top 4rem
+
+#qwb-sidebar .qwb-accordion
+  opacity 0
+  transition opacity linear .2s
+  border-top 1px solid rgba(0, 0, 0, .2)
 
 
 /* Page content */

@@ -256,7 +256,7 @@ input, select, textarea
 .qwb-accordion,
   display flex
   flex-direction column
-  overflow-y hidden
+  overflow-y auto
 
   .qwb-toggle+.list
     flex 0
@@ -264,7 +264,7 @@ input, select, textarea
     max-height 0px
     opacity 0
     overflow-y hidden
-    transition opacity .2s, max-height .2s, overflow-y 0.5s linear 0.5s
+    transition opacity .2s, overflow-y 0.5s linear 0.5s
 
   .qwb-toggle.on+.list
     flex 1
