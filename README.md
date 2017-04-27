@@ -20,6 +20,18 @@ I'm excited if you want to contribute to Quasar under any form (report bugs, wri
 
 I'm only asking that you [read this](http://quasar-framework.org/guide/contributing.html) first.
 
+## Run locally
+
+This website is based on [Hexo](https://hexo.io) and could run on your machine following these steps:
+
+```bash
+$ git clone https://github.com/quasarframework/quasar-framework.org.git
+$ cd quasar-framework.org
+$ npm install hexo-cli -g
+$ npm install
+$ hexo server
+```
+
 ## License
 
 Copyright (c) 2016-2017 Razvan Stoenescu
