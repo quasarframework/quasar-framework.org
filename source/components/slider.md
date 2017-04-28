@@ -45,7 +45,7 @@ use you mouse to drag slides to left or right.
 ## Vue Events
 | Vue Event | Description |
 | --- | --- |
-| `slide` | Emits the index of the current slide when the transition animation finishes. Emits even if navigating to the same slide. |
+| `@slide(index, direction)` | Emits the index of the current slide and the direction of the slide when the transition animation finishes. Emits even if navigating to the same slide. |
 
 ## Slider with Arrows, Dots and Fullscreen Controls
 Sliders can contain button controls, like:

@@ -28,6 +28,7 @@ Quasar supplies a way for you to upload files.
 | `extensions` | String | Extensions to allow for uploading. Example: `'.gif,.jpg,.jpeg,.png'` |
 | `multiple` | Boolean | Allow multiple file uploads |
 | `hide-upload-button` | Boolean | Hides the Upload button. You can then trigger it manually by calling `upload()` on the Vue ref |
+| `icons` | Object | You can overwrite default `add`, `remove`, `upload` and `failed` icons. Specify which prop to overwrite. |
 | `labels` | Object | You can overwrite default `add`, `remove`, `upload`, `failed` and `uploading` labels. Specify which prop to overwrite. |
 | `additionalFields` | Array | **Additional fields to send along the upload request.** Useful for authentication and so on. Array of Objects containing `name` and `value` props. |
 
@@ -39,8 +40,9 @@ Quasar supplies a way for you to upload files.
 ## Vue Events
 | Vue Event | Description |
 | --- | --- |
-| `@add` | Triggered when file is picked for upload |
-| `@remove` | Triggered when file is removed from upload queue |
-| `@upload` | Triggered individually for each file that has just been uploaded |
+| `@add(files)` | Triggered when file is picked for upload |
+| `@remove(file)` | Triggered when file is removed from upload queue |
+| `@upload(file, xhr)` | Triggered individually for each file that has just been uploaded |
+| `@fail(file, xhr)` | Triggered individually for each file that has encountered error while uploading |
 | `@start` | Triggered when upload has started |
 | `@finish` | Triggered when upload of file(s) has ended (with success or failure) |
