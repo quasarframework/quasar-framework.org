@@ -22,4 +22,9 @@ You can include more than one set too, if you'd like.
 
 ```
 
-That would display a rather small thumbs-up icon. To change the size, you can use  
+That would display a rather small thumbs-up icon. To change the size, you can use style or class attributes.  
+
+```html
+<q-icon name="thumb_up" class="big" />
+
+```
