@@ -276,11 +276,17 @@ input, select, textarea
 
 /* Leads */
 
-@keyframes slide-background-x
+@keyframes sky-slide-x
   from
-    background-position 0px top
+    background-position 0px 0
   to
-    background-position 500% top
+    background-position 10000px 0
+
+@keyframes stars-slide-x
+  from
+    background-position 0px 0, -100px 0
+  to
+    background-position 5000px 0, 10000px 0
 
 .qwb-lead
   display flex
@@ -293,31 +299,21 @@ input, select, textarea
   background-size auto 100%
   background-color $primary
   text-align center
-  animation slide-background-x 100s linear infinite
+  animation sky-slide-x 300s linear infinite reverse
 
-  &:before,
-  &:after
+  &:before
     content ''
     position absolute
     top 0
     left 0
     right 0
     bottom 0
-    background-image url(../images/stars.png)
+    background-image url(../images/stars.png), url(../images/stars.png)
     background-attachment fixed
-    background-repeat repeat
-    background-size auto 100%
+    background-repeat repeat, repeat
+    background-size auto 60%, auto 120%
     background-color transparent
-    text-align center
-
-  &:before
-    opacity .7
-    background-size auto 70%
-    animation slide-background-x 250s linear infinite
-
-  &:after
-    animation slide-background-x 350s linear infinite
-
+    animation stars-slide-x 250s linear infinite
 
   p
     max-width 80%
