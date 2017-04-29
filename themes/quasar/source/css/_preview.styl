@@ -1,6 +1,7 @@
 #qwb-device-preview
   display block
   z-index 101
+  width 100%
   box-sizing border-box
   padding 0
   margin 0 auto
@@ -8,11 +9,16 @@
 
   .theme
     display none
+    opacity 0
     &.active
       display block
 
 #qwb-device-preview-chooser
   margin 1rem auto
+  flex-direction row
+
+#qwb-device-desktop-preview-btn
+  display none
 
 #qwb-apple-preview,
 #qwb-android-preview,
@@ -54,3 +60,18 @@
     width 360px
     height 590px
     background $white
+
+@media screen and (min-width $md)
+
+  #qwb-device-desktop-preview-btn
+    display block
+
+@media screen and (min-width $xl)
+
+  #qwb-device-preview
+
+    .theme
+      opacity 1
+
+  #qwb-device-preview-chooser
+    flex-direction row
