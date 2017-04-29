@@ -24,6 +24,7 @@ p, ul, ol, pre, table, blockquote
 h1, h2, h3, h4, h5, h6
   color $secondary-text
   margin 0 0 $header-bottom-margin
+  font-family $header-font-family
   font-weight inherit
   line-height $header-line-height
   letter-spacing $header-letter-spacing
@@ -146,11 +147,11 @@ table
 
   h1, h3
     color $inverted-primary-text
-    text-shadow $shadow
+    text-shadow $text-shadow
 
   h2, h4
     color $inverted-secondary-text
-    text-shadow $shadow
+    text-shadow $text-shadow
 
   h5, h6
     color $inverted-text
@@ -162,7 +163,7 @@ table
       color $white
 
   p.lead
-    text-shadow $shadow
+    text-shadow $text-shadow
 
   code, pre
     color $inverted-text
