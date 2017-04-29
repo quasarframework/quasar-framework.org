@@ -280,13 +280,13 @@ input, select, textarea
   from
     background-position 0px 0
   to
-    background-position 10000px 0
+    background-position 8000px 0
 
 @keyframes stars-slide-x
   from
     background-position 0px 0, -100px 0
   to
-    background-position 5000px 0, 10000px 0
+    background-position 7000px 0, 10000px 0
 
 .qwb-lead
   display flex
@@ -299,7 +299,7 @@ input, select, textarea
   background-size auto 100%
   background-color $primary
   text-align center
-  animation sky-slide-x 300s linear infinite reverse
+  animation sky-slide-x 300s linear infinite
 
   &:before
     content ''
@@ -313,7 +313,7 @@ input, select, textarea
     background-repeat repeat, repeat
     background-size auto 60%, auto 120%
     background-color transparent
-    animation stars-slide-x 250s linear infinite
+    animation stars-slide-x 250s linear infinite reverse
 
   p
     max-width 80%
