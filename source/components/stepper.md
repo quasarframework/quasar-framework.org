@@ -1,10 +1,10 @@
 title: Quasar Stepper
 ---
-A Stepper is an interface for users to show numbered steps or for navigation. It's usually useful when user has to follow steps to complete a process.
+A Stepper is an interface for users to show numbered steps or for navigation. It's usually useful when the user has to follow steps to complete a process, like in a wizzard.
 
 <input type="hidden" data-fullpage-demo="web-components/stepper">
 
-The navigation is handled by Quasar. User is able to go forward, back and to finish the process.
+The navigation is handled by Quasar. The user is able to go forward, back and to finish the process.
 
 ## Basic Usage
 
