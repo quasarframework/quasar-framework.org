@@ -1,19 +1,45 @@
 title: Cordova App Wrapper
 ---
-You can use Cordova to wrap your Quasar App into a native mobile App. We'll be using Quasar CLI to manage this.
+Cordova allows you to wrap your Quasar App into a native mobile App. In the following examples we'll be using Quasar CLI to manage this. After the initial setup you will need to wrap each project individually and add the desired platforms (Android and/or iOS).
 
-First install Cordova globally on your machine:
-``` bash
-$ npm install -g cordova
-```
 
-Then make sure you have the platform SDK installed on your machine, like [Android SDK](https://developer.android.com/studio/index.html#download).
-``` bash
-$ cordova requirements
-```
+## Initial setup steps
 
-## Wrap your App
-Now let's create the Wrapper for your App.
+There are some initial steps you need to take before you can wrap your apps using Cordova:
+
+1. First install Cordova globally on your machine:
+	``` bash
+	$ npm install -g cordova
+	```
+
+2. After this step you will need to install the Android platform SDK on your machine. You can [download the Android Studio here](https://developer.android.com/studio/index.html#download) and follow these [installation steps](https://developer.android.com/studio/install.html) afterwards.
+
+3. Update your ~/.bashrc file to contain the correct paths to your installation of Android Studio:
+
+	``` bash
+	export ANDROID_HOME="$HOME/Android/Sdk"
+	PATH=$PATH:$ANDROID_HOME/tools; PATH=$PATH:$ANDROID_HOME/platform-tools
+	```
+
+4. Start Android studio by changing into the folder you installed it in and run ```./studio.sh```. Next step is to install the individual SDKs:
+
+	Open the "Configure" menu at the bottom of the window:
+
+	![SDK manager](/images/Android-Studio-SDK-Menu.png "SDK manager")
+
+	Select the desired SDKs. As per May 2017 Cordova supports 4.4 and up and click on "Apply" to install the SDKs.
+
+	![SDK selection](/images/Android-Studio-SDK-selection.png "SDK selection")
+
+
+## Wrapping and configuration of your App
+
+Each Quasar project requires you to wrap your app initially. The following steps explain how to wrap your app and add the desired platforms.
+
+
+### Wrapping
+
+Run the following command to wrap your app in your project folder:
 ``` bash
 $ quasar wrap cordova
 ```
@@ -35,6 +61,11 @@ $ cordova plugin add cordova-plugin-crosswalk-webview
 
 > Another work-around and a quick solution is creating the symlink manually (after running `quasar wrap cordova`). To do so, start a command line as Administrator, change directory (`cd`) to the newly created `cordova` directory, run `mklink www ..\dist\`.
 
+### Adding platforms
+
+> **IMPORTANT**
+> Change into the `/cordova` subfolder in your Quasar project before you run any ```cordova``` commands.
+
 After making the wrapper and making sure you have the platform's SDK installed on your machine, you need to add at least a platform to your App, like this:
 ``` bash
 $ cd cordova
@@ -44,15 +75,21 @@ $ cordova platform add android
 $ cordova platform add ios
 ```
 
-> **IMPORTANT**
-> Remember all Cordova commands must be issued from within the `/cordova` subfolder.
+To verify if you fulfill all requirements run the follow command:
+
+``` bash
+$ cordova requirements
+```
+
+> On some newer Debian-based operating systems you might face a very persistent problem when running `cordova requiremets`. Please see the ["Android SDK not found" after installation](#android-sdk-not-found-after-installation-of-the-sdk) section for assistance.
+
 
 ## Cordova Plugins
 There are lots of Cordova plugins available which enables to you access the Camera, NFC, Battery Status, Contacts, Geolocation, Device motion and orientation and many more.
 
 Check out Cordova's website. Example for Battery Status: [here](https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-battery-status/index.html).
 
-## Tips
+## Tips and Troubleshooting
 
 ### Browser Simulator
 Use Google Chrome's emulator from Developer Tools. It's a fantastic tool. You can select which device to emulate, but keep in mind that it's an *emulator* and not the real deal.
@@ -75,7 +112,55 @@ If you are debugging Android Apps, you can use Google Chrome [Remote Debugging](
 ![Android Remote Debugging](/images/remote-debug.png "Android Remote Debugging")
 ![Android Remote Debugging](/images/remote-debug-2.png "Android Remote Debugging")
 
+### "Android SDK not found." after installation of the SDK
+
+Some newer Debian-based OS (e.g. ubuntu, elementary OS) might leave you with a ```Android SDK not found.``` after you installed and (correctly) configured the environment. The output might look similar to this:
+
+``` bash
+$ cordova requirements
+
+Requirements check results for android:
+Java JDK: installed 1.8.0
+Android SDK: installed true
+Android target: not installed
+Android SDK not found. Make sure that it is installed. If it is not at the default location, set the ANDROID_HOME environment variable.
+Gradle: not installed
+Could not find gradle wrapper within Android SDK. Might need to update your Android SDK.
+Looked here: /home/your_user/Android/Sdk/tools/templates/gradle/wrapper
+Error: Some of requirements check failed
+```
+
+This could have two different reasons: Usually the paths aren't configured correctly. The first step is to verify if your paths are set correctly. This can be done by running the following commands:
+
+``` bash
+$ echo $ANDROID_HOME
+```
+
+The expected output should be a path similar to this ```$HOME/Android/Sdk```. After this run:
+
+
+``` bash
+$ ls -la $ANDROID_HOME
+```
+
+To ensure the folder contains the SDK. The expected output should contain folders like 'tools', 'sources', 'platform-tools', etc.
+
+
+``` bash
+$ echo $PATH
+```
+
+The output should contain each one entry for the Android SDK 'tools'-folder and 'platform-tools'-tools. This could look like this:
+
+``` bash
+/home/your_user/bin:/home/your_user/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/your_user/Android/Sdk/tools:/home/your_user/Android/Sdk/platform-tools
+```
+
+> If you ensured your paths are set correctly and still get the error on ```cordova requirements``` you can try the following fix: [Replacing the Android Studio 'tools' folder manually](https://github.com/meteor/meteor/issues/8464#issuecomment-288112504)
+
+
 ### Setting Up Device on Linux
+
 You may bump into `?????? no permissions` problem when trying to run your App directly on an Android phone/tablet.
 
 Here's how you fix this:
