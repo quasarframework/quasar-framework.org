@@ -34,7 +34,7 @@ There are some initial steps you need to take before you can wrap your apps usin
 
 ## Wrapping and configuration of your App
 
-Each Quasar project requires you to wrap your app initially. The following steps explain how to wrap your app and add the desired platforms.
+To transform a Quasar project into a working Cordova app, you need to wrap it initially. The following steps explain how to wrap your app and add the desired platforms.
 
 
 ### Wrapping
