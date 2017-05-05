@@ -54,6 +54,7 @@ components:
   root:
     Action Sheet: $
     Dialog: $
+    Inner Loading: $
     Loading: $
     Toast: $
   Layout:
