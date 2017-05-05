@@ -38,7 +38,7 @@ figure.highlight
   margin 1rem 0
   width 100%
   max-width 58rem
-  
+
   pre
     margin 0
     padding 0
@@ -48,6 +48,40 @@ figure.highlight
 
   table
     border none
+
+
+/* Tables */
+
+table
+  min-width 100%
+  overflow hidden
+  border-spacing 0
+  border 1px solid $divider
+  border-radius $border-radius
+
+  tr:not(:first-child)
+    border-top 1px solid $divider
+
+  thead
+    color $inverted-primary-text
+    background-color $dark-primary
+
+  tr
+    display flex
+    flex-direction column
+    min-width 100%
+
+  td, th
+    padding .5rem 1rem
+    text-align left
+
+  td:first-child,
+  th:first-child
+    padding-top 1rem
+
+  td:last-child,
+  th:last-child
+    padding-bottom 1rem
 
 
 /* Inputs */
@@ -163,6 +197,7 @@ input, select, textarea
 
 .qwb-toggle
   cursor pointer
+  transition opacity .2s
 
 
 /* Dropdowns */
@@ -515,15 +550,25 @@ input, select, textarea
 
 /* Responsive */
 
-@media only screen and (min-width 48rem)
+@media only screen and (min-width $md)
+
+  table
+    tr
+      display table-row
+
+    td, th
+      padding 1rem
 
   .qwb-menu:not(.vertical)
     flex-flow row wrap
 
-    > a, > input, > select, > i
-      width auto
+  > a, > input, > select, > i
+    width auto
 
-  .qwb-toggle.only.xs+.qwb-menu.collapsible
+  .qwb-toggle.fixed
+    opacity 0
+
+  .qwb-toggle.fixed+.qwb-menu.collapsible
     dropdownVisible()
 
   .qwb-feature-item
