@@ -87,19 +87,14 @@
 /* Mobile preview */
 
 #qwb-preview
+  display none
   position fixed
-  opacity 0
   flex 0
   width 100%
   height 100%
-  max-height 0
-  max-width 0
   right 0
-  background-color transparent
+  background-color $white
   z-index 150
-
-#qwb-page.with-previewer+#qwb-preview
-  opacity 1
 
 
 /* Responsive */
@@ -124,6 +119,8 @@
   #qwb-page.with-previewer
     margin-right $preview-max-width
 
+  #qwb-page.with-previewer+#qwb-preview
+    display flex
+
   #qwb-preview
     max-width $preview-max-width
-    background-color $white
