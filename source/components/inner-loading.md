@@ -1,7 +1,7 @@
 title: Inner Loading
 ---
 
-The `<q-inner-loading>` component allows you to add a progress animation within a component. Much like the [Loading feature](components/loading.html), it's purpose is to offer visual confirmation to the user that some process is happening in the background, which takes an excessive amount of time. The `<q-inner-loading>` will add an opaque overlay over the delayed element along with a [spinner](components/spinners.html).
+The `<q-inner-loading>` component allows you to add a progress animation within a component. Much like the [Loading feature](loading.html), it's purpose is to offer visual confirmation to the user that some process is happening in the background, which takes an excessive amount of time. The `<q-inner-loading>` will add an opaque overlay over the delayed element along with a [spinner](spinners.html).
 
 The default spinners are `tail` for the Material style and iOS for the iOS style and have a default size of 42 pixels.  
 
@@ -45,4 +45,4 @@ To change the spinner, you can add it as a slotted component within the `<q-inne
 
 ```
 
-In most cases, you'll probably want to add your own spinner, color and size. For more information on spinner control, please refer to the [spinner section](components/spinners.html) of the docs.
+In most cases, you'll probably want to add your own spinner, color and size. For more information on spinner control, please refer to the [spinner section](spinners.html) of the docs.

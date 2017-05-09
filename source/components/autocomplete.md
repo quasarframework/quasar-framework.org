@@ -7,21 +7,38 @@ Autocomplete component binds to a text field and offers suggestions to the user 
 As long as this component is rendered by Vue it will capture all Ajax calls.
 ``` html
 <!-- Fills with its own input field -->
-<q-autocomplete v-model="terms" @search="search"></q-autocomplete>
+<q-autocomplete v-model="terms" @search="search" @selected="selected"></q-autocomplete>
 
 <!-- Binds to a specified textfield -->
-<q-autocomplete v-model="terms" @search="search">
-  <input v-model="terms" class="full-width" placeholder="Type 'fre'" />
-</q-autocomplete>
+<q-input v-model="terms" placeholder="Type 'fre'">
+  <q-autocomplete
+    v-model="terms"
+    @search="search"
+    :min-characters="3"
+    @selected="selected"
+  />
+</q-input>
 
 <!-- Binds to a textfield from a component, like Search -->
-<q-autocomplete v-model="terms" :delay="0" @search="search" :max-results="2">
-  <!--
-    Don't forget to set delay to 0 ^^^
-    otherwise you'll get double debounced feedback
-  -->
-  <q-search v-model="terms"></q-search>
-</q-autocomplete>
+<q-search v-model="terms">
+  <q-autocomplete
+    v-model="terms"
+    @search="search"
+    @selected="selected"
+    :debounce="0"
+  />
+</q-search>
+
+<!-- Adds a delimiter between results -->
+<q-search v-model="terms">
+  <q-autocomplete
+    v-model="terms"
+    delimiter
+    @search="search"
+    @selected="selected"
+    :debounce="0"
+  />
+</q-search>
 ```
 
 ## Vue Properties
@@ -29,11 +46,10 @@ As long as this component is rendered by Vue it will capture all Ajax calls.
 | --- | --- | --- | --- |
 | `min-characters` | Number | 1 | How many minimum characters can trigger component to suggest something? |
 | `max-results` | Number | 6 | How many results can we display at a time? |
-| `delay` | Number | 500 | How many milliseconds to wait before triggering a suggestion? |
 | `static-data` | Object | *None* | Use static suggestions. No need to do an Ajax call. Filtering is provided by Autocomplete component. |
-| `delimiter` | Boolean | false | Should suggestions popover display a delimiter between results? |
+| `debounce` | Number | 500 | Time in milliseconds, between key presses and finding new results. Good for delay, if using AJAX requests. |
 
-When using static data, specify an Object this (notice that it uses [ListItem component props](/components/list-item.html)):
+When using static data, specify an Object this (notice that it uses [QItem component props](/components/list-item.html)):
 ``` js
 // static-data
 [
@@ -65,6 +81,7 @@ Only if you want to also trigger it manually. Ajax calls trigger these methods a
 | `close()` | Close suggestions popover. |
 | `setValue()` | Set textfield string to the value supplied. |
 | `move(offset)` | Move selection cursor on suggestions popover by offset (Number, example: 3 for three selections down, -1 for one selection up). |
+| `setCurrentSelection()` | Sets the value for the current selection. |
 
 ## Vue Events
 | Vue Event | Description |

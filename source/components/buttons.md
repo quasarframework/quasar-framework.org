@@ -61,7 +61,7 @@ and the example JavaScript function could be something like this
 | `spinner`    | boolean | make a spinner if true                 |
 | `circular`   | boolean | set true if circular shape is required |
 | `icon`       | string  | name of the icon to use                |
-| `iconRight`  | string  | name of the right icon to user         |
+| `icon-right`  | string  | name of the right icon to user         |
 
 ## Vue Events
 | Vue Event | Description               |
@@ -70,7 +70,7 @@ and the example JavaScript function could be something like this
 
 It is also possible to use the html buttons and quasar classes.
 
-## more examples
+## More examples
 
 When adding an icon to a regular button, there are two possibilities for its position, where the default is left. Use `iconRight` to position the icon to the right:
 
@@ -111,5 +111,18 @@ There are also the `raised`, `clear`, `outline`, `push`, `bordered`, `round` and
 
 Make use of globally available `disabled`, `block` (sets CSS `display` property to `block`) or `full-width`.
 
+## Custom Spinner
+
+If you'd like to add a different spinner than the default, you can do so by slotting in the spinner component you'd like. 
+
+```html
+<q-btn icon="mail" class="orange" @click="simulateProgress">
+  <q-spinner-facebook slot="spinner" size="20" />
+  Get Mail
+</q-btn>
+```
+
+[See the q-spinner section](components/spinners.html) of the documenation for more details.
+
 ## Progress Buttons
-There is also another type of button that has its own Quasar Component called `<q-progress-button>`. For reference, check [the q-progress-button documentation](/components/progress-button.html).
+There is also another type of button that has its own Quasar Component called `<q-progress-button>`, which is similar to the spinner feature, but better for showing progress of an action. For reference, check [the q-progress-button documentation](/components/progress-button.html).
