@@ -22,6 +22,7 @@ Quasar supplies a way for you to upload files.
 | Vue Property | Type | Default Value | Description |
 | --- | --- | --- | --- |
 | `url` | String | (**Required**) URL or path to the server which handles the upload |
+| `name` | String | Name of the file, if it should be different than the file's name. |
 | `headers` | Object | Specify what headers need to be added to the XHR request |
 | `buttonClass` | String | CSS classes used for "Add" and "Upload" buttons |
 | `method` | String | HTTP method to use (POST/PUT). Defaults to POST |
@@ -46,3 +47,4 @@ Quasar supplies a way for you to upload files.
 | `@fail(file, xhr)` | Triggered individually for each file that has encountered error while uploading |
 | `@start` | Triggered when upload has started |
 | `@finish` | Triggered when upload of file(s) has ended (with success or failure) |
+| `@fail` | Triggered when upload of file(s) has ended with a failure |

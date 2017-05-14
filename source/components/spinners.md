@@ -45,4 +45,10 @@ The following specific spinners components are available:
 **Note**
 Having to use an extra component to identify specific spinners might seem like extra work, however, the goal is to be able to remove all other spinner components in your final build, in order to keep the overall package size of your application down to a minimum.  
 
+## Vue Properties
+| Vue Property | Type | Description |
+| --- | --- | --- |
+| `size` | Number | Number defining the size in pixels or rem units. |
+| `color` | String | CSS color string. |
+
 You can also see how spinners are used within the [QInnerLoading](/components/inner-loading.html) and [QBtn](/components/buttons.html) components.

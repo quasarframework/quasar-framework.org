@@ -100,8 +100,13 @@ $ quasar new component Hello
 $ quasar new layout layout/about/help/Hello
 # the above creates src/components/layout/about/help/Hello.vue
 ```
-
 > Add your own component templates. Quasar will be able to handle them.
+
+> The command `quasar new templateName vueFileName` simply copy the file from `/templates` to `/src/components` with given names.
+```
+# will copy file from `/template/myView.vue` to `/src/components/MyNewView.vue`
+$ quasar new myView MyNewView
+```
 
 ## App Wrappers
 Current App Wrappers available are for Cordova & Electron. More will be added in the future, to allow you to build a Google Chrome extension or a Progressive Web App, to name a few examples.
