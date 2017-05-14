@@ -12,7 +12,6 @@ Quasar Grid is a Vue Component which allows you to display data in a tabular man
   * Columns picker
   * Row selection (single or multiple)
   * Refresh functionality
-  * Tool tips for column headers with long text.
 
 **Data Table is highly optimized to support a large number of rows**, but its good to check "Performance" section below to make the most of it.
 
