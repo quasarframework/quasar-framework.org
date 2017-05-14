@@ -57,6 +57,7 @@ Example:
 | `@input` | Triggered on model value change with the new value. |
 | `@focus` | Triggered when search input gets focus. |
 | `@blur` | Triggered when search input loses focus. |
+| `@enter` | Triggered when `Enter` key is detected. |
 
 ## Coloring
 Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`, `orange`, `teal` as CSS class:
