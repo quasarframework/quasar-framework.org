@@ -32,12 +32,12 @@
       <%- section %>
       <i class="fa fa-chevron-down"></i>
     </h4>
-    <div class="list">
+    <div class="list" data-gumshoe-header>
       <% for (category in site.data.pageMenu[section]) { %>
       <% if (category !== 'root') { %>
       <h5><%- category %></h5>
       <% } %>
-      <ul>
+      <ul data-gumshoe>
         <% for (name in site.data.pageMenu[section][category]) {
             var
               html = site.data.pageMenu[section][category][name]

@@ -74,8 +74,12 @@
       &+.list
         display none
 
-      &.current
+      &.current,
+      &.active
         font-weight bold
+
+        &:before
+          content '# '
 
         &:before
           content '# '
