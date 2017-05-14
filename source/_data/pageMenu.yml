@@ -51,29 +51,41 @@ api:
     Positioning: css-$
     Other Helper Classes: css-$
 components:
-  root:
+  General:
     Action Sheet: $
-    Dialog: $
-    Inner Loading: $
     Loading: $
-    Observables: $
-    Toast: $
-  Layout:
-    Overview: layout-$
+    Layout: layout-overview
     Drawer: $
-    Toolbar: $
     Tabs: $
+  Control:
+    Ajax Bar: $
+    Back to Top: $
+    Collapsible (+ Accordion): collapsible
+    Infinite Scroll: $
+    Observables: $
+    Pagination: $
+    Pull to Refresh: $
+    Scroll Fire: $
+    Transition: $
+    Vue Transitions: $
   CSS:
     Breadcrumb: $
-    Buttons: $
     Cards: $
-    Chat: $
     HTML Tables: $
     Label: $
     List: $
     Timeline: $
-    Transition: $
-  Form Inputs:
+    Toolbar: $
+  Elements:
+    Button: $
+    Chip: $
+    FAB: floating-action-button
+    Icon: $
+    Knob: $
+    Radio: $
+    Spinner: $
+    Toggle: $
+  Forms:
     Autocomplete: $
     Checkbox: $
     Chips Textbox: $
@@ -81,9 +93,7 @@ components:
     Datetime Range: $
     Inline Datetime: $
     Input Textbox: $
-    Knob: $
     Numeric: $
-    Radio: $
     Range: $
     Double Range: $
     Rating: $
@@ -91,34 +101,25 @@ components:
     Select: $
     Dialog Select: $
     Textarea: $
-    Toggle: $
-  Vue Components:
+  Simple Components:
     Alert: $
-    Ajax Bar: $
-    Back to Top: $
-    Chip: $
-    Collapsible (+ Accordion): collapsible
-    Context Menu: $
-    Data Table: $
-    Floating Action Buttons: $
-    Infinite Scroll: $
+    Inner Loading: $
     Modal: $
-    Icon: $
-    Image Gallery: $
     List Item: $
-    Pagination: $
     Parallax: $
     Popover: $
     Progress Bar: $
     Progress Button: $
-    Pull to Refresh: $
-    Scroll Fire: $
-    Slider: $
-    Spinners: $
-    State: $
-    Stepper: $
+    Toast: $
     Tooltip: $
+  Advanced Components:
+    Chat: $
+    Context Menu: $
+    Dialog: $
+    Data Table: $
+    Image Gallery: $
+    Slider: $
+    Stepper: $
     Tree: $
     Uploader: $
     Video Embedding: $
-    Vue Transitions: $
