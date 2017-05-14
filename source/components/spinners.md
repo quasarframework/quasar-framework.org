@@ -19,7 +19,7 @@ A Spinner is used to show the user a process is currently taking place. You can 
 | Vue Property | Type | Description |
 | --- | --- | --- |
 | `name` | String | One of the values described below this table. |
-| `size` | Number | Number defining the size in pixels. |
+| `size` | Number | Number defining the size in pixels or rem units. |
 | `color` | String | CSS color string. |
 
 Following names are available: `audio`, `ball`, `bars`, `circles`, `dots`, `grid`, `hearts`, `ios`, `oval`, `puff`, `rings`, `tail`, `facebook`, `gears`, `hourglass`, `infinity`, `pie`, `radio`.

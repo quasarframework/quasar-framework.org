@@ -14,6 +14,7 @@ import { Platform } from 'quasar'
 | Platform.is.mobile | boolean | Is the code running on a mobile device? |
 | Platform.is.cordova | boolean | Is the code running within Cordova? |
 | Platform.is.desktop | boolean | Is the code running on a desktop browser? |
+| Platform.is.chromeExt | boolean | Is the code running is a Chrome extension environment? |
 | Platform.has.touch | boolean | Is the code running on a touch capable screen? |
 | Platform.within.iframe | boolean | Is the App running within an IFRAME? |
 

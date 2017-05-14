@@ -71,6 +71,9 @@ Only if you want to also trigger it manually. Ajax calls trigger these methods a
 | --- | --- |
 | `@search(terms, Function done)` | Triggered by the component when a search should start and offer some results. |
 | `@selected(item)` | Triggered when user has selected a suggestion. |
+| `@selected(item)` | Triggered when user has selected a suggestion. |
+| `@open` | Triggered when the selections pop-up opens. |
+| `@closed` | Triggered when selections pop-up closes. |
 
 Example for `search` event:
 
