@@ -56,6 +56,7 @@ components:
     Dialog: $
     Inner Loading: $
     Loading: $
+    Observables: $
     Toast: $
   Layout:
     Overview: layout-$
