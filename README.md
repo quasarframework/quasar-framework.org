@@ -16,9 +16,9 @@
 
 ## Contributing
 
-I'm excited if you want to contribute to Quasar under any form (report bugs, write a plugin, fix an issue, write a new feature).
+We're excited if you want to contribute to Quasar under any form (report bugs, write a plugin, fix an issue, write a new feature).
 
-I'm only asking that you [read this](http://quasar-framework.org/guide/contributing.html) first.
+We only ask that you [read this](http://quasar-framework.org/guide/contributing.html) first.
 
 ## Run locally
 
