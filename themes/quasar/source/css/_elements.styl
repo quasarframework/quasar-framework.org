@@ -348,12 +348,13 @@ input, select, textarea
     left 0
     right 0
     bottom 0
-    background-image url(../images/stars.png), url(../images/stars.png)
+    opacity .7
+    background-image url(../images/stars.png), url(../images/stars.png), url(../images/stars.png)
     background-attachment fixed
-    background-repeat repeat, repeat
-    background-size auto 60%, auto 120%
+    background-repeat repeat, repeat, repeat
+    background-size auto 50%, auto 100%, auto 150%
     background-color transparent
-    animation stars-slide-x 250s linear infinite reverse
+    animation stars-slide-x 550s linear infinite reverse
 
   p
     max-width 80%
@@ -535,7 +536,7 @@ input, select, textarea
   background-size contain
 
   &.vertical
-    margin 2rem auto !important
+    margin 2rem auto 2.5rem !important
 
 .inverted .qwb-logotype
   background-image url(https://cdn.rawgit.com/quasarframework/quasar-art/729b1177/dist/svg/quasar-logotype-inverted.svg)
