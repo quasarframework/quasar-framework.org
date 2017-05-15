@@ -1,4 +1,4 @@
-![Quasar Framework logo](https://cdn.rawgit.com/quasarframework/quasar-art/9addb0ba/dist/128/quasar-logo.png)
+![Quasar Framework logo](https://cdn.rawgit.com/quasarframework/quasar-art/863c14bd/dist/svg/quasar-logo-full-inline.svg)
 
 # Quasar Framework Official Website
 
