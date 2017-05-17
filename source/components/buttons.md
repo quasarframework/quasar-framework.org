@@ -29,12 +29,12 @@ Primary button and spinning
 
 ```html
 <!-- Regular shaped -->
-<q-btn loader class="primary" @click="clickMethod">
+<q-btn loader color="primary" @click="clickMethod">
   Button Label
 </q-btn>
 
 <!-- Circular shaped; only use icon as content -->
-<q-btn v-model="submit" loader circular class="primary" @click="clickMethod">
+<q-btn v-model="submit" loader circular color="primary" @click="clickMethod">
   <q-spinner-oval slot="loading" />
 </q-btn>
 ```
@@ -71,12 +71,12 @@ When adding an icon to a regular button, there are two possibilities for its pos
 
 ``` html
 <!-- icon will be placed on the left -->
-<q-btn icon='mail' class="primary">
+<q-btn icon='mail' color="primary">
   Button Label
 </q-btn>
 
 <!-- icon will be placed on the right -->
-<q-btn iconRight='mail' class="teal">
+<q-btn iconRight='mail' color="teal">
   Button Label
 </q-btn>
 ```
@@ -86,11 +86,11 @@ When adding an icon to a regular button, there are two possibilities for its pos
 Use `small` or `big` as attributes. You don't need to specify `medium` because that's the default size.
 
 ``` html
-<q-btn class="primary" small>
+<q-btn color="primary" small>
   Small Button
 </q-btn>
 
-<q-btn class="primary" big>
+<q-btn color="primary" big>
   Big Button
 </q-btn>
 ```
@@ -173,6 +173,3 @@ If you'd like to add a different spinner than the default, you can do so by slot
 ```
 
 [See the q-spinner section](components/spinners.html) of the documentation for more details.
-
-## Progress Buttons
-There is also another type of button that has its own Quasar Component called `<q-progress-button>`, which is similar to the spinner feature, but better for showing progress of an action. For reference, check [the q-progress-button documentation](/components/progress-button.html).
