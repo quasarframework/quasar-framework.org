@@ -11,7 +11,7 @@ There are two types of FABs: expandable (has sub-actions) and non-expandable. **
 
 ``` html
 <!-- Non-expandable -->
-<button color="primary" @click="method()">
+<button round color="primary" @click="method()">
   Button label
 </button>
 
@@ -35,7 +35,7 @@ There are two types of FABs: expandable (has sub-actions) and non-expandable. **
 </q-fab>
 ```
 
-We'll continue describing only the expandable FAB, as the non-expandable FAB is, as mentioned above, a simple [circular button](/components/buttons.html).
+We'll continue describing only the expandable FAB, as the non-expandable FAB is, as mentioned above, a simple [round button](/components/buttons.html).
 
 ## Vue Properties
 > These properties and methods apply to `<q-fab>` only.
@@ -69,29 +69,29 @@ In order to position the FAB, you can use the [Quasar CSS Fixed Positioning](/ap
 ``` html
 <!-- button positioned bottom right -->
 <button
-  color="primary" class="fixed-bottom-right"
+  color="primary" round class="fixed-bottom-right"
   @click="method()"
 >
   Button label
 </button>
 
 <q-fab
-  class="fixed-bottom-left"
+  class="fixed"
+  style="right: 18px; bottom: 18px;"
   @click="alert()"
   color="primary"
   active-icon="alarm"
   direction="up"
-  style="right: 18px; bottom: 18px;"
 >
   <q-small-fab
     class="white"
-    @click.native="someMethod()"
+    @click="someMethod()"
     icon="mail"
   ></q-small-fab>
 
   <q-small-fab
     class="white"
-    @click.native="someMethod()"
+    @click="someMethod()"
     icon="alarm"
   ></q-small-fab>
 </q-fab>
@@ -115,13 +115,13 @@ The cool bit about FABs is, they give the user the ability to select from a numb
 >
   <q-small-fab
     class="white"
-    @click.native="someMethod()"
+    @click="someMethod()"
     icon="mail"
   ></q-small-fab>
 
   <q-small-fab
     class="white"
-    @click.native="someMethod()"
+    @click="someMethod()"
     icon="alarm"
   ></q-small-fab>
 </q-fab>
@@ -142,10 +142,10 @@ The cool bit about FABs is, they give the user the ability to select from a numb
 ## Vue Events
 | Vue Method | Description |
 | --- | --- |
-| `@click.native` | Triggered when clicking/tapping on the small fab. |
+| `@click` | Triggered when clicking/tapping on the small fab. |
 
 **Note**
-Clicking on a `q-small-fab' will automatically close the list of sub-actions and return the FAB to its original state. Also always use the `.native` modifier for the click event. 
+Clicking on a `q-small-fab' will automatically close the list of sub-actions and return the FAB to its original state.
 
 ## Labeling the FAB Actions with Tooltips
 You can also add labels to the actions with a Tooltip. Below is an example of how to do this.
@@ -155,7 +155,7 @@ You can also add labels to the actions with a Tooltip. Below is an example of ho
   color="primary"
   active-icon="alarm"
   direction="right"
-  class="fixed-top-left"
+  class="fixed"
   style="top: 10px; left: 10px"
 >
   <q-small-fab color="purple" @click="toast('mail')" icon="mail">
