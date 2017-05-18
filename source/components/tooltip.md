@@ -1,12 +1,13 @@
 title: Tooltip
 ---
-Quasar Tooltips should be used when you want to offer the user more information about a certain item in your App. When mouse hovering (or tapping on mobile platforms) the target element the Tooltip appears.
+Quasar Tooltips should be used when you want to offer the user more information about a certain item in your App. When hovering the mouse over the target element (or quickly tapping on mobile platforms), the Tooltip will appear.
 
 <input type="hidden" data-fullpage-demo="web-components/tooltip">
 
 ## Basic Usage
-In the example below we use a Button (as a target) and when hovering it Quasar will display a List.
-You can replace the Button and the List with any DOM elements or components you like.
+In the example below we use a button (as a target) and when hovering over it, Quasar will display a list.
+
+You can replace the button and the list with any DOM elements or components you like.
 ``` html
 <button ref="target" class="primary">
   <i>mail</i>
@@ -24,7 +25,7 @@ You can replace the Button and the List with any DOM elements or components you 
 </button>
 ```
 
-The idea is to place `<q-tooltip>` inside your DOM element / component that you want to be the trigger. Don't worry about Tooltip content inheriting CSS from the container as the Tooltip will be injected as a direct child of `<body>`.
+The idea is to place `<q-tooltip>` inside your DOM element / component, when you want it to be the trigger for the Tooltip. Don't worry about Tooltip content inheriting CSS from the container. This won't occur, since the Tooltip will be injected as a direct child of `<body>`.
 
 ## Vue Properties
 | Vue Property | Type | Description |
@@ -45,6 +46,6 @@ The idea is to place `<q-tooltip>` inside your DOM element / component that you 
 | `close()` | Close Popover. |
 
 ## Handling Positioning
-Position of the Tooltip can be customized. It keeps account of the `anchor` and `self` optional Vue properties. See demo and play with them.
+The position of the Tooltip can be customized. It keeps account of the `anchor` and `self` optional Vue properties. Check out the demo and play with them.
 
-The final position of the Tooltip popup is calculated so that it will be displayed on the available screen real estate, switching to right-side and/or top-side when necessary.
+The final position of the Tooltip popup is calculated, so that it will be displayed on the available screen real estate, switching to the right-side and/or top-side when necessary.
