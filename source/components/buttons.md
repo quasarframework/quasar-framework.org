@@ -49,7 +49,7 @@ In the example above, the `clickMethod` would be a function to control the value
 | `loader`     | Boolean | Display a spinner, if true. Requires the value prop. |
 | `icon`       | String  | Name of the icon to use. |
 | `icon-right` | String  | Name of the right icon to use. |
-| `no-upper-case` |Boolean | Set true, if inner HTML should be only lowercase. |
+| `no-caps`    | Boolean | Set true, if inner HTML should be only lowercase. |
 | `round`      | Boolean | Set true, if you want a round button. |
 | `outline`    | Boolean | Set true, if you want an outlined button. |
 | `flat`       | Boolean | Set true, if you want a flat button. |
