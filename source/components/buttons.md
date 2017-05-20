@@ -34,7 +34,7 @@ Primary button and spinning
 </q-btn>
 
 <!-- Circular shaped; only use icon as content -->
-<q-btn v-model="submit" loader circular color="primary" @click="clickMethod">
+<q-btn v-model="submit" loader round color="primary" @click="clickMethod">
   <q-spinner-oval slot="loading" />
 </q-btn>
 ```
@@ -47,9 +47,9 @@ In the example above, the `clickMethod` would be a function to control the value
 | `value`      | Boolean | The v-model value assigned, when using the loader feature. |
 | `disable`    | Boolean | The button is disabled, if true. |
 | `loader`     | Boolean | Display a spinner, if true. Requires the value prop. |
-| `circular`   | Boolean | Set true, if circular shape is required. |
 | `icon`       | String  | Name of the icon to use. |
 | `icon-right` | String  | Name of the right icon to use. |
+| `no-caps`    | Boolean | Set true, if inner HTML should be only lowercase. |
 | `round`      | Boolean | Set true, if you want a round button. |
 | `outline`    | Boolean | Set true, if you want an outlined button. |
 | `flat`       | Boolean | Set true, if you want a flat button. |
