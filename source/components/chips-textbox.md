@@ -33,7 +33,7 @@ Add `has-error` CSS class:
 | `readonly` | Boolean | If readonly user can not add or remove chips. |
 | `disable` | Boolean | If disabled user can not add or remove chips. |
 | `placeholder` | String | Placeholder for the textfield. |
-| `chipClasses` | String, Object, Array | The CSS class properties to be assigned to the chips. |
+| `chip-classes` | String, Object, Array | The CSS class properties to be assigned to the chips. |
 
 ## Vue Methods
 | Vue Method | Description |
