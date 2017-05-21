@@ -14,7 +14,7 @@ Before diving in, make sure you know how to configure a [Datetime component](/co
   v-model="range"
   :min="min"
   :max="max"
-></q-datetime>
+></q-datetime-range>
 
 <!-- Time Range -->
 <q-datetime-range
@@ -22,7 +22,7 @@ Before diving in, make sure you know how to configure a [Datetime component](/co
   v-model="range"
   :min="min"
   :max="max"
-></q-datetime>
+></q-datetime-range>
 
 <!-- Datetime Range -->
 <q-datetime-range
@@ -30,7 +30,7 @@ Before diving in, make sure you know how to configure a [Datetime component](/co
   v-model="range"
   :min="min"
   :max="max"
-></q-datetime>
+></q-datetime-range>
 ```
 
 ## Vue Properties
