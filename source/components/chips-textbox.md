@@ -1,5 +1,7 @@
 title: Quasar Chips Textbox
 ---
+The Quasar Chips Textbox allows user to enter a group of text items, which is also editable in the form of quick deletion of the items in the list.
+
 <input type="hidden" data-fullpage-demo="form/text-input/chips">
 
 ## Basic Usage
@@ -16,7 +18,7 @@ title: Quasar Chips Textbox
 
 > The model variable must be an Array.
 
-User can remove a Chip by clicking/tapping on the `close` icon. Adding a Chip is done by clicking/tapping on the component, typing and then hitting the `send` icon or `<ENTER>` key.
+The user can remove a Chip by clicking/tapping on the `close` icon. Adding a Chip is done by clicking/tapping on the component, typing and then hitting the `send` icon or `<ENTER>` key.
 
 ### Error State
 Add `has-error` CSS class:
@@ -27,9 +29,11 @@ Add `has-error` CSS class:
 ## Vue Properties
 | Vue Property | Type | Description |
 | --- | --- | --- |
+| `value` | Array | (**required**) The model data for the initial rendering of chips. |
 | `readonly` | Boolean | If readonly user can not add or remove chips. |
 | `disable` | Boolean | If disabled user can not add or remove chips. |
 | `placeholder` | String | Placeholder for the textfield. |
+| `chip-classes` | String, Object, Array | The CSS class properties to be assigned to the chips. |
 
 ## Vue Methods
 | Vue Method | Description |
@@ -54,3 +58,5 @@ Add `has-error` CSS class:
   </div>
 </div>
 ```
+
+Please refer to the [Chip component documentation](/component/chip.html) for more details. 
