@@ -185,13 +185,13 @@ The Tabs Router component is just like the `<q-tab>` component and shares the sa
 ``` html
 <!-- Tabs -->
 <q-tabs>
-  <q-tab
+  <q-route-tab
     icon="mail"
     to="/mails"
     exact
     slot="title"    
   />
-  <q-tab
+  <q-route-tab
     icon="alarm"
     to="/alarms"
     exact
@@ -209,14 +209,14 @@ You will, in most cases, want to use tabs within a layout component. Below is an
 <q-layout>
   ...
   <q-tabs slot="navigation">
-    <q-tab
+    <q-route-tab
       icon="mail"
       route="/mails"
       exact
       slot="title"
     />
 
-    <q-tab
+    <q-route-tab
       icon="alarm"
       route="/alarms"
       exact
