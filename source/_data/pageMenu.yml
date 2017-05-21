@@ -60,6 +60,7 @@ components:
     Toast: $
   Layout:
     Overview: layout-$
+    Fixed Position: $
     Drawer: $
     Toolbar: $
     Tabs: $
