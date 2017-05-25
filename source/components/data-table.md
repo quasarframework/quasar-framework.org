@@ -43,7 +43,7 @@ _Best way to display a Grid is on a desktop so you might want to check that firs
  
   <!-- Custom renderer for "action" column with button for custom action -->
   <template slot='col-action' scope='cell'>
-      <button class="primary" @click='doSomethingMethod(cell.row.id)'>View</button>
+    <button class="primary" @click='doSomethingMethod(cell.row.id)'>View</button>
   </template>
 
   <!-- Custom renderer when user selected one or more rows -->
