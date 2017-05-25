@@ -57,7 +57,7 @@ There are two types of progress bars you can display in a Dialog: determinate (w
 
 ### Determinate Mode
 ``` js
-import { Dialog ,Toast } from 'quasar'
+import { Dialog, Toast } from 'quasar'
 
 // "progress" property from "configObj"
 let progress = {
