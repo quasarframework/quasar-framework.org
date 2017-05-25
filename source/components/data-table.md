@@ -40,6 +40,11 @@ _Best way to display a Grid is on a desktop so you might want to check that firs
     </span>
     <span v-else class="label text-white bg-negative">{{cell.data}}</span>
   </template>
+ 
+  <!-- Custom renderer for "action" column with button for custom action -->
+  <template slot='col-action' scope='cell'>
+      <button class="primary" @click='doSomethingMethod(cell.row.id)'>View</button>
+  </template>
 
   <!-- Custom renderer when user selected one or more rows -->
   <template slot="selection" scope="selection">
@@ -125,9 +130,10 @@ config = {
     options: [5, 10, 15, 30, 50, 500]
   },
 
-  // (optional) User can make selections. When "single" is specified
-  // then user will be able to select only one row at a time.
-  // Otherwise use "multiple".
+  // (optional) Select one or more rows for an action 
+  // "single" adds a column with radio buttons for single row selection
+  // "multiple" adds a column with checkboxes for multiple row selection
+  // omitting the property will result in no selection column at all
   selection: 'multiple',
 
   // (optional) Override default messages when no data is available
@@ -272,6 +278,7 @@ A field is a property name of a row. Example of Data Table `data` Vue property (
 ``` js
 data = [
   {
+    id: 1,
     date: '21-10-2016',
     msg: 'Some message',
     ...
