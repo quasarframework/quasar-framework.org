@@ -93,30 +93,26 @@ const timeout = setInterval(() => {
 import { Dialog, Toast } from 'quasar'
 
 const dialog = Dialog.create({
-  label: 'Indeterminate Progress',
-  icon: 'hourglass_full',
-  handler () {
-    const dialog = Dialog.create({
-      title: 'Progress',
-      message: 'Computing...',
-      progress: {
-        indeterminate: true
-      },
-      buttons: [
-        {
-          label: 'Cancel',
-          handler (data) {
-            clearTimeout(timeout)
-            Toast.create('Canceled...')
-          }
-        }
-      ]
-    })
+  title: 'Progress',
+  message: 'Computing...',
+  progress: {
+    indeterminate: true
+  },
+  buttons: [
+    {
+      label: 'Cancel',
+      handler (data) {
+        clearTimeout(timeout)
+        Toast.create('Canceled...')
+      }
+    }
+  ]
+})
 
-    const timeout = setTimeout(() => {
-      clearInterval(timeout)
-      dialog.close()
-    }, 3000)
+const timeout = setTimeout(() => {
+  clearInterval(timeout)
+  dialog.close()
+}, 3000)
 ```
 
 ## Dialog with Form Components
