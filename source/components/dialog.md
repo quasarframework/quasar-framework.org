@@ -2,7 +2,7 @@ title: Quasar Dialog
 ---
 Quasar Dialogs are a great way to offer the user the ability to choose a specific action or list of actions. They also can provide the user with important information, or require them to make a decision (or multiple decisions).
 
-From a UI perspective, you can think of Alerts as a type of “floating” modal, that covers only a portion of the screen. This means Alerts should only be used for quick actions like password verification, small App notifications, or quick options. More in depth user flows should be reserved for full screen ​Modals​.
+From a UI perspective, you can think of Dialogs as a type of “floating” modal, which covers only a portion of the screen. This means Dialogs should only be used for quick actions, like password verification, small App notifications or quick options. More in depth user flows should be reserved for full screen ​Modals​.
 
 <input type="hidden" data-fullpage-demo="global/dialog">
 
@@ -10,7 +10,7 @@ From a UI perspective, you can think of Alerts as a type of “floating” modal
 ``` js
 import { Dialog } from 'quasar'
 
-(Object with `close` method) Dialog.create(configObj)
+Dialog.create(configObj) (Object with `close` method)
 ```
 
 A real life example:
@@ -33,76 +33,80 @@ Dialog.create({
 ```
 
 > **IMPORTANT**
-> <br>When user hits the browser/phone/tablet back button, the Dialog will get closed automatically..
+> <br>When the user hits the browser/phone/tablet back button, the Dialog will be closed automatically..
 > <br>Also, when on a browser, hitting the &lt;ESCAPE&gt; key also closes the Dialog.
 
-## Configuring Dialog
-Creating a Dialog uses an Object as parameter to configure it (*configObj* above). Properties of this Object (all are optional):
+## Dialog Config Object
+In order to create a Dialog, you'll need an object as a parameter to configure it (*configObj* above). Below are the properties of this object (all properties are optional):
 
 | Property Name | Type | Description |
 | --- | --- | --- |
 | `title` | String | Title of the Dialog. |
 | `message` | String | Additional message below the title. |
+| `form` | Object | Configure what types of form components to show. |
 | `buttons` | Array of Objects | Bottom buttons for the Dialog. Regardless of the `handler` that you specify, each button closes the Dialog. You can also specify a String instead of an Object as part of your Array for buttons that only closes the Dialog. |
-| `stackButtons` | Boolean | If you want your buttons placed one below the previous one instead of on the same row. |
+| `stackButtons` | Boolean | If you want your buttons placed one below the previous one instead of in the same row. |
 | `nobuttons` | Boolean | When you don't want any buttons on your Dialog. By default, if no buttons are specified, an "OK" button is added. This property avoids this default addition. |
 | `progress` | Object | When you want to make your Dialog display a progress bar. Check [Progress Dialog](#Progress-Dialog) below. |
-| `form` | Object | Configure what types of form components to show. |
-| `onDismiss` | Function | Function to be called when Dialog gets closed (or dismissed). |
-| `noBackdropDismiss` | Boolean | Can Dialog be dismissed by clicking/tapping on backdrop? |
-| `noEscDismiss` | Boolean | Can Dialog be dismissed by hitting Escape key? |
+| `onDismiss` | Function | Function to be called when the Dialog gets closed (or dismissed). |
+| `noBackdropDismiss` | Boolean | If set true, the Dialog cannot be dismissed by clicking/tapping on backdrop. |
+| `noEscDismiss` | Boolean | If set true, the Dialog cannot be dismissed by hitting Escape key. |
 
 ## Progress Dialog
-There are two types of progress you can display: determinate (when you can quantify the progress) or indeterminate (when you don't know the moment you're done).
+There are two types of progress bars you can display in a Dialog: determinate (when you can quantify the progress) or indeterminate (when you don't know the moment the progress will be done).
 
 ### Determinate Mode
 ``` js
-import { Dialog } from 'quasar'
+import { Dialog, Toast } from 'quasar'
 
 // "progress" property from "configObj"
 let progress = {
-  model: 25
+  model: 5
 }
 
 const dialog = Dialog.create({
   title: 'Progress',
   message: 'Computing...',
   progress,
-  buttons: ['Cancel'],
-  onDismiss () {
-    clearInterval(timeout)
-    Toast.create('Canceled on progress ' + progress.model)
-  },
-  noBackdropDismiss: true,
-  noEscDismiss: true
+  buttons: [
+    {
+      label: 'Cancel',
+      handler () {
+        clearInterval(timeout)
+        Toast.create('Canceled on progress ' + progress.model)
+      }
+    }
+  ]
 })
 
 const timeout = setInterval(() => {
-  progress.model += Math.floor(Math.random() * 5) + 1
-  if (progress.model >= 42) {
+  progress.model += Math.floor(Math.random() * 5) + 5
+  if (progress.model >= 96) {
     clearInterval(timeout)
     dialog.close()
   }
-}, 500)
+}, 300)
 ```
 
 ### Indeterminate Mode
 ``` js
-import { Dialog } from 'quasar'
+import { Dialog, Toast } from 'quasar'
 
 const dialog = Dialog.create({
   title: 'Progress',
   message: 'Computing...',
-  progress: { // <<<<<<<
+  progress: {
     indeterminate: true
   },
-  buttons: ['Cancel'],
-  onDismiss () {
-    clearTimeout(timeout)
-    Toast.create('Canceled...')
-  },
-  noBackdropDismiss: true,
-  noEscDismiss: true
+  buttons: [
+    {
+      label: 'Cancel',
+      handler (data) {
+        clearTimeout(timeout)
+        Toast.create('Canceled...')
+      }
+    }
+  ]
 })
 
 const timeout = setTimeout(() => {
@@ -112,9 +116,9 @@ const timeout = setTimeout(() => {
 ```
 
 ## Dialog with Form Components
-You can combine multiple form components (textfields, chips, radios, checkboxes, ...) together to configure your Dialog through the `form` Object property.
+You can combine multiple form components (textfields, chips, radios, checkboxes, ...), to configure your Dialog through the `form` Object property.
 
-Each property of `form` is an Object itself. The key will be used later when user closes the Dialog. For example:
+Each property of `form` is an Object itself. The key will be used later, when the user closes the Dialog. For example:
 ``` js
 {form: {name: {...}}}
 // will pass a "name" property later:
@@ -123,21 +127,21 @@ handler (data) {
 }
 ```
 
-Each Form Component has a certain syntax that you must follow as described below. At the end you'll learn how to separate these into sections by using a "heading".
+Each Form Component has a certain syntax that you must follow as described below. At the end, you'll learn how to separate these into sections by using a "heading".
 
-> Default value for following Form Components is taken from the `model` property.
+> The default value for the following Form Components is taken from the `model` property.
 
 ### Textfields
 You can configure input textboxes, textareas, numeric input textboxes and chips:
 
 ``` js
-import { Dialog } from 'quasar'
+import { Dialog, Toast } from 'quasar'
 
 Dialog.create({
   title: 'Prompt',
   form: {
     name: {
-      type: 'textbox',
+      type: 'input',
       label: 'Textbox',
       model: ''
     },
@@ -183,7 +187,7 @@ Dialog.create({
 
 ### Radios
 ``` js
-import { Dialog } from 'quasar'
+import { Dialog, Toast } from 'quasar'
 
 Dialog.create({
   title: 'Radios',
@@ -193,7 +197,7 @@ Dialog.create({
       type: 'radio',
       model: 'opt1',
       items: [
-        {label: 'Option 1', value: 'opt1'},
+        {label: 'Option 1', value: 'opt1', color: 'secondary'},
         {label: 'Option 2', value: 'opt2'},
         {label: 'Option 3', value: 'opt3'}
       ]
@@ -214,26 +218,34 @@ Dialog.create({
 
 ### Checkboxes & Toggles
 ``` js
-import { Dialog } from 'quasar'
+import { Dialog, Toast } from 'quasar'
 
 Dialog.create({
   title: 'Checkbox & Toggle',
   message: 'Message can be used for all types of Dialogs.',
   form: {
+    header1: {
+      type: 'heading',
+      label: 'Checkboxes'
+    },
     group1: {
       type: 'checkbox',
       items: [
         {label: 'Option 1', value: 'opt1', model: true},
-        {label: 'Option 2', value: 'opt2', model: false},
-        {label: 'Option 3', value: 'opt3', model: false}
+        {label: 'Option 2', value: 'opt2', model: false, color: 'secondary'},
+        {label: 'Option 3', value: 'opt3', model: false, color: 'amber'}
       ]
+    },
+    header2: {
+      type: 'heading',
+      label: 'Toggles'
     },
     group2: {
       type: 'toggle',
       items: [
         {label: 'Option 1', value: 'opt1', model: true},
-        {label: 'Option 2', value: 'opt2', model: false},
-        {label: 'Option 3', value: 'opt3', model: true}
+        {label: 'Option 2', value: 'opt2', model: false, color: 'secondary'},
+        {label: 'Option 3', value: 'opt3', model: false, color: 'amber'}
       ]
     }
   },
@@ -243,17 +255,68 @@ Dialog.create({
       label: 'Ok',
       handler (data) {
         Toast.create('Returned ' + JSON.stringify(data))
-        // data.group1 is ['opt1']
-        // data.group2 is ['opt1', 'opt3']
       }
     }
   ]
 })
 ```
 
+### Ranges
+
+``` js
+import { Dialog, Toast } from 'quasar'
+
+Dialog.create({
+  title: 'Ranges',
+  form: {
+    range: {
+      type: 'range',
+      label: 'Range',
+      min: 10,
+      max: 20,
+      withLabel: true,
+      model: 12,
+      color: 'secondary'
+    },
+    doubleRange: {
+      type: 'double-range',
+      label: 'Double Range',
+      model: {
+        min: 7,
+        max: 12
+      },
+      min: 5,
+      max: 15,
+      withLabel: true
+    },
+    step: {
+      type: 'range',
+      label: 'With step & snap',
+      model: -6,
+      min: -10,
+      max: 10,
+      step: 4,
+      snap: true,
+      markers: true,
+      withLabel: true
+    }
+  },
+  buttons: [
+    'Cancel',
+    {
+      label: 'Ok',
+      handler (data) {
+        Toast.create('Returned ' + JSON.stringify(data))
+      }
+    }
+  ]
+})
+
+```
+
 ### Rating
 ``` js
-import { Dialog } from 'quasar'
+import { Dialog, Toast } from 'quasar'
 
 Dialog.create({
   title: 'Rating',
@@ -287,9 +350,9 @@ Dialog.create({
 ```
 
 ### Headings
-Since you can combine components however you want, sometimes you may need to separate into sections so Quasar comes to our help with a "heading" type:
+Since you can combine different components within the Dialog, sometimes you may need to separate them into sections. For this purpose Quasar offers the "heading" type:
 ``` js
-import { Dialog } from 'quasar'
+import { Dialog, Toast } from 'quasar'
 
 Dialog.create({
   ...,
@@ -329,7 +392,7 @@ See demo with "Multiple Selections".
 
 ## More Examples
 
-### Alert Example
+### Alert
 ``` js
 import { Dialog } from 'quasar'
 
@@ -339,7 +402,7 @@ Dialog.create({
 })
 ```
 
-### Confirm Example
+### Confirm
 ``` js
 import { Dialog } from 'quasar'
 
@@ -371,19 +434,20 @@ Dialog.create({
   buttons: [
     {
       label: 'Disagree',
-      classes: 'negative clear',
+      color: 'negative',
+      outline: true,
       style: 'text-decoration: underline'
     },
     {
       label: 'Agree',
-      classes: 'positive'
+      color: 'positive'
     }
   ]
 })
 ```
 
 ### Stacked Buttons
-If you have many buttons or buttons with lots of text, you can use set `stackButtons` property to `true` when creating your Dialog. This will make your buttons be displayed on separate rows:
+If you have many buttons or buttons with lots of text, you can set the `stackButtons` property to `true` when creating your Dialog. This will display your in separate rows:
 
 ``` js
 import { Dialog } from 'quasar'
@@ -395,12 +459,14 @@ Dialog.create({
 })
 ```
 
-### Buttons Preventing Dialog Close
-You can prevent a button from closing the Dialog. Useful when you need to do some validations on form fields.
+### Prevent Closing the Dialog
+You can prevent a button from closing the Dialog. This is useful, when you need to do some validations on form fields.
 
-Add `preventClose: true` to the button definition. This will make the `handler()` method receive a second parameter which when called it closes the Dialog. Not calling it obviously keeps the Dialog opened.
+Add `preventClose: true` to the button definition. This will make the `handler()` method receive a second parameter, which when called, closes the Dialog. Not calling it obviously keeps the Dialog opened.
 
 ``` js
+import { Dialog, Toast } from 'quasar'
+
 Dialog.create({
   title: 'Prevent Close',
   message: 'Having "Prevent" checkbox ticked and then hitting "Try to Close" button will prevent the dialog from closing.',
@@ -415,10 +481,10 @@ Dialog.create({
   buttons: [
     {
       label: 'Try to Close',
-      preventClose: true, // <<<<<<<
+      preventClose: true,
       handler (data, close) {
         if (!data.prevent.length) {
-          close(() => { // <<<<<<<
+          close(() => {
             Toast.create(`Finally. It's closed now.`)
           })
           return
@@ -432,7 +498,7 @@ Dialog.create({
 
 ### Complex Dialog with Form Components
 ``` js
-import { Dialog } from 'quasar'
+import { Dialog, Toast } from 'quasar'
 
 Dialog.create({
   title: 'Prompt',
