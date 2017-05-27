@@ -80,6 +80,7 @@ components:
     Chips Textbox: $
     Datetime: $
     Datetime Range: $
+    Field: $
     Inline Datetime: $
     Input Textbox: $
     Knob: $
@@ -87,6 +88,7 @@ components:
     Radio: $
     Range: $
     Double Range: $
+    Option Group: $
     Rating: $
     Search: $
     Select: $
