@@ -42,6 +42,7 @@ There are a number of properties available:
 |`square` | Boolean | Gives the chip right-angled corners. Rounded corners are default. |
 |`floating` | Boolean | Allows the chip to float over other elements. |
 |`pointing` | String | Adds a carat to the chip, pointing either `up`, `right`, `down` or `up`.  |
+| `color` | String | The color the chip should be. | 
 |`closable` | Boolean | Adds a close button to the right of the chip, which when clicked, will remove the chip. |
 |`detail` | Boolean | Highlights the area of the icon, should there be one. |
 
@@ -50,10 +51,7 @@ There are a number of properties available:
 You can add the ability to close the chip too.
 
 ``` html
-<q-chip 
- closable
- class="bg-red text-white"
- >
+<q-chip closable class="bg-red text-white">
   <img slot="left" src="~assets/boy-avatar.png">Joe
 </q-chip>
 ```
@@ -69,14 +67,30 @@ You can also use a chip to label a button.
 You can also use chips as pointing labels.
 
 ```html
+  <q-chip pointing="up" class="pointing-up bg-primary text-white">
+    Pointing Up
+  </q-chip>
+```
 
-  <q-chip pointing="up" class="pointing-up bg-primary text-white">Pointing Up</q-chip>
+You can create advanced label chips, with an avatar/ image and a closeable button to delete the chip. 
 
+```html
+  <q-chip closable color="light" class="text-black">
+    <img slot="left" src="~assets/boy-avatar.png">John
+  </q-chip>
+```
+
+You can also create chips that look like tags.
+
+```html
+<q-chip tag color="light" class="text-black">
+  New <q-icon class="on-right" name="mail" />
+</q-chip>
 ```
 
 ## CSS
 
-Much like [the button component](/components/buttons.html), you can add [Quasar Colors](/api/css-color-palette.html) and other styling to chips too. Below is an example of a chip, but with shadowing.
+Much like [the button component](/components/buttons.html), you can add other CSS styling attribute to chips too. Below is an example of a chip, but with shadowing.
 
 ```html
 <q-chip square class="bg-secondary text-white shadow-1">10k</q-chip>
