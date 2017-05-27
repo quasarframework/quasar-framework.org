@@ -51,7 +51,7 @@ There are a number of properties available:
 You can add the ability to close the chip too.
 
 ``` html
-<q-chip closable class="bg-red text-white">
+<q-chip closable color="bg-red" class="text-white">
   <img slot="left" src="~assets/boy-avatar.png">Joe
 </q-chip>
 ```
@@ -60,14 +60,14 @@ You can also use a chip to label a button.
 ```html
 <q-btn class="light relative-position">
   Inbox
-  <q-chip label floating  class="bg-primary text-white">22</q-chip>
+  <q-chip label floating color="bg-primary" class="text-white">22</q-chip>
 </q-btn>
 ```
 
 You can also use chips as pointing labels.
 
 ```html
-  <q-chip pointing="up" class="pointing-up bg-primary text-white">
+  <q-chip pointing="up" color="bg-primary" class="pointing-up text-white">
     Pointing Up
   </q-chip>
 ```
@@ -93,7 +93,7 @@ You can also create chips that look like tags.
 Much like [the button component](/components/buttons.html), you can add other CSS styling attribute to chips too. Below is an example of a chip, but with shadowing.
 
 ```html
-<q-chip square class="bg-secondary text-white shadow-1">10k</q-chip>
+<q-chip square color="bg-primary" class="text-white shadow-1">10k</q-chip>
 ```
 
 For more on styling elements, please refer to [the JavaScript and CSS API section](/api).  
