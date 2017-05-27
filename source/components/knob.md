@@ -48,4 +48,37 @@ Quasar Knob is another way of making the user select a Number value from a prede
 ## Vue Events
 | Vue Event | Description |
 | --- | --- |
-| `@input` | Triggered on model value change with the new value. |
+| `@click` | Triggered when mouse is clicked, held and moved to change the model value. |
+
+## More Examples
+Multi-colored with a Euro icon.
+
+``` html
+ <q-knob
+  v-model="model"
+  size="120px"
+  style="font-size: 1.5rem"
+  color="secondary"
+  track-color="yellow-3"
+  line-width="5px"
+  :min="min"
+  :max="max"
+  :step="5"
+>
+  <q-icon class="on-left" name="euro_symbol" /> {{model}}
+</q-knob>
+```
+
+Read-only state (different than disabled, as the mouse pointer doesn't change).
+
+``` html
+<q-knob
+  v-model="model"
+  :min="min"
+  :max="max"
+  color="primary"
+  readonly
+>
+  <q-icon class="on-left" name="volume_up" /> {{model}}
+</q-knob>
+```
