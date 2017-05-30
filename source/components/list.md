@@ -1,6 +1,7 @@
 title: Lists
 ---
 Quasar Lists are used to display rows of information, such as a contact list, a playlist, or menu. Each row is called an item. Items can also be used outside of a list.
+
 Lists can also be used (and it's also recommended) on Quasar Drawers. There's even a `<q-drawer-link>` component based on List Items.
 
 If you have some basic lists that you wish to diplay, you can also use the [ListItem component](/components/list-item.html).
@@ -16,6 +17,24 @@ Scroll down to see the demos if on desktop.
 <p class="caption">Basic List</p>
   <div class="list">
     <div class="item" v-for="n in 2">
+      <div class="item-content">
+        List Item
+      </div>
+    </div>
+  </div>
+
+  <p class="caption">Dense List</p>
+  <div class="list dense">
+    <div class="item dense" v-for="n in 3">
+      <div class="item-content">
+        List Item
+      </div>
+    </div>
+  </div>
+
+  <p class="caption">Large List</p>
+  <div class="list">
+    <div class="item large" v-for="n in 3">
       <div class="item-content">
         List Item
       </div>
@@ -42,28 +61,24 @@ Scroll down to see the demos if on desktop.
 
   <p class="caption">Delimiter Between Items</p>
   <div class="list">
-    <div class="item">
-      <div class="item-content">
-        List Item
+    <template v-for="n in 3">
+      <div class="item">
+        <div class="item-content">
+          List Item
+        </div>
       </div>
-    </div>
-    <hr>
-    <div class="item">
-      <div class="item-content">
-        List Item
-      </div>
-    </div>
-    <hr>
-    <div class="item">
-      <div class="item-content">
-        List Item
-      </div>
-    </div>
+      <hr>
+    </template>
   </div>
 
   <p class="caption">Delimiter within Items</p>
   <div class="list item-delimiter">
-    <div class="item" v-for="n in 3">
+    <div class="item" v-for="n in 2">
+      <div class="item-content">
+        List Item
+      </div>
+    </div>
+    <div class="item delimiter">
       <div class="item-content">
         List Item
       </div>
@@ -80,7 +95,7 @@ Scroll down to see the demos if on desktop.
   </div>
 
   <p class="caption">Inset Delimiter within Items</p>
-  <div class="list item-inset-delimiter">
+  <div class="list inset-delimiter">
     <div class="item" v-for="n in 3">
       <div class="item-content inset">
         List Item
@@ -132,8 +147,7 @@ Scroll down to see the demos if on desktop.
     <small>
       <br>
       <span class="mobile-only">
-        On desktop, hovering the list items will change their background
-        color temporarily.
+        On desktop, hovering the list items will change their background color temporarily.
       </span>
       <span class="desktop-only">
         Hover the list items to change their background color temporarily.
@@ -153,17 +167,15 @@ Scroll down to see the demos if on desktop.
     <small>
       <br>
       <span class="mobile-only">
-        On desktop, hovering the list items will change their background
-        color temporarily and the cursor will be a pointer.
+        On desktop, hovering the list items will change their background color temporarily and the cursor will be a pointer.
       </span>
       <span class="desktop-only">
-        Hover the list items to change their background color temporarily
-        and change cursor to pointer.
+        Hover the list items to change their background color temporarily and change cursor to pointer.
       </span>
     </small>
   </p>
-  <div class="list">
-    <div class="item item-link" v-for="n in 2">
+  <div class="list link">
+    <div class="item" v-for="n in 2">
       <div class="item-content">
         List Item
       </div>
@@ -178,19 +190,39 @@ Scroll down to see the demos if on desktop.
 <p class="caption">Primary</p>
 <div class="list item-inset-delimiter">
   <div class="item">
-    <i class="item-primary">assignment_ind</i>
+    <div class="item-primary"><q-icon name="assignment_ind" /></div>
     <div class="item-content">Icon as Primary</div>
   </div>
   <div class="item">
-    <img class="item-primary" :src="'statics/boy-avatar.png'">
+    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
     <div class="item-content">Avatar as Primary</div>
   </div>
   <div class="item">
-    <img class="item-primary thumbnail" :src="'statics/mountains.jpg'">
-    <div class="item-content">Thumbnail as Primary</div>
+    <div class="item-primary"><span class="item-letter">Q</span></div>
+    <div class="item-content">One character as Primary</div>
+  </div>
+</div>
+<div class="list item-inset-delimiter">
+  <div class="item">
+    <div class="item-primary"><q-icon name="assignment_ind" /></div>
+    <div class="item-content">Icon as Primary</div>
   </div>
   <div class="item">
-    <div class="item-primary">Q</div>
+    <div class="item-primary"><q-icon name="cloud" /></div>
+    <div class="item-content">Icon as Primary</div>
+  </div>
+
+<div class="list item-inset-delimiter big-inset">
+  <div class="item">
+    <div class="item-primary big"><q-icon name="assignment_ind" /></div>
+    <div class="item-content">Icon as Primary</div>
+  </div>
+  <div class="item">
+    <div class="item-primary big"><img src="/statics/boy-avatar.png"></div>
+    <div class="item-content">Avatar as Primary</div>
+  </div>
+  <div class="item">
+    <div class="item-primary big"><span class="item-letter">Q</span></div>
     <div class="item-content">One character as Primary</div>
   </div>
 </div>
@@ -198,146 +230,230 @@ Scroll down to see the demos if on desktop.
 <p class="caption">Secondary</p>
 <div class="list">
   <div class="item">
-    <div class="item-content has-secondary">Icon as Secondary</div>
-    <i class="item-secondary">info</i>
+    <div class="item-content">Icon as Secondary</div>
+    <div class="item-secondary"><q-icon name="info" /></div>
   </div>
   <hr>
   <div class="item">
-    <div class="item-content has-secondary">Avatar as Secondary</div>
-    <img class="item-secondary" :src="'statics/boy-avatar.png'">
+    <div class="item-content">Avatar as Secondary</div>
+    <div class="item-secondary"><img src="/statics/boy-avatar.png"></div>
   </div>
   <hr>
   <div class="item">
-    <div class="item-content has-secondary">Thumbnail as Secondary</div>
-    <img class="item-secondary thumbnail" :src="'statics/mountains.jpg'">
+    <div class="item-content">One character as Secondary</div>
+    <div class="item-secondary"><span class="item-letter">Q</span></div>
+  </div>
+</div>
+
+<div class="list">
+  <div class="item">
+    <div class="item-content">Icon as Secondary</div>
+    <div class="big item-secondary"><q-icon name="info" /></div>
   </div>
   <hr>
   <div class="item">
-    <div class="item-content has-secondary">One character as Secondary</div>
-    <div class="item-secondary">Q</div>
+    <div class="item-content">Avatar as Secondary</div>
+    <div class="big item-secondary"><img src="/statics/boy-avatar.png"></div>
+  </div>
+  <hr>
+  <div class="item">
+    <div class="item-content">One character as Secondary</div>
+    <div class="big item-secondary"><span class="item-letter">Q</span></div>
   </div>
 </div>
 
 <p class="caption">Example Items with Primary and Secondary</p>
 <div class="list item-inset-delimiter">
   <div class="item">
-    <img class="item-primary" :src="'statics/boy-avatar.png'">
-    <div class="item-content has-secondary">Jack</div>
-    <i class="item-secondary">chat_bubble</i>
+    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
+    <div class="item-content">Jack</div>
+    <div class="item-secondary"><q-icon name="chat_bubble" /></div>
   </div>
   <div class="item">
-    <img class="item-primary" :src="'statics/linux-avatar.png'">
-    <div class="item-content has-secondary">Jim's Photos</div>
-    <img class="item-secondary thumbnail" :src="'statics/mountains.jpg'">
+    <div class="item-primary"><img src="/statics/linux-avatar.png"></div>
+    <div class="item-content">Jim's Photos</div>
+    <div class="item-secondary"><img src="/statics/mountains.jpg"></div>
   </div>
   <div class="item">
-    <i class="item-primary">voice_chat</i>
-    <div class="item-content has-secondary">Voice Chat with Joe</div>
-    <img class="item-secondary" :src="'statics/boy-avatar.png'">
+    <div class="item-primary"><q-icon name="voice_chat" /></div>
+    <div class="item-content">Voice Chat with Joe</div>
+    <div class="item-secondary"><img src="/statics/boy-avatar.png"></div>
   </div>
   <div class="item">
-    <div class="item-primary">J</div>
-    <div class="item-content has-secondary">John Doe</div>
-    <img class="item-secondary" :src="'statics/guy-avatar.png'">
+    <div class="item-primary"><q-icon name="voice_chat" class="inverted bg-primary" /></div>
+    <div class="item-content">Voice Chat with Joe</div>
+    <div class="item-secondary"><img src="/statics/boy-avatar.png"></div>
+  </div>
+  <div class="item">
+    <div class="item-primary"><div class="item-letter">J</div></div>
+    <div class="item-content">John Doe</div>
+    <div class="item-secondary"><img src="/statics/guy-avatar.png"></div>
   </div>
 </div>
 
+<!-- Note this creates 3 lists with dense and large classes! -->
 <p class="caption">Stamp and Truncated Content</p>
-<div class="list" style="max-width: 400px">
+<div class="list highlight" style="max-width: 400px" v-for="n in ['', 'dense', 'large']" :class="n">
+  <div class="list-label capitalize" v-if="n !== ''">{{ n }}</div>
   <div class="item">
-    <img class="item-primary" :src="'statics/boy-avatar.png'">
-    <div class="item-content has-secondary">
-      <div>Brunch this weekend? Brunch this weekend? Brunch this weekend?</div>
-    </div>
-    <div class="item-secondary stamp">
-      1 week
-    </div>
-  </div>
-  <div class="item two-lines">
-    <img class="item-primary" :src="'statics/boy-avatar.png'">
-    <div class="item-content has-secondary">
-      <div>Brunch this weekend? Brunch this weekend? Brunch this weekend?</div>
-      <div>John Doe John Doe John Doe John Doe John Doe John Doe John Doe John Doe </div>
-    </div>
-    <div class="item-secondary stamp">
-      10 min
-    </div>
-  </div>
-  <div class="item three-lines">
-    <img class="item-primary" :src="'statics/boy-avatar.png'">
-    <div class="item-content has-secondary">
-      <div>Brunch this weekend? Brunch this weekend? Brunch this weekend?</div>
-      <div>
-        <span>John Doe</span>
-        -- I'll be in your neighborhood doing errands this
-        weekend. Do you want to grab brunch?
-      </div>
-    </div>
-    <div class="item-secondary stamp">
-      2 years
-    </div>
-    <i class="item-secondary">mail</i>
-  </div>
-  <div class="item three-lines">
-    <img class="item-primary" :src="'statics/boy-avatar.png'">
-    <div class="item-content has-secondary">
-      <div>Brunch this weekend? Brunch this weekend? Brunch this weekend?</div>
-      <div>
-        <span>John Doe</span>
-        -- I'll be in your neighborhood doing errands this
-        weekend. Do you want to grab brunch?
-      </div>
-    </div>
-    <div class="item-secondary stamp">
-      1 week ago
-    </div>
-    <i class="item-secondary">mail</i>
-  </div>
-</div>
-
-<p class="caption">Item with Actions</p>
-<div class="list">
-  <div class="item">
-    <img class="item-primary" :src="'statics/boy-avatar.png'">
-    <div class="item-content has-secondary">
-      <div>Brunch this weekend?</div>
+    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
+    <div class="item-content ellipsis">
+      Brunch this weekend? Brunch this weekend? Brunch this weekend?
     </div>
     <div class="item-secondary">
-      <i slot="target">
-        more_vert
+      <div class="item-stamp">1 week<br>ago</div>
+    </div>
+  </div>
+  <div class="item multiple-lines">
+    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
+    <div class="item-content text">
+      <div class="ellipsis">Brunch this weekend? Brunch this weekend? Brunch this weekend?</div>
+      <div>John Doe</div>
+    </div>
+    <div class="item-secondary">
+      <div class="item-stamp">10 min</div>
+    </div>
+  </div>
 
+  <div class="item multiple-lines">
+    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
+    <div class="item-content text">
+      <div class="ellipsis">Brunch <span>5</span></div>
+      <div class="ellipsis">John Doe</div>
+    </div>
+    <div class="item-secondary">
+      <div class="item-stamp">10 min</div>
+    </div>
+  </div>
+
+  <div class="item multiple-lines">
+    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
+    <div class="item-content text">
+      <div>Brunch this weekend? Yeah, this weekend. Really. This one.</div>
+      <div>
+        <span>John Doe</span>
+        -- I'll be in your neighborhood doing errands this
+        weekend. Do you want to grab brunch?
+      </div>
+    </div>
+    <div class="item-secondary">
+      <div class="item-stamp">2 years</div>
+      <q-icon name="mail" />
+    </div>
+  </div>
+  <div class="item multiple-lines">
+    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
+    <div class="item-content text">
+      <div class="ellipsis">Brunch this weekend? Yeah, this weekend. Really. This one.</div>
+      <div class="ellipsis-2-lines">
+        <span>John Doe</span>
+        -- I'll be in your neighborhood doing errands this
+        weekend. Do you want to grab brunch?
+      </div>
+    </div>
+    <div class="item-secondary">
+      <div class="item-stamp">2 years</div>
+      <q-icon name="mail" />
+    </div>
+  </div>
+</div>
+
+<p class="caption">List Item with Secondary Actions</p>
+<div class="list inset-delimiter">
+  <div class="item">
+    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
+    <div class="item-content">
+      <div class="ellipsis">Brunch this weekend?</div>
+    </div>
+    <div class="item-secondary">
+      <q-icon name="more_vert">
         <q-popover ref="popover">
           <div class="list">
-            <div class="item item-link" @click="$refs.popover.close()">
+            <div class="item link" @click="$refs.popover.close()">
               <div class="item-content">Reply</div>
             </div>
-            <div class="item item-link" @click="$refs.popover.close()">
+            <div class="item link" @click="$refs.popover.close()">
               <div class="item-content">Forward</div>
             </div>
-            <div class="item item-link" @click="$refs.popover.close()">
+            <div class="item link" @click="$refs.popover.close()">
               <div class="item-content">Delete</div>
             </div>
           </div>
         </q-popover>
-      </i>
+      </q-icon>
+    </div>
+  </div>
+</div>
+
+<p class="caption">Item with different secondaries</p>
+<div class="list inset-delimiter">
+  <div class="item">
+    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
+    <div class="item-content">
+      <div class="ellipsis">Brunch this weekend?</div>
+    </div>
+    <div class="item-secondary">
+      <q-icon name="more_vert">
+        <q-popover ref="popover">
+          <div class="list">
+            <div class="item link" @click="$refs.popover.close()">
+              <div class="item-content">Reply</div>
+            </div>
+            <div class="item link" @click="$refs.popover.close()">
+              <div class="item-content">Forward</div>
+            </div>
+            <div class="item link" @click="$refs.popover.close()">
+              <div class="item-content">Delete</div>
+            </div>
+          </div>
+        </q-popover>
+      </q-icon>
+    </div>
+  </div>
+  <div class="item">
+    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
+    <div class="item-content">
+      <div class="ellipsis">Brunch this weekend?</div>
+    </div>
+    <div class="item-secondary">
+      <q-chip color="secondary" class="shadow-1">10k</q-chip>
+    </div>
+  </div>
+  <div class="item">
+    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
+    <div class="item-content">
+      <div class="ellipsis">Brunch this weekend?</div>
+    </div>
+    <div class="item-secondary">
+      <div class="item-stamp">10 min ago</div>
+      <span class="text-amber">
+        <q-icon name="star" />
+        <q-icon name="star" />
+      </span>
     </div>
   </div>
 </div>
 ```
 
 ### Router-Link with List Items
+
 ``` html
-<router-link
-  tag="div"
-  class="item item-link item-inset-delimiter"
-  to="/some/path/in/your/app"
->
-  <i class="item-primary">alarm</i>
-  <div class="item-content has-secondary">
-    <div>Some content</div>
-  </div>
-  <i class="item-secondary">chevron_right</i>
-</router-link>
+<div class="list link item-inset-delimiter">
+  <router-link
+    tag="div"
+    class="item"
+    to="/some/path/in/your/app"
+  >
+    <div class="item-primary"><q-icon name="cloud"/></div>
+    <div class="item-content">Go to the cloud!</div>
+    <div class="item-secondary">
+      <q-icon name="info" />
+      <q-tooltip anchor="top middle" self="bottom middle" :offset="[10, 10]">
+        <strong>Click here to go to the cloud! And yes, Quasar is like living on Cloud 9! Isn't it?</strong>
+      </q-tooltip>
+    </div>
+  </router-link>
+</div>
 ```
 
 ## Multi-line Items
@@ -347,71 +463,29 @@ Multiple line items are usually for some Form components that exceed the height 
 
 ``` html
 <div class="list">
+  <div class="list-label">People</div>
   <div class="item">
-    <img class="item-primary" :src="'statics/boy-avatar.png'">
-    <div class="item-content has-secondary">
-      One line item
+    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
+    <div class="item-content text">
+      John
     </div>
-    <div class="item-secondary stamp">
-      1 week
-    </div>
+    <div class="item-secondary"><q-icon name="chat_bubble" /></div>
   </div>
-  <hr>
   <div class="item two-lines">
-    <img class="item-primary" :src="'statics/boy-avatar.png'">
-    <div class="item-content has-secondary">
-      <div>Two line item</div>
-      <div>Second line</div>
+    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
+    <div class="item-content text">
+      <div>Jim</div>
+      <div>Javascript wiz kid</div>
     </div>
-    <div class="item-secondary stamp">
-      10 min
-    </div>
+    <div class="item-secondary"><q-icon name="chat_bubble" /></div>
   </div>
-  <hr>
   <div class="item three-lines">
-    <img class="item-primary" :src="'statics/boy-avatar.png'">
-    <div class="item-content has-secondary">
-      <div>Three line item</div>
-      <div>
-        <span>Second & Third line</span>
-        -- I'll be in your neighborhood doing errands this
-        weekend. Do you want to grab brunch?
-      </div>
+    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
+    <div class="item-content text">
+      <div>Jake</div>
+      <div>Passionate about Quasar</div>
     </div>
-    <div class="item-secondary stamp">
-      2 years
-    </div>
-    <i class="item-secondary">mail</i>
-  </div>
-  <hr>
-  <div class="item multiple-lines">
-    <img class="item-primary" :src="'statics/boy-avatar.png'">
-    <div class="item-content has-secondary">
-      <div>Multiple lines item</div>
-      <div class="item-label item-smaller">Second line</div>
-      <div class="item-label item-smaller">Third line</div>
-      <div class="item-label item-smaller">Fourth line</div>
-      <div class="item-label item-smaller">...as many as you need!</div>
-    </div>
-    <div class="item-secondary">
-      <i slot="target">
-        more_vert
-
-        <q-popover ref="popover">
-          <div class="list">
-            <div class="item item-link" @click="$refs.popover.close()">
-              <div class="item-content">Reply</div>
-            </div>
-            <div class="item item-link" @click="$refs.popover.close()">
-              <div class="item-content">Forward</div>
-            </div>
-            <div class="item item-link" @click="$refs.popover.close()">
-              <div class="item-content">Delete</div>
-            </div>
-          </div>
-        </q-popover>
-      </i>
-    </div>
+    <div class="item-secondary"><q-icon name="chat_bubble" /></div>
   </div>
 </div>
 ```
@@ -424,25 +498,32 @@ Collapsible Items make use of the Collapsible Component. Read more about it [her
 You can nest collapsibles within collapsibles within collapsibles within...
 ``` html
 <div class="list">
-  <q-collapsible icon="inbox" label="Inbox">
+<div class="list">
+  <q-collapsible icon="inbox" label="Inbox" description="Where your email is">
     <div class="item" v-for="n in 3">
-      <i class="item-primary">mail</i>
+      <div class="item-primary"><q-icon name="mail" /></div>
       <div class="item-content">
         Email {{ n + 1 }}
       </div>
     </div>
-    <q-collapsible icon="favorites" label="Favorites">
+    <q-collapsible icon="favorite" label="Favorites">
       <div class="item" v-for="n in 3">
-        <i class="item-primary">mail</i>
+        <div class="item-primary"><q-icon name="mail" /></div>
         <div class="item-content">
           Favorite {{ n + 1 }}
         </div>
       </div>
     </q-collapsible>
+    <div class="item">
+      <div class="item-primary"><q-icon name="mail" /></div>
+      <div class="item-content">
+        Email
+      </div>
+    </div>
   </q-collapsible>
   <q-collapsible icon="send" label="Sent">
     <div class="item" v-for="n in 3">
-      <i class="item-primary">mail</i>
+      <div class="item-primary"><q-icon name="mail" /></div>
       <div class="item-content">
         Email {{ n + 1 }}
       </div>
@@ -450,134 +531,26 @@ You can nest collapsibles within collapsibles within collapsibles within...
   </q-collapsible>
   <q-collapsible icon="delete" label="Trash">
     <div class="item" v-for="n in 3">
-      <i class="item-primary">mail</i>
+      <div class="item-primary"><q-icon name="mail" /></div>
       <div class="item-content">
         Email {{ n + 1 }}
       </div>
     </div>
   </q-collapsible>
 </div>
+</div>
 ```
 
-## List with Textfields
+## List with Text Chips
 <input type="hidden" data-demo="css/list/example-textfields">
 
-Some predefined forumals you can use to nest Textfields in List Items.
 ``` html
 <div class="list">
-  <div class="list-label">Textboxes</div>
-  <div class="item two-lines">
-    <i class="item-primary">edit</i>
-    <div class="item-content">
-      <input class="full-width">
-    </div>
-  </div>
-
-  <hr>
-  <div class="item two-lines">
-    <i class="item-primary">edit</i>
-    <div class="item-content">
-      <input placeholder="Placeholder" class="full-width">
-    </div>
-  </div>
-
-  <hr>
-  <div class="item multiple-lines">
-    <i class="item-primary">edit</i>
-    <div class="item-content row items-center wrap">
-      <div style="margin-right: 10px;" class="item-label">Label:</div>
-      <input class="auto">
-    </div>
-  </div>
-
-  <hr>
-  <div class="item three-lines">
-    <i class="item-primary">edit</i>
-    <div class="item-content">
-      <div class="stacked-label">
-        <input class="full-width">
-        <label>Stacked Label</label>
-      </div>
-    </div>
-  </div>
-
-  <hr>
-  <div class="item three-lines">
-    <i class="item-primary">edit</i>
-    <div class="item-content">
-      <div class="floating-label">
-        <input required class="full-width">
-        <label>Floating Label</label>
-      </div>
-    </div>
-  </div>
-
-  <hr>
-  <div class="list-label">Textareas</div>
-  <div class="item multiple-lines">
-    <i class="item-primary">edit</i>
-    <div class="item-content">
-      <textarea class="full-width"></textarea>
-    </div>
-  </div>
-
-  <hr>
-  <div class="item multiple-lines">
-    <i class="item-primary">edit</i>
-    <div class="item-content">
-      <div style="margin-right: 10px;" class="item-label">Label:</div>
-      <textarea class="full-width"></textarea>
-    </div>
-  </div>
-
-  <hr>
-  <div class="item multiple-lines">
-    <i class="item-primary">edit</i>
-    <div class="item-content">
-      <div class="stacked-label">
-        <textarea class="full-width"></textarea>
-        <label>Stacked Label</label>
-      </div>
-    </div>
-  </div>
-
-  <hr>
-  <div class="item multiple-lines">
-    <i class="item-primary">edit</i>
-    <div class="item-content">
-      <div class="floating-label">
-        <textarea required class="full-width"></textarea>
-        <label>Floating Label</label>
-      </div>
-    </div>
-  </div>
-
-  <hr>
-
-  <div class="list-label">Numeric</div>
-  <div class="item multiple-lines">
-    <i class="item-primary">edit</i>
-    <div class="item-content">
-      <span class="item-label">Number:</span>
-      <q-numeric v-model="number"></q-numeric>
-    </div>
-  </div>
-  <hr class="inset">
-  <div class="item multiple-lines">
-    <i class="item-primary">edit</i>
-    <div class="item-content">
-      <span class="item-label">Number:</span>
-      <q-numeric v-model="number"></q-numeric>
-    </div>
-  </div>
-
-  <hr>
-
   <div class="list-label">Chips Textbox</div>
   <div class="item multiple-lines">
-    <i class="item-primary">edit</i>
+    <div class="item-primary"><q-icon name="edit" /></div>
     <div class="item-content">
-      <q-chips v-model="chips" placeholder="Type names"></q-chips>
+      <q-chips-input v-model="chips" placeholder="Type names" />
     </div>
   </div>
 </div>
@@ -588,175 +561,178 @@ Some predefined forumals you can use to nest Textfields in List Items.
 
 Some predefined formulas you can use to nest Form Components within List Items.
 
+**Note**
+Also check out [q-option-group](/components/option-group.md) for grouping toggles, checkboxes and radios.
+
 ``` html
 <p class="caption">Checkboxes</p>
 <div class="list">
-  <label class="item">
-    <div class="item-primary">
-      <q-checkbox v-model="checked"></q-checkbox>
-    </div>
-    <div class="item-content">
-      Notifications
-    </div>
-  </label>
-  <label class="item two-lines">
-    <div class="item-primary">
-      <q-checkbox v-model="checked"></q-checkbox>
-    </div>
-    <div class="item-content">
-      <div>Notifications</div>
-      <div>Allow notifications</div>
-    </div>
-  </label>
-  <label class="item three-lines">
-    <div class="item-primary">
-      <q-checkbox v-model="checked"></q-checkbox>
-    </div>
-    <div class="item-content">
-      <div>Notifications</div>
-      <div>Allow notifications Allow notifications Allow notifications Allow notifications Allow notifications </div>
-    </div>
-  </label>
+<label class="item">
+  <div class="item-primary">
+    <q-checkbox v-model="checked"></q-checkbox>
+  </div>
+  <div class="item-content">
+    Notifications
+  </div>
+</label>
+<label class="item multiple-lines">
+  <div class="item-primary">
+    <q-checkbox v-model="checked"></q-checkbox>
+  </div>
+  <div class="item-content text">
+    <div>Notifications</div>
+    <div>Allow notifications</div>
+  </div>
+</label>
+<label class="item multiple-lines">
+  <div class="item-primary">
+    <q-checkbox v-model="checked"></q-checkbox>
+  </div>
+  <div class="item-content text">
+    <div>Notifications</div>
+    <div class="ellipsis-2-lines">Allow notifications Allow notifications Allow notifications Allow notifications Allow notifications </div>
+  </div>
+</label>
 </div>
 
 <p class="caption">Radios</p>
 <div class="list">
-  <label class="item">
-    <div class="item-primary">
-      <q-radio v-model="option" val="opt1"></q-radio>
-    </div>
-    <div class="item-content">
-      Option 1
-    </div>
-  </label>
-  <label class="item two-lines">
-    <div class="item-primary">
-      <q-radio v-model="option" val="opt2"></q-radio>
-    </div>
-    <div class="item-content">
-      <div>Option 2</div>
-      <div>Allows notifications</div>
-    </div>
-  </label>
-  <label class="item three-lines">
-    <div class="item-primary">
-      <q-radio v-model="option" val="opt3"></q-radio>
-    </div>
-    <div class="item-content">
-      <div>Option 3</div>
-      <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-    </div>
-  </label>
+<label class="item">
+  <div class="item-primary">
+    <q-radio v-model="option" val="opt1"></q-radio>
+  </div>
+  <div class="item-content">
+    Option 1
+  </div>
+</label>
+<label class="item multiple-lines">
+  <div class="item-primary">
+    <q-radio v-model="option" val="opt2"></q-radio>
+  </div>
+  <div class="item-content text">
+    <div>Option 2</div>
+    <div>Allows notifications</div>
+  </div>
+</label>
+<label class="item multiple-lines">
+  <div class="item-primary">
+    <q-radio v-model="option" val="opt3"></q-radio>
+  </div>
+  <div class="item-content text">
+    <div>Option 3</div>
+    <div class="ellipsis-3-lines">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+  </div>
+</label>
 </div>
 
 <p class="caption">Toggles</p>
 <div class="list">
-  <label class="item">
-    <div class="item-content has-secondary">
-      Events and reminders
-    </div>
-    <div class="item-secondary">
-      <q-toggle v-model="checked"></q-toggle>
-    </div>
-  </label>
-  <label class="item two-lines">
-    <div class="item-content has-secondary">
-      <div>Events and reminders</div>
-      <div>Lorem ipsum</div>
-    </div>
-    <div class="item-secondary">
-      <q-toggle v-model="checked" class="purple"></q-toggle>
-    </div>
-  </label>
-  <label class="item three-lines">
-    <div class="item-content has-secondary">
-      <div>Events and reminders</div>
-      <div>Lorem ipsum dolor sit amet...</div>
-    </div>
-    <div class="item-secondary">
-      <q-toggle v-model="checked" class="red"></q-toggle>
-    </div>
-  </label>
+<label class="item">
+  <div class="item-content">
+    Events and reminders
+  </div>
+  <div class="item-secondary">
+    <q-toggle v-model="checked"></q-toggle>
+  </div>
+</label>
+<label class="item multiple-lines">
+  <div class="item-content text">
+    <div>Events and reminders</div>
+    <div>Lorem ipsum</div>
+  </div>
+  <div class="item-secondary">
+    <q-toggle v-model="checked" class="purple"></q-toggle>
+  </div>
+</label>
+<label class="item multiple-lines">
+  <div class="item-content text">
+    <div>Events and reminders</div>
+    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+  </div>
+  <div class="item-secondary">
+    <q-toggle v-model="checked" class="red"></q-toggle>
+  </div>
+</label>
 </div>
 
 <p class="caption">Select</p>
 <div class="list">
-  <div class="list-label">Single Selection</div>
-  <div class="item multiple-lines">
-    <i class="item-primary">supervisor_account</i>
-    <div class="item-content">
-      <q-select class="full-width" type="radio" v-model="select" :options="selectOptions" ok-label="Pick" cancel-label="Neah" title="Company"></q-select>
-    </div>
+<div class="list-label">Single Selection</div>
+<div class="item">
+  <div class="item-primary"><q-icon name="supervisor_account" /></div>
+  <div class="item-content">
+    <q-select class="full-width" v-model="select" :options="selectOptions" ok-label="Pick" cancel-label="Neah" title="Company"></q-select>
   </div>
-  <hr>
-  <div class="list-label">Multiple Selection</div>
-  <div class="item multiple-lines">
-    <i class="item-primary">supervisor_account</i>
-    <div class="item-content">
-      <q-select class="full-width" type="checkbox" v-model="multipleSelect" :options="selectOptions" ok-label="Pick" title="Companies"></q-select>
-    </div>
+</div>
+<hr>
+<div class="list-label">Multiple Selection</div>
+<div class="item">
+  <div class="item-primary"><q-icon name="supervisor_account" /></div>
+  <div class="item-content">
+    <q-select class="full-width" multiple checkbox v-model="multipleSelect" :options="selectOptions" ok-label="Pick" title="Companies"></q-select>
   </div>
-  <div class="item multiple-lines">
-    <i class="item-primary">supervisor_account</i>
-    <div class="item-content">
-      <q-select class="full-width" type="toggle" v-model="multipleSelect" :options="selectOptions" ok-label="Pick" title="Companies"></q-select>
-    </div>
+</div>
+<div class="item">
+  <div class="item-primary"><q-icon name="supervisor_account" /></div>
+  <div class="item-content">
+    <q-select class="full-width" multiple toggle v-model="multipleSelect" :options="selectOptions" ok-label="Pick" title="Companies"></q-select>
   </div>
+</div>
 </div>
 
 <p class="caption">Ranges</p>
 <div class="list">
-  <div class="item two-lines">
-    <i class="item-primary">volume_up</i>
-    <div class="item-content">
-      <q-range v-model="standalone" :min="0" :max="50" label></q-range>
-    </div>
+<div class="item two-lines">
+  <div class="item-primary"><q-icon name="volume_up" /></div>
+  <div class="item-content">
+    <q-range v-model="range" :min="0" :max="50" label></q-range>
   </div>
-  <div class="item two-lines">
-    <i class="item-primary">brightness_medium</i>
-    <div class="item-content">
-      <q-range v-model="standalone" :min="0" :max="50" label></q-range>
-    </div>
+</div>
+<div class="item two-lines">
+  <div class="item-primary"><q-icon name="brightness_medium" /></div>
+  <div class="item-content">
+    <q-range v-model="range" :min="0" :max="50" label></q-range>
   </div>
-  <hr>
-  <div class="list-label">Double Range</div>
-  <div class="item two-lines">
-    <i class="item-primary">local_atm</i>
-    <div class="item-content">
-      <q-double-range :model-min.sync="standaloneMin" :model-max.sync="standaloneMax" :min="0" :max="50" label></q-double-range>
-    </div>
+</div>
+<hr>
+<div class="list-label">Double Range</div>
+<div class="item two-lines">
+  <div class="item-primary"><q-icon name="local_atm" /></div>
+  <div class="item-content">
+    <q-double-range v-model="doubleRange" :min="0" :max="50" label></q-double-range>
   </div>
-  <div class="item two-lines">
-    <i class="item-primary">euro_symbol</i>
-    <div class="item-content">
-      <q-double-range :model-min.sync="standaloneMin" :model-max.sync="standaloneMax" :min="0" :max="50" label></q-double-range>
-    </div>
+</div>
+<div class="item two-lines">
+  <div class="item-primary"><q-icon name="euro_symbol" /></div>
+  <div class="item-content">
+    <q-double-range v-model="doubleRange" :min="0" :max="50" label></q-double-range>
   </div>
+</div>
 </div>
 
 <p class="caption">Date and Time</p>
 <div class="list">
-  <div class="list-label">Date or Time</div>
-  <div class="item two-lines">
-    <i class="item-primary">access_time</i>
-    <div class="item-content">
-      <q-datetime class="full-width" v-model="timestamp" type="time"></q-datetime>
-    </div>
+<div class="list-label">Date or Time</div>
+<div class="item two-lines">
+  <div class="item-primary"><q-icon name="access_time" /></div>
+  <div class="item-content">
+    <q-datetime class="full-width" v-model="timestamp" type="time"></q-datetime>
   </div>
-  <div class="item two-lines">
-    <i class="item-primary">update</i>
-    <div class="item-content row items-baseline">
-      <q-datetime class="full-width" v-model="timestamp" type="date"></q-datetime>
-    </div>
+</div>
+<div class="item two-lines">
+  <div class="item-primary"><q-icon name="update" /></div>
+  <div class="item-content row items-baseline">
+    <q-datetime class="full-width" v-model="timestamp" type="date"></q-datetime>
   </div>
-  <hr>
-  <div class="list-label">Date & Time</div>
-  <div class="item two-lines">
-    <i class="item-primary">notifications</i>
-    <div class="item-content row items-baseline">
-      <q-datetime class="full-width" v-model="timestamp" type="datetime"></q-datetime>
-    </div>
+</div>
+<hr>
+<div class="list-label">Date & Time</div>
+<div class="item two-lines">
+  <div class="item-primary"><q-icon name="notifications" /></div>
+  <div class="item-content row items-baseline">
+    <q-datetime class="full-width" v-model="timestamp" type="datetime"></q-datetime>
   </div>
+</div>
 </div>
 ```
 
@@ -769,47 +745,41 @@ Let's explore some ready to use templates using what we've learned above.
 ``` html
 <div class="list">
   <div class="item">
-    <i class="item-primary">inbox</i>
+    <div class="item-primary"><q-icon name="inbox" /></div>
     <div class="item-content">
       Inbox
     </div>
   </div>
   <div class="item">
-    <i class="item-primary">send</i>
+    <div class="item-primary"><q-icon name="send" /></div>
     <div class="item-content">
       Sent
     </div>
   </div>
   <div class="item">
-    <i class="item-primary">delete</i>
+    <div class="item-primary"><q-icon name="delete" /></div>
     <div class="item-content">
       Trash
     </div>
   </div>
   <hr>
   <div class="item">
-    <div class="item-content has-secondary">
+    <div class="item-content">
       Inbox
     </div>
-    <i class="item-secondary">
-      inbox
-    </i>
+    <div class="item-secondary"><q-icon name="inbox" /></div>
   </div>
   <div class="item">
-    <div class="item-content has-secondary">
+    <div class="item-content">
       Sent
     </div>
-    <i class="item-secondary">
-      send
-    </i>
+    <div class="item-secondary"><q-icon name="send" /></div>
   </div>
   <div class="item">
-    <div class="item-content has-secondary">
+    <div class="item-content">
       Trash
     </div>
-    <i class="item-secondary">
-      delete
-    </i>
+    <div class="item-secondary"><q-icon name="delete" /></div>
   </div>
 </div>
 ```
@@ -821,33 +791,27 @@ Let's explore some ready to use templates using what we've learned above.
 <div class="list">
   <div class="list-label">People</div>
   <div class="item">
-    <img class="item-primary" :src="'statics/boy-avatar.png'">
-    <div class="item-content has-secondary">
+    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
+    <div class="item-content text">
       John
     </div>
-    <i class="item-secondary">
-      chat_bubble
-    </i>
+    <div class="item-secondary"><q-icon name="chat_bubble" /></div>
   </div>
   <div class="item two-lines">
-    <img class="item-primary" :src="'statics/boy-avatar.png'">
-    <div class="item-content has-secondary">
+    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
+    <div class="item-content text">
       <div>Jim</div>
       <div>Javascript wiz kid</div>
     </div>
-    <i class="item-secondary">
-      chat_bubble
-    </i>
+    <div class="item-secondary"><q-icon name="chat_bubble" /></div>
   </div>
   <div class="item three-lines">
-    <img class="item-primary" :src="'statics/boy-avatar.png'">
-    <div class="item-content has-secondary">
+    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
+    <div class="item-content text">
       <div>Jake</div>
       <div>Passionate about Quasar</div>
     </div>
-    <i class="item-secondary">
-      chat_bubble
-    </i>
+    <div class="item-secondary"><q-icon name="chat_bubble" /></div>
   </div>
 </div>
 ```
@@ -859,18 +823,16 @@ Let's explore some ready to use templates using what we've learned above.
 <div class="list">
   <div class="list-label">Recent chats</div>
   <div class="item" v-for="n in 3">
-    <img class="item-primary" :src="'statics/boy-avatar.png'">
-    <div class="item-content has-secondary">
+    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
+    <div class="item-content">
       John Doe
     </div>
-    <i class="item-secondary">
-      chat_bubble
-    </i>
+    <div class="item-secondary"><q-icon name="chat_bubble" /></div>
   </div>
   <hr>
   <div class="list-label">Previous chats</div>
   <div class="item" v-for="n in 3">
-    <img class="item-primary" :src="'statics/guy-avatar.png'">
+    <div class="item-primary"><img src="/statics/guy-avatar.png"></div>
     <div class="item-content">
       Jack Doe
     </div>
@@ -885,33 +847,27 @@ Let's explore some ready to use templates using what we've learned above.
 <div class="list">
   <div class="list-label">Movies</div>
   <div class="item">
-    <img class="item-primary thumbnail" :src="'statics/mountains.jpg'">
-    <div class="item-content has-secondary">
+    <img src="/statics/mountains.jpg">
+    <div class="item-content text">
       <div>Mountains Documentary</div>
     </div>
-    <i class="item-secondary">
-      movie
-    </i>
+    <div class="item-secondary"><q-icon name="movie" /></div>
   </div>
-  <div class="item two-lines">
-    <img class="item-primary thumbnail" :src="'statics/mountains.jpg'">
-    <div class="item-content has-secondary">
+  <div class="item">
+    <img src="/statics/mountains.jpg">
+    <div class="item-content text">
       <div>Mountains Documentary</div>
       <div>For passionates only</div>
     </div>
-    <i class="item-secondary">
-      movie
-    </i>
+    <div class="item-secondary"><q-icon name="movie" /></div>
   </div>
-  <div class="item three-lines">
-    <img class="item-primary thumbnail" :src="'statics/mountains.jpg'">
-    <div class="item-content has-secondary">
+  <div class="item multiple-lines">
+    <img src="/statics/mountains.jpg">
+    <div class="item-content text">
       <div>Mountains Documentary</div>
       <div>For passionates only For passionates only For passionates only For passionates only For passionates only </div>
     </div>
-    <i class="item-secondary">
-      movie
-    </i>
+    <div class="item-secondary"><q-icon name="movie" /></div>
   </div>
 </div>
 ```
@@ -922,19 +878,19 @@ Let's explore some ready to use templates using what we've learned above.
 ``` html
 <div class="list">
   <div class="item" v-for="n in 3">
-    <i class="item-primary" v-if="n === 0">star</i>
-    <div class="item-content inset has-secondary">
+    <div class="item-primary" v-if="n === 1"><q-icon name="star" class="text-pink" /></div>
+    <div class="item-content inset">
       John Joe
     </div>
-    <img class="item-secondary" :src="'statics/boy-avatar.png'">
+    <div class="item-secondary"><img src="/statics/boy-avatar.png"></div>
   </div>
   <hr class="inset">
   <div class="item" v-for="n in 3">
     <div class="item-primary" v-if="n === 0">A</div>
-    <div class="item-content inset has-secondary">
+    <div class="item-content inset">
       John Joe
     </div>
-    <img class="item-secondary" :src="'statics/boy-avatar.png'">
+    <div class="item-secondary"><img src="/statics/boy-avatar.png"></div>
   </div>
 </div>
 ```
@@ -945,27 +901,27 @@ Let's explore some ready to use templates using what we've learned above.
 ``` html
 <div class="list">
   <div class="list-label inset">Folders</div>
-  <div class="item two-lines" v-for="n in 3">
-    <div class="item-primary bg-grey-6 text-white">
-      <i>folder</i>
+  <div class="item" v-for="n in 3">
+    <div class="item-primary">
+      <q-icon name="folder" class="bg-grey-6 inverted" />
     </div>
-    <div class="item-content has-secondary">
+    <div class="item-content text">
       <div>Photos</div>
       <div>February 22, 2016</div>
     </div>
-    <i class="item-secondary">info</i>
+    <div class="item-secondary"><q-icon name="info" /></div>
   </div>
   <hr class="inset">
   <div class="list-label inset">Files</div>
-  <div class="item two-lines" v-for="n in 3">
-    <div class="item-primary bg-primary text-white">
-      <i>assignment</i>
+  <div class="item" v-for="n in 3">
+    <div class="item-primary">
+      <q-icon name="assignment" class="bg-primary inverted" />
     </div>
-    <div class="item-content has-secondary">
+    <div class="item-content text">
       <div>Vacation</div>
       <div>February 22, 2016</div>
     </div>
-    <i class="item-secondary">info</i>
+    <div class="item-secondary"><q-icon name="info" /></div>
   </div>
 </div>
 ```
@@ -975,18 +931,18 @@ Let's explore some ready to use templates using what we've learned above.
 
 ``` html
 <div class="list">
-  <div class="item two-lines" v-for="n in 3">
-    <i class="item-primary" v-if="n === 0">phone</i>
-    <div class="item-content inset has-secondary">
+  <div class="item" v-for="n in 3">
+    <q-icon name="phone" class="item-primary" v-if="n === 0" />
+    <div class="item-content inset text">
       <div>(650) 555 - 1234</div>
       <div>Mobile</div>
     </div>
-    <i class="item-secondary">chat_bubble</i>
+    <div class="item-secondary"><q-icon name="chat_bubble" /></div>
   </div>
   <hr class="inset">
-  <div class="item two-lines" v-for="n in 3">
-    <i class="item-primary">mail</i>
-    <div class="item-content">
+  <div class="item" v-for="n in 3">
+    <div class="item-primary"><q-icon name="mail" /></div>
+    <div class="item-content text">
       <div>john@doe.com</div>
       <div>Personal</div>
     </div>
@@ -1000,80 +956,67 @@ Let's explore some ready to use templates using what we've learned above.
 ``` html
 <div class="list">
   <div class="list-label">Today</div>
-  <div class="item three-lines">
-    <img class="item-primary" :src="'statics/boy-avatar.png'">
-    <div class="item-content inset has-secondary">
+  <div class="item inset-delimiter">
+    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
+    <div class="item-content text">
       <div>Brunch this weekend?</div>
-      <div>
+      <div class="ellipsis-2-lines">
         <span>John Doe</span>
         -- I'll be in your neighborhood doing errands this
         weekend. Do you want to grab brunch?
       </div>
     </div>
-    <div class="item-secondary stamp">
-      1 week
+    <div class="item-secondary">
+      <div class="item-stamp">1 week</div>
     </div>
   </div>
   <hr class="inset">
-  <div class="item three-lines">
-    <img class="item-primary" :src="'statics/boy-avatar.png'">
-    <div class="item-content inset has-secondary">
+  <div class="item inset-delimiter">
+    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
+    <div class="item-content text">
       <div>Brunch this weekend?</div>
-      <div>
+      <div class="ellipsis-2-lines">
         <span>John Doe</span>
         -- I'll be in your neighborhood doing errands this
         weekend. Do you want to grab brunch?
       </div>
     </div>
-    <i class="item-secondary">info</i>
+    <div class="item-secondary">
+      <div class="item-stamp">1 week</div>
+      <q-icon name="info" />
+    </div>
   </div>
   <hr>
   <div class="list-label">Yesterday</div>
-  <div class="item three-lines">
-    <img class="item-primary" :src="'statics/boy-avatar.png'">
-    <div class="item-content inset">
+  <div class="item inset-delimiter">
+    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
+    <div class="item-content text">
       <div>Brunch this weekend?</div>
-      <div>
+      <div class="ellipsis-2-lines">
         <span>John Doe</span>
-        <br>
-        I'll be in your neighborhood doing errands this
+        -- I'll be in your neighborhood doing errands this
         weekend. Do you want to grab brunch?
       </div>
-    </div>
-  </div>
-  <hr class="inset">
-  <div class="item three-lines">
-    <img class="item-primary" :src="'statics/boy-avatar.png'">
-    <div class="item-content inset has-secondary">
-      <div>Brunch this weekend?</div>
-      <div>
-        <span>John Doe</span>
-        <br>
-        I'll be in your neighborhood doing errands this
-        weekend. Do you want to grab brunch?
-      </div>
-    </div>
-    <div class="item-secondary stamp">
-      1 week
     </div>
     <div class="item-secondary">
-      <i slot="target">
-        more_vert
-
-        <q-popover ref="popover">
-          <div class="list">
-            <div class="item item-link" @click="$refs.popover.close()">
-              <div class="item-content">Reply</div>
-            </div>
-            <div class="item item-link" @click="$refs.popover.close()">
-              <div class="item-content">Forward</div>
-            </div>
-            <div class="item item-link" @click="$refs.popover.close()">
-              <div class="item-content">Delete</div>
-            </div>
-          </div>
-        </q-popover>
-      </i>
+      <div class="item-stamp">1 week</div>
+      <q-icon name="info" />
+    </div>
+  </div>
+  <div class="item inset-delimiter">
+    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
+    <div class="item-content text">
+      <div>Brunch this weekend?</div>
+      <div class="ellipsis-2-lines">
+        <span>John Doe</span>
+        <br>
+        I'll be in your neighborhood doing errands this
+        weekend. Do you want to grab brunch?
+      </div>
+    </div>
+    <div class="item-secondary">
+      <div class="item-stamp">1 week</div>
+      <q-icon name="more_vert" />
     </div>
   </div>
 </div>
