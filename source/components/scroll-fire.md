@@ -43,3 +43,6 @@ For ease of use, its implementation is through a Vue Directive called `v-scroll-
 
 > **IMPORTANT**
 > For performance purposes, the scroll listener function injected is by default debounced by 50ms. Read more about `debouncing` [here](/components/utils.html#Debounce-Function).
+
+## Determining Scrolling Container
+Please read [here](components/scroll-observable.html#Determining-Scrolling-Container) about how Quasar determines the container to attach scrolling events to.

@@ -63,11 +63,11 @@ components:
     Context Menu: $
     Breadcrumb: $
   Scrolling:
+    Scroll Observable: $
     Scroll Directive: $
     Infinite Scroll: $
     Scroll Area: $
     Scroll Fire: $
-    Scroll Observable: $
     Back to Top: $
   Animation:
     Transition: $
