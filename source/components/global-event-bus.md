@@ -4,14 +4,22 @@ Events are important for the inner workings of your App.
 Sometimes you need an event bus or a publish/subscribe channel. Quasar provides this out of the box:
 
 ``` js
+// outside of a Vue component:
 import { Events } from 'quasar'
-
 Events.$on('app:visibility', state => {
+  console.log('App became', state)
+})
+
+// inside a Vue component:
+this.$q.event.$on('app:visibility', state => {
   console.log('App became', state)
 })
 ```
 
 Essentially, Events is just a Vue event bus that you can use throughout your App. If you know how to use Vue events, then you're all set to go.
+
+> **IMPORTANT!**
+> Not to be confused with events supported by Quasar Components. Those are Vue events emitted by the respective components and don't interfere with this global event bus.
 
 ## Methods
 
