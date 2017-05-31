@@ -1,4 +1,4 @@
-title: Quasar CSS Visibility
+title: CSS Visibility
 ---
 There are some CSS classes that you can use out of the box for common functionality.
 
@@ -12,6 +12,8 @@ There are some CSS classes that you can use out of the box for common functional
 | `light-dimmed` | Apply white transparent overlay on top of your element. Do not use on elements which already have **:after** pseudoelement. |
 | `highlight-and-fade` | Adds a yellow background color and fades it away upon element is displayed. |
 | `ellipsis` | Truncates text and shows ellipsis when not enough space available. |
+| `ellipsis-2-lines` | Truncates text and shows ellipsis when not enough space available on two lines (works only on Webkit browsers). |
+| `ellipsis-3-lines` | Truncates text and shows ellipsis when not enough space available on three lines (works only on Webkit browsers). |
 | `z-absolute` | Positions your element on top of any other component (including Drawer, Modals, Toasts, Layout header/footer, ...) |
 
 ### Animating
@@ -35,7 +37,6 @@ Visible only on:
 | `cordova-only` | Visible only on Cordova wrapped Apps |
 | `electron-only` | Visible only on Electron wrapped Apps |
 | `touch-only` | Visible only on touch capable platforms |
-| `no-touch-only` | Visible only on non-touch platforms |
 | `mat-only` | Visible only for Material Quasar Theme |
 | `ios-only` | Visible only for iOS Quasar Theme |
 | `platform-ios` | Visible only on an iOS platform |
@@ -51,7 +52,6 @@ Hide on:
 | `cordova-hide` | Hide on Cordova wrapped Apps |
 | `electron-hide` | Hide on Electron wrapped Apps |
 | `touch-hide` | Hide on touch capable platforms |
-| `no-touch-hide` | Hide on non-touch platforms |
 | `mat-hide` | Hide for Material Quasar Theme |
 | `ios-hide` | Hide for iOS Quasar Theme |
 | `platform-ios` | Hide on iOS platform |
@@ -72,27 +72,27 @@ Also check [Quasar Theming &gt; Platform Specific Styles](/guide/quasar-theming.
 ### Window Width Related
 First of all, let's define what does a small, medium, big or large window means:
 
-| Window Size | Width threshold in pixels |
+| Window Size | Prefix | Width threshold in pixels |
 | --- | --- |
-| Small | Up to 600px |
-| Medium | Up to 920px |
-| Big | Up to 1280px |
-| Large | Bigger than 1280px |
+| Extra Small | xs | Up to 576px |
+| Small | sm | Up to 768px |
+| Medium | md | Up to 992px |
+| Large | lg | Up to 1200px |
+| Extra Large | xl | Bigger than 1200px |
 
-Now on to the window width related CSS classes:
+Now on to the window width related CSS classes.
 
 | Class Name | Description |
 | --- | --- |
+| `xs` | Display only on extra small windows |
 | `sm` | Display only on small windows |
 | `md` | Display only on medium-sized windows |
-| `bg` | Display only on big windows |
 | `lg` | Display only on large windows |
-| `lt-md` | Display only on lower than medium windows |
-| `lt-bg` | Display only on lower than big windows |
-| `lt-lg` | Display only on lower than large windows |
-| `gt-sm` | Display only on greater than small windows |
-| `gt-md` | Display only on greater than medium windows |
-| `gt-bg` | Display only on greater than big windows |
+| `xl` | Display only on extra large windows |
+
+You can also make some DOM element or component **be hidden** by using one of classes above and adding `-hide` suffix to it. Example: `xl-hide` (hide on extra large windows), `sm-hide` (hide on small windows).
+
+You can also show some DOM element or component **if it's lower than one of the sizes**. **Same for greater than one of the sizes**. Just attach `lt-` or `gt-` prefixes, which come from "lower than" and "greater than". Example: `lt-md` (display on xs and sm only), `lt-xl` (display on xs, sm, md and lg windows only), `gt-md` (display on greater than medium windows: lg and xl).
 
 > **NOTE**
 > You can combine the visibility classes with the `inline` class for inline-blocks.
