@@ -2,53 +2,49 @@ title: Spinners
 ---
 A Spinner is used to show the user a timely process is currently taking place. It is an important UX feature, which gives the user the feeling the system is continuing to work for longer term activities, like grabbing data from the server or some heavy calculations.   
 
-The spinner is used in components such as the [QInnerLoading](inner-loading.html) and [Qbtn](buttons.html) components and within the `Loading` feature. We'll be covering the usage in components. 
-
-<input type="hidden" data-fullpage-demo="web-components/spinner">
+<input type="hidden" data-fullpage-demo="web-componentss/spinner">
 
 ## Basic Usage
 ``` html
 <!-- Default platform spinner-->
-<q-spinner></q-spinner>
+<q-spinner />
 
 <!-- Spinner with options -->
-<q-spinner color="#ff00ee" :size="30"></q-spinner>
+<q-spinner color="secondary" :size="30" />
+<q-spinner color="teal-4" size="40px" />
 
+<!--
+  Alternatively, you can set CSS colo prop on
+  a container or directly with `style` attribute on spinner
+-->
+<q-spinner style="color: #e2aa6f" />
 ```
 
 ## Vue Properties
 | Vue Property | Type | Description |
 | --- | --- | --- |
 | `size` | Number | Number defining the size in pixels. |
-| `color` | String | CSS color string. |
+| `color` | String | CSS color from [Quasar Color Palette](/components/color-palette.html). |
 
 You can change the spinner's size without a loss of quality, because SVGs are used.
 
-If you'd like to use a different spinner than the default, use a specific spinner component. 
-
-The following specific spinners components are available:
-
- `q-spinner-audio`, `q-spinner-ball`, `q-spinner-bars`, `q-spinner-circles`, `q-spinner-dots`, `q-spinner-grid`, `q-spinner-hearts`, `q-spinner-ios`, `q-spinner-mat`, `q-spinner-oval`, `q-spinner-puff`, `q-spinner-rings`, `q-spinner-tail`, `q-spinner-facebook`, `q-spinner-gears`, `q-spinner-hourglass`, `q-spinner-infinity`, `q-spinner-pie`, `q-spinner-radio`.
-
-
 ## Using Specific Spinners
+If you'd like to use a different spinner than the default, use a specific spinner component, which inherits the [same props as specified above](#Vue-Properties).
+
+The following specific spinners components are available. The name of these components is `q-spinner-*name*`, where `name` is one of 'audio', 'ball', 'bars', 'circles', 'dots', 'grid', 'hearts', 'ios', 'mat', 'oval', 'puff', 'rings', 'tail', 'facebook', 'gears', 'hourglass', 'infinity', 'pie', 'radio'.
+
+Example:
 
 ```html
 <!-- Specific spinner icon -->
-<q-spinner-audio></q-spinner-audio>
+<q-spinner-audio />
 
 <!-- Specific spinner icon with options -->
-<q-spinner-audio color="#ff00ee" :size="30"></q-spinner-audio>
+<q-spinner-audio color="primary" :size="30" />
 
 ```
 
-**Note**
-Having to use an extra component to identify specific spinners might seem like extra work, however, the goal is to be able to remove all other spinner components in your final build, in order to keep the overall package size of your application down to a minimum.  
+> **Note**
+> Having to use an extra component to identify specific spinners might seem like extra work, however, the goal is to be able to remove all other spinner components in your final build, in order to keep the overall package size of your application down to a minimum.  
 
-## Vue Properties
-| Vue Property | Type | Description |
-| --- | --- | --- |
-| `size` | Number | Number defining the size in pixels or rem units. |
-| `color` | String | CSS color string. |
-
-You can also see how spinners are used within the [QInnerLoading](/components/inner-loading.html) and [QBtn](/components/buttons.html) components.
+The spinners are used in components such as the [QInnerLoading](/components/inner-loading.html) and [QBtn](/components/button.html) components or within the [Loading](/components/loading.html) feature, just to name a few examples.

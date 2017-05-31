@@ -98,7 +98,7 @@ components:
     Buttons with Progress: $
     Loading: $
     Inner Loading: $
-    Linear Progress: $
+    Progress Bar: $
     Spinner: $
   Forms:
     Button: $

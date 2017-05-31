@@ -22,6 +22,8 @@ The QInnerLoading component allows you to add a progress animation within a comp
 </div>
 ```
 
+View the source of the demo for the full example.
+
 Use `v-show` or `v-if` and the Inner Loading component's `:visible` prop to toggle between the animation and your content.
 
 ## Vue Properties
