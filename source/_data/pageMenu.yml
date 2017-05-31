@@ -49,12 +49,11 @@ components:
     Positioning: $
     Other Helper Classes: $
   Layout and Structure:
-    Introduction: layout-and-structure
+    Overview: layout-$
     Layout: $
     Fixed Positioning on Layout: $
     Element Resize Observable: $
     Window Resize Observable: $
-    Relocating Nodes: $
   Navigation:
     Toolbar: $
     Tabs: $
