@@ -72,7 +72,7 @@ components:
   Animation:
     Transition: $
     SlideTransition: $
-  Touch Actions:
+  Touch/Mouse Actions:
     Panning: $
     Swiping: $
     Touch Hold: $
