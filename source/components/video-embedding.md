@@ -4,16 +4,17 @@ Embedding a video like Youtube is easy. It also resizes to fit the container by 
 
 <input type="hidden" data-fullpage-demo="web-components/video-embedding">
 
+## Using QVideo
 ``` html
 <q-video
-  :src="https://www.youtube.com/embed/k3_tw44QsZQ?rel=0"
+  src="https://www.youtube.com/embed/k3_tw44QsZQ?rel=0"
   style="width: 853px; height: 480px"
-></q-video>
+/>
 ```
 
-Or, if you prefer the "raw" version:
+Or, if you prefer the "raw" version for more control:
 ``` html
-<div class="video">
+<div class="q-video">
   <iframe
     width="853"
     height="480"
