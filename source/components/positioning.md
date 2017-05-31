@@ -1,4 +1,4 @@
-title: Quasar CSS Positioning Classes
+title: CSS Positioning Classes
 ---
 There are CSS classes supplied by Quasar to help you position a DOM element easily:
 
