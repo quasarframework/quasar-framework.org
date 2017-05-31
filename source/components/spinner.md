@@ -2,7 +2,7 @@ title: Spinners
 ---
 A Spinner is used to show the user a timely process is currently taking place. It is an important UX feature, which gives the user the feeling the system is continuing to work for longer term activities, like grabbing data from the server or some heavy calculations.   
 
-<input type="hidden" data-fullpage-demo="web-componentss/spinner">
+<input type="hidden" data-fullpage-demo="web-components/spinner">
 
 ## Basic Usage
 ``` html
