@@ -1,4 +1,4 @@
-title: Events
+title: Global Event Bus
 ---
 Events are important for the inner workings of your App.
 Sometimes you need an event bus or a publish/subscribe channel. Quasar provides this out of the box:

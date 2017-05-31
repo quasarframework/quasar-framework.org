@@ -1,4 +1,4 @@
-title: Icon
+title: Icons
 ---
 
 The Quasar Icon component allows you to easily insert icons within other components or any other area of your pages, as you'd like.
