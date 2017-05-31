@@ -72,7 +72,7 @@ components:
     Scrolling Utils: $
   Animation:
     Transition: $
-    SlideTransition: $
+    Slide Transition: $
     JS Animations: $
   Touch/Mouse Actions:
     Panning: $
