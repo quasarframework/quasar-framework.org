@@ -99,7 +99,7 @@ components:
     Loading: $
     Inner Loading: $
     Linear Progress: $
-    Circular Progress (Spinner): $
+    Spinner: $
   Forms:
     Button: $
     Field: $
