@@ -131,7 +131,7 @@ components:
     Tree: $
     Utils: js-$
   Web API Wrappers:
-    Cookies: js-$
-    Web Storage: js-$
-    App Visibility: js-$
-    App Fullscreen: js-$
+    Cookies: $
+    Web Storage: $
+    App Visibility: $
+    App Fullscreen: $
