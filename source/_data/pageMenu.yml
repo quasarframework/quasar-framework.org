@@ -69,9 +69,11 @@ components:
     Scroll Area: $
     Scroll Fire: $
     Back to Top: $
+    Scrolling Utils: $
   Animation:
     Transition: $
     SlideTransition: $
+    JS Animations: $
   Touch/Mouse Actions:
     Panning: $
     Swiping: $
@@ -129,7 +131,10 @@ components:
   Miscellaneous:
     Chat: $
     Tree: $
-    Utils: js-$
+    Handling JS Date: $
+    DOM Utils: $
+    Formatter Utils: $
+    Other Utils: $
   Web API Wrappers:
     Cookies: $
     Web Storage: $

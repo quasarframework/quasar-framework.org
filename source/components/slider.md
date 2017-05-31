@@ -123,9 +123,9 @@ Put icons on the same DOM hierarchical level as the slides.
     Slide 3
   </div>
 
-  <q-icon slot="action" @click.native="someMethod" name="camera_enhance" />
-  <q-icon slot="action" @click.native="someOtherMethod" name="bookmark_border" />
-  <q-icon slot="action" @click.native="thirdMethod" name="add_shopping_cart" />
+  <q-icon slot="action" @click="someMethod" name="camera_enhance" />
+  <q-icon slot="action" @click="someOtherMethod" name="bookmark_border" />
+  <q-icon slot="action" @click="thirdMethod" name="add_shopping_cart" />
 </q-slider>
 ```
 
