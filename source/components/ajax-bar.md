@@ -6,7 +6,7 @@ Ajax Bar is a component which displays a loading bar (like Youtube) whenever an 
 ## Basic Usage
 As long as this component is rendered by Vue it will capture all Ajax calls.
 ``` html
-<q-ajax-bar></q-ajax-bar>
+<q-ajax-bar />
 ```
 
 Best way is to place it in your App root component (`App.vue` if you are using the default Quasar template):
@@ -14,7 +14,7 @@ Best way is to place it in your App root component (`App.vue` if you are using t
 <template>
   <div id="q-app">
     <router-view></router-view>
-    <q-ajax-bar></q-ajax-bar>
+    <q-ajax-bar />
   </div>
 </template>
 ```

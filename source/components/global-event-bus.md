@@ -14,6 +14,25 @@ Events.$on('app:visibility', state => {
 this.$q.event.$on('app:visibility', state => {
   console.log('App became', state)
 })
+// in this case, make sure you unregister your handler
+// when the Vue component gets destroyed
+```
+
+Full example inside a Vue component:
+```js
+// on a Vue component:
+export default {
+  ...,
+  created () {
+    this.handler = state => {
+      console.log('App became', state)
+    }
+    this.$q.event.$on('app:visibility', this.handler)
+  },
+  beforeDestroy () {
+    this.$q.event.$off('app:visibility', this.handler)
+  }
+}
 ```
 
 Essentially, Events is just a Vue event bus that you can use throughout your App. If you know how to use Vue events, then you're all set to go.
