@@ -1,12 +1,12 @@
 title: Directive "v-scroll"
 ---
-This one takes one parameter (a Function) and fires when user scrolls the page containing that DOM node.
+This is a Vue directive which takes one parameter (a Function) and fires when user scrolls the page containing that DOM node.
 
 ``` html
 <!-- Template for VueModel below -->
-......
+...
 <div v-scroll="scrolled">...</div>
-......
+...
 ```
 ``` js
 // VueModel for template above
@@ -26,17 +26,17 @@ This one takes one parameter (a Function) and fires when user scrolls the page c
 ```
 
 > **IMPORTANT**
-> Please note that by default the method called is not debounced. For that you have to do it yourself, by wrapping your method with `Utils.debounce` like in example below.
-> Read more about `debouncing` [here](/api/js-utils.html#Debounce-Function).
+> Please note that by default the method called is not debounced. For that you have to do it yourself, by wrapping your method with Quasar's debouncer (as an example) like in example below.
+> <br>Read more about `debouncing` [here](/components/utils.html#Debounce-Function).
 
 ``` js
-import { Utils } from 'quasar'
+import { debounce } from 'quasar'
 
 export default {
   ...,
   methods: {
     ...,
-    scrolled: Utils.debounce(position => {
+    scrolled: debounce(position => {
       // when this method is invoked then it means user
       // has scrolled the Page to `position`
       //
