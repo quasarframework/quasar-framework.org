@@ -6,7 +6,14 @@ Helpers are built-in to detect the Platform (and its capabilities) in which the 
 <input type="hidden" data-fullpage-demo="other/platform-detection">
 
 ``` js
+// Usage outside a Vue component
 import { Platform } from 'quasar'
+
+// or usage inside a Vue component JS:
+this.$q.platform.is.mobile
+
+// or usage inside a Vue component template:
+$q.platform.is.cordova
 ```
 
 | Property | Type | Meaning |
@@ -40,4 +47,4 @@ Example when running Chrome on a Linux desktop machine:
 ```
 
 > **NOTE**
-> When trying to show DOM elements only on a platform you can skip using Javascript and make use of Quasar CSS classes (which is more efficient). Read about on [CSS &gt; Visibility](/api/css-visibility.html#Platform-Related) documentation page.
+> When trying to show DOM elements only on a platform you can skip using Javascript and make use of Quasar CSS classes (which is more efficient). Read about this here: [Design Helpers &gt; Visibility](/components/visibility.html#Platform-Related).

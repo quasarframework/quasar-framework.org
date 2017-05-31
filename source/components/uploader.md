@@ -1,21 +1,15 @@
 title: Uploader
 ---
-Quasar supplies a way for you to upload files.
+Quasar supplies a way for you to upload files through QUploader component.
 
-> The documentation website only allows static content, so a demo with Uploader is not possible as this assumes a server script running. As a result you can only see some screenshots (may be out of date) below:
+> The documentation website only allows static content, so a demo with QUploader is not possible as this assumes a server script running. As a result you can only see some screenshots (may be out of date) below:
 
-* Picking files:
-![Uploader Picking Files](/images/uploader-picking-files.png)
-
-* Uploading files:
-![Uploader in progress](/images/uploader-progress.png)
-
-* Error reporting:
-![Uploader error](/images/uploader-error.png)
+![Uploader Screenshot 1](/images/uploader-1.png)
+![Uploader Screenshot 2](/images/uploader-2.png)
 
 ## Basic Usage
 ``` html
-<q-uploader :url="url"></q-uploader>
+<q-uploader :url="url" />
 ```
 
 ## Vue Properties
@@ -24,27 +18,29 @@ Quasar supplies a way for you to upload files.
 | `url` | String | (**Required**) URL or path to the server which handles the upload |
 | `name` | String | Name of the file, if it should be different than the file's name. |
 | `headers` | Object | Specify what headers need to be added to the XHR request |
-| `buttonClass` | String | CSS classes used for "Add" and "Upload" buttons |
-| `method` | String | HTTP method to use (POST/PUT). Defaults to POST |
+| `url-factory` | Function | Function (with `file` object received as parameter) which returns a Promise that resolves to a URL. |
+| `method` | String | HTTP method to use (POST/PUT). Defaults to POST. |
 | `extensions` | String | Extensions to allow for uploading. Example: `'.gif,.jpg,.jpeg,.png'` |
 | `multiple` | Boolean | Allow multiple file uploads |
 | `hide-upload-button` | Boolean | Hides the Upload button. You can then trigger it manually by calling `upload()` on the Vue ref |
-| `icons` | Object | You can overwrite default `add`, `remove`, `upload` and `failed` icons. Specify which prop to overwrite. |
-| `labels` | Object | You can overwrite default `add`, `remove`, `upload`, `failed` and `uploading` labels. Specify which prop to overwrite. |
+| `hide-upload-progress` | Boolean | Hides the upload progress. Useful when you want some other means of signaling upload progress to the user. |
 | `additionalFields` | Array | **Additional fields to send along the upload request.** Useful for authentication and so on. Array of Objects containing `name` and `value` props. |
+| `color` | String | One color from [Quasar Color Palette](/components/color-palette.html). |
 
 ## Vue Methods
 | Vue Method | Description |
 | --- | --- |
 | `upload()` | Start file(s) upload. |
+| `abort()` | Abort uploading file(s). |
 
 ## Vue Events
 | Vue Event | Description |
 | --- | --- |
 | `@add(files)` | Triggered when file is picked for upload |
-| `@remove(file)` | Triggered when file is removed from upload queue |
-| `@upload(file, xhr)` | Triggered individually for each file that has just been uploaded |
+| `@remove:abort(file)` | Triggered when file is removed from upload queue while uploading. |
+| `@remove:cancel(file)` | Triggered when file is removed from upload queue before uploading. |
+| `@remove:done(file)` | Triggered when file is removed from upload list after it has been  uploaded. |
+| `@uploaded(file, xhr)` | Triggered individually for each file that has just been uploaded |
 | `@fail(file, xhr)` | Triggered individually for each file that has encountered error while uploading |
 | `@start` | Triggered when upload has started |
 | `@finish` | Triggered when upload of file(s) has ended (with success or failure) |
-| `@fail` | Triggered when upload of file(s) has ended with a failure |

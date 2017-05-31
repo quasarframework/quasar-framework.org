@@ -1,11 +1,9 @@
-title: Quasar CSS Positioning Classes
+title: CSS Positioning Classes
 ---
 There are CSS classes supplied by Quasar to help you position a DOM element easily:
 
 | Class Name | Description |
 | --- | --- |
-| `float-left`/`pull-left` | Float to the left |
-| `float-right`/`pull-right` | Float to the right |
 | `fullscreen` | Fix position covering all window real-estate |
 | `fixed` | Set `position` to `fixed` without specifying `top`, `left`, `right` or `bottom` properties |
 | `absolute` | Set `position` to `absolute` without specifying `top`, `left`, `right` or `bottom` properties |

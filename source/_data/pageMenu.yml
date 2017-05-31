@@ -29,99 +29,109 @@ guide:
     Nightly Build: quasar-$
     Router: $
     Theming: quasar-$
-api:
-  Javascript:
-    App Visibility: js-$
-    App Fullscreen: js-$
-    Cookies: js-$
-    Events: js-$
-    Platform Detection: js-$
-    Utils: js-$
-    Touch Directives: js-$
-    Other Directives: js-$
-    Web Storage: js-$
-  CSS:
-    Stylus Variables: css-$
-    Color Palette: css-$
-    Icons: css-$
-    Typography: css-$
-    Shadows: css-$
-    Grid Layout: css-$
-    Visibility: css-$
-    Positioning: css-$
-    Other Helper Classes: css-$
+
 components:
   root:
-    Action Sheet: $
-    Dialog: $
-    Inner Loading: $
-    Loading: $
-    Observables: $
-    Toast: $
-  Layout:
+    Introduction: $
+    Platform Detection: $
+    Global Event Bus: $
+  Style & Identity:
+    Color Palette: $
+    Stylus Variables: $
+    Icons: $
+    Material Ripples: $
+    Typography: $
+    Addressbar Color: $
+  CSS Helpers:
+    Flex CSS: $
+    Shadows (Elevation): $
+    Visibility: $
+    Positioning: $
+    Other Helper Classes: $
+  Layout and Structure:
     Overview: layout-$
-    Fixed Position: $
-    Drawer: $
+    Layout: $
+    Fixed Positioning on Layout: $
+    Element Resize Observable: $
+    Window Resize Observable: $
+  Navigation:
     Toolbar: $
     Tabs: $
-  CSS:
-    Breadcrumb: $
-    Buttons: $
-    Cards: $
-    Chat: $
-    HTML Tables: $
-    Label: $
-    List: $
-    Timeline: $
-    Transition: $
-  Form Inputs:
-    Autocomplete: $
-    Checkbox: $
-    Chips Textbox: $
-    Datetime: $
-    Datetime Range: $
-    Field: $
-    Inline Datetime: $
-    Input Textbox: $
-    Knob: $
-    Numeric: $
-    Radio: $
-    Range: $
-    Double Range: $
-    Option Group: $
-    Rating: $
-    Search: $
-    Select: $
-    Dialog Select: $
-    Textarea: $
-    Toggle: $
-  Vue Components:
-    Alert: $
-    Ajax Bar: $
-    Back to Top: $
-    Chip: $
-    Collapsible (+ Accordion): collapsible
+    Pull to refresh: $
+    Layout Side Links: $
+    Go Back Directive: $
     Context Menu: $
-    Data Table: $
-    Floating Action Buttons: $
+    Breadcrumb: $
+  Scrolling:
+    Scroll Directive: $
     Infinite Scroll: $
-    Modal: $
-    Icon: $
-    Image Gallery: $
-    List Item: $
-    Pagination: $
-    Parallax: $
-    Popover: $
-    Progress Bar: $
-    Progress Button: $
-    Pull to Refresh: $
+    Scroll Area: $
     Scroll Fire: $
-    Slider: $
-    Spinners: $
-    State: $
-    Stepper: $
+    Scroll Observable: $
+    Back to Top: $
+  Animation:
+    Transition: $
+    SlideTransition: $
+  Touch Actions:
+    Panning: $
+    Swiping: $
+    Touch Hold: $
+  Popups:
+    Action Sheet: $
+    Alert: $
+    Dialog: $
+    Toast: $
+    Modal: $
+    Popover: $
     Tooltip: $
-    Tree: $
+    Floating Action Button: $
+  Grouping:
+    Card: $
+    Collapsible: $
+    DataTable: $
+    HTML Table: $
+    Lists and Items: $
+    Slider: $
+    Stepper: $
+  Progress:
+    Ajax Bar: $
+    Buttons with Progress: $
+    Loading: $
+    Inner Loading: $
+    Progress Bar: $
+    Spinner: $
+  Forms:
+    Button: $
+    Field: $
+    Input: $
+    ChipsInput: $
+    Autocomplete: $
+    Search: $
+    Range: $
+    DoubleRange: $
+    Radio: $
+    Checkbox: $
+    Toggle: $
+    OptionGroup: $
+    Datetime: $
+    InlineDatetime: $
+    DatetimeRange: $
+    Pagination: $
+    Select: $
+    DialogSelect: $
+    Rating: $
+    Knob: $
     Uploader: $
+  Media:
+    Image Gallery: $
+    Parallax: $
     Video Embedding: $
-    Vue Transitions: $
+  Miscellaneous:
+    Chat: $
+    Tree: $
+    Utils: js-$
+  Web API Wrappers:
+    Cookies: $
+    Web Storage: $
+    App Visibility: $
+    App Fullscreen: $

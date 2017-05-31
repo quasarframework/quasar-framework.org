@@ -8,30 +8,36 @@ All Components below are responsive. They accommodate to the width of their cont
 Just add the `responsive` CSS class to it.
 
 ``` html
-<img src="assets/quasar.jpg" class="responsive">
+<img src="~assets/quasar.jpg" class="responsive">
 ```
 
 ## Avatar Images
 Just add the `avatar` CSS class to it.
 
 ``` html
-<img src="assets/q-avatar.jpg" class="avatar">
+<img src="~assets/q-avatar.jpg" class="avatar">
 ```
 
 ## Image Gallery
 Use this Web Component when you want to display multiple images together.
 
 ``` html
-<q-gallery :src="gallery"></q-gallery>
+<q-gallery :src="gallery" />
 
 <!-- With infinite scrolling and autoplay and dots and fullscreen -->
-<q-gallery infinite autoplay dots fullscreen :src="gallery"></q-gallery>
+<q-gallery
+  infinite
+  autoplay
+  dots
+  fullscreen
+  :src="gallery"
+/>
 ```
 
 ### Vue Properties
 | Property | Type | Description |
 | --- | --- | --- |
-| `src` | Array | Strings represting URLs. Use images from statics folder. |
+| `src` | Array | Array of Strings represting URLs. Use images from statics folder. |
 | `infinite` | Boolean | Infinite slides scrolling |
 | `autoplay` | Boolean/Number | Auto scrolls between slides. Works great along `infinite` prop (but `infinite` is not required). If used as a number, it represents the number of milliseconds between scrolls. |
 | `arrows` | Boolean | Show arrows |
@@ -48,7 +54,7 @@ User can switch between images using the arrow buttons or through swipe actions.
 
 ``` html
 <!-- Template for VueModel below -->
-<q-gallery-slider :src="gallery"></q-gallery-slider>
+<q-gallery-slider :src="gallery" />
 ```
 
 ### Vue Properties
