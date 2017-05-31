@@ -64,7 +64,7 @@ components:
     Breadcrumb: $
   Scrolling:
     Scroll Directive: $
-    InfiniteScroll: $
+    Infinite Scroll: $
     Scroll Area: $
     Scroll Fire: $
     Scroll Observable: $
