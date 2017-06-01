@@ -26,13 +26,13 @@ Modals are responsive to the width of the window (see demo on a desktop and resi
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `position-classes` | String | Space delimited CSS classes that overwrite the default 'items-center justify-center' classes. |
 | `content-css` | Object | Applies CSS style Object to Modal container. |
 | `content-classes` | Object or String | Classes to apply to Modal inner content. |
-| `transition` | String | Vue transition to use. Quasar comes with `q-modal` out of the box. But you can write your own Vue transitions using CSS and use them. |
+| `transition` | String | Vue transition to use. Quasar comes with a `q-modal` transition out of the box. But you can write your own Vue transitions using CSS and use them. |
 | `noBackdropDismiss` | Boolean | Disable Modal dismissal by clicking/tapping on backdrop. |
 | `noEscDismiss` | Boolean | Disable Modal dismissal by hitting Escape key. |
 | `position` | String | Stick Modal to one of the screen edges (`top`, `right`, `bottom`, `left`). |
+| `position-classes` | String | Space delimited CSS classes that overwrite the default 'items-center justify-center' classes. Gets overridden by `position` if present. |
 | `minimized` | Boolean | Always minimized regardless of screen width. |
 | `maximized` | Boolean | Always maximized regardless of screen width. |
 | `enterClass` | String | enter transition class name |
@@ -69,6 +69,13 @@ Modals are responsive to the width of the window (see demo on a desktop and resi
 ### Styling Modal
 ``` html
 <q-modal :content-css="{padding: '50px'}">
+  ...
+</q-modal>
+```
+
+### Sticking Modal to an Edge
+``` html
+<q-modal position="left">
   ...
 </q-modal>
 ```
