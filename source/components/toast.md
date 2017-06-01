@@ -4,6 +4,7 @@ Quasar Toasts appear on top of the screen above any other components to signal t
 
 > Toasts are displayed one at a time, but you can build up a queue of them.
 
+Check the sibling [Alert](/components/alert.html) too.
 <input type="hidden" data-fullpage-demo="global/toast">
 
 ## Basic Usage

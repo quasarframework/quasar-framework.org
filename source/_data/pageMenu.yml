@@ -81,8 +81,8 @@ components:
   Popups:
     Action Sheet: $
     Alert: $
-    Dialog: $
     Toast: $
+    Dialog: $
     Modal: $
     Popover: $
     Tooltip: $
