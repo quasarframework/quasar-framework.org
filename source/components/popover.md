@@ -15,7 +15,7 @@ You can replace the QBtn and the List with any DOM elements or components you li
   must be direct parent of QPopover on the
   DOM hierarchy.
 -->
-<q-btn ref="target" class="primary">
+<q-btn ref="target">
   Email
 
   <!-- Direct child of target -->
