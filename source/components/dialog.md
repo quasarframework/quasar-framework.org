@@ -1,8 +1,8 @@
-title: Quasar Dialog
+title: Dialog
 ---
 Quasar Dialogs are a great way to offer the user the ability to choose a specific action or list of actions. They also can provide the user with important information, or require them to make a decision (or multiple decisions).
 
-From a UI perspective, you can think of Dialogs as a type of “floating” modal, which covers only a portion of the screen. This means Dialogs should only be used for quick actions, like password verification, small App notifications or quick options. More in depth user flows should be reserved for full screen ​Modals​.
+From a UI perspective, you can think of Dialogs as a type of “floating” modal, which covers only a portion of the screen. This means Dialogs should only be used for quick actions, like password verification, small App notifications or quick options. More in depth user flows should be reserved for ​Modals​.
 
 <input type="hidden" data-fullpage-demo="global/dialog">
 
@@ -230,10 +230,11 @@ Dialog.create({
     },
     group1: {
       type: 'checkbox',
+      model: ['opt2', 'opt3'],
       items: [
-        {label: 'Option 1', value: 'opt1', model: true},
-        {label: 'Option 2', value: 'opt2', model: false, color: 'secondary'},
-        {label: 'Option 3', value: 'opt3', model: false, color: 'amber'}
+        {label: 'Option 1', value: 'opt1'},
+        {label: 'Option 2', value: 'opt2', color: 'secondary'},
+        {label: 'Option 3', value: 'opt3', color: 'amber'}
       ]
     },
     header2: {
@@ -242,10 +243,11 @@ Dialog.create({
     },
     group2: {
       type: 'toggle',
+      model: [],
       items: [
-        {label: 'Option 1', value: 'opt1', model: true},
-        {label: 'Option 2', value: 'opt2', model: false, color: 'secondary'},
-        {label: 'Option 3', value: 'opt3', model: false, color: 'amber'}
+        {label: 'Option 1', value: 'opt1'},
+        {label: 'Option 2', value: 'opt2', color: 'secondary'},
+        {label: 'Option 3', value: 'opt3', color: 'amber'}
       ]
     }
   },
@@ -473,8 +475,9 @@ Dialog.create({
   form: {
     prevent: {
       type: 'checkbox',
+      model: ['prevent'],
       items: [
-        {label: 'Prevent dialog close', value: 'prevent', model: true}
+        {label: 'Prevent dialog close', value: 'prevent'}
       ]
     }
   },
@@ -529,10 +532,11 @@ Dialog.create({
     },
     group1: {
       type: 'checkbox',
+      model: ['opt2'],
       items: [
-        {label: 'Option 1', value: 'opt1', model: true},
-        {label: 'Option 2', value: 'opt2', model: false},
-        {label: 'Option 3', value: 'opt3', model: false}
+        {label: 'Option 1', value: 'opt1'},
+        {label: 'Option 2', value: 'opt2'},
+        {label: 'Option 3', value: 'opt3'}
       ]
     },
     comments: {
