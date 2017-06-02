@@ -82,7 +82,7 @@ alert.dismiss()
 Here are all of the properties of the Alert component, when used as a method:
 
 | Property | Type | Description |
-| --- | --- | --- | --- |
+| --- | --- | --- |
 | `duration` | Number | The time in milliseconds any transition should take.|
 | `color` | String | This can be any color set up under the [Quasar Color Palette](/components/color-palette.html).  |
 | `html` | String | HTML to display as the message text. |

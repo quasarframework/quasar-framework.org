@@ -17,6 +17,12 @@ QSideLink is basically a wrapper over Vue's `<router-link>` component (read abou
   "/some/route"
 -->
 <q-side-link to="/some/route">Go to Route</q-side-link>
+
+<!--
+  The example below creates a <a> element instead of
+  the default <div>.
+-->
+<q-side-link tag="a" to="/some/route">Go to Route</q-side-link>
 ```
 
 ```html
