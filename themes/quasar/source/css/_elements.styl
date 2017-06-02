@@ -339,7 +339,6 @@ input, select, textarea
   background-size auto 100%
   background-color $primary
   text-align center
-  animation sky-slide-x 300s linear infinite
 
   &:before
     content ''
@@ -348,13 +347,11 @@ input, select, textarea
     left 0
     right 0
     bottom 0
-    opacity .7
-    background-image url(../images/stars.png), url(../images/stars.png), url(../images/stars.png)
+    background-image url(../images/stars.png), url(../images/stars.png)
     background-attachment fixed
-    background-repeat repeat, repeat, repeat
-    background-size auto 50%, auto 100%, auto 150%
-    background-color transparent
-    animation stars-slide-x 550s linear infinite reverse
+    background-repeat repeat, repeat
+    background-size auto 150%, auto 100%
+    animation stars-slide-x 400s linear infinite reverse
 
   p
     max-width 80%
