@@ -1,6 +1,3 @@
-/* Credits for 'pulse' and 'tada' anims to animate.css */
-/* https://github.com/daneden/animate.css */
-
 .animated
   animation-duration 1s
   animation-fill-mode both
@@ -16,49 +13,6 @@
 
 .rotate-clockwise
   animation-name rotate-clockwise
-
-@keyframes pulse
-  from
-    transform scale3d(1, 1, 1)
-  50%
-    transform scale3d(1.05, 1.05, 1.05)
-  to
-    transform scale3d(1, 1, 1)
-
-.pulse
-  animation-name pulse
-
-@keyframes tada
-  from
-    transform scale3d(1, 1, 1)
-  10%, 20%
-    transform scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg)
-  30%, 50%, 70%, 90%
-    transform scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)
-  40%, 60%, 80%
-    transform scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)
-  to
-    transform scale3d(1, 1, 1)
-
-.tada
-  animation-name tada
-
-@keyframes swing
-  15%
-    transform translateX(5px)
-  30%
-    transform translateX(-5px)
-  50%
-    transform translateX(3px)
-  65%
-    transform translateX(-3px)
-  80%
-    transform translateX(2px)
-  100%
-    transform translateX(0)
-
-.swing
-  animation-name swing
 
 @keyframes logo-resize
   0%, 25%
