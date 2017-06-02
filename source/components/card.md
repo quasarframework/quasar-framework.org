@@ -9,6 +9,15 @@ Quasar Cards are a collection of components that you can use, based on the needs
 
 Familiarize yourself with Card components with the examples below. The only requirement is that QCard needs to wrap all the other ones. Everything else is optional and can be inserted into your template anywhere as long as they are direct children of QCard.
 
+Following are Vue properties of QCard component:
+
+| Vue Property | Type | Description |
+| --- | --- | --- | --- |
+| `square` | Boolean | Squared borders instead of round ones. |
+| `flat` | Boolean | Remove shadow. |
+| `inline` | Boolean | Make it inline. Also set a CSS width to work. Take a look at Grid example on the "More Examples" section. |
+| `color` | String | One color from [Quasar Color Palette](/components/color-palette.html). |
+
 ``` html
 <!-- An basic example -->
 <q-card>
@@ -21,13 +30,6 @@ Familiarize yourself with Card components with the examples below. The only requ
   </q-card-main>
 </q-card>
 ```
-
-| Vue Property | Type | Description |
-| --- | --- | --- | --- |
-| `square` | Boolean | Squared borders instead of round ones. |
-| `flat` | Boolean | Remove shadow. |
-| `inline` | Boolean | Make it inline. Also set a CSS width to work. Take a look at Grid example on the "More Examples" section. |
-| `color` | String | One color from [Quasar Color Palette](/components/color-palette.html). |
 
 A more complex example:
 ```html
@@ -114,6 +116,11 @@ QCardMain defines an area containing the main Card content, like description, de
 ### Card Actions (QCardActions)
 Cards can have some actions (buttons) attached to them.
 
+| Vue Property | Type | Description |
+| --- | --- | --- | --- |
+| `vertical` | Boolean | Stack actions vertically |
+| `align` | String | One of 'start', 'center', 'end', 'around' which aligns buttons in respect to the actions container |
+
 ```html
 <!-- Horizontal actions -->
 <q-card-actions>
@@ -134,11 +141,6 @@ Cards can have some actions (buttons) attached to them.
   <q-btn flat>Action 2</q-btn>
 </q-card-actions>
 ```
-
-| Vue Property | Type | Description |
-| --- | --- | --- | --- |
-| `vertical` | Boolean | Stack actions vertically |
-| `align` | String | One of 'start', 'center', 'end', 'around' which aligns buttons in respect to the actions container |
 
 ### Card Lists (QCardList)
 QCardList is simply creating a `<div>` with the appropriate List classes attached to it. So any CSS class available for Lists works for this too.
@@ -185,6 +187,11 @@ There's also the possibility to create a nice header for your Cards with an imag
 
 ### Card Media (QCardMedia)
 Cards can also contain media elements: images, videos (through [QVideo](/components/video-embedding.html)) or a parallax (through [QParallax](/components/parallax.html)). This can be done through QCardMedia component, which supports an optional overlay too (for things like title and/or subtitle).
+
+
+| Vue Property | Type | Description |
+| --- | --- | --- | --- |
+| `overlay-position` | String | One of 'top', 'bottom' or 'full' which sets the position of overlay on top of media element. |
 
 ```html
 <!-- Displaying an image -->
@@ -245,10 +252,6 @@ Now let's see how we can add overlays too (through "overlay" slot):
   </q-card-title>
 </q-card-media>
 ```
-
-| Vue Property | Type | Description |
-| --- | --- | --- | --- |
-| `overlay-position` | String | One of 'top', 'bottom' or 'full' which sets the position of overlay on top of media element. |
 
 ### Card Inner Separator
 You can choose to add a separator between Card components, which is basically a horizontal thin line, by adding QCardSeparator:
