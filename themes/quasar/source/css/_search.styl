@@ -1,3 +1,6 @@
+@import '_variables'
+@import '_mixins'
+
 .content.search
   margin-left 20px
   h1
@@ -9,17 +12,15 @@
       margin-top 0
     li
       margin .5em 0 .5em
-      border-bottom 1px solid $border
-      border-radius $radius
+      border-bottom 1px solid $border-color
+      border-radius $border-radius
       padding 10px
       &:hover
         background-color #EEE // @stylint ignore
       a.search-result-title
         font-weight bold
-        color $main
         font-size 16px
       a.search-result
-        color $medium
         font-weight 400
 
 #search-content
