@@ -322,17 +322,11 @@ input, select, textarea
 
 /* Leads */
 
-@keyframes sky-slide-x
-  from
-    background-position 0px 0
-  to
-    background-position 8000px 0
-
 @keyframes stars-slide-x
   from
-    background-position 0px 0, -100px 0
+    background-position 0px 0, 100px 0
   to
-    background-position 7000px 0, 10000px 0
+    background-position -7000px 0, -10000px 0
 
 .qwb-lead
   display flex
@@ -356,8 +350,8 @@ input, select, textarea
     background-image url(../images/stars.png), url(../images/stars.png)
     background-attachment fixed
     background-repeat repeat, repeat
-    background-size auto 150%, auto 100%
-    animation stars-slide-x 400s linear infinite reverse
+    background-size auto 1300px, auto 1000px
+    animation stars-slide-x 600s linear infinite
 
   p
     max-width 80%
