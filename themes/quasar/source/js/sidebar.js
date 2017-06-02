@@ -56,7 +56,6 @@
     toggleStatus ? toggle.classList.add('on') : toggle.classList.remove('on');
   });
   var scrollY = Number(sessionStorage.getItem(sessionAccordionScrollId)) || 0;
-  accordion.style.opacity = 1;
   accordion.scrollTop = scrollY;
 
   // listen for events to do positioning
