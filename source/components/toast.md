@@ -1,8 +1,6 @@
 title: Toast
 ---
-Quasar Toasts appear on top of the screen above any other components to signal the user with a message and sometimes with an action too. They can be dismissed by clicking on the right side button.
-
-> Toasts are displayed one at a time, but you can build up a queue of them.
+Quasar Toasts appear on top of the screen above any other components to signal the user with a message and sometimes with an action too. They can be dismissed by clicking on the right side button or waiting for them to timeout. Toasts are displayed one at a time, but you can build up a queue of them.
 
 Check the sibling [Alert](/components/alert.html) too.
 <input type="hidden" data-fullpage-demo="global/toast">
