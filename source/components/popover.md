@@ -59,6 +59,13 @@ The idea is to place QPopover inside your DOM element / component that you want 
 | `open()` | Open Popover. |
 | `close()` | Close Popover. |
 
+## Vue Events
+
+| Vue Method | Description |
+| --- | --- |
+| `@open` | Triggered after opening Popover. |
+| `@close` | Triggered after closing Popover. |
+
 ## Handling Popover Dismissal
 By default, clicking/tapping outside the QPopover content will close it. But if you'd like elements from the QPopover content to close it, then use a Vue reference on QPopover to call `close()` method, like on the "Basic Usage" example above.
 
