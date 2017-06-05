@@ -1,6 +1,6 @@
-title: Buttons
+title: Button
 ---
-The Quasar button component is a button with a few extra useful features. For instance, `q-btn` comes in two shapes: rectangle (default) and circular. It also has the material ripple effect by default. 
+The Quasar button component is a button with a few extra useful features. For instance, `q-btn` comes in two shapes: rectangle (default) and circular. It also has the material ripple effect by default.
 
 The button component also comes with a spinner or loading effect. You would use this for times when app execution may cause a delay and you want to give the user some feedback about that delay. When used, the button will display a spinning animation as soon as the user clicks the button.
 
@@ -94,7 +94,7 @@ Use `small` or `big` as attributes. You don't need to specify `medium` because t
   Big Button
 </q-btn>
 ```
-You can also make use of globally available `block` (sets CSS `display` property to `block`) or `full-width` to expand the button. 
+You can also make use of globally available `block` (sets CSS `display` property to `block`) or `full-width` to expand the button.
 
 ## Button Colors
 Use any color from the [Quasar CSS Color Palette](/api/css-color-palette.html). Examples: `primary`, `orange`, `lime`.
@@ -105,7 +105,7 @@ Use any color from the [Quasar CSS Color Palette](/api/css-color-palette.html). 
 ```
 
 ## Other Prop Controlled CSS Class Properties
-There are also the `outline`, `push`, `round`, `flat`, `rounded` props for you to use to control some design aspects of the button. 
+There are also the `outline`, `push`, `round`, `flat`, `rounded` props for you to use to control some design aspects of the button.
 
 ``` html
 <!-- an outlined button -->
@@ -116,11 +116,11 @@ There are also the `outline`, `push`, `round`, `flat`, `rounded` props for you t
 ```
 
 ## Controlling the Button for Form Submission
-When you have a button to submit a form's input to the server, like a "Save" button, more often than not you want to also give the user the ability to submit the form with a press of the enter key. If you would also like to give the user feedback of the saving process being in work and to also avoid them pressing the button too, you you'd need the button to show a loading spinner and be disabled from click events. The `q-btn` allows for this through the `value` prop. 
+When you have a button to submit a form's input to the server, like a "Save" button, more often than not you want to also give the user the ability to submit the form with a press of the enter key. If you would also like to give the user feedback of the saving process being in work and to also avoid them pressing the button too, you you'd need the button to show a loading spinner and be disabled from click events. The `q-btn` allows for this through the `value` prop.
 
 To control this loading feature, all you need is logic in your form, which sets the `v-model` of the button to true. Once it is set to true, the button reacts as if it had been pressed and displays the spinner. To stop the process, set the `v-model` value back to false.
 
-The example below demonstrates this button control with the enter key. 
+The example below demonstrates this button control with the enter key.
 
 ```html
 <!-- a simple text field watching for the enter key release -->
@@ -132,7 +132,7 @@ The example below demonstrates this button control with the enter key.
   <q-spinner-facebook slot="loading"></q-spinner-facebook>
 </q-btn>
 ```
-Below is the necessary JavaScript to make the button and the loading effect work with the form input. 
+Below is the necessary JavaScript to make the button and the loading effect work with the form input.
 
 ```js
 <script>
@@ -163,7 +163,7 @@ To disable the button, use the disable prop.
 
 ## Custom Spinner
 
-If you'd like to add a different spinner than the default, you can do so by slotting in the spinner component you'd like. 
+If you'd like to add a different spinner than the default, you can do so by slotting in the spinner component you'd like.
 
 ```html
 <q-btn icon="mail" color="orange" @click="simulateProgress">

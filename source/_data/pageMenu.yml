@@ -63,24 +63,26 @@ components:
     Context Menu: $
     Breadcrumb: $
   Scrolling:
+    Scroll Observable: $
     Scroll Directive: $
     Infinite Scroll: $
     Scroll Area: $
     Scroll Fire: $
-    Scroll Observable: $
     Back to Top: $
+    Scrolling Utils: $
   Animation:
     Transition: $
-    SlideTransition: $
-  Touch Actions:
+    Slide Transition: $
+    JS Animations: $
+  Touch/Mouse Actions:
     Panning: $
     Swiping: $
     Touch Hold: $
   Popups:
     Action Sheet: $
     Alert: $
-    Dialog: $
     Toast: $
+    Dialog: $
     Modal: $
     Popover: $
     Tooltip: $
@@ -129,7 +131,10 @@ components:
   Miscellaneous:
     Chat: $
     Tree: $
-    Utils: js-$
+    Handling JS Date: $
+    DOM Utils: $
+    Formatter Utils: $
+    Other Utils: $
   Web API Wrappers:
     Cookies: $
     Web Storage: $

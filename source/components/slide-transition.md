@@ -1,28 +1,28 @@
-title: Vue Transitions
+title: Slide Transition
 ---
-At the moment, Quasar provides only one ready to use Vue transition. If you don't know what a transition is, read [here](http://vuejs.org/guide/transitions.html).
-Quasar Vue transitions work alongside `v-show` and `v-if` on a single element. Not supporting group transitions yet.
-
-Supports all of Vue's `<transition>` props.
+QSlideTransitions slides the DOM element (or component) up or down, based on its visibility: works alongside `v-show` and `v-if` on a single element, similar to Vue's Transition component with the only difference being that it's not a group transition too (it only applies to one DOM element or component).
 
 <input type="hidden" data-fullpage-demo="other/vue-transitions">
 
-### "slide" transition
-Slide the DOM element up or down based on its visibility.
+Example:
+```html
+<template>
+  <div>
+    <q-slide-transition>
+      <img
+        v-show="visible"
+        src="~assets/quasar.jpg"
+      >
+    </q-slide-transition>
 
-``` html
-<!-- Template for VueModel below -->
-<q-transition name="slide">
-  <img
-    v-show="visible" <<<<<<<<
-    src="assets/quasar.jpg"
-  >
-</q-transition>
-<button @click="toggleVisibility()">Toggle</button>
-```
-``` js
-// VueModel for template above
-module.exports = {
+    <q-btn @click="toggleVisibility">
+      Toggle
+    </q-btn>
+  </div>
+</template>
+
+<script>
+export default {
   ...,
   data: {
     ...,
@@ -30,9 +30,17 @@ module.exports = {
   },
   methods: {
     ...,
-    toggleVisibility: function() {
-      this.visible = !this.visible;
+    toggleVisibility () {
+      this.visible = !this.visible
     }
   }
 }
+</script>
+```
+
+You can also trigger the animation when rendering the component for first time (on appearance) too, by specifying the `appear` Boolean prop:
+```html
+<q-slide-transition appear>
+  ...
+</q-slide-transition>
 ```

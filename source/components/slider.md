@@ -123,15 +123,9 @@ Put icons on the same DOM hierarchical level as the slides.
     Slide 3
   </div>
 
-  <i slot="action" @click="someMethod()">
-    camera_enhance
-  </i>
-  <i slot="action" @click="someOtherMethod()">
-    bookmark_border
-  </i>
-  <i slot="action" @click="thirdMethod()">
-    add_shopping_cart
-  </i>
+  <q-icon slot="action" @click="someMethod" name="camera_enhance" />
+  <q-icon slot="action" @click="someOtherMethod" name="bookmark_border" />
+  <q-icon slot="action" @click="thirdMethod" name="add_shopping_cart" />
 </q-slider>
 ```
 
@@ -139,22 +133,22 @@ Put icons on the same DOM hierarchical level as the slides.
 You can launch a Slider in Fullscreen by using a [Modal](/components/modal.html) component:
 
 ``` html
-<button class="primary glossy" @click="$refs.modal.open()">
+<q-btn color="primary" glossy @click="$refs.modal.open()">
   Launch
-</button>
+</q-btn>
 <q-modal ref="modal" class="maximized">
   <q-slider arrows dots class="text-white full-height">
     <div slot="slide" class="bg-primary centered">
       <h1>Slide 1</h1>
-      <button class="dark glossy" @click="$refs.modal.close()">Close Me</button>
+      <q-btn color="dark" glossy @click="$refs.modal.close()">Close Me</q-btn>
     </div>
     <div slot="slide" class="bg-secondary centered">
       <h1>Slide 2</h1>
-      <button class="dark glossy" @click="$refs.modal.close()">Close Me</button>
+      <q-btn color="dark" glossy @click="$refs.modal.close()">Close Me</q-btn>
     </div>
     <div slot="slide" class="bg-tertiary centered">
       <h1>Slide 3</h1>
-      <button class="dark glossy" @click="$refs.modal.close()">Close Me</button>
+      <q-btn color="dark" glossy @click="$refs.modal.close()">Close Me</q-btn>
     </div>
   </q-slider>
 </q-modal>

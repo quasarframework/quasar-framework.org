@@ -1,69 +1,103 @@
 title: Toolbar
 ---
-Quasar Toolbars are non-wrappable DOM elements which usually contain buttons and text.
-
-A Quasar Layout can have headers and/or footers (also called "marginals"), which will always be visible to the user at all times as long as the Layout is being used. This is a great place to use Toolbars, but you can also place Toolbars anywhere else you want.
+A Quasar Layout can have headers and/or footers (also called "marginals") and this is a great place to use Toolbars, but note that you can also place Toolbars anywhere else you want. One QToolbar will represent a row in your marginals, usually used for navigation buttons and a title (but not limited to only this).
 
 <input type="hidden" data-fullpage-demo="layout/toolbar">
 
 ## Basic Usage
-Standalone example (within a page template, not on a Layout):
+A Toolbar is defined by two Quasar components: **QToolbar** and optional **QToolbarTitle**.
+
 ``` html
-<div class="toolbar">
-  <!-- Toolbar title -->
-  <q-toolbar-title :padding="1">
+<q-toolbar color="primary">
+  <!--
+    For Toolbar title, we use
+    QToolbarTitle component
+  -->
+  <q-toolbar-title>
     Title
   </q-toolbar-title>
 
-  <button>
-    <i>mail</i>
-  </button>
-</div>
+  <!--
+    In a Toolbar, buttons are best
+    configured as "flat" and with an icon,
+    but any button will do
+  -->
+  <q-btn flat>
+    <q-icon name="mail" />
+  </q-btn>
+
+  <!--
+    ...and also small flat round buttons
+  -->
+  <q-btn flat round small>
+    <q-icon name="mail" />
+  </q-btn>
+</q-toolbar>
+
+<!-- A color "inverted" Toolbar -->
+<q-toolbar color="primary" inverted>
+  ...
+</q-toolbar>
+
+<!-- A Toolbar with a title and subtitle -->
+<q-toolbar color="primary" inverted>
+  <q-toolbar-title>
+    Title
+    <span slot="subtitle">
+      Subtitle
+    </span>
+  </q-toolbar-title>
+</q-toolbar>
 ```
 
 Example on using a Toolbar on Layout header:
 
 ``` html
-<q-layout>
+<q-layout ref="layout">
   ...
-  <div slot="header" class="toolbar">
-    <!-- opens drawer using its ref -->
-    <button
-      class="hide-on-drawer-visible"
-      @click="$refs.drawer.open()"
+  <q-toolbar slot="header" color="secondary">
+    <!-- toggles QLayout left side -->
+    <q-btn
+      flat
+      @click="$refs.layout.toggleLeft()"
     >
-      <i>menu</i>
-    </button>
+      <q-icon name="menu" />
+    </q-btn>
 
-    <q-toolbar-title :padding="2">
+    <q-toolbar-title>
       Title
     </q-toolbar-title>
 
-    <button>
-      <i>mail</i>
-    </button>
-    <button>
-      <i>alarm</i>
-    </button>
+    <q-btn flat>
+      <q-icon name="mail" />
+    </q-btn>
+    <q-btn flat>
+      <q-icon name="alarm" />
+    </q-btn>
   </div>
   ...
 </q-layout>
 ```
 
-## Toolbar Title/Text
-As you've seen in the examples above, there's the `<q-toolbar-title>` component which wraps the title/text of a Toolbar.
+## QToolbar Vue Props
 
-In order to successfully place it in the horizontal middle of your Toolbar on iOS theme (which is specific for iOS Apps), then you need to specify the maximum number of buttons on the left or right side of the title through the `padding` attribute.
+| Property | Type | Description |
+| --- | --- | --- |
+| `color` | String | A color from [Quasar Color Palette](/components/color-palette.html) |
+| `inverted` | Boolean | Invert color: background becomes transparent while text has `color` |
 
-## Coloring
-Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`, `orange`, `teal` as CSS class:
+## QToolbarTitle
+QToolbarTitle is a component used to wrap the "title" of your Toolbar. It spreads horizontally to the full real estate space it can get. If not enough space to cover the full extent of the content then ending ellipsis are used.
 
-``` html
-<div class="toolbar orange">...</div>
-```
-
-You can also invert the colors (see demo for example) by adding the color and `inverted` as CSS classes:
-
-``` html
-<div class="toolbar inverted orange">...</div>
+```html
+<!-- A Toolbar with a title and subtitle -->
+<q-toolbar color="primary" inverted>
+  ...
+  <q-toolbar-title>
+    Title
+    <span slot="subtitle">
+      Subtitle
+    </span>
+  </q-toolbar-title>
+</q-toolbar>
 ```

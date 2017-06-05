@@ -40,7 +40,7 @@ _Best way to display a Grid is on a desktop so you might want to check that firs
     </span>
     <span v-else class="label text-white bg-negative">{{cell.data}}</span>
   </template>
- 
+
   <!-- Custom renderer for "action" column with button for custom action -->
   <template slot='col-action' scope='cell'>
     <button class="primary" @click='doSomethingMethod(cell.row.id)'>View</button>
@@ -130,7 +130,7 @@ config = {
     options: [5, 10, 15, 30, 50, 500]
   },
 
-  // (optional) Select one or more rows for an action 
+  // (optional) Select one or more rows for an action
   // "single" adds a column with radio buttons for single row selection
   // "multiple" adds a column with checkboxes for multiple row selection
   // omitting the property will result in no selection column at all
@@ -187,7 +187,8 @@ columns = [
     // (optional) Can filter/search be applied to this column?
     filter: true,
 
-    // (optional) Sortable column? Type is inferred automatically
+    // (optional) Sortable column?
+    // If yes, then also specify `type` prop to know how to sort
     sort: true,
     // or you can specify a custom sorting method;
     // works same as Array.prototype.sort().
@@ -198,9 +199,9 @@ columns = [
     sort (a, b) {
       return (new Date(a)) - (new Date(b))
     },
-    // or you have a third option to use a built-in sorting method:
-    // "string", "number", "date", "moment", "boolean"
-    sort: 'string',
+    // Type required if using sort.
+    // Available values: "string", "number", "date", "boolean"
+    type: 'string',
 
     // (optional)
     // use a formatter for this column;

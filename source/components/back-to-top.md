@@ -61,3 +61,6 @@ You can use the binding value in 3 forms:
 1. **No value**. Defaults will apply.
 2. **As a Number**. This will be the scroll offset after which DOM element will be made visible.
 3. **As an Object** with `offset` and/or `duration` as props. Duration is ignored if `animate` modifier is not used.
+
+## Determining Scrolling Container
+Please read [here](components/scroll-observable.html#Determining-Scrolling-Container) about how Quasar determines the container to attach scrolling events to.
