@@ -6,7 +6,6 @@ The button component also comes with a spinner or loading effect. You would use 
 
 When not disabled or spinning, a button component will always emit a `click` event, as soon as it is clicked or tapped.
 
-For circular buttons only use icons as content.
 
 <input type="hidden" data-fullpage-demo="css/button">
 
@@ -17,6 +16,13 @@ Plain simple button
 ``` html
 <q-btn icon='create'>New item</q-btn>
 ```
+
+A standard circular button
+```html
+<q-btn round color="secondary"><q-icon name="card_giftcard" /></q-btn>
+```
+**Note**
+For circular buttons, only use icons as content.
 
 Small primary button
 
@@ -49,7 +55,7 @@ In the example above, the `clickMethod` would be a function to control the value
 | `loader`     | Boolean | Display a spinner, if true. Requires the value prop. |
 | `icon`       | String  | Name of the icon to use. |
 | `icon-right` | String  | Name of the right icon to use. |
-| `no-caps`    | Boolean | Set true, if inner HTML should be only lowercase. |
+| `no-caps`    | Boolean | Set true, if inner HTML should be only lowercase. The default is `false`. |
 | `round`      | Boolean | Set true, if you want a round button. |
 | `outline`    | Boolean | Set true, if you want an outlined button. |
 | `flat`       | Boolean | Set true, if you want a flat button. |
@@ -57,7 +63,8 @@ In the example above, the `clickMethod` would be a function to control the value
 | `push`       | Boolean | Set true, if the button should have a push effect. |
 | `small`      | Boolean | Set true, if the button should be small. |
 | `big`        | Boolean | Set true, if the button should be big. |
-| `color`      | String  | The name or hex value for a color.
+| `color`      | String  | The value for a [Quasar color](/components/color-palette.html). |
+| `glossy`      | Boolean  | Set true, if the button should be glossy. |
 
 ## Vue Events
 | Vue Event | Description               |
@@ -83,7 +90,7 @@ When adding an icon to a regular button, there are two possibilities for its pos
 
 ## Button Sizes
 
-Use `small` or `big` as attributes. You don't need to specify `medium` because that's the default size.
+Use `small` or `big` as attributes. You don't need to specify `standard`, because that's the default size.
 
 ``` html
 <q-btn color="primary" small>
@@ -97,7 +104,7 @@ Use `small` or `big` as attributes. You don't need to specify `medium` because t
 You can also make use of globally available `block` (sets CSS `display` property to `block`) or `full-width` to expand the button.
 
 ## Button Colors
-Use any color from the [Quasar CSS Color Palette](/api/css-color-palette.html). Examples: `primary`, `orange`, `lime`.
+Use any color from the [Quasar CSS Color Palette](/components/color-palette.html). Examples: `primary`, `orange`, `lime`.
 
 ``` html
 <q-btn color="primary">Primary Button</q-btn>
@@ -105,7 +112,7 @@ Use any color from the [Quasar CSS Color Palette](/api/css-color-palette.html). 
 ```
 
 ## Other Prop Controlled CSS Class Properties
-There are also the `outline`, `push`, `round`, `flat`, `rounded` props for you to use to control some design aspects of the button.
+There are also the `outline`, `push`, `round`, `flat`, `rounded` and `glossy` props for you to use to control some design aspects of the button.
 
 ``` html
 <!-- an outlined button -->
@@ -113,6 +120,9 @@ There are also the `outline`, `push`, `round`, `flat`, `rounded` props for you t
 
 <!-- a rounded push button -->
 <q-btn rounded push>Rounded Push Button</q-btn>
+
+<!-- a glossy button -->
+<q-btn color="primary" glossy>Glossy</q-btn>
 ```
 
 ## Controlling the Button for Form Submission
