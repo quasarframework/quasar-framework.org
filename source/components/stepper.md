@@ -192,7 +192,10 @@ It is also possible to build a stepper, which presents itself in a vertical fash
 When using a vertical Stepper, it doesn't really make sense to use a "global" QStepper navigation. Instead, use navigation within each QStep.
 
 ### Specific Steps Order
-If you dynamically add/remove Steps, then you need to specify the `order` property so that the Stepper will know the actual order of Steps. By using `v-if` or `v-for` directives Vue & Quasar can't ensure Steps will be registered in the order they are placed in DOM.
+If you dynamically add/remove Steps, then you need to specify the `order` property (for ALL QSteps) so that the Stepper will know the actual order of Steps. By using `v-if` or `v-for` directives, Vue & Quasar can't ensure Steps will be registered in the order they are placed in DOM.
+
+> **IMPORTANT**
+> Just make sure that when you use `order` you apply it to **all** QSteps and don't leave out any step without it. Either use `order` for all QSteps or don't use it at all.
 
 ```html
 <q-stepper>
@@ -207,4 +210,4 @@ If you dynamically add/remove Steps, then you need to specify the `order` proper
 </q-stepper>
 ```
 
-The `order` property applied to all QStep doesn't has to be strictly growing consecutively. Setting `order` as `10`, `100` and `52` will work too. **Just make sure that when you use `order` you apply it to ALL QStep and don't leave out any step without it.**
+The `order` property applied to all QStep doesn't has to be strictly growing consecutively. Setting `order` as `10`, `100` and `52` will work too.
