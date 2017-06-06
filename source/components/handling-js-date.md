@@ -150,6 +150,17 @@ if (date.isBetweenDates(date, from, to)) {
 }
 ```
 
+To normalize a date in a given date/time range use:
+``` js
+import { date } from 'quasar'
+
+let date = new Date()
+let dateMin = new Date(2010, 2, 23)
+let dateMax = new Date(2012, 4, 12)
+let dateNormalized = date.getDateBetween(date, dateMin, dateMax)
+// Returns `date` if it's between 2010-2-23 and 2012-4-12; `dateMin` if it's lower; `dateMax` if it's greater
+```
+
 ### Equality
 To check if two dates are **equal** use:
 ``` js
@@ -199,6 +210,14 @@ import { date } from 'quasar'
 
 let date = new Date()
 let day = date.getDayOfYear(date) // e.g. 128
+```
+
+To get the day number in week for a given date object use:
+``` js
+import { date } from 'quasar'
+
+let date = new Date()
+let day = date.getDayOfWeek(date) // e.g. 4
 ```
 
 To get the number of days in the month for the specified date:
