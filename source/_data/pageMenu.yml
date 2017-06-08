@@ -25,7 +25,6 @@ guide:
     Ajax Requests: $
     Components Sharing State: $
     Form Validation: $
-    Handling Back Button: $
     Nightly Build: quasar-$
     Opening Dev Server To Public: $
     Router: $
@@ -60,7 +59,7 @@ components:
     Tabs: $
     Pull to refresh: $
     Layout Side Links: $
-    Go Back Directive: $
+    Handling Back Button: $
     Context Menu: $
     Breadcrumb: $
   Scrolling:
