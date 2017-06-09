@@ -1,5 +1,8 @@
 (function() {
 
+  /* HACK for WebKit/IE/Edge */
+  NodeList.prototype.forEach = Array.prototype.forEach;
+
   /* Add a global flag to indicate if we're on mobile */
 
   window.isMobile =
@@ -43,7 +46,9 @@
         searchResultList.innerHTML = '<p>Sorry, no results...</p>';
         if (response.length > 0) {
           searchResultList.innerHTML = response.map(function (entry) {
-            return '<p><a href="' + entry.url + '">' + entry.title + '</a><br/>' + entry.keywords.map(() => { return '<i class="fa fa-star"></i>'}).join('') + '</p>';
+            return '<p><a href="' + entry.url + '">' + entry.title + '</a><br/>' + entry.keywords.map(function () {
+              return '<i class="fa fa-star"></i>'
+            }).join('') + '</p>';
           }).join('');
         }
 

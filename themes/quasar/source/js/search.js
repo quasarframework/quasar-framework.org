@@ -1,4 +1,7 @@
 (function() {
+  /* HACK for WebKit/IE/Edge */
+  NodeList.prototype.forEach = Array.prototype.forEach;
+
   window.searchTree = null;
 
   window.search = function (keywords) {

@@ -1,4 +1,7 @@
 (function () {
+  /* HACK for WebKit/IE/Edge */
+  NodeList.prototype.forEach = Array.prototype.forEach;
+
   /* eslint-disable one-var */
   var
     h1s = document.querySelectorAll('#qwb-page .qwb-content h1'),
