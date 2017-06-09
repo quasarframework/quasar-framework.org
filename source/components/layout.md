@@ -1,150 +1,138 @@
-title: Layout Overview
+title: Layout
 ---
 Layouts are the elements that wrap page content, like navigational bar or drawer. Multiple pages can share the same Layout, which is one of the main reason for their existence.
+
+Quasar Layouts are not mandatory, but help you better structure the layout of your website/app and they have a lot of features that you can benefit out of the box.
 
 <input type="hidden" data-fullpage-demo="layout">
 
 ## Basic Usage
-A Layout is constructed by `<q-layout>` Component. It is mandatory unless you really know what you are doing.
-
-An example of Layout, containing all possible elements: toolbars (used on header and footer), navigational tabs, a drawer on the left side (which is shown alongside page content on wide screens) and a drawer on the right side (which is always hidden regardless of the screen width and can only be activated by swiping it into view or by clicking a button):
+An example of Layout, containing all possible elements: [QToolbar](/components/toolbar.html) (used on header and footer), navigational [QTabs](/components/tabs.html), a drawer on the left side (which is shown alongside page content on wide screens) and a drawer on the right side:
 
 ``` html
-<q-layout>
-  <!-- Header -->
-  <div slot="header" class="toolbar">
-    <!-- opens left-side drawer using its ref -->
-    <button class="hide-on-drawer-visible" @click="$refs.leftDrawer.open()">
-      <i>menu</i>
-    </button>
-    <q-toolbar-title :padding="1">
-      Title
+<q-layout ref="layout" view="hHr LpR lFf" :right-breakpoint="1100">
+  <q-toolbar slot="header">
+    <q-btn flat @click="$refs.layout.toggleLeft()">
+      <q-icon name="menu" />
+    </q-btn>
+    <q-toolbar-title>
+      Layout Header
+      <span slot="subtitle">Optional subtitle</span>
     </q-toolbar-title>
-    <!-- opens right-side drawer using its ref -->
-    <button class="hide-on-drawer-visible" @click="$refs.rightDrawer.open()">
-        <i>menu</i>
-      </button>
-  </div>
+    <q-btn flat @click="$refs.layout.toggleRight()">
+      <q-icon name="menu" />
+    </q-btn>
+  </q-toolbar>
 
-  <!-- Navigation Tabs -->
   <q-tabs slot="navigation">
-    <q-tab icon="mail" route="/layout" exact replace>Mails</q-tab>
-    <q-tab icon="alarm" route="/layout/alarm" exact replace>Alarms</q-tab>
-    <q-tab icon="help" route="/layout/help" exact replace>Help</q-tab>
+    <q-route-tab slot="title" icon="view_quilt" to="/test-layout/about" replace hide="icon" label="About" />
+    <q-route-tab slot="title" icon="view_day" to="/test-layout/toolbar" replace hide="icon" label="Toolbar" />
+    <q-route-tab slot="title" icon="view_day" to="/test-layout/tabs" replace label="Tabs" />
+    <q-route-tab slot="title" icon="input" to="/test-layout/drawer" replace label="Drawer" />
   </q-tabs>
 
-  <!-- Left-side Drawer -->
-  <q-drawer ref="leftDrawer">
-    <div class="toolbar">
-      <q-toolbar-title>
-        Drawer Title
-      </q-toolbar-title>
-    </div>
+  <q-scroll-area
+    slot="left"
+    style="width: 100%; height: 100%;"
+  >
+    <q-side-link item to="/test-layout/toolbar">Toolbar</q-side-link>
+    <q-side-link item to="/test-layout/tabs">Tabs</q-side-link>
+    <q-side-link item to="/test-layout/drawer">Drawer</q-side-link>
+  </q-scroll-area>
 
-    <div class="list no-border platform-delimiter">
-      <q-drawer-link icon="mail" :to="{path: '/', exact: true}">
-        Link
-      </q-drawer-link>
-    </div>
-  </q-drawer>
-
-  <!-- IF USING subRoutes only: -->
-  <router-view class="layout-view"></router-view>
-  <!-- OR ELSE, IF NOT USING subRoutes: -->
-  <div class="layout-view"></div>
-
-  <!-- Right-side Drawer -->
-  <q-drawer ref="rightDrawer" right-side>
-    ...
-  </q-drawer>
-
-  <!-- Footer -->
-  <div slot="footer" class="toolbar">
-    ....
+  <div slot="right">
+    Right Side of Layout
   </div>
+
+  <!-- sub-routes get injected here: -->
+  <router-view />
+
+  <q-toolbar slot="footer">
+    <q-toolbar-title>
+      Layout Footer
+    </q-toolbar-title>
+  </q-toolbar>
 </q-layout>
 ```
 
-## Understanding Layouts
+## Understanding QLayout
 
-1. Make sure that your Layout template DOM elements are wrapped by one (and **only one**) DOM element, like for example `<q-layout>`. Do not add more than one DOM element at the highest hierarchical level of your Layout template.
+1. If your layout uses Vue Router sub-routes (recommended), then it makes sense to use Vue's `<router-view>` component, which is just a placeholder where sub-routes are injected.
 
-2. If your layout uses subRoutes, then it makes sense to use `<router-view>` component (but with `layout-view` CSS class). Else use whatever element you want, as long as you also specify `layout-view` CSS class.
-
-3. The `<q-layout>` Component uses the following slots: `header`, `footer` and `navigation`. You can specify your content for these slots with the `slot` HTML attribute: `slot="footer"`.
+2. QLayout uses the following Vue slots: `header`, `footer`, `navigation`, `left` and `right`. You can specify your content for these slots with the `slot` HTML attribute: `slot="footer"`.
   ``` html
-  <div slot="footer">
-    ...Your Content...
-  </div>
+  <q-layout>
+    ...
+    <div slot="footer">
+      ...Your Content...
+    </div>
+    ...
+  </q-layout>
   ```
 
   Note that you can use define multiple headers, footers and navigation elements. Specify `slot="header"` or `slot="footer"` multiple times if you need. The order in which you specify these DOM elements matter.
 
   The `navigation` slot will be placed after header and before page view on Material Design theme, and after page view and before footer on iOS theme.
 
-4. The place where the App pages' content goes on the Layout is the one having `layout-view` CSS class. If you want your page content to have margins and padding calculated automatically (responsive) use CSS class `layout-padding`:
-  ``` html
-  <div class="layout-view">
-    <div class="layout-padding">
-      ...page content...
-    </div>
-  </div>
-  ```
-  Or with `<router-view>`:
-  ``` html
-  <!-- in the Layout: -->
-  <router-view class="layout-view"></router-view>
-
-  <!-- in each page -->
-  <div> <!-- root node required for subRoutes -->
-    <div class="layout-padding">
-      ...page content...
-    </div>
-    <!--
-      You can have as many <div>s with
-      "layout-padding" CSS class as you want
-    -->
-    <!--
-      Also, anything placed outside of these <div>s with "layout-padding"
-      (so direct children of the root node) will have width 100% of your
-      page view
-    -->
-  </div>
-  ```
-
-  The reason why each subRoute template needs a root node is that `<router-view>` component gets replaced with DOM elements of the subRoute template. If you
-  have more than one node, Vue will treat this as a Document Fragment and
-  cannot add `layout-view` CSS class, which is required.
-
-5. The order of inclusion of the drawers and `layout-view` classed DOM element matters on a desktop view (and even on wide screen tablets) where if the window is wide enough, drawers are displayed side by side with layout view content. For example, you can actually decide that your left-side drawer should be displayed on the right-side of your page content on a wide window by manipulating the order of
-components:
-  ``` html
-  <q-layout>
-    ...
-    <router-view class="layout-view"></router-view>
-    <q-drawer>
-      ...Drawer Content...
-    </q-drawer>
-  ```
-
-6. A great place to use [Toolbars](/components/toolbar.html) is for header and footer slots.
-  ``` html
-  <div slot="header" class="toolbar">
+3. A great place to use [Toolbars](/components/toolbar.html) is for header and footer slots.
+  ```html
+  <q-toolbar slot="header" color="green">
     ... toolbar content ...
-  </div>
+  </q-toolbar>
   ```
 
-7. You can create Modals with Layout templates for great effect. Read about [Modals](/components/modal.html).
+4. Best way to use the navigation slot (placed right below header on Material theme and right above footer on iOS theme) is to place some [QTabs](/components/tabs.html) configured to use routes. Those routes can be sub-routes of the route being used for the layout.
 
-8. You can make navigation Tabs work great with Vue Router if you register the routes correctly and specify `v-link` directive on each Tab. Read more about Tabs [here](/components/tabs.html).
+5. Read about the smart [Fixed Positioning on Layout](/components/fixed-positioning-on-layout.html) and learn how you can use it for also placing a [Floating Action Button](/components/floating-action-button.html) on your Layout.
 
-9. Example of placing a Search bar on header:
-  ``` html
+6. Example of placing a [Search](/components/search.html) bar on header:
+  ```html
   <q-layout>
     ...
-    <div slot="header" class="toolbar primary">
-      <q-search v-model="searchModel" class="primary"></q-search>
-    </div>
+    <!-- We place it on header, so slot="header" -->
+    <q-toolbar slot="header" color="primary">
+      <q-search inverted v-model="search" color="none" />
+    </q-toolbar>
     ...
   </q-layout>
   ```
+
+## Vue Properties
+
+| Vue Property | Type | Description |
+| --- | --- | --- |
+| `view` | String | Configuration String which defines how different parts of layout get displayed on screen. |
+| `reveal` | Boolean | Makes header slide up out of view when scrolling page down and reappearing when scrolling up a bit. |
+| `left-breakpoint` | Number | Breakpoint (in pixels, defining window width) at which point the left side will be placed directly on layout and won't act as a drawer anymore. Default is 996. |
+| `right-breakpoint` | Number | Breakpoint (in pixels, defining window width) at which point the right side will be placed directly on layout and won't act as a drawer anymore. Default is 996. |
+| `header-style` | Object | Style applied to header. |
+| `header-class` | Object | CSS classes applied to header. |
+| `left-style` | Object | Style applied to layout left side / drawer. |
+| `left-class` | Object | CSS classes applied to layout left side / drawer. |
+| `right-style` | Object | Style applied to layout right side / drawer. |
+| `right-class` | Object | CSS classes applied to layout right side / drawer. |
+| `page-style` | Object | Style applied to content/page (between header and footer). |
+| `page-class` | Object | CSS classes applied to content/page (between header and footer). |
+| `footer-style` | Object | Style applied to footer. |
+| `footer-class` | Object | CSS classes applied to footer. |
+
+## Vue Methods
+
+| Method | Description |
+| --- | --- |
+| `toggleLeft` | Toggle left side state (show / hide). |
+| `showLeft` | Show left side. |
+| `hideLeft` | Hide left side. |
+| `toggleRight` | Toggle right side state (show / hide). |
+| `showRight` | Show right side. |
+| `hideRight` | Hide right side. |
+| `hideCurrentSide` | Hide currently opened layout side (right or left). |
+
+## Vue Events
+
+| Event Name | Description |
+| --- | --- |
+| `@resize` | Event emitted on window resize. |
+| `@scroll` | Event emitted on page scroll. |
+| `@left-breakpoint` | Event emitted when window width toggles above/below left side breakpoint (see `left-breakpoint` prop) |
+| `@right-breakpoint` | Event emitted when window width toggles above/below right side breakpoint (see `right-breakpoint` prop) |
