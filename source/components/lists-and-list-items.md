@@ -79,10 +79,49 @@ QList encapsulates all other components mentioned. It's not mandatory but helps 
 | `no-border` | Boolean | Remove the default border around QList. |
 
 ## QListHeader
+Within QList, display a section header / title:
+
+```html
+<q-list>
+  <q-list-header>Folders</q-list-header>
+  <!-- insert QItems... -->
+
+  <q-list-header>Files</q-list-header>
+  <!-- insert QItems... -->
+</q-list>
+```
 
 ## QItemDelimiter
+If you want QItem external delimiters (there are internal ones too as you can see on QItem's description later on this page), use QItemDelimiter component. Useful also to separate different sections of your QList, like for example before a QListHeader.
+
+```html
+<q-list>
+  <q-list-header>Folders</q-list-header>
+  <!-- insert QItems... -->
+
+  <q-item-delimiter />
+
+  <q-list-header>Files</q-list-header>
+  <!-- insert QItems... -->
+</q-list>
+
+<!-- and/or -->
+<q-list>
+  <q-item ...>...</q-item>
+  <q-item-delimiter />
+  <q-item ...>...</q-item>
+  <q-item-delimiter />
+  <q-item ...>...</q-item>
+  <q-item-delimiter />
+  <q-list-header>Files</q-list-header>
+  <q-item ...>...</q-item>
+</q-list>
+```
 
 ## QItem
+
+
+
 
 ## QItemSide
 
