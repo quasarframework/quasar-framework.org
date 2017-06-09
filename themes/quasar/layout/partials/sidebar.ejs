@@ -1,26 +1,28 @@
 <div class="qwb-sidebar inverted">
-  <a
-    class="qwb-logo"
-    href="<%- config.root %>"
-    title="v<%- latest_quasar_version() %>"
-  >
-    <img
-    width="32" height="32" src="https://cdn.rawgit.com/quasarframework/quasar-art/756e89a6/dist/svg/quasar-logo.svg"/>
-    <strong class="qwb-logotype">Quasar Framework</strong>
-    <em>v<%- latest_quasar_version() %></em>
-  </a>
+  <div class="qwb-sidebar-header">
+    <a
+      class="qwb-logo"
+      href="<%- config.root %>"
+      title="v<%- latest_quasar_version() %>"
+    >
+      <img
+      width="32" height="32" src="https://cdn.rawgit.com/quasarframework/quasar-art/756e89a6/dist/svg/quasar-logo.svg"/>
+      <strong class="qwb-logotype">Quasar Framework</strong>
+      <em>v<%- latest_quasar_version() %></em>
+    </a>
 
-  <span class="qwb-input search right icon">
-    <input
-      type="text"
-      title="Type here and press ENTER to search"
-      placeholder="Search..."
-    />
-    <i class="fa fa-search"></i>
-  </span>
+    <span class="qwb-input search right icon">
+      <input
+        type="text"
+        title="Type here and press ENTER to search"
+        placeholder="Search..."
+      />
+      <i class="fa fa-search"></i>
+    </span>
 
-  <div class="qwb-menu simple centered fluid">
-    <%- partial('partials/social-links') %>
+    <div class="qwb-menu simple centered fluid">
+      <%- partial('partials/social-links') %>
+    </div>
   </div>
 
   <div class="qwb-accordion">

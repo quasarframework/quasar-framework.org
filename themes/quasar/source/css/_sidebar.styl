@@ -3,10 +3,10 @@
 
 
 .qwb-sidebar
-  display flex
-  flex-direction column
-
   inverted()
+
+  .qwb-sidebar-header
+    min-height 110px
 
   .qwb-logo
     position fixed
@@ -39,9 +39,9 @@
       font-size .6em
 
   .qwb-menu
+    flex-flow row wrap
     margin-top -1rem
     margin-bottom 2rem
-    flex 0
 
   .qwb-accordion
     margin -1rem
@@ -92,9 +92,13 @@
           display flex
 
 @media screen and (min-width $md)
-  .qwb-sidebar .qwb-logo
-    position static
-    background none
-    box-shadow none
-    padding 0
-    left 0
+  .qwb-sidebar
+    .qwb-sidebar-header
+      min-height 160px
+
+    .qwb-logo
+      position static
+      background none
+      box-shadow none
+      padding 0
+      left 0
