@@ -94,14 +94,14 @@ QItem components inherited properties:
 
 | Inherited Property | Type | Description |
 | --- | --- | --- |
-| `icon` | String | Icon to use. Either use an icon, image or avatar. |
+| `icon` | String | Icon to use. Either use an icon, image, avatar or letter. |
 | `image` | String | URL to image to use (point to statics). Either use an icon, image, avatar or letter. |
 | `avatar` | String | URL to avatar to use (point to statics). Either use an icon, image, avatar or letter. |
-| `letter` | String | One character String to define a letter.  Either use an icon, image, avatar or letter. |
+| `letter` | String | One character String to define a letter. Either use an icon, image, avatar or letter. |
 | `label` | String | Label to use as title. |
 | `sublabel` | String | Label to use as subtitle. |
-| `label-lines` | String / Number | Number of lines the label can span to. |
-| `sublabel-lines` | String / Number | Number of lines the sublabel can span to. |
+| `label-lines` | String / Number | Number of lines the label can span to. Ellipsis are used when overflowing. |
+| `sublabel-lines` | String / Number | Number of lines the sublabel can span to. Ellipsis are used when overflowing. |
 | `dense` | Boolean | Use a dense QItem. |
 | `sparse` | Boolean | Use a sparse QItem. |
 | `multiline` | Boolean | Use a multiline QItem. Useful in cases where you use label and sublabel that spans multiple lines, but even then it's optional. |
@@ -126,7 +126,7 @@ QItem components inherited properties:
 Be creative. In the example below we're using a Card as Collapsible content.
 
 ``` html
-<q-collapsible icon="explore" label="First Card">
+<q-collapsible icon="explore" label="First Card" sublabel="Contains a Card">
   <q-card>
     <q-card-title>
       Card Title

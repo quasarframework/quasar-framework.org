@@ -91,7 +91,7 @@ It also inherits properties from QItem components if you set `item` property:
     Notice slot="left"
   -->
   <div slot="left">
-    <q-side-link item to="/test-layout" exact>
+    <q- item to="/test-layout" exact>
       <q-item-main label="About" />
     </q-side-link>
     <q-side-link item to="/test-layout/toolbar">

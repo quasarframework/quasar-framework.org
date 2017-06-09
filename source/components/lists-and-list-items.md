@@ -10,21 +10,8 @@ List Items have three areas of interest:
 
 <input type="hidden" data-fullpage-demo="css/list/item">
 
-## Components
-
-These are the Quasar components that you can use to define lists and list items:
-* QList (encapsulating QItems and all other List related components)
-* QListHeader (header of a section in QList)
-* QItemDelimiter (external Item delimiter/separator)
-* QItem (encapsulating everything an Item contains)
-* QItemSide (left or right side)
-* QItemMain (for main content of an Item)
-* QItemTile (for individual parts of QItemSide and QItemMain, like label, icon, avatar, image, …)
-
-![Quasar List and List Items](/images/list-and-list-items.svg "Quasar List and List Items")
-
 ## Basic Usage
-Quick examples of using the components mentioned above. For more involved examples, check each component's section below.
+We'll cover each component on its own section later on, but for now, take a look to get a glimpse of how to structure your templates when using Lists.
 
 ``` html
 <q-list highlight>
@@ -61,10 +48,22 @@ Notice that QItemMain and QItemSide can contain QItemTiles or for convenience yo
 
 Due to how Webpack works in creating the bundle for your App, in some cases you may need to use QItemTile like for examples on avatars or images. The reason is simple: if you use QItemSide `avatar` property, you must supply the path to the statics folder and cannot use `assets` folder or relative paths. The latter two can instead be used with a QItemTile wrapping an `<img>` HTML tag. Look closely at image paths in the example above (`/statics/guy-avata.png` vs `~assets/boy-avatar.png`). Also read about [App Handling Static Assets](/guide/app-handling-static-assets.html) to understand how Webpack includes assets into the bundle.
 
-## QList
+## Components
+
+These are the Quasar components that you can use to define lists and list items:
+* QList (encapsulating QItems and all other List related components)
+* QListHeader (header of a section in QList)
+* QItemDelimiter (external Item delimiter/separator)
+* QItem (encapsulating everything an Item contains)
+* QItemSide (left or right side)
+* QItemMain (for main content of an Item)
+* QItemTile (for individual parts of QItemSide and QItemMain, like label, icon, avatar, image, …)
+
+![Quasar List and List Items](/images/list-and-list-items.svg "Quasar List and List Items")
+
+### QList
 QList encapsulates all other components mentioned. It's not mandatory but helps with keeping a good design and can also define some properties that will be applied to all QItems (or QItem-like) like multiline, delimiter, link, highlight and so on.
 
-### QList Vue Properties
 | Vue Property | Type | Description |
 | --- | --- | --- | --- |
 | `striped` | Boolean | Apply highlight to QItems intermitently, starting with second QItem. |
@@ -78,8 +77,12 @@ QList encapsulates all other components mentioned. It's not mandatory but helps 
 | `inset-delimiter` | Boolean | Make QItems have an inset delimiter between them. |
 | `no-border` | Boolean | Remove the default border around QList. |
 
-## QListHeader
-Within QList, display a section header / title:
+### QListHeader
+Within QList, you can display a section header / title.
+
+| Vue Property | Type | Description |
+| --- | --- | --- | --- |
+| `inset` | Boolean | Place an inset delimiter. |
 
 ```html
 <q-list>
@@ -91,8 +94,12 @@ Within QList, display a section header / title:
 </q-list>
 ```
 
-## QItemDelimiter
+### QItemDelimiter
 If you want QItem external delimiters (there are internal ones too as you can see on QItem's description later on this page), use QItemDelimiter component. Useful also to separate different sections of your QList, like for example before a QListHeader.
+
+| Vue Property | Type | Description |
+| --- | --- | --- | --- |
+| `inset` | Boolean | Place an inset delimiter. |
 
 ```html
 <q-list>
@@ -108,7 +115,10 @@ If you want QItem external delimiters (there are internal ones too as you can se
 <!-- and/or -->
 <q-list>
   <q-item ...>...</q-item>
-  <q-item-delimiter />
+
+  <!-- Inset delimiter example -->
+  <q-item-delimiter inset />
+
   <q-item ...>...</q-item>
   <q-item-delimiter />
   <q-item ...>...</q-item>
@@ -118,849 +128,614 @@ If you want QItem external delimiters (there are internal ones too as you can se
 </q-list>
 ```
 
-## QItem
+### QItem
 
+| Vue Property | Type | Description |
+| --- | --- | --- | --- |
+| `dense` | Boolean | Make QItem dense (narrow paddings). |
+| `sparse` | Boolean | Make QItem sparse (large paddings). |
+| `delimiter` | Boolean | Make QItem have a delimiter between it and previous QItem. |
+| `inset-delimiter` | Boolean | Make QItem have an inset delimiter between it and previous QItem. |
+| `multiline` | Boolean | Make QItem multiline. Vertically aligns QItem sides to top. Useful for more than 2-3 lines QItem content. |
+| `highlight` | Boolean | Apply highlight to QItem. Works only on desktop when user hovers it. |
+| `link` | Boolean | Apply highlight and a pointer cursor to QItem. |
+| `tag` | String | Default HTML tag used is 'div', but this can be any HTML tag if you need to. Read below for more information. |
 
+Also check next section for more properties and to learn how you can use your QItem as a Router Link.
 
+#### Using QItem as a Router Link
+If you want your QItem to act the same as Vue's `<router-link>`, then you can use these additional properties (which work exactly the same as `<router-link>`):
 
-## QItemSide
+| Property | Type | Description |
+| --- | --- | --- | --- |
+| `to` | String / Object | Route to navigate to |
+| `exact` | Boolean | Match the exact route specified (and not also its children) when adding `router-link-active` CSS class. |
+| `append` | Boolean | Append route definition to current route when navigating. |
+| `replace` | Boolean | Replaces current route with the new one instead of adding it to the window history queue. |
 
-## QItemMain
+For more details on these properties, please refer to Vue Router documentation [here](http://router.vuejs.org/en/api/router-link.html).
 
-## QItemTile
-
-``` html
-<p class="caption">Primary</p>
-<div class="list item-inset-delimiter">
-  <div class="item">
-    <div class="item-primary"><q-icon name="assignment_ind" /></div>
-    <div class="item-content">Icon as Primary</div>
-  </div>
-  <div class="item">
-    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
-    <div class="item-content">Avatar as Primary</div>
-  </div>
-  <div class="item">
-    <div class="item-primary"><span class="item-letter">Q</span></div>
-    <div class="item-content">One character as Primary</div>
-  </div>
-</div>
-<div class="list item-inset-delimiter">
-  <div class="item">
-    <div class="item-primary"><q-icon name="assignment_ind" /></div>
-    <div class="item-content">Icon as Primary</div>
-  </div>
-  <div class="item">
-    <div class="item-primary"><q-icon name="cloud" /></div>
-    <div class="item-content">Icon as Primary</div>
-  </div>
-
-<div class="list item-inset-delimiter big-inset">
-  <div class="item">
-    <div class="item-primary big"><q-icon name="assignment_ind" /></div>
-    <div class="item-content">Icon as Primary</div>
-  </div>
-  <div class="item">
-    <div class="item-primary big"><img src="/statics/boy-avatar.png"></div>
-    <div class="item-content">Avatar as Primary</div>
-  </div>
-  <div class="item">
-    <div class="item-primary big"><span class="item-letter">Q</span></div>
-    <div class="item-content">One character as Primary</div>
-  </div>
-</div>
-
-<p class="caption">Secondary</p>
-<div class="list">
-  <div class="item">
-    <div class="item-content">Icon as Secondary</div>
-    <div class="item-secondary"><q-icon name="info" /></div>
-  </div>
-  <hr>
-  <div class="item">
-    <div class="item-content">Avatar as Secondary</div>
-    <div class="item-secondary"><img src="/statics/boy-avatar.png"></div>
-  </div>
-  <hr>
-  <div class="item">
-    <div class="item-content">One character as Secondary</div>
-    <div class="item-secondary"><span class="item-letter">Q</span></div>
-  </div>
-</div>
-
-<div class="list">
-  <div class="item">
-    <div class="item-content">Icon as Secondary</div>
-    <div class="big item-secondary"><q-icon name="info" /></div>
-  </div>
-  <hr>
-  <div class="item">
-    <div class="item-content">Avatar as Secondary</div>
-    <div class="big item-secondary"><img src="/statics/boy-avatar.png"></div>
-  </div>
-  <hr>
-  <div class="item">
-    <div class="item-content">One character as Secondary</div>
-    <div class="big item-secondary"><span class="item-letter">Q</span></div>
-  </div>
-</div>
-
-<p class="caption">Example Items with Primary and Secondary</p>
-<div class="list item-inset-delimiter">
-  <div class="item">
-    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
-    <div class="item-content">Jack</div>
-    <div class="item-secondary"><q-icon name="chat_bubble" /></div>
-  </div>
-  <div class="item">
-    <div class="item-primary"><img src="/statics/linux-avatar.png"></div>
-    <div class="item-content">Jim's Photos</div>
-    <div class="item-secondary"><img src="/statics/mountains.jpg"></div>
-  </div>
-  <div class="item">
-    <div class="item-primary"><q-icon name="voice_chat" /></div>
-    <div class="item-content">Voice Chat with Joe</div>
-    <div class="item-secondary"><img src="/statics/boy-avatar.png"></div>
-  </div>
-  <div class="item">
-    <div class="item-primary"><q-icon name="voice_chat" class="inverted bg-primary" /></div>
-    <div class="item-content">Voice Chat with Joe</div>
-    <div class="item-secondary"><img src="/statics/boy-avatar.png"></div>
-  </div>
-  <div class="item">
-    <div class="item-primary"><div class="item-letter">J</div></div>
-    <div class="item-content">John Doe</div>
-    <div class="item-secondary"><img src="/statics/guy-avatar.png"></div>
-  </div>
-</div>
-
-<!-- Note this creates 3 lists with dense and large classes! -->
-<p class="caption">Stamp and Truncated Content</p>
-<div class="list highlight" style="max-width: 400px" v-for="n in ['', 'dense', 'large']" :class="n">
-  <div class="list-label capitalize" v-if="n !== ''">{{ n }}</div>
-  <div class="item">
-    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
-    <div class="item-content ellipsis">
-      Brunch this weekend? Brunch this weekend? Brunch this weekend?
-    </div>
-    <div class="item-secondary">
-      <div class="item-stamp">1 week<br>ago</div>
-    </div>
-  </div>
-  <div class="item multiple-lines">
-    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
-    <div class="item-content text">
-      <div class="ellipsis">Brunch this weekend? Brunch this weekend? Brunch this weekend?</div>
-      <div>John Doe</div>
-    </div>
-    <div class="item-secondary">
-      <div class="item-stamp">10 min</div>
-    </div>
-  </div>
-
-  <div class="item multiple-lines">
-    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
-    <div class="item-content text">
-      <div class="ellipsis">Brunch <span>5</span></div>
-      <div class="ellipsis">John Doe</div>
-    </div>
-    <div class="item-secondary">
-      <div class="item-stamp">10 min</div>
-    </div>
-  </div>
-
-  <div class="item multiple-lines">
-    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
-    <div class="item-content text">
-      <div>Brunch this weekend? Yeah, this weekend. Really. This one.</div>
-      <div>
-        <span>John Doe</span>
-        -- I'll be in your neighborhood doing errands this
-        weekend. Do you want to grab brunch?
-      </div>
-    </div>
-    <div class="item-secondary">
-      <div class="item-stamp">2 years</div>
-      <q-icon name="mail" />
-    </div>
-  </div>
-  <div class="item multiple-lines">
-    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
-    <div class="item-content text">
-      <div class="ellipsis">Brunch this weekend? Yeah, this weekend. Really. This one.</div>
-      <div class="ellipsis-2-lines">
-        <span>John Doe</span>
-        -- I'll be in your neighborhood doing errands this
-        weekend. Do you want to grab brunch?
-      </div>
-    </div>
-    <div class="item-secondary">
-      <div class="item-stamp">2 years</div>
-      <q-icon name="mail" />
-    </div>
-  </div>
-</div>
-
-<p class="caption">List Item with Secondary Actions</p>
-<div class="list inset-delimiter">
-  <div class="item">
-    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
-    <div class="item-content">
-      <div class="ellipsis">Brunch this weekend?</div>
-    </div>
-    <div class="item-secondary">
-      <q-icon name="more_vert">
-        <q-popover ref="popover">
-          <div class="list">
-            <div class="item link" @click="$refs.popover.close()">
-              <div class="item-content">Reply</div>
-            </div>
-            <div class="item link" @click="$refs.popover.close()">
-              <div class="item-content">Forward</div>
-            </div>
-            <div class="item link" @click="$refs.popover.close()">
-              <div class="item-content">Delete</div>
-            </div>
-          </div>
-        </q-popover>
-      </q-icon>
-    </div>
-  </div>
-</div>
-
-<p class="caption">Item with different secondaries</p>
-<div class="list inset-delimiter">
-  <div class="item">
-    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
-    <div class="item-content">
-      <div class="ellipsis">Brunch this weekend?</div>
-    </div>
-    <div class="item-secondary">
-      <q-icon name="more_vert">
-        <q-popover ref="popover">
-          <div class="list">
-            <div class="item link" @click="$refs.popover.close()">
-              <div class="item-content">Reply</div>
-            </div>
-            <div class="item link" @click="$refs.popover.close()">
-              <div class="item-content">Forward</div>
-            </div>
-            <div class="item link" @click="$refs.popover.close()">
-              <div class="item-content">Delete</div>
-            </div>
-          </div>
-        </q-popover>
-      </q-icon>
-    </div>
-  </div>
-  <div class="item">
-    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
-    <div class="item-content">
-      <div class="ellipsis">Brunch this weekend?</div>
-    </div>
-    <div class="item-secondary">
-      <q-chip color="secondary" class="shadow-1">10k</q-chip>
-    </div>
-  </div>
-  <div class="item">
-    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
-    <div class="item-content">
-      <div class="ellipsis">Brunch this weekend?</div>
-    </div>
-    <div class="item-secondary">
-      <div class="item-stamp">10 min ago</div>
-      <span class="text-amber">
-        <q-icon name="star" />
-        <q-icon name="star" />
-      </span>
-    </div>
-  </div>
-</div>
+#### Render with specific HTML tag
+Example on `tag` property usage below. In this case, we take advantage of the `<label>` tag that browsers connect to checkboxes (QCheckbox, QToggle) or radio inputs (QRadio). When a `<label>` is clicked/tapped, then the wrapped checkboxes toggle their state (check / uncheck) and wrapped radios are being selected.
+```html
+<!--
+  We want a click/tap on the whole QItem
+  to toggle the checkbox, so we use tag="label"
+  to make QItem render with <label> tag.
+-->
+<q-item tag="label">
+  <q-item-side>
+    <q-checkbox v-model="checkboxModel" />
+  </q-item-side>
+  <q-item-main>
+    <q-item-tile label>Notifications</q-item-tile>
+    <q-item-tile sublabel>Notify me about updates to apps or games that I downloaded</q-item-tile>
+  </q-item-main>
+</q-item>
 ```
 
-### Router-Link with List Items
+### QItemSide
 
-``` html
-<div class="list link item-inset-delimiter">
-  <router-link
-    tag="div"
-    class="item"
-    to="/some/path/in/your/app"
-  >
-    <div class="item-primary"><q-icon name="cloud"/></div>
-    <div class="item-content">Go to the cloud!</div>
-    <div class="item-secondary">
-      <q-icon name="info" />
-      <q-tooltip anchor="top middle" self="bottom middle" :offset="[10, 10]">
-        <strong>Click here to go to the cloud! And yes, Quasar is like living on Cloud 9! Isn't it?</strong>
-      </q-tooltip>
-    </div>
-  </router-link>
-</div>
-```
+| Vue Property | Type | Description |
+| --- | --- | --- | --- |
+| `color` | String | Use a color from [Quasar Color Palette](/components/color-palette.html). |
+| `right` | Boolean | Applies necessary design tweaks for right side of QItem. |
+| `icon` | String | Icon to use. Either use an icon, image, avatar or letter. |
+| `image` | String | URL to image to use (point to statics). Either use an icon, image, avatar or letter. |
+| `avatar` | String | URL to avatar to use (point to statics). Either use an icon, image, avatar or letter. |
+| `letter` | String | One character String to define a letter. Either use an icon, image, avatar or letter. |
+| `stamp` | String | For right side only. One character String to define a letter. Either use an icon, image, avatar or letter. |
+| `tag` | String | Default HTML tag that QItemTile gets rendered with is 'div', but this can be any HTML tag if you need to. |
 
-## Multi-line Items
-<input type="hidden" data-demo="css/list/multiline">
+Use the icon, image, avatar, letter or stamp properties or, for more control, insert QItemTiles instead. Don't use both ways though.
 
-Multiple line items are usually for some Form components that exceed the height of a predefined one, two or three lines item.
+### QItemMain
 
-``` html
-<div class="list">
-  <div class="list-label">People</div>
-  <div class="item">
-    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
-    <div class="item-content text">
-      John
-    </div>
-    <div class="item-secondary"><q-icon name="chat_bubble" /></div>
-  </div>
-  <div class="item two-lines">
-    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
-    <div class="item-content text">
-      <div>Jim</div>
-      <div>Javascript wiz kid</div>
-    </div>
-    <div class="item-secondary"><q-icon name="chat_bubble" /></div>
-  </div>
-  <div class="item three-lines">
-    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
-    <div class="item-content text">
-      <div>Jake</div>
-      <div>Passionate about Quasar</div>
-    </div>
-    <div class="item-secondary"><q-icon name="chat_bubble" /></div>
-  </div>
-</div>
-```
+| Vue Property | Type | Description |
+| --- | --- | --- | --- |
+| `label` | String | Label to use as title. |
+| `sublabel` | String | Label to use as subtitle. |
+| `label-lines` | String / Number | Number of lines the label can span to. |
+| `sublabel-lines` | String / Number | Number of lines the sublabel can span to. |
+| `inset` | Boolean | Useful when QItem has no left side, but you want to align your content as if it had a left side. |
+| `tag` | String | Default HTML tag that QItemTile gets rendered with is 'div', but this can be any HTML tag if you need to. |
 
-## Collapsible Items
-<input type="hidden" data-demo="css/list/collapsible">
+Use the label properties or, for more control, insert QItemTiles instead to define the label and sublabel. Don't use both ways though.
 
-Collapsible Items make use of the Collapsible Component. Read more about it [here](/components/collapsible.html).
+### QItemTile
+QItemTile can be used for more control over the contents of left/right side and main content of QItem.
 
-You can nest collapsibles within collapsibles within collapsibles within...
-``` html
-<div class="list">
-<div class="list">
-  <q-collapsible icon="inbox" label="Inbox" description="Where your email is">
-    <div class="item" v-for="n in 3">
-      <div class="item-primary"><q-icon name="mail" /></div>
-      <div class="item-content">
-        Email {{ n + 1 }}
-      </div>
-    </div>
+| Vue Property | Type | Description |
+| --- | --- | --- | --- |
+| `color` | String | Use a color from [Quasar Color Palette](/components/color-palette.html). |
+| `icon` | String | Icon to use. Either use an icon, image, avatar or letter as props. |
+| `image` | Boolean | Encapsulates an image. Its content must be an `<img>` with `src` attribute pointing to statics. Either use an icon, image, avatar or letter as props. |
+| `avatar` | Boolean | Encapsulates an avatar image. Its content must be an `<img>` with `src` attribute pointing to statics. Either use an icon, image, avatar or letter as props. |
+| `letter` | String | One character String to define a letter. Either use an icon, image, avatar or letter as props. |
+| `tag` | String | Default HTML tag that QItemTile gets rendered with is 'div', but this can be any HTML tag if you need to. |
+
+More props available, but use these only within QItemMain:
+
+| Vue Property | Type | Description |
+| --- | --- | --- | --- |
+| `label` | String | Encapsulates the label / title of QItem. |
+| `sublabel` | String | Encapsulates the sub-label / sub-title of QItem. |
+| `lines` | String / Number | Number of lines the label/sublacel can span to. Ellipsis are used when overflowing. Use only in conjunction with `label` and `sublabel`. |
+
+
+## Using along QCollapsible & QSideLink
+[QCollapsible](/components/collapsible.html) and [QSideLink](/components/layout-side-links.html) are QItem wrappers, so you can use them along QItems within a QList. Here are two examples:
+
+```html
+<!--
+  Notice we use QCollapsibles and QItems
+  as direct children of QList.
+
+  We are basically building a menu.
+-->
+<q-list delimiter>
+  <!-- collapsible to hide sub-level menu entries -->
+  <q-collapsible icon="inbox" label="Inbox" label="Where your email is">
+    <q-item link to="/inbox/1">
+      <q-item-side icon="mail" />
+      <q-item-main label="Email 1" />
+    </q-item>
+    <q-item link to="/inbox/2">
+      <q-item-side icon="mail" />
+      <q-item-main label="Email 2" />
+    </q-item>
     <q-collapsible icon="favorite" label="Favorites">
-      <div class="item" v-for="n in 3">
-        <div class="item-primary"><q-icon name="mail" /></div>
-        <div class="item-content">
-          Favorite {{ n + 1 }}
-        </div>
+      <q-item link to="/inbox/favorites/1">
+        <q-item-side icon="mail" />
+        <q-item-main :label="Favorite 1" />
+      </q-item>
+      <q-item to="/inbox/favorites/2">
+        <q-item-side icon="mail" />
+        <q-item-main :label="Favorite 2" />
+      </q-item>
+    </q-collapsible>
+    <q-item to="/inbox/3">
+      <q-item-side icon="mail" />
+      <q-item-main label="Email 3" />
+    </q-item>
+  </q-collapsible>
+
+  <!-- menu link -->
+  <q-item link to="/snoozed">
+    <q-item-side icon="schedule" />
+    <q-item-main>
+      <q-item-tile label>Snoozed</q-item-tile>
+    </q-item-main>
+  </q-item>
+
+  <!-- collapsible to hide sub-level menu entries -->
+  <q-collapsible icon="send" label="Sent">
+    <q-item to="/sent/1">
+      <q-item-side icon="mail" />
+      <q-item-main label="Email 1" />
+    </q-item>
+  </q-collapsible>
+
+  <!-- menu link -->
+  <q-item link to="/trash">
+    <q-item-side icon="delete" />
+    <q-item-main>
+      <q-item-tile label>Trash</q-item-tile>
+    </q-item-main>
+  </q-item>
+</q-list>
+```
+
+Another complex example used on one of the sides of a QLayout, describing a menu with QItems, QCollapsible and QSideLinks:
+
+```html
+<q-list delimiter no-border>
+  <q-item>
+    <q-item-side avatar="/statics/boy-avatar.png" />
+    <q-item-main>
+      <q-item-tile label>John Doe</q-item-tile>
+      <q-item-tile sublabel>Administrator</q-item-tile>
+    </q-item-main>
+  </q-item-main>
+
+  <q-item-delimiter />
+  <q-list-header>Menu</q-list-header>
+
+  <q-side-link item icon="content_paste" to="/app" exact>
+    <q-item-main label="Dashboard" />
+  </q-side-link>
+
+  <q-side-link item icon="assignment" to="/app/registrations">
+    <q-item-main label="Registrations" />
+  </q-side-link>
+
+  <!--
+    Notice "indent" Boolean property on QCollapsible
+    which will make the sub-menu be indented.
+    Also, notice the "label" property which defines the
+    name of the menu item which opens up the sub-menu.
+  -->
+  <q-collapsible indent icon="event" label="Event" opened>
+    <q-side-link item to="/app/event">
+      <q-item-main label="Competitions" />
+    </q-side-link>
+    <q-collapsible menu label="Competitions" opened>
+      <div class="scroll" style="max-height: 400px">
+        <q-side-link
+          item
+          v-for="competition in competitions"
+          :key="competition"
+          :to="`/app/competitions/${competition.id}`"
+          exact
+        >
+          <q-item-main :label="competition.name" />
+        </q-side-link>
       </div>
     </q-collapsible>
-    <div class="item">
-      <div class="item-primary"><q-icon name="mail" /></div>
-      <div class="item-content">
-        Email
-      </div>
-    </div>
+
+    <q-side-link item to="/app/other-info">
+      <q-item-main label="Other Information" />
+    </q-side-link>
   </q-collapsible>
-  <q-collapsible icon="send" label="Sent">
-    <div class="item" v-for="n in 3">
-      <div class="item-primary"><q-icon name="mail" /></div>
-      <div class="item-content">
-        Email {{ n + 1 }}
-      </div>
-    </div>
-  </q-collapsible>
-  <q-collapsible icon="delete" label="Trash">
-    <div class="item" v-for="n in 3">
-      <div class="item-primary"><q-icon name="mail" /></div>
-      <div class="item-content">
-        Email {{ n + 1 }}
-      </div>
-    </div>
-  </q-collapsible>
-</div>
-</div>
+</q-list>
 ```
 
-## List with Text Chips
-<input type="hidden" data-demo="css/list/example-textfields">
+## More Examples
 
-``` html
-<div class="list">
-  <div class="list-label">Chips Textbox</div>
-  <div class="item multiple-lines">
-    <div class="item-primary"><q-icon name="edit" /></div>
-    <div class="item-content">
-      <q-chips-input v-model="chips" placeholder="Type names" />
-    </div>
-  </div>
-</div>
+### Email list
+```html
+<q-list highlight inset-delimiter style="max-width: 400px">
+  <q-item>
+    <q-item-side avatar="/statics/boy-avatar.png" />
+    <q-item-main label="Brunch this weekend? Brunch this weekend? Brunch this weekend?" label-lines="1" />
+    <q-item-side right stamp="1 min" />
+  </q-item>
+  <q-item multiline>
+    <q-item-side avatar="/statics/boy-avatar.png" />
+    <q-item-main
+      label="Brunch this weekend? Brunch this weekend? Brunch this weekend?"
+      label-lines="1"
+      sublabel="John Doe John Doe John Doe John Doe John Doe John Doe John Doe John Doe John Doe"
+      sublabel-lines="2"
+    />
+    <q-item-side right stamp="1 week<br>ago" />
+  </q-item>
+  <q-item multiline>
+    <q-item-side avatar="/statics/boy-avatar.png" />
+    <q-item-main
+      label="Brunch this weekend? Brunch this weekend? Brunch this weekend?"
+      label-lines="1"
+      sublabel="John Doe John Doe John Doe John Doe John Doe John Doe John Doe John Doe John Doe"
+    />
+    <q-item-side right stamp="10 min" />
+  </q-item>
+
+  <q-item multiline>
+    <q-item-side>
+      <q-item-tile avatar>
+        <img src="~assets/boy-avatar.png" />
+      </q-item-tile>
+    </q-item-side>
+    <q-item-main>
+      <q-item-tile label>Brunch <span>5</span></q-item-tile>
+      <q-item-tile sublabel lines="2">
+        John Doe John Doe John Doe John Doe John Doe John Doe
+        John Doe John Doe John Doe John Doe John Doe John Doe
+        John Doe John Doe John Doe John Doe
+      </q-item-tile>
+    </q-item-main>
+    <q-item-side right>
+      <q-item-tile stamp>10 min</q-item-tile>
+    </q-item-side>
+  </q-item>
+
+  <q-item multiline>
+    <q-item-side avatar="/statics/boy-avatar.png" />
+    <q-item-main>
+      <q-item-tile label lines="1">Brunch this weekend? Yeah, this weekend. Really. This one.</q-item-tile>
+      <q-item-tile sublabel lines="2">
+        <span>John Doe</span>
+        -- I'll be in your neighborhood doing errands this
+        weekend. Do you want to grab brunch?
+      </q-item-tile>
+    </q-item-main>
+    <q-item-side right>
+      <q-item-tile stamp>2 years</q-item-tile>
+      <q-item-tile icon="mail" />
+    </q-item-side>
+  </q-item>
+</q-list>
 ```
 
-## List with Form Components
-<input type="hidden" data-demo="css/list/example-form">
-
-Some predefined formulas you can use to nest Form Components within List Items.
-
-**Note**
-Also check out [q-option-group](/components/option-group.md) for grouping toggles, checkboxes and radios.
-
-``` html
-<p class="caption">Checkboxes</p>
-<div class="list">
-<label class="item">
-  <div class="item-primary">
-    <q-checkbox v-model="checked"></q-checkbox>
-  </div>
-  <div class="item-content">
-    Notifications
-  </div>
-</label>
-<label class="item multiple-lines">
-  <div class="item-primary">
-    <q-checkbox v-model="checked"></q-checkbox>
-  </div>
-  <div class="item-content text">
-    <div>Notifications</div>
-    <div>Allow notifications</div>
-  </div>
-</label>
-<label class="item multiple-lines">
-  <div class="item-primary">
-    <q-checkbox v-model="checked"></q-checkbox>
-  </div>
-  <div class="item-content text">
-    <div>Notifications</div>
-    <div class="ellipsis-2-lines">Allow notifications Allow notifications Allow notifications Allow notifications Allow notifications </div>
-  </div>
-</label>
-</div>
-
-<p class="caption">Radios</p>
-<div class="list">
-<label class="item">
-  <div class="item-primary">
-    <q-radio v-model="option" val="opt1"></q-radio>
-  </div>
-  <div class="item-content">
-    Option 1
-  </div>
-</label>
-<label class="item multiple-lines">
-  <div class="item-primary">
-    <q-radio v-model="option" val="opt2"></q-radio>
-  </div>
-  <div class="item-content text">
-    <div>Option 2</div>
-    <div>Allows notifications</div>
-  </div>
-</label>
-<label class="item multiple-lines">
-  <div class="item-primary">
-    <q-radio v-model="option" val="opt3"></q-radio>
-  </div>
-  <div class="item-content text">
-    <div>Option 3</div>
-    <div class="ellipsis-3-lines">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-  </div>
-</label>
-</div>
-
-<p class="caption">Toggles</p>
-<div class="list">
-<label class="item">
-  <div class="item-content">
-    Events and reminders
-  </div>
-  <div class="item-secondary">
-    <q-toggle v-model="checked"></q-toggle>
-  </div>
-</label>
-<label class="item multiple-lines">
-  <div class="item-content text">
-    <div>Events and reminders</div>
-    <div>Lorem ipsum</div>
-  </div>
-  <div class="item-secondary">
-    <q-toggle v-model="checked" class="purple"></q-toggle>
-  </div>
-</label>
-<label class="item multiple-lines">
-  <div class="item-content text">
-    <div>Events and reminders</div>
-    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-  </div>
-  <div class="item-secondary">
-    <q-toggle v-model="checked" class="red"></q-toggle>
-  </div>
-</label>
-</div>
-
-<p class="caption">Select</p>
-<div class="list">
-<div class="list-label">Single Selection</div>
-<div class="item">
-  <div class="item-primary"><q-icon name="supervisor_account" /></div>
-  <div class="item-content">
-    <q-select class="full-width" v-model="select" :options="selectOptions" ok-label="Pick" cancel-label="Neah" title="Company"></q-select>
-  </div>
-</div>
-<hr>
-<div class="list-label">Multiple Selection</div>
-<div class="item">
-  <div class="item-primary"><q-icon name="supervisor_account" /></div>
-  <div class="item-content">
-    <q-select class="full-width" multiple checkbox v-model="multipleSelect" :options="selectOptions" ok-label="Pick" title="Companies"></q-select>
-  </div>
-</div>
-<div class="item">
-  <div class="item-primary"><q-icon name="supervisor_account" /></div>
-  <div class="item-content">
-    <q-select class="full-width" multiple toggle v-model="multipleSelect" :options="selectOptions" ok-label="Pick" title="Companies"></q-select>
-  </div>
-</div>
-</div>
-
-<p class="caption">Ranges</p>
-<div class="list">
-<div class="item two-lines">
-  <div class="item-primary"><q-icon name="volume_up" /></div>
-  <div class="item-content">
-    <q-range v-model="range" :min="0" :max="50" label></q-range>
-  </div>
-</div>
-<div class="item two-lines">
-  <div class="item-primary"><q-icon name="brightness_medium" /></div>
-  <div class="item-content">
-    <q-range v-model="range" :min="0" :max="50" label></q-range>
-  </div>
-</div>
-<hr>
-<div class="list-label">Double Range</div>
-<div class="item two-lines">
-  <div class="item-primary"><q-icon name="local_atm" /></div>
-  <div class="item-content">
-    <q-double-range v-model="doubleRange" :min="0" :max="50" label></q-double-range>
-  </div>
-</div>
-<div class="item two-lines">
-  <div class="item-primary"><q-icon name="euro_symbol" /></div>
-  <div class="item-content">
-    <q-double-range v-model="doubleRange" :min="0" :max="50" label></q-double-range>
-  </div>
-</div>
-</div>
-
-<p class="caption">Date and Time</p>
-<div class="list">
-<div class="list-label">Date or Time</div>
-<div class="item two-lines">
-  <div class="item-primary"><q-icon name="access_time" /></div>
-  <div class="item-content">
-    <q-datetime class="full-width" v-model="timestamp" type="time"></q-datetime>
-  </div>
-</div>
-<div class="item two-lines">
-  <div class="item-primary"><q-icon name="update" /></div>
-  <div class="item-content row items-baseline">
-    <q-datetime class="full-width" v-model="timestamp" type="date"></q-datetime>
-  </div>
-</div>
-<hr>
-<div class="list-label">Date & Time</div>
-<div class="item two-lines">
-  <div class="item-primary"><q-icon name="notifications" /></div>
-  <div class="item-content row items-baseline">
-    <q-datetime class="full-width" v-model="timestamp" type="datetime"></q-datetime>
-  </div>
-</div>
-</div>
+### Embedding Components on Right Side
+```html
+<q-list inset-delimiter>
+  <q-item>
+    <q-item-side avatar="/statics/boy-avatar.png" />
+    <q-item-main label="Brunch this weekend?" />
+    <q-item-side right icon="more_vert">
+      <q-popover ref="popover">
+        <q-list link>
+          <q-item @click="$refs.popover.close()">
+            <q-item-main label="Reply" />
+          </q-item>
+          <q-item @click="$refs.popover.close()">
+            <q-item-main label="Forward" />
+          </q-item>
+          <q-item @click="$refs.popover.close()">
+            <q-item-main label="Delete" />
+          </q-item>
+        </q-list>
+      </q-popover>
+    </q-item-side>
+  </q-item>
+  <q-item>
+    <q-item-side avatar="/statics/boy-avatar.png" />
+    <q-item-main label="Brunch this weekend?" />
+    <q-item-side right>
+      <q-chip square color="primary" class="shadow-2">10k</q-chip>
+    </q-item-side>
+  </q-item>
+  <q-item>
+    <q-item-side avatar="/statics/boy-avatar.png" />
+    <q-item-main label="Brunch this weekend?" />
+    <q-item-side right>
+      <q-item-tile stamp>10 min ago</q-item-tile>
+      <span class="text-amber">
+        <q-item-tile icon="star" v-for="n in 2" :key="n" />
+      </span>
+    </q-item-side>
+  </q-item>
+</q-list>
 ```
 
-## Examples
-Let's explore some ready to use templates using what we've learned above.
-
-### Simple List
-<input type="hidden" data-demo="css/list/example-simple">
-
-``` html
-<div class="list">
-  <div class="item">
-    <div class="item-primary"><q-icon name="inbox" /></div>
-    <div class="item-content">
-      Inbox
-    </div>
-  </div>
-  <div class="item">
-    <div class="item-primary"><q-icon name="send" /></div>
-    <div class="item-content">
-      Sent
-    </div>
-  </div>
-  <div class="item">
-    <div class="item-primary"><q-icon name="delete" /></div>
-    <div class="item-content">
-      Trash
-    </div>
-  </div>
-  <hr>
-  <div class="item">
-    <div class="item-content">
-      Inbox
-    </div>
-    <div class="item-secondary"><q-icon name="inbox" /></div>
-  </div>
-  <div class="item">
-    <div class="item-content">
-      Sent
-    </div>
-    <div class="item-secondary"><q-icon name="send" /></div>
-  </div>
-  <div class="item">
-    <div class="item-content">
-      Trash
-    </div>
-    <div class="item-secondary"><q-icon name="delete" /></div>
-  </div>
-</div>
-```
-
-### Persons List
-<input type="hidden" data-demo="css/list/example-persons">
-
-``` html
-<div class="list">
-  <div class="list-label">People</div>
-  <div class="item">
-    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
-    <div class="item-content text">
-      John
-    </div>
-    <div class="item-secondary"><q-icon name="chat_bubble" /></div>
-  </div>
-  <div class="item two-lines">
-    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
-    <div class="item-content text">
-      <div>Jim</div>
-      <div>Javascript wiz kid</div>
-    </div>
-    <div class="item-secondary"><q-icon name="chat_bubble" /></div>
-  </div>
-  <div class="item three-lines">
-    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
-    <div class="item-content text">
-      <div>Jake</div>
-      <div>Passionate about Quasar</div>
-    </div>
-    <div class="item-secondary"><q-icon name="chat_bubble" /></div>
-  </div>
-</div>
-```
 
 ### Chat List
-<input type="hidden" data-demo="css/list/example-chat">
+```html
+<q-list highlight>
+  <q-list-header>Recent chats</q-list-header>
+  <q-item>
+    <q-item-side avatar="/statics/boy-avatar.png" />
+    <q-item-main label="John Doe" />
+    <q-item-side right>
+      <q-item-tile icon="chat_bubble" color="green" />
+    </q-item-side>
+  </q-item>
+  <q-item>
+    <q-item-side avatar="/statics/boy-avatar.png" />
+    <q-item-main label="John Doe" />
+    <q-item-side right icon="chat_bubble" />
+  </q-item>
+  <q-item-delimiter />
+  <q-list-header>Previous chats</q-list-header>
+  <q-item>
+    <q-item-side avatar="/statics/guy-avatar.png" />
+    <q-item-main label="Jack Doe" />
+  </q-item>
+</q-list>
+```
 
-``` html
-<div class="list">
-  <div class="list-label">Recent chats</div>
-  <div class="item" v-for="n in 3">
-    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
-    <div class="item-content">
-      John Doe
-    </div>
-    <div class="item-secondary"><q-icon name="chat_bubble" /></div>
-  </div>
-  <hr>
-  <div class="list-label">Previous chats</div>
-  <div class="item" v-for="n in 3">
-    <div class="item-primary"><img src="/statics/guy-avatar.png"></div>
-    <div class="item-content">
-      Jack Doe
-    </div>
-  </div>
-</div>
+One more example:
+```html
+<q-list>
+  <q-item>
+    <q-item-side icon="star" color="yellow" />
+    <q-item-main label="John Joe" />
+    <q-item-side right>
+      <q-item-tile avatar>
+        <img src="~assets/boy-avatar.png">
+      </q-item-tile>
+    </q-item-side>
+  </q-item>
+  <q-item-delimiter inset />
+  <q-item>
+    <q-item-side letter="D" />
+    <q-item-main label="John Joe" />
+    <q-item-side right avatar="/statics/boy-avatar.png" />
+  </q-item>
+  <q-item>
+    <q-item-side letter="J" />
+    <q-item-main label="Jim Jefferies" />
+    <q-item-side right avatar="/statics/linux-avatar.png" />
+  </q-item>
+</q-list>
+```
+
+### Folders and Files
+```html
+<q-list>
+  <q-list-header inset>Folders</q-list-header>
+  <q-item v-for="n in 3" :key="n">
+    <q-item-side icon="folder" inverted color="grey-6" />
+    <q-item-main>
+      <q-item-tile label>Photos</q-item-tile>
+      <q-item-tile sublabel>February 22, 2016</q-item-tile>
+    </q-item-main>
+    </q-item-side right icon="info" />
+  </q-item>
+  <q-item-delimiter inset />
+  <q-list-header inset>Files</q-list-header>
+  <q-item v-for="n in 3" :key="n">
+    <q-item-side icon="assignment" inverted color="grey-6" />
+    <q-item-main>
+      <q-item-tile label>Vacation</q-item-tile>
+      <q-item-tile sublabel>February 22, 2016</q-item-tile>
+    </q-item-main>
+    </q-item-side right icon="info" />
+  </q-item>
+</q-list>
+```
+
+### Settings
+```html
+<q-list link>
+  <q-list-header>User controls</q-list-header>
+  <q-item>
+    <q-item-main>
+      <q-item-tile label>Content filtering</q-item-tile>
+      <q-item-tile sublabel>Set the content filtering level to restrict apps that can be downloaded</q-item-tile>
+    </q-item-main>
+  </q-item>
+  <q-item>
+    <q-item-main>
+      <q-item-tile label>Password</q-item-tile>
+      <q-item-tile sublabel>Require password for purchase or use password to restrict purchase</q-item-tile>
+    </q-item-main>
+  </q-item>
+  <q-item-delimiter />
+  <q-list-header>General</q-list-header>
+  <q-item tag="label">
+    <q-item-side>
+      <q-checkbox v-model="checked" />
+    </q-item-side>
+    <q-item-main>
+      <q-item-tile label>Notifications</q-item-tile>
+      <q-item-tile sublabel>Notify me about updates to apps or games that I downloaded</q-item-tile>
+    </q-item-main>
+  </q-item>
+  <q-item tag="label">
+    <q-item-side>
+      <q-checkbox v-model="checked" />
+    </q-item-side>
+    <q-item-main>
+      <q-item-tile label>Sound</q-item-tile>
+      <q-item-tile sublabel>Auto-update apps at anytime. Data charges may apply</q-item-tile>
+    </q-item-main>
+  </q-item>
+  <q-item tag="label">
+    <q-item-side>
+      <q-checkbox v-model="checked" />
+    </q-item-side>
+    <q-item-main>
+      <q-item-tile label>Auto-add widgets</q-item-tile>
+      <q-item-tile sublabel>Automatically add home screen widgets</q-item-tile>
+    </q-item-main>
+  </q-item>
+</q-list>
+```
+
+### Embedding Form Components
+```html
+<q-list link>
+  <q-list-header>Radios</q-list-header>
+  <q-item tag="label">
+    <q-item-side>
+      <q-radio v-model="option" val="opt1"></q-radio>
+    </q-item-side>
+    <q-item-main label="Option 1" />
+  </q-item>
+  <q-item tag="label">
+    <q-item-side>
+      <q-radio color="purple" v-model="option" val="opt2"></q-radio>
+    </q-item-side>
+    <q-item-main>
+      <q-item-tile label>Option 2</q-item-tile>
+      <q-item-tile sublabel>Allows notifications</q-item-tile>
+    </q-item-main>
+  </q-item>
+  <q-item tag="label">
+    <q-item-side>
+      <q-radio color="red" v-model="option" val="opt3"></q-radio>
+    </q-item-side>
+    <q-item-main>
+      <q-item-tile label>Option 3</q-item-tile>
+      <q-item-tile sublabel lines="3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</q-item-tile>
+    </q-item-main>
+  </q-item>
+
+  <q-item-delimiter />
+  <q-list-header>Toggles</q-list-header>
+  <q-item tag="label">
+    <q-item-main label="Events and reminders" />
+    <q-item-side right>
+      <q-toggle v-model="checked"></q-toggle>
+    </q-item-side>
+  </q-item>
+  <q-item tag="label" multiline>
+    <q-item-main>
+      <q-item-tile label>Events and reminders</q-item-tile>
+      <q-item-tile sublabel>Lorem ipsum</q-item-tile>
+    </q-item-main>
+    <q-item-side right>
+      <q-toggle v-model="checked" color="purple"></q-toggle>
+    </q-item-side>
+  </q-item>
+  <q-item tag="label" multiline>
+    <q-item-main>
+      <q-item-tile label>Events and reminders</q-item-tile>
+      <q-item-tile sublabel lines="3">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+        do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+      </q-item-tile>
+    </q-item-main>
+    <q-item-side right>
+      <q-toggle v-model="checked" color="red"></q-toggle>
+    </q-item-side>
+  </q-item>
+
+  <q-item-delimiter />
+  <q-list-header>Selects</q-list-header>
+  <q-item>
+    <q-item-side icon="supervisor_account" />
+    <q-item-main>
+      <q-select class="full-width" v-model="select" :options="selectOptions" />
+    </q-item-main>
+  </q-item>
+  <q-item>
+    <q-item-side icon="supervisor_account" />
+    <q-item-main>
+      <q-select class="full-width" multiple checkbox v-model="multipleSelect" :options="selectOptions" />
+    </q-item-main>
+  </q-item>
+
+  <q-item-delimiter />
+  <q-list-header>Ranges</q-list-header>
+  <q-item>
+    <q-item-side icon="volume_down" />
+    <q-item-main>
+      <q-range v-model="range" :min="0" :max="50" label />
+    </q-item-main>
+    <q-item-side right icon="volume_up" />
+  </q-item>
+  <q-item>
+    <q-item-side icon="volume_down" />
+    <q-item-main>
+      <q-range v-model="range" :min="0" :max="50" label />
+    </q-item-main>
+    <q-item-side right icon="volume_up" />
+  </q-item>
+  <q-item>
+    <q-item-side icon="euro_symbol" />
+    <q-item-main>
+      <q-double-range v-model="doubleRange" :min="0" :max="50" label />
+    </q-item-main>
+  </q-item>
+</q-list>
 ```
 
 ### Movies List
-<input type="hidden" data-demo="css/list/example-movies">
-
-``` html
-<div class="list">
-  <div class="list-label">Movies</div>
-  <div class="item">
-    <img src="/statics/mountains.jpg">
-    <div class="item-content text">
-      <div>Mountains Documentary</div>
-    </div>
-    <div class="item-secondary"><q-icon name="movie" /></div>
-  </div>
-  <div class="item">
-    <img src="/statics/mountains.jpg">
-    <div class="item-content text">
-      <div>Mountains Documentary</div>
-      <div>For passionates only</div>
-    </div>
-    <div class="item-secondary"><q-icon name="movie" /></div>
-  </div>
-  <div class="item multiple-lines">
-    <img src="/statics/mountains.jpg">
-    <div class="item-content text">
-      <div>Mountains Documentary</div>
-      <div>For passionates only For passionates only For passionates only For passionates only For passionates only </div>
-    </div>
-    <div class="item-secondary"><q-icon name="movie" /></div>
-  </div>
-</div>
-```
-
-### Contact List
-<input type="hidden" data-demo="css/list/example-contacts">
-
-``` html
-<div class="list">
-  <div class="item" v-for="n in 3">
-    <div class="item-primary" v-if="n === 1"><q-icon name="star" class="text-pink" /></div>
-    <div class="item-content inset">
-      John Joe
-    </div>
-    <div class="item-secondary"><img src="/statics/boy-avatar.png"></div>
-  </div>
-  <hr class="inset">
-  <div class="item" v-for="n in 3">
-    <div class="item-primary" v-if="n === 0">A</div>
-    <div class="item-content inset">
-      John Joe
-    </div>
-    <div class="item-secondary"><img src="/statics/boy-avatar.png"></div>
-  </div>
-</div>
-```
-
-### Folder List
-<input type="hidden" data-demo="css/list/example-folders">
-
-``` html
-<div class="list">
-  <div class="list-label inset">Folders</div>
-  <div class="item" v-for="n in 3">
-    <div class="item-primary">
-      <q-icon name="folder" class="bg-grey-6 inverted" />
-    </div>
-    <div class="item-content text">
-      <div>Photos</div>
-      <div>February 22, 2016</div>
-    </div>
-    <div class="item-secondary"><q-icon name="info" /></div>
-  </div>
-  <hr class="inset">
-  <div class="list-label inset">Files</div>
-  <div class="item" v-for="n in 3">
-    <div class="item-primary">
-      <q-icon name="assignment" class="bg-primary inverted" />
-    </div>
-    <div class="item-content text">
-      <div>Vacation</div>
-      <div>February 22, 2016</div>
-    </div>
-    <div class="item-secondary"><q-icon name="info" /></div>
-  </div>
-</div>
+```html
+<q-list>
+  <q-list-header>Movies</q-list-header>
+  <q-item>
+    <q-item-side image="/statics/mountains.jpg" />
+    <q-item-main label="Mountains Documentary" />
+    <q-item-side right icon="movie" />
+  </q-item>
+  <q-item>
+    <q-item-side image="/statics/mountains.jpg" />
+    <q-item-main>
+      <q-item-tile label>Mountains Documentary</q-item-tile>
+      <q-item-tile sublabel>For passionates only</q-item-tile>
+    </q-item-main>
+    <q-item-side right icon="movie" />
+  </q-item>
+  <q-item>
+    <q-item-side image="/statics/mountains.jpg" />
+    <q-item-main>
+      <q-item-tile label>Mountains Documentary</q-item-tile>
+      <q-item-tile sublabel lines="3">
+        For passionates only For passionates only For passionates only For passionates only For passionates only
+      </q-item-tile>
+    </q-item-main>
+    <q-item-side right icon="movie" />
+  </q-item>
+</q-list>
 ```
 
 ### Phonebook List
-<input type="hidden" data-demo="css/list/example-phonebook">
-
-``` html
-<div class="list">
-  <div class="item" v-for="n in 3">
-    <q-icon name="phone" class="item-primary" v-if="n === 0" />
-    <div class="item-content inset text">
-      <div>(650) 555 - 1234</div>
-      <div>Mobile</div>
-    </div>
-    <div class="item-secondary"><q-icon name="chat_bubble" /></div>
-  </div>
-  <hr class="inset">
-  <div class="item" v-for="n in 3">
-    <div class="item-primary"><q-icon name="mail" /></div>
-    <div class="item-content text">
-      <div>john@doe.com</div>
-      <div>Personal</div>
-    </div>
-  </div>
-</div>
-```
-
-### Messages List
-<input type="hidden" data-demo="css/list/example-messages">
-
-``` html
-<div class="list">
-  <div class="list-label">Today</div>
-  <div class="item inset-delimiter">
-    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
-    <div class="item-content text">
-      <div>Brunch this weekend?</div>
-      <div class="ellipsis-2-lines">
-        <span>John Doe</span>
-        -- I'll be in your neighborhood doing errands this
-        weekend. Do you want to grab brunch?
-      </div>
-    </div>
-    <div class="item-secondary">
-      <div class="item-stamp">1 week</div>
-    </div>
-  </div>
-  <hr class="inset">
-  <div class="item inset-delimiter">
-    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
-    <div class="item-content text">
-      <div>Brunch this weekend?</div>
-      <div class="ellipsis-2-lines">
-        <span>John Doe</span>
-        -- I'll be in your neighborhood doing errands this
-        weekend. Do you want to grab brunch?
-      </div>
-    </div>
-    <div class="item-secondary">
-      <div class="item-stamp">1 week</div>
-      <q-icon name="info" />
-    </div>
-  </div>
-  <hr>
-  <div class="list-label">Yesterday</div>
-  <div class="item inset-delimiter">
-    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
-    <div class="item-content text">
-      <div>Brunch this weekend?</div>
-      <div class="ellipsis-2-lines">
-        <span>John Doe</span>
-        -- I'll be in your neighborhood doing errands this
-        weekend. Do you want to grab brunch?
-      </div>
-    </div>
-    <div class="item-secondary">
-      <div class="item-stamp">1 week</div>
-      <q-icon name="info" />
-    </div>
-  </div>
-  <div class="item inset-delimiter">
-    <div class="item-primary"><img src="/statics/boy-avatar.png"></div>
-    <div class="item-content text">
-      <div>Brunch this weekend?</div>
-      <div class="ellipsis-2-lines">
-        <span>John Doe</span>
-        <br>
-        I'll be in your neighborhood doing errands this
-        weekend. Do you want to grab brunch?
-      </div>
-    </div>
-    <div class="item-secondary">
-      <div class="item-stamp">1 week</div>
-      <q-icon name="more_vert" />
-    </div>
-  </div>
-</div>
+```html
+<q-list>
+  <q-item>
+    <q-item-side icon="phone" color="primary" />
+    <q-item-main>
+      <q-item-tile label>(650) 555 - 1234</q-item-tile>
+      <q-item-tile sublabel>Mobile</q-item-tile>
+    </q-item-main>
+    <q-item-side right icon="chat_bubble" />
+  </q-item>
+  <q-item>
+    <q-item-main inset>
+      <q-item-tile label>(650) 555 - 1234</q-item-tile>
+      <q-item-tile sublabel>Mobile</q-item-tile>
+    </q-item-main>
+    <q-item-side right icon="chat_bubble" />
+  </q-item>
+  <q-item-delimiter inset />
+  <q-item>
+    <q-item-side icon="mail" color="primary" />
+    <q-item-main>
+      <q-item-tile label>john@doe.com</q-item-tile>
+      <q-item-tile sublabel>Personal</q-item-tile>
+    </q-item-main>
+  </q-item>
+  <q-item>
+    <q-item-main inset>
+      <q-item-tile label>john@doe.com</q-item-tile>
+      <q-item-tile sublabel>Personal</q-item-tile>
+    </q-item-main>
+  </q-item>
+</q-list>
 ```
