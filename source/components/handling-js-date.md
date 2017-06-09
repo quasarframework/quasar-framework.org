@@ -97,9 +97,9 @@ To add/subtract some duration to/from a date use:
 ``` js
 import { date } from 'quasar'
 
-let date = new Date()
-date = date.addToDate(date, { days: 7, months: 1 })
-date = date.subtractFromDate(date, { hours: 24, milliseconds: 1000000 })
+let date = new Date(2017, 2, 7)
+date = date.addToDate(date, { days: 7, months: 1 }) // `date` is now 2017-3-14 00:00:00
+date = date.subtractFromDate(date, { hours: 24, milliseconds: 10000 }) // `date` is now 2017-3-12 23:59:50
 ```
 The object literal provided can contain the following keys:
 * `milliseconds`: for a duration in milliseconds
@@ -110,23 +110,6 @@ The object literal provided can contain the following keys:
 * `month`: for a duration in months
 * `year`: for a duration in years
 
-### Start/End of time
-To mutate the original date object by setting it to the start of a unit of time use:
-``` js
-import { date } from 'quasar'
-
-let date = new Date()
-date = date.startOfDate(date, 'year') // e.g. set to January 1st, 12:00 am this year
-date = date.endOfDate(date, 'year') // e.g. set to 12-31 23:59:59.999 this year
-```
-The second parameter indicates which component of the date to reset to start (i.e. set to zero):
-* `second`: reset seconds
-* `minute`: reset minutes
-* `hour`: reset hours
-* `day`: reset days
-* `month`: reset months
-* `year`: reset years
-
 ## Query dates
 
 ### Minimum/Maximum
@@ -134,9 +117,9 @@ To get the minimum/maximum date of a date set (i.e. array) use:
 ``` js
 import { date } from 'quasar'
 
-let dates = [ new Date(), new Date(), new Date() ]
-let min = date.getMinDate(dates)
-let max = date.getMaxDate(dates)
+let dates = [ new Date(2017, 6, 24), new Date(2017, 5, 20), new Date(2017, 6, 26) ]
+let min = date.getMinDate(dates) // `min` is 2017-5-20
+let max = date.getMaxDate(dates) // `max` is 2017-6-26
 ```
 
 ### Time range
@@ -145,7 +128,9 @@ To check if a date is **strictly** (i.e. exclusive range) in a given date/time r
 import { date } from 'quasar'
 
 let date = new Date()
-if (date.isBetweenDates(date, from, to)) {
+let dateFrom = new Date()
+let dateTo = new Date()
+if (date.isBetweenDates(date, dateFrom, dateTo)) {
 	// Do something with date
 }
 ```
@@ -162,13 +147,18 @@ let dateNormalized = date.getDateBetween(date, dateMin, dateMax)
 ```
 
 ### Equality
-To check if two dates are **equal** use:
+To check if two dates' unit are **equal** use:
 ``` js
 import { date } from 'quasar'
 
+let date1 = new Date(2017, 2, 5)
+let date2 = new Date(2017, 3, 8)
+let unit = 'year'
+
 if (date.isSameDate(date1, date2, unit)) {
-	// Do something with date
+	// true because date1 and date2's year is the same
 }
+
 ```
 If `undefined` the unit parameter allows to perform the complete date/time comparison, otherwise it allows to perform partial comparison:
 * `second`: test if same second only
@@ -183,9 +173,14 @@ To compute the difference between two dates use:
 ``` js
 import { date } from 'quasar'
 
+let date1 = new Date(2017, 4, 12)
+let date2 = new Date(2017, 3, 8)
+let unit = 'days'
+
 let diff = date.getDateDiff(date1, date2, unit)
+// `diff` is 34 (days)
 ```
-The unit parameter indicates the unit of measurement:
+The unit parameter indicates the unit of measurement, if not specified is `days` by default:
 * `seconds`: distance in seconds
 * `minutes`: distance in minutes
 * `hours`: distance in hours
@@ -200,24 +195,24 @@ To get the week number in year for a given date object use:
 ``` js
 import { date } from 'quasar'
 
-let date = new Date()
-let week = date.getWeekOfYear(date) // e.g. 5
+let date = new Date(2017, 0, 4)
+let week = date.getWeekOfYear(date) // `week` is 1
 ```
 
 To get the day number in year for a given date object use:
 ``` js
 import { date } from 'quasar'
 
-let date = new Date()
-let day = date.getDayOfYear(date) // e.g. 128
+let date = new Date(2017, 1, 4)
+let day = date.getDayOfYear(date) // `day` is 35
 ```
 
 To get the day number in week for a given date object use:
 ``` js
 import { date } from 'quasar'
 
-let date = new Date()
-let day = date.getDayOfWeek(date) // e.g. 4
+let date = new Date(2017, 1, 9)
+let day = date.getDayOfWeek(date) // `day` is 4
 ```
 
 To get the number of days in the month for the specified date:
@@ -227,3 +222,22 @@ import { date } from 'quasar'
 let date = new Date()
 let days = date.daysInMonth(date) // e.g. 30
 ```
+
+### Start/End of time
+To mutate the original date object by setting it to the start of a unit of time use:
+``` js
+import { date } from 'quasar'
+
+let date = new Date(2000)
+// set to the starting month of 2000 (January 2000)
+date = date.startOfDate(date, 'year') 
+// set to the ending month of 2000 (December 2000)
+date = date.endOfDate(date, 'year') 
+```
+The second parameter indicates which component of the date to reset to start (i.e. set to zero):
+* `second`: reset seconds
+* `minute`: reset minutes
+* `hour`: reset hours
+* `day`: reset days
+* `month`: reset months
+* `year`: reset years
