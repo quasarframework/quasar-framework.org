@@ -93,7 +93,7 @@ components:
     Collapsible: $
     DataTable: $
     HTML Table: $
-    Lists and Items: $
+    Lists and List Items: $
     Slider: $
     Stepper: $
   Progress:

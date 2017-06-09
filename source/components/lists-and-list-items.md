@@ -1,232 +1,94 @@
-title: Lists
+title: Lists and List Items
 ---
-Quasar ListItem is a component which wraps the HTML syntax described in the [CSS > List](/components/list.html) section. Make sure you read about Lists on the previous link before diving into this component.
+Quasar Lists and List Items are a group of components which can work together to present multiple line items vertically as a single continuous element. They are best suited for displaying similar data types as rows of information, such as a contact list, a playlist, or menu. Each row is called an Item. Items can also be used outside of a List.
+
+Lists can encapsulate Items or Item-like components, for example [QCollapsible](/components/collapsible.html) or [QSideLink](/components/layout-side-links.html) (latter if setting `item` property).
+
+List Items have three areas of interest:
+* **left side** and **right side** (usually equipped for supplemental actions represented by icons, avatars, images or letters, but not limited to only these)
+* **main content** which usually is filled with a label (title) and sublabel (subtitle), form components, or anything else for that matter.
+
+<input type="hidden" data-fullpage-demo="css/list/item">
+
+## Components
+
+These are the Quasar components that you can use to define lists and list items:
+* QList (encapsulating QItems and all other List related components)
+* QListHeader (header of a section in QList)
+* QItemDelimiter (external Item delimiter/separator)
+* QItem (encapsulating everything an Item contains)
+* QItemSide (left or right side)
+* QItemMain (for main content of an Item)
+* QItemTile (for individual parts of QItemSide and QItemMain, like label, icon, avatar, image, …)
+
+![Quasar List and List Items](/images/list-and-list-items.svg "Quasar List and List Items")
 
 ## Basic Usage
+Quick examples of using the components mentioned above. For more involved examples, check each component's section below.
 
 ``` html
-<q-list-item
-  :item="item"
-  link
-  :active="itemIsSelected"
-  @click.native="clickedOnItem()"
-></q-list-item>
+<q-list highlight>
+  <q-list-header>Recent chats</q-list-header>
+  <q-item>
+    <q-item-side avatar="/statics/boy-avatar.png" />
+    <q-item-main>
+      <q-item-tile label>John Doe</q-item-tile>
+      <q-item-tile sublabel>Quasar enthusiast</q-item-tile>
+    </q-item-main>
+    <q-item-side right>
+      <q-item-tile icon="chat_bubble" color="green" />
+    </q-item-side>
+  </q-item>
+  <q-item>
+    <q-item-side>
+      <q-item-tile avatar>
+        <img src="~assets/boy-avatar.png" />
+      </q-item-tile>
+    </q-item-side>
+    <q-item-main label="John Doe" sublabel="Quasar enthusiast" />
+    <q-item-side right icon="chat_bubble" />
+  </q-item>
+  <q-item-delimiter />
+  <q-list-header>Previous chats</q-list-header>
+  <q-item>
+    <q-item-side avatar="/statics/guy-avatar.png" />
+    <q-item-main label="Jack Doe" />
+  </q-item>
+</q-list>
 ```
 
-Example of `item` definition:
-``` js
-{
-  icon: 'alarm',
-  label: 'Set your alarm'
-}
-```
+Notice that QItemMain and QItemSide can contain QItemTiles or for convenience you can use their own properties to define the content.
 
-## Vue Properties
+Due to how Webpack works in creating the bundle for your App, in some cases you may need to use QItemTile like for examples on avatars or images. The reason is simple: if you use QItemSide `avatar` property, you must supply the path to the statics folder and cannot use `assets` folder or relative paths. The latter two can instead be used with a QItemTile wrapping an `<img>` HTML tag. Look closely at image paths in the example above (`/statics/guy-avata.png` vs `~assets/boy-avatar.png`). Also read about [App Handling Static Assets](/guide/app-handling-static-assets.html) to understand how Webpack includes assets into the bundle.
+
+## QList
+QList encapsulates all other components mentioned. It's not mandatory but helps with keeping a good design and can also define some properties that will be applied to all QItems (or QItem-like) like multiline, delimiter, link, highlight and so on.
+
+### QList Vue Properties
 | Vue Property | Type | Description |
 | --- | --- | --- | --- |
-| `item` | Object | Information about the item being displayed. |
-| `active` | Boolean | Should the list item be "active"/"highlighted" ? |
-| `link` | Boolean | Is our list item a link? Works great with specifying a @click event. |
+| `striped` | Boolean | Apply highlight to QItems intermitently, starting with second QItem. |
+| `striped-odd` | Boolean | Apply highlight to QItems intermitently, starting with first QItem. |
+| `highlight` | Boolean | Apply highlight to all QItems. This works only on desktop when user hovers QItems. |
+| `link` | Boolean | Apply highlight and a pointer cursor to all QItems. |
+| `dense` | Boolean | Make QItems dense. |
+| `sparse` | Boolean | Make QItems sparse. |
+| `multiline` | Boolean | Make QItems multiline. |
+| `delimiter` | Boolean | Make QItems have a delimiter between them. |
+| `inset-delimiter` | Boolean | Make QItems have an inset delimiter between them. |
+| `no-border` | Boolean | Remove the default border around QList. |
 
-List `item` Object prop has the following properties:
+## QListHeader
 
-| Prop Name | Place | Description |
-| --- | --- | --- |
-| `icon` | left | Icon to display |
-| `img` | left | Image to display from the statics folder (specify if so!) or an external URL |
-| `label` | center | Label to display (first line) |
-| `secondLabel` | center | Label to display (starting with second line) |
-| `stamp` | right | Stamp to display |
-| `secondIcon` | right | Icon to display |
-| `secondImg` | right | Image to display from the statics folder (specify if so!) or an external URL |
-| `multiline` | - | Specifies if this is a multiline list item (more than 2 lines), otherwise the component infers by itself if it's one or two lines from the other props. |
+## QItemDelimiter
 
+## QItem
 
-Quasar Lists are used to display rows of information, such as a contact list, a playlist, or menu. Each row is called an item. Items can also be used outside of a list.
+## QItemSide
 
-Lists can also be used (and it's also recommended) on Quasar Drawers. There's even a `<q-drawer-link>` component based on List Items.
+## QItemMain
 
-If you have some basic lists that you wish to diplay, you can also use the [ListItem component](/components/list-item.html).
-
-> We'll learn to use Lists and List Items gradually. Make sure you don't skip steps and follow this page.
-
-Scroll down to see the demos if on desktop.
-
-## List Basics
-<input type="hidden" data-demo="css/list/basic">
-
-``` html
-<p class="caption">Basic List</p>
-  <div class="list">
-    <div class="item" v-for="n in 2">
-      <div class="item-content">
-        List Item
-      </div>
-    </div>
-  </div>
-
-  <p class="caption">Dense List</p>
-  <div class="list dense">
-    <div class="item dense" v-for="n in 3">
-      <div class="item-content">
-        List Item
-      </div>
-    </div>
-  </div>
-
-  <p class="caption">Large List</p>
-  <div class="list">
-    <div class="item large" v-for="n in 3">
-      <div class="item-content">
-        List Item
-      </div>
-    </div>
-  </div>
-
-  <p class="caption">No Border</p>
-  <div class="list no-border">
-    <div class="item" v-for="n in 2">
-      <div class="item-content">
-        List Item
-      </div>
-    </div>
-  </div>
-
-  <p class="caption">Striped</p>
-  <div class="list striped">
-    <div class="item" v-for="n in 6">
-      <div class="item-content">
-        List Item
-      </div>
-    </div>
-  </div>
-
-  <p class="caption">Delimiter Between Items</p>
-  <div class="list">
-    <template v-for="n in 3">
-      <div class="item">
-        <div class="item-content">
-          List Item
-        </div>
-      </div>
-      <hr>
-    </template>
-  </div>
-
-  <p class="caption">Delimiter within Items</p>
-  <div class="list item-delimiter">
-    <div class="item" v-for="n in 2">
-      <div class="item-content">
-        List Item
-      </div>
-    </div>
-    <div class="item delimiter">
-      <div class="item-content">
-        List Item
-      </div>
-    </div>
-  </div>
-
-  <p class="caption">Platform Delimiter - changes based on Theme</p>
-  <div class="list platform-delimiter">
-    <div class="item" v-for="n in 3">
-      <div class="item-content">
-        List Item
-      </div>
-    </div>
-  </div>
-
-  <p class="caption">Inset Delimiter within Items</p>
-  <div class="list inset-delimiter">
-    <div class="item" v-for="n in 3">
-      <div class="item-content inset">
-        List Item
-      </div>
-    </div>
-  </div>
-
-  <p class="caption">List Labels</p>
-  <div class="list">
-    <div class="list-label">List Label</div>
-    <div class="item" v-for="n in 2">
-      <div class="item-content">
-        List Item
-      </div>
-    </div>
-    <hr>
-    <div class="list-label">Another List Label</div>
-    <div class="item" v-for="n in 3">
-      <div class="item-content">
-        List Item
-      </div>
-    </div>
-  </div>
-
-  <p class="caption">Inset: Items, Delimiters and Labels</p>
-  <div class="list">
-    <div class="item">
-      <div class="item-content inset">
-        List Item
-      </div>
-    </div>
-    <hr class="inset">
-    <div class="list-label inset">Inset List Label</div>
-    <div class="item" v-for="n in 2">
-      <div class="item-content inset">
-        List Item
-      </div>
-    </div>
-    <hr class="inset">
-    <div class="item">
-      <div class="item-content inset">
-        List Item
-      </div>
-    </div>
-  </div>
-
-  <p class="caption">
-    Highlight (Desktop only)
-    <small>
-      <br>
-      <span class="mobile-only">
-        On desktop, hovering the list items will change their background color temporarily.
-      </span>
-      <span class="desktop-only">
-        Hover the list items to change their background color temporarily.
-      </span>
-    </small>
-  </p>
-  <div class="list highlight">
-    <div class="item" v-for="n in 2">
-      <div class="item-content">
-        List Item
-      </div>
-    </div>
-  </div>
-
-  <p class="caption">
-    Link Items (Desktop only)
-    <small>
-      <br>
-      <span class="mobile-only">
-        On desktop, hovering the list items will change their background color temporarily and the cursor will be a pointer.
-      </span>
-      <span class="desktop-only">
-        Hover the list items to change their background color temporarily and change cursor to pointer.
-      </span>
-    </small>
-  </p>
-  <div class="list link">
-    <div class="item" v-for="n in 2">
-      <div class="item-content">
-        List Item
-      </div>
-    </div>
-  </div>
-```
-
-## List Items
-<input type="hidden" data-demo="css/list/item">
+## QItemTile
 
 ``` html
 <p class="caption">Primary</p>
