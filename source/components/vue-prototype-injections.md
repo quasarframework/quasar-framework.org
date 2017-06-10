@@ -41,4 +41,5 @@ export default {
 </script>
 ```
 
+### Mobile Apps
 When running under Cordova, you'll be able to use `$cordova` injection too (`this.$cordova` in Vue components script, `$cordova` in Vue templates).
