@@ -9,7 +9,6 @@ Consider this situation: We have an App with two pages (so two routes): a login 
 
 How would you handle this situation? Normally, you'd write code like below for the Login and Logout button (we won't go into details of handling the login information and communicating with a server as this is outside of our point here):
 
-> Please note that Quasar supports its own `v-link` directive, since this was dropped in Vue 2. Alternatively, you can use `<router-link>`:
 ``` html
 <!-- Login button -->
 <q-btn @click="$router.push('/list')">Login</q-btn>
@@ -42,7 +41,7 @@ Let's rewrite the Logout button to act as we would actually want it to work, whi
 This directive determines if the Platform is Cordova, and if so, it performs a `window.history.back()` call instead of a `$router.push('/')`.
 
 ## Quirks
-Now you may think everything will work smoothly, but you must be careful about how your app is stacking up the window history. Remember, we started out by saying that the List page has a layout with multiple tabs, each one with its own route ("/list/shoes", "/list/hats"). If we'd use `to="/list/shoes"` and `to="/list/hats'"` on your Tabs (read more about Tabs [here](/components/tabs.html)), then window history will build up when switching between the tabs. 
+Now you may think everything will work smoothly, but you must be careful about how your app is stacking up the window history. Remember, we started out by saying that the List page has a layout with multiple tabs, each one with its own route ("/list/shoes", "/list/hats"). If we'd use `to="/list/shoes"` and `to="/list/hats'"` on your Tabs (read more about Tabs [here](/components/tabs.html)), then window history will build up when switching between the tabs.
 
 This incorrect behavior for apps is due to Vue Router pushing routes to the history by default. What you'd like instead, is for your window history length to stay the same, even if routes change. Fortunately, Vue Router comes to the rescue with the `replace` property, which essentially replaces current route instead of pushing it as a new route.
 
