@@ -9,21 +9,15 @@ Context menus can contain anything. In the example below, we display a menu.
 
 ``` html
 <q-context-menu ref="context">
-  <div
-    class="list highlight"
-    style="min-width: 150px; max-height: 300px;"
-  >
-    <div
-      class="item item-link two-lines item-delimiter"
-      v-for="n in 10"
-      @click="showToast(), $refs.context.close()"
-    >
-      <div class="item-content">
-        <div>Label</div>
-        <div>Value</div>
-      </div>
-    </div>
-  </div>
+  <q-list link delimiter style="min-width: 150px; max-height: 300px;">
+    <q-item @click="showToast(), $refs.context.close()">
+      <q-item-main label="Label" sublabel="Value" />
+    </q-item>
+
+    <q-item @click="showOtherToast(), $refs.context.close()">
+      <q-item-main label="Other Label" sublabel="Other Value" />
+    </q-item>
+  </q-list>
 </q-context-menu>
 ```
 
@@ -45,3 +39,9 @@ Clicking/Tapping outside of the popup will close the Context Menu.
 | Vue Method | Description |
 | --- | --- |
 | `close()` | Close Context Menu |
+
+## Vue Events
+| Vue Method | Description |
+| --- | --- |
+| `@open` | Triggered when showing up. |
+| `@close` | Triggered when closing/hiding. |

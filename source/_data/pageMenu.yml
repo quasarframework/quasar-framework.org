@@ -25,8 +25,9 @@ guide:
     Ajax Requests: $
     Components Sharing State: $
     Form Validation: $
-    Handling Back Button: $
+    Managing Google Analytics: $
     Nightly Build: quasar-$
+    Opening Dev Server To Public: $
     Router: $
     Theming: quasar-$
 
@@ -35,6 +36,7 @@ components:
     Introduction: $
     Platform Detection: $
     Global Event Bus: $
+    Vue Prototype Injections: $
   Style & Identity:
     Color Palette: $
     Stylus Variables: $
@@ -59,7 +61,7 @@ components:
     Tabs: $
     Pull to refresh: $
     Layout Side Links: $
-    Go Back Directive: $
+    Handling Back Button: $
     Context Menu: $
     Breadcrumb: $
   Scrolling:
@@ -92,7 +94,7 @@ components:
     Collapsible: $
     DataTable: $
     HTML Table: $
-    Lists and Items: $
+    Lists and List Items: $
     Slider: $
     Stepper: $
   Progress:

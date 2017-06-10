@@ -82,17 +82,17 @@ Note that you can set title and subtitle as overlay on an image or video through
   -->
   <q-icon slot="right" name="more_vert">
     <q-popover ref="popover">
-      <div class="list link no-border">
-        <div class="item" @click="$refs.popover.close()">
-          <div class="item-content">Remove Card</div>
-        </div>
-        <div class="item" @click="$refs.popover.close()">
-          <div class="item-content">Send Feedback</div>
-        </div>
-        <div class="item" @click="$refs.popover.close()">
-          <div class="item-content">Share</div>
-        </div>
-      </div>
+      <q-list link class="no-border">
+        <q-item @click="$refs.popover.close()">
+          <q-item-main label="Remove Card" />
+        </q-item>
+        <q-item @click="$refs.popover.close()">
+          <q-item-main label="Send Feedback" />
+        </q-item>
+        <q-item @click="$refs.popover.close()">
+          <q-item-main label="Share" />
+        </q-item>
+      </q-list>
     </q-popover>
   </q-icon>
 </q-card-title>
@@ -140,49 +140,6 @@ Cards can have some actions (buttons) attached to them.
   <q-btn flat>Action 1</q-btn>
   <q-btn flat>Action 2</q-btn>
 </q-card-actions>
-```
-
-### Card Lists (QCardList)
-QCardList is simply creating a `<div>` with the appropriate List classes attached to it. So any CSS class available for Lists works for this too.
-
-```html
-<q-card-list>
-    <div class="item">
-      <div class="item-primary">
-        <q-icon class="text-primary" name="local bar" />
-      </div>
-      <div class="item-content text">
-        <div>Bar XYZ</div>
-        <div>Have a drink.</div>
-      </div>
-    </div>
-    <div class="item">
-      <div class="item-primary">
-        <q-icon class="text-red" name="local gas station" />
-      </div>
-      <div class="item-content text">
-        <div>Gas Station</div>
-        <div>Fill your gas tank.</div>
-      </div>
-    </div>
-  </q-card-list>
-</q-card>
-```
-
-There's also the possibility to create a nice header for your Cards with an image / avatar, a person name and some quick details. In this example, we skip using QCardList:
-
-```html
-<q-card>
-  <div class="item">
-    <div class="item-primary">
-      <img src="~assets/boy-avatar.png">
-    </div>
-    <div class="item-content text">
-      <div>Jim</div>
-      <div>Quasar enthusiast</div>
-    </div>
-  </div>
-</q-card>
 ```
 
 ### Card Media (QCardMedia)
@@ -285,6 +242,59 @@ Use colors from [Quasar Color Palette](/components/color-palette.html) to set a 
 
 <q-card color="amber-8">
   ...
+</q-card>
+```
+
+### Lists on Cards
+Place a QList with its QItems at root of your QCard, like this:
+
+```html
+<q-card>
+  ...
+  <q-list>
+    <q-item>
+      <q-item-side>
+        <q-item-tile color="primary" icon="local bar" />
+      </q-item-side>
+      <q-item-main>
+        <q-item-tile label>Bar XYZ</q-item-tile>
+        <q-item-tile sublabel>Have a drink.</q-item-tile>
+      </q-item-main>
+    </q-item>
+    <q-item>
+      <q-item-side>
+        <q-item-tile color="red" icon="local gas station" />
+      </q-item-side>
+      <q-item-main>
+        <q-item-tile label>Gas Station</q-item-tile>
+        <q-item-tile sublabel>Fill your gas tank.</q-item-tile>
+      </q-item-main>
+    </q-item>
+    <q-item>
+      <q-item-side>
+        <q-item-tile color="amber" icon="local movies" />
+      </q-item-side>
+      <q-item-main>
+        <q-item-tile label>Cinema XYZ</q-item-tile>
+        <q-item-tile sublabel>Watch a movie.</q-item-tile>
+      </q-item-main>
+    </q-item>
+  </q-list>
+  ...
+</q-card>
+```
+
+There's also the possibility to create a nice header for your Cards with an image / avatar, a person name and some quick details. In this example, we skip using QCardList:
+
+```html
+<q-card>
+  <q-item>
+    <q-item-side avatar="/statics/boy-avatar.png" />
+    <q-item-main>
+      <q-item-tile label>Title</q-item-tile>
+      <q-item-tile sublabel>Subhead</q-item-tile>
+    </q-item-main>
+  </q-item>
 </q-card>
 ```
 

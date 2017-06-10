@@ -4,6 +4,8 @@ QLayout's two areas on left and right of window (possibly acting like a Drawer i
 
 QSideLink is basically a wrapper over Vue's `<router-link>` component (read about it [here](http://router.vuejs.org/en/api/router-link.html)), so it inherits all its properties. Furthermore, when on target route, it adds `router-link-active` CSS class to the element.
 
+It can also wrap a QItem so you can use within QLists if you want to. In this case, use QItem subcomponents within it.
+
 > If you are upgrading from older Quasar versions then you should know that this component replaces QDrawerLink.
 
 ## Basic Usage
@@ -27,15 +29,23 @@ QSideLink is basically a wrapper over Vue's `<router-link>` component (read abou
 
 ```html
 <!--
-  The example below creates a <div> with List Item
-  classes so it acts as a menu item on a QLayout left/right side.
+  The example below creates a wrapper over QItem
+  so it acts as a menu item on a QLayout left/right side.
 -->
 <q-side-link
-  class="item link"
+  item
   to="/some/other/route"
   exact
 >
-  Go to some other Route
+  <!--
+    any QItem subcomponent goes here, just like under
+    a QItem component
+  -->
+  <q-item-main>
+    <q-item-tile label>
+      Go to some other Route
+    </q-item-tile>
+  </q-item-main>
 </q-side-link>
 ```
 
@@ -48,6 +58,18 @@ As QSideLink is a wrapper over Vue's RouterLink, it inherits its properties and 
 | `exact` | Boolean | Match the exact route specified (and not also its children) when adding `router-link-active` CSS class. |
 | `append` | Boolean | Append route definition to current route when navigating. |
 | `replace` | Boolean | Replaces current route with the new one instead of adding it to the window history queue. |
+
+It also inherits properties from QItem components if you set `item` property:
+
+| Property | Type | Description |
+| --- | --- | --- | --- |
+| `item` | Boolean | Wrap a QItem component. Required so that all next properties to kick in. |
+| `dense` | Boolean | Use a dense QItem. |
+| `sparse` | Boolean | Use a sparse QItem. |
+| `multiline` | Boolean | Use a multiline QItem. Useful in cases where you use label and sublabel that spans multiple lines, but even then it's optional. |
+| `delimiter` | Boolean | Use a delimiter from other QItems or QCollapsibles, just like on QItem. |
+| `inset-delimiter` | Boolean | Inset delimiter, same behavior as `delimiter`. |
+| `highlight` | Boolean | Hover effect when on desktop only. |
 
 ## Creating QLayout Side Menus
 
@@ -69,10 +91,12 @@ As QSideLink is a wrapper over Vue's RouterLink, it inherits its properties and 
     Notice slot="left"
   -->
   <div slot="left">
-    <q-side-link class="item link" to="/test-layout/about">About</q-side-link>
-    <q-side-link class="item link" to="/test-layout/toolbar">Toolbar</q-side-link>
-    <q-side-link class="item link" to="/test-layout/tabs">Tabs</q-side-link>
-    <q-side-link class="item link" to="/test-layout/drawer">Drawer</q-side-link>
+    <q- item to="/test-layout" exact>
+      <q-item-main label="About" />
+    </q-side-link>
+    <q-side-link item to="/test-layout/toolbar">
+      <q-item-main label="Toolbar" />
+    </q-side-link>
   </div>
 
   <!-- Page insertion point -->
@@ -84,12 +108,12 @@ An even more compelling example with a complex menu on multiple levels.
 ```html
 <q-layout ref="layout" view="hHr LpR Fff">
   <div slot="left">
-    <q-side-link class="item link" icon="content_paste" to="/app" exact>
-      Dashboard
+    <q-side-link item icon="content_paste" to="/app" exact>
+      <q-item-main label="Dashboard" />
     </q-side-link>
 
-    <q-side-link class="item link" icon="assignment" to="/app/registrations">
-      Registrations
+    <q-side-link item icon="assignment" to="/app/registrations">
+      <q-item-main label="Registrations" />
     </q-side-link>
 
     <!--
@@ -99,25 +123,25 @@ An even more compelling example with a complex menu on multiple levels.
       name of the menu item which opens up the sub-menu.
     -->
     <q-collapsible indent icon="event" label="Event" opened>
-      <q-side-link class="item link" to="/app/event">
-        Competitions
+      <q-side-link item to="/app/event">
+        <q-item-main label="Competitions" />
       </q-side-link>
       <q-collapsible menu label="Competitions" opened>
         <div class="scroll" style="max-height: 400px">
           <q-side-link
+            item
             v-for="competition in competitions"
             :key="competition"
             :to="`/app/competitions/${competition.id}`"
-            class="item link"
             exact
           >
-            {{ competition.name }}
+            <q-item-main :label="competition.name" />
           </q-side-link>
         </div>
       </q-collapsible>
 
-      <q-side-link class="item link" to="/app/other-info">
-        Other Information
+      <q-side-link item to="/app/other-info">
+        <q-item-main label="Other Information" />
       </q-side-link>
     </q-collapsible>
   </div>

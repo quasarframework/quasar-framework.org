@@ -41,9 +41,12 @@ ActionSheet.create({
 
   // optional:
   dismiss: {
+    // label is used only for iOS theme
     label: 'Cancel',
-    icon: 'cancel',
-    classes: 'text-primary',
+
+    // tell what to do when Action Sheet
+    // is dismised (doesn't trigger when
+    // any of the actions above are clicked/tapped)
     handler: function() {
       // console.log('Cancelled...')
     }

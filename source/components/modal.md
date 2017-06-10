@@ -82,7 +82,7 @@ Modals are responsive to the width of the window (see demo on a desktop and resi
 
 ### Modal with Layout
 
-When making layout inside a modal, Quasar has a special component called QModalLayout (described in next section), which takes care of any needed structure.
+When making layout inside a modal, Quasar has a special component called **QModalLayout** (described in next section), which takes care of any needed structure.
 > Do **NOT** use QLayout inside a QModal. Instead, use the simplified QMoadlLayout.
 
 ``` html

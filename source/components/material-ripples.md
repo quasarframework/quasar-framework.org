@@ -29,12 +29,17 @@ For this you need to specify `mat` or `ios` directive modifiers like this:
 If for some reason you have a scenario where the ripples need to be disabled, then you can assign a Boolean as value for the directive.
 
 ```html
-<!-- Only for Quasar Material theme -->
 <template>
   <div
     v-ripple="rippleEnabled"
     class="relative-position"
-  >...</div>
+  >
+    <q-checkbox
+      v-model="rippleEnabled"
+      label="Enable Ripples"
+    />
+    .....
+  </div>
 </template>
 
 <script>
@@ -49,3 +54,4 @@ export default {
 ```
 
 When your Vue scope variable `rippleEnabled` becomes Boolean `false` then the ripple will be disabled.
+You can also combine this with the `mat` and `ios` modifiers.

@@ -11,7 +11,7 @@ Below is a basic example of the Tabs component using many of its features.
 ``` html
 <q-tabs>
   <!-- Tabs -->
-  <q-tab selected count="5" slot="title" name="tab-1" icon="message" />
+  <q-tab default count="5" slot="title" name="tab-1" icon="message" />
   <q-tab disable slot="title" name="tab-2" icon="fingerprint" />
   <q-tab alert slot="title" name="tab-3" icon="account_box" />
   <q-tab slot="title" name="tab-4" icon="accessibility" />
@@ -111,7 +111,7 @@ If you want to use Vue Router with a Tab (clicking on a Tab triggers a route cha
 ### Vue Properties
 | Vue Property | Type | Description |
 | --- | --- | --- |
-| `selected` | Boolean | Set to `true` on the tab which you want to be selected by default. |
+| `default` | Boolean | Set to `true` on the tab which you want to be selected by default. |
 | `label` | String | Label to use for the tab. |
 | `icon` | String | Icon to use for the tab. |
 | `disable` | Boolean | If disabled, the user won't be able to select the tab. |
@@ -168,7 +168,7 @@ data () {
 }
 ```
 **Note**
-When the tabs are initially rendered, the value stored in the v-model used by your component, as with `tabsModel` above, will also indicate to the user a selected tab. If you aren't using v-model, you can set the initially active tab with the `selected` prop.
+When the tabs are initially rendered, the value stored in the v-model used by your component, as with `tabsModel` above, will also indicate to the user a selected tab. If you aren't using v-model, you can set the initially active tab with the `default` prop.
 
 ## QTabPane (Child Component)
 

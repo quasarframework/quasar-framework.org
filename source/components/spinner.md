@@ -31,7 +31,7 @@ You can change the spinner's size without a loss of quality, because SVGs are us
 ## Using Specific Spinners
 If you'd like to use a different spinner than the default, use a specific spinner component, which inherits the [same props as specified above](#Vue-Properties).
 
-The following specific spinners components are available. The name of these components is `q-spinner-*name*`, where `name` is one of 'audio', 'ball', 'bars', 'circles', 'dots', 'grid', 'hearts', 'ios', 'mat', 'oval', 'puff', 'rings', 'tail', 'facebook', 'gears', 'hourglass', 'infinity', 'pie', 'radio'.
+The following specific spinners components are available. The name of these components is `q-spinner-*name*`, where `name` is one of 'audio', 'ball', 'bars', 'circles', 'comment', 'cube', 'dots', 'grid', 'hearts', 'ios', 'mat', 'oval', 'puff', 'rings', 'tail', 'facebook', 'gears', 'hourglass', 'infinity', 'pie', 'radio'.
 
 Example:
 

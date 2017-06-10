@@ -24,14 +24,11 @@ You can replace the QBtn and the List with any DOM elements or components you li
       The DOM element(s) that make up the popup,
       in this case a list:
     -->
-    <div class="list item-delimiter highlight">
-      <div
-        class="item item-link"
-        @click="doSomething(), $refs.popover.close()"
-      >
+    <q-list item-delimiter link>
+      <q-item @click="doSomething(), $refs.popover.close()">
         ...
-      </div>
-    </div>
+      </q-item>
+    </q-list>
   </q-popover>
 </q-btn>
 ```
