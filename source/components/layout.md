@@ -70,9 +70,9 @@ An example of Layout, containing all possible elements: [QToolbar](/components/t
   </q-layout>
   ```
 
-  Note that you can use define multiple headers, footers and navigation elements. Specify `slot="header"` or `slot="footer"` multiple times if you need. The order in which you specify these DOM elements matter.
+  Note that you can use define multiple headers, footers and navigation elements. Specify `slot="header"` or `slot="footer"` on multiple elements if you need. The order in which you specify these DOM elements / components matters.
 
-  The `navigation` slot will be placed after header and before page view on Material Design theme, and after page view and before footer on iOS theme.
+  The `navigation` slot will be placed after header and before page view (but part of header) on Material Design theme, and after page view and before footer (but part of footer) on iOS theme.
 
 3. A great place to use [Toolbars](/components/toolbar.html) is for header and footer slots.
   ```html
@@ -116,6 +116,35 @@ An example of Layout, containing all possible elements: [QToolbar](/components/t
 | `footer-style` | Object | Style applied to footer. |
 | `footer-class` | Object | CSS classes applied to footer. |
 
+### Styling
+Use `*-style` and `*-class` properties (notice they need Objects) to style containers of the layout parts. For example, you can set background on left side / drawer like this:
+
+```html
+<q-layout
+  :left-class="{'bg-primary': true}"
+  ...
+</q-layout>
+```
+
+The Vue Object notation for style and class attributes is mandatory.
+
+### Configuring "view" prop
+Imagine your Layout as a 3x3 matrix. First row would be header and last row would be footer, while first column would be "left" and last column would be "right". Center piece would be page.
+
+QLayout `view` property is a String. It must contain 11 characters: 3 defining header, space, 3 defining middle row, space, and 3 defining footer. Take a look at the picture below to understand how you can configure it.
+
+It matters if you use lowercase or uppercase. For example, using at least one "L" (uppercase character instead of lowercase) will make your layout left side (drawer) be fixed position. Same applies for "H" (header), "F" (footer) and finally "R" (right side / drawer).
+
+![Layout "view" prop](/images/layout-view-prop.svg "Layout 'view' prop")
+
+For example, if you want your layout right side / drawer to be placed on the right of header, page and footer, you'd use `hhr lpr ffr`. If you'd like to also make it fixed, just transform one `r` character to uppercase, like this: `hhR lpr ffr`, or `hhr lpR ffr` or `hhr lpr ffR`.
+
+There's nothing stopping you from going wild with a setup like this: `Lhh lpR ffr`.
+
+> **NOTES**
+> <br>It is important that you specify all parts of a layout, even if you don't use some. For example, even if you don't use footer or right side drawer, specify them in your `view` prop.
+> <br>If you also specify the `reveal` property, your header will be fixed, regardless of wether you've used an uppercase "h" in your `view` setup or not.
+
 ## Vue Methods
 
 | Method | Description |
@@ -127,6 +156,54 @@ An example of Layout, containing all possible elements: [QToolbar](/components/t
 | `showRight` | Show right side. |
 | `hideRight` | Hide right side. |
 | `hideCurrentSide` | Hide currently opened layout side (right or left). |
+
+Example of placing a button on a toolbar in header which will toggle left side / drawer:
+
+```html
+<!--
+  Notice we're using a Vue Reference
+  ("ref") on QLayout
+-->
+<q-layout ref="layout">
+  <q-toolbar slot="header" color="primary">
+    <q-btn flat @click="$refs.layout.toggleLeft()">
+      <q-icon name="menu" />
+    </q-btn>
+    ...
+  </q-toolbar>
+  ...
+</q-layout>
+```
+
+There's also the possibility to use `v-model` to control left/right sides toggle:
+```html
+<template>
+  <q-layout v-model="sides">
+    <q-toolbar slot="header" color="primary">
+      <q-btn flat @click="sides.left = !sides.left">
+        <q-icon name="menu" />
+      </q-btn>
+      ...
+    </q-toolbar>
+    ...
+  </q-layout>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      sides: {
+        // "false" means hidden
+        // "true" means visible
+        left: false,
+        right: true
+      }
+    }
+  }
+}
+</script>
+```
 
 ## Vue Events
 
