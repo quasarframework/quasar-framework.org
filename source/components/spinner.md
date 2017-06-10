@@ -23,7 +23,7 @@ A Spinner is used to show the user a timely process is currently taking place. I
 ## Vue Properties
 | Vue Property | Type | Description |
 | --- | --- | --- |
-| `size` | Number | Number defining the size in pixels. |
+| `size` | Number / String | Number (defining the size in pixels) or String (CSS size with unit). |
 | `color` | String | CSS color from [Quasar Color Palette](/components/color-palette.html). |
 
 You can change the spinner's size without a loss of quality, because SVGs are used.

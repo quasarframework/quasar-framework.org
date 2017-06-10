@@ -101,7 +101,28 @@ Self-closing means the above template is equivalent with:
 Both forms are accepted and can be used.
 
 ## Handling Vue Properties
+You will notice throughout the documentation that Quasar components have a section called "Vue Properties". Example:
+
+| Vue Property | Type | Description |
+| --- | --- | --- |
+| `infinite` | Boolean | Infinite slides scrolling |
+| `size` | String | Thickness of loading bar. |
+| `speed` | Number | How fast should loading bar update its value (in milliseconds). |
 
 ## Handling Vue Methods
+You will notice throughout the documentation that Quasar components have a section called "Vue Methods". Example:
+
+| Vue Method | Description |
+| --- | --- |
+| `next(doneFn)` | Goes to next slide. |
+| `previous(doneFn)` | Goes to previous slide. |
+| `toggleFullscreen()` | Toggles fullscreen mode. |
+
 
 ## Handling Vue Events
+You will notice throughout the documentation that Quasar components have a section called "Vue Events". Example:
+
+| Event Name | Description |
+| --- | --- |
+| `@open` | Triggered right after Modal is opened. |
+| `@close` | Triggered right after Modal is closed. |
