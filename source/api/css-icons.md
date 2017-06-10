@@ -1,7 +1,7 @@
 title: Quasar Icons
 ---
 What would an App be without icons? A default set of (hundreds of) icons is included in any Quasar App.
-These are the [Material Design Icons](https://design.google.com/icons/). You can you can read (and search for them) in the previous link.
+These are the [Material Design Icons](https://design.google.com/icons/). You can read (and search for them) in the previous link.
 
 ![Material Icons Example](/images/material-icons.png)
 
