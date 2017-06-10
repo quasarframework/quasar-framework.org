@@ -4,7 +4,7 @@ Quasar Lists and List Items are a group of components which can work together to
 
 Lists can encapsulate Items or Item-like components, for example [QCollapsible](/components/collapsible.html) or [QSideLink](/components/layout-side-links.html) (latter if setting `item` property).
 
-List Items have three areas of interest:
+List Items have content areas:
 * **left side** and **right side** (usually equipped for supplemental actions represented by icons, avatars, images or letters, but not limited to only these)
 * **main content** which usually is filled with a label (title) and sublabel (subtitle), form components, or anything else for that matter.
 
@@ -44,13 +44,13 @@ We'll cover each component on its own section later on, but for now, take a look
 </q-list>
 ```
 
-Notice that QItemMain and QItemSide can contain QItemTiles or for convenience you can use their own properties to define the content.
+Notice that QItemMain and QItemSide can contain QItemTiles, or for convenience, you can use their own properties to define the content.
 
-Due to how Webpack works in creating the bundle for your App, in some cases you may need to use QItemTile like for examples on avatars or images. The reason is simple: if you use QItemSide `avatar` property, you must supply the path to the statics folder and cannot use `assets` folder or relative paths. The latter two can instead be used with a QItemTile wrapping an `<img>` HTML tag. Look closely at image paths in the example above (`/statics/guy-avata.png` vs `~assets/boy-avatar.png`). Also read about [App Handling Static Assets](/guide/app-handling-static-assets.html) to understand how Webpack includes assets into the bundle.
+Due to how Webpack works in creating the bundle for your App, in some cases you may need to use QItemTile, like for avatars or images. The reason is simple: if you use QItemSide `avatar` property, you must supply the path to the statics folder and cannot use the `assets` folder or relative paths. Instead, the latter two can be used with a QItemTile wrapping an `<img>` HTML tag. Look closely at image paths in the example above (`/statics/guy-avata.png` vs `~assets/boy-avatar.png`). Also read about [App Handling Static Assets](/guide/app-handling-static-assets.html) to understand how Webpack includes assets into the bundle.
 
 ## Components
 
-These are the Quasar components that you can use to define lists and list items:
+Below is a list of Quasar components that you can use to define lists and list items:
 * QList (encapsulating QItems and all other List related components)
 * QListHeader (header of a section in QList)
 * QItemDelimiter (external Item delimiter/separator)
@@ -62,12 +62,12 @@ These are the Quasar components that you can use to define lists and list items:
 ![Quasar List and List Items](/images/list-and-list-items.svg "Quasar List and List Items")
 
 ### QList
-QList encapsulates all other components mentioned. It's not mandatory but helps with keeping a good design and can also define some properties that will be applied to all QItems (or QItem-like) like multiline, delimiter, link, highlight and so on.
+QList encapsulates all other components mentioned. It's not mandatory, but does help with maintaining a good design and can also define some properties that will be applied to all QItems (or QItem-like components) like multiline, delimiter, link, highlight and so on.
 
 | Vue Property | Type | Description |
 | --- | --- | --- | --- |
-| `striped` | Boolean | Apply highlight to QItems intermitently, starting with second QItem. |
-| `striped-odd` | Boolean | Apply highlight to QItems intermitently, starting with first QItem. |
+| `striped` | Boolean | Apply highlight to QItems intermittently, starting with second QItem. |
+| `striped-odd` | Boolean | Apply highlight to QItems intermittently, starting with first QItem. |
 | `highlight` | Boolean | Apply highlight to all QItems. This works only on desktop when user hovers QItems. |
 | `link` | Boolean | Apply highlight and a pointer cursor to all QItems. |
 | `dense` | Boolean | Make QItems dense. |
@@ -95,7 +95,7 @@ Within QList, you can display a section header / title.
 ```
 
 ### QItemDelimiter
-If you want QItem external delimiters (there are internal ones too as you can see on QItem's description later on this page), use QItemDelimiter component. Useful also to separate different sections of your QList, like for example before a QListHeader.
+If you want QItem external delimiters (there are internal ones too as you can see on QItem's description later on this page), use the QItemDelimiter component. It's useful also to separate different sections of your QList, like for example, before a QListHeader.
 
 | Vue Property | Type | Description |
 | --- | --- | --- | --- |
@@ -141,7 +141,7 @@ If you want QItem external delimiters (there are internal ones too as you can se
 | `link` | Boolean | Apply highlight and a pointer cursor to QItem. |
 | `tag` | String | Default HTML tag used is 'div', but this can be any HTML tag if you need to. Read below for more information. |
 
-Also check next section for more properties and to learn how you can use your QItem as a Router Link.
+Also check the next section for more properties and to learn about how you can use your QItem as a Router Link.
 
 #### Using QItem as a Router Link
 If you want your QItem to act the same as Vue's `<router-link>`, then you can use these additional properties (which work exactly the same as `<router-link>`):
@@ -153,10 +153,10 @@ If you want your QItem to act the same as Vue's `<router-link>`, then you can us
 | `append` | Boolean | Append route definition to current route when navigating. |
 | `replace` | Boolean | Replaces current route with the new one instead of adding it to the window history queue. |
 
-For more details on these properties, please refer to Vue Router documentation [here](http://router.vuejs.org/en/api/router-link.html).
+For more details on these properties, please refer to [the Vue Router documentation](http://router.vuejs.org/en/api/router-link.html).
 
 #### Render with specific HTML tag
-Example on `tag` property usage below. In this case, we take advantage of the `<label>` tag that browsers connect to checkboxes (QCheckbox, QToggle) or radio inputs (QRadio). When a `<label>` is clicked/tapped, then the wrapped checkboxes toggle their state (check / uncheck) and wrapped radios are being selected.
+Please refer to the example on how to use the `tag` property shown below. In this example, we take advantage of the `<label>` tag that browsers automatically connect to checkboxes (QCheckbox, QToggle) or radio inputs (QRadio). When a `<label>` is clicked/tapped, then the wrapped checkboxes toggle their state (check / uncheck) and wrapped radios are being selected.
 ```html
 <!--
   We want a click/tap on the whole QItem
@@ -187,7 +187,7 @@ Example on `tag` property usage below. In this case, we take advantage of the `<
 | `stamp` | String | For right side only. One character String to define a letter. Either use an icon, image, avatar or letter. |
 | `tag` | String | Default HTML tag that QItemTile gets rendered with is 'div', but this can be any HTML tag if you need to. |
 
-Use the icon, image, avatar, letter or stamp properties or, for more control, insert QItemTiles instead. Don't use both ways though.
+Use the icon, image, avatar, letter or stamp properties or, for more control, insert QItemTiles instead. Use only one method or the other.
 
 ### QItemMain
 
@@ -200,10 +200,10 @@ Use the icon, image, avatar, letter or stamp properties or, for more control, in
 | `inset` | Boolean | Useful when QItem has no left side, but you want to align your content as if it had a left side. |
 | `tag` | String | Default HTML tag that QItemTile gets rendered with is 'div', but this can be any HTML tag if you need to. |
 
-Use the label properties or, for more control, insert QItemTiles instead to define the label and sublabel. Don't use both ways though.
+Use the label properties or, for more control, insert QItemTiles to define the label and sublabel. Use only one method or the other.
 
 ### QItemTile
-QItemTile can be used for more control over the contents of left/right side and main content of QItem.
+QItemTile can be used for more control over the content of the left, right side or main content of QItem.
 
 | Vue Property | Type | Description |
 | --- | --- | --- | --- |
@@ -214,7 +214,7 @@ QItemTile can be used for more control over the contents of left/right side and 
 | `letter` | String | One character String to define a letter. Either use an icon, image, avatar or letter as props. |
 | `tag` | String | Default HTML tag that QItemTile gets rendered with is 'div', but this can be any HTML tag if you need to. |
 
-More props available, but use these only within QItemMain:
+There are more props available, but use only these within QItemMain:
 
 | Vue Property | Type | Description |
 | --- | --- | --- | --- |
@@ -223,8 +223,8 @@ More props available, but use these only within QItemMain:
 | `lines` | String / Number | Number of lines the label/sublacel can span to. Ellipsis are used when overflowing. Use only in conjunction with `label` and `sublabel`. |
 
 
-## Using along QCollapsible & QSideLink
-[QCollapsible](/components/collapsible.html) and [QSideLink](/components/layout-side-links.html) are QItem wrappers, so you can use them along QItems within a QList. Here are two examples:
+## Using QCollapsible & QSideLink with QItems
+[QCollapsible](/components/collapsible.html) and [QSideLink](/components/layout-side-links.html) are QItem wrappers, so you can use them with QItems within a QList. Here are two examples:
 
 ```html
 <!--
@@ -407,7 +407,7 @@ Another complex example used on one of the sides of a QLayout, describing a menu
 </q-list>
 ```
 
-### Embedding Components on Right Side
+### Embedding Components on the Right Side
 ```html
 <q-list inset-delimiter>
   <q-item>

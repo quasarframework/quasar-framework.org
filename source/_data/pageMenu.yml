@@ -108,21 +108,21 @@ components:
     Button: $
     Field: $
     Input: $
-    ChipsInput: $
+    Chips Input: $
     Autocomplete: $
     Search: $
     Range: $
-    DoubleRange: $
+    Double Range: $
     Radio: $
     Checkbox: $
     Toggle: $
-    OptionGroup: $
+    Option Group: $
     Datetime: $
-    InlineDatetime: $
-    DatetimeRange: $
+    Inline Datetime: $
+    Datetime Range: $
     Pagination: $
     Select: $
-    DialogSelect: $
+    Dialog Select: $
     Rating: $
     Knob: $
     Uploader: $
