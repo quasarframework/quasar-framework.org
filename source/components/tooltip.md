@@ -34,7 +34,6 @@ The idea is to place `<q-tooltip>` inside your DOM element / component that you 
 | `offset` | Array | Array with two numbers. Offset on horizontal and vertical (in pixels). |
 | `max-height` | String | Optional maximum height of Popover content. Example: `500px` |
 | `disable` | Boolean | When set to `true`, Popover won't be triggered. |
-| `delay` | Number | Set the delay, when the tool tip should appear. |
 
 ## Vue Methods
 
