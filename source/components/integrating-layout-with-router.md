@@ -2,7 +2,7 @@ title: Integrating Layout with Router
 ---
 You can benefit from Vue Router's capabilities while structuring your routes with a Quasar Layout. The information below is just a recommendation and not a mandatory folder/files structure to follow. Quasar allows you full freedom. Take the lines below only as an example.
 
-As you will read in the next documentation pages, Layout is the component used to encapsulate pages, so that multiple pages will share the same header, left / right side and so on. In order to understand how this works, you need a little bit of reading on [Vue Router nested routes](http://router.vuejs.org/en/essentials/nested-routes.html).
+[Layout](/components/layout.html) is the component used to encapsulate pages, so that multiple pages will share the same header, left / right side and so on. In order to understand how this works, you need a little bit of reading on [Vue Router nested routes](http://router.vuejs.org/en/essentials/nested-routes.html).
 
 ## Example
 To make it more clear, let's take an example. We have one layout ('user-layout') and two pages ('user-feed' and 'user-profile'). We want to configure the website/app routes like this: `/user/feed` and `/user/profile`.
