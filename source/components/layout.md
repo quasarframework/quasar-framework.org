@@ -31,14 +31,11 @@ An example of Layout, containing all possible elements: [QToolbar](/components/t
     <q-route-tab slot="title" icon="input" to="/test-layout/drawer" replace label="Drawer" />
   </q-tabs>
 
-  <q-scroll-area
-    slot="left"
-    style="width: 100%; height: 100%;"
-  >
+  <div slot="left">
     <q-side-link item to="/test-layout/toolbar">Toolbar</q-side-link>
     <q-side-link item to="/test-layout/tabs">Tabs</q-side-link>
     <q-side-link item to="/test-layout/drawer">Drawer</q-side-link>
-  </q-scroll-area>
+  </div>
 
   <div slot="right">
     Right Side of Layout
@@ -53,6 +50,18 @@ An example of Layout, containing all possible elements: [QToolbar](/components/t
     </q-toolbar-title>
   </q-toolbar>
 </q-layout>
+```
+
+You can also use [QScrollArea](/components/scroll-area.html) for the left or right side of layout if you want to control the scrollbar:
+```html
+<q-scroll-area
+  slot="left"
+  style="width: 100%; height: 100%;"
+>
+  <q-side-link item to="/test-layout/toolbar">Toolbar</q-side-link>
+  <q-side-link item to="/test-layout/tabs">Tabs</q-side-link>
+  <q-side-link item to="/test-layout/drawer">Drawer</q-side-link>
+</q-scroll-area>
 ```
 
 ## Understanding QLayout
