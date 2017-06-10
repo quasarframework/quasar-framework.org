@@ -1,6 +1,6 @@
 title: Handling Back Button
 ---
-When writing  reusable code for building a mobile App and a website, it's important to know how to handle the "Back" button. More specifically, how to manage buttons on your layout/page that should make your App "go back" to the previous screen.
+When writing reusable code for building a mobile App and a website, it's important to know how to handle the "Back" button. More specifically, how to manage buttons on your layout/page that should make your App "go back" to the previous screen.
 
 > If you have no knowledge of [Vue Router](http://router.vuejs.org/), we highly recommend you read and understand how it works first.
 
