@@ -51,7 +51,7 @@ components:
     Positioning: $
     Other Helper Classes: $
   Layout and Structure:
-    Overview: layout-$
+    Integrating Layout with Router: $
     Layout: $
     Fixed Positioning on Layout: $
     Element Resize Observable: $
