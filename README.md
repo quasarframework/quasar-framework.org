@@ -22,6 +22,6 @@ I'm only asking that you [read this](http://quasar-framework.org/guide/contribut
 
 ## License
 
-Copyright (c) 2016-2017 Razvan Stoenescu
+Copyright (c) Razvan Stoenescu
 
 [MIT License](http://en.wikipedia.org/wiki/MIT_License)
