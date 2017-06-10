@@ -110,6 +110,36 @@ The object literal provided can contain the following keys:
 * `month`: for a duration in months
 * `year`: for a duration in years
 
+### Format date
+To format an unformatted date:
+``` js
+import { date } from 'quasar'
+
+let date = new Date(2017, 2, 12)
+let formattedDate = date.convertDateToFormat(date)
+// `formattedDate` is now in format YYYY-MM-DDTHH:mm:ss.SSSZ
+```
+
+### Set date/time
+To set a specified unit(s) of date/time:
+``` js
+import { date } from 'quasar'
+
+let date = new Date(2017, 10, 2)
+let adjustedDate = date.adjustDate(date, { year: 2010, month: 2})
+// `adjustedDate` is 2010-2-2
+```
+You can pass a third argument (a boolean) for setting UTC time (true) instead of local time.
+
+The object literal provided can contain the following keys:
+* `milliseconds`: for a duration in milliseconds
+* `seconds`: for a duration in seconds
+* `minutes`: for a duration in minutes
+* `hours`: for a duration in hours
+* `days`: for a duration in days
+* `month`: for a duration in months
+* `year`: for a duration in years
+
 ## Query dates
 
 ### Minimum/Maximum
