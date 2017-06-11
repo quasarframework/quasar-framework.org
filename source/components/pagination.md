@@ -1,32 +1,47 @@
 title: Pagination
 ---
-Quasar Pagination is a Web Component ready to use where a pagination system is needed.
+The Quasar Pagination component is available for whenever a pagination system is required. It offers the user a simple UI to move between pages. 
 
 <input type="hidden" data-fullpage-demo="web-components/pagination">
 
 ## Basic Usage
 
 ``` html
-<q-pagination
-  v-model="page"
-  :max="17"
-></q-pagination>
+<q-pagination v-model="page" :max="17" />
 ```
 
 ## Vue Properties
-| Vue Property | Required | Description |
+| Vue Property | Type | Description |
 | --- | --- | --- |
-| `min` | | Number of the first page; Default: `1` |
-| `max` | Yes | Number of last page |
-| `disable` | | Boolean. If no value is provided (empty attribute), then it's considered as set to `true`. |
+| `value` | Number  | **Required** The v-model of the pagination component. |
+| `min` | Number | Number of the first page; Default: `1` |
+| `max` | Number | **Required** Number of last page |
+| `disable` | Boolean | If no value is provided (empty attribute), then it's considered as set to `true`. |
 
-## Vue Methods
-| Vue Method | Description |
-| --- | --- |
-| `set(value)` | Parses and sets page number to `value`. |
-| `setByOffset(value)` | Parses and sets page number to current value + `value`. Negative values allowed. |
+If you'd like to set the minimum starting page or the max number of pages, you can do so, as in the example below.
 
-## Vue Events
-| Vue Event | Description |
-| --- | --- |
-| `@input` | Triggered on model value change with the new value. |
+``` html
+<q-pagination v-model="page" :min= "minPages" :max="maxPages" />
+```
+```javascript
+<script>
+export default {
+  data () {
+    return {
+      page: 4,
+      minPages: 4,
+      maxPages: 27
+    }
+  }
+}
+</script>
+```
+This will cause the pagination to initially render to page 4 and not allow the user to go below page 4. 
+
+### Disabling
+
+If you'd like to disable the pagination component, use the `disable` prop. 
+
+``` html
+<q-pagination v-model="page" :max="17" disable />
+```
