@@ -74,14 +74,27 @@ components:
     Scroll Fire: $
     Back to Top: $
     Scrolling Utils: $
-  Animation:
-    Transition: $
-    Slide Transition: $
-    JS Animations: $
-  Touch/Mouse Actions:
-    Panning: $
-    Swiping: $
-    Touch Hold: $
+  Forms:
+    Button: $
+    Field: $
+    Input: $
+    Chips Input: $
+    Autocomplete: $
+    Search: $
+    Range: $
+    Double Range: $
+    Radio: $
+    Checkbox: $
+    Toggle: $
+    Option Group: $
+    Datetime: $
+    Inline Datetime: $
+    Datetime Range: $
+    Select: $
+    Dialog Select: $
+    Rating: $
+    Knob: $
+    Uploader: $
   Popups:
     Action Sheet: $
     Alert: $
@@ -105,34 +118,23 @@ components:
     Inner Loading: $
     Progress Bar: $
     Spinner: $
-  Forms:
-    Button: $
-    Field: $
-    Input: $
-    Chips Input: $
-    Autocomplete: $
-    Search: $
-    Range: $
-    Double Range: $
-    Radio: $
-    Checkbox: $
-    Toggle: $
-    Option Group: $
-    Datetime: $
-    Inline Datetime: $
-    Datetime Range: $
-    Select: $
-    Dialog Select: $
-    Rating: $
-    Knob: $
-    Uploader: $
+  Touch/Mouse Actions:
+    Panning: $
+    Swiping: $
+    Touch Hold: $
   Media:
     Image Gallery: $
     Parallax: $
     Video Embedding: $
-  Miscellaneous:
+  Animation:
+    Transition: $
+    Slide Transition: $
+    JS Animations: $
+  Other Components:
+    Chip: $
     Chat: $
     Tree: $
+  Utils:
     Handling JS Date: $
     DOM Utils: $
     Formatter Utils: $
