@@ -65,6 +65,7 @@ components:
     Handling Back Button: $
     Context Menu: $
     Breadcrumb: $
+    Pagination: $
   Scrolling:
     Scroll Observable: $
     Scroll Directive: $
@@ -120,7 +121,6 @@ components:
     Datetime: $
     Inline Datetime: $
     Datetime Range: $
-    Pagination: $
     Select: $
     Dialog Select: $
     Rating: $
