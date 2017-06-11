@@ -4,7 +4,7 @@ Quasar Lists and List Items are a group of components which can work together to
 
 Lists can encapsulate Items or Item-like components, for example [QCollapsible](/components/collapsible.html) or [QSideLink](/components/layout-side-links.html) (latter if setting `item` property).
 
-List Items have content areas:
+List Items have following content areas:
 * **left side** and **right side** (usually equipped for supplemental actions represented by icons, avatars, images or letters, but not limited to only these)
 * **main content** which usually is filled with a label (title) and sublabel (subtitle), form components, or anything else for that matter.
 
@@ -153,7 +153,7 @@ If you want your QItem to act the same as Vue's `<router-link>`, then you can us
 | `append` | Boolean | Append route definition to current route when navigating. |
 | `replace` | Boolean | Replaces current route with the new one instead of adding it to the window history queue. |
 
-For more details on these properties, please refer to [the Vue Router documentation](http://router.vuejs.org/en/api/router-link.html).
+For more details on these properties, please refer to the [Vue Router documentation](http://router.vuejs.org/en/api/router-link.html).
 
 #### Render with specific HTML tag
 Please refer to the example on how to use the `tag` property shown below. In this example, we take advantage of the `<label>` tag that browsers automatically connect to checkboxes (QCheckbox, QToggle) or radio inputs (QRadio). When a `<label>` is clicked/tapped, then the wrapped checkboxes toggle their state (check / uncheck) and wrapped radios are being selected.

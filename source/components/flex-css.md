@@ -1,4 +1,4 @@
-title: Quasar Grid Layout
+title: Flex CSS
 ---
 <input type="hidden" data-fullpage-demo="css/grid-layout">
 

@@ -33,7 +33,7 @@ guide:
 
 components:
   root:
-    Introduction: $
+    Introduction for Beginners: $
     Platform Detection: $
     Global Event Bus: $
     Vue Prototype Injections: $
@@ -50,7 +50,7 @@ components:
     Visibility: $
     Positioning: $
     Other Helper Classes: $
-  Layout and Structure:
+  Layout:
     Layout: $
     Integrating Layout with Router: $
     Fixed Positioning on Layout: $
