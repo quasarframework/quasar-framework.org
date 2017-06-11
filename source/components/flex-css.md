@@ -1,10 +1,9 @@
 title: Flex CSS
 ---
+Quasar provides lots of CSS classes to help you build your UI easily with the help of [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/). Think of it like operating with rows and columns with many options at hand.
+
+> The final section of this page will show you how to create responsive UIs. Also take a look at the demo (best viewed by clicking "Desktop View" when on a desktop, because that's where you can resize the window width to see helper classes in action). Click on "View Source" too to see the demo's source code.
 <input type="hidden" data-fullpage-demo="css/grid-layout">
-
-Back in the ol' days web developers used HTML tables to style their web pages. Then came along powerful CSS features. Latest in the arena entered [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
-
-Quasar provides lots of CSS classes to help you deal easily with managing a layout. Long story short, think of it like operating with rows and columns with many options at hand.
 
 ## Background on Flexbox
 The Flexbox Layout (Flexible Box) module (currently a W3C Last Call Working Draft) aims at providing a more efficient way to lay out, align and distribute space among items in a container, even when their size is unknown and/or dynamic (thus the word "flex").
@@ -14,7 +13,7 @@ The main idea behind the flex layout is to give the container the ability to alt
 Most importantly, the flexbox layout is direction-agnostic as opposed to the regular layouts (block which is vertically-based and inline which is horizontally-based). While those work well for pages, they lack flexibility (no pun intended) to support large or complex applications (especially when it comes to orientation changing, resizing, stretching, shrinking, etc.).
 
 ## Getting Started
-Quasar Grid Layout CSS classes apply to either the Container (Parent) or the Container's items (Children).
+Quasar Flex CSS classes apply to either the Container (Parent) or the Container's items (Children).
 
 ![Flexbox Container](/images/flexbox-container.svg)
 ![Flexbox Items](/images/flexbox-items.svg)
@@ -28,13 +27,12 @@ One of the following CSS classes is mandatory for the parent in order for the ch
 
 | Class Name | Description |
 | --- | --- |
-| `flex` | `display` is set to `flex` |
 | `row` | Flex row |
 | `row inline` | Inline Flex row |
 | `column` | Flex column |
 | `column inline` | Inline Flex column |
-| `reverse-row` | Flex row with `flex-direction` set to `row-reverse` |
-| `reverse-column` | Flex column with `flex-direction` set to `column-reverse` |
+| `row reverse` | Flex row with `flex-direction` set to `row-reverse` |
+| `column reverse` | Flex column with `flex-direction` set to `column-reverse` |
 
 Example:
 ``` html
@@ -45,16 +43,18 @@ Example:
 </div>
 ```
 
-### Wrap
-**You can also wrap content**. Use `wrap` or `reverse-wrap` classes. By default, flex items will all try to fit onto one line. You can change that and allow the items to wrap as needed with this property. Direction also plays a role here, determining the direction new lines are stacked in.
+### Wrapping by default
+By default, all rows and columns are wrapping content.
 
 ![Flexbox Direction](/images/flexbox-wrap.svg)
 
-If you explicitly do not want to wrap, use `no-wrap` class.
+However if you explicitly do not want to wrap and by so doing you want to fit all content into one line, then add `no-wrap` CSS helper class.
+
+Also, if you want to wrap in reverse order, then `reverse-wrap` is available.
 
 | Class Name | Description |
 | --- | --- |
-| `wrap` | Wrap if necessary |
+| `wrap` | Wrap if necessary ("on" by default, no need to specify it) |
 | `no-wrap` | Do NOT wrap even if necessary |
 | `reverse-wrap` | Wrap backwards if necessary |
 
@@ -72,114 +72,115 @@ The next classes **align a flex container's lines** within when there is extra s
 
 ![Flexbox Content Align](/images/flexbox-content-align.svg)
 
-### Gutters
-| Class Name | Description |
-| --- | --- |
-| `small-gutter` | Small gutter between cells |
-| `medium-gutter` or `gutter` | Default gutter between cells |
-| `big-gutter` | Big gutter between cells |
-| `large-gutter` | Large gutter between cells |
-
-Example:
-``` html
-<div class="row large-gutter">
-  <div>First column</div>
-  <div>Second column</div>
-</div>
-```
-
 ## Children Classes
 
-### Order
-**You can set the order** by using `order-i` classes, where *i* is between 1-10. By default, flex items are laid out in the source order. However, the order property controls the order in which they appear in the flex container. If you need more granularity, use `order` CSS property and assign the desired value.
+### Distribution of Size
+Quasar uses a 12 point column system for distributing size of row children. Here are some examples of the CSS helper classes available:
 
-![Flexbox Order](/images/flexbox-order.svg)
-
-Example:
-``` html
-<div class="row">
-  <div class="order-2">Second column</div>
-  <div class="order-3">Third column</div>
-  <div class="order-1">First column</div>
-</div>
-```
-
-### Size
-The width of a column can be set as `width-XofY` (where *Y* is 1 to 5 and *X* is 1 to Y).
-It's a wrapper over `flex 0 1 X%`.
-
-Example: `width-1of3` for a 33% width for the cell. `sm-width-1of3` when on a narrow screen only.
 
 ``` html
 <div class="row">
-  <div class="width-2of3">2/3</div>
-  <div class="width-1of5">1/5</div>
-  <div class="auto">auto</div>
-  <div class="auto">auto</div>
+  <div class="col-8">two thirds</div>
+  <div class="col-2">one sixth</div>
+  <div class="col-auto">auto size based on content and available space</div>
+  <div class="col">fills remaining available space</div>
 </div>
 ```
 
-CSS class `auto` makes the cell expand to the remaining unused width.
+In the example above, `col-8` fills two thirds (2/3) of the row width, because 8/12 = 2/3 = 66%, while `col-2` occupies one sixth (2/12 = 1/6 ~ 16.67%).
 
-There's also the possible to offset a cell with `offset-XofY`. Example: 'offset-1of3', `sm-offset-1of3` (when on narrow screen only), `offset-0` (for no offset, useful when using different offsets based on screen size).
+CSS helper class `col-auto` makes the cell fill only the space it needs to be rendered, with the possibility to shrink when not enough space is available. `col`, on the other hand, tries to fill all space available while also shrinking if needed.
 
-### Grow
-**An item can grow if it's enough space available** by using `grow-i` classes, where *i* is between 1-10. This defines the ability for a flex item to grow if necessary. It accepts a unit-less value that serves as a proportion. It dictates what amount of the available space inside the flex container the item should take up.
-If all items have `grow-1` class, the remaining space in the container will be distributed equally to all children. If one of the children has `grow-2`, the remaining space would take up twice as much space as the others (or it will try to, at least).
+Another example with a visual representation below it:
+```html
+<div class="row">
+  <div class="col">1</div>
+  <div class="col">1</div>
+  <div class="col">1</div>
+  <!--
+     we have 3 children, so equivalent
+     to above would be to use `col-4`
+     on each of the children
+  -->
+</div>
 
+<div class="row">
+  <div class="col-3">1</div>
+  <div class="col-6">2</div>
+  <div class="col-3">1</div>
+</div>
+```
 ![Flexbox Grow](/images/flexbox-grow.svg)
 
-### Shrink
-**An item can shrink if necessary** by using `shrink-i` classes, where *i* is between 1-10.
+There's also the possible to offset a cell. Example: `offset-4` which offsets a third of space (4/12 = 1/3 = 33%).
 
 ### Self Alignment
 **An item can override the aligned specified on parent**. This allows alignment to be overridden for individual flex items. Please see the [Alignment](#Alignment) explanation from Parent Classes to understand the available values (`self-start`, `self-center`, `self-baseline`, `self-end`, `self-stretch`).
 
 ![Flexbox Grow](/images/flexbox-self.svg)
 
-## Visibility
-**An item can be displayed or not based on the width of the screen**. The following list displays prefixes (can be used as standalone too!) that you can use for all of the above CSS classes.
+### Order
+**You can set the order** of children elements by using `order-first` and `order-last` CSS helper classes.
 
-| Prefix | Description |
+By default, flex items are laid out in the source order. However, the order property controls the order in which they appear in the flex container. If you need more granularity, use `order` CSS property and assign the desired value.
+
+Example:
+``` html
+<div class="row">
+  <div style="order: 2">Second column</div>
+  <div class="order-last">Third column</div>
+  <div class="order-first">First column</div>
+</div>
+```
+
+Here is how the CSS `order` property works:
+
+![Flexbox Order](/images/flexbox-order.svg)
+
+## Responsive Design
+Flex CSS Helper classes can be applied based on the width of the screen, to help you in making a responsive UI. The 12 points grid is inspired by Bootstrap's, so there are a lot of similarities.
+
+What we've learned so far is that, for example, we can size the columns regardless of window width. If we are to create a response UI, we need to dynamically change the sizing while taking into account how wide the window is. First, let's learn about some tokens that you can inject at middle of `col-*`, `offset-*` and `col-auto` helper classes (look at table below for tokens).
+
+| Token | Max window width | Description / When it applies |
 | --- | --- |
-| `sm` | Display only on small windows |
-| `md` | Display only on medium-sized windows |
-| `bg` | Display only on big windows |
-| `lg` | Display only on large windows |
-| `lt-md` | Display only on lower than medium windows |
-| `lt-bg` | Display only on lower than big windows |
-| `lt-lg` | Display only on lower than large windows |
-| `gt-sm` | Display only on greater than small windows |
-| `gt-md` | Display only on greater than medium windows |
-| `gt-bg` | Display only on greater than big windows |
+| `xs` | 576px | Extra small sized window |
+| `sm` | 768px | Small sized window |
+| `md` | 992px | Medium-sized window |
+| `lg` | 1200px | Large sized window |
+| `xl` | 1201+ px | Extra large sized window |
+
+Example: `col-md-7`, `offset-lg-3`, `col-xs-auto`.
+
+A full example: let's say we have a row with three children. On extra small windows, we need to stack the children vertically, on small windows we need to display them side by side (each having equal width), and starting with medium windows we should display them all on same line:
 
 ``` html
-<!-- Also see the demo on this page and try a mobile and desktop view -->
-<div class="row gutter">
-  <div class="sm">SM</div>
-  <div class="md">MD</div>
-  <div class="bg">BG</div>
-  <div class="lg">LG</div>
-  <div class="lt-md">lt-MD</div>
-  <div class="lt-bg">lt-BG</div>
-  <div class="lt-lg">lt-LG</div>
-  <div class="gt-sm">gt-SM</div>
-  <div class="gt-md">gt-MD</div>
-  <div class="gt-bg">gt-BG</div>
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-md-4">
+    col
+  </div>
+  <div class="col-xs-12 col-sm-6 col-md-4">
+    col
+  </div>
+  <div class="col-xs-12 col-sm-6 col-md-4">
+    col
+  </div>
 </div>
 ```
 
-One more example:
-``` html
-<!-- Displayed as column on small windows and as rows the rest of the time -->
-<div class="row gutter sm-column"> <<<<<<<<<<<<<<
-  <div class="width-2of3"><div>2/3</div></div>
-  <div class="width-1of5"><div>1/5</div></div>
-  <div class="auto"><div>auto</div></div>
-  <div class="auto"><div>auto</div></div>
+Notice in the above example that we used `col-xs-12` (12/12 = 100% of row, so each child will take full width of the container making all children stack vertically, since rows are wrapping content by default), `col-sm-6` (6/12 = 50% of row) and `col-md-4` (4/12 = 33% of row).
+
+Like previously mentioned, rows wrap content by default, so when 12 (or more) grid points are used for a row, content is wrapped to the next line. If we have two `<div>`s and we use `col-8` on both, they will also stack, since 8 + 8 = 16 and we can only display 12 points on a single line.
+
+```html
+<div class="row">
+  <!--
+    more than 12 grid points together,
+    so second <div> will wrap on next line
+  -->
+  <div class="col-8">col</div>
+  <div class="col-8">col</div>
 </div>
 ```
 
-Prefixes also work with `order-i`, `shrink-i`, `width-XofY`, `offset-XofY`, on gutters and so on.
-
-What does small, medium, big or large windows mean? Check [CSS &gt; Visibility](/api/css-visibility.html#Window-Width-Related) page to see thresholds on window width.
+Also check [CSS Helpers &gt; Visibility](/components/visibility.html#Window-Width-Related) page to see thresholds on window width and these tokens (xs, sm, md, lg, xl) used on their own to hide or show DOM elements.
