@@ -1,6 +1,6 @@
 title: Double Range
 ---
-The Quasar Double Range component is a great way to offer the user the selection of a sub-range of values between a minimum and maximum value, with optional steps to select those values. And example use case would be to offer a price range selection.
+The Quasar Double Range component is a great way to offer the user the selection of a sub-range of values between a minimum and maximum value, with optional steps to select those values. An example use case for the Double Range component would be to offer a price range selection.
 
 Also check out its "sibling", the [Range](/components/range.html) component.
 

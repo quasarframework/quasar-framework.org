@@ -1,18 +1,15 @@
 title: Autocomplete
 ---
-Autocomplete component binds to a text field and offers suggestions to the user while typing based on a static list of results or an Ajax call.
+The Quasar Autocomplete component binds to a text input field and offers suggestions to the user, while the user is typing. The suggestions offered the user are based on either a static list of results or an Ajax call.
+
 <input type="hidden" data-fullpage-demo="form/autocomplete">
 
 ## Basic Usage
-As long as this component is rendered by Vue it will capture all Ajax calls.
+As long as this component is rendered by Vue, it will capture all Ajax calls.
 ``` html
-<!-- Fills with its own input field -->
-<q-autocomplete v-model="terms" @search="search" @selected="selected"></q-autocomplete>
-
 <!-- Binds to a specified textfield -->
-<q-input v-model="terms" placeholder="Type 'fre'">
+<q-input color="amber" v-model="terms" placeholder="Type 'fre'">
   <q-autocomplete
-    v-model="terms"
     @search="search"
     :min-characters="3"
     @selected="selected"
@@ -20,23 +17,16 @@ As long as this component is rendered by Vue it will capture all Ajax calls.
 </q-input>
 
 <!-- Binds to a textfield from a component, like Search -->
-<q-search v-model="terms">
-  <q-autocomplete
-    v-model="terms"
-    @search="search"
-    @selected="selected"
-    :debounce="0"
-  />
+<q-search v-model="terms" placeholder="Start typing a country name">
+  <q-autocomplete @search="search" @selected="selected" />
 </q-search>
 
 <!-- Adds a delimiter between results -->
 <q-search v-model="terms">
   <q-autocomplete
-    v-model="terms"
     delimiter
     @search="search"
     @selected="selected"
-    :debounce="0"
   />
 </q-search>
 ```
@@ -48,8 +38,9 @@ As long as this component is rendered by Vue it will capture all Ajax calls.
 | `max-results` | Number | 6 | How many results can we display at a time? |
 | `static-data` | Object | *None* | Use static suggestions. No need to do an Ajax call. Filtering is provided by Autocomplete component. |
 | `debounce` | Number | 500 | Time in milliseconds, between key presses and finding new results. Good for delay, if using AJAX requests. |
+| `delimiter` | Boolean | false | If set to `true`, it ads a delimeter between the values to select from. |
 
-When using static data, specify an Object this (notice that it uses [QItem component props](/components/list-item.html)):
+When using static data, specify an Object (notice that it uses [QItem component props](/components/list-item.html)):
 ``` js
 // static-data
 [
@@ -62,7 +53,7 @@ When using static data, specify an Object this (notice that it uses [QItem compo
       value: 'Romania', // what gets Autocompleted with
       label: 'Romania', // what gets displayed as main label for this suggestion
 
-      secondLabel: 'Continent: Europe', // optional
+      sublabel: 'Continent: Europe', // optional
       icon: 'location_city', // optional
       stamp: '18 mil', // optional
       ...
@@ -73,7 +64,7 @@ When using static data, specify an Object this (notice that it uses [QItem compo
 ```
 
 ## Vue Methods
-Only if you want to also trigger it manually. Ajax calls trigger these methods automatically.
+Use the methods, only if you want to trigger the component manually. Ajax calls trigger these methods automatically.
 
 | Vue Method | Description |
 | --- | --- |
@@ -87,8 +78,8 @@ Only if you want to also trigger it manually. Ajax calls trigger these methods a
 | Vue Event | Description |
 | --- | --- |
 | `@search(terms, Function done)` | Triggered by the component when a search should start and offer some results. |
-| `@selected(item)` | Triggered when user has selected a suggestion. |
-| `@open` | Triggered when the selections pop-up opens. |
+| `@selected` | Triggered when user has selected a suggestion. |
+| `@show` | Triggered when the selections pop-up opens. |
 | `@close` | Triggered when selections pop-up closes. |
 
 Example for `search` event:
