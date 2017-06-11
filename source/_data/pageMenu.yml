@@ -41,9 +41,9 @@ components:
     Color Palette: $
     Stylus Variables: $
     Icons: $
-    Material Ripples: $
     Typography: $
     Addressbar Color: $
+    Material Ripples: $
   CSS Helpers:
     Flex CSS: $
     Shadows (Elevation): $
@@ -54,6 +54,7 @@ components:
     Layout: $
     Integrating Layout with Router: $
     Fixed Positioning on Layout: $
+    Floating Action Button: $
     Element Resize Observable: $
     Window Resize Observable: $
   Navigation:
@@ -88,7 +89,6 @@ components:
     Modal: $
     Popover: $
     Tooltip: $
-    Floating Action Button: $
   Grouping:
     Card: $
     Collapsible: $
