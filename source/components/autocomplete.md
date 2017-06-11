@@ -78,8 +78,8 @@ Use the methods, only if you want to trigger the component manually. Ajax calls 
 | Vue Event | Description |
 | --- | --- |
 | `@search(terms, Function done)` | Triggered by the component when a search should start and offer some results. |
-| `@selected` | Triggered when user has selected a suggestion. |
-| `@show` | Triggered when the selections pop-up opens. |
+| `@selected(item)` | Triggered when user has selected a suggestion. |
+| `@open` | Triggered when the selections pop-up opens. |
 | `@close` | Triggered when selections pop-up closes. |
 
 Example for `search` event:
