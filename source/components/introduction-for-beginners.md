@@ -1,8 +1,10 @@
 title: Introduction for Beginners
 ---
-It's a good idea to get acquainted with ES6 (quick overview [here](https://github.com/lukehoban/es6features) and full description [here](http://es6-features.org/#Constants) -- don't worry, you don't need to understand ALL of it) and Vue before jumping in and using Quasar. [Vue documentation](https://vuejs.org/v2/guide/) takes half a day at most to read top-bottom and will help you understand how Quasar components can be used and configured.
+Before you begin with Quasar, it is a good idea to get acquainted with ES6 and have a fairly good knowledge about how Vue works. ([quick overview of ES6](https://github.com/lukehoban/es6features) and [full description](http://es6-features.org/#Constants) -- don't worry, you don't need to understand ALL of ES6). For devs experienced with reactive UIs, [the Vue documentation](https://vuejs.org/v2/guide/) itself takes half a day at most to read top-to-bottom and will help you understand how Quasar components can be used and configured. 
 
-After reading Vue documentation, let's clear up some of the most frequently asked questions, like "How can I use Quasar components Vue properties, methods and events".
+If you are a total beginner to Vue and reactive UI libraries and want a good tutorial, we highly recommend <a href="https://www.udemy.com/vuejs-2-the-complete-guide/learn/v4/overview" target="_blank">the Udemy Course - Vue JS 2 - The Complete Guide</a>.
+
+After reading the Vue documentation and/ or taking the course above, let's clear up some of the most frequently asked questions, like "How can I use Quasar components, Vue properties, methods and events".
 
 ## Single File Vue Components
 You'll be building your Quasar app using `*.vue` files which contain multiple sections: 'template' (HTML), 'script' (Javascript) and 'style' (CSS).
@@ -31,7 +33,7 @@ export default {
 ### CSS preprocessors
 For the `<style>` tag, you can also use whatever CSS preprocessor you want. [Stylus](http://stylus-lang.com/) is available out of the box. For SCSS/SASS or LESS, you'll need to install their Webpack loaders (example: `npm install less-loader`).
 
-After installing loaders you need (remember Stylus does not need install), you can specify you want preprocessor to be used to handle the CSS code you're writing:
+After installing the loader you need (remember Stylus is already installed for you), you can specify you want your chosen preprocessor to handle the CSS code you're writing:
 
 ```html
 <!-- notice lang="stylus" -->
@@ -40,6 +42,8 @@ After installing loaders you need (remember Stylus does not need install), you c
   font-size 15px
 </style>
 ```
+
+In the above example, you would replace `stylus` with the preprocessor you've chosen.
 
 ## Using Quasar Components
 Quasar components have names beginning with "Q" like "QBtn" or "QElementResizeObservable". In order to use them, you need to import them (globally or locally per Vue component where you use them).
@@ -66,7 +70,7 @@ export default {
 </script>
 ```
 
-> Notice how QBtn is used in Vue HTML template as `<q-btn>`. If we'd import QElementResizeObservable then we'd use it in template as `<q-element-resize-observable>`.
+> Notice how QBtn is used in the Vue HTML template as `<q-btn>`. If we'd import QElementResizeObservable, then we'd use it in template as `<q-element-resize-observable>`.
 
 Example importing Quasar components globally. **This means you won't need to import the specified Quasar components in every `*.vue` file where you are using them.**
 ```js
@@ -92,13 +96,13 @@ Some Quasar components do not need you to include HTML content inside them. In t
 <q-icon name="cloud" />
 ```
 
-Self-closing means the above template is equivalent with:
+Self-closing means the above template is the equivalent to:
 
 ```html
 <q-icon name="cloud"></q-icon>
 ```
 
-Both forms are accepted and can be used.
+Both forms are valid and can be used.
 
 ## Handling Vue Properties
 You will notice throughout the documentation that Quasar components have a section called "Vue Properties". Example:
@@ -111,12 +115,12 @@ You will notice throughout the documentation that Quasar components have a secti
 | `columns` | Object defining columns (see "Columns Definition" below). |
 | `offset` | Array | Array with two numbers. Offset on horizontal and vertical (in pixels). |
 
-Let's take some examples with a bogus Quasar component (we will call it QBogus) that supports the properties above. We will discuss each of the types of Vue properties in below sections.
+Let's take some examples with a bogus Quasar component (we will call it QBogus) that supports the properties above. We will discuss each of the types of Vue properties in the below sections.
 
 ### Boolean Property
-A boolean property means it only accepts a strictly Boolean value. The values will not be casted to Boolean, so you must ensure you are using a true Boolean.
+A boolean property means it only accepts a strictly Boolean value. The values will not be cast to Boolean, so you must ensure you are using a true Boolean.
 
-If you are trying to control that property and change it dynamically at runtime, then assign it to a variable in your scope:
+If you are trying to control that property and change it dynamically at runtime, then bind it to a variable in your scope:
 ```html
 <template>
   <q-bogus :infinite="myInfiniteVariable" />
@@ -133,13 +137,13 @@ export default {
 </script>
 ```
 
-If on the other hand, you know this Boolean value is not going to change, you can use the shorthand version of it, and just specify it. No binded value means it will always be `true`:
+If, on the other hand, you know this Boolean value is not going to change, you can use the shorthand version of the variable like a component attribute and just specify it. In other words, if you don't bind the variable to a variable in the component's scope, it will always be `true`:
 ```
 <template>
   <q-bogus infinite />
 
   <!--
-    the following is perfectly equivalent,
+    the following is perfectly valid,
     but it's a longer version
   -->
   <q-bogus :infinite="true" />
@@ -147,7 +151,7 @@ If on the other hand, you know this Boolean value is not going to change, you ca
 ```
 
 ### String Property
-As you can imagine, Strings are required as value for this type of property.
+As you can imagine, Strings are required as a value for this type of property.
 ```html
 <template>
   <!--
@@ -254,7 +258,7 @@ export default {
 ```
 
 ## Handling Vue Methods
-You will notice throughout the documentation that Quasar components have a section called "Vue Methods". Example:
+You will notice throughout the documentation that some Quasar components have a section called "Vue Methods". Example:
 
 | Vue Method | Description |
 | --- | --- |
@@ -290,16 +294,16 @@ export default {
 ```
 
 ## Handling Vue Events
-You will notice throughout the documentation that Quasar components have a section called "Vue Events". **Do not confuse** these Vue events with the [Global Event Bus](/components/global-event-bus.html) as these two have nothing in common.
+You will notice throughout the documentation that some Quasar components have a section called "Vue Events". **Do not confuse** these Vue events with the [Global Event Bus](/components/global-event-bus.html) as these two have nothing in common.
 
 Example of "Vue Events" section in docs:
 
 | Event Name | Description |
 | --- | --- |
-| `@open` | Triggered right after Modal is opened. |
-| `@close` | Triggered right after Modal is closed. |
+| `@open` | Triggered right after the Modal is opened. |
+| `@close` | Triggered right after the Modal is closed. |
 
-In order for you to catch these events when they are triggered, you will need to add listeners for them on the component itself in the HTML template. Here's an example:
+In order for you to catch these events, when they are triggered, you will need to add listeners for them on the component itself in the HTML template. Here's an example:
 
 ```html
 <template>
