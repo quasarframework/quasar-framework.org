@@ -41,9 +41,9 @@ components:
     Color Palette: $
     Stylus Variables: $
     Icons: $
-    Material Ripples: $
     Typography: $
     Addressbar Color: $
+    Material Ripples: $
   CSS Helpers:
     Flex CSS: $
     Shadows (Elevation): $
@@ -54,6 +54,7 @@ components:
     Layout: $
     Integrating Layout with Router: $
     Fixed Positioning on Layout: $
+    Floating Action Button: $
     Element Resize Observable: $
     Window Resize Observable: $
   Navigation:
@@ -64,6 +65,7 @@ components:
     Handling Back Button: $
     Context Menu: $
     Breadcrumb: $
+    Pagination: $
   Scrolling:
     Scroll Observable: $
     Scroll Directive: $
@@ -72,38 +74,6 @@ components:
     Scroll Fire: $
     Back to Top: $
     Scrolling Utils: $
-  Animation:
-    Transition: $
-    Slide Transition: $
-    JS Animations: $
-  Touch/Mouse Actions:
-    Panning: $
-    Swiping: $
-    Touch Hold: $
-  Popups:
-    Action Sheet: $
-    Alert: $
-    Toast: $
-    Dialog: $
-    Modal: $
-    Popover: $
-    Tooltip: $
-    Floating Action Button: $
-  Grouping:
-    Card: $
-    Collapsible: $
-    DataTable: $
-    HTML Table: $
-    Lists and List Items: $
-    Slider: $
-    Stepper: $
-  Progress:
-    Ajax Bar: $
-    Buttons with Progress: $
-    Loading: $
-    Inner Loading: $
-    Progress Bar: $
-    Spinner: $
   Forms:
     Button: $
     Field: $
@@ -120,19 +90,51 @@ components:
     Datetime: $
     Inline Datetime: $
     Datetime Range: $
-    Pagination: $
     Select: $
     Dialog Select: $
     Rating: $
     Knob: $
     Uploader: $
+  Popups:
+    Action Sheet: $
+    Alert: $
+    Toast: $
+    Dialog: $
+    Modal: $
+    Popover: $
+    Tooltip: $
+  Grouping:
+    Card: $
+    Collapsible: $
+    DataTable: $
+    HTML Table: $
+    Lists and List Items: $
+    Slider: $
+    Stepper: $
+  Progress:
+    Ajax Bar: $
+    Buttons with Progress: $
+    Loading: $
+    Inner Loading: $
+    Progress Bar: $
+    Spinner: $
+  Touch/Mouse Actions:
+    Panning: $
+    Swiping: $
+    Touch Hold: $
   Media:
     Image Gallery: $
     Parallax: $
     Video Embedding: $
-  Miscellaneous:
+  Animation:
+    Transition: $
+    Slide Transition: $
+    JS Animations: $
+  Other Components:
+    Chip: $
     Chat: $
     Tree: $
+  Utils:
     Handling JS Date: $
     DOM Utils: $
     Formatter Utils: $

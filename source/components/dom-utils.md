@@ -1,5 +1,28 @@
 title: DOM Utils
 ---
+
+### Helping Tree-Shake
+You will notice all examples import different parts of Quasar. However, if you need only one specific util method, then you can use ES6 destructuring to help Tree Shaking embed only that method and not all around it.
+
+Example with `dom` utils:
+```js
+import { dom } from 'quasar'
+const { offset } = dom
+
+// Offset on screen
+console.log(offset(DomElement))
+// { top: 10, left: 100 }
+```
+
+You can also import all of dom utils and use whatever you need like this (but note that your bundle will contain unused methods too):
+```js
+import { dom } from 'quasar'
+
+// Offset on screen
+console.log(dom.offset(DomElement))
+// { top: 10, left: 100 }
+```
+
 ## Offset on screen viewport
 ``` js
 import { dom } from 'quasar'

@@ -16,6 +16,35 @@ There are some CSS classes that you can use out of the box for common functional
 | `ellipsis-3-lines` | Truncates text and shows ellipsis when not enough space available on three lines (works only on Webkit browsers). |
 | `z-absolute` | Positions your element on top of any other component (including Drawer, Modals, Toasts, Layout header/footer, ...) |
 
+### Window Width Related
+First of all, let's define what does a small, medium, big or large window means:
+
+| Window Size | Prefix | Width threshold in pixels |
+| --- | --- |
+| Extra Small | xs | Up to 576px |
+| Small | sm | Up to 768px |
+| Medium | md | Up to 992px |
+| Large | lg | Up to 1200px |
+| Extra Large | xl | Bigger than 1200px |
+
+Now on to the window width related CSS classes.
+
+| Class Name | Description |
+| --- | --- |
+| `xs` | Display only on extra small windows |
+| `sm` | Display only on small windows |
+| `md` | Display only on medium-sized windows |
+| `lg` | Display only on large windows |
+| `xl` | Display only on extra large windows |
+
+You can also make some DOM element or component **be hidden** by using one of classes above and adding `-hide` suffix to it. Example: `xl-hide` (hide on extra large windows), `sm-hide` (hide on small windows).
+
+You can also show some DOM element or component **if it's lower than one of the sizes**. **Same for greater than one of the sizes**. Just attach `lt-` or `gt-` prefixes, which come from "lower than" and "greater than". Example: `lt-md` (display on xs and sm only), `lt-xl` (display on xs, sm, md and lg windows only), `gt-md` (display on greater than medium windows: lg and xl).
+
+> **NOTE**
+> You can combine the visibility classes with the `inline` class for inline-blocks.
+> Example : `<span class="gt-sm inline">&nbsp;and here is the end of this long sentence.</span>`
+
 ### Animating
 | Class Name | Description |
 | --- | --- |
@@ -68,32 +97,3 @@ Also check [Quasar Theming &gt; Platform Specific Styles](/guide/quasar-theming.
 | --- | --- |
 | `orientation-portrait` | Visible only when screen orientation is *Portrait* |
 | `orientation-landscape` | Visible only when screen orientation is *Landscape* |
-
-### Window Width Related
-First of all, let's define what does a small, medium, big or large window means:
-
-| Window Size | Prefix | Width threshold in pixels |
-| --- | --- |
-| Extra Small | xs | Up to 576px |
-| Small | sm | Up to 768px |
-| Medium | md | Up to 992px |
-| Large | lg | Up to 1200px |
-| Extra Large | xl | Bigger than 1200px |
-
-Now on to the window width related CSS classes.
-
-| Class Name | Description |
-| --- | --- |
-| `xs` | Display only on extra small windows |
-| `sm` | Display only on small windows |
-| `md` | Display only on medium-sized windows |
-| `lg` | Display only on large windows |
-| `xl` | Display only on extra large windows |
-
-You can also make some DOM element or component **be hidden** by using one of classes above and adding `-hide` suffix to it. Example: `xl-hide` (hide on extra large windows), `sm-hide` (hide on small windows).
-
-You can also show some DOM element or component **if it's lower than one of the sizes**. **Same for greater than one of the sizes**. Just attach `lt-` or `gt-` prefixes, which come from "lower than" and "greater than". Example: `lt-md` (display on xs and sm only), `lt-xl` (display on xs, sm, md and lg windows only), `gt-md` (display on greater than medium windows: lg and xl).
-
-> **NOTE**
-> You can combine the visibility classes with the `inline` class for inline-blocks.
-> Example : `<span class="gt-sm inline">&nbsp;and here is the end of this long sentence.</span>`
