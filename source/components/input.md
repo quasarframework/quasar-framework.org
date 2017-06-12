@@ -129,14 +129,21 @@ If, for some reason, the input requires some longer term background action or pr
 | --- | --- |
 | `clear()` | Clear the model. Sets it to empty String `''`. |
 | `togglePass()` | Applies to type "password" only. Toggles between showing legible password or not. |
+| `focus()` | Focused the textfield. |
+| `blur()` | Makes textfield lose focus. |
 
 ## Vue Events
 | Vue Event | Description |
 | --- | --- |
 | `@input` | Triggered on model value change with the new value. |
+| `@focus` | Triggered on focus. |
+| `@blur` | Triggered a blur. |
+| `@keydown` | Triggered by keydown event on textfield. |
+| `@keyup` | Triggered by keyup event on textfield. |
+| `@click` | Triggered by a native `click` event on textfield. |
 
 ## Formatting
-It is possible to add formatting to a QField in two ways. One is for the basic component. The other is with the QField component. Both methods offer "inverted" coloring.
+It is possible to add formatting to a QInput in two ways. One is for the basic component. The other is with the QField component. Both methods offer "inverted" coloring.
 
 ### Additional Vue Properties
 
