@@ -2,6 +2,9 @@ title: Toggle
 ---
 The Quasar Toggle component is another basic element for user input. You can use this for turning settings, features or true/ false inputs on and off.
 
+Please also refer to the [Option Group documentation](/components/option-group.html) on other possibilities for creating groups of Toggles.
+Remember you can use QToggle wrapped by a [QField](/components/field.html) too.
+
 <input type="hidden" data-fullpage-demo="form/toggle">
 
 ## Basic Usage
@@ -31,56 +34,18 @@ Supports `v-model` which should be binded to a Boolean or Array in your scope.
 | --- | --- | --- |
 | `label` | String | The text label for the Toggle. |
 | `left-label` | Boolean | Set to `true`, if the label should be placed to the left of the Toggle. |
+| `icon` | String | Optional icon to use. Overriden by `checked-icon` and `unchecked-icon` if the latter are used. |
 | `checked-icon` | String | The icon to use, when the Toggle is checked. |
 | `uncheck-icon` | String | The icon to use, when the Toggle is not checked. |
 | `color` | String | Color from [Quasar Color Palette](/components/color-palette.html). |
 | `disable` | Boolean | Set to true, to disable the toggle. |
-| `val` | Object  | Used to modify the v-model of the toggle. |
+| `val` | Object  | Used to modify the v-model of the Toggle when using an Array as `v-model`. |
 
 ## Vue Events
 | Vue Event | Description |
 | --- | --- |
 | `@blur` | Triggered, when the toggle loses focus. |
 | `@focus` | Triggered, when the toggle gains focus. |
-
-## Formatting
-There are a number of props, which are available to help quickly format a toggle. An interesting feature of Toggle is the ripple effect that user gets when clicking/tapping on it to change its state.
-
-### Specific Icons
-
-For a more informational Toggle, you can also use the `checked-icon` and `unchecked-icon` props to display an inset icon in the toggle.
-
-```html
-<q-toggle
-  v-model="checked"
-  unchecked-icon="visibility_off"
-  checked-icon="visibility"
-  label="Toggle Label"
-/>
-```
-
-### Coloring
-
-Use the `color` prop to control the toggle's color.
-
-``` html
-<q-toggle v-model="checked" color="orange" />
-
-<q-toggle v-model="checked" color="teal" />
-
-<q-toggle v-model="checked" color="dark" />
-```
-### Label Position
-
-Use the `left-label` prop, to move the label to the left of the toggle.
-
-```html
-<q-toggle
-  v-model="checked"
-  left-label
-  label="Checkbox Label"
-/>
-```
 
 ## Array as Model
 If you have a number of toggles for a selection, use can also use an Array as the model object and the `val` prop for the inserted value into the Array.
@@ -107,7 +72,47 @@ export default {
 
 Ticking all toggles will make `selection` scope variable to be `['one', 'two', 'three']`. Unticking all toggles will result in `selection` being an empty array `[]`.
 
-## Usage Inside of a List
+## More Examples
+There are a number of props, which are available to help quickly format a toggle. An interesting feature of Toggle is the ripple effect that user gets when clicking/tapping on it to change its state.
+
+### Specific State Icons
+For a more informational Toggle, you can also use the `checked-icon` and `unchecked-icon` props to display an inset icon in the toggle.
+
+```html
+<q-toggle
+  v-model="checked"
+  unchecked-icon="visibility_off"
+  checked-icon="visibility"
+  label="Toggle Label"
+/>
+```
+
+Specifying `checked-icon` and `unchecked-icon` overrides `icon` property if you've also used it.
+
+### Coloring
+Use the `color` prop to control the toggle's color.
+
+``` html
+<q-toggle v-model="checked" color="orange" />
+
+<q-toggle v-model="checked" color="teal" />
+
+<q-toggle v-model="checked" color="dark" />
+```
+
+### Label Position
+Use the `left-label` prop, to move the label to the left of the toggle.
+
+```html
+<q-toggle
+  v-model="checked"
+  left-label
+  label="Checkbox Label"
+/>
+```
+
+### Usage Inside of a List
+In the following example we use the right side of QItems to insert Toggle, but it works anywhere.
 
 ```html
 <q-list link>
@@ -144,6 +149,3 @@ Ticking all toggles will make `selection` scope variable to be `['one', 'two', '
   </q-item>
 </q-list>
 ```
-
-Please also refer to the [Option Group documentation](/components/option-group.html) on other possibilities for creating groups of Toggles.
-Remember you can use QToggle wrapped by a [QField](/components/field.html) too.
