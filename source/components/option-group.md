@@ -1,35 +1,79 @@
 title: Option Group
 ---
 
-The Quasar Option Group component is a helper component, which allows you to better control the grouping of binary (as in on or off, true or false, 1 or 0) form input components like check boxes, radios or toggles. A good usage for this component is for offering the user a set of options or settings to turn on and off, and thus the name of the component.
+The Quasar Option Group component is a helper component, which allows you to better control the grouping of binary (as in on or off, true or false, 1 or 0) form input components like checkboxes, radios or toggles. A good usage for this component is for offering the user a set of options or settings to turn on and off, and thus the name of the component.
 
 ## Basic Usage
 
-For a group of check boxes
+Example on a group of checkboxes:
 
 ```html
-<q-option-group
-  inline
-  type="checkbox"
-  color="secondary"
-  v-model="group"
-  :options="[
-    { label: 'Option 1', value: 'op1' },
-    { label: 'Option 2', value: 'op2' },
-    { label: 'Option 3', value: 'op3' }
-  ]"
-/>
+<template>
+  <q-option-group
+    color="secondary"
+    type="checkbox"
+    v-model="group"
+    :options="[
+      { label: 'Option 1', value: 'op1' },
+      { label: 'Option 2', value: 'op2' },
+      { label: 'Option 3', value: 'op3' }
+    ]"
+  />
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      // `v-model` binded to `group`,
+      // which must be an array for checkboxes and toggles
+      group: ['opt1']
+    }
+  }
+}
+</script>
+```
+
+Example on a group of radios:
+
+```html
+<template>
+  <q-option-group
+    color="secondary"
+    type="radio"
+    v-model="group"
+    :options="[
+      { label: 'Option 1', value: 'op1' },
+      { label: 'Option 2', value: 'op2' },
+      { label: 'Option 3', value: 'op3' }
+    ]"
+  />
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      // `v-model` binded to `group`,
+      // which must be a String when using radios
+      group: 'opt1'
+    }
+  }
+}
+</script>
 ```
 
 ## Vue Properties
+Supports `v-model`, which is required. For "radio" type it must be a String, otherwise ("checkbox" or "toggle" type) your scope variable binded to `v-model` must be an Array.
+
 | Vue Property | Type | Description |
 | --- | --- | --- |
-| `value` |  Number | **Required** The v-model of the component. |
 | `type` | String | The type of input component to be used. The default is `radio`. The other choices are `checkbox` and `toggle`. |
 | `options` | Array | An array of objects with `value` and `label` properties. The binary components will be created according to this array. |
-| `leftLabe` | Boolean | When set to true, the label will be put on the left side. |
-| `inline` | Boolean | Adjusts the display of the binary components fill out the row, instead of being stacked.. |
-| `disable` | Boolean | When set to true, the binary components are not selectable. |
+| `color` | String | One from [Quasar Color Palette](/components/color-palette.html). |
+| `left-label` | Boolean | When set to `true`, the labels will be put on the left side. |
+| `inline` | Boolean | Adjusts the display of the binary components fill out the row, instead of being stacked vertically. |
+| `disable` | Boolean | When set to `true`, the binary components are not selectable thus cannot change your `v-model`. |
 
 ## Vue Events
 | Vue Event | Description |
@@ -51,7 +95,7 @@ A group of radios with different colors.
 />
 ```
 
-And a group of toggles, but in a row (inline).
+And a group of toggles, but not stacked vertically when possible. We add `inline` Boolean property.
 
 ```html
 <q-option-group
@@ -66,14 +110,15 @@ And a group of toggles, but in a row (inline).
 />
 ```
 
-You would normally also add this component inside a [q-field](/components/field.html) component as shown below.
+You would normally also add this component inside a [QField](/components/field.html) component as shown below.
 
 ```html
 <q-field
   icon="cloud"
-  helper="Helper"
-  label="Horizontal"
-  error-label="Max 10 characters!"
+  helper="Choose your option"
+  label="Pick something"
+  :error="hasError"
+  error-label="Select at least one option"
 >
   <q-option-group
     type="radio"
