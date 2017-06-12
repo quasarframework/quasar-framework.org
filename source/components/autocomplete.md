@@ -1,6 +1,6 @@
 title: Autocomplete
 ---
-The Quasar Autocomplete component binds to a text input field and offers suggestions to the user, while the user is typing. The suggestions offered the user are based on either a static list of results or an Ajax call.
+The Quasar Autocomplete component binds to a text input field and offers suggestions to the user, while the user is typing. The suggestions offered to the user are based on either a static list of results or on an Ajax call response.
 
 <input type="hidden" data-fullpage-demo="form/autocomplete">
 
