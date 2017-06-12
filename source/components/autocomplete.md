@@ -40,28 +40,6 @@ As long as this component is rendered by Vue, it will capture all Ajax calls.
 | `debounce` | Number | 500 | Time in milliseconds, between key presses and finding new results. Good for delay, if using AJAX requests. |
 | `delimiter` | Boolean | false | If set to `true`, it ads a delimeter between the values to select from. |
 
-When using static data, specify an Object (notice that it uses [QItem component props](/components/list-item.html)):
-``` js
-// static-data
-[
-  // Property name from array of objects below
-  // that will fill input box when suggestion is selected
-  field: 'value',
-
-  list: [
-    {
-      value: 'Romania', // what gets Autocompleted with
-      label: 'Romania', // what gets displayed as main label for this suggestion
-
-      sublabel: 'Continent: Europe', // optional
-      icon: 'location_city', // optional
-      stamp: '18 mil', // optional
-      ...
-    },
-    ...
-  ]
-]
-```
 
 ## Vue Methods
 Use the methods, only if you want to trigger the component manually. Ajax calls trigger these methods automatically.
@@ -93,3 +71,79 @@ function search (terms, done) {
   // Example: done([])
 }
 ```
+
+## With Static Data
+When using static data, specify an Object (notice that it uses [QItem component props](/components/list-item.html)):
+``` js
+// static-data
+[
+  // Property name from array of objects below
+  // that will fill input box when suggestion is selected
+  field: 'value',
+
+  list: [
+    {
+      value: 'Romania', // The value given, when selected
+      label: 'Romania', // The value displayed as main label for this suggested selection
+
+      sublabel: 'Continent: Europe', // optional
+      icon: 'location_city', // optional
+      stamp: '18 mil', // optional
+      ...
+    },
+    ...
+  ]
+]
+```
+
+```html
+<template>
+  <q-search inverted color="secondary" v-model="terms" placeholder="Featuring static data">
+    <q-autocomplete
+      :static-data="{field: 'value', list: countries}"
+      @selected="selected"
+    />
+  </q-search>
+</template>
+
+<script>
+import Countries from 'countries.json'
+// See above for the data format for the array of objects with required and optional data
+export default {
+  data () {
+    return {
+      terms: '',
+      countries: Countries
+    }
+  }
+}
+
+</script>
+```
+
+## With an AJAX Call
+If you'd like to call up data from the server, you may also do so with the following usage of `search()` method.
+```html
+<template>
+  <q-search v-model="terms" placeholder="Start typing a country name">
+    <q-autocomplete @search="search" @selected="selected" />
+  </q-search>
+</template>
+
+<script>
+export default {
+  ...
+  methods: {
+    search: (terms, done) {
+      // make an AJAX call with Axios
+      // then call done(Array results)
+      // DO NOT forget to call done! When no results, just call with empty array as param
+      // Example: done([])
+    }   
+  },
+  ...
+}
+</script>
+```
+
+
