@@ -66,8 +66,8 @@ function search (terms, done) {
   // do something with terms, like an Ajax call for example
   // then call done(Array results)
 
-  // DO NOT forget to call done! When no results, just call with empty array as param
-  // Example: done([])
+  // DO NOT forget to call done! When no results or an error occured,
+  // just call with empty array as param. Example: done([])
 }
 ```
 
@@ -157,8 +157,9 @@ export default {
     search: (terms, done) {
       // make an AJAX call
       // then call done(Array results)
-      // DO NOT forget to call done! When no results, just call with empty array as param
-      // Example: done([])
+
+      // DO NOT forget to call done! When no results or an error occured,
+      // just call with empty array as param. Example: done([])
     }   
   },
   ...
