@@ -36,8 +36,8 @@ Supports `v-model` which should be binded to a Boolean or Array in your scope.
 ## Vue Events
 | Vue Event | Description |
 | --- | --- |
-| `@blur` | Triggered, when the checkbox loses focus. |
-| `@focus` | Triggered, when the checkbox gains focus. |
+| `@blur` | Triggered, when Checkbox loses focus. |
+| `@focus` | Triggered, when Checkbox gains focus. |
 
 ## Array as Model
 If you have a number of checkboxes for a selection, use an array as the model object and specify `val` property.
@@ -98,7 +98,7 @@ Use the `color` prop to control the Checkbox color.
 ```
 
 ### Label Position
-Use the `left-label` prop, to move the label to the left of the checkbox.
+Use the `left-label` prop, to move the label to the left of Checkbox.
 
 ```html
 <q-checkbox

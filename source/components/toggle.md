@@ -44,8 +44,8 @@ Supports `v-model` which should be binded to a Boolean or Array in your scope.
 ## Vue Events
 | Vue Event | Description |
 | --- | --- |
-| `@blur` | Triggered, when the toggle loses focus. |
-| `@focus` | Triggered, when the toggle gains focus. |
+| `@blur` | Triggered, when Toggle loses focus. |
+| `@focus` | Triggered, when Toggle gains focus. |
 
 ## Array as Model
 If you have a number of toggles for a selection, use can also use an Array as the model object and the `val` prop for the inserted value into the Array.
@@ -73,7 +73,7 @@ export default {
 Ticking all toggles will make `selection` scope variable to be `['one', 'two', 'three']`. Unticking all toggles will result in `selection` being an empty array `[]`.
 
 ## More Examples
-There are a number of props, which are available to help quickly format a toggle. An interesting feature of Toggle is the ripple effect that user gets when clicking/tapping on it to change its state.
+There are a number of props, which are available to help quickly format a Toggle. An interesting feature of Toggle is the ripple effect that user gets when clicking/tapping on it to change its state.
 
 ### Specific State Icons
 For a more informational Toggle, you can also use the `checked-icon` and `unchecked-icon` props to display an inset icon in the toggle.
@@ -101,7 +101,7 @@ Use the `color` prop to control the toggle's color.
 ```
 
 ### Label Position
-Use the `left-label` prop, to move the label to the left of the toggle.
+Use the `left-label` prop, to move the label to the left of Toggle.
 
 ```html
 <q-toggle
