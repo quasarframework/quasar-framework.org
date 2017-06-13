@@ -2,6 +2,8 @@ title: Uploader
 ---
 Quasar supplies a way for you to upload files through QUploader component.
 
+Works well with [QField](/components/field.html) for additional functionality such as a helper, error message placeholder and many others.
+
 > The documentation website only allows static content, so a demo with QUploader is not possible as this assumes a server script running. As a result you can only see some screenshots (may be out of date) below:
 
 ![Uploader Screenshot 1](/images/uploader-1.png)

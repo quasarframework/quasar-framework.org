@@ -2,6 +2,8 @@ title: Knob
 ---
 Quasar Knob is another way of making the user select a Number value from a predefined range. With optional steps included. See demo.
 
+Works well with [QField](/components/field.html) for additional functionality such as a helper, error message placeholder and many others.
+
 <input type="hidden" data-fullpage-demo="form/knob">
 
 ## Basic Usage

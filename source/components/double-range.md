@@ -5,6 +5,8 @@ The Quasar Double Range component is a great way to offer the user the selection
 Also check out its "sibling", the [Range](/components/range.html) component.
 Remember you can use QDoubleRange wrapped by a [QField](/components/field.html) too.
 
+Works well with [QField](/components/field.html) for additional functionality such as a helper, error message placeholder and many others.
+
 <input type="hidden" data-fullpage-demo="form/range/double">
 
 ## Basic Usage

@@ -2,6 +2,8 @@ title: Rating
 ---
 Quasar Rating is a Component which allows users to rate items, usually known as "Star Rating".
 
+Works well with [QField](/components/field.html) for additional functionality such as a helper, error message placeholder and many others.
+
 <input type="hidden" data-fullpage-demo="form/rating">
 
 ## Basic Usage

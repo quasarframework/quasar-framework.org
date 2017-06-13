@@ -3,7 +3,8 @@ title: Checkbox
 The Quasar Checkbox component is a basic element to be used for selection or toggling by the user. It has a number of features, as described below.
 
 Please also refer to the [Option Group documentation](/components/option-group.html) on other possibilities for creating groups of Toggles.
-Remember you can use QCheckbox wrapped by a [QField](/components/field.html) too.
+
+Works well with [QField](/components/field.html) for additional functionality such as a helper, error message placeholder and many others.
 
 <input type="hidden" data-fullpage-demo="form/checkbox">
 

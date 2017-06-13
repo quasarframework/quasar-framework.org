@@ -5,6 +5,8 @@ Quasar Range is a great way to make the user specify a number value between a mi
 Also check its "sibling", the [Double Range](/components/double-range.html) component.
 Remember you can use QRange wrapped by a [QField](/components/field.html) too.
 
+Works well with [QField](/components/field.html) for additional functionality such as a helper, error message placeholder and many others.
+
 <input type="hidden" data-fullpage-demo="form/range/basic">
 
 ## Basic Usage
