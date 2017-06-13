@@ -45,6 +45,8 @@ Supports `v-model` which should be binded to a String or Number (depending on `t
 | `disable` | Boolean | If set to `true`, textfield is disabled and the user cannot type anything. |
 | `error` | Boolean | If set to true, the input fields colors are changed to show there is an error. |
 | `name` | String | Adds a "name" attribute to the textfield. |
+| `before` | Array of Objects | Icon buttons on left side of textfield. Read below more details. |
+| `after` | Array of Objects | Icon buttons on right side of textfield. Read below more details. |
 
 When you set type to "number", there are some additional properties that you can use:
 
@@ -61,6 +63,66 @@ When you set type to "textarea", these are additional properties that you can us
 | --- | --- | --- |
 | `min-rows` | Number | Minimum number of rows to display regardless of how many rows the content spans to. |
 | `max-height` | Number | Number in pixels that determines the maximum height of textarea which auto-grows. |
+
+### Icon buttons
+This section refers to `before` and `after` properties which can add additional buttons as icons to the textfield. Here is the structure of the two properties:
+
+```js
+{
+  // required icon
+  icon: String,
+  // required function to call when
+  // icon is clicked/tapped
+  handler: Function,
+
+  // Optional. Show icon button
+  // if model has a value
+  content: Boolean,
+
+  // Optional. Show icon button
+  // if textfield is marked with error
+  error: Boolean
+}
+```
+
+Examples:
+```html
+<!--
+  Show an icon button (with 'warning' as icon)
+  when there is an error on QInput (through "error" prop)
+-->
+<q-input
+  v-model="text"
+  :error="error"
+  type="password"
+  :after="[
+    {
+      icon: 'warning',
+      error: true,
+      handler () {
+        // do something...
+      }
+    }
+  ]"
+/>
+
+<!--
+  Show an icon button (with 'arrow_forward' as icon)
+  when the model has a non empty value
+-->
+<q-input
+  v-model="text"
+  :after="[
+    {
+      icon: 'arrow_forward',
+      content: true,
+      handler () {
+        // do something...
+      }
+    }
+  ]"
+/>
+```
 
 ### Labeling
 QInput comes with two built-in labeling possibilities. You can use the `float-label` or the `stack-label` properties to add text for the labeling of the field. A `stack-label` is static in its position above the field, whereas the `fload-label` is more dynamic. Check the examples to the right to see the difference.

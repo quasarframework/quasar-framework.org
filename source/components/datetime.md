@@ -50,6 +50,68 @@ Supports `v-model` which must be a String, Number or Date Object.
 | `cancel-label` | String | Text for the button to cancel input with no change. |
 | `disable` | Boolean | If set to `true`, the field is inaccessable. |
 | `error` | Boolean | If set to `true`, the field highlights an error. |
+| `before` | Array of Objects | Icon buttons on left side of textfield. Read below more details. |
+| `after` | Array of Objects | Icon buttons on right side of textfield. Read below more details. |
+
+### Icon buttons
+This section refers to `before` and `after` properties which can add additional buttons as icons to the textfield. Here is the structure of the two properties:
+
+```js
+{
+  // required icon
+  icon: String,
+  // required function to call when
+  // icon is clicked/tapped
+  handler: Function,
+
+  // Optional. Show icon button
+  // if model has a value
+  content: Boolean,
+
+  // Optional. Show icon button
+  // if textfield is marked with error
+  error: Boolean
+}
+```
+
+Examples:
+```html
+<!--
+  Show an icon button (with 'warning' as icon)
+  when there is an error on QDatetime (through "error" prop)
+-->
+<q-datetime
+  v-model="date"
+  :error="error"
+  type="password"
+  :after="[
+    {
+      icon: 'warning',
+      error: true,
+      handler () {
+        // do something...
+      }
+    }
+  ]"
+/>
+
+<!--
+  Show an icon button (with 'arrow_forward' as icon)
+  when the model has a non empty value
+-->
+<q-datetime
+  v-model="date"
+  :after="[
+    {
+      icon: 'arrow_forward',
+      content: true,
+      handler () {
+        // do something...
+      }
+    }
+  ]"
+/>
+```
 
 ## Vue Methods
 | Vue Method | Description |

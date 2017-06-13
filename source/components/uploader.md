@@ -28,6 +28,47 @@ Works well with [QField](/components/field.html) for additional functionality su
 | `hide-upload-progress` | Boolean | Hides the upload progress. Useful when you want some other means of signaling upload progress to the user. |
 | `additionalFields` | Array | **Additional fields to send along the upload request.** Useful for authentication and so on. Array of Objects containing `name` and `value` props. |
 | `color` | String | One color from [Quasar Color Palette](/components/color-palette.html). |
+| `before` | Array of Objects | Icon buttons on left side of textfield. Read below more details. |
+| `after` | Array of Objects | Icon buttons on right side of textfield. Read below more details. |
+
+### Icon buttons
+This section refers to `before` and `after` properties which can add additional buttons as icons to the textfield. Here is the structure of the two properties:
+
+```js
+{
+  // required icon
+  icon: String,
+  // required function to call when
+  // icon is clicked/tapped
+  handler: Function,
+
+  // Optional. Show icon button
+  // if model has a value
+  content: Boolean,
+
+  // Optional. Show icon button
+  // if textfield is marked with error
+  error: Boolean
+}
+```
+
+Examples:
+```html
+<!--
+  Show an icon button (with 'warning' as icon)
+-->
+<q-uploader
+  :url="url"
+  :after="[
+    {
+      icon: 'warning',
+      handler () {
+        // do something...
+      }
+    }
+  ]"
+/>
+```
 
 ## Vue Methods
 | Vue Method | Description |
