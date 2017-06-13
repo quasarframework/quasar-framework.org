@@ -1,8 +1,7 @@
 title: Datetime Range
 ---
 
-When you need to specify a date, time or datetime interval, use DatetimeRange component.
-Before diving in, make sure you know how to configure a [Datetime component](/components/datetime.html) as this one supports the exactly same properties.
+The Quasar Datetime Range component offers the users the ability to input a date, time or datetime interval. It is based off of the [Datetime component](/components/datetime.html). Before diving in, make sure you know how to use the [Datetime component](/components/datetime.html), since they share a lot of the same properties.
 
 <input type="hidden" data-fullpage-demo="form/datetime/range">
 
@@ -11,10 +10,10 @@ Before diving in, make sure you know how to configure a [Datetime component](/co
 <!-- Date Range -->
 <q-datetime-range
   type="date"
-  v-model="range"
+  v-model="first.range"
   :min="min"
   :max="max"
-></q-datetime-range>
+/>
 
 <!-- Time Range -->
 <q-datetime-range
@@ -22,7 +21,7 @@ Before diving in, make sure you know how to configure a [Datetime component](/co
   v-model="range"
   :min="min"
   :max="max"
-></q-datetime-range>
+/>
 
 <!-- Datetime Range -->
 <q-datetime-range
@@ -30,29 +29,22 @@ Before diving in, make sure you know how to configure a [Datetime component](/co
   v-model="range"
   :min="min"
   :max="max"
-></q-datetime-range>
+/>
 ```
 
 ## Vue Properties
-Following properties are optional.
+>**Note**
+>The properties below are only special to the Datetime Range component. This component also shares all of the properties of the [Datetime component](/components/datetime.html).
 
-| Vue Property | Description |
+
+| Vue Property | Type | Description |
 | --- | --- | --- |
-| `type` | One of `date`, `time` or `datetime` strings. |
-| `min` | Minimum datetime at which selection can start. |
-| `max` | Maximum datetime at which selection can stop. |
-| `format` | Format in MomentJs style of how input displays date and/or time. |
-| `ok-label` | Label for "OK" button on mobile Dialog. |
-| `cancel-label` | Label for "Cancel" button on mobile Dialog. |
-| `clear-label` | Label for "Clear" button on mobile Dialog. |
-| `label` | (Floating) label to use. |
-| `placeholder` | Placeholder text to use. |
-| `static-label` | Overrides `label` and `placeholder` and selected value. Display this label always regardless of selection status. |
-| `default-selection` | Set default date/time (as Momentjs string) when Popover is shown and no value is yet selected. |
-| `readonly` | When set to `true` the model cannot be altered. |
-| `disable` | When set to `true` the model cannot be altered. |
+| `value` | Object | (**Required**) Supports the v-model of the component and must contain `to` and `from` properties. See below for more. |
+| `default-from` | String, Number, Date | (**Required**) Supports the v-model of the component and must contain `to` and `from` properties. See below for more. |
 
-> The model needs to be an Object with `{to, from}` String properties, same as the model used for Datetime component.
+
+> **IMPORTANT**
+> The model needs to be an Object with `{to, from}` properties, which hold the same types `String`, `Number` and `Date` as the model used for [Datetime component](/components/datetime.html). In effect, these are the models for each datetime component used to create the range.
 
 ## Vue Events
 | Vue Event | Description |

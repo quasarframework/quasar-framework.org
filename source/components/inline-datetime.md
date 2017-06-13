@@ -1,91 +1,40 @@
 title: Inline Datetime
 ---
-Quasar provides a way to manage dates and time through Datetime pickers. An inline as well as an input component are available. To see the input version, click/tap [here](/components/datetime.html).
+The Quasar Inline Datetime component provides a method to input dates and time or both and is shown directly on the page or element you are dispaying. There are also a [Datetime field version](/components/datetime.html), which also uses a modal/popup, as well as a [Datetime Range](/components/datetime-range.html) version.
 
-The iOS and Material Datetime pickers look and act totally different, just like their native counterparts.
+You'll notice in the examples to the right, the iOS and Material Datetime pickers look and act totally different, just like their native counterparts.
 
 <input type="hidden" data-fullpage-demo="form/datetime/inline">
 
 ## Basic Usage
 
 ``` html
-<!-- Only Date -->
-<q-inline-datetime
-  v-model="model"
-  type="date"
-></q-inline-datetime>
+<q-inline-datetime v-model="model" type="date" />
 
 <!-- Only Time -->
-<q-inline-datetime
-  v-model="model"
-  type="time"
-></q-inline-datetime>
+<q-inline-datetime v-model="model" type="time" />
 
 <!-- Date & Time -->
-<q-inline-datetime
-  v-model="model"
-  type="datetime"
-></q-inline-datetime>
+<q-inline-datetime v-model="model" type="datetime" />
 
-<!-- Disabled state -->
-<q-inline-datetime
-  disable
-  v-model="model"
-  type="date"
-></q-inline-datetime>
+<!-- Date - Monday as First -->
+<q-inline-datetime v-model="model" monday-first type="date" />
+
+<!-- Disabled State -->
+<q-inline-datetime disable v-model="model" type="datetime" />
+
+<!-- Readonly State -->
+<q-inline-datetime readonly v-model="model" type="datetime" />
+
+<!-- Min & Max -->
+<q-inline-datetime type="datetime" v-model="minMaxModel" :min="min" :max="max" />
+
+<!-- Adding color -->
+<q-inline-datetime color="secondary" v-model="model" type="datetime" />
+
+<!-- Time 24hr Format -->
+<q-inline-datetime v-model="model" type="time" format24h />
 ```
 
 > **IMPORTANT**
-> Model must be either an empty string (unfilled state) or a string of form `2016-10-24T10:40:14.674Z`.
-
-#### Model Variable
-The model used by DateTime must be a String. Either an empty one, or a Momentjs formatted one, like in the example below:
-
-``` js
-import moment from 'moment'
-
-// ....
-export default {
-  data () {
-    return {
-      model: moment().format(),
-      // ...
-    }
-  },
-  // ...
-}
-```
-
-### Error State
-Add `has-error` CSS class:
-``` html
-<q-inline-datetime
-  class="has-error"
-  v-model="model"
-  type="time"
-></q-inline-datetime>
-```
-
-## Vue Properties
-| Vue Property | Description |
-| --- | --- | --- |
-| `type` | (**Required**) One of `date`, `time` or `datetime` strings. |
-| `min` | String; Minimum value it can take. Has same format as Datetime model. |
-| `max` | String; Maximum value it can take. Has same format as Datetime model. |
-| `readonly` | When set to `true` the model cannot be altered. |
-| `disable` | When set to `true` the model cannot be altered. |
-
-## Vue Methods
-| Vue Method | Description |
-| --- | --- |
-| `setYear()` | Sets the year. |
-| `setMonth()` | Sets the month (1-12). |
-| `setDay()` | Sets day of the month. |
-| `toggleAmPm()` | Toggles between AM and PM. |
-| `setHour()` | Sets hour (0-23). |
-| `setMinute()` | Sets minute (0-59). |
-
-## Vue Events
-| Vue Event | Description |
-| --- | --- |
-| `@change(newVal)` | Triggered on model value change. |
+> Please refer to the [Datetime Component documentation]([Datetime component](/components/datetime.html) about the properties, methods and model and how to use them. The only props not used by Inline Datetime are the button props, as there are no buttons.   
