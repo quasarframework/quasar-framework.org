@@ -1,10 +1,10 @@
 title: Introduction for Beginners
 ---
-Before you begin with Quasar, it is a good idea to get acquainted with ES6 and have a fairly good knowledge about how Vue works. ([quick overview of ES6](https://github.com/lukehoban/es6features) and [full description](http://es6-features.org/#Constants) -- don't worry, you don't need to understand ALL of ES6). For devs experienced with reactive UIs, [the Vue documentation](https://vuejs.org/v2/guide/) itself takes half a day at most to read top-to-bottom and will help you understand how Quasar components can be used and configured. 
+Before you begin with Quasar, it is a good idea to get acquainted with ES6 and have a fairly good knowledge about how Vue works. ([quick overview of ES6](https://github.com/lukehoban/es6features) and [full description](http://es6-features.org/#Constants) -- don't worry, you don't need to understand ALL of ES6). For devs experienced with reactive UIs, [the Vue documentation](https://vuejs.org/v2/guide/) itself takes half a day at most to read top-to-bottom and will help you understand how Quasar components can be used and configured.
 
-If you are a total beginner to Vue and reactive UI libraries and want a good tutorial, we highly recommend <a href="https://www.udemy.com/vuejs-2-the-complete-guide/learn/v4/overview" target="_blank">the Udemy Course - Vue JS 2 - The Complete Guide</a>.
+If you are a total beginner to Vue and reactive UI libraries and want a good tutorial, we recommend you take a look at the [Udemy Course - Vue JS 2 - The Complete Guide](https://www.udemy.com/vuejs-2-the-complete-guide/learn/v4/overview).
 
-After reading the Vue documentation and/ or taking the course above, let's clear up some of the most frequently asked questions, like "How can I use Quasar components, Vue properties, methods and events".
+After reading the Vue documentation, let's clear up some of the most frequently asked questions, like "How can I use Quasar components, Vue properties, methods and events".
 
 ## Single File Vue Components
 You'll be building your Quasar app using `*.vue` files which contain multiple sections: 'template' (HTML), 'script' (Javascript) and 'style' (CSS).
@@ -324,4 +324,11 @@ export default {
   }
 }
 </script>
+```
+
+There are times when you need to access native DOM events on a Quasar component too, like the native `@click`. Do not confuse native events with the Vue events emitted by the component. They are different things. Let's take an example: let's say we have a component (QBogus) that emits `@open` and `@close`, but doesn't emit a `@click` event. `@click` being a native DOM event, we can still catch it with the `.native` modifier:
+
+```html
+<!-- Notice "@click.native" -->
+<q-bogus @click.native="myMethod" />
 ```
