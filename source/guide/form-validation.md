@@ -6,18 +6,20 @@ Get started with the [documentation](https://monterail.github.io/vuelidate/).
 ## Example
 
 ``` html
-<input
-  type="text"
-  v-model="form.email"
-  @input="$v.form.email.$touch()"
-  class="full-width"
-  :class="{'has-error': $v.form.email.$error}"
->
+<template>
+  <div>
+    <q-input
+      v-model="form.email"
+      @blur="$v.form.email.$touch"
+      @keyup.enter="submit"
+      :error="$v.form.email.$error"
+    />
 
-<button class="primary" @click="submit">Submit</button>
-```
+    <q-btn color="primary" @click="submit">Submit</q-btn>
+  </div>
+</template>
 
-``` js
+<script>
 import { required, email } from 'vuelidate/lib/validators'
 import { Toast } from 'quasar'
 
@@ -47,4 +49,5 @@ export default {
     }
   }
 }
+</script>
 ```

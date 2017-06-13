@@ -48,7 +48,7 @@ Supports `v-model` which should be a Number.
 ## Vue Events
 | Vue Event | Description |
 | --- | --- |
-| `@input` | Triggered when v-model changes. |
+| `@change(newVal)` | Triggered on v-model value change. |
 
 ## More Examples
 Multi-colored with a Euro icon.

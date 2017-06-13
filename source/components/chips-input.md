@@ -94,7 +94,7 @@ When used on a dark background, specify "dark" property.
 ## Vue Events
 | Vue Event | Description |
 | --- | --- |
-| `@input` | Triggered on model value change with the new value. |
+| `@change(newVal)` | Triggered on model value change. |
 
 ## More Examples
 

@@ -37,7 +37,7 @@ Supports `v-model` which should be binded to a Number in your scope.
 ## Vue Events
 | Vue Event | Description |
 | --- | --- |
-| `@input` | Triggered on model value change with the new value. |
+| `@change(newVal)` | Triggered on model value change. |
 
 ## Coloring
 Use one of the Quasar colors from the [Color Palette](/components/color-palette.html), like `primary`, `secondary`, `orange-7`, `teal-2` as CSS class:

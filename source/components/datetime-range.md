@@ -57,4 +57,4 @@ Following properties are optional.
 ## Vue Events
 | Vue Event | Description |
 | --- | --- |
-| `@input` | Triggered when model (Object with `to` and `from` props) changes |
+| `@change(newVal)` | Triggered when model (Object with `to` and `from` props) changes. |

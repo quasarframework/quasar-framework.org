@@ -21,7 +21,7 @@ The iOS and Material Datetime pickers look and act totally different, just like 
 ```
 
 ### Model Variable
-Quasar uses its own date utility to work with dates. 
+Quasar uses its own date utility to work with dates.
 
 > **IMPORTANT**
 > The model must be either an empty string (undefined) or a string of form `2016-10-24T10:40:14.674Z` or a shorter derivative of this string, like `2016-10-24` or `2016-10-24T10:40`, or a Unix Time Stamp (including milliseconds).
@@ -112,7 +112,7 @@ export default {
 ## Vue Events
 | Vue Event | Description |
 | --- | --- |
-| `@input` | Triggered on model value change with the new value. |
+| `@change(newVal)` | Triggered on model value change. |
 
 
 ### Error State

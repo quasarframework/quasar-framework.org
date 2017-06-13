@@ -77,7 +77,7 @@ Use one of the Quasar colors from the Color Palette with the `color` prop, like 
 ## Vue Events
 | Vue Event | Description |
 | --- | --- |
-| `@input` | Triggered when Range changes model. |
+| `@change(newVal)` | Triggered on model value change. |
 
 ## Usage Inside of a List
 
