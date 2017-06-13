@@ -28,7 +28,7 @@ Supports `v-model` which should be binded to a String or Number (depending on `t
 | `dark` | Boolean | Is QInput rendered on a dark background? |
 | `align` | String | One of 'left', 'center' or 'right' which determines the text align within textfield. |
 | `autofocus` | Boolean | Focus textfield after rendering QInput. |
-| `maxlength` | Number | Maximum characters allowed on textfield. |
+| `max-length` | Number/String | Maximum characters allowed on textfield. |
 | `placeholder` | String | A text to be shown on textfield, mainly to explain what should be entered. For instance, for a password you might have `Enter your password...` |
 | `error` | Boolean | If set to `true`, the component is changed to red to indicate a problem. |
 | `disable` | Boolean | When set to `true` user can not change model value. |

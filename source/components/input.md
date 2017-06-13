@@ -37,7 +37,7 @@ Supports `v-model` which should be binded to a String or Number (depending on `t
 | `dark` | Boolean | Is QInput rendered on a dark background? |
 | `align` | String | One of 'left', 'center' or 'right' which determines the text align within textfield. |
 | `autofocus` | Boolean | Focus textfield after rendering QInput. |
-| `maxlength` | Number | Maximum characters allowed on textfield. |
+| `max-length` | Number/String | Maximum characters allowed on textfield. |
 | `placeholder` | String | A text to be shown on textfield, mainly to explain what should be entered. For instance, for a password you might have `Enter your password...` |
 | `loading` | Boolean | Place the default spinner of the theme after textfield to highlight some process takes place in the background. |
 | `disable` | Boolean | If set to `true`, textfield is disabled and the user cannot type anything. |
@@ -201,6 +201,37 @@ It is also possible to further enhance a QInput by wrapping it in a [QField](/co
 The above usage of QField will show the input field within a dark grey background with an inverse white text. Notice the usage of the `dark` prop for QInput. This controls the inversion of the text color.
 
 Please refer to the [QField documentation](/components/field.html) for more info about its usage.
+
+## Validations with Vuelidate
+Quasar's recommendation for doing form components validations is  [Vuelidate](https://monterail.github.io/vuelidate/) as it fits great with the overall architecture. It's simple, lightweight and **model-based**.
+
+```html
+<template>
+  <q-input
+    type="email"
+    :error="$v.email.$error"
+    v-model="email"
+    @blur="$v.email.$touch"
+  />
+</template>
+
+<script>
+import { required, email } from 'vuelidate/lib/validators'
+
+export default {
+  data () {
+    return {
+      email: ''
+    }
+  },
+  validations: {
+    email: { required, email }
+  }
+}
+</script>
+```
+
+For more options like displaying an error label, a helper or character counter, wrap QInput with a QField. [Here](/components/field.html#Validations-with-Vuelidate) is a more involved example.
 
 ## Directive Modifiers for `v-model`
 

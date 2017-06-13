@@ -45,7 +45,7 @@ Supports `v-model` which should be binded to an Array of Strings in your scope.
 | `align` | String | One of 'left', 'center' or 'right' to align textfield content within ChipsInput. |
 | `autofocus` | Boolean | Automatically focus on textfield after render. |
 | `placeholder` | String | Placeholder for the textfield. |
-| `maxlength` | Number | Maximum number of characters that the textfield should support. |
+| `max-length` | Number/String | Maximum number of characters that the textfield should support. |
 | `readonly` | Boolean | If readonly user can not add or remove chips. |
 | `disable` | Boolean | If disabled user can not add or remove chips. |
 
