@@ -29,24 +29,7 @@ Supports `v-model` which should be binded to a String or Number (depending on `t
 | Property | Type | Description |
 | --- | --- | --- |
 | `type` | String |  Must be one of the following: `text` (default), `textarea`, `email`, `tel`, `file`, `number`, `password` and `url`. This is important as it determines the keyboard type popping up on mobile devices. |
-| `float-label` | String | A text label that will "float" up above the input field, once the input field gets focus. |
-| `stack-label` | String | A text label that will be shown above the input field and is static. |
 | `clearable` | Boolean | If set to `true`, the component offers the user an actionable icon to remove the entered text. |
-| `prefix` | String | A text that should be shown before the textfield. |
-| `suffix` | String | A text that should be shown after the textfield. |
-| `color` | String | One from [Quasar Color Palette](/components/color-palette.html). |
-| `inverted` | Boolean | Inverted mode. Color is applied to background instead. |
-| `dark` | Boolean | Is QInput rendered on a dark background? |
-| `align` | String | One of 'left', 'center' or 'right' which determines the text align within textfield. |
-| `autofocus` | Boolean | Focus textfield after rendering QInput. |
-| `max-length` | Number/String | Maximum characters allowed on textfield. |
-| `placeholder` | String | A text to be shown on textfield, mainly to explain what should be entered. For instance, for a password you might have `Enter your password...` |
-| `loading` | Boolean | Place the default spinner of the theme after textfield to highlight some process takes place in the background. |
-| `disable` | Boolean | If set to `true`, textfield is disabled and the user cannot type anything. |
-| `error` | Boolean | If set to true, the input fields colors are changed to show there is an error. |
-| `name` | String | Adds a "name" attribute to the textfield. |
-| `before` | Array of Objects | Icon buttons on left side of textfield. Read below more details. |
-| `after` | Array of Objects | Icon buttons on right side of textfield. Read below more details. |
 
 When you set type to "number", there are some additional properties that you can use:
 
@@ -63,6 +46,33 @@ When you set type to "textarea", these are additional properties that you can us
 | --- | --- | --- |
 | `min-rows` | Number | Minimum number of rows to display regardless of how many rows the content spans to. |
 | `max-height` | Number | Number in pixels that determines the maximum height of textarea which auto-grows. |
+
+Common input field properties:
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `autofocus` | Boolean | Focus input field after rendering component. |
+| `placeholder` | String | A text to be shown on textfield, mainly to explain what should be entered. |
+| `name` | String | Adds a "name" attribute to the input field. |
+| `max-length` | Number/String | Maximum characters allowed on input field. |
+| `loading` | Boolean | Place the default spinner of the theme after textfield to highlight some process takes place in the background. |
+
+Common input frame properties:
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `prefix` | String | A text that should be shown before the textfield. |
+| `suffix` | String | A text that should be shown after the textfield. |
+| `float-label` | String | A text label that will "float" up above the input field, once the input field gets focus. |
+| `stack-label` | String | A text label that will be shown above the input field and is static. |
+| `color` | String | One from [Quasar Color Palette](/components/color-palette.html). |
+| `inverted` | Boolean | Inverted mode. Color is applied to background instead. |
+| `dark` | Boolean | Is QInput rendered on a dark background? |
+| `align` | String | One of 'left', 'center' or 'right' which determines the text align within textfield. |
+| `disable` | Boolean | If set to `true`, textfield is disabled and the user cannot type anything. |
+| `error` | Boolean | If set to true, the input fields colors are changed to show there is an error. |
+| `before` | Array of Objects | Icon buttons on left side of textfield. Read below more details. |
+| `after` | Array of Objects | Icon buttons on right side of textfield. Read below more details. |
 
 ### Icon buttons
 This section refers to `before` and `after` properties which can add additional buttons as icons to the textfield. Here is the structure of the two properties:

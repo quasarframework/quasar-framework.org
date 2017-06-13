@@ -18,22 +18,8 @@ Supports `v-model` which should be binded to a String or Number (depending on `t
 | Vue Property | Type | Description |
 | --- | --- | --- |
 | `icon` | String | Icon to use. |
-| `placeholder` | String | Text to use as a placeholder. |
 | `type` | String |  Must be one of the following: `text` (default), `email`, `tel`, `number` and `url`. This is important as it determines the keyboard type popping up on mobile devices. |
 | `debounce` | Number | Number of ms to debounce input. Default is 300. |
-| `float-label` | String | A text label that will "float" up above the input field, once the input field gets focus. |
-| `stack-label` | String | A text label that will be shown above the input field and is static. |
-| `prefix` | String | A text that should be shown before the textfield. |
-| `suffix` | String | A text that should be shown after the textfield. |
-| `color` | String | One from [Quasar Color Palette](/components/color-palette.html). |
-| `inverted` | Boolean | Inverted mode. Color is applied to background instead. |
-| `dark` | Boolean | Is QInput rendered on a dark background? |
-| `align` | String | One of 'left', 'center' or 'right' which determines the text align within textfield. |
-| `autofocus` | Boolean | Focus textfield after rendering QInput. |
-| `max-length` | Number/String | Maximum characters allowed on textfield. |
-| `placeholder` | String | A text to be shown on textfield, mainly to explain what should be entered. For instance, for a password you might have `Enter your password...` |
-| `error` | Boolean | If set to `true`, the component is changed to red to indicate a problem. |
-| `disable` | Boolean | When set to `true` user can not change model value. |
 
 A more involved example:
 ``` html
@@ -45,6 +31,32 @@ A more involved example:
   float-label="What is your hotel?"
 />
 ```
+
+Common input field properties:
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `autofocus` | Boolean | Focus input field after rendering component. |
+| `placeholder` | String | A text to be shown on textfield, mainly to explain what should be entered. |
+| `name` | String | Adds a "name" attribute to the input field. |
+| `max-length` | Number/String | Maximum characters allowed on input field. |
+
+Common input frame properties:
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `prefix` | String | A text that should be shown before the textfield. |
+| `suffix` | String | A text that should be shown after the textfield. |
+| `float-label` | String | A text label that will "float" up above the input field, once the input field gets focus. |
+| `stack-label` | String | A text label that will be shown above the input field and is static. |
+| `color` | String | One from [Quasar Color Palette](/components/color-palette.html). |
+| `inverted` | Boolean | Inverted mode. Color is applied to background instead. |
+| `dark` | Boolean | Is QInput rendered on a dark background? |
+| `align` | String | One of 'left', 'center' or 'right' which determines the text align within textfield. |
+| `disable` | Boolean | If set to `true`, textfield is disabled and the user cannot type anything. |
+| `error` | Boolean | If set to true, the input fields colors are changed to show there is an error. |
+| `before` | Array of Objects | Icon buttons on left side of input frame. Read below more details. |
+| `after` | Array of Objects | Icon buttons on right side of input frame. Read below more details. |
 
 ## Vue Methods
 | Vue Method | Description |

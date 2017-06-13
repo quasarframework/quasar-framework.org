@@ -29,29 +29,34 @@ Supports `v-model` which must be a String, Number or Date Object.
 | `type` | String | One of `date`, `time` or `datetime`. Default is `date`. |
 | `min` | String | Optional minimum value it can take. Has same format as Datetime model. |
 | `max` | String | Optional maximum value it can take. Has same format as Datetime model. |
-| `color` | String | One from [Color Palette](/components/color-palette.html). |
-| `inverted` | Boolean | Inverted mode. Color is applied to background instead. |
-| `dark` | Boolean | Is component rendered on a dark background? |
-| `float-label` | String | A text label that will "float" up above the field, once the input field gets focus. |
-| `stack-label` | String | A text label that will be shown above the field and is static. |
 | `month-names` | Array | Array of month names, starting with January. |
 | `day-names` | Array | Array of day names, starting with Sunday, Monday, ... |
-| `prefix` | String | A text that should be shown before the field. |
-| `suffix` | String | A text that should be shown after the field. |
 | `default-selection` | String/Number/Date | Default date/time for picker when model is not yet set. |
 | `monday-first` | Boolean | Use Monday as first day of week. Otherwise it's Sunday. |
 | `format` | String | Format as described on Handling JS Date page under [Format for display](/components/handling-js-date.html#Format-for-display) section. |
 | `format24h` | Boolean | Use 24 hour time for Material picker instead of AM/PM system which is default. |
 | `placeholder` | String | Placeholder text to use. |
-| `align` | String | One of 'left', 'center' or 'right' which determines the text align. |
 | `no-clear` | Boolean | If set to `true`, the clear button won't be shown. |
 | `ok-label` | String | Text for the button to accept the input. |
 | `clear-label` | String | Text for the button to clear the field. |
 | `cancel-label` | String | Text for the button to cancel input with no change. |
-| `disable` | Boolean | If set to `true`, the field is inaccessable. |
-| `error` | Boolean | If set to `true`, the field highlights an error. |
-| `before` | Array of Objects | Icon buttons on left side of textfield. Read below more details. |
-| `after` | Array of Objects | Icon buttons on right side of textfield. Read below more details. |
+
+Common input frame properties:
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `prefix` | String | A text that should be shown before the textfield. |
+| `suffix` | String | A text that should be shown after the textfield. |
+| `float-label` | String | A text label that will "float" up above the input field, once the input field gets focus. |
+| `stack-label` | String | A text label that will be shown above the input field and is static. |
+| `color` | String | One from [Quasar Color Palette](/components/color-palette.html). |
+| `inverted` | Boolean | Inverted mode. Color is applied to background instead. |
+| `dark` | Boolean | Is QInput rendered on a dark background? |
+| `align` | String | One of 'left', 'center' or 'right' which determines the text align within textfield. |
+| `disable` | Boolean | If set to `true`, textfield is disabled and the user cannot type anything. |
+| `error` | Boolean | If set to true, the input fields colors are changed to show there is an error. |
+| `before` | Array of Objects | Icon buttons on left side of input frame. Read below more details. |
+| `after` | Array of Objects | Icon buttons on right side of input frame. Read below more details. |
 
 ### Icon buttons
 This section refers to `before` and `after` properties which can add additional buttons as icons to the textfield. Here is the structure of the two properties:
