@@ -1,8 +1,8 @@
 title: Inline Datetime
 ---
-The Quasar Inline Datetime component provides a method to input dates and time or both and is shown directly on the page or element you are dispaying. There are also a [Datetime field version](/components/datetime.html), which also uses a modal/popup, as well as a [Datetime Range](/components/datetime-range.html) version.
+The Inline Datetime component provides a method to input dates and time or both and is shown directly on the page or element you are dislpaying. There are also two more versions available: [Datetime](/components/datetime.html), which also uses a modal/popup, as well as a [Datetime Range](/components/datetime-range.html).
 
-You'll notice in the examples to the right, the iOS and Material Datetime pickers look and act totally different, just like their native counterparts.
+You'll notice in the demos that the iOS and Material Datetime pickers look and act totally different, just like their native counterparts.
 
 Works well with [QField](/components/field.html) for additional functionality such as a helper, error message placeholder and many others.
 
