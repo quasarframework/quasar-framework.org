@@ -2,14 +2,14 @@
   var isIndex = page.path === 'index.html' || page.standalone;
 %>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh_CN">
     <head>
         <title><%- page.title ? page.title + ' - ' : '' %>Quasar Framework</title>
         <meta charset="utf-8">
         <meta name="description" content="Quasar Framework - Build desktop & phone/tablet apps simultaneously">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono|Source+Sans+Pro">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono|Source+Sans+Pro">-->
+        <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
         <link rel="icon" href="<%- config.root %>images/quasar-logo.png" type="image/x-icon">
         <!-- build:css css/<%- isIndex ? 'index' : 'page' %>-combined.css -->
           <%- css(isIndex ? 'css/index' : 'css/page') %>
@@ -32,16 +32,16 @@
                 <%- body %>
             <% } %>
         </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+        <script src="https://cdn.bootcss.com/fastclick/1.0.6/fastclick.js"></script>
         <script>
         document.addEventListener('DOMContentLoaded', function() {
           FastClick.attach(document.body);
         }, false);
         </script>
         <% if (!isIndex) { %>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/7.1.1/js/smooth-scroll.min.js"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+          <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
+          <script src="https://cdn.bootcss.com/smooth-scroll/7.1.1/js/smooth-scroll.js"></script>
+         <script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.js"></script>
           <!-- build:js js/page-combined.js -->
           <script src="<%- config.root %>js/page.js"></script>
           <script src="<%- config.root %>js/preview.js"></script>
