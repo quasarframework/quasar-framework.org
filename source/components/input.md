@@ -24,7 +24,7 @@ Works well with [QField](/components/field.html) for additional functionality su
 ```
 
 ## Vue Properties
-Supports `v-model` which should be binded to a String or Number (depending on `type` property used) in your scope.
+Supports `v-model` which should be bound to a String or Number (depending on `type` property used) in your scope.
 
 | Property | Type | Description |
 | --- | --- | --- |
