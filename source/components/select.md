@@ -74,12 +74,12 @@ Supports `v-model` which should be the String for single selection and Array for
 | `multiple` | Boolean | If set to `true`, multiple selections will be allowed. |
 | `radio` | Boolean | If set to `true`, the selection will be through radios. For single selection only. |
 | `toggle` | Boolean | If set to `true`, the selection options will offer a toggle to select them. |
-| `chips` | Boolean | If set to `true`, the selections will appear as chips (instead of comma separated strings) on the input frame. |
+| `chips` | Boolean | If set to `true`, the selections will appear as chips (instead of comma separated strings) on the input frame (works for multiple selection only). |
 | `frame-color` | String | One from [Quasar Color Palette](/components/color-palette.html). Useful when `color` is to be used for Chips alone and you want a different color for the input frame. |
 | `filter` | Boolean | If set to `true`, the selections will offer an input to filter the selection options. |
 | `filter-placeholder` | String | A text to show in the filter input field. Default is "Filter". |
 | `delimiter` | Boolean | If set to `true`, the selection options will be separarted by a line. |
-| `display-value` | String | A text to show in the selection field, after selections have been made. |
+| `display-value` | String | Overrides text displayed in input frame. See "Working with Display Value" section below. |
 
 Common input frame properties:
 
@@ -91,7 +91,7 @@ Common input frame properties:
 | `stack-label` | String | A text label that will be shown above the input field and is static. |
 | `color` | String | A color from the [Quasar Color Palette](/components/color-palette.html). |
 | `inverted` | Boolean | Inverted mode. The color is applied to the background instead. |
-| `dark` | Boolean | Is QInput rendered on a dark background? |
+| `dark` | Boolean | Is QSelect rendered on a dark background? |
 | `align` | String | One of 'left', 'center' or 'right' which determines the text align within the textfield. |
 | `disable` | Boolean | If set to `true`, the field is disabled and the user cannot select anything. |
 | `error` | Boolean | If set to `true`, the input field's colors are changed to show there is an error. |
@@ -126,7 +126,6 @@ Examples:
 -->
 <q-select
   v-model="selection"
-  :error="error"
   :options="selectListOptions"
   :after="[
     {
@@ -252,6 +251,51 @@ Use an Object for each option like above (notice that it uses some properties fr
 | `rightLetter` | String | One character String for right side. |
 | `rightImage` | String | URL pointing to statics for an image on right side. |
 | `stamp` | String | Stamp to use for right side. Example: '10 min ago'. |
+
+### Working with Display Value
+If for some reason you want to have total control over the text in the input frame (replacing the comma delimited option strings), then use `display-value` property:
+
+```html
+<q-select
+  :display-value="`${ multipleSelect.length } item${ multipleSelect.length !== 1 ? 's' : '' } selected`"
+  multiple
+  v-model="multipleSelect"
+  float-label="Select a company"
+  :options="selectLongListOptions"
+/>
+```
+
+For a more elegant solution (and more efficient too), use a computed property:
+```html
+<template>
+  <!-- Notice "display-value" is binded to "text" variable -->
+  <q-select
+    :display-value="text"
+    multiple
+    v-model="multipleSelect"
+    float-label="Select a company"
+    :options="selectLongListOptions"
+  />
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      multipleSelect: /* value */,
+      selectOptions: /* options */
+    }
+  },
+  computed: {
+    text () {
+      // in this example we want to show how many items are selected,
+      // so we need to check model (multipleSelect) length
+      return `${this.multipleSelect.length} item${this.multipleSelect.length > 1 ? 's' : ''} selected`
+    }
+  }
+}
+</script>
+```
 
 ## Vue Methods
 | Vue Method | Description |

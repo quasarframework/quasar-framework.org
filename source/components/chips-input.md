@@ -58,7 +58,7 @@ Common input frame properties:
 | `stack-label` | String | A text label that will be shown above the input field and is static. |
 | `color` | String | One from [Quasar Color Palette](/components/color-palette.html). |
 | `inverted` | Boolean | Inverted mode. Color is applied to background instead. |
-| `dark` | Boolean | Is QInput rendered on a dark background? |
+| `dark` | Boolean | Is QChipsInput rendered on a dark background? |
 | `align` | String | One of 'left', 'center' or 'right' which determines the text align within textfield. |
 | `disable` | Boolean | If set to `true`, textfield is disabled and the user cannot type anything. |
 | `error` | Boolean | If set to true, the input fields colors are changed to show there is an error. |

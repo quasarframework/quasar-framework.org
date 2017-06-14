@@ -1,59 +1,82 @@
 title: Dialog Select
 ---
-The Quasar Dialog Select component offers two types of selection: single selection (using Radios) or multiple selection (using Checkboxes or Toggles).
+Dialog Select component offers two types of selection: single selection (using Radios) or multiple selection (using Checkboxes or Toggles). This component opens up a [Dialog](/components/dialog.html) for the selection list and action. If for some reason you want an in-place Popover to open for the selection, use the sibling [Select](/components/select.html) component.
 
-This component opens up a Dialog Modal, when the user should make a selection. If for some reason you want an in-place Popover to open for the selection, use the basic [Select](/components/select.html) component.
+Works well with [QField](/components/field.html) for additional functionality such as a helper, error message placeholder and many others.
 
 <input type="hidden" data-fullpage-demo="form/select/dialog">
 
 ## Basic Usage
 
 ``` html
-<!-- With Radios -->
-<q-dialog-select
-  type="radio"
-  @change="onChange"
-  v-model="select"
-  :options="selectOptions"
-  ok-label="Pick"
-  cancel-label="Neah"
-  title="Radios"
-/>
+<template>
+  <div>
+    <!-- With Radios -->
+    <q-dialog-select
+      type="radio"
+      v-model="select"
+      :options="selectOptions"
+      ok-label="Pick"
+      cancel-label="Neah"
+      title="Radios"
+    />
 
-<!-- With Checkboxes -->
-<q-dialog-select
-  type="checkbox"
-  @change="onChange"
-  v-model="multipleSelect"
-  :options="selectOptions"
-  ok-label="Pick"
-  cancel-label="Neah"
-  title="Checkboxes"
-/>
+    <!-- With Checkboxes -->
+    <q-dialog-select
+      type="checkbox"
+      v-model="multipleSelect"
+      :options="selectOptions"
+      ok-label="Pick"
+      cancel-label="Neah"
+      title="Checkboxes"
+    />
 
-<!-- With Toggles -->
-<q-dialog-select
-  type="toggle"
-  v-model="multipleSelect"
-  :options="selectOptions"
-  ok-label="Pick"
-  cancel-label="Neah"
-  title="Toggles"
-/>
+    <!-- With Toggles -->
+    <q-dialog-select
+      type="toggle"
+      v-model="multipleSelect"
+      :options="selectOptions"
+      ok-label="Pick"
+      cancel-label="Neah"
+      title="Toggles"
+    />
+  </div>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      selectOptions: [
+        {
+          label: 'Google',
+          value: 'goog'
+        },
+        {
+          label: 'Facebook',
+          value: 'fb'
+        }
+      ]
+    }
+  }
+}
+</script>
 ```
 
 ## Vue Properties
+Supports `v-model` which should be the String for single selection and Array for multiple selection.
+
 | Vue Property | Type | Description |
 | --- | --- | --- |
-| `value` | String | (**Required**) Model for the Select Component. |
-| `options` | Array | (**Required**) Array of options (Object with `label` and `value` properties). |
+| `options` | Array | (**Required**) Array of options (as Objects with required `label` and `value` props - for full list read next sections). |
 | `type` | String | (**Required**) The type of selection, `radio`, `checkbox` or `toggle`. |
+| `frame-color` | String | One from [Quasar Color Palette](/components/color-palette.html). Useful when `color` is to be used for Chips alone and you want a different color for the input frame. |
+| `chips` | Boolean | If set to `true`, the selections will appear as chips (instead of comma separated strings) on the input frame (works for multiple selection only). |
 | `title` | String | The title of Dialog. |
 | `message` | String | An additional informational text for the Dialog. |
-| `placeholder` | String | Placeholder to use, should no selections be made. |
 | `display-value` | String | A text to show in the selection field, after selections have been made. |
-
-Because `q-dialog-select` builds on top of `q-input-frame`, there are a number of available props from `q-input-frame` made available in `q-dialog-select`.
+| `okLabel` | String | Label for the "OK" button on the Dialog. |
+| `cancelLabel` | String | Label for "Cancel" button on the Dialog. |
 
 Common input frame properties:
 
@@ -65,20 +88,140 @@ Common input frame properties:
 | `stack-label` | String | A text label that will be shown above the input field and is static. |
 | `color` | String | A color from the [Quasar Color Palette](/components/color-palette.html). |
 | `inverted` | Boolean | Inverted mode. The color is applied to the background instead. |
-| `dark` | Boolean | Is QInput rendered on a dark background? |
+| `dark` | Boolean | Is QDialogSelect rendered on a dark background? |
 | `align` | String | One of 'left', 'center' or 'right' which determines the text align within the textfield. |
 | `disable` | Boolean | If set to `true`, the field is disabled and the user cannot select anything. |
 | `error` | Boolean | If set to `true`, the input field's colors are changed to show there is an error. |
 | `before` | Array of Objects | Icon buttons positioned on the left side of the field. |
 | `after` | Array of Objects | Icon buttons on the right side of the field. |
 
-For more information about the `input-frame-component` props, please refer to the [q-input component documentation](components/input.html).
+### Icon buttons
+This section refers to `before` and `after` properties which can add additional buttons as icons to the textfield. Here is the structure of the two properties:
 
-## Vue Properties for the Dialog Buttons
-| Vue Property | Type | Description |
-| --- | --- | --- |
-| `okLabel` | String | Label for the "OK" button on the Dialog. |
-| `cancelLabel` | String | Label for "Cancel" button on the Dialog. |
+```js
+{
+  // required icon
+  icon: String,
+  // required function to call when
+  // icon is clicked/tapped
+  handler: Function,
+
+  // Optional. Show icon button
+  // if model has a value
+  content: Boolean,
+
+  // Optional. Show icon button
+  // if textfield is marked with error
+  error: Boolean
+}
+```
+
+Examples:
+```html
+<!--
+  Show an icon button (with 'warning' as icon)
+-->
+<q-dialog-select
+  v-model="selection"
+  type="toggle"
+  :options="selectListOptions"
+  :after="[
+    {
+      icon: 'warning',
+      handler () {
+        // do something...
+      }
+    }
+  ]"
+/>
+
+<!--
+  Show an icon button (with 'arrow_forward' as icon)
+  when the model has a non empty value (like something has
+  been selected).
+-->
+<q-dialog-select
+  v-model="selection"
+  type="toggle"
+  :options="selectListOptions"
+  :after="[
+    {
+      icon: 'arrow_forward',
+      content: true,
+      handler () {
+        // do something...
+      }
+    }
+  ]"
+/>
+```
+
+### The Options Array Format
+Below are examples of the array of options you must use to create the selection options:
+
+Select options object:
+``` js
+selectOptions: [
+  {
+    label: 'Google',
+    value: 'goog'
+  },
+  {
+    label: 'Facebook',
+    value: 'fb'
+  },
+  ...
+]
+```
+
+### Working with Display Value
+If for some reason you want to have total control over the text in the input frame (replacing the comma delimited option strings), then use `display-value` property:
+
+```html
+<q-dialog-select
+  :display-value="`${ multipleSelect.length } item${ multipleSelect.length !== 1 ? 's' : '' } selected`"
+  type="checkbox"
+  v-model="multipleSelect"
+  :options="selectOptions"
+  ok-label="Pick"
+  cancel-label="Neah"
+  title="Checkboxes"
+/>
+```
+
+For a more elegant solution (and more efficient too), use a computed property:
+```html
+<template>
+  <!-- Notice "display-value" is binded to "text" variable -->
+  <q-dialog-select
+    :display-value="text"
+    type="checkbox"
+    v-model="multipleSelect"
+    :options="selectOptions"
+    ok-label="Pick"
+    cancel-label="Neah"
+    title="Checkboxes"
+  />
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      multipleSelect: /* value */,
+      selectOptions: /* options */
+    }
+  },
+  computed: {
+    text () {
+      // in this example we want to show how many items are selected,
+      // so we need to check model (multipleSelect) length
+      return `${this.multipleSelect.length} item${this.multipleSelect.length > 1 ? 's' : ''} selected`
+    }
+  }
+}
+</script>
+```
 
 ## Vue Methods
 | Vue Method | Description |
@@ -93,23 +236,7 @@ For more information about the `input-frame-component` props, please refer to th
 | `@focus` | Triggered, when the field gets focus. |
 | `@blur` | Triggered, when the field loses focus. |
 
-## Options Array
-Below is an example of the array of options you must use to create the selection options:
-
-Options Array example:
-``` js
-selectOptions: [
-  {
-    label: 'Google',
-    value: 'goog'
-  },
-  {
-    label: 'Facebook',
-    value: 'fb'
-  },
-  ...
-]
-```
+## More Examples
 
 ### Error State
 Use the `error` prop, to change the color of the component to red:
@@ -152,7 +279,7 @@ As with any input, you have two options for labels. Stack and Floating.
 ```
 
 ### Coloring
-Use the `color`, `inverted` and `frame-color` props to control the coloring of the component. 
+Use the `color`, `inverted` and `frame-color` props to control the coloring of the component.
 ```html
 <!-- Color -->
 <q-dialog-select
@@ -179,7 +306,12 @@ Use the `color`, `inverted` and `frame-color` props to control the coloring of t
   title="Radios"
 />
 
-<!-- With a different frame color -->
+<!--
+  With a color for chips and a different color for the frame.
+  Notice "color" and "frame-color". By default, "color" is used
+  for both frame and chips, but specifying a frame-color overrides
+  the color for the frame.
+-->
 <q-select
   <q-dialog-select
   frame-color="amber"
@@ -194,10 +326,11 @@ Use the `color`, `inverted` and `frame-color` props to control the coloring of t
   placeholder="Pick Company"
 />
 ```
-**Note** The `frame-color` prop is especially useful when using chips as selected values, so the chips stand out from the background color.
 
+> **Note**
+> The optional `frame-color` prop is useful when using chips as selected values, so the chips stand out from the background color.
 
-## Inside of a List Usage
+### Usage Inside of a List
 
 ``` html
 <q-list>
