@@ -2,8 +2,7 @@ title: Getting Started
 ---
 There are 3 sections on this documentation website that will get you familiarized with Quasar:
   * **Guide** - Information about CLI, starter kits, how to get you started working on a project folder
-  * [**API**](/api) - Global Javascript and CSS (framework) API
-  * [**Components**](/components) - List of Quasar components
+  * [**Components**](/components) - Quasar components
 
 # First steps
 Quasar CLI allows you to start new projects in no time by generating a starter boilerplate filled with everything that you need. It also does most of the heavy-lifting so you don't have to take care of the redundant tasks. You must install it to generate and manage a Quasar App.
