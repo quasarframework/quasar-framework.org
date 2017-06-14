@@ -12,30 +12,49 @@ The animation effects are borrowed from [Animate.css](https://daneden.github.io/
 
 To use QTransition component, simply wrap a component or HTML element with the transition component and add the necessary properties to it.
 
-It's also important that you import the CSS animation from Quasar's package as none will be supplied by default in order to reduce the footprint of your website/app.
+It's also important that you import the CSS animation(s) from `quasar-extra` package as none will be supplied by default in order to reduce the footprint of your website/app.
 
 ### Adding an Animation to the Bundle
 In you Vue component where the template contains a QTransition or in `src/main.js` or `src/App.vue` (if you are using in multiple places), import the animations like this:
 
 ```js
-import 'quasar/animations/fadeIn.css'
-import 'quasar/animations/fadeOut.css'
+import 'quasar-extras/animate/fadeIn.css'
+import 'quasar-extras/animate/fadeOut.css'
+
+// Or import them all -- but notice that your
+// bundle will probably include unused ones,
+// so more KB over the wire that never get used.
+import 'quasar-extras/animate'
+```
+
+If you are building a website, you can also replace "quasar-extras" imports and use a CDN link which points to Animate.css like this (following is just an example, Google for latest link). Remember this will require an Internet connection for your user, as opposed to bundling from "quasar-extras".
+
+```html
+<!-- index.html -->
+<head>
+  ...
+
+  <!-- CDN example for Animate.css -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
+  >
+</head>
 ```
 
 ### Wrapping a Single Element
 ``` html
 <!-- Example with wrapping only one DOM element / component -->
-<div>
-  <q-transition
-    appear
-    enter="fadeIn"
-    leave="fadeOut"
-  >
-    <q-btn color="secondary" icon="mail">
-      Email
-    </q-btn>
-  </q-transition>
-</div>
+<q-transition
+  appear
+  enter="fadeIn"
+  leave="fadeOut"
+>
+  <!-- Wrapping only one DOM element, defined by QBtn -->
+  <q-btn color="secondary" icon="mail">
+    Email
+  </q-btn>
+</q-transition>
 ```
 
 ### Wrapping Multiple Elements
@@ -43,25 +62,24 @@ You can also group components or DOM elements in a QTransition so that the same 
 
 ``` html
 <!-- Example with wrapping multiple DOM elements / components -->
-<div>
-  <q-transition
-    appear
-    group
-    enter="fadeIn"
-    leave="fadeOut"
+<q-transition
+  appear
+  group
+  enter="fadeIn"
+  leave="fadeOut"
+>
+  <!-- We wrap a "p" tag and a QBtn -->
+  <p key="text">
+     Lorum Ipsum
+  </p>
+  <q-btn
+    key="email-button"
+    color="secondary"
+    icon="mail"
   >
-    <p key="text">
-       Lorum Ipsum
-    </p>
-    <q-btn
-      key="email-button"
-      color="secondary"
-      icon="mail"
-    >
-      Email
-    </q-btn>
-  </q-transition>
-</div>
+    Email
+  </q-btn>
+</q-transition>
 ```
 
 Please note two things in the above example.
@@ -97,7 +115,7 @@ There are several properties within the transition component.
 | `after-leave` |
 | `after-appear` |
 
-You can use the events to control state, which controls the display logic. Check out [the Alert component documentation](/components/alert.html#An-Alert-Component-Wrapped-in-a-Transition) for an example.
+You can use these events to control state, which controls the display logic.
 
 ## Custom Animations
 If the default animations supplied with Quasar are not enough, QTransition also allows you to specify custom animations defined by CSS classes in your website/app. This works much like Vue's Transition component (which it wraps) when specifying the `name` property.

@@ -90,23 +90,27 @@ The example link tag below would include Font Awesome v4.7.0 icons. Do a Google 
 ```html
 <!-- in `index.html` -->
 
-<!-- CDN example for Material Icons -->
-<link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/icon?family=Material+Icons"
->
+<head>
+  ...
 
-<!-- CDN example for Fontawesome -->
-<link
-  rel="stylesheet"
-  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
->
+  <!-- CDN example for Material Icons -->
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  >
 
-<!-- CDN example for Ioniocns -->
-<link
-  rel="stylesheet"
-  href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
->
+  <!-- CDN example for Fontawesome -->
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  >
+
+  <!-- CDN example for Ioniocns -->
+  <link
+    rel="stylesheet"
+    href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
+  >
+</head>
 ```
 
 ### Vue Properties
