@@ -112,7 +112,7 @@ You will notice throughout the documentation that Quasar components have a secti
 | `infinite` | Boolean | Infinite slides scrolling |
 | `size` | String | Thickness of loading bar. |
 | `speed` | Number | How fast should loading bar update its value (in milliseconds). |
-| `columns` | Object defining columns (see "Columns Definition" below). |
+| `columns` | Object | Object defining columns (see "Columns Definition" below). |
 | `offset` | Array | Array with two numbers. Offset on horizontal and vertical (in pixels). |
 
 Let's take some examples with a bogus Quasar component (we will call it QBogus) that supports the properties above. We will discuss each of the types of Vue properties in the below sections.
