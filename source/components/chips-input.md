@@ -4,6 +4,8 @@ The Quasar Chips Input allows user to enter a group of text items, which is also
 
 For more details on Chips used within Chips Input, please refer to its [documentation](/components/chip.html).
 
+Works well with [QField](/components/field.html) for additional functionality such as a helper, error message placeholder and many others.
+
 <input type="hidden" data-fullpage-demo="form/text-input/chips">
 
 ## Basic Usage
@@ -33,21 +35,73 @@ Supports `v-model` which should be binded to an Array of Strings in your scope.
 
 | Vue Property | Type | Description |
 | --- | --- | --- |
-| `prefix` | String | Prefix before Chips |
-| `suffix` | String | Suffix after Chips |
-| `stack-label` | String | Stacked Label. Use this or `float-label`, but not both. |
-| `float-label` | String | Floating Label. Use this or `stack-label`, but not both. |
-| `error` | Boolean | Does ChipsInput has an error? |
-| `color` | String | One from [Quasar Color Palette](/components/color-palette.html). See "Coloring" section. |
 | `frame-color` | String | One from [Quasar Color Palette](/components/color-palette.html). See "Coloring" section. |
-| `inverted` | Boolean | Coloring Background. See "Coloring" section. |
-| `dark` | Boolean | Is ChipsInput used on a dark background? |
-| `align` | String | One of 'left', 'center' or 'right' to align textfield content within ChipsInput. |
-| `autofocus` | Boolean | Automatically focus on textfield after render. |
-| `placeholder` | String | Placeholder for the textfield. |
-| `max-length` | Number/String | Maximum number of characters that the textfield should support. |
 | `readonly` | Boolean | If readonly user can not add or remove chips. |
-| `disable` | Boolean | If disabled user can not add or remove chips. |
+
+Common input field properties:
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `autofocus` | Boolean | Focus input field after rendering component. |
+| `placeholder` | String | A text to be shown on textfield, mainly to explain what should be entered. |
+| `name` | String | Adds a "name" attribute to the input field. |
+| `max-length` | Number/String | Maximum characters allowed on input field. |
+| `loading` | Boolean | Place the default spinner of the theme after textfield to highlight some process takes place in the background. |
+
+Common input frame properties:
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `prefix` | String | A text that should be shown before the textfield. |
+| `suffix` | String | A text that should be shown after the textfield. |
+| `float-label` | String | A text label that will "float" up above the input field, once the input field gets focus. |
+| `stack-label` | String | A text label that will be shown above the input field and is static. |
+| `color` | String | One from [Quasar Color Palette](/components/color-palette.html). |
+| `inverted` | Boolean | Inverted mode. Color is applied to background instead. |
+| `dark` | Boolean | Is QInput rendered on a dark background? |
+| `align` | String | One of 'left', 'center' or 'right' which determines the text align within textfield. |
+| `disable` | Boolean | If set to `true`, textfield is disabled and the user cannot type anything. |
+| `error` | Boolean | If set to true, the input fields colors are changed to show there is an error. |
+| `before` | Array of Objects | Icon buttons on left side of input frame. Read below more details. |
+| `after` | Array of Objects | Icon buttons on right side of input frame. Read below more details. |
+
+### Icon buttons
+This section refers to `before` and `after` properties which can add additional buttons as icons to the textfield. Here is the structure of the two properties:
+
+```js
+{
+  // required icon
+  icon: String,
+  // required function to call when
+  // icon is clicked/tapped
+  handler: Function,
+
+  // Optional. Show icon button
+  // if model has a value
+  content: Boolean,
+
+  // Optional. Show icon button
+  // if textfield is marked with error
+  error: Boolean
+}
+```
+
+Examples:
+```html
+<q-chips-input
+  v-model="model"
+  color="secondary"
+  :after="[
+    {
+      icon: 'warning',
+      error: true,
+      handler () {
+        // do something...
+      }
+    }
+  ]"
+/>
+```
 
 ### Coloring
 As you may have noticed above, there's a "color" and "frame-color" along "inverted" and "dark" properties.
@@ -94,7 +148,7 @@ When used on a dark background, specify "dark" property.
 ## Vue Events
 | Vue Event | Description |
 | --- | --- |
-| `@input` | Triggered on model value change with the new value. |
+| `@change(newVal)` | Triggered on model value change. |
 
 ## More Examples
 

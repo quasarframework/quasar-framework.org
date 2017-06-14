@@ -1,7 +1,8 @@
 title: Option Group
 ---
-
 The Quasar Option Group component is a helper component, which allows you to better control the grouping of binary (as in on or off, true or false, 1 or 0) form input components like checkboxes, radios or toggles. A good usage for this component is for offering the user a set of options or settings to turn on and off, and thus the name of the component.
+
+Works well with [QField](/components/field.html) for additional functionality such as a helper, error message placeholder and many others.
 
 ## Basic Usage
 

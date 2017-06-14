@@ -91,7 +91,7 @@ Add `has-error` CSS class:
 ## Vue Events
 | Vue Event | Description |
 | --- | --- |
-| `@input` | Triggered on model value change with the new value. |
+| `@change(newVal)` | Triggered on model value change. |
 
 ## Inside of a List Usage
 

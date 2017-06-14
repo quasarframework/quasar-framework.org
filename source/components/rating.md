@@ -2,6 +2,8 @@ title: Rating
 ---
 Quasar Rating is a Component which allows users to rate items, usually known as "Star Rating".
 
+Works well with [QField](/components/field.html) for additional functionality such as a helper, error message placeholder and many others.
+
 <input type="hidden" data-fullpage-demo="form/rating">
 
 ## Basic Usage
@@ -37,7 +39,7 @@ Supports `v-model` which should be binded to a Number in your scope.
 ## Vue Events
 | Vue Event | Description |
 | --- | --- |
-| `@input` | Triggered on model value change with the new value. |
+| `@change(newVal)` | Triggered on model value change. |
 
 ## Coloring
 Use one of the Quasar colors from the [Color Palette](/components/color-palette.html), like `primary`, `secondary`, `orange-7`, `teal-2` as CSS class:

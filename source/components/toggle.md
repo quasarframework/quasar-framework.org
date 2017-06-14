@@ -3,7 +3,8 @@ title: Toggle
 The Quasar Toggle component is another basic element for user input. You can use this for turning settings, features or true/ false inputs on and off.
 
 Please also refer to the [Option Group documentation](/components/option-group.html) on other possibilities for creating groups of Toggles.
-Remember you can use QToggle wrapped by a [QField](/components/field.html) too.
+
+Works well with [QField](/components/field.html) for additional functionality such as a helper, error message placeholder and many others.
 
 <input type="hidden" data-fullpage-demo="form/toggle">
 
