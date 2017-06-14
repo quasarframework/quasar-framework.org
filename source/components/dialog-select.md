@@ -10,7 +10,7 @@ This component opens up a Dialog Modal, when the user should make a selection. I
 
 ``` html
 <!-- With Radios -->
-<q-dialog-select 
+<q-dialog-select
   type="radio"
   @change="onChange"
   v-model="select"
@@ -21,7 +21,7 @@ This component opens up a Dialog Modal, when the user should make a selection. I
 />
 
 <!-- With Checkboxes -->
-<q-dialog-select 
+<q-dialog-select
   type="checkbox"
   @change="onChange"
   v-model="multipleSelect"
@@ -32,7 +32,7 @@ This component opens up a Dialog Modal, when the user should make a selection. I
 />
 
 <!-- With Toggles -->
-<q-dialog-select 
+<q-dialog-select
   type="toggle"
   v-model="multipleSelect"
   :options="selectOptions"
@@ -72,7 +72,7 @@ Common input frame properties:
 | `before` | Array of Objects | Icon buttons positioned on the left side of the field. |
 | `after` | Array of Objects | Icon buttons on the right side of the field. |
 
-For more information about the `input-frame-component` props, please refer to the [q-input component documentation](components/input.html). 
+For more information about the `input-frame-component` props, please refer to the [q-input component documentation](components/input.html).
 
 ## Vue Properties for the Dialog Buttons
 | Vue Property | Type | Description |
@@ -114,7 +114,7 @@ selectOptions: [
 ### Error State
 Use the `error` prop, to change the color of the component to red:
 ``` html
-<q-dialog-select 
+<q-dialog-select
   error type="radio"
   v-model="select"
   :options="selectOptions"
@@ -124,9 +124,9 @@ Use the `error` prop, to change the color of the component to red:
 Use the `disable` prop, to stop access to the field.
 ```html
 <q-dialog-select
-  disable 
-  type="radio" 
-  v-model="select" 
+  disable
+  type="radio"
+  v-model="select"
   :options="selectOptions"
 />
 ```
@@ -134,29 +134,29 @@ Use the `disable` prop, to stop access to the field.
 As with any input, you have two options for labels. Stack and Floating.
 ```html
 <!-- Floating Label -->
-<q-dialog-select 
+<q-dialog-select
   float-label="Float Label"
   type="checkbox"  
-  v-model="multipleSelect" 
-  :options="selectOptions" 
+  v-model="multipleSelect"
+  :options="selectOptions"
   placeholder="Pick Company"
 />
 
 <!-- Stack Label -->
 <q-select
   static-label="Company"
-  multiple 
-  v-model="multipleSelect" 
+  multiple
+  v-model="multipleSelect"
   :options="selectOptions"
 />
 ```
 
 ### Coloring
-Use the `color`, `inverted` and `frameColor` props to control the coloring of the component. 
+Use the `color`, `inverted` and `frame-color` props to control the coloring of the component. 
 ```html
 <!-- Color -->
 <q-dialog-select
-  color="amber" 
+  color="amber"
   type="radio"
   @change="onChange"
   v-model="select"
@@ -180,17 +180,17 @@ Use the `color`, `inverted` and `frameColor` props to control the coloring of th
 />
 
 <!-- With a different frame color -->
-<q-select 
+<q-select
   <q-dialog-select
   frame-color="amber"
-  inverted 
+  inverted
   color="dark"
   @change="onChange"
   chips
   float-label="Float Label"
   type="checkbox"
-  v-model="multipleSelect" 
-  :options="selectOptions" 
+  v-model="multipleSelect"
+  :options="selectOptions"
   placeholder="Pick Company"
 />
 ```

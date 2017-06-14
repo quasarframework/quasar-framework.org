@@ -105,13 +105,13 @@ Here is the full list of properties that can be used:
 | `image` | String | URL pointing to statics for an image. |
 | `label` | String | Main label of the selection. |
 | `sublabel` | String | Sub-label of the selection. |
-| `label-lines` | String/Number | Number of lines that label can expand to. |
-| `sublabel-lines` | String/Number | Number of lines that the sublabel can expand to. |
+| `labelLines` | String/Number | Number of lines that label can expand to. |
+| `sublabelLines` | String/Number | Number of lines that the sublabel can expand to. |
 | `inset` | Boolean | Inset Label if no left-side is specified (no icon, avatar, letter or image). |
-| `right-icon` | String | Icon on the right to use. |
-| `right-avatar` | String | URL pointing to statics for an avatar on right side. |
-| `right-letter` | String | One character String for right side. |
-| `right-image` | String | URL pointing to statics for an image on right side. |
+| `rightIcon` | String | Icon on the right to use. |
+| `rightAvatar` | String | URL pointing to statics for an avatar on right side. |
+| `rightLetter` | String | One character String for right side. |
+| `rightImage` | String | URL pointing to statics for an image on right side. |
 | `stamp` | String | Stamp to use for right side. Example: '10 min ago'. |
 
 
