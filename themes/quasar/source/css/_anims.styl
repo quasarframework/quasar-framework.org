@@ -1,6 +1,7 @@
 .animated
   animation-duration 1s
   animation-fill-mode both
+  transform-origin 50%
 
 .animated.infinite
   animation-iteration-count infinite
@@ -10,9 +11,6 @@
     transform rotateZ(0deg)
   to
     transform rotateZ(360deg)
-
-.rotate-clockwise
-  animation-name rotate-clockwise
 
 @keyframes logo-resize
   0%, 25%
@@ -73,13 +71,11 @@
     left 100%
     width 10%
     opacity 0
-    transform translate(-50%, -50%) rotateZ(-45deg)
   40%, 65%
     width 30%
     top 50%
     left 50%
     opacity 1
-    transform translate(-50%, -50%) rotateZ(0deg)
   70%, 100%
     width 30%
     opacity 0
@@ -104,40 +100,30 @@
 
 @keyframes vuelogo-rotate
   0%
-    transform translate(-50%, -50%) rotateY(0deg)
     opacity 1
   25%
-    transform translate(-50%, -50%) rotateY(90deg)
     opacity 1
   26%
     opacity 0
   50%
-    transform translate(-50%, -50%) rotateY(180deg)
     opacity 0
   75%
-    transform translate(-50%, -50%) rotateY(-90deg)
     opacity 0
   100%
-    transform translate(-50%, -50%) rotateY(0deg)
     opacity 1
 
 @keyframes jslogo-rotate
   0%
-    transform translate(-50%, -50%) rotateY(-180deg)
     opacity 0
   25%
-    transform translate(-50%, -50%) rotateY(-90deg)
     opacity 0
   50%
-    transform translate(-50%, -50%) rotateY(0deg)
     opacity 1
   75%
-    transform translate(-50%, -50%) rotateY(90deg)
     opacity 1
   76%
     opacity 0
   100%
-    transform translate(-50%, -50%) rotateY(180deg)
     opacity 0
 
 @keyframes logo-slide-in-out
