@@ -4,15 +4,25 @@ title: Icons
 The Quasar Icon component allows you to easily insert icons within other components or any other area of your pages, as you'd like.
 Quasar currently supports: [Material Icons](https://material.io/icons/) out of the box, but you can add [Font Awesome](http://fontawesome.io/icons/) and [Ionicons](http://ionicons.com/). Learn how to include the last two by reading on.
 
+Importing the required font icons is required in order to make them work. Read [Importing Icons](#Importing-Icons) section for more details.
+
 <input type="hidden" data-fullpage-demo="components/button">
 
 ## Basic Usage
+Learn how to include the font icons that you need in the next sections, but for now, let's take a look at how we can use QIcon component:
 
 ```html
+<!-- Material icons have no prefix -->
 <q-icon name="thumb_up" />
 
+<!-- Ionicons have "ion-" prefix -->
+<q-icon name="ion-heart" />
+
+<!-- Fontawesome icons have "fa-" prefix -->
+<q-icon name="fa-id-card" />
+
 <!--
-  or if you prefer the non self-closing version
+  or if you prefer the non self-closing tag version
   which allows to add a QPopover or QTooltip:
 -->
 <q-icon name="thumb_up">
@@ -20,13 +30,21 @@ Quasar currently supports: [Material Icons](https://material.io/icons/) out of t
 </q-icon>
 ```
 
-There are cases where you want to differentiate icons displayed based on the Quasar theme you are using, so you can use `mat` and `ios` props. This is practical for cross-platform application development.
+There are cases where you want to differentiate icons displayed based on the Quasar theme you are using, so you can use `mat` and `ios` props. This is practical for cross-platform application development where you use different themes for each platform.
 ```html
-<q-icon mat="map" ios="place" />
+<q-icon mat="settings" ios="ion-ios-gear-outline" />
+```
+
+For "icon" properties on different Quasar components you won't have the means to specify an icon for each platform, but you can achieve the same effect with:
+
+```html
+<q-item-side
+  :icon="$q.theme === 'mat' ? 'settings' : 'ion-ios-gear-outline'"
+/>
 ```
 
 ### Size & Colors
-All icons are font icons. This means that you can change size by manipulating `font-size` CSS property. And also, they inherit the current CSS `color` used.
+All icons are **font icons**. This means that you can change size by manipulating `font-size` CSS property. And also, they inherit the current CSS `color` used.
 
 ```html
 <q-icon name="mail" style="font-size: 25px" />
@@ -46,45 +64,50 @@ Colors from the [Quasar Color Palette](/components/color-palette.html) can be sp
 <q-icon name="alarm" color="green-2" />
 ```
 
-## Including Fontawesome or Ionicons
-Using Fontawesome or Ionicons (after including them in the build -- read below the example) simply requires you to use prefixes (`fa-` and `ion-`):
-```html
-<!-- Fontawesome -->
-<q-icon name="fa-cloud" />
+## Importing Icons
+The only required icon font is "Material Icons" one. The other (Fontawesome or Ionicons) are optional. In order for you to be able to use them, you have two options: either use [quasar-extras](https://github.com/quasarframework/quasar-extras) npm package, or add the appropriate CDN (Content Delivery Network) links in `<head>` of your index.html.
 
-<!-- Ionicon -->
-<q-icon name="fa-cloud" />
+If you are building a website only, then CDN approach can be an option you can follow. However, when building a mobile or Electron app, you will most likely do not want to depend on an Internet connection, so it's best that you import directly from `quasar-extras`.
+
+### Importing from "quasar-extras"
+
+```js
+/*
+  File: main.js
+  Remember only material-icons is required,
+  unless you use CDN to link to it.
+ */
+import 'quasar-extras/material-icons'
+import 'quasar-extras/ionicons'
+import 'quasar-extras/fontawesome'
 ```
-
-Material Icons are included by default. If you want to use [Font Awesome](http://fontawesome.io/icons/) or [Ionicons](http://ionicons.com/) you need to include them in the bundle. And there's two ways of doing that, based on what you are building with Quasar: only a website or a website/mobile app/electron app.
 
 ### Including from CDN
 If you want to make use of CDNs (Content Delivery Network), all you need is to include style tags in your `index.html` which point to the CDN URL.
 
-The example link tag below would include Font Awesome v4.7.0 icons. Do a Google search for CDNs to make sure you include the latest version.
+The example link tag below would include Font Awesome v4.7.0 icons. Do a Google search for CDNs to make sure you include the latest version. Following are just examples.
 
 ```html
 <!-- in `index.html` -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- CDN example for Material Icons -->
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+>
+
+<!-- CDN example for Fontawesome -->
+<link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+>
+
+<!-- CDN example for Ioniocns -->
+<link
+  rel="stylesheet"
+  href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
+>
 ```
-
-> **NOTE**
-> Including from CDN is highly not recommended when also building a mobile app or an Electron app, as your apps will depend on a network connection to fetch the font icons from Internet. This is why next section will teach you how to include them in your bundle.
-
-### Directly Including in the Bundle
-When building a mobile app or an Electron app, it's highly recommended that font icons be included in the bundle too, to avoid the need of an Internet connection to work.
-
-In order to do this, you need to install some NPM packages (`font-awesome` and/or `ionicons`).
-
-//
-//
-//
-//
-// TODO: write tutorial
-//
-//
-//
-//
 
 ### Vue Properties
 | Vue Property | Type | Description |
@@ -100,16 +123,16 @@ In order to do this, you need to install some NPM packages (`font-awesome` and/o
 
 ## More Examples
 
-With `style` attribute:
+With HTML native `style` attribute:
 
 ```html
 <q-icon name="thumb_up" style="font-size: 5rem;" />
 ```
 
-With `class` attribute:
+With HTML native `class` attribute:
 
 ```html
-<q-icon name="thumb_up" class="big-btn" />
+<q-icon name="thumb_up" class="big-icon" />
 ```
 
 **Note**
@@ -117,7 +140,7 @@ To create the necessary CSS class, you would need to define the class within you
 
 ```stylus
 <style lang="stylus">
-.big-btn
+.big-icon
   font-size: 5rem
 </style>
 ```
