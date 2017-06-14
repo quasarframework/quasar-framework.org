@@ -1,8 +1,18 @@
 title: Getting Started
 ---
-There are 3 sections on this documentation website that will get you familiarized with Quasar:
+There are 2 sections on this documentation website that will get you familiarized with Quasar:
   * **Guide** - Information about CLI, starter kits, how to get you started working on a project folder
   * [**Components**](/components) - Quasar components
+
+It will help you a lot if you are familiar with these awesome tools/technologies:
+
+* [ES6 Javascript](http://www.2ality.com/2015/08/getting-started-es6.html)
+* [Vue JS](http://vuejs.org) and [NPM](http://npmjs.org) ecosystems
+* [Vue Router](http://router.vuejs.org/)
+* Writing [.vue files](http://vue-loader.vuejs.org/en/index.html)
+* [Optional] [Vuex](http://vuex.vuejs.org/) if building large scale Apps.
+* [Optional] [Webpack](http://webpack.github.io/) for tweaking the build system to your specific needs
+* [Optional] [Cordova](https://cordova.apache.org/) for building native mobile phone Apps out of your Quasar App
 
 # First steps
 Quasar CLI allows you to start new projects in no time by generating a starter boilerplate filled with everything that you need. It also does most of the heavy-lifting so you don't have to take care of the redundant tasks. You must install it to generate and manage a Quasar App.
@@ -53,16 +63,5 @@ $ quasar dev --play
 ```
 
 This generates a QR code that you can scan with Quasar Play app and you'll have your App on the phone as long as the development server is running.
-
-## Things to read about
-You should be familiar with these awesome tools/technologies:
-
-* [ES6 Javascript](http://www.2ality.com/2015/08/getting-started-es6.html)
-* [Vue Js](http://vuejs.org) and [NPM](http://npmjs.org) ecosystems
-* [Vue Router](http://router.vuejs.org/)
-* Writing [.vue files](http://vue-loader.vuejs.org/en/index.html)
-* [Optional] [Vuex](http://vuex.vuejs.org/) if building large scale Apps.
-* [Optional] [Webpack](http://webpack.github.io/) for tweaking the build system to your specific needs
-* [Optional] [Cordova](https://cordova.apache.org/) for building native mobile phone Apps out of your Quasar App
 
 > That's it. You're set now. Continue to read the guide about Quasar and don't forget to have fun :)

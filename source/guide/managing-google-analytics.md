@@ -5,7 +5,7 @@ Getting to know your users and measuring user behavior is an important step in A
 Follow this guide to implement Google Analytics into your Cordova App.
 
 ## Prerequisites
-> - Make sure all your routes have a name and path parameter specified. Otherwise, they cannot be posted to the ga.logPage function. Please refer to [the router docs](http://quasar-framework.org/guide/router.html) for more info on routing.
+> - Make sure all your routes have a name and path parameter specified. Otherwise, they cannot be posted to the `ga.logPage` function. Please refer to [the router docs](/guide/router.html) for more info on routing.
 > - Have Basic knowledge of Google Analytics
 
 ## Preparation

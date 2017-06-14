@@ -15,18 +15,17 @@ guide:
     Handling Static Assets: app-$
     API Proxying for Dev: app-$
     Prerendering for SEO: app-$
-    Using Fonts from CDN: app-$
     Dev vs Production Code: app-$
     Troubleshoot and Tips: app-$
   Wrappers:
     Cordova Wrapper: $
     Electron Wrapper: $
   Development:
+    Nightly Build: quasar-$
     Ajax Requests: $
     Components Sharing State: $
     Form Validation: $
     Managing Google Analytics: $
-    Nightly Build: quasar-$
     Opening Dev Server To Public: $
     Router: $
     Theming: quasar-$
