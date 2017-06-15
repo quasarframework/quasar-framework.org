@@ -22,13 +22,13 @@ guide:
     Electron Wrapper: $
   Development:
     Nightly Build: quasar-$
+    Theming: quasar-$
     Ajax Requests: $
     Components Sharing State: $
     Form Validation: $
     Managing Google Analytics: $
     Opening Dev Server To Public: $
     Router: $
-    Theming: quasar-$
 
 components:
   root:

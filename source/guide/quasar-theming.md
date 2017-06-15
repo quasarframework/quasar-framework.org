@@ -11,7 +11,7 @@ Quasar CSS is a blank slate that you can easily customize and modify to fit your
 
 Quasar is built on top of Stylus, which allows it to set some default styles for your App but makes it extremely easy for you to change the defaults in your App code.
 
-Customizing a theme means overriding Stylus variables which can hold colors, sizes, border types and so on. After reading this intro you can go to [API &gt; Stylus Variables](/api/css-stylus-variables.html) for a list of all Stylus variables that you can override so you can theme your App.
+Customizing a theme means overriding Stylus variables which can hold colors, sizes, border types and so on. After reading this intro you can go to [Components &gt; Stylus Variables](/components/stylus-variables.html) for a list of all Stylus variables that you can override so you can theme your App.
 
 ## Build
 Please note the following:
@@ -44,7 +44,8 @@ src
 └── themes
     ├── app.ios.styl
     ├── app.mat.styl
-    └── app.variables.styl
+    ├── app.variables.styl
+    └── quasar.variables.styl
 ```
 
 You will find more documentation and steps in these files.
@@ -54,8 +55,26 @@ You will find more documentation and steps in these files.
 | app.ios.styl | iOS entry point. It includes app.variables.styl and Quasar iOS theme. |
 | app.mat.styl | Material Design entry point. It includes app.variables.styl and Quasar Material theme. |
 | app.variables.styl | (Common code for all themes) Place to override Stylus variables which define the primary color, the secondary color, the list border radius and so many properties.. You can easily make good use of Quasar Themes and customize your App so it will have a distinct overall design. |
+| quasar.variables.styl | This file includes your Stylus overrides and Quasar's Core Stylus variables so you can use them in your `*.vue` fiels. Read section below. |
 
 The Build System expects just `app.ios.styl` and `app.mat.styl` to exist, so feel free to dig in into the `src/themes` folder to understand how and what is rendered by Stylus and change whatever you like and best suits your needs. Just make sure you have those two files there.
+
+## Using Stylus variables in Vue files
+In your app's `*.vue` files you can use the core Quasar Stylus variables (examples - colors: `$primary`, `$red-1`, media breakpoints: `$breakpoint-md`, `$breakpoint-md-min` and so on).
+
+```html
+<!-- Notice lang="stylus" -->
+<style lang="stylus">
+// "variables" is a Webpack alias (defined in /config/index.js)
+// which points to /src/themes/quasar.variables.styl
+// in your starter kit
+@import '~variables'
+
+div
+  color $red-1
+  background-color $grey-5
+</style>
+```
 
 ## Theming Your App
 
@@ -104,4 +123,4 @@ body
 
 ## Stylus Variables
 
-Read a complete list of all [Stylus variables](/api/css-stylus-variables.html) that you can override.
+Read a complete list of all [Stylus variables](/components/stylus-variables.html) that you can override.

@@ -13,10 +13,7 @@ Most of the colors that Quasar Components use are strongly linked with these thr
 
 ## Color List
 
-Here's the list of colors provided out of the box. Use them as CSS classes or as Stylus variables (preceded by `$` character) in files directly required by `themes/app.*theme*.styl`.
-
-> **IMPORTANT**
-> **Do not use them in Vue components `<style>` tags** as they are not available there. Use CSS classes described in the next section instead.
+Here's the list of colors provided out of the box. Use them as CSS classes (in HTML templates) or as Stylus variables (in `<style lang="stylus">` tags) within your app's `*.vue` files.
 
 `primary`, `secondary`, `tertiary`
 `positive`, `negative`, `info`, `warning`, `white`, `light`, `dark`, `faded`
@@ -26,7 +23,7 @@ On the following colors there are variations available:
 
 Example of color variation: `red`, `red-1`, `red-2`, ..., `red-14`. See the demo to make a good picture of what variations are. Variation 11 to 14 are color accents.
 
-## CSS Classes
+## Using as CSS Classes
 Use `text-` or `bg-` prefixes as class names to change the color of text or the color of the background.
 
 ``` html
@@ -37,48 +34,19 @@ Use `text-` or `bg-` prefixes as class names to change the color of text or the 
 <p class="bg-positive">...</p>
 ```
 
-## Stylus Color Variables
-In your Stylus App code you can use them as `$primary`, `$red-1`, and so on.
+## Using Stylus Variables
+In your app's `*.vue` files you can use the colors as `$primary`, `$red-1`, and so on.
 
-``` stylus
+```html
+<!-- Notice lang="stylus" -->
+<style lang="stylus">
+// "variables" is a Webpack alias (defined in /config/index.js)
+// which points to /src/themes/quasar.variables.styl
+// in your starter kit
+@import '~variables'
+
 div
   color $red-1
   background-color $grey-5
-```
-
-The full list of colors is stored in the `$colors` array. You can change it to add/remove/change colors and all Quasar Components will generate CSS according to those colors.
-
-``` stylus
-$colors ?= {
-  primary: $primary,
-  secondary: $secondary,
-  tertiary: $tertiary,
-  positive: $positive,
-  negative: $negative,
-  warning: $warning,
-  info: $info,
-  light: $light,
-  dark: $dark,
-  white: $white,
-
-  red: $red,
-  pink: $pink,
-  purple: $purple,
-  deep-purple: $deep-purple,
-  indigo: $indigo,
-  blue: $blue,
-  light-blue: $light-blue,
-  cyan: $cyan,
-  teal: $teal,
-  green: $green,
-  light-green: $light-green,
-  lime: $lime,
-  yellow: $yellow,
-  amber: $amber,
-  orange: $orange,
-  deep-orange: $deep-orange,
-  brown: $brown,
-  grey: $grey,
-  blue-grey: $blue-grey
-}
+</style>
 ```
