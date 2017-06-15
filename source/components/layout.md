@@ -11,6 +11,7 @@ An example of Layout, containing all possible elements: [QToolbar](/components/t
 
 ``` html
 <q-layout ref="layout" view="hHr LpR lFf" :right-breakpoint="1100">
+  <!-- Header -->
   <q-toolbar slot="header">
     <q-btn flat @click="$refs.layout.toggleLeft()">
       <q-icon name="menu" />
@@ -24,6 +25,7 @@ An example of Layout, containing all possible elements: [QToolbar](/components/t
     </q-btn>
   </q-toolbar>
 
+  <!-- Navigation -->
   <q-tabs slot="navigation">
     <q-route-tab slot="title" icon="view_quilt" to="/test-layout/about" replace hide="icon" label="About" />
     <q-route-tab slot="title" icon="view_day" to="/test-layout/toolbar" replace hide="icon" label="Toolbar" />
@@ -31,12 +33,30 @@ An example of Layout, containing all possible elements: [QToolbar](/components/t
     <q-route-tab slot="title" icon="input" to="/test-layout/drawer" replace label="Drawer" />
   </q-tabs>
 
+  <!-- Left Side Panel -->
   <div slot="left">
-    <q-side-link item to="/test-layout/toolbar">Toolbar</q-side-link>
-    <q-side-link item to="/test-layout/tabs">Tabs</q-side-link>
-    <q-side-link item to="/test-layout/drawer">Drawer</q-side-link>
+    <q-list no-border link inset-delimiter>
+      <q-list-header>Essential Links</q-list-header>
+      <q-item>
+        <q-item-side icon="school" />
+        <q-item-main label="Docs" sublabel="quasar-framework.org" />
+      </q-item>
+      <q-item>
+        <q-item-side icon="record_voice_over" />
+        <q-item-main label="Forum" sublabel="forum.quasar-framework.org" />
+      </q-item>
+      <q-item>
+        <q-item-side icon="chat" />
+        <q-item-main label="Gitter Channel" sublabel="Quasar Lobby" />
+      </q-item>
+      <q-item>
+        <q-item-side icon="rss feed" />
+        <q-item-main label="Twitter" sublabel="@quasarframework" />
+      </q-item>
+    </q-list>
   </div>
 
+  <!-- Right Side Panel -->
   <div slot="right">
     Right Side of Layout
   </div>
@@ -44,6 +64,7 @@ An example of Layout, containing all possible elements: [QToolbar](/components/t
   <!-- sub-routes get injected here: -->
   <router-view />
 
+  <!-- Footer -->
   <q-toolbar slot="footer">
     <q-toolbar-title>
       Layout Footer
