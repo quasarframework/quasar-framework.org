@@ -43,6 +43,7 @@ Use the QTabs component to wrap your Tabs.
 | `inverted` | Boolean | Set to true, to invert the tab color. |
 | `two-lines` | Boolean | Set to true, should a tab's label wrap to a second line. |
 | `no-pane-border` | Boolean | Avoid drawing a border around QTabPanes. |
+| `glossy` | Boolean | Apply a glossy effect |
 
 There is support for `v-model` (which is optional). In this case, you need a Vue variable in your scope which will contain the name of the current selected tab (through `name` prop on QTab). Changing the value will also make QTabs select the according QTab.
 

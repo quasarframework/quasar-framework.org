@@ -85,6 +85,7 @@ Example on using a Toolbar on Layout header:
 | --- | --- | --- |
 | `color` | String | A color from [Quasar Color Palette](/components/color-palette.html) |
 | `inverted` | Boolean | Invert color: background becomes transparent while text has `color` |
+| `glossy` | Boolean | Apply a glossy effect |
 
 ## QToolbarTitle
 QToolbarTitle is a component used to wrap the "title" of your Toolbar. It spreads horizontally to the full real estate space it can get. If not enough space to cover the full extent of the content then ending ellipsis are used.
