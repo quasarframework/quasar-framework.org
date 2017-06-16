@@ -1,6 +1,6 @@
 title: Quasar CLI
 ---
-Quasar CLI allows you to start new projects in no time by generating a starter boilerplate filled with everything you need. It also does most of the heavy-lifting so you don’t have to take care of the redundant tasks. You must install it to generate and manage a Quasar App.
+The Quasar CLI allows you to create new projects in no time, by generating a base application, filled with everything you need to begin working on your application. It does most of the heavy-lifting, so you need not concern yourself with the redundant tasks of building a base application. 
 
 ``` bash
 $ npm install -g quasar-cli
@@ -17,7 +17,7 @@ $ quasar [command name] --help
 ```
 
 ## Version
-Check CLI version and if on a Quasar app folder also output Quasar version being used.
+Check the CLI version and, if on a Quasar app folder, also output Quasar version being used.
 
 ``` bash
 $ quasar version
@@ -32,18 +32,22 @@ $ quasar init [template name] <folder-name>
 
 > By omitting the `template name` parameter the CLI will detect latest App template and generate the App folder with it.
 
-You can check available App template list at any time with:
+You can check available App templates, by listing them at any time with:
 
 ``` bash
 $ quasar list
 ```
 
+> **Tip** - You can also install your own base template from Github with the `@` indicator.
+<br>
+>`quasar init @myrepo/my-quasar-template my-new-app`
+
 ## Development Server
-Developing your App by compiling and maintaining code in-memory. A web server will serve your App while offering hot-reload out of the box. Running in-memory offers faster rebuilds when you change your code.
+The Quasar development server allows you to develop your App by compiling and maintaining code in-memory. A web server will serve your App while offering hot-reload out of the box. Running in-memory offers faster rebuilds when you change your code.
 
-> Hot Reload is much more than just refreshing your browser when code changes. It skips the refresh and updates your code on the fly while maintaining your App's state (like your VueModel's data). Please note that there are cases when this is impossible, so the dev webserver will simply refresh your browser.
+> Hot Reload is much more than just refreshing your browser when code changes. It skips the refresh and updates your code on the fly, while maintaining your App's state (like your VueModel's data). Please note that there are cases when this is impossible, so the dev webserver will simply refresh your browser.
 
-Furthermore, you can develop your App directly on a phone and still benefit from Hot-Reload. Download and install the Quasar Play App (currently only on Google Play Store).
+Furthermore, you can develop your App directly on a phone and still benefit from Hot-Reload. Download and install the Quasar Play App (currently only on Google Play Store) to achieve this functionality.
 
 ``` bash
 # run development server (with default theme)
@@ -68,7 +72,7 @@ If you wish to change the port serving your App you have 2 options:
   ```
 
 ## Build App for Production
-Quasar CLI can pack everything together and optimize your App for production. Minifies source code, extracts vendor components and leverages browser cache, and many more.
+The Quasar CLI can pack everything together and optimize your App for production. It minifies source code, extracts vendor components and leverages browser cache, and much more.
 
 ``` bash
 # build for production
@@ -85,7 +89,7 @@ $ quasar clean
 ```
 
 ## Generating Components
-After creating an App folder with the CLI, inside your App you'll have a folder named `/templates` that contains templates for: `layout`, `view` (page), or a generic Vue `component`.
+After creating an App folder with the CLI, you'll have a folder named `/templates` inside your App, which contains templates for: `layout`, `view` (page), or a generic Vue `component`.
 
 You can generate components for your App in your `/src` folder:
 ```
@@ -109,15 +113,15 @@ $ quasar new myView MyNewView
 ```
 
 ## App Wrappers
-Current App Wrappers available are for Cordova & Electron. More will be added in the future, to allow you to build a Google Chrome extension or a Progressive Web App, to name a few examples.
+The currently available App Wrappers are for Cordova & Electron. More will be added in the future, to allow you to build a Google Chrome extension or a Progressive Web App, just to name a few.
 
-The CLI command is like this:
+The CLI wrap command is like this:
 ``` bash
 $ quasar wrap <wrapper name>
 ```
 
-Further reading on **Cordova** wrapper is available [here](/guide/cordova-wrapper.html).
-Further reading on **Electron** wrapper is available [here](/guide/electron-wrapper.html).
+Further reading on the **Cordova** wrapper is available [here](/guide/cordova-wrapper.html).
+Further reading on the **Electron** wrapper is available [here](/guide/electron-wrapper.html).
 
 ## Lint App Code
 ESlint is used to check your ES6 Javascript files.
@@ -129,7 +133,7 @@ $ quasar lint
 ## Serve Static-Content Folder
 You are able to create an ad-hoc web server to serve static-content web files from a folder. Browser sessions are automatically refreshed when content changes. User click/scroll can be synchronized.
 
-This command comes in really handy after building your Quasar App for production. The `/dist` folder contains files that are meant to be served with a webserver. So here you go:
+This command comes in really handy after building your Quasar App for production. The `/dist` folder contains files that are meant to be served with a webserver. This is how:
 
 ``` bash
 # Serve dist folder
