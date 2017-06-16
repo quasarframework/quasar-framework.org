@@ -19,16 +19,16 @@ $ quasar dev --play
 $ quasar dev mat --play
 ```
 
-While developing with Dev Server you will have:
-* Ability to develop on phone with [Quasar Play](/guide/quasar-play-app.html) App
-* Webbpack + vue-loader for single file Vue components
+While developing with the Dev Server you will have:
+* The ability to develop on your phone with [Quasar Play](/guide/quasar-play-app.html) App
+* The Webbpack + vue-loader for single file Vue components
 * State preserving hot-reload
 * State preserving compilation error overlay
 * Lint-on-save with ESLint
 * Source maps
 
 #### Generate .vue Components
-After creating an App folder with the CLI, inside your App you'll have a folder named `/templates` that contains templates for: `layout`, `view` (page), or a generic Vue `component`.
+After creating an App folder with the CLI, you'll have a folder named `/templates` inside the generated app folder, which contains templates for: `layout`, `view` (page), or a generic Vue `component`.
 
 You can generate components for your App in your `/src` folder:
 ```
@@ -44,7 +44,7 @@ $ quasar new layout layout/about/help/Hello
 # the above creates src/components/layout/about/help/Hello.vue
 ```
 
-> Add your own component templates. Quasar will be able to handle them.
+> You can also add your own component templates. Quasar will be able to handle them too.
 
 #### Serve Static-Content Folder
 You are able to create an ad-hoc web server to serve static-content web files from a folder. Browser sessions are automatically refreshed when content changes. User click/scroll can be synchronized.
