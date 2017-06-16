@@ -108,7 +108,7 @@ components:
     DataTable: $
     HTML Table: $
     Lists and List Items: $
-    Slider: $
+    Carousel: $
     Stepper: $
   Progress:
     Ajax Bar: $
