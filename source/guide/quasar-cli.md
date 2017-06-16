@@ -89,7 +89,7 @@ $ quasar clean
 ```
 
 ## Generating Components
-After creating an App folder with the CLI, you'll have a folder named `/templates` inside your App, which contains templates for: `layout`, `view` (page), or a generic Vue `component`.
+After creating an App folder with the CLI, you'll have a folder named `/templates` inside your App, which contains templates for: `layout`, `page`, or a generic Vue `component`.
 
 You can generate components for your App in your `/src` folder:
 ```

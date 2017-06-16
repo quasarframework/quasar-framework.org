@@ -56,7 +56,7 @@ Although it isn't all that inconvenient, there is still some boilerplate involve
 $ quasar new [type] <name of your component with optional subfolder>
 ```
 
-The type can be `layout`, `view` (page content), `component` (generic `*.vue` component).
+The type can be `layout`, `page`, `component` (generic `*.vue` component).
 You can even make your own component templates and use the CLI to generate them in your App.
 
 ## Quasar Play App
