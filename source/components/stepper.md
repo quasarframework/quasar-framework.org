@@ -191,6 +191,24 @@ It is also possible to build a stepper, which presents itself in a vertical fash
 
 When using a vertical Stepper, it doesn't really make sense to use a "global" QStepper navigation. Instead, use navigation within each QStep.
 
+### Displaying Progress
+A common case is where you need to take an asynchronouse action (like an Ajax call) before going to next step. Make use of [QInnerLoading](/components/inner-loading.html) component for this:
+
+```html
+<q-stepper>
+  <!-- Steps... -->
+  ........
+
+  <!--
+    Create a Boolean scope variable (here it's "inProgress")
+    and binded to "visible" prop.
+    Then toggle it whenever you need to display
+    that the Stepper has a background process going.
+  -->
+  <q-inner-loading :visible="inProgress" />
+</q-stepper>
+```
+
 ### Specific Steps Order
 If you dynamically add/remove Steps, then you need to specify the `order` property (for ALL QSteps) so that the Stepper will know the actual order of Steps. By using `v-if` or `v-for` directives, Vue & Quasar can't ensure Steps will be registered in the order they are placed in DOM.
 
