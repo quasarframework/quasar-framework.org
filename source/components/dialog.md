@@ -132,7 +132,7 @@ Each Form Component has a certain syntax that you must follow as described below
 > The default value for the following Form Components is taken from the `model` property.
 
 ### Textfields
-You can configure input textboxes, textareas, numeric input textboxes and chips:
+Supported types: 'text', 'textarea', 'email', 'tel', 'file', 'number', 'password', 'url', 'chips':
 
 ``` js
 import { Dialog, Toast } from 'quasar'
@@ -141,7 +141,7 @@ Dialog.create({
   title: 'Prompt',
   form: {
     name: {
-      type: 'input',
+      type: 'text',
       label: 'Textbox',
       model: ''
     },
@@ -151,7 +151,7 @@ Dialog.create({
       model: ''
     },
     age: {
-      type: 'numeric',
+      type: 'number',
       label: 'Numeric',
       model: 10,
       min: 1,
@@ -508,12 +508,12 @@ Dialog.create({
   message: 'Modern HTML5 Single Page Application front-end framework on steroids.',
   form: {
     name: {
-      type: 'textbox',
+      type: 'text',
       label: 'Textbox',
       model: ''
     },
     age: {
-      type: 'numeric',
+      type: 'number',
       label: 'Numeric',
       model: 10,
       min: 5,

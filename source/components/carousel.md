@@ -1,17 +1,17 @@
-title: Slider
+title: Carousel
 ---
-Quasar Slider is a Vue Component which you can use to display more information with less real estate, using slides.
+Quasar Carousel is a Vue Component which you can use to display more information with less real estate, using slides.
 
-The Slider height is determined by the slide with biggest height.
+The Carousel height is determined by the slide with biggest height.
 
 <input type="hidden" data-fullpage-demo="web-components/slider">
 
-## Basic Slider
-Basic Slider. No controls. Just swipe between slides or
+## Basic Carousel
+Basic Carousel. No controls. Just swipe between slides or
 use you mouse to drag slides to left or right.
 
 ``` html
-<q-slider class="text-white">
+<q-carousel class="text-white">
   <div slot="slide" class="bg-primary">
     Slide 1
   </div>
@@ -21,7 +21,7 @@ use you mouse to drag slides to left or right.
   <div slot="slide" class="bg-tertiary">
     Slide 3
   </div>
-</q-slider>
+</q-carousel>
 ```
 
 ## Vue Properties
@@ -47,72 +47,72 @@ use you mouse to drag slides to left or right.
 | --- | --- |
 | `@slide(index, direction)` | Emits the index of the current slide and the direction of the slide when the transition animation finishes. Emits even if navigating to the same slide. |
 
-## Slider with Arrows, Dots and Fullscreen Controls
-Sliders can contain button controls, like:
+## Carousel with Arrows, Dots and Fullscreen Controls
+Carousels can contain button controls, like:
 * Arrows so user can switch between slides if swipe actions are not enough.
 * Clickable small dots to also quickly switch between slides and give a hint on the number of current slide.
-* Fullscreen button so Slider can be displayed over all screen real-estate.
+* Fullscreen button so Carousel can be displayed over all screen real-estate.
 
 To show these controls simply add `arrows`, `dots` and/or `fullscreen` DOM node attributes.
 
 ``` html
-<q-slider arrows dots fullscreen class="text-white">
+<q-carousel arrows dots fullscreen class="text-white">
   <div slot="slide" class="bg-primary">
     Slide 1
   </div>
   <div slot="slide" class="bg-secondary">
     Slide 2
   </div>
-</q-slider>
+</q-carousel>
 ```
 
-## Slider with Centered Content
+## Carousel with Centered Content
 Add CSS class `centered` to the slide that you want to center its content.
 
 ``` html
-<q-slider arrows dots class="text-white">
+<q-carousel arrows dots class="text-white">
   <div slot="slide" class="bg-primary centered">
     Slide 1
   </div>
   <div slot="slide" class="bg-secondary centered">
     Slide 2
   </div>
-</q-slider>
+</q-carousel>
 ```
 
-## Slider with Infinite Scrolling
+## Carousel with Infinite Scrolling
 Use `infinite` Vue prop.
 
 ``` html
-<q-slider infinite class="text-white">
+<q-carousel infinite class="text-white">
   <div slot="slide" class="bg-primary centered">
     Slide 1
   </div>
   <div slot="slide" class="bg-secondary centered">
     Slide 2
   </div>
-</q-slider>
+</q-carousel>
 ```
 
-## Slider with Autoplay
+## Carousel with Autoplay
 Use `autoplay` Vue prop. Works great with `infinite` prop too (but `infinite` is not required).
 
 ``` html
-<q-slider autoplay class="text-white">
+<q-carousel autoplay class="text-white">
   <div slot="slide" class="bg-primary centered">
     Slide 1
   </div>
   <div slot="slide" class="bg-secondary centered">
     Slide 2
   </div>
-</q-slider>
+</q-carousel>
 ```
 
-## Slider with Custom Actions
+## Carousel with Custom Actions
 Put icons on the same DOM hierarchical level as the slides.
 
 ``` html
-<q-slider arrows dots actions class="text-white">
+<q-carousel arrows dots actions class="text-white">
   <div slot="slide" class="bg-primary">
     Slide 1
   </div>
@@ -126,18 +126,18 @@ Put icons on the same DOM hierarchical level as the slides.
   <q-icon slot="action" @click="someMethod" name="camera_enhance" />
   <q-icon slot="action" @click="someOtherMethod" name="bookmark_border" />
   <q-icon slot="action" @click="thirdMethod" name="add_shopping_cart" />
-</q-slider>
+</q-carousel>
 ```
 
-## Launch Slider in Fullscreen
-You can launch a Slider in Fullscreen by using a [Modal](/components/modal.html) component:
+## Launch Carousel in Fullscreen
+You can launch a Carousel in Fullscreen by using a [Modal](/components/modal.html) component:
 
 ``` html
 <q-btn color="primary" glossy @click="$refs.modal.open()">
   Launch
 </q-btn>
 <q-modal ref="modal" class="maximized">
-  <q-slider arrows dots class="text-white full-height">
+  <q-carousel arrows dots class="text-white full-height">
     <div slot="slide" class="bg-primary centered">
       <h1>Slide 1</h1>
       <q-btn color="dark" glossy @click="$refs.modal.close()">Close Me</q-btn>
@@ -150,6 +150,6 @@ You can launch a Slider in Fullscreen by using a [Modal](/components/modal.html)
       <h1>Slide 3</h1>
       <q-btn color="dark" glossy @click="$refs.modal.close()">Close Me</q-btn>
     </div>
-  </q-slider>
+  </q-carousel>
 </q-modal>
 ```
