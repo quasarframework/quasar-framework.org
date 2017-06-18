@@ -4,6 +4,8 @@ Field component allows you to easily build your responsive Forms UI by wrapping 
 
 On small windows, label and content will stack vertically, while on bigger windows label will be placed on the left of QField content. Icons are always placed at the left of label and content, regardless of window width.
 
+Works with ANY component, not only Form ones.
+
 ## Basic Usage
 
 ```html

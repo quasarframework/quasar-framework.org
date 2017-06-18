@@ -407,7 +407,7 @@ Another complex example used on one of the sides of a QLayout, describing a menu
 </q-list>
 ```
 
-### Embedding Components on the Right Side
+### Right Side with Components
 ```html
 <q-list inset-delimiter>
   <q-item>
@@ -511,7 +511,7 @@ One more example:
       <q-item-tile label>Photos</q-item-tile>
       <q-item-tile sublabel>February 22, 2016</q-item-tile>
     </q-item-main>
-    </q-item-side right icon="info" />
+    <q-item-side right icon="info" />
   </q-item>
   <q-item-delimiter inset />
   <q-list-header inset>Files</q-list-header>
@@ -521,7 +521,7 @@ One more example:
       <q-item-tile label>Vacation</q-item-tile>
       <q-item-tile sublabel>February 22, 2016</q-item-tile>
     </q-item-main>
-    </q-item-side right icon="info" />
+    <q-item-side right icon="info" />
   </q-item>
 </q-list>
 ```
