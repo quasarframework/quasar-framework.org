@@ -13,7 +13,6 @@ Works well with [QField](/components/field.html) for additional functionality su
   <div>
     <!-- With Radios -->
     <q-dialog-select
-      type="radio"
       v-model="select"
       :options="selectOptions"
       ok-label="Pick"
@@ -23,7 +22,7 @@ Works well with [QField](/components/field.html) for additional functionality su
 
     <!-- With Checkboxes -->
     <q-dialog-select
-      type="checkbox"
+      multiple
       v-model="multipleSelect"
       :options="selectOptions"
       ok-label="Pick"
@@ -33,7 +32,7 @@ Works well with [QField](/components/field.html) for additional functionality su
 
     <!-- With Toggles -->
     <q-dialog-select
-      type="toggle"
+      multiple toggle
       v-model="multipleSelect"
       :options="selectOptions"
       ok-label="Pick"
@@ -69,9 +68,10 @@ Supports `v-model` which should be the String for single selection and Array for
 | Vue Property | Type | Description |
 | --- | --- | --- |
 | `options` | Array | (**Required**) Array of options (as Objects with required `label` and `value` props - for full list read next sections). |
-| `type` | String | (**Required**) The type of selection, `radio`, `checkbox` or `toggle`. |
-| `frame-color` | String | One from [Quasar Color Palette](/components/color-palette.html). Useful when `color` is to be used for Chips alone and you want a different color for the input frame. |
+| `multiple` | Boolean | If set to `true`, multiple selections will be allowed. |
+| `toggle` | Boolean | If set to `true`, the selection options will offer a toggle to select them. Needs `multiple` set to `true`. |
 | `chips` | Boolean | If set to `true`, the selections will appear as chips (instead of comma separated strings) on the input frame (works for multiple selection only). |
+| `frame-color` | String | One from [Quasar Color Palette](/components/color-palette.html). Useful when `color` is to be used for Chips alone and you want a different color for the input frame. |
 | `title` | String | The title of Dialog. |
 | `message` | String | An additional informational text for the Dialog. |
 | `display-value` | String | A text to show in the selection field, after selections have been made. |
@@ -123,7 +123,7 @@ Examples:
 -->
 <q-dialog-select
   v-model="selection"
-  type="toggle"
+  multiple toggle
   :options="selectListOptions"
   :after="[
     {
@@ -142,7 +142,7 @@ Examples:
 -->
 <q-dialog-select
   v-model="selection"
-  type="toggle"
+  multiple toggle
   :options="selectListOptions"
   :after="[
     {
@@ -180,7 +180,7 @@ If for some reason you want to have total control over the text in the input fra
 ```html
 <q-dialog-select
   :display-value="`${ multipleSelect.length } item${ multipleSelect.length !== 1 ? 's' : '' } selected`"
-  type="checkbox"
+  multiple
   v-model="multipleSelect"
   :options="selectOptions"
   ok-label="Pick"
@@ -195,7 +195,7 @@ For a more elegant solution (and more efficient too), use a computed property:
   <!-- Notice "display-value" is binded to "text" variable -->
   <q-dialog-select
     :display-value="text"
-    type="checkbox"
+    multiple
     v-model="multipleSelect"
     :options="selectOptions"
     ok-label="Pick"
@@ -242,7 +242,7 @@ export default {
 Use the `error` prop, to change the color of the component to red:
 ``` html
 <q-dialog-select
-  error type="radio"
+  error
   v-model="select"
   :options="selectOptions"
 />
@@ -252,7 +252,6 @@ Use the `disable` prop, to stop access to the field.
 ```html
 <q-dialog-select
   disable
-  type="radio"
   v-model="select"
   :options="selectOptions"
 />
@@ -263,7 +262,7 @@ As with any input, you have two options for labels. Stack and Floating.
 <!-- Floating Label -->
 <q-dialog-select
   float-label="Float Label"
-  type="checkbox"  
+  multiple  
   v-model="multipleSelect"
   :options="selectOptions"
   placeholder="Pick Company"
@@ -284,7 +283,6 @@ Use the `color`, `inverted` and `frame-color` props to control the coloring of t
 <!-- Color -->
 <q-dialog-select
   color="amber"
-  type="radio"
   @change="onChange"
   v-model="select"
   :options="selectOptions"
@@ -296,8 +294,7 @@ Use the `color`, `inverted` and `frame-color` props to control the coloring of t
 <!-- Inverted Color -->
 <q-dialog-select
   color="secondary"
-  inverted  
-  type="radio"
+  inverted
   @change="onChange"
   v-model="select"
   :options="selectOptions"
@@ -320,7 +317,7 @@ Use the `color`, `inverted` and `frame-color` props to control the coloring of t
   @change="onChange"
   chips
   float-label="Float Label"
-  type="checkbox"
+  multiple
   v-model="multipleSelect"
   :options="selectOptions"
   placeholder="Pick Company"
@@ -338,13 +335,13 @@ Use the `color`, `inverted` and `frame-color` props to control the coloring of t
   <q-item>
     <q-item-side icon="supervisor_account" />
     <q-item-main>
-      <q-dialog-select class="no-margin" type="radio" v-model="select" :options="selectOptions" ok-label="Pick" cancel-label="Neah" title="Company" />
+      <q-dialog-select class="no-margin"  v-model="select" :options="selectOptions" ok-label="Pick" cancel-label="Neah" title="Company" />
     </q-item-main>
   </q-item>
   <q-item>
     <q-item-side icon="supervisor_account" />
     <q-item-main>
-      <q-dialog-select class="no-margin" type="radio" v-model="select" :options="selectOptions" ok-label="Pick" cancel-label="Neah" title="Company" />
+      <q-dialog-select class="no-margin"  v-model="select" :options="selectOptions" ok-label="Pick" cancel-label="Neah" title="Company" />
     </q-item-main>
   </q-item>
   <q-item-delimiter />
@@ -352,13 +349,13 @@ Use the `color`, `inverted` and `frame-color` props to control the coloring of t
   <q-item>
     <q-item-side icon="supervisor_account" />
     <q-item-main>
-      <q-dialog-select class="no-margin" type="checkbox" v-model="multipleSelect" :options="selectOptions" ok-label="Pick" title="Companies" />
+      <q-dialog-select class="no-margin" multiple v-model="multipleSelect" :options="selectOptions" ok-label="Pick" title="Companies" />
     </q-item-main>
   </q-item>
   <q-item>
     <q-item-side icon="supervisor_account" />
     <q-item-main>
-      <q-dialog-select class="no-margin" type="toggle" v-model="multipleSelect" :options="selectOptions" ok-label="Pick" title="Companies" />
+      <q-dialog-select class="no-margin" multiple toggle v-model="multipleSelect" :options="selectOptions" ok-label="Pick" title="Companies" />
     </q-item-main>
   </q-item>
 </q-list>
