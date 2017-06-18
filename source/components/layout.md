@@ -201,6 +201,16 @@ Another way is to use the `reveal` prop.
 
 The `reveal` prop overrides "H", by fixing the header to the top of the screen. As the user scrolls down more than 100 pixels, the header rolls up it's own height above the top of the screen. As soon as the user scrolls back up (just 1 pixel), the header comes into view again immediately. 
 
+
+## The Breakpoints
+
+If you've played with the layout in desktop mode, you might notice how the left and right sides/ drawers magically hide, as you decrease the screen width. This is part of the smart responsiveness designed into Quasar's layout component. 
+
+If you'd like to control how the left and right side /drawers work, you have two props called `left-breakpoint` and `right-breakpoint`. These values are the minimum size of the screen in pixels, before the left and right drawers are forced to float above the layout. This is a fantastic and important function in maximizing screen real estate, for smaller devices.
+
+**Tip**
+If you want to also be able to toggle the left drawer with larger screen sizes, use a large value for `left-breakpoint`, so that basically the left drawer is always stay a drawer on larger screens.
+
 ## Vue Methods
 
 | Method | Description |
