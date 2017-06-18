@@ -209,7 +209,7 @@ If you've played with the layout in desktop mode, you might notice how the left 
 If you'd like to control how the left and right side /drawers work, you have two props called `left-breakpoint` and `right-breakpoint`. These values are the minimum size of the screen in pixels, before the left and right drawers are forced to float above the layout. This is a fantastic and important function in maximizing screen real estate, for smaller devices.
 
 **Tip**
-If you want to also be able to toggle the left drawer with larger screen sizes, use a large value for `left-breakpoint`, so that basically the left drawer is always stay a drawer on larger screens.
+If you want to also be able to toggle the left drawer with larger screen sizes, use a large value for `left-breakpoint`, so that basically the left drawer  always works as a drawer on larger screens.
 
 ## Vue Methods
 
