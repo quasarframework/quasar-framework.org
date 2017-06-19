@@ -195,7 +195,7 @@ These settings are completely up to you to use as you'd like. You could even go 
 >It is important that you specify all sections of a layout, even if you don't use them. For example, even if you don't use footer or right side drawer, specify them within your layout's `view` prop.
 
 ### The "reveal" prop
-You'll notice in playing with the view configuration, if you set the header to "hhh" (all small letters), the header will be set to a static position at the top of the page. This in turn means, the header will move off the screen as the user scrolls down the page. If the user then needs to use the navigation in the header, she must scroll completely up the page to get to it and this is bad UX. 
+You'll notice in playing with the view configuration, if you set the header to "hhh" (all small letters), the header will be set to a static position at the top of the page. This in turn means, the header will move off the screen as the user scrolls down the page. If the user then needs to use the navigation in the header, he/she must scroll completely up to top of the page to get to it and this is bad UX. 
 
 One way to help the user, is to add a [back-to-top button](components/back-to-top.html) on the page. 
 
