@@ -263,26 +263,26 @@ Dialog.create({
 })
 ```
 
-### Ranges
+### Slider & Range
 
 ``` js
 import { Dialog, Toast } from 'quasar'
 
 Dialog.create({
-  title: 'Ranges',
+  title: 'Slider & Range',
   form: {
-    range: {
-      type: 'range',
-      label: 'Range',
+    slider: {
+      type: 'slider',
+      label: 'Slider',
       min: 10,
       max: 20,
       withLabel: true,
       model: 12,
       color: 'secondary'
     },
-    doubleRange: {
-      type: 'double-range',
-      label: 'Double Range',
+    range: {
+      type: 'range',
+      label: 'Range',
       model: {
         min: 7,
         max: 12
@@ -292,7 +292,7 @@ Dialog.create({
       withLabel: true
     },
     step: {
-      type: 'range',
+      type: 'slider',
       label: 'With step & snap',
       model: -6,
       min: -10,

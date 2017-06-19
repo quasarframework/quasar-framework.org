@@ -655,21 +655,21 @@ One more example:
   <q-item>
     <q-item-side icon="volume_down" />
     <q-item-main>
-      <q-range v-model="range" :min="0" :max="50" label />
+      <q-slider v-model="slider" :min="0" :max="50" label />
     </q-item-main>
     <q-item-side right icon="volume_up" />
   </q-item>
   <q-item>
     <q-item-side icon="volume_down" />
     <q-item-main>
-      <q-range v-model="range" :min="0" :max="50" label />
+      <q-slider v-model="slider" :min="0" :max="50" label />
     </q-item-main>
     <q-item-side right icon="volume_up" />
   </q-item>
   <q-item>
     <q-item-side icon="euro_symbol" />
     <q-item-main>
-      <q-double-range v-model="doubleRange" :min="0" :max="50" label />
+      <q-range v-model="range" :min="0" :max="50" label />
     </q-item-main>
   </q-item>
 </q-list>

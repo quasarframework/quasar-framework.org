@@ -80,8 +80,8 @@ components:
     Chips Input: $
     Autocomplete: $
     Search: $
+    Slider: $
     Range: $
-    Double Range: $
     Radio: $
     Checkbox: $
     Toggle: $
