@@ -8,10 +8,10 @@ Quasar Layouts are not mandatory, but they do help you better structure your web
 
 ## Basic Usage
 Below is an example of a Layout, which contains all possible elements:
-- a [QToolbar](/components/toolbar.html) (used for both header and footer) 
+- a [QToolbar](/components/toolbar.html) (used for both header and footer, you can specify as many as you want) 
 - a navigation with [QTabs](/components/tabs.html) 
-- a left side drawer (which is shown alongside page content on wide screens) 
-- and a right side drawer
+- a left side drawer panel (which is shown alongside page content on wide screens) 
+- and a right side drawer panel
 
 ``` html
 <q-layout ref="layout" view="hHr LpR lFf" :right-breakpoint="1100">
@@ -90,10 +90,10 @@ You can also use [QScrollArea](/components/scroll-area.html) for the left or rig
 ```
 
 ## Tips to Understanding QLayout
-#### Routing
+### Routing
 If your layout uses Vue Router sub-routes (recommended), then it makes sense to use Vue's `<router-view>` component, which is just a placeholder where sub-routes are injected.
 
-#### Available Slots
+### Available Slots
 QLayout uses the following Vue slots: `header`, `footer`, `navigation`, `left` and `right`. You can specify your content for these slots with the `slot` HTML attribute: `slot="footer"`.
   ``` html
   <q-layout>
@@ -107,20 +107,20 @@ QLayout uses the following Vue slots: `header`, `footer`, `navigation`, `left` a
 
 You can also use multiple headers, footers and navigation elements. Specify `slot="header"` or `slot="footer"` on multiple elements, when the need arises. Please note though, the order in which you specify these DOM elements / components does matter.
 
-#### The Navigation Slot and Positioning
+### The Navigation Slot and Positioning
 The best way to use the navigation slot is to place some [QTabs](/components/tabs.html), configured to use routes, within it. Those routes can be sub-routes of the route being used for the layout.
 
 >**Note**
 >Depending on the theme used, the `navigation` slot will be placed in different places. With the Material Design theme, the `navigation` slot will be after header and before the page view (but part of header). With the iOS theme, the `navigation` slot will be added after page view and before the footer (but part of footer).
 
-#### Toolbar Placement
+### Toolbar Placement
 A great place to use the [Toolbars](/components/toolbar.html) component is within the header and footer slots.
   ```html
   <q-toolbar slot="header" color="green">
     ... toolbar content ...
   </q-toolbar>
   ```
-#### Search example
+### Search example
 Below is an example of placing a [Search](/components/search.html) bar in the header:
 ```html
 <q-layout>
