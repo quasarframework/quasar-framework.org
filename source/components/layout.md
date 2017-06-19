@@ -1,8 +1,8 @@
 title: Layout
 ---
-Layouts are the elements that wrap page content, like a navigational bar or drawer. Multiple pages can share the same Layout, so the code is reusable, which is one of the main advantages of using them.
+Layouts are the elements that wrap page content, like a navigational bar or drawer. Multiple pages can share the same Layout, so the code is reusable, which is one of their key points.
 
-Quasar Layouts are not mandatory, but they do help you better structure your website/app. They have a number of features, which offer you major benefits in simplifying your app's layout design, right out of the box.
+Quasar Layouts are not mandatory, but they do help you better structure your website/app. They have a number of features which offer you major benefits in simplifying your app's layout design, right out of the box.
 
 <input type="hidden" data-fullpage-demo="layout">
 
