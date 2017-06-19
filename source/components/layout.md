@@ -77,8 +77,9 @@ Below is an example of a Layout, which contains all possible elements:
 </q-layout>
 ```
 
-You can also use [QScrollArea](/components/scroll-area.html) for the left or right sides of the layout, if you want to control the scrollbar:
+You can also use [QScrollArea](/components/scroll-area.html) for the left or right sides of the layout, if you want to control the scrollbar (but it's not mandatory):
 ```html
+<!-- notice style tag -->
 <q-scroll-area
   slot="left"
   style="width: 100%; height: 100%;"
