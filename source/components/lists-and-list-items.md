@@ -35,7 +35,7 @@ We'll cover each component on its own section later on, but for now, take a look
     <q-item-main label="John Doe" sublabel="Quasar enthusiast" />
     <q-item-side right icon="chat_bubble" />
   </q-item>
-  <q-item-delimiter />
+  <q-item-separator />
   <q-list-header>Previous chats</q-list-header>
   <q-item>
     <q-item-side avatar="/statics/guy-avatar.png" />
@@ -53,7 +53,7 @@ Due to how Webpack works in creating the bundle for your App, in some cases you 
 Below is a list of Quasar components that you can use to define lists and list items:
 * QList (encapsulating QItems and all other List related components)
 * QListHeader (header of a section in QList)
-* QItemDelimiter (external Item delimiter/separator)
+* QItemSeparator (external Item separator/separator)
 * QItem (encapsulating everything an Item contains)
 * QItemSide (left or right side)
 * QItemMain (for main content of an Item)
@@ -62,7 +62,7 @@ Below is a list of Quasar components that you can use to define lists and list i
 ![Quasar List and List Items](/images/list-and-list-items.svg "Quasar List and List Items")
 
 ### QList
-QList encapsulates all other components mentioned. It's not mandatory, but does help with maintaining a good design and can also define some properties that will be applied to all QItems (or QItem-like components) like multiline, delimiter, link, highlight and so on.
+QList encapsulates all other components mentioned. It's not mandatory, but does help with maintaining a good design and can also define some properties that will be applied to all QItems (or QItem-like components) like multiline, separator, link, highlight and so on.
 
 | Vue Property | Type | Description |
 | --- | --- | --- | --- |
@@ -73,8 +73,8 @@ QList encapsulates all other components mentioned. It's not mandatory, but does 
 | `dense` | Boolean | Make QItems dense. |
 | `sparse` | Boolean | Make QItems sparse. |
 | `multiline` | Boolean | Make QItems multiline. |
-| `delimiter` | Boolean | Make QItems have a delimiter between them. |
-| `inset-delimiter` | Boolean | Make QItems have an inset delimiter between them. |
+| `separator` | Boolean | Make QItems have a separator between them. |
+| `inset-separator` | Boolean | Make QItems have an inset separator between them. |
 | `no-border` | Boolean | Remove the default border around QList. |
 
 ### QListHeader
@@ -82,7 +82,7 @@ Within QList, you can display a section header / title.
 
 | Vue Property | Type | Description |
 | --- | --- | --- | --- |
-| `inset` | Boolean | Place an inset delimiter. |
+| `inset` | Boolean | Place an inset separator. |
 
 ```html
 <q-list>
@@ -94,19 +94,19 @@ Within QList, you can display a section header / title.
 </q-list>
 ```
 
-### QItemDelimiter
-If you want QItem external delimiters (there are internal ones too as you can see on QItem's description later on this page), use the QItemDelimiter component. It's useful also to separate different sections of your QList, like for example, before a QListHeader.
+### QItemSeparator
+If you want QItem external separators (there are internal ones too as you can see on QItem's description later on this page), use the QItemSeparator component. It's useful also to separate different sections of your QList, like for example, before a QListHeader.
 
 | Vue Property | Type | Description |
 | --- | --- | --- | --- |
-| `inset` | Boolean | Place an inset delimiter. |
+| `inset` | Boolean | Place an inset separator. |
 
 ```html
 <q-list>
   <q-list-header>Folders</q-list-header>
   <!-- insert QItems... -->
 
-  <q-item-delimiter />
+  <q-item-separator />
 
   <q-list-header>Files</q-list-header>
   <!-- insert QItems... -->
@@ -116,13 +116,13 @@ If you want QItem external delimiters (there are internal ones too as you can se
 <q-list>
   <q-item ...>...</q-item>
 
-  <!-- Inset delimiter example -->
-  <q-item-delimiter inset />
+  <!-- Inset separator example -->
+  <q-item-separator inset />
 
   <q-item ...>...</q-item>
-  <q-item-delimiter />
+  <q-item-separator />
   <q-item ...>...</q-item>
-  <q-item-delimiter />
+  <q-item-separator />
   <q-list-header>Files</q-list-header>
   <q-item ...>...</q-item>
 </q-list>
@@ -134,8 +134,8 @@ If you want QItem external delimiters (there are internal ones too as you can se
 | --- | --- | --- | --- |
 | `dense` | Boolean | Make QItem dense (narrow paddings). |
 | `sparse` | Boolean | Make QItem sparse (large paddings). |
-| `delimiter` | Boolean | Make QItem have a delimiter between it and previous QItem. |
-| `inset-delimiter` | Boolean | Make QItem have an inset delimiter between it and previous QItem. |
+| `separator` | Boolean | Make QItem have a separator between it and previous QItem. |
+| `inset-separator` | Boolean | Make QItem have an inset separator between it and previous QItem. |
 | `multiline` | Boolean | Make QItem multiline. Vertically aligns QItem sides to top. Useful for more than 2-3 lines QItem content. |
 | `highlight` | Boolean | Apply highlight to QItem. Works only on desktop when user hovers it. |
 | `link` | Boolean | Apply highlight and a pointer cursor to QItem. |
@@ -233,7 +233,7 @@ There are more props available, but use only these within QItemMain:
 
   We are basically building a menu.
 -->
-<q-list delimiter>
+<q-list separator>
   <!-- collapsible to hide sub-level menu entries -->
   <q-collapsible icon="inbox" label="Inbox" label="Where your email is">
     <q-item link to="/inbox/1">
@@ -289,7 +289,7 @@ There are more props available, but use only these within QItemMain:
 Another complex example used on one of the sides of a QLayout, describing a menu with QItems, QCollapsible and QSideLinks:
 
 ```html
-<q-list delimiter no-border>
+<q-list separator no-border>
   <q-item>
     <q-item-side avatar="/statics/boy-avatar.png" />
     <q-item-main>
@@ -298,7 +298,7 @@ Another complex example used on one of the sides of a QLayout, describing a menu
     </q-item-main>
   </q-item-main>
 
-  <q-item-delimiter />
+  <q-item-separator />
   <q-list-header>Menu</q-list-header>
 
   <q-side-link item icon="content_paste" to="/app" exact>
@@ -344,7 +344,7 @@ Another complex example used on one of the sides of a QLayout, describing a menu
 
 ### Email list
 ```html
-<q-list highlight inset-delimiter style="max-width: 400px">
+<q-list highlight inset-separator style="max-width: 400px">
   <q-item>
     <q-item-side avatar="/statics/boy-avatar.png" />
     <q-item-main label="Brunch this weekend? Brunch this weekend? Brunch this weekend?" label-lines="1" />
@@ -409,7 +409,7 @@ Another complex example used on one of the sides of a QLayout, describing a menu
 
 ### Right Side with Components
 ```html
-<q-list inset-delimiter>
+<q-list inset-separator>
   <q-item>
     <q-item-side avatar="/statics/boy-avatar.png" />
     <q-item-main label="Brunch this weekend?" />
@@ -466,7 +466,7 @@ Another complex example used on one of the sides of a QLayout, describing a menu
     <q-item-main label="John Doe" />
     <q-item-side right icon="chat_bubble" />
   </q-item>
-  <q-item-delimiter />
+  <q-item-separator />
   <q-list-header>Previous chats</q-list-header>
   <q-item>
     <q-item-side avatar="/statics/guy-avatar.png" />
@@ -487,7 +487,7 @@ One more example:
       </q-item-tile>
     </q-item-side>
   </q-item>
-  <q-item-delimiter inset />
+  <q-item-separator inset />
   <q-item>
     <q-item-side letter="D" />
     <q-item-main label="John Joe" />
@@ -513,7 +513,7 @@ One more example:
     </q-item-main>
     <q-item-side right icon="info" />
   </q-item>
-  <q-item-delimiter inset />
+  <q-item-separator inset />
   <q-list-header inset>Files</q-list-header>
   <q-item v-for="n in 3" :key="n">
     <q-item-side icon="assignment" inverted color="grey-6" />
@@ -542,7 +542,7 @@ One more example:
       <q-item-tile sublabel>Require password for purchase or use password to restrict purchase</q-item-tile>
     </q-item-main>
   </q-item>
-  <q-item-delimiter />
+  <q-item-separator />
   <q-list-header>General</q-list-header>
   <q-item tag="label">
     <q-item-side>
@@ -603,7 +603,7 @@ One more example:
     </q-item-main>
   </q-item>
 
-  <q-item-delimiter />
+  <q-item-separator />
   <q-list-header>Toggles</q-list-header>
   <q-item tag="label">
     <q-item-main label="Events and reminders" />
@@ -635,7 +635,7 @@ One more example:
     </q-item-side>
   </q-item>
 
-  <q-item-delimiter />
+  <q-item-separator />
   <q-list-header>Selects</q-list-header>
   <q-item>
     <q-item-side icon="supervisor_account" />
@@ -650,7 +650,7 @@ One more example:
     </q-item-main>
   </q-item>
 
-  <q-item-delimiter />
+  <q-item-separator />
   <q-list-header>Ranges</q-list-header>
   <q-item>
     <q-item-side icon="volume_down" />
@@ -723,7 +723,7 @@ One more example:
     </q-item-main>
     <q-item-side right icon="chat_bubble" />
   </q-item>
-  <q-item-delimiter inset />
+  <q-item-separator inset />
   <q-item>
     <q-item-side icon="mail" color="primary" />
     <q-item-main>

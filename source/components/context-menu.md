@@ -9,7 +9,7 @@ Context menus can contain anything. In the example below, we display a menu.
 
 ``` html
 <q-context-menu ref="context">
-  <q-list link delimiter style="min-width: 150px; max-height: 300px;">
+  <q-list link separator style="min-width: 150px; max-height: 300px;">
     <q-item @click="showToast(), $refs.context.close()">
       <q-item-main label="Label" sublabel="Value" />
     </q-item>

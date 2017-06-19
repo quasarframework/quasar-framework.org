@@ -67,8 +67,8 @@ It also inherits properties from QItem components if you set `item` property:
 | `dense` | Boolean | Use a dense QItem. |
 | `sparse` | Boolean | Use a sparse QItem. |
 | `multiline` | Boolean | Use a multiline QItem. Useful in cases where you use label and sublabel that spans multiple lines, but even then it's optional. |
-| `delimiter` | Boolean | Use a delimiter from other QItems or QCollapsibles, just like on QItem. |
-| `inset-delimiter` | Boolean | Inset delimiter, same behavior as `delimiter`. |
+| `separator` | Boolean | Use a separator from other QItems or QCollapsibles, just like on QItem. |
+| `inset-separator` | Boolean | Inset separator, same behavior as `separator`. |
 | `highlight` | Boolean | Hover effect when on desktop only. |
 
 ## Creating QLayout Side Menus

@@ -49,7 +49,7 @@ You can group multiple Collapsibles to act as an Accordion, which is to open onl
 </q-list>
 ```
 
-You can add `item-delimiter` class on the list `<div>` element if you want separators between Collapsibles.
+You can add `item-separator` class on the list `<div>` element if you want separators between Collapsibles.
 
 ## Preselecting Items
 Collapsible items can be opened by default:
@@ -105,8 +105,8 @@ QItem components inherited properties:
 | `dense` | Boolean | Use a dense QItem. |
 | `sparse` | Boolean | Use a sparse QItem. |
 | `multiline` | Boolean | Use a multiline QItem. Useful in cases where you use label and sublabel that spans multiple lines, but even then it's optional. |
-| `delimiter` | Boolean | Use a delimiter from other QItems or QCollapsibles, just like on QItem. |
-| `inset-delimiter` | Boolean | Inset delimiter, same behavior as `delimiter`. |
+| `separator` | Boolean | Use a separator from other QItems or QCollapsibles, just like on QItem. |
+| `inset-separator` | Boolean | Inset separator, same behavior as `separator`. |
 
 ## Vue Methods
 | Vue Methods | Description |

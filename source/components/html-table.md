@@ -3,7 +3,7 @@ title: HTML Tables
 HTML tables don't need to look bad. Quasar takes care of them by default if you add `q-table` CSS class to them.
 <input type="hidden" data-fullpage-demo="css/html-table">
 
-If the default table style is not enough, also add the following CSS classes to best suit your needs: `bordered`, `horizontal-delimiter`, `vertical-delimiter`, `cell-delimiter`, `striped`, `striped-even`, `striped-odd`, `highlight`, `compact`, `loose`, `flipped`, `responsive`.
+If the default table style is not enough, also add the following CSS classes to best suit your needs: `bordered`, `horizontal-separator`, `vertical-separator`, `cell-separator`, `striped`, `striped-even`, `striped-odd`, `highlight`, `compact`, `loose`, `flipped`, `responsive`.
 
 ``` html
 <table class="q-table">

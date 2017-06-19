@@ -344,7 +344,7 @@ Use the `color`, `inverted` and `frame-color` props to control the coloring of t
       <q-dialog-select class="no-margin"  v-model="select" :options="selectOptions" ok-label="Pick" cancel-label="Neah" title="Company" />
     </q-item-main>
   </q-item>
-  <q-item-delimiter />
+  <q-item-separator />
   <q-list-header>Multiple Selection</q-list-header>
   <q-item>
     <q-item-side icon="supervisor_account" />

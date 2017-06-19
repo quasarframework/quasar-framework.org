@@ -78,7 +78,7 @@ Supports `v-model` which should be the String for single selection and Array for
 | `frame-color` | String | One from [Quasar Color Palette](/components/color-palette.html). Useful when `color` is to be used for Chips alone and you want a different color for the input frame. |
 | `filter` | Boolean | If set to `true`, the selections will offer an input to filter the selection options. |
 | `filter-placeholder` | String | A text to show in the filter input field. Default is "Filter". |
-| `delimiter` | Boolean | If set to `true`, the selection options will be separarted by a line. |
+| `separator` | Boolean | If set to `true`, the selection options will be separarted by a line. |
 | `display-value` | String | Overrides text displayed in input frame. See "Working with Display Value" section below. |
 
 Common input frame properties:
@@ -410,7 +410,7 @@ Use the `color`, `inverted` and `frame-color` props to control the coloring of t
       />
     </q-item-main>
   </q-item>
-  <q-item-delimiter />
+  <q-item-separator />
   <q-list-header>Multiple Selection</q-list-header>
   <q-item>
     <q-item-side icon="supervisor_account" />

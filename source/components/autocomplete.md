@@ -21,10 +21,10 @@ As long as this component is rendered by Vue, it will capture all Ajax calls.
   <q-autocomplete @search="search" @selected="selected" />
 </q-search>
 
-<!-- Adds a delimiter between results -->
+<!-- Adds a separator between results -->
 <q-search v-model="terms">
   <q-autocomplete
-    delimiter
+    separator
     @search="search"
     @selected="selected"
   />
@@ -38,7 +38,7 @@ As long as this component is rendered by Vue, it will capture all Ajax calls.
 | `max-results` | Number | 6 | How many results can we display at a time? |
 | `static-data` | Object | *None* | Use static suggestions. No need to do an Ajax call. Filtering is provided by Autocomplete component. |
 | `debounce` | Number | 500 | Time in milliseconds, between key presses and finding new results. Good for delay, if using AJAX requests. |
-| `delimiter` | Boolean | false | If set to `true`, it ads a delimeter between the values to select from. |
+| `separator` | Boolean | false | If set to `true`, it ads a delimeter between the values to select from. |
 
 ## Vue Methods
 No need to trigger these methods manually as they are invoked automatically. Only use them when your use-case is something very specific.

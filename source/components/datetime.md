@@ -233,7 +233,7 @@ Also, if QDatetime is displayed on a dark background, add the `dark` property.
       <q-datetime class="no-margin" v-model="model" type="date" />
     </q-item-main>
   </q-item>
-  <q-item-delimiter />
+  <q-item-separator />
   <q-list-header>Date & Time</q-list-header>
   <q-item>
     <q-item-side icon="notifications" />
