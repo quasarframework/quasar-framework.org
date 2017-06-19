@@ -35,7 +35,8 @@ Supports `v-model` which must be a String, Number or Date Object.
 | `monday-first` | Boolean | Use Monday as first day of week. Otherwise it's Sunday. |
 | `format` | String | Format as described on Handling JS Date page under [Format for display](/components/handling-js-date.html#Format-for-display) section. |
 | `format24h` | Boolean | Use 24 hour time for Material picker instead of AM/PM system which is default. |
-| `placeholder` | String | Placeholder text to use. |
+| `placeholder` | String | Placeholder text for input frame to use when model is not set (empty). |
+| `display-value` | String | Text to display on input frame. Superseeds 'placeholder'. |
 | `no-clear` | Boolean | If set to `true`, the clear button won't be shown. |
 | `ok-label` | String | Text for the button to accept the input. |
 | `clear-label` | String | Text for the button to clear the field. |
