@@ -134,6 +134,7 @@ Below is an example of placing a [Search](/components/search.html) bar in the he
 </q-layout>
 ```
 
+### Fixed Positioning & FABs
 Also, read about the smart [Fixed Positioning on Layout](/components/fixed-positioning-on-layout.html) and learn how you can use it to also place a [Floating Action Button](/components/floating-action-button.html) on your Layout.
 
 ## Vue Properties
