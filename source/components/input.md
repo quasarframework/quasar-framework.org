@@ -35,8 +35,8 @@ When you set type to "number", there are some additional properties that you can
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `min` | Number | Minimum number that the user can type. |
-| `max` | Number | Maximum number that the user can type. |
+| `min` | Number | Minimum number. It's only enforced when user hits UP or DOWN keys. Don't use only this property for validation. |
+| `max` | Number | Maximum number. It's only enforced when user hits UP or DOWN keys. Don't use only this property for validation. |
 | `step` | Number | Default is `1`. If Up or Down keys are used, this tells the increment amount. |
 | `max-decimals` | Number | Maximum number of decimals that should be displayed. |
 
