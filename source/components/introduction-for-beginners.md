@@ -45,6 +45,45 @@ After installing the loader you need (remember Stylus is already installed for y
 
 In the above example, you would replace `stylus` with the preprocessor you've chosen.
 
+## Using Quasar Directive
+Quasar comes with a few custom [Vue Directives](https://vuejs.org/v2/guide/custom-directive.html). In order to use them, you need to import them (globally or locally per Vue component where you use them).
+
+Example importing Quasar directive locally:
+```html
+<template>
+  <div>
+    <div v-ripple>click me</div>
+  </div>
+</template>
+
+<script>
+import { Ripple } from 'quasar'
+
+export default {
+  directives: {
+    Ripple
+  },
+  ...
+}
+</script>
+```
+
+> Notice how Ripple is used in the Vue HTML template as `v-ripple`. Vue directives are prefixed with `v-`.
+
+Example importing Quasar directives globally. **This means you won't need to import the specified Quasar directive in every `*.vue` file where you are using them.**
+```js
+// We edit "src/main.js":
+...
+import Quasar, { Ripple } from 'quasar'
+...
+Vue.use(Quasar, {
+  directives: {
+    Ripple
+  }
+})
+...
+```
+
 ## Using Quasar Components
 Quasar components have names beginning with "Q" like "QBtn" or "QElementResizeObservable". In order to use them, you need to import them (globally or locally per Vue component where you use them).
 
@@ -76,14 +115,12 @@ Example importing Quasar components globally. **This means you won't need to imp
 ```js
 // We edit "src/main.js":
 ...
-import Quasar, { QBtn, Ripple } from 'quasar'
+import Quasar, { QBtn, QIcon } from 'quasar'
 ...
 Vue.use(Quasar, {
   components: {
-    QBtn
-  },
-  directives: {
-    Ripple
+    QBtn,
+    QIcon
   }
 })
 ...
@@ -105,7 +142,7 @@ Self-closing means the above template is the equivalent to:
 Both forms are valid and can be used.
 
 ## Handling Vue Properties
-You will notice throughout the documentation that Quasar components have a section called "Vue Properties". Example:
+You will notice throughout the documentation that Quasar components have a section called "Vue Properties". These are often called **Props** in Vue documentation. Example:
 
 | Vue Property | Type | Description |
 | --- | --- | --- |
