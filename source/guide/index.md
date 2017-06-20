@@ -16,7 +16,7 @@ It will help you a lot if you are familiar with these awesome tools/technologies
 
 # First steps
 
-Before you begin your awesome journey with Quasar, if you aren't yet a very experienced JavaScript and Vue developer, we recommend you [read through this article first](http://quasar-framework.org/components/introduction-for-beginners.html). In that article we clarify simple prerequisites and basic knowledge needed to work with Quasar, which expands on the list above. 
+Before you begin your awesome journey with Quasar, if you aren't yet a very experienced JavaScript and Vue developer, we recommend you [read through this article first](/components/introduction-for-beginners.html). In that article we clarify simple prerequisites and basic knowledge needed to work with Quasar, which expands on the list above. 
 
 After reading that article, or if you have JavaScript and Vue experience, you can start with the Quasar CLI. The CLI allows you to create new projects in no time, by generating a base application, filled with everything you need to begin working on your application. It does most of the heavy-lifting, so you need not concern yourself with the redundant tasks of building a base application. You should install the CLI globally, in order to generate and manage Quasar apps.
 
@@ -69,4 +69,3 @@ $ quasar dev --play
 This generates a QR code that you can scan with the Quasar Play app and you'll have your App on the phone as long as the development server is running.
 
 > That's it. You're all set now. Continue to read the guide about Quasar and don't forget to have fun! :)
- 
