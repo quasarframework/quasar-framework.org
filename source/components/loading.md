@@ -1,8 +1,7 @@
 title: Loading
 ---
 Loading is a feature that you can use to display an overlay with a spinner on top of your App's content to inform the user that a background operation is taking place. No need to add complex logic within your Pages for global background operations.
-
-<input type="hidden" data-fullpage-demo="global/loading">
+<input type="hidden" data-fullpage-demo="progress/loading">
 
 ## Basic Usage
 Loading uses a delay (500ms) to display itself so that quick operations won't make the screen flicker. This happens by showing and then quickly hiding the progress spinner without the user having a chance to see what happens. The delay before showing it eliminates confusion.

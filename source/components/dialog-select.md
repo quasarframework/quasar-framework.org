@@ -1,6 +1,7 @@
 title: Dialog Select
 ---
 Dialog Select component offers two types of selection: single selection (using Radios) or multiple selection (using Checkboxes or Toggles). This component opens up a [Dialog](/components/dialog.html) for the selection list and action. If for some reason you want an in-place Popover to open for the selection, use the sibling [Select](/components/select.html) component.
+<input type="hidden" data-fullpage-demo="forms/select/dialog-select">
 
 Works well with [QField](/components/field.html) for additional functionality such as a helper, error message placeholder and many others.
 

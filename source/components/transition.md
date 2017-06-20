@@ -4,9 +4,7 @@ title: Transition (QTransition)
 The Quasar Transition component (called QTransition) gives transitional animation behavior to any components or HTML elements, which are wrapped by it. It is basically a simplification of [the Vue Transition Component](https://vuejs.org/v2/guide/transitions.html). The transitions are used for entering (appearing) or leaving (disappearing) animations.
 
 The animation effects are borrowed from [Animate.css](https://daneden.github.io/animate.css/).  So there are 12 general, 32 entering (In) and 32 leaving (Out) animation types currently available for you to use out of the box. Check the list either on Animate.css website or on the demo available for this page.
-
-<input type="hidden" data-fullpage-demo="css/transition">
-
+<input type="hidden" data-fullpage-demo="animation/transition">
 
 ## Basic Usage
 

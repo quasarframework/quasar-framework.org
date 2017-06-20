@@ -1,8 +1,7 @@
 title: Image Gallery
 ---
 All Components below are responsive. They accommodate to the width of their container.
-
-<input type="hidden" data-fullpage-demo="web-components/image-gallery">
+<input type="hidden" data-fullpage-demo="media/image-gallery">
 
 ## Responsive Images
 Just add the `responsive` CSS class to it.

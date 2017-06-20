@@ -2,6 +2,7 @@ title: Inner Loading
 ---
 
 The QInnerLoading component allows you to add a progress animation within a component. Much like the [Loading feature](loading.html), it's purpose is to offer visual confirmation to the user that some process is happening in the background, which takes an excessive amount of time. QInnerLoading will add an opaque overlay over the delayed element along with a [Spinner](/components/spinner.html).
+<input type="hidden" data-fullpage-demo="progress/inner-loading">
 
 > **Note**
 > In order for the spinner to be properly placed in the center of the element you want the loading display to show over, that element must have the `relative-position` CSS class declared.

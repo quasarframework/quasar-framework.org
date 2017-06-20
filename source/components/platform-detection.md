@@ -2,8 +2,7 @@ title: Platform Detection
 ---
 
 Helpers are built-in to detect the Platform (and its capabilities) in which the code is running:
-
-<input type="hidden" data-fullpage-demo="other/platform-detection">
+<input type="hidden" data-fullpage-demo="misc/platform-detection">
 
 ``` js
 // Usage outside a Vue component

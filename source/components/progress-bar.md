@@ -2,7 +2,7 @@ title: Progress Bar (QProgress)
 ---
 A Progress bar is used to show a process is being worked on, so the user isn't staring at a static page, even though the system is working in the background. It is a good visual indicator (i.e. good UX) for the user, when waiting for longer term operations to be accomplished.
 
-<input type="hidden" data-fullpage-demo="web-components/progress">
+<input type="hidden" data-fullpage-demo="progress/progress">
 
 ## Basic usage
 ``` html

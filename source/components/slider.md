@@ -1,13 +1,12 @@
 title: Slider
 ---
 Quasar Slider is a great way to make the user specify a number value between a minimum and maximum value, with optional steps between valid values.
+<input type="hidden" data-fullpage-demo="forms/slider">
 
 Also check its "sibling", the [Range](/components/range.html) component.
 Remember you can use QSlider wrapped by a [QField](/components/field.html) too.
 
 Works well with [QField](/components/field.html) for additional functionality such as a helper, error message placeholder and many others.
-
-<input type="hidden" data-fullpage-demo="form/slider">
 
 ## Basic Usage
 

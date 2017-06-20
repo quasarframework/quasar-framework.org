@@ -6,6 +6,10 @@ Material Ripple effect can easily be added to any DOM element (or component) thr
 
 2. Add `v-ripple` directive to it.
 
+The color of the ripples are determined by the text color (CSS 'color' prop) of the DOM element.
+
+<input type="hidden" data-fullpage-demo="style-and-identity/material-ripples">
+
 ## Basic Usage
 
 ```html

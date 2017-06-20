@@ -1,7 +1,7 @@
 title: Ajax Bar
 ---
 Ajax Bar is a component which displays a loading bar (like Youtube) whenever an Ajax call (regardless of Ajax library used) is in progress. It can be manually triggered as well.
-<input type="hidden" data-fullpage-demo="web-components/ajax-bar">
+<input type="hidden" data-fullpage-demo="progress/ajax-bar">
 
 ## Basic Usage
 As long as this component is rendered by Vue it will capture all Ajax calls.

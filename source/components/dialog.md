@@ -3,8 +3,7 @@ title: Dialog
 Quasar Dialogs are a great way to offer the user the ability to choose a specific action or list of actions. They also can provide the user with important information, or require them to make a decision (or multiple decisions).
 
 From a UI perspective, you can think of Dialogs as a type of “floating” modal, which covers only a portion of the screen. This means Dialogs should only be used for quick actions, like password verification, small App notifications or quick options. More in depth user flows should be reserved for ​Modals​.
-
-<input type="hidden" data-fullpage-demo="global/dialog">
+<input type="hidden" data-fullpage-demo="popups/dialog">
 
 ## Basic Usage
 ``` js

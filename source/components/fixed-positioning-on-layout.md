@@ -5,6 +5,7 @@ The Quasar Fixed Position component helps to fix HTML elements wrapped by it to 
 
 The great advantage of this is that the elements wrapped by this component will never overlap the layout header, footer or left/right sides, even if those are not configured to be fixed. In the latter case, the position will be offsetted so that the overlap won't occur.
 Try it out with a non fixed footer for example. When user reaches bottom of screen and footer comes into view, the component will shift up so it won't overlap with the footer.
+<input type="hidden" data-fullpage-demo="layout/fixed-positioning">
 
 >**Important!**
 In order for `<q-fixed-position>` to work, it must be within a `<q-layout>` component.

@@ -1,8 +1,7 @@
 title: Quasar Stepper
 ---
 Quasar Stepper conveys progress through numbered steps. Steppers display progress through a sequence of logical and numbered steps. They may also be used for navigation. It's usually useful when the user has to follow steps to complete a process, like in a [wizard](https://en.wikipedia.org/wiki/Wizard_(software).
-
-<input type="hidden" data-fullpage-demo="web-components/stepper">
+<input type="hidden" data-fullpage-demo="grouping/stepper">
 
 The stepper component is built from three different child components:
 

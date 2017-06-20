@@ -2,8 +2,7 @@ title: Back to Top
 ---
 
 This is actually a directive and not a component. It allows to make visible any DOM elements (like buttons) which appear after a certain scroll offset. When clicked/tapped they take the user to the top of the page.
-
-<input type="hidden" data-fullpage-demo="web-components/back-to-top">
+<input type="hidden" data-fullpage-demo="scrolling/back-to-top">
 
 ## Basic Usage
 ``` html

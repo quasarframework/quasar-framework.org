@@ -1,10 +1,9 @@
 title: Collapsible (+ Accordion)
 ---
 Quasar Collapsibles allow the hiding of content that is not immediately relevant to the user. Think of them as accordion elements that expand when clicked on.
+<input type="hidden" data-fullpage-demo="grouping/collapsible">
 
 They are basically QItem components wrapped with additional functionality. So they can be included in QLists and inherit QItem component properties.
-
-<input type="hidden" data-fullpage-demo="web-components/collapsible">
 
 ## Basic Usage
 ``` html

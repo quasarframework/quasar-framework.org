@@ -1,8 +1,7 @@
 title: Toolbar
 ---
 A Quasar Layout can have headers and/or footers (also called "marginals") and this is a great place to use Toolbars, but note that you can also place Toolbars anywhere else you want. One QToolbar will represent a row in your marginals, usually used for navigation buttons and a title (but not limited to only this).
-
-<input type="hidden" data-fullpage-demo="layout/toolbar">
+<input type="hidden" data-fullpage-demo="navigation/toolbar">
 
 ## Basic Usage
 A Toolbar is defined by two Quasar components: **QToolbar** and optional **QToolbarTitle**.

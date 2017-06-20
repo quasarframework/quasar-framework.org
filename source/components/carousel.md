@@ -1,10 +1,9 @@
 title: Carousel
 ---
 Quasar Carousel is a Vue Component which you can use to display more information with less real estate, using slides.
+<input type="hidden" data-fullpage-demo="grouping/carousel">
 
 The Carousel height is determined by the slide with biggest height.
-
-<input type="hidden" data-fullpage-demo="web-components/slider">
 
 ## Basic Carousel
 Basic Carousel. No controls. Just swipe between slides or

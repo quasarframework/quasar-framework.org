@@ -1,9 +1,9 @@
 title: Alert
 ---
 Quasar Alerts are like a mix between Dialog and Toast components. They offer more options for appearance and control than Toasts do and they can have custom dismissal action(s) and other behaviors, similar to the dialog component. The Alert component is built however, to be more specific to alerting the users of events happening in your app and it does not timeouts unless user hits one of the Alert action buttons. It can be used either as a component or as a method (so globally, even outside of Vue components, much like Toasts).
+<input type="hidden" data-fullpage-demo="popups/alert">
 
 Check the sibling [Toast](/components/toast.html) too.
-<input type="hidden" data-fullpage-demo="global/alert">
 
 ## Basic Usage as a Method
 Below is an example of a simple Alert as a method containing only a message:

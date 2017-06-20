@@ -3,7 +3,7 @@ title: Flex CSS
 Quasar provides lots of CSS classes to help you build your UI easily with the help of [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/). Think of it like operating with rows and columns with many options at hand.
 
 > The final section of this page will show you how to create responsive UIs. Also take a look at the demo (best viewed by clicking "Desktop View" when on a desktop, because that's where you can resize the window width to see helper classes in action). Click on "View Source" too to see the demo's source code.
-<input type="hidden" data-fullpage-demo="css/grid-layout">
+<input type="hidden" data-fullpage-demo="css-helpers/flex-css">
 
 ## Background on Flexbox
 The Flexbox Layout (Flexible Box) module (currently a W3C Last Call Working Draft) aims at providing a more efficient way to lay out, align and distribute space among items in a container, even when their size is unknown and/or dynamic (thus the word "flex").

@@ -3,9 +3,9 @@ title: Cards
 Quasar Cards are a great way to display important pieces of content, and are quickly emerging as a core design pattern for Apps. They're a great way to contain and organize information, while also setting up predictable expectations for the user. With so much content to display at once, and often so little screen real-estate, Cards have fast become the design pattern of choice for many companies, including the likes of Google and Twitter.
 
 Quasar Cards are a collection of components that you can use, based on the needs. It's all about being creative. Experiment with different Web Components by embedding them in Card components to create awesome results.
+<input type="hidden" data-fullpage-demo="grouping/card">
 
 ## Basic Usage
-<input type="hidden" data-demo="css/card/basic">
 
 Familiarize yourself with Card components with the examples below. The only requirement is that QCard needs to wrap all the other ones. Everything else is optional and can be inserted into your template anywhere as long as they are direct children of QCard.
 
@@ -231,8 +231,6 @@ You can choose to add a separator between Card components, which is basically a 
 ## Some More Examples
 
 ### Coloring Cards
-<input type="hidden" data-demo="css/card/coloring">
-
 Use colors from [Quasar Color Palette](/components/color-palette.html) to set a color for your Cards.
 
 ``` html
@@ -316,8 +314,6 @@ In order to make a grid of Cards you need to use the `inline` property of QCard 
 ```
 
 ### Card with Collapsibles
-<input type="hidden" data-demo="css/card/with-collapsible">
-
 Since Collapsibles are List items too, it makes sense to use a QCardList component to encapsulate them. Also, imagine a Card with Collapsibles containing Cards. Inception :)
 
 ``` html

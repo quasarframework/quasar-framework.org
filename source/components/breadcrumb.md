@@ -4,7 +4,7 @@ Quasar Breadcrumbs is a graphical control element used as a navigational aid in 
 
 This component only has CSS code, so you just have to follow the HTML structure in your templates for it.
 
-<input type="hidden" data-fullpage-demo="css/breadcrumb">
+<input type="hidden" data-fullpage-demo="navigation/breadcrumb">
 
 ## Basic Usage
 

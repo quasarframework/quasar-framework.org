@@ -1,12 +1,11 @@
 title: Chips Input
 ---
 The Quasar Chips Input allows user to enter a group of text items, which is also editable in the form of quick deletion of the Chips in the list.
+<input type="hidden" data-fullpage-demo="forms/chips-input">
 
 For more details on Chips used within Chips Input, please refer to its [documentation](/components/chip.html).
 
 Works well with [QField](/components/field.html) for additional functionality such as a helper, error message placeholder and many others.
-
-<input type="hidden" data-fullpage-demo="form/text-input/chips">
 
 ## Basic Usage
 

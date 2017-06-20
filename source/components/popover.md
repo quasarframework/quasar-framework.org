@@ -1,8 +1,7 @@
 title: Popover
 ---
 QPopover should be used when you want a menu (or any content) to be displayed on a popup as a result of user clicking/tapping on a DOM element / component.
-
-<input type="hidden" data-fullpage-demo="web-components/popover">
+<input type="hidden" data-fullpage-demo="popups/popover">
 
 ## Basic Usage
 In the example below we use a Button (as a target) and when clicking/tapping on it Quasar will display a List.

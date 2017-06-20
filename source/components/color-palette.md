@@ -2,7 +2,7 @@ title: Color Palette
 ---
 Quasar Framework offers a wide selection of colors out of the box. You can use them both as Stylus variables in your CSS code or directly as CSS classes in your HTML templates.
 
-<input type="hidden" data-fullpage-demo="css/colors">
+<input type="hidden" data-fullpage-demo="style-and-identity/color-palette">
 
 This page comes really handy after reading [Quasar Theming](/guide/quasar-theming.html).
 

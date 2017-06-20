@@ -1,8 +1,7 @@
 title: Scroll Fire
 ---
 "Scroll Fire" is a feature that enables a method to be called (once and only once) when user scrolls current page and the DOM element (or component) that it is applied to comes into the viewport.
-
-<input type="hidden" data-fullpage-demo="web-components/scroll-fire">
+<input type="hidden" data-fullpage-demo="scrolling/scroll-fire">
 
 For ease of use, its implementation is through a Vue Directive called `v-scroll-fire`.
 

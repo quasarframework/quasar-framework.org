@@ -1,16 +1,15 @@
 title: Layout
 ---
 Layouts are the elements that wrap page content, like a navigational bar or drawer. Multiple pages can share the same Layout, so the code is reusable, which is one of their key points.
+<input type="hidden" data-fullpage-demo="layout/play-with-layout">
 
 Quasar Layouts are not mandatory, but they do help you better structure your website/app. They have a number of features which offer you major benefits in simplifying your app's layout design, right out of the box.
 
-<input type="hidden" data-fullpage-demo="layout">
-
 ## Basic Usage
 Below is an example of a Layout, which contains all possible elements:
-- a [QToolbar](/components/toolbar.html) (used for both header and footer, you can specify as many as you want) 
-- a navigation with [QTabs](/components/tabs.html) 
-- a left side drawer panel (which is shown alongside page content on wide screens) 
+- a [QToolbar](/components/toolbar.html) (used for both header and footer, you can specify as many as you want)
+- a navigation with [QTabs](/components/tabs.html)
+- a left side drawer panel (which is shown alongside page content on wide screens)
 - and a right side drawer panel
 
 ``` html
@@ -169,18 +168,18 @@ Use `*-style` and `*-class` properties (notice they need Objects) to style  the 
 The Vue Object notation for style and class attributes is mandatory.
 
 ### Configuring the "view" prop
-Quasar introduces a unique and excellent layout concept, which allows you to easily structure layouts to work in certain ways, by simply changing a short string notation. 
+Quasar introduces a unique and excellent layout concept, which allows you to easily structure layouts to work in certain ways, by simply changing a short string notation.
 
 To explain how this works, imagine your Layout is a 3x3 matrix of containers. The first row of containers would be the header and the last row would be the footer. The first column of containers would be the "left" and last column would be the "right". The center of the matrix, below the header and above the footer, would be the page or main content container.
 
-Now think about this. This matrix of containers or "QLayout View" can be represented by a string. This string contains only 11 characters: 
+Now think about this. This matrix of containers or "QLayout View" can be represented by a string. This string contains only 11 characters:
 
 - 3 defining the header row
 - then a space
 - 3 defining the middle row
 - a space
 - then 3 defining the footer
- 
+
 The picture below offers a visual representation of the QLayout View, to help you understand how to configure its 3x3 matrix.
 
 ![Layout "view" prop](/images/layout-view-prop.svg "Layout 'view' prop")
@@ -195,18 +194,18 @@ These settings are completely up to you to use as you'd like. You could even go 
 >It is important that you specify all sections of a layout, even if you don't use them. For example, even if you don't use footer or right side drawer, specify them within your layout's `view` prop.
 
 ### The "reveal" prop
-You'll notice in playing with the view configuration, if you set the header to "hhh" (all small letters), the header will be set to a static position at the top of the page. This in turn means, the header will move off the screen as the user scrolls down the page. If the user then needs to use the navigation in the header, he/she must scroll completely up to top of the page to get to it and this is bad UX. 
+You'll notice in playing with the view configuration, if you set the header to "hhh" (all small letters), the header will be set to a static position at the top of the page. This in turn means, the header will move off the screen as the user scrolls down the page. If the user then needs to use the navigation in the header, he/she must scroll completely up to top of the page to get to it and this is bad UX.
 
-One way to help the user, is to add a [back-to-top button](components/back-to-top.html) on the page. 
+One way to help the user, is to add a [back-to-top button](components/back-to-top.html) on the page.
 
-Another way is to use the `reveal` prop. 
+Another way is to use the `reveal` prop.
 
-The `reveal` prop overrides "H", by fixing the header to the top of the screen. As the user scrolls down more than 100 pixels, the header rolls up it's own height above the top of the screen. As soon as the user scrolls back up (just 1 pixel), the header comes into view again immediately. 
+The `reveal` prop overrides "H", by fixing the header to the top of the screen. As the user scrolls down more than 100 pixels, the header rolls up it's own height above the top of the screen. As soon as the user scrolls back up (just 1 pixel), the header comes into view again immediately.
 
 
 ## The Breakpoints
 
-If you've played with the layout in desktop mode, you might notice how the left and right sides/ drawers magically hide, as you decrease the screen width. This is part of the smart responsiveness designed into Quasar's layout component. 
+If you've played with the layout in desktop mode, you might notice how the left and right sides/ drawers magically hide, as you decrease the screen width. This is part of the smart responsiveness designed into Quasar's layout component.
 
 If you'd like to control how the left and right side /drawers work, you have two props called `left-breakpoint` and `right-breakpoint`. These values are the minimum size of the screen in pixels, before the left and right drawers are forced to float above the layout. This is a fantastic and important function in maximizing screen real estate, for smaller devices.
 

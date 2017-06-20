@@ -1,8 +1,7 @@
 title: Chat
 ---
 Quasar supplies a chat component called QChatMessage which is really a chat entry that renders the data given by the props.
-
-<input type="hidden" data-fullpage-demo="css/chat">
+<input type="hidden" data-fullpage-demo="other-components/chat">
 
 ## Basic Usage
 This show a simple chat between two parties, and a to label

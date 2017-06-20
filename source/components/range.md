@@ -1,13 +1,12 @@
 title: Range
 ---
 The Quasar Range component is a great way to offer the user the selection of a sub-range of values between a minimum and maximum value, with optional steps to select those values. An example use case for the Range component would be to offer a price range selection.
+<input type="hidden" data-fullpage-demo="forms/range">
 
 Also check out its "sibling", the [Slider](/components/slider.html) component.
 Remember you can use QRange wrapped by a [QField](/components/field.html) too.
 
 Works well with [QField](/components/field.html) for additional functionality such as a helper, error message placeholder and many others.
-
-<input type="hidden" data-fullpage-demo="form/range">
 
 ## Basic Usage
 Notice we are using an object for the selection, which holds values for both the lower value of the selected range - `rangeValues.min` and the higher value - `rangeValues.max`.

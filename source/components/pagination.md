@@ -4,7 +4,7 @@ The Quasar Pagination component is available for whenever a pagination system is
 
 If user wants to go to a specific page, it can click/tap on the inputbox within Pagination, type the page number then hit Enter key and if the new page number is within valid limits, the model will be changed accordingly.
 
-<input type="hidden" data-fullpage-demo="web-components/pagination">
+<input type="hidden" data-fullpage-demo="navigation/pagination">
 
 ## Basic Usage
 

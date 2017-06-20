@@ -1,8 +1,7 @@
 title: Video Embedding
 ---
 Embedding a video like Youtube is easy. It also resizes to fit the container by default.
-
-<input type="hidden" data-fullpage-demo="web-components/video-embedding">
+<input type="hidden" data-fullpage-demo="media/video">
 
 ## Using QVideo
 ``` html

@@ -2,10 +2,9 @@ title: Datetime Range
 ---
 
 The Datetime Range component offers the users the ability to input a date, time or datetime interval. It is based off of the [Datetime component](/components/datetime.html). Before diving in, make sure you know how to use the Datetime component, since this component shares same properties.
+<input type="hidden" data-fullpage-demo="forms/datetime/range-datetime">
 
 In essense, Datetime Range is made up of two Datetime components, one for "from" and one for "to", making up a date interval together.
-
-<input type="hidden" data-fullpage-demo="form/datetime/range">
 
 ## Basic Usage
 ``` html

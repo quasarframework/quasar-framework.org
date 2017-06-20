@@ -1,10 +1,9 @@
 title: Search (Textfield)
 ---
 The Search component offers the users an input field with additional features for searching purposes. For autocomplete functionality, also refer to [QAutocomplete](/components/autocomplete.html) documentation.
+<input type="hidden" data-fullpage-demo="forms/search">
 
 Works well with [QField](/components/field.html) for additional functionality such as a helper, error message placeholder and many others.
-
-<input type="hidden" data-fullpage-demo="form/search">
 
 ## Basic Usage
 

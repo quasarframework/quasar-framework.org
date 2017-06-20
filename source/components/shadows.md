@@ -4,7 +4,7 @@ Simple yet effective way to add shadows to create a depth/elevation effect.
 The shadows are in accordance to Material Design speifications (24 levels of depth).
 
 Don't forget to check the demo.
-<input type="hidden" data-fullpage-demo="css/shadows">
+<input type="hidden" data-fullpage-demo="css-helpers/shadows">
 
 | CSS Class Name | Description |
 | --- | --- |

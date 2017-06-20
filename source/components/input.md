@@ -1,10 +1,9 @@
 title: Input (Textfield)
 ---
 Quasar's Input component is the basis for text (we'll call it "Singe Line Input") and textarea (we'll call it "Multiple Line Input") form input. It can be used for regular text input, passwords, email addresses, numbers, telephone numbers, urls and auto-growing text areas.
+<input type="hidden" data-fullpage-demo="forms/input">
 
 Works well with [QField](/components/field.html) for additional functionality such as a helper, error message placeholder and many others.
-
-<input type="hidden" data-fullpage-demo="form/text-input/textbox">
 
 ## Basic Usage
 ``` html

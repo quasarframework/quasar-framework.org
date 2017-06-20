@@ -1,8 +1,7 @@
 title: Tooltip
 ---
 QTooltip should be used when you want to offer the user more information about a certain area in your App. When hovering the mouse over the target element (or quickly tapping on mobile platforms), the Tooltip will appear.
-
-<input type="hidden" data-fullpage-demo="web-components/tooltip">
+<input type="hidden" data-fullpage-demo="popups/tooltip">
 
 ## Basic Usage
 In the example below we use a QBtn (as a target) and when hovering over it, Quasar will display some text.

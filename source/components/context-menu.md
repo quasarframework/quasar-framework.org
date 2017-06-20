@@ -2,7 +2,7 @@ title: Context Menu
 ---
 This component allows you to display a context menu (popup) instead of the default browser one when user performs a right-click (or long tap on touch capable devices).
 
-<input type="hidden" data-fullpage-demo="web-components/context-menu">
+<input type="hidden" data-fullpage-demo="navigation/context-menu">
 
 ## Basic Usage
 Context menus can contain anything. In the example below, we display a menu.
