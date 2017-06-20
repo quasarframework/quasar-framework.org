@@ -38,7 +38,7 @@ npm-windows-upgrade
 
 ### Disabling iOS rubber band effect
 
-When building an iOS app with Cordova and you want to disable the rubber band effect (https://www.youtube.com/watch?v=UjuNGpU29Mk), add this to your `config.xml` from the `cordova` wrapper folder inside your project:
+When building an iOS app with Cordova and you want to disable the [rubber band effect](https://www.youtube.com/watch?v=UjuNGpU29Mk), add this to your `config.xml` from the `cordova` wrapper folder inside your project:
 
 ``` xml
 <Preference name = "DisallowOverscroll" value = "true" />
