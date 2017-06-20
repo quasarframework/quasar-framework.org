@@ -4,7 +4,7 @@ See how headings, blockquotes, definitions lists and more are displayed in the d
 <input type="hidden" data-fullpage-demo="style-and-identity/typography">
 
 ### Default MD Font
-The default font embedded in Quasar App *when built with Material Design Theme* is Roboto. It comes with 5 different font weights you can use: 200, 300, 400, 500, 600. Below is an image from Google's Roboto Specimen document displaying the different font weights:
+The default font embedded in Quasar App *when built with Material Design Theme* is Roboto. It comes with 5 different font weights you can use: 100, 300, 400, 500, 700. Below is an image from Google's Roboto Specimen document displaying the different font weights:
 
 <div style="max-width: 550px">
 ![Roboto Font](/images/roboto.png "Roboto Font")
