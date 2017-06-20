@@ -6,8 +6,6 @@ Quasar currently supports: [Material Icons](https://material.io/icons/) out of t
 
 Importing the required font icons is required in order to make them work. Read [Importing Icons](#Importing-Icons) section for more details.
 
-<input type="hidden" data-fullpage-demo="components/button">
-
 ## Basic Usage
 Learn how to include the font icons that you need in the next sections, but for now, let's take a look at how we can use QIcon component:
 
