@@ -100,7 +100,7 @@ export default {
 
 On a desktop, if the Tabs cannot be dispalayed completely, the user will be offered a scroll action in the form of an opaque gradient fill. When hovered over, it turns to an arrow button. The user can press continually on the button, and the unseen Tabs will scroll by.
 
-If the user is on a device with a small screen (like a phone) and all Tabs can fit on the screen, they will be automatically justified and share the complete screen width. If the Tabs do not fit, then the user will also see the arrow to indicate the user can swipe through the Tabs.
+If the user is on a device with a small screen (like a phone) and all Tabs can fit on the screen, they will be automatically justify aligned and share the complete screen width. If the Tabs do not fit, then the user will also see the arrow to indicate the user can swipe through the Tabs.
 
 ## QTab (Child Component)
 QTab component is used to define a title for your Tab. Can be linked to a QTabPane through `name` prop.
@@ -272,10 +272,10 @@ You can also invert the colors (see demo for example) by adding the Boolean `inv
 ```
 
 ## Alignment of Tabs in the Header
-By default, on large width windows the Tabs are aligned to the left. If you wish to maintain a justified alignment (filling all available space on the width), then add `justified` to the align prop:
+By default, on large width windows the Tabs are aligned to the left. If you wish to maintain a justify alignment (filling all available space on the width), then add `justify` to the align prop:
 
 ``` html
-<q-tabs align="justified">...</q-tabs>
+<q-tabs align="justify">...</q-tabs>
 ```
 
 To align center or to the right, use `align="center"` or `align="right"`.
