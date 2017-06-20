@@ -9,7 +9,14 @@ Loading uses a delay (500ms) to display itself so that quick operations won't ma
 
 ### Show Loading
 ``` js
-import { Loading } from 'quasar'
+import {
+  Loading,
+
+  // optional!, for example below
+  // with custom spinner
+  QSpinnerGears
+} from 'quasar'
+
 // default options
 Loading.show()
 
@@ -18,8 +25,9 @@ Loading.show({
   delay: 300 // milliseconds
 })
 
-// customizable
+// customizable (all props available)
 Loading.show({
+  spinner: QSpinnerGears,
   message: 'Some message',
   messageColor: '#00ff00',
   spinnerSize: 250, // in pixels
