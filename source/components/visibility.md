@@ -37,8 +37,6 @@ Now on to the window width related CSS classes.
 | `lg` | Display only on large windows |
 | `xl` | Display only on extra large windows |
 
-You can also make some DOM element or component **be hidden** by using one of classes above and adding `-hide` suffix to it. Example: `xl-hide` (hide on extra large windows), `sm-hide` (hide on small windows).
-
 You can also show some DOM element or component **if it's lower than one of the sizes**. **Same for greater than one of the sizes**. Just attach `lt-` or `gt-` prefixes, which come from "lower than" and "greater than". Example: `lt-md` (display on xs and sm only), `lt-xl` (display on xs, sm, md and lg windows only), `gt-md` (display on greater than medium windows: lg and xl).
 
 > **NOTE**
