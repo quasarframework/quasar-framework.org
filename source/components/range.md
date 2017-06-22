@@ -57,6 +57,8 @@ Supports `v-model` which should be binded to an Object in your scope with "min" 
 | `max` | Number | (**Required**) Maximum value for end of interval. |
 | `label` | Boolean | Popup a label when user clicks/taps on the Range. |
 | `label-always` | Boolean | Always display the label. |
+| `left-label-value` | String | Override default left label value. |
+| `right-label-value` | String | Override default right label value. |
 | `step` | Number | Specify step amount between valid values. |
 | `snap` | Boolean | Range handler will snap on values, rather than walking freely; good to use along `step`; also displays step markers on the Range. |
 | `markers` | Boolean | Display markers on background, one for each possible value for the model. |
@@ -102,6 +104,17 @@ Use the `drag-range` or `drag-only-range` props, to allow the user to move the s
 Use the `markers` prop, to show the steps available for the range selection.
 ``` html
 <q-range markers v-model="rangeValues" :min="-6" :max="10" :step="2" label snap  />
+```
+
+### Overriding Labels
+In the example below we add a "px" suffix to labels.
+``` html
+<q-range
+  v-model="label"
+  :min="-20" :max="20"
+  :left-label-value="`${label.min}px`"
+  :right-label-value="`${label.max}px`"
+/>
 ```
 
 ## Usage Inside of a List

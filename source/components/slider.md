@@ -45,6 +45,7 @@ Supports `v-model` which should be binded to a Number in your scope.
 | `max` | Number | Maximum value of the model. Default is 5. |
 | `label` | Boolean | Popup a label when user clicks/taps on the Range and moves it. |
 | `label-always` | Boolean | Always display the label. |
+| `label-value` | String | Override default label value. |
 | `step` | Number | Specify step amount between valid values. |
 | `snap` | Boolean | Range handler will snap on values, rather than sliding freely; good to use along `step`; also displays step markers on the Range. |
 | `markers` | Boolean | Display markers on background, one for each possible value for the model. |
@@ -66,6 +67,16 @@ Use the `error` prop to indicate there is an error. This will turn the component
 Use the `disable` prop to stop the user from changing the slider value.
 ``` html
 <q-slider v-model="selectedValue" :min="0" :max="50" disable />
+```
+
+### Overriding Label
+In the example below we add a "px" suffix to the label.
+``` html
+<q-range
+  v-model="label"
+  :min="-20" :max="20"
+  :label-value="`${label}px`"
+/>
 ```
 
 ### Coloring
