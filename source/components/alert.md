@@ -38,8 +38,8 @@ import { Alert } from 'quasar'
 // using some animations along `enter` and `leave` props
 // so don't forget to import them too!
 // Read about them in Animation > Transition page
-import 'quasar/animations/bounceInRight.css'
-import 'quasar/animations/bounceOutRight.css'
+import 'quasar-extras/animate/fadeIn.css'
+import 'quasar-extras/animate/fadeOut.css'
 
 Alert.create({
   enter: 'bounceInRight',
