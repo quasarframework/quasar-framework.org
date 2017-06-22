@@ -142,8 +142,8 @@ Also, read about the smart [Fixed Positioning on Layout](/components/fixed-posit
 | --- | --- | --- |
 | `view` | String | Configuration string which defines how different parts of  the layout get displayed on screen. |
 | `reveal` | Boolean | Makes the header slide up out of view when scrolling page down and reappear, when scrolling up a bit. |
-| `left-breakpoint` | Number | Breakpoint (in pixels, defining window width) at which point the left side will be placed directly over the layout and won't act as a drawer anymore. Default is 996. |
-| `right-breakpoint` | Number | Breakpoint (in pixels, defining window width) at which point the right side will be placed directly over the layout and won't act as a drawer anymore. Default is 996. |
+| `left-breakpoint` | Number | Breakpoint (in pixels, defining window width) at which point the left side will be placed directly over the layout and won't act as a drawer anymore. Default is 992 (up to "sm", including). |
+| `right-breakpoint` | Number | Breakpoint (in pixels, defining window width) at which point the right side will be placed directly over the layout and won't act as a drawer anymore. Default is 992 (up to "sm", including). |
 | `header-style` | Object | Style applied to header. |
 | `header-class` | Object | CSS classes applied to header. |
 | `left-style` | Object | Style applied to layout left side / drawer. |
