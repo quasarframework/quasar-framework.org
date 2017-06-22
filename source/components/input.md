@@ -29,6 +29,7 @@ Supports `v-model` which should be bound to a String or Number (depending on `ty
 | --- | --- | --- |
 | `type` | String |  Must be one of the following: `text` (default), `textarea`, `email`, `tel`, `file`, `number`, `password` and `url`. This is important as it determines the keyboard type popping up on mobile devices. |
 | `clearable` | Boolean | If set to `true`, the component offers the user an actionable icon to remove the entered text. |
+| `no-pass-toggle` | Boolean | If type is 'password' and set to `true`, then password toggle is not shown. |
 
 When you set type to "number", there are some additional properties that you can use:
 
