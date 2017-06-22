@@ -64,7 +64,7 @@ $ cordova plugin add cordova-plugin-crosswalk-webview
 ### Adding platforms
 
 > **IMPORTANT**
-> Change into the `/cordova` subfolder in your Quasar project before you run any ```cordova``` commands.
+> Change into the `/cordova` subfolder in your Quasar project before you run any `cordova` commands.
 
 After making the wrapper and making sure you have the platform's SDK installed on your machine, you need to add at least a platform to your App, like this:
 ``` bash
