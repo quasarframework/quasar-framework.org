@@ -21,7 +21,7 @@ There are some initial steps you need to take before you can wrap your apps usin
 	PATH=$PATH:$ANDROID_HOME/tools; PATH=$PATH:$ANDROID_HOME/platform-tools
 	```
 
-4. Start Android studio by changing into the folder you installed it in and run ```./studio.sh```. Next step is to install the individual SDKs:
+4. Start Android studio by changing into the folder you installed it in and run `./studio.sh`. Next step is to install the individual SDKs:
 
 	Open the "Configure" menu at the bottom of the window:
 
@@ -64,7 +64,7 @@ $ cordova plugin add cordova-plugin-crosswalk-webview
 ### Adding platforms
 
 > **IMPORTANT**
-> Change into the `/cordova` subfolder in your Quasar project before you run any ```cordova``` commands.
+> Change into the `/cordova` subfolder in your Quasar project before you run any `cordova` commands.
 
 After making the wrapper and making sure you have the platform's SDK installed on your machine, you need to add at least a platform to your App, like this:
 ``` bash
@@ -114,7 +114,7 @@ If you are debugging Android Apps, you can use Google Chrome [Remote Debugging](
 
 ### "Android SDK not found." after installation of the SDK
 
-Some newer Debian-based OS (e.g. ubuntu, elementary OS) might leave you with a ```Android SDK not found.``` after you installed and (correctly) configured the environment. The output might look similar to this:
+Some newer Debian-based OS (e.g. ubuntu, elementary OS) might leave you with a `Android SDK not found.` after you installed and (correctly) configured the environment. The output might look similar to this:
 
 ``` bash
 $ cordova requirements
@@ -136,7 +136,7 @@ This could have two different reasons: Usually the paths aren't configured corre
 $ echo $ANDROID_HOME
 ```
 
-The expected output should be a path similar to this ```$HOME/Android/Sdk```. After this run:
+The expected output should be a path similar to this `$HOME/Android/Sdk`. After this run:
 
 
 ``` bash
@@ -156,7 +156,7 @@ The output should contain each one entry for the Android SDK 'tools'-folder and 
 /home/your_user/bin:/home/your_user/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/your_user/Android/Sdk/tools:/home/your_user/Android/Sdk/platform-tools
 ```
 
-> If you ensured your paths are set correctly and still get the error on ```cordova requirements``` you can try the following fix: [Replacing the Android Studio 'tools' folder manually](https://github.com/meteor/meteor/issues/8464#issuecomment-288112504)
+> If you ensured your paths are set correctly and still get the error on `cordova requirements` you can try the following fix: [Replacing the Android Studio 'tools' folder manually](https://github.com/meteor/meteor/issues/8464#issuecomment-288112504)
 
 
 ### Setting Up Device on Linux
