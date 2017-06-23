@@ -48,8 +48,11 @@ There are a number of properties available:
 | Vue Property | Description |
 | --- | --- |
 | `@close` | The close button has been clicked/tapped. |
+| `@click` | Chip has been clicked/tapped outside of close button. |
 
 When using `closable` property a close button will be displayed on the right side. When clicking/tapping on the button the `@close` event will be triggered. This does not removes the chip by itself. You will have to handle it yourself.
+
+The two events fire independently but not both simultaneously, depending on where the user has clicked/tapped (on close button or anywhere else within the Chip).
 
 ## More Examples
 
