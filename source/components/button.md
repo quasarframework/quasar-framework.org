@@ -63,6 +63,7 @@ In the example above, the `clickMethod` would be a function to control the value
 | `icon`       | String  | Name of the icon to use. |
 | `icon-right` | String  | Name of the icon to place on right side of button. |
 | `loader`     | Boolean | Display a spinner, if true. Can be optionally used along `v-model`. Check [Button with Progress](#Button-with-Progress) section. |
+| `percentage` | Number | Optional property for displaying a determinate progress. Use along `loader`. |
 | `round`      | Boolean | Set true, if you want a round button. |
 | `outline`    | Boolean | Set true, if you want an outlined button. |
 | `flat`       | Boolean | Set true, if you want a flat button. |
@@ -183,7 +184,61 @@ If you'd like to add a different spinner than the default one of the theme you a
 
 > The "loading" slot can contain anything. It's not reduced to text or spinners only. You can use whatever DOM elements or components you want. The end result is that while in "loading" state, the Button content will be replaced by whatever the "loading" slot contains. Also, while in this state, button gets disabled so no further click events are triggered, making your life easier to not call same button click handler while it's already in progress.
 
-Learn how you can use `loader` prop along with `v-model` on buttons in the next section.
+We'll learn how you can use `loader` prop along with `v-model` on buttons later on this page.
+
+### Handling Deterministic Progress
+Should you wish, you can also display a deterministic progress within the button by using the additional "percentage" property along what you've learned so far about buttons with progress:
+```html
+<template>
+  <q-btn
+    :percentage="percentage"
+    loader
+    color="primary"
+    @click="startComputing"
+  >
+    Compute PI
+    <span slot="loading">
+      <q-spinner-gears class="on-left" />
+      Computing...
+    </span>
+  </q-btn>
+</template>
+
+<script>
+// remember to also import necessary
+// Quasar components (not added here)
+export default {
+  data () {
+    return {
+      percentage: 0
+    }
+  },
+  methods: {
+    startComputing (e, done) {
+      this.percentage = 0
+
+      // we simulate progress here
+      this.interval = setInterval(() => {
+        // adding a random amount of percentage
+        this.percentage += Math.floor(Math.random() * 8 + 10)
+
+        // and when we are done...
+        if (this.percentage >= 100) {
+          clearInterval(this.interval)
+          // DON'T forget to call "done()" (the second param of handler)
+          done()
+        }
+      }, 700)
+    }
+  },
+  beforeDestroy () {
+    // we also take care of clearing interval
+    // should the user navigate away before the progress has ended
+    clearInterval(this.interval)
+  }
+}
+</script>
+```
 
 ### Controlling the Button for Form Submission
 When you have a button to submit a form's input to the server, like a "Save" button, more often than not you want to also give the user the ability to submit the form with a press of the enter key. If you would also like to give the user feedback of the saving process being in progress and to also avoid them pressing the button while saving too, you wouldd need the button to show a loading spinner and be disabled from click events. QBtn allows this behavior if configured so.
