@@ -64,6 +64,7 @@ In the example above, the `clickMethod` would be a function to control the value
 | `icon-right` | String  | Name of the icon to place on right side of button. |
 | `loader`     | Boolean | Display a spinner, if true. Can be optionally used along `v-model`. Check [Button with Progress](#Button-with-Progress) section. |
 | `percentage` | Number | Optional property for displaying a determinate progress. Use along `loader`. |
+| `dark-percentage` | Boolean | Optional property for displaying a determinate progress on a light button color. Use along `loader` and `percentage`. |
 | `round`      | Boolean | Set true, if you want a round button. |
 | `outline`    | Boolean | Set true, if you want an outlined button. |
 | `flat`       | Boolean | Set true, if you want a flat button. |
@@ -239,6 +240,8 @@ export default {
 }
 </script>
 ```
+
+You also got `dark-percentage` prop if your button has a light color.
 
 ### Controlling the Button for Form Submission
 When you have a button to submit a form's input to the server, like a "Save" button, more often than not you want to also give the user the ability to submit the form with a press of the enter key. If you would also like to give the user feedback of the saving process being in progress and to also avoid them pressing the button while saving too, you wouldd need the button to show a loading spinner and be disabled from click events. QBtn allows this behavior if configured so.
