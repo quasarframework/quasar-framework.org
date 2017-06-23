@@ -27,7 +27,7 @@ this.$http.get('/user')
 ```
 
 
-Get started with the  [axios](https://github.com/mzabriskie/axios).
-Get started with the [vue-ressource](https://github.com/pagekit/vue-resource). 
+Get started with [axios](https://github.com/mzabriskie/axios).
+Get started with [vue-ressource](https://github.com/pagekit/vue-resource). 
 Vue Cookbook topic [vuejs-cookbook](https://vuejs.org/v2/cookbook/adding-instance-properties.html)
 Using libraries from npm with vue: [vuejsdevelopers.com](http://vuejsdevelopers.com/2017/04/22/vue-js-libraries-plugins/)
