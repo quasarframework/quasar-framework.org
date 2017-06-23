@@ -5,7 +5,7 @@ These packages are not provided by default so you will have to npm install them 
 
 
 ## Quickstart with axios
-Installation: `npm install axios --save`
+Installation: `npm install axios --save` or ``yarn add axios --save``
 
 First make the package globally available within Vue(main.js):
 ```
@@ -16,16 +16,18 @@ Vue.prototype.$http = axios
 
 Then to use the package in your components:
 ```
-this.$http.get('/').then(res => {
-  if (res.status !== 200) {
-    this.$http.get('/') // etc
-    // Only works in a fat arrow callback.
-  }
-});
+// Make a get request
+this.$http.get('/user')
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
 ```
 
 
-Get started with the documentation for [axios](https://github.com/mzabriskie/axios).
-Get started with the documentation for [vue-ressource](https://github.com/pagekit/vue-resource).
+Get started with the  [axios](https://github.com/mzabriskie/axios).
+Get started with the [vue-ressource](https://github.com/pagekit/vue-resource). 
 Vue Cookbook topic [vuejs-cookbook](https://vuejs.org/v2/cookbook/adding-instance-properties.html)
 Using libraries from npm with vue: [vuejsdevelopers.com](http://vuejsdevelopers.com/2017/04/22/vue-js-libraries-plugins/)
