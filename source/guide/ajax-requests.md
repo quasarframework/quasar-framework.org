@@ -5,7 +5,7 @@ These packages are not provided by default so you will have to npm install them 
 
 
 ## Quickstart with axios
-Installation: `npm install axios --save` or ``yarn add axios --save``
+Installation: `npm install axios --save`
 
 First make the package globally available within Vue(main.js):
 ```
