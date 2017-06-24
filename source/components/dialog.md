@@ -51,6 +51,81 @@ In order to create a Dialog, you'll need an object as a parameter to configure i
 | `noBackdropDismiss` | Boolean | If set true, the Dialog cannot be dismissed by clicking/tapping on backdrop. |
 | `noEscDismiss` | Boolean | If set true, the Dialog cannot be dismissed by hitting Escape key. |
 
+## Tip on using "this" in handlers
+A common use case is this scenario in script part of a Vue file, where you'd like the button handler to be able to access the Vue component scope with `this`.
+
+```js
+export default {
+  ...,
+  methods: {
+    data () {
+      // defining a variable for this example
+      // to highlight how you can access it
+      // later when we call the Dialog
+      return {
+        variable: 'alright'
+      }
+    },
+    showDialog () {
+      // "this" here refers to current component
+
+      // prints: "alright"
+      console.log(this.variable)
+
+      Dialog.create({
+        title: 'Some title',
+        message: 'Some message',
+        buttons: [
+          'Cancel',
+          {
+            label: 'Empty Trash Bin',
+            handler () {
+              // "this" refers to the scope of this method only,
+              // not your Vue component
+
+              // prints: undefined
+              console.log(this.variable)
+            }
+          }
+        ]
+      })
+    }
+  }
+}
+```
+
+What you need to do is use ES6 arrow functions instead:
+```js
+// instead of:
+handler () { .... }
+
+// use this:
+handler: () => {
+  // now "this" points to the method's outer JS scope,
+  // in this case your Vue component scope
+
+  // correctly prints out "alright"
+  console.log(this.variable)
+}
+```
+
+Since using ES6, it's time to forget about temporary variables in your code, like in the following example:
+```js
+// use ES6 arrow function instead!
+// it's much cleaner
+
+var self = this
+
+Dialog.create({
+  ...,
+  buttons: [{
+    handler () {
+      console.log(self.variable)
+    }
+  }]
+})
+```
+
 ## Progress Dialog
 There are two types of progress bars you can display in a Dialog: determinate (when you can quantify the progress) or indeterminate (when you don't know the moment the progress will be done).
 

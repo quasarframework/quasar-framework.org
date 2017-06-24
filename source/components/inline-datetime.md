@@ -50,6 +50,7 @@ Supports `v-model` which must be a String, Number or Date Object. Please refer t
 | `day-names` | Array | Array of day names, starting with Sunday, Monday, ... |
 | `default-selection` | String/Number/Date | Default date/time for picker when model is not yet set. |
 | `monday-first` | Boolean | Use Monday as first day of week. Otherwise it's Sunday. |
+| `saturday-first` | Boolean | Use Saturday as first day of week. Otherwise it's Sunday. |
 | `format24h` | Boolean | Use 24 hour time for Material picker instead of AM/PM system which is default. |
 | `disable` | Boolean | If set to `true`, the field is inaccessable. |
 | `readonly` | Boolean | If set to `true`, the component is readonly. |
