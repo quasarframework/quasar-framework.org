@@ -126,22 +126,23 @@ Vue.use(Quasar, {
 ...
 ```
 
-## Importing All Components and Directives for Development
+### Importing All Components and Directives for Development
 You can import all Components and Directives globally.
+
+> **IMPORTANT**
+> This **will not** take advantage of tree shaking, causing your code to become bloated with unnescesary/unused code. **Not recommended for production.**
 
 ```js
 // We edit "src/main.js":
 ...
-import Quasar, * as Everything from 'quasar'
+import Quasar, * as All from 'quasar'
 ...
 Vue.use(Quasar, {
-  components: Everything,
-  directives: Everything
+  components: All,
+  directives: All
 })
 ...
 ```
-
-> This **will not** take advantage of tree shaking, causing your code to become bloated with unnescesary/unused code. Not recommended for production.
 
 ### Self Closing Tags
 Some Quasar components do not need you to include HTML content inside them. In this case, you can use them as self closing tags. One example with QIcon below:
