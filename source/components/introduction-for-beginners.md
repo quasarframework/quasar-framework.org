@@ -126,14 +126,16 @@ Vue.use(Quasar, {
 ...
 ```
 
-### Importing All Components and Directives for Development
+### Importing All Components and Directives for Quick Test
 You can import all Components and Directives globally.
 
 > **IMPORTANT**
-> This **will not** take advantage of tree shaking, causing your code to become bloated with unnescesary/unused code. **Not recommended for production.**. Use this only for quick testing purposes.
+> This **will not** take advantage of tree shaking, causing your code to become bloated with unnescesary/unused code. **Not recommended for production**. Use this only for quick testing purposes.
 
 ```js
-// We edit "src/main.js":
+// src/main.js
+// (remember to use this for
+// quick testing purposes only!)
 ...
 import Quasar, * as All from 'quasar'
 ...
