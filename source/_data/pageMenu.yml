@@ -128,6 +128,7 @@ components:
     Transition: $
     Slide Transition: $
     JS Animations: $
+    Animation CSS Helper Classes: $
   Other Components:
     Chip: $
     Chat: $

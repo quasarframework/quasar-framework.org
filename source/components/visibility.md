@@ -43,17 +43,6 @@ You can also show some DOM element or component **if it's lower than one of the 
 > You can combine the visibility classes with the `inline` class for inline-blocks.
 > Example : `<span class="gt-sm inline">&nbsp;and here is the end of this long sentence.</span>`
 
-### Animating
-| Class Name | Description |
-| --- | --- |
-| `animate-spin` | Apply a continuous spin/rotation to the DOM element |
-| `animate-spin-reverse` | Apply a continuous spin/rotation (opposite direction to `animate-spin`) to the DOM element |
-| `animate-blink` | Apply a blinking effect to the DOM element |
-| `animate-pop` | Apply a pop-in effect to the DOM element |
-| `animate-scale` | Apply a scale-in effect to the DOM element |
-| `animate-fade` | Apply a fade-in effect to the DOM element |
-| `animate-bounce` | Apply a continuous bouncing effect to the DOM element |
-
 ### Platform Related
 Visible only on:
 
