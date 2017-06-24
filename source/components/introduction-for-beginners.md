@@ -130,7 +130,7 @@ Vue.use(Quasar, {
 You can import all Components and Directives globally.
 
 > **IMPORTANT**
-> This **will not** take advantage of tree shaking, causing your code to become bloated with unnescesary/unused code. **Not recommended for production.**
+> This **will not** take advantage of tree shaking, causing your code to become bloated with unnescesary/unused code. **Not recommended for production.**. Use this only for quick testing purposes.
 
 ```js
 // We edit "src/main.js":
