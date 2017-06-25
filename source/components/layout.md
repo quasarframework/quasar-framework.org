@@ -40,22 +40,22 @@ Below is an example of a Layout, which contains all possible elements:
   <div slot="left">
     <q-list no-border link inset-separator>
       <q-list-header>Essential Links</q-list-header>
-      <q-item>
+      <q-side-link item to="/docs">
         <q-item-side icon="school" />
         <q-item-main label="Docs" sublabel="quasar-framework.org" />
-      </q-item>
-      <q-item>
+      </q-side-link>
+      <q-side-link item to="/forum">
         <q-item-side icon="record_voice_over" />
         <q-item-main label="Forum" sublabel="forum.quasar-framework.org" />
-      </q-item>
-      <q-item>
+      </q-side-link>
+      <q-side-link item to="/chat">
         <q-item-side icon="chat" />
         <q-item-main label="Gitter Channel" sublabel="Quasar Lobby" />
-      </q-item>
-      <q-item>
+      </q-side-link>
+      <q-side-link item to="/twitter">
         <q-item-side icon="rss feed" />
         <q-item-main label="Twitter" sublabel="@quasarframework" />
-      </q-item>
+      </q-side-link>
     </q-list>
   </div>
 
@@ -90,14 +90,90 @@ You can also use [QScrollArea](/components/scroll-area.html) for the left or rig
 ```
 
 ## Tips to Understanding QLayout
+
+### Navigation from drawer panels
+
+There are multiple ways to navigate to a route from the drawer panels (left/right side of Layout). Following examples apply only from "left" and "right" Layout slots.
+
+> **IMPORTANT**
+> Avoid directly using any other means of changing current route, like `<router-link>`, when on a drawer panel. You also need a way to tell the drawer panel to close itself (if it's the case, on narrow windows) before navigating away. Notice that the drawer panels can also be closed with the "back" button (both on a desktop or on a mobile device), which means they tamper with window history which must be restored before navigating to another route. Following examples show you how.
+
+Recommended way is through [QSideLink](/components/layout-side-links.html):
+```html
+<q-layout>
+  ....
+  <div slot="left">
+    <!-- navigating to "/twitter" route -->
+    <q-side-link item to="/twitter">
+      <!-- using it as QItem in this particular example -->
+      <q-item-side icon="rss feed" />
+      <q-item-main label="Twitter" sublabel="@quasarframework" />
+    </q-side-link>
+
+    <!--
+      Wrapping an icon in this example,
+      but note that it can wrap anything
+    -->
+    <q-side-link to="/twitter">
+      <q-icon name="rss feed" />
+    </q-side-link>
+  </div>
+</q-layout>
+```
+
+Another approach would be to use a Vue reference on QLayout and call "hideCurrentSide" method:
+
+```html
+<template>
+  <q-layout ref="layout">
+    ...
+    <div slot="left">
+      <!-- navigating to "/twitter" route -->
+      <q-item @click="navigate">
+        <!-- using it as QItem in this particular example -->
+        <q-item-side icon="rss feed" />
+        <q-item-main label="Twitter" sublabel="@quasarframework" />
+      </q-item>
+
+      <!--
+        Works on any DOM element / component.
+        In this example we have an icon.
+        Make sure you understand the difference between @click and @click.native
+      -->
+      <q-icon name="rss feed" @click="navigate" />
+    </div>
+  </q-layout>
+</template>
+
+<script>
+export default {
+  ...,
+  methods: {
+    navigate () {
+      this.$refs.layout.hideCurrentSide(() => {
+        this.$router.push('/twitter')
+      })
+    }
+  }
+}
+```
+
 ### Routing
 If your layout uses Vue Router sub-routes (recommended), then it makes sense to use Vue's `<router-view>` component, which is just a placeholder where sub-routes are injected.
 
 ### Available Slots
 QLayout uses the following Vue slots: `header`, `footer`, `navigation`, `left` and `right`. You can specify your content for these slots with the `slot` HTML attribute: `slot="footer"`.
+
+> **IMPORTANT**
+> The slots must be direct children of `<q-layout>` (do not wrap them with any DOM elements / components) otherwise Vue won't pick them up. Read about [Vue content distribution with slots](https://vuejs.org/v2/guide/components.html#Content-Distribution-with-Slots) to understand why.
+
   ``` html
   <q-layout>
     ...
+    <!--
+      direct child of <q-layout>
+      (<q-layout> is direct parent of the slot)
+    -->
     <div slot="footer">
       ...Your Content...
     </div>

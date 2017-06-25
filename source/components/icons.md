@@ -2,9 +2,11 @@ title: Icons
 ---
 
 The Quasar Icon component allows you to easily insert icons within other components or any other area of your pages, as you'd like.
-Quasar currently supports: [Material Icons](https://material.io/icons/) out of the box, but you can add [Font Awesome](http://fontawesome.io/icons/) and [Ionicons](http://ionicons.com/). Learn how to include the last two by reading on.
+Quasar currently supports: [Material Icons](https://material.io/icons/) out of the box, but you can add [Font Awesome](http://fontawesome.io/icons/), [Ionicons](http://ionicons.com/) and [IcoMoon](https://icomoon.io/). Learn how to include the last three (which are optional) by reading on.
 
 Importing the required font icons is required in order to make them work. Read [Importing Icons](#Importing-Icons) section for more details.
+
+Please [submit a request](https://github.com/quasarframework/quasar/issues/new) if your favorite font icon is not listed here.
 
 ## Basic Usage
 Learn how to include the font icons that you need in the next sections, but for now, let's take a look at how we can use QIcon component:
@@ -18,6 +20,9 @@ Learn how to include the font icons that you need in the next sections, but for 
 
 <!-- Fontawesome icons have "fa-" prefix -->
 <q-icon name="fa-id-card" />
+
+<!-- IcoMoon icons have "icon-" prefix -->
+<q-icon name="icon-chrome" />
 
 <!--
   or if you prefer the non self-closing tag version
@@ -41,6 +46,18 @@ For "icon" properties on different Quasar components you won't have the means to
 />
 ```
 
+### Vue Properties
+| Vue Property | Type | Description |
+| --- | --- | --- |
+| `name` | String | The name of the icon to be used (for both Quasar themes). |
+| `ios` | String | The name of the icon to be used for Quasar iOS theme only. |
+| `mat` | String | The name of the icon to be used for Quasar Material theme only. |
+| `color` | String | One color from the Quasar Color Palette. |
+| `size` | String | Example: '12px', '3.2rem', '14pt'. |
+
+> **Note**
+> If you add the `name` prop, it overrides the `ios` and `mat` props.
+
 ### Size & Colors
 All icons are **font icons**. This means that you can change size by manipulating `font-size` CSS property. And also, they inherit the current CSS `color` used.
 
@@ -62,10 +79,19 @@ Colors from the [Quasar Color Palette](/components/color-palette.html) can be sp
 <q-icon name="alarm" color="green-2" />
 ```
 
+There's also a "size" property:
+```html
+<q-icon name="wifi" size="2rem" />
+<q-icon name="delete" size="24px" />
+```
+
 ## Importing Icons
 The only required icon font is "Material Icons" one. The other (Fontawesome or Ionicons) are optional. In order for you to be able to use them, you have two options: either use [quasar-extras](https://github.com/quasarframework/quasar-extras) npm package, or add the appropriate CDN (Content Delivery Network) links in `<head>` of your index.html.
 
 If you are building a website only, then CDN approach can be an option you can follow. However, when building a mobile or Electron app, you will most likely do not want to depend on an Internet connection, so it's best that you import directly from `quasar-extras`.
+
+> **IMPORTANT**
+> Due to the license of IcoMoon and its custom build option, this icon font is not provided by `quasar-extras`. You will need to use [their website](https://icomoon.io/app/#/select) to create your custom icon font files and then copy them to your app's folder and import them (`src/main.js` would probably be a good place).
 
 ### Importing from "quasar-extras"
 
@@ -110,18 +136,6 @@ The example link tag below would include Font Awesome v4.7.0 icons. Do a Google 
   >
 </head>
 ```
-
-### Vue Properties
-| Vue Property | Type | Description |
-| --- | --- | --- |
-| `name` | String | The name of the icon to be used (for both Quasar themes). |
-| `ios` | String | The name of the icon to be used for Quasar iOS theme only. |
-| `mat` | String | The name of the icon to be used for Quasar Material theme only. |
-| `color` | String | One color from the Quasar Color Palette. |
-
-
-> **Note**
-> If you add the `name` prop, it overrides the `ios` and `mat` props.
 
 ## More Examples
 
