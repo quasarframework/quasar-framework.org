@@ -9,7 +9,7 @@ Importing the required font icons is required in order to make them work. Read [
 Please [submit a request](https://github.com/quasarframework/quasar/issues/new) if your favorite font icon is not listed here.
 
 ## Basic Usage
-Learn how to include the font icons that you need in the next sections, but for now, let's take a look at how we can use QIcon component:
+Let's take a look at how we can use QIcon component. (Do not forget to check down below how to [include](#Importing-Icons) the icons, otherwise they won't show up!)
 
 ```html
 <!-- Material icons have no prefix -->
