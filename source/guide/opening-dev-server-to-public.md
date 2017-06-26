@@ -9,7 +9,7 @@ At some point you may want to show someone else the project you've been working 
 
 ### Getting started
 
-1. Download and install ngrok [here](https://ngrok.com/download)
+1. Download and install ngrok [here](https://ngrok.com/download). (Please note that the ngrok application does not necessarily need to be placed in or run from inside your cordova folder)
 
 2. Start your Dev server
 ``` bash
@@ -19,6 +19,7 @@ $ quasar dev
 3. Create your ngrok connection
 ``` bash
 $ ngrok http 80
+// In case your development server doesn't run on port 80 you need to change the number to the correct port
 ```
 
 4. ngrok shows the url in the command line when it started.
@@ -32,6 +33,7 @@ Forwarding                    https://92832de0.ngrok.io -> localhost:80
 Connnections                  ttl     opn     rt1     rt5     p50     p90
                               0       0       0.00    0.00    0.00    0.00
 ```
+Please be careful as the 'Forwarding' URL will be accesible to anyone until this connection is closed again.
 
 ### Inspecting traffic
 
