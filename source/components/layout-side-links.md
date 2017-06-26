@@ -32,11 +32,7 @@ It can also wrap a QItem so you can use within QLists if you want to. In this ca
   The example below creates a wrapper over QItem
   so it acts as a menu item on a QLayout left/right side.
 -->
-<q-side-link
-  item
-  to="/some/other/route"
-  exact
->
+<q-side-link item to="/some/other/route" exact>
   <!--
     any QItem subcomponent goes here, just like under
     a QItem component
@@ -91,7 +87,7 @@ It also inherits properties from QItem components if you set `item` property:
     Notice slot="left"
   -->
   <div slot="left">
-    <q- item to="/test-layout" exact>
+    <q-side-link item to="/test-layout" exact>
       <q-item-main label="About" />
     </q-side-link>
     <q-side-link item to="/test-layout/toolbar">
