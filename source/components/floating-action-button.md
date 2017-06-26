@@ -29,7 +29,7 @@ If you want a non-expandable FAB, [all you need is a round button](/components/b
   <q-btn round color="primary" @click="method">
     <q-icon name="mail" />
   </q-btn>
-<q-fixed-position>
+</q-fixed-position>
 ```
 
 ### Expandable
