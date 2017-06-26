@@ -226,13 +226,16 @@ Use `config.bodyStyle` optional property to define the height of your Data Table
 * If you want to have a fixed height, specify `height` CSS prop
 
 ### Making a column sortable
-In the columns definition array specify `sort: true` for the Object defining that column.
+In the columns definition array specify `sort: true` (and also `type`) for the Object defining that column.
 ```js
 columns = [
   {
     label: '...',
     ...,
-    sort: true // <<<<
+    sort: true, // <<<<
+
+    // Available values: "string", "number", "date", "boolean"
+    type: 'string' // <<< required to know how to sort
   }
 ]
 ```
