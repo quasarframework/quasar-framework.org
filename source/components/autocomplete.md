@@ -36,6 +36,7 @@ As long as this component is rendered by Vue, it will capture all Ajax calls.
 | `min-characters` | Number | 1 | How many minimum characters can trigger component to suggest something? |
 | `max-results` | Number | 6 | How many results can we display at a time? |
 | `static-data` | Object | *None* | Use static suggestions. No need to do an Ajax call. Filtering is provided by Autocomplete component. |
+| `filter` | Function | internal implementation | If provided, autocomplete will perform custom filtering. |
 | `debounce` | Number | 500 | Time in milliseconds, between key presses and finding new results. Good for delay, if using AJAX requests. |
 | `separator` | Boolean | false | If set to `true`, it ads a delimeter between the values to select from. |
 
@@ -92,6 +93,28 @@ When using static data, specify an Object (notice that it uses some properties f
     ...
   ]
 ]
+```
+To perform custom filtering like fuzzy search, provide an optional function with following signature.
+
+``` js
+// fuzzysearch(needle, haystack) { return true|false }
+methods: {
+  myFilter(terms, { field, list }) {
+    const token = terms.toLowerCase();
+    return list.filter(item => fuzzysearch(token, item[field].toLowerCase()));
+  }
+}
+```
+
+``` html
+<!-- Provide custom filter function -->
+<q-search v-model="terms">
+  <q-autocomplete
+    @search="search"
+    @selected="selected"
+    :filter="myFilter"
+  />
+</q-search>
 ```
 
 Here is the full list of properties that can be used:
@@ -159,7 +182,7 @@ export default {
 
       // DO NOT forget to call done! When no results or an error occured,
       // just call with empty array as param. Example: done([])
-    }   
+    }
   },
   ...
 }
