@@ -181,6 +181,14 @@ QLayout uses the following Vue slots: `header`, `footer`, `navigation`, `left` a
   </q-layout>
   ```
 
+You can specify your own components as content for these slots too.
+
+  ``` html
+  <q-layout>
+    <my-left-panel slot="left" />
+  </q-layout>
+  ```
+
 You can also use multiple headers, footers and navigation elements. Specify `slot="header"` or `slot="footer"` on multiple elements, when the need arises. Please note though, the order in which you specify these DOM elements / components does matter.
 
 ### The Navigation Slot and Positioning
