@@ -76,6 +76,8 @@ All Vue properties are **required**.
 | Vue Event | Description |
 | --- | --- |
 | `@refresh(Function done)` | Triggered when user clicks/taps on "Refresh" button. Call `done()` when refresh is over. |
+| `@selection(Array selection)` | Triggered when user selects/deselects a row. Parameter has all selected rows. |
+| `@rowclick` | Triggered when user clicks on a row. |
 
 ## Configuring Data Table
 Some things worth mentioning before digging into how to configure Data Table:
