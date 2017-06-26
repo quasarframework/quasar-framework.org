@@ -5,14 +5,14 @@ Helpers are built-in to detect the Platform (and its capabilities) in which the 
 <input type="hidden" data-fullpage-demo="misc/platform-detection">
 
 ``` js
-// Usage outside a Vue component
-import { Platform } from 'quasar'
-
-// or usage inside a Vue component JS:
+// For usage inside a Vue component JS:
 this.$q.platform.is.mobile
 
 // or usage inside a Vue component template:
 $q.platform.is.cordova
+
+// Only for usage outside a Vue component you need to import it:
+import { Platform } from 'quasar'
 ```
 
 | Property | Type | Meaning |
