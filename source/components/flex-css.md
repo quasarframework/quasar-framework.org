@@ -184,3 +184,83 @@ Like previously mentioned, rows wrap content by default, so when 12 (or more) gr
 ```
 
 Also check [CSS Helpers &gt; Visibility](/components/visibility.html#Window-Width-Related) page to see thresholds on window width and these tokens (xs, sm, md, lg, xl) used on their own to hide or show DOM elements.
+
+## Using Gutters
+There are 5 types of gutter, depending on the amount of space that you want between your elements:
+
+| Class Name | Size | Description |
+| --- | --- | --- |
+| `xs-gutter` | 8px | extra small gutter |
+| `sm-gutter` | 16px | small gutter |
+| `md-gutter` | 32px | medium gutter |
+| `lg-gutter` | 48px | large gutter |
+| `xl-gutter` | 64px | extra large gutter |
+
+Let's look at a basic example. Please take note of the structure. You need a wrapping `<div>` and your content must be **inside** the `<div>` which has `col-*` CSS helper classes.
+
+```html
+<!-- Example with extra small gutter and two equal width cols -->
+
+<!-- wrapping <div> required -->
+<div>
+  <!-- the row with a type of gutter -->
+  <div class="row xs-gutter">
+    <div class="col-6">
+      <!-- Your content here -->
+    </div>
+    <div class="col-6">
+      <!-- Your content here -->
+    </div>
+  </div>
+</div>
+```
+
+> **IMPORTANT**
+> Some components have default margins, like the form components. This will add to the gutter, which is probably not what you want. For such cases, use `no-margin` class on those components, like in the example below:
+
+```html
+<div>
+  <div class="row xs-gutter">
+    <div class="col-6">
+      <q-input v-model="model" class="no-margin" />
+    </div>
+    <div class="col-6">
+      <q-input v-model="model" class="no-margin" />
+    </div>
+  </div>
+</div>
+```
+
+By default, the gutter applies both horizontally and vertically. If for example you want gutter only horizontally or only vertically, add `no-vert-gutter` or `no-horiz-gutter` (but not both).
+
+### QInput Example
+Let's say we want to build something depicted in the two picture below.
+![QInput on sm+ windows](/images/gutter-sm.png)
+... which becomes like below on xs windows:
+![QInput on xs windows](/images/gutter-xs.png)
+
+The template for this would look like below. Note we are using `no-margin` CSS helper class for QInputs to not add additional space to gutter.
+```html
+<div>
+  <div class="row sm-gutter">
+    <div class="col-12">
+      <q-input inverted v-model="model" class="no-margin" float-label="col-12" />
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <q-input inverted v-model="model" class="no-margin" float-label="col-xs-12 col-sm-6 TOP LEFT" />
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <q-input inverted v-model="model" class="no-margin" float-label="col-xs-12 col-sm-6 TOP RIGHT" />
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <q-input inverted v-model="model" class="no-margin" float-label="col-xs-12 col-sm-6 BOTTOM LEFT" />
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <q-input inverted v-model="model" class="no-margin" float-label="col-xs-12 col-sm-6 BOTTOM RIGHT" />
+    </div>
+    <div class="col-12">
+      <q-input inverted v-model="model" class="no-margin" float-label="col-12" />
+    </div>
+  </div>
+</div>
+```
