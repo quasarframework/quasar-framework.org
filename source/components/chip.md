@@ -40,7 +40,7 @@ There are a number of properties available:
 | `avatar` | String | URL pointing to statics folder for an image which gets placed on left side. |
 | `small` | Boolean | Reduces the size of the chip. Makes it compact. |
 | `square` | Boolean | Gives the chip right-angled corners. Rounded corners are default. |
-| `pointing` | String | Adds a carat to the chip, pointing either `up`, `right`, `down` or `up`.  |
+| `pointing` | String | Adds a carat to the chip, pointing either `up`, `right`, `down` or `left`.  |
 | `color` | String | The color the chip should be. |
 | `closable` | Boolean | Adds a close button to the right of the chip, which when clicked, will emit `@close` event. |
 
