@@ -19,6 +19,16 @@ It's highly **NOT recommended**, but here is how to do it: edit `/build/webpack.
 }
 ```
 
+### Adding support for IE11/Edge
+Check `src/main.js` in your project folder for the code below (should be near the beginning of file):
+``` js
+// Uncomment the following lines if you need IE11/Edge support
+// require(`quasar/dist/quasar.ie`)
+// require(`quasar/dist/quasar.ie.${__THEME}.css`)
+```
+
+Due to the fact that it adds about ~8KB to the bundle size (we care about bundle size!) and there are cases where you don't need it (like Cordova apps for iOS or Android), this is totally optional. Uncomment those two lines and that's everything you need to do.
+
 ### Remote Debugging Mobile Apps
 
 Check the guide [here](/guide/cordova-wrapper.html#Remote-Debugging)
@@ -43,28 +53,3 @@ When building an iOS app with Cordova and you want to disable the [rubber band e
 ``` xml
 <Preference name = "DisallowOverscroll" value = "true" />
 ```
-
-### Configuring Momentjs Localization
-
-In `src/main.js` file, add this:
-
-``` js
-import moment from 'moment'
-
-// 'de' for German localization, as an example
-moment.locale('de')
-```
-
-### Adding support for IE11
-Webpack2 requires Promise polyfill which does not come out of the box with IE11+. As a result, npm install `es6-promise` and then at the top of your `src/main.js` add the following code:
-
-``` js
-require('es6-promise').polyfill()
-```
-
-Due to the fact that it adds about 6KB to the bundle size (and we care about bundle size!), this is not added for you by default in the boilerplating.
-
-### Google Chrome shows scrollbars
-There are some Google Chrome extensions that interfere with website CSS, like WhatFont. Disable it. If this is not it, disable the extensions one by one to find the culprit.
-
-![Chrome extension interfering with website CSS](/images/chrome-scrollbar.png "Chrome extension interfering with website CSS")
