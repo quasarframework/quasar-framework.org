@@ -114,6 +114,32 @@ Another example with a visual representation below it:
 
 There's also the possible to offset a cell. Example: `offset-4` which offsets a third of space (4/12 = 1/3 = 33%).
 
+### Wrapping
+Wrapping is a key feature in understanding Flex CSS classes. You are not bound to use exactly 12 points per row. You can use less or even more.
+
+This allows you, among other things, to dynamically stack rows vertically on smaller screens while displaying them on a single line on bigger screens. Read "Responsive Design" section.
+
+```html
+<div class="row">
+  <div class="col-2">...</div>
+
+  <!-- 2 + 6 < 12, so next element is placed on same line -->
+  <div class="col-6">...</div>
+
+  <!-- 2 + 6 + 10 > 12, so next element wraps to next line -->
+  <div class="col-10">...</div>
+
+  <!--
+    10 + 3 > 12, so next element wraps to next line.
+    Note that we take into consideration the current line only
+    (with col-10 only, since it was wrapped to its own line).
+  -->
+  <div class="col-3">...</div>
+</div>
+```
+
+> Note that rows are wrappable by default. Should you wish to disable this, use `no-wrap` CSS helper class.
+
 ### Self Alignment
 **An item can override the aligned specified on parent**. This allows alignment to be overridden for individual flex items. Please see the [Alignment](#Alignment) explanation from Parent Classes to understand the available values (`self-start`, `self-center`, `self-baseline`, `self-end`, `self-stretch`).
 
@@ -151,6 +177,8 @@ What we've learned so far is that, for example, we can size the columns regardle
 | `xl` | 1201+ px | Extra large sized window |
 
 Example: `col-md-7`, `offset-lg-3`, `col-xs-auto`.
+
+> Before diving into examples, make sure you read and understood [Children Classes &gt; Wrapping](#Wrapping) because it is key to understanding how you can build a responsive design.
 
 A full example: let's say we have a row with three children. On extra small windows, we need to stack the children vertically, on small windows we need to display them side by side (each having equal width), and starting with medium windows we should display them all on same line:
 
