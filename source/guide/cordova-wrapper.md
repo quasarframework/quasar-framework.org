@@ -83,6 +83,18 @@ $ cordova requirements
 
 > On some newer Debian-based operating systems you might face a very persistent problem when running `cordova requiremets`. Please see the ["Android SDK not found" after installation](#android-sdk-not-found-after-installation-of-the-sdk) section for assistance.
 
+### Running iOS simulator
+
+To run your wrapped app on an ios simulator, you need to be on running a Mac OS for iOS and excecute the following command:
+``` bash
+$ cordova run ios
+```
+In case you run into the bug described here:
+> Cannot read property 'replace' of undefined
+
+Please follow the steps here: [phonegap/ios-sim#210](https://github.com/phonegap/ios-sim/issues/210).
+
+For other cordova related bugs please try to look into the [official Cordova documentation](https://cordova.apache.org/) first.
 
 ## Cordova Plugins
 There are lots of Cordova plugins available which enables to you access the Camera, NFC, Battery Status, Contacts, Geolocation, Device motion and orientation and many more.
