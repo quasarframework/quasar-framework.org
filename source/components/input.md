@@ -54,7 +54,7 @@ Common input field properties:
 | `autofocus` | Boolean | Focus input field after rendering component. |
 | `placeholder` | String | A text to be shown on textfield, mainly to explain what should be entered. |
 | `name` | String | Adds a "name" attribute to the input field. |
-| `max-length` | Number/String | Maximum characters allowed on input field. |
+| `max-length` | Number/String | Maximum number of characters allowed on textual input field. This property only affects inputs with type `text`, `textarea`, `email`, `tel`, `password` and `url` |
 | `loading` | Boolean | Place the default spinner of the theme after textfield to highlight some process takes place in the background. |
 
 Common input frame properties:
