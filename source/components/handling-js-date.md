@@ -53,7 +53,11 @@ Available format tokens:
 ## Manipulate dates
 
 ### Create
-**Try to create dates with native JS Date class**. The following method is just a wrapper to help you in cases where you just need current time but with a different year, or month, or second etc.
+**Try to create dates with native JS Date class** like so:
+``` js
+let date = new Date();
+```
+The following method is just a wrapper to help you in cases where you just need current time but with a different year, or month, or second etc.
 
 ``` js
 import { date } from 'quasar'
