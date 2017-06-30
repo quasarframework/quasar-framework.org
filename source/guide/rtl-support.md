@@ -1,4 +1,4 @@
-title: RTL Support
+title: RTL Support (Experimental)
 ---
 
 RTL (right to left) support is in its very early development stages, **so experimental, not fit for production yet**, with some bugs. Due to lack of time, we ask the community for help. Please contact us on forum/Gitter/email if you are interested in giving a helping hand.
@@ -37,4 +37,4 @@ require('quasar/dist/quasar.ie.' + __THEME + '.rtl.css')
 > **IMPORTANT**
 > Do NOT simultaneously use default CSS requires/imports and the new lines.
 
-Note that you currently can't use Quasar Stylus variables with the RTL functionality. This will be added as last step before RTL support will be production ready.
+Note that you currently can't use Quasar Stylus variables with the RTL functionality. This will be added as last step before RTL support will be production ready along with `rtl-css-loader` for Webpack.
