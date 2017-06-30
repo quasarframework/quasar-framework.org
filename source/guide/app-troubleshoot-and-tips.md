@@ -19,16 +19,6 @@ It's highly **NOT recommended**, but here is how to do it: edit `/build/webpack.
 }
 ```
 
-### Adding support for IE11/Edge
-Check `src/main.js` in your project folder for the code below (should be near the beginning of file):
-``` js
-// Uncomment the following lines if you need IE11/Edge support
-// require(`quasar/dist/quasar.ie`)
-// require(`quasar/dist/quasar.ie.${__THEME}.css`)
-```
-
-Due to the fact that it adds about ~8KB to the bundle size (we care about bundle size!) and there are cases where you don't need it (like Cordova apps for iOS or Android), this is totally optional. Uncomment those two lines and that's everything you need to do.
-
 ### Remote Debugging Mobile Apps
 
 Check the guide [here](/guide/cordova-wrapper.html#Remote-Debugging)

@@ -1,4 +1,5 @@
-title: v0.14 Upgrade Guide
+title: v0.14
+Upgrade Guide
 ---
 
 # Starter kit
