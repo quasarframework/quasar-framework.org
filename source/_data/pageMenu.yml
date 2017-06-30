@@ -13,6 +13,7 @@ guide:
   Boilerplate:
     Overview: app-boilerplate
     Structure: app-$
+    Routes Lazy Loading: $
     Build Commands: app-$
     Linter Configuration: app-$
     Pre-Processors: app-$
