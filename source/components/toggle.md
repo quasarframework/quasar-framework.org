@@ -36,7 +36,7 @@ Supports `v-model` which should be binded to a Boolean or Array in your scope.
 | `left-label` | Boolean | Set to `true`, if the label should be placed to the left of the Toggle. |
 | `icon` | String | Optional icon to use. Overriden by `checked-icon` and `unchecked-icon` if the latter are used. |
 | `checked-icon` | String | The icon to use, when the Toggle is checked. |
-| `uncheck-icon` | String | The icon to use, when the Toggle is not checked. |
+| `unchecked-icon` | String | The icon to use, when the Toggle is not checked. |
 | `color` | String | Color from [Quasar Color Palette](/components/color-palette.html). |
 | `disable` | Boolean | Set to true, to disable the toggle. |
 | `val` | Object  | Used to modify the v-model of the Toggle when using an Array as `v-model`. |
