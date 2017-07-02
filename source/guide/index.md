@@ -16,7 +16,7 @@ It will help you a lot if you are familiar with these awesome tools/technologies
 
 # First steps
 
-Before you begin your awesome journey with Quasar, if you aren't yet a very experienced JavaScript and Vue developer, we recommend you [read through this article first](/components/introduction-for-beginners.html). In that article we clarify simple prerequisites and basic knowledge needed to work with Quasar, which expands on the list above. 
+Before you begin your awesome journey with Quasar, if you aren't yet a very experienced JavaScript and Vue developer, we recommend you [read through this article first](/components/introduction-for-beginners.html). In that article we clarify simple prerequisites and basic knowledge needed to work with Quasar, which expands on the list above.
 
 After reading that article, or if you have JavaScript and Vue experience, you can start with the Quasar CLI. The CLI allows you to create new projects in no time, by generating a base application, filled with everything you need to begin working on your application. It does most of the heavy-lifting, so you need not concern yourself with the redundant tasks of building a base application. You should install the CLI globally, in order to generate and manage Quasar apps.
 
@@ -28,7 +28,7 @@ $ npm install -g quasar-cli
 
 ``` bash
 # create starter boilerplate folder
-$ quasar init <folder name>
+$ quasar init default#beta <folder name>
 $ cd <folder name>
 
 # npm install deps
