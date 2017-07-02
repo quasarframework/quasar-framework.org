@@ -63,7 +63,7 @@ console.log(
 // 10 100
 ```
 
-## Aply CSS Properties in Batch
+## Apply CSS Properties in Batch
 ```js
 import { dom } from 'quasar'
 const { css } = dom
