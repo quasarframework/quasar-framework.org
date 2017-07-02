@@ -205,6 +205,7 @@ If, for some reason, the input requires some longer term background action or pr
 | `togglePass()` | Applies to type "password" only. Toggles between showing legible password or not. |
 | `focus()` | Focused the textfield. |
 | `blur()` | Makes textfield lose focus. |
+| `select()` | Selects all textfield text and focuses. |
 
 ## Vue Events
 | Vue Event | Description |

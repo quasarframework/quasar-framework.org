@@ -64,6 +64,7 @@ Common input frame properties:
 | `clearAndFocus()` | Resets the model to an empty string and gives the input focus. |
 | `focus()` | Focused the textfield. |
 | `blur()` | Makes textfield lose focus. |
+| `select()` | Selects all textfield text and focuses. |
 
 ## Vue Events
 | Vue Event | Description |

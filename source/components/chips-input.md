@@ -143,6 +143,7 @@ When used on a dark background, specify "dark" property.
 | `add(value)` | Adds `value` to the model. |
 | `remove(index)` | Removes value at `index` in model. |
 | `focus()` | Focuses the input text field within Chips Input. |
+| `select()` | Selects all textfield text and focuses. |
 
 ## Vue Events
 | Vue Event | Description |
