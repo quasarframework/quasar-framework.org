@@ -11,7 +11,7 @@ Events.$on('app:visibility', state => {
 })
 
 // inside a Vue component:
-this.$q.event.$on('app:visibility', state => {
+this.$q.events.$on('app:visibility', state => {
   console.log('App became', state)
 })
 // in this case, make sure you unregister your handler
@@ -27,10 +27,10 @@ export default {
     this.handler = state => {
       console.log('App became', state)
     }
-    this.$q.event.$on('app:visibility', this.handler)
+    this.$q.events.$on('app:visibility', this.handler)
   },
   beforeDestroy () {
-    this.$q.event.$off('app:visibility', this.handler)
+    this.$q.events.$off('app:visibility', this.handler)
   }
 }
 ```
