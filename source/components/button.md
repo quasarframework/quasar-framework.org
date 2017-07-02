@@ -156,7 +156,7 @@ Here is a full example highlighting what you can do with `loader` property.
 export default {
   methods: {
     // notice parameter "done" (Function)
-    simulateProgress (done) {
+    simulateProgress (event, done) {
       // simulate a delay, like in
       // waiting for an Ajax call
       setTimeout(() => {
