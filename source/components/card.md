@@ -314,7 +314,7 @@ In order to make a grid of Cards you need to use the `inline` property of QCard 
 ```
 
 ### Card with Collapsibles
-Since Collapsibles are List items too, it makes sense to use a QCardList component to encapsulate them. Also, imagine a Card with Collapsibles containing Cards. Inception :)
+Since Collapsibles are List items too, it makes sense to use a QList component to encapsulate them. Also, imagine a Card with Collapsibles containing Cards. Inception :)
 
 ``` html
 <q-card>
@@ -324,7 +324,7 @@ Since Collapsibles are List items too, it makes sense to use a QCardList compone
 
   <q-card-separator />
 
-  <q-card-list>
+  <q-list>
     <q-collapsible icon="explore" label="First">
       <div>
         Lorem ipsum dolor sit amet...
@@ -342,6 +342,6 @@ Since Collapsibles are List items too, it makes sense to use a QCardList compone
         Lorem ipsum dolor sit amet...
       </div>
     </q-collapsible>
-  </q-card-list>
+  </q-list>
 </q-card>
 ```
