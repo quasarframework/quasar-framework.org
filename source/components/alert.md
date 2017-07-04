@@ -1,6 +1,6 @@
 title: Alert
 ---
-Quasar Alerts are like a mix between Dialog and Toast components. They offer more options for appearance and control than Toasts do and they can have custom dismissal action(s) and other behaviors, similar to the dialog component. The Alert component is built however, to be more specific to alerting the users of events happening in your app and it does not timeouts unless user hits one of the Alert action buttons. It can be used either as a component or as a method (so globally, even outside of Vue components, much like Toasts).
+Quasar Alerts are like a mix between the Dialog and Toast components. They offer more options for appearance and control than Toasts do and they can have custom dismissal action(s) and other behaviors, similar to the dialog component. The Alert component is built however, to be more specific to alerting the users of events happening within your app. The alert will also not timeout like a toast, unless the user hits one of the Alert action buttons. The Alert can be used either as a component or as a method (so globally, even outside of Vue components, much like Toasts).
 <input type="hidden" data-fullpage-demo="popups/alert">
 
 Check the sibling [Toast](/components/toast.html) too.
@@ -14,7 +14,7 @@ import { Alert } from 'quasar'
 Alert.create({html: 'Warning, warning, Will Robinson!'})
 ```
 
-You can see this alert at the top right of the play app to the right. Please notice the defaults.
+You can see this alert at the top right of the demo on this page. Please notice the defaults.
 
 1. The alert is red.
 2. The alert needs an options object with the `html` property for adding text.
@@ -64,10 +64,10 @@ Alert.create({
   ]
 })
 ```
-To see this in action, click on the "Show Alert As Method" button in the example app to the right.
+To see this in action, click on the "Show Alert As Method" buttons in the example app to the right.
 
 > **Note**
-> If you do not define any actions, the alert method will automatically be dismissible i.e. there will be the "X" button available to dismiss the alert.
+> If you do not define any actions, the alert method will automatically be dismissible i.e. there will be an "X" button available for the user to dismiss the alert.
 
 ### Programmatically Closing Alert
 Quasar Alerts are meant to be dismissed only by the user, however for exceptional cases you can do it programmatically.
@@ -149,6 +149,6 @@ Here are the available properties, when using Alert as a component:
 | `leave` | String | The transition animation for dismissing the alert. |
 | `name` | String | A custom transition name that will override `enter` and `leave` props. Read about `name` prop of [QTransition](/components/transition.html).  |
 
-> `enter`, `leave` and `name` props work same as for [QTransition](/components/transition.html), so it might be a good idea to get a reading on them.
+> The alert component also makes use of the ´q-transition` component, so you see the `appear`, `enter`, `leave` and `name` props from the [QTransition](/components/transition.html). Please refer to the `q-transition` docs for more information about working with transitions.
 
-It also supports `v-model` directive to receive a Boolean as property, which determines the visibility of the QAlert (`true` means it's visible).
+Alert also supports the `v-model` directive to receive a Boolean as a property. This determines the visibility of the QAlert (`true` means it's visible).
