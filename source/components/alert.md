@@ -14,7 +14,7 @@ import { Alert } from 'quasar'
 Alert.create({html: 'Warning, warning, Will Robinson!'})
 ```
 
-You can see this alert at the top right of the play app. Please notice the defaults.
+You can see this alert at the top right of the demo on this page. Please notice the defaults.
 
 1. The alert is red.
 2. The alert needs an options object with the `html` property for adding text.
