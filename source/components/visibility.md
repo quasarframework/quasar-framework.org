@@ -5,9 +5,9 @@ There are some CSS classes that you can use out of the box for common functional
 | Class Name | Description |
 | --- | --- |
 | `disabled` | Cursor is changed to notify a 'disable' and opacity is set to a lower value. |
-| `hidden` | Set `display` to `none` |
-| `invisible` | Set `visibility` to `none` |
-| `transparent` | Background color is transparent |
+| `hidden` | Set `display` to `none`. Compare with below - the class `hidden` means the element will not show _and_ will not take up space in the layout. |
+| `invisible` | Set `visibility` to `hidden`. Compare with above - the class `invisible` means the element will not show, but it will still take up space in the layout. |
+| `transparent` | Background color is transparent. |
 | `dimmed` | Apply dark transparent overlay on top of your element. Do not use on elements which already have **:after** pseudoelement. |
 | `light-dimmed` | Apply white transparent overlay on top of your element. Do not use on elements which already have **:after** pseudoelement. |
 | `highlight-and-fade` | Adds a yellow background color and fades it away upon element is displayed. |
