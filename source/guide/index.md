@@ -25,7 +25,7 @@ $ npm install -g quasar-cli
 ```
 
 ## Create your first App
-
+<!-- we need to make this part of the docs "beta" compatible. The below note is a start --> 
 ``` bash
 # create starter boilerplate folder
 $ quasar init default#beta <folder name>
@@ -34,6 +34,9 @@ $ cd <folder name>
 # npm install deps
 $ npm install
 ```
+**Note:**
+When there is a beta version available, the addition of `default#beta` to the `quasar init` command is necessary to install the beta version. Otherwise, without naming the beta template, you will end up installing the current stable version of Quasar.  
+
 ## The Dev Server
 Quasar also comes with a development server, which is equipped with [hot reload](https://www.youtube.com/watch?v=zSnL5W1RVkA). It makes your development process significantly easier. To get the server started:
 
