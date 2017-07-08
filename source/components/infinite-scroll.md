@@ -13,9 +13,9 @@ When you want to progressively load new content as the user scrolls down your Pa
 
   <!--
     slot="message" for DOM element to display (in this example
-    a spinner) when loading additional content
+    a dots spinner) when loading additional content
   -->
-  <spinner slot="message" name="dots" :size="40"></spinner>
+  <q-spinner-dots slot="message" :size="40"></q-spinner-dots>
 </q-infinite-scroll>
 ```
 
