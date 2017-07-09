@@ -76,6 +76,8 @@ div
 </style>
 ```
 
+**NOTE:** You must add `@import '~variables'` within your `<style>` tags, in order for Quasar to parse any Stylus variables you may add. If you don't, Quasar will literally pass the variables as text and any theming changes using Stylus variables won't work.
+
 ## Theming Your App
 
 You can easily theme your App by adding Stylus variable declarations in `src/themes/app.variables.styl`.
