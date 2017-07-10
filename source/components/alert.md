@@ -149,6 +149,6 @@ Here are the available properties, when using Alert as a component:
 | `leave` | String | The transition animation for dismissing the alert. |
 | `name` | String | A custom transition name that will override `enter` and `leave` props. Read about `name` prop of [QTransition](/components/transition.html).  |
 
-> The alert component also makes use of the `q-transition component`, so you see the `appear`, `enter`, `leave` and `name` props from the [QTransition](/components/transition.html). Please refer to the `q-transition` docs for more information about working with transitions.
+> The Alert component makes use of the QTransition component which in turn is a wrapper over Vue's `<transition>` component, so for the `appear`, `enter`, `leave` and `name` props please refer to [Vue documentation](https://vuejs.org/v2/guide/transitions.html) and [QTransition](/components/transition.html).
 
 Alert also supports the `v-model` directive to receive a Boolean as a property. This determines the visibility of the QAlert (`true` means it's visible).
