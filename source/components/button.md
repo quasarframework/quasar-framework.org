@@ -135,6 +135,12 @@ There are also the `outline`, `push`, `round`, `flat`, `rounded` and `glossy` pr
 <q-btn glossy color="primary">Glossy</q-btn>
 ```
 
+If you'd like a rectangular button with just an icon and not text, you should use the ´q-icon` component inside the button. 
+
+```
+<q-btn> <q-icon name="mail" /> </q-btn>
+```
+
 ## Button with Progress
 Some button actions involve contacting a server, so an asynchronous response. It's best that you inform the user about a background process taking place until the asynchronous response is ready. QBtn offers this possibility through the `loader` prop. What this property does it it's displaying a QSpinner (by default) instead of the icon and/or label of the button. Custom loading content can also be used.
 
