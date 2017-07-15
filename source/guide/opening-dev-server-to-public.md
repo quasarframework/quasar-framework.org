@@ -9,7 +9,8 @@ At some point you may want to show someone else the project you've been working 
 
 ### Getting started
 
-1. Download and install ngrok [here](https://ngrok.com/download). (Please note that the ngrok application does not necessarily need to be placed in or run from inside your cordova folder)
+1. Download and install ngrok [here](https://ngrok.com/download).
+(Please note that the ngrok executable file does not need to be placed in or run from inside your cordova folder. When on a mac it's best to place the ngrok executable file inside `/usr/local/bin` to be able to run it globally.)
 
 2. Start your Dev server
 ``` bash
