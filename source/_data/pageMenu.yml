@@ -7,7 +7,7 @@ guide:
     Changelog: quasar-framework-$
     Contributing: $
   Misc:
-    IE11 and Edge Support: $
+    Browser Support: $
     RTL Support: $
     Troubleshoot and Tips: app-$
   Boilerplate:
