@@ -135,10 +135,12 @@ There are also the `outline`, `push`, `round`, `flat`, `rounded` and `glossy` pr
 <q-btn glossy color="primary">Glossy</q-btn>
 ```
 
-If you'd like a rectangular button with just an icon and not text, you should use the ´q-icon` component inside the button. 
+If you'd like a rectangular button with just an icon and not text, you should use the QIcon component inside the button. 
 
 ```
-<q-btn> <q-icon name="mail" /> </q-btn>
+<q-btn>
+  <q-icon name="mail" />
+</q-btn>
 ```
 
 ## Button with Progress
