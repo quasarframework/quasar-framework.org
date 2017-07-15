@@ -11,9 +11,6 @@ The Supported Browsers are:
 - Opera
 - Android Browser 4.4+
 
-Due to the lack of some important CSS features, IE 9 and 10 aren't supported.
-
-
 # IE11/Edge Support
 
 Adding support for IE11/Edge requires you to check `src/main.js` in your project folder for the code below (should be near the beginning of file):
