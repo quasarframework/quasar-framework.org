@@ -19,7 +19,7 @@ $ quasar dev
 3. Create your ngrok connection
 ``` bash
 $ ngrok http 80
-// In case your development server doesn't run on port 80 you need to change the number to the correct port
+# In case your development server doesn't run on port 80 you need to change the number to the correct port
 ```
 
 4. ngrok shows the url in the command line when it started.
