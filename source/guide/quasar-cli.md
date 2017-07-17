@@ -71,6 +71,18 @@ If you wish to change the port serving your App you have 2 options:
   $ PORT=3000 quasar dev
   ```
 
+If there appears to be an issue with hot reload, you can try two fixes:
+* Change the permissions for the project folder with
+
+  ``` bash
+  sudo chown -R username: .
+  ```
+* or run the dev server with root privileges
+  
+  ``` bash
+  sudo quasar dev
+  ```
+
 ## Build App for Production
 The Quasar CLI can pack everything together and optimize your App for production. It minifies source code, extracts vendor components and leverages browser cache, and much more.
 
