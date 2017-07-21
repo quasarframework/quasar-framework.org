@@ -1,0 +1,41 @@
+@require 'quasar.theme'
+
+
+/* Inputs */
+
+input, select, textarea
+  border-radius $border-radius
+
+.qwb-input
+  position relative
+
+  input
+    width 100%
+    box-sizing border-box
+
+  &.search input
+    border-radius $border-radius * 4
+    padding-right 2em
+
+  &.icon
+    input+i
+      position absolute
+      top .5em
+      color $normal-text
+
+  &.left.icon
+    input
+      padding-left 25px
+
+    input+i
+      left 10px
+
+  &.right.icon
+    input
+      padding-right 25px
+
+    input+i
+      right 10px
+
+  input, select, textarea
+    display inline-block

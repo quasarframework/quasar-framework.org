@@ -1,0 +1,74 @@
+@require 'quasar.theme'
+
+
+/* Modals */
+
+.qwb-modal
+  display flex
+  pointer-events none
+  flex-direction column
+  justify-content center
+  align-content center
+  position fixed
+  top 0
+  left 0
+  width 100%
+  height 100%
+  z-index 200
+  opacity 0
+  background-color rgba(0, 0, 0, .5)
+  transition opacity .2s
+
+  :first-child
+    border-top-left-radius $border-radius
+    border-top-right-radius $border-radius
+
+  :last-child
+    border-bottom-left-radius $border-radius
+    border-bottom-right-radius $border-radius
+
+.qwb-modal-header,
+.qwb-modal-content,
+.qwb-modal-footer
+  display flex
+  min-width 300px
+  width 300px
+  margin 0 auto
+  padding 1rem
+  background-color $white
+  box-shadow $shadow
+
+.qwb-modal-header,
+.qwb-modal-footer
+  flex-direction row
+
+.qwb-modal-header
+  vertical-align middle
+
+  inverted()
+
+  h1, h2, h3, h4, h5, h6, i, a
+    display inline-block
+    color $white
+    font-size 1em
+    line-height 1em
+    margin-bottom 0
+
+  i
+    margin-right 10px
+
+  i+*
+    flex-grow 1
+
+  .qwb-modal-close i
+    margin-right 0
+
+.qwb-modal-content
+  flex-direction column
+  min-height 3em
+  max-height 30em
+  overflow auto
+
+.qwb-modal:target
+  opacity 1
+  pointer-events auto

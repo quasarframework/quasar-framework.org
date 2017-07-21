@@ -1,0 +1,44 @@
+@require 'quasar.theme'
+
+
+/* Leads */
+
+@keyframes stars-slide-x
+  from
+    background-position 0px 0, 100px 0
+  to
+    background-position -7000px 0, -10000px 0
+
+.qwb-lead
+  position relative
+  box-sizing border-box
+  background-image url(../images/space.jpg)
+  background-attachment fixed
+  background-repeat repeat-x
+  background-position center 60%
+  background-size auto 100%
+  background-color $primary
+  color $white
+  text-align center
+
+  &:before
+    content ''
+    position absolute
+    top 0
+    left 0
+    right 0
+    bottom 0
+    opacity 0.8
+    background-image url(../images/stars.png), url(../images/stars.png)
+    background-attachment fixed
+    background-repeat repeat, repeat
+    background-size auto 1300px, auto 1000px
+    animation stars-slide-x 600s linear infinite
+
+  .container
+    position relative
+    padding-top 2rem
+    padding-bottom 2rem
+
+  p
+    flex-grow 2

@@ -1,0 +1,54 @@
+@require 'quasar.mixins'
+
+
+/* Buttons */
+
+.btn
+  border-radius $border-radius
+  box-shadow $shadow
+  transition all .2s
+
+  &:hover
+    color $primary
+
+  &:not(.icon-only) > i
+    margin-right .25em
+
+  &.floating
+    margin .75rem
+    z-index 102 /* <-- Avoid to be covered */
+    color $primary
+
+    &:hover
+      color $inverted-secondary-text
+
+.btn-group
+  display flex
+
+.inverted > .btn, .btn.inverted
+  background-color $dark-primary
+  color $white
+
+  &:hover
+    background-color $primary
+
+  &:active
+    background-color $inverted-secondary-text
+
+.btn-group.iconized > .btn > i, .btn.iconized > i
+  margin-right 0
+
+  &+span
+    display none
+
+.btn-group.compact > .btn, .btn.compact
+  padding 0
+  min-width auto
+
+.btn-group.round > .btn, .btn.round
+  border-radius 50%
+
+.btn-group.simple > .btn, .btn.simple
+  border none
+  background transparent
+  box-shadow none

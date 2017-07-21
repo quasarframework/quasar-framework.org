@@ -1,0 +1,47 @@
+@require 'quasar.theme'
+
+
+/* Text */
+
+a
+  color $dark-primary
+  text-decoration none
+
+  &:hover
+    color $primary
+
+.lead
+  font-size 1.5em
+
+blockquote
+  border-left-color $primary
+
+
+/* Variations */
+
+.inverted
+  color $inverted-text
+
+  h1, h3
+    color $inverted-primary-text
+    text-shadow $text-shadow
+
+  h2, h4
+    color $inverted-secondary-text
+    text-shadow $text-shadow
+
+  h5, h6
+    color $inverted-text
+
+  a:not(.btn)
+    color $light-primary
+    font-weight normal
+
+    &:hover
+      color $white
+
+  .lead
+    text-shadow $text-shadow
+
+  code, pre
+    color $inverted-text

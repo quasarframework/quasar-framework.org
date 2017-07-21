@@ -1,0 +1,29 @@
+@require 'quasar.theme'
+
+
+.qwb-logotype
+  display inline-block
+  width 222px
+  height 32px
+  font-size 0
+  background url(https://cdn.rawgit.com/quasarframework/quasar-art/729b1177/dist/svg/quasar-logotype.svg) no-repeat center
+  background-size contain
+
+  &.vertical
+    margin 2rem auto 0 !important
+
+.inverted .qwb-logotype
+  background-image url(https://cdn.rawgit.com/quasarframework/quasar-art/729b1177/dist/svg/quasar-logotype-inverted.svg)
+
+.fa.fa-quasar
+  &:before
+    content ''
+    display inline-block
+    width 1em
+    height 1em
+    vertical-align bottom
+    background url(https://cdn.rawgit.com/quasarframework/quasar-art/4a472070/dist/svg/quasar-logo-monochrome.svg) no-repeat center center
+    background-size 1em 1em
+
+  &:hover:before
+    background-image url(https://cdn.rawgit.com/quasarframework/quasar-art/756e89a6/dist/svg/quasar-logo.svg)

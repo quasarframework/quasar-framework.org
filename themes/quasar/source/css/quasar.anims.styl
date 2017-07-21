@@ -1,0 +1,179 @@
+@require 'quasar.theme'
+
+
+/* Responsive */
+
+@keyframes logo-resize
+  0%, 20%
+    top 16%
+    height 40%
+  25%, 45%
+    top 32%
+    height 30%
+  50%, 70%
+    top 35%
+    height 25%
+  75%, 95%
+    top 45%
+    height 15%
+  100%
+    top 16%
+    height 40%
+
+@keyframes device-fade-in-out
+  0%
+    opacity 0
+  5%, 20%
+    opacity 1
+  25%
+    opacity 0
+
+
+/* Platforms */
+
+@keyframes platform-logo-slide-in-out
+  0%
+    left 80%
+    opacity 0
+    height 20%
+  33%
+    left 0
+    opacity 1
+    height 65%
+  66%, 100%
+    left -80%
+    opacity 0
+    height 20%
+
+
+/* JS & Vue */
+
+@keyframes vuelogo-rotate
+  0%
+    opacity 0
+    transform rotateY(-180deg)
+  25%
+    opacity 0
+    transform rotateY(-90deg)
+  26%
+    opacity 1
+  50%
+    opacity 1
+    transform rotateY(0deg)
+  75%
+    opacity 1
+    transform rotateY(90deg)
+  76%
+    opacity 0
+  100%
+    opacity 0
+    transform rotateY(180deg)
+
+@keyframes jslogo-rotate
+  0%
+    opacity 1
+    transform rotateY(0deg)
+  24%
+    opacity 1
+  25%
+    opacity 0
+    transform rotateY(90deg)
+  50%
+    opacity 0
+    transform rotateY(180deg)
+  75%
+    opacity 0
+    transform rotateY(270deg)
+  76%
+    opacity 1
+  100%
+    opacity 1
+    transform rotateY(360deg)
+
+
+/* Quasar Play */
+
+@keyframes play-fade-out
+  0%, 5%, 15%, 100%
+    width 25%
+    opacity 1
+  10%
+    width 30%
+    opacity 1
+  20%, 95%
+    opacity 0
+
+@keyframes laptop-fade-out
+  0%, 15%
+    opacity 0
+    left 5%
+  25%, 55%
+    left 0
+    opacity 1
+  60%, 100%
+    opacity 0
+    left -5%
+
+@keyframes qrcode-fade-in
+  0%, 15%
+    width 25%
+    opacity 0
+  20%, 45%
+    width 25%
+    opacity 1
+  50%
+    width 10%
+    opacity 1
+  55%
+    width 10%
+    opacity 0
+  90%, 100%
+    width 25%
+    opacity 0
+
+@keyframes mobile-scan
+  0%, 30%
+    top 10%
+    opacity 0
+  35%
+    opacity 1
+  40%, 65%
+    top 2.5%
+    opacity 1
+  70%, 100%
+    top 2.5%
+    opacity 0
+
+@keyframes logo-fade-in
+  0%, 50%
+    width 5%
+    opacity 0
+  55%, 65%
+    width 30%
+    opacity 1
+  90%
+    width 80%
+    opacity 1
+  100%
+    width 80%
+    opacity 0
+
+
+/* Hot reload */
+
+@keyframes smoke
+  0%, 50%
+    opacity 0
+    top 10%
+  80%
+    opacity 1
+    top 0
+  100%
+    opacity 0
+    top -2.5%
+
+@keyframes rotate-clockwise
+  from
+    transform rotateZ(0deg)
+  to
+    transform rotateZ(360deg)

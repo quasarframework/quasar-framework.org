@@ -61,7 +61,7 @@
 
   /* Toggles */
 
-  var toggleBtns = document.querySelectorAll('.qwb-toggle');
+  var toggleBtns = document.querySelectorAll('.btn.toggle');
 
   toggleBtns.forEach(function (toggle) {
     toggle.addEventListener('click', function (evt) {

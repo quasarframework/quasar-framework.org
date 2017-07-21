@@ -1,18 +1,34 @@
-@import '_variables'
-@import '_typography'
-@import '_grid'
-@import '_elements'
-@import '_anims'
+@require 'quasar.typography'
+@require 'quasar.grid'
+@require 'quasar.brand'
+@require 'quasar.images'
+@require 'quasar.buttons'
+@require 'quasar.inputs'
+@require 'quasar.tables'
+@require 'quasar.menus'
+@require 'quasar.collapsible'
+@require 'quasar.leads'
+@require 'quasar.footer'
+@require 'quasar.anims'
 
 
-img.arrow
-  width 1.5rem
-  margin 2rem auto 0
+#qwb-main
+  @media screen and (min-width: $xs)
+    padding-top 2.5rem
+
+
+#qwb-header
+  position fixed
+  top 0
+  width 100%
+  z-index 999
+  background-color $white
+  box-shadow $shadow
 
 
 #qwb-logo
-  width 7rem
-  height 7rem
+  width 8rem
+  height 8rem
   margin 0 auto
   box-sizing border-box
   background-color #fff
@@ -20,55 +36,140 @@ img.arrow
   border-radius 50%
 
 
-#qwb-intro
-  padding-top 3rem
-  font-size 1.2em
+#qwb-intro-actions
+  padding-top 1rem
+  padding-bottom 1rem
 
-  p
-    max-width 34rem
+  > .btn
+    margin-bottom 1rem
+
+    @media screen and (max-width: $sm)
+      width 100%
+      margin-left 0
+
+
+#qwb-features
+  > .row
+    margin 5rem 0
+
+    &.reverse
+      @media screen and (max-width: $xs)
+        flex-direction column
+
+  .qwb-feature-image
+    position relative
+    box-sizing border-box
+    text-align center
+    width 13rem
+    height 13rem
+    margin 0 auto
+    overflow hidden
+
+    @media screen and (max-width: $xs)
+      width 10rem
+      height 10rem
+
+    > img
+      display inline-block
+      position absolute
+      left 0
+      right 0
+      height 80%
+      max-height 100%
+      margin 0 auto
+
+  #qwb-responsive
+    .device
+      opacity 0
+      height auto
+      animation device-fade-in-out 8s linear infinite
+    .desktop
+      top 7.5%
+      width 100%
+    .laptop
+      top 25%
+      width 85%
+      animation-delay 2s
+    .tablet
+      top 20%
+      width 40%
+      animation-delay 4s
+    .mobile
+      top 30%
+      width 25%
+      animation-delay 6s
+    .logo
+      animation logo-resize 8s linear infinite
+
+  #qwb-platforms
+    .androidlogo, .applelogo, .winlogo
+      opacity 0
+      left 80%
+      animation platform-logo-slide-in-out 6s ease infinite
+    .androidlogo
+      animation-delay 0s
+    .applelogo
+      animation-delay 2s
+    .winlogo
+      animation-delay 4s
+
+  #qwb-js-vue
+    perspective: 500px;
+
+    .jslogo, .vuelogo
+      height 70%
+    .vuelogo
+      margin-top 15%
+      opacity 0
+      transform rotateY(-180deg)
+      animation vuelogo-rotate 4s linear infinite
+    .jslogo
+      margin-top 10%
+      opacity 1
+      animation jslogo-rotate 4s linear infinite
+
+  #qwb-play
+    .qrcode
+      top 2.5%
+      animation qrcode-fade-in 8s linear infinite
+    .play
+      animation play-fade-out 8s linear infinite
+    .logo
+      top 2.5%
+      animation logo-fade-in 8s ease infinite
+    .mobile
+      top 10%
+      height 80%
+      animation mobile-scan 8s ease infinite
+    .laptop
+      top 15%
+      height 60%
+      opacity 0
+      animation laptop-fade-out 8s ease infinite
+
+  #qwb-hot-reload
+    .cup
+      top 40%
+      left 5%
+      height 55%
+    .smoke
+      top 0
+      height 40%
+      opacity 0
+      animation smoke 3s ease infinite
+    .logo
+      top 48%
+      height 35%
+      animation rotate-clockwise 3s ease infinite
+
+
+#qwb-brief
+  padding 1.5rem 0
 
 
 #qwb-actions
-  .qwb-item
-    margin-bottom 2rem
-    p
-      max-width 80%
-      box-sizing border-box
-      text-align center
-      margin-left auto
-      margin-right auto
-    .qwb-btn
-      margin-bottom 2rem
-
-
-#qwb-footer
-  margin 2rem 0
   text-align center
-  box-sizing border-box
 
-
-@media only screen and (min-width $sm)
-
-  #qwb-logo
-    width 10rem
-    height 10rem
-
-
-@media only screen and (min-width $md)
-
-  #qwb-logo
-    margin-top 2rem
-
-
-  #qwb-actions
-    .qwb-item
-      margin-bottom 0
-      padding-bottom 4rem
-      .qwb-btn
-        position absolute
-        width 180px
-        left 0
-        right 0
-        bottom 0
-        margin-left auto
-        margin-right auto
+  .col
+    @media screen and (max-width: $xs)
+      margin-bottom 2rem

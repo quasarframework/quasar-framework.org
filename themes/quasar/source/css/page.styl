@@ -1,11 +1,19 @@
-@import '_variables'
-@import '_typography'
-@import '_grid'
-@import '_elements'
-@import '_syntax'
-@import '_search'
-@import '_sidebar'
-@import '_preview'
+@require 'quasar.typography'
+@require 'quasar.grid'
+@require 'quasar.brand'
+@require 'quasar.images'
+@require 'quasar.buttons'
+@require 'quasar.inputs'
+@require 'quasar.tables'
+@require 'quasar.menus'
+@require 'quasar.modals'
+@require 'quasar.code'
+@require 'quasar.syntax'
+@require 'quasar.search'
+@require 'quasar.sidebar'
+@require 'quasar.preview'
+@require 'quasar.footer.styl'
+
 
 #qwb-main
   display flex
@@ -59,7 +67,6 @@
     padding 4rem 1rem 1rem
 
     h1, h2
-      padding-bottom $header-bottom-margin * 0.5
       border-bottom 1px dotted $divider
 
     h1, h2, h3, h4, h5, h6

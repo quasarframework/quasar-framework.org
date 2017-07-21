@@ -1,0 +1,19 @@
+@require 'quasar.theme'
+
+
+/* Collapsible */
+
+.collapsible
+  overflow-y hidden
+
+  .btn.toggle:first-child+.btn-group
+    margin-top 0
+    transition .2s margin-top
+
+  .btn.toggle:first-child
+    @media screen and (max-width: $xs)
+      &:not(.on)+.btn-group
+          margin-top -100%
+
+    @media screen and (min-width: $xs)
+      display none

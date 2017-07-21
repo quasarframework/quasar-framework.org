@@ -1,5 +1,4 @@
-@import '_variables'
-@import '_mixins'
+@require 'quasar.mixins'
 
 
 .qwb-sidebar
@@ -63,7 +62,6 @@
       i
         float right
         font-size .8rem
-        margin-top 1em * $header-line-height * 0.5
         transition transform .2s, color .2s
 
   h4.qwb-toggle.on+.list
@@ -91,9 +89,7 @@
         &+.list
           display flex
 
-@media screen and (min-width $md)
-  .qwb-sidebar
-
+  @media screen and (min-width $md)
     .qwb-logo
       position static
       background none
