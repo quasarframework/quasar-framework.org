@@ -1,6 +1,6 @@
 title: Quasar Play App
 ---
-We have the dev server which offers hot-reload. We can build and test Apps on a desktop machine. If we want to release a native App, we can use emulators directly in the browser (read about debugging methods [here](/guide/cordova-wrapper.html#Tips)). It's cool. But, what if we want to develop our Apps directly on the phone, to tap and swipe items on it? Wouldn't it be way cooler to have hot-reload working on a phone too?
+We have the dev server which offers hot-reload. We can build and test Apps on a desktop machine. If we want to release a native App, we can use emulators directly in the browser (read about debugging methods [here](/guide/cordova-wrapper.html#Tips-and-Troubleshooting)). It's cool. But, what if we want to develop our Apps directly on the phone, to tap and swipe items on it? Wouldn't it be way cooler to have hot-reload working on a phone too?
 
 **Well, now you can.** 
 

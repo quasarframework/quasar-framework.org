@@ -245,7 +245,7 @@ You will, in most cases, want to use tabs within a layout component. Below is an
 
 Notice the `slot="navigation"` attribute. This allows Quasar to know where to place your Tabs depending on the theme. With the Material Design theme, the tabs will be placed between the Layout header and the page view. And, with the iOS theme, it will be placed between the page view and the Layout footer.
 
-Please refer to the following documentation for more information: [Quasar Layout Component](/components/layout-overview.html)
+Please refer to the following documentation for more information: [Quasar Layout Component](/components/layout.html)
 
 ## Coloring
 Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`, `orange`, `teal` or variants (`teal-4`, `orange-10`) as CSS class:

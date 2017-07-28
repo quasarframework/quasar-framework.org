@@ -62,4 +62,4 @@ You can use the binding value in 3 forms:
 3. **As an Object** with `offset` and/or `duration` as props. Duration is ignored if `animate` modifier is not used.
 
 ## Determining Scrolling Container
-Please read [here](components/scroll-observable.html#Determining-Scrolling-Container) about how Quasar determines the container to attach scrolling events to.
+Please read [here](/components/scroll-observable.html#Determining-Scrolling-Container) about how Quasar determines the container to attach scrolling events to.

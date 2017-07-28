@@ -1,6 +1,6 @@
 title: Quasar Stepper
 ---
-Quasar Stepper conveys progress through numbered steps. Steppers display progress through a sequence of logical and numbered steps. They may also be used for navigation. It's usually useful when the user has to follow steps to complete a process, like in a [wizard](https://en.wikipedia.org/wiki/Wizard_(software).
+Quasar Stepper conveys progress through numbered steps. Steppers display progress through a sequence of logical and numbered steps. They may also be used for navigation. It's usually useful when the user has to follow steps to complete a process, like in a <a href="https://en.wikipedia.org/wiki/Wizard_(software)">wizard</a>.
 <input type="hidden" data-fullpage-demo="grouping/stepper">
 
 The stepper component is built from three different child components:
@@ -162,7 +162,7 @@ Methods for this component:
 | `select()` | Stepper selects this step as current one. |
 
 ## QStepperNavigation (Child of QStepper or QStep)
-This component allows you to place buttons within QStepper or QStep to navigate through the steps. It is up to you to add whatever [buttons](components/buttons.html) you require.
+This component allows you to place buttons within QStepper or QStep to navigate through the steps. It is up to you to add whatever [buttons](/components/button.html) you require.
 
 ```html
 <q-stepper ref="myStepper">
