@@ -20,7 +20,7 @@
       <i class="fa fa-search"></i>
     </span>
 
-    <div class="qwb-menu simple centered fluid">
+    <div class="btn-group centered simple iconized">
       <%- partial('partials/social-links') %>
     </div>
   </div>
@@ -28,7 +28,7 @@
   <div class="qwb-accordion">
     <% for (section in site.data.pageMenu) { %>
     <h4
-      class="qwb-toggle"
+      class="qwb-toggle toggle"
       href="<%- config.root %><%- section %>/"
     >
       <%- section %>

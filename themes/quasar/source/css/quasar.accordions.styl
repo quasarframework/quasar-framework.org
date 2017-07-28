@@ -1,0 +1,27 @@
+@require 'quasar.toggles'
+
+
+/* Accordions */
+
+.qwb-accordion,
+  display flex
+  flex-direction column
+  overflow-y auto
+
+  > .toggle
+    font-size 1.25rem
+    cursor pointer
+
+  > .toggle+.list
+    flex 0
+    height auto
+    max-height 0px
+    opacity 0
+    overflow-y hidden
+    transition opacity .2s, overflow-y 0.5s linear 0.5s
+
+  > .toggle.on+.list
+    flex 1
+    max-height 9999px
+    overflow-y auto
+    opacity 1

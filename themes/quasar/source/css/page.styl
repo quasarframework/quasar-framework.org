@@ -6,22 +6,16 @@
 @require 'quasar.inputs'
 @require 'quasar.tables'
 @require 'quasar.menus'
+@require 'quasar.toggles'
+@require 'quasar.collapsible'
+@require 'quasar.accordions'
 @require 'quasar.modals'
 @require 'quasar.code'
 @require 'quasar.syntax'
 @require 'quasar.search'
 @require 'quasar.sidebar'
 @require 'quasar.preview'
-@require 'quasar.footer.styl'
-
-
-#qwb-main
-  display flex
-  flex-direction column
-  width 100%
-
-  .qwb-container .qwb-row
-    background-color $white
+@require 'quasar.footer'
 
 
 /* Sidebar */
@@ -29,26 +23,37 @@
 #qwb-sidebar
   display flex
   position fixed
+  max-width 100%
   width 100%
-  z-index 101
-  margin-left - $sidebar-max-width
-  max-width $sidebar-max-width
   height 100%
+  padding 0
+  left 0
+  z-index 101
   overflow-x hidden
   overflow-y hidden
-  transition margin-left .2s
+
+  @media screen and (min-width $xs)
+    max-width $sidebar-max-width
 
 #qwb-sidebar-toggle
-  height 3rem
-  line-height 2rem
-  background-color transparent !important
+  display block
 
-#qwb-sidebar-toggle.on+#qwb-sidebar
-  margin-left 0
-  transition margin-left .2s
+  &+.qwb-sidebar
+    padding-top 4rem
+    padding-bottom 0
+    max-width 100%
+    margin-left -100%
+    transition margin-left .2s
 
-#qwb-sidebar .qwb-sidebar
-  padding-top 4rem
+    @media screen and (min-width $lg)
+      padding-top 1rem
+      margin-left 0
+
+  &.on+.qwb-sidebar
+    margin-left 0
+
+  @media screen and (min-width $lg)
+    display none
 
 #qwb-sidebar .qwb-accordion
   border-top 1px solid rgba(0, 0, 0, .2)
@@ -57,38 +62,48 @@
 /* Page content */
 
 #qwb-page
-  min-width $xs - 2rem
+  box-sizing border-box
+  width 100%
   max-width $lg
+  padding 4rem 1rem 2rem
   height 100%
   background-color $white
 
-  .qwb-content
-    flex-shrink 0
-    padding 4rem 1rem 1rem
+  h1, h2
+    border-bottom 1px dotted $divider
 
-    h1, h2
-      border-bottom 1px dotted $divider
+  h1, h2, h3, h4, h5, h6
+    cursor pointer
+    &:hover:after
+      content ' #'
+      color $primary-text
+      font-weight bold
 
-    h1, h2, h3, h4, h5, h6
-      cursor pointer
-      &:hover:after
-        content ' #'
-        color $primary-text
-        font-weight bold
+  img
+    display block
+    width auto
+    margin-left auto
+    margin-right auto
 
-    img
-      display block
-      width auto
-      margin-left auto
-      margin-right auto
+  @media screen and (min-width $lg)
+    padding 2rem
+    margin-left $sidebar-max-width
 
-    .qwb-edit-page-btn
-      float right
+  @media screen and (min-width $xl)
+    &.with-previewer
+      &+#qwb-preview
+        display flex
 
-  .qwb-guide-links
-    width 100%
-    overflow auto
-    margin 2rem 0
+
+/* Page meta */
+
+#qwb-edit-page-btn
+  display inline
+  float right
+
+#qwb-headnote
+  display inline
+  float left
 
 
 /* Mobile preview */
@@ -97,6 +112,7 @@
   display none
   position fixed
   flex 0
+  max-width $preview-max-width
   width 100%
   height 100%
   right 0
@@ -104,30 +120,15 @@
   z-index 150
 
 
-/* Responsive */
+/* Page content footer */
 
-@media screen and (min-width $md)
+#qwb-guide-links
+  width 100%
+  overflow auto
+  margin 2rem 0
 
-  #qwb-main
-    .qwb-container .qwb-row
-      padding-left $sidebar-max-width
+#qwb-footnote
+  padding 1rem 0
+  border-top 1px dashed $divider
 
-  #qwb-sidebar
-    margin-left - $sidebar-max-width !important
-    .qwb-sidebar
-      padding-top 1rem
-
-  #qwb-page
-    .qwb-content
-      padding 2rem 4rem
-
-@media screen and (min-width $xl)
-
-  #qwb-page.with-previewer
-    margin-right $preview-max-width
-
-  #qwb-page.with-previewer+#qwb-preview
-    display flex
-
-  #qwb-preview
-    max-width $preview-max-width
+/**/

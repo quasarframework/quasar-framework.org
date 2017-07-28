@@ -36,7 +36,7 @@
   // build current page sub-links
   if (currentPageLink) {
     var
-      h2s = document.querySelectorAll('#qwb-page .qwb-content h2')
+      h2s = document.querySelectorAll('#qwb-page > a > h2')
       submenu = document.createElement('ul')
       ;
 

@@ -4,9 +4,9 @@
 
   /* eslint-disable one-var */
   var
-    h1s = document.querySelectorAll('#qwb-page .qwb-content h1'),
-    h2s = document.querySelectorAll('#qwb-page .qwb-content h2'),
-    h3s = document.querySelectorAll('#qwb-page .qwb-content h3')
+    h1s = document.querySelectorAll('#qwb-page > h1'),
+    h2s = document.querySelectorAll('#qwb-page > h2'),
+    h3s = document.querySelectorAll('#qwb-page > h3')
     ;
 
   function makeHeaderClickable (header) {

@@ -1,30 +1,49 @@
 @require 'quasar.mixins'
 
 
+/* Sidebars */
+
 .qwb-sidebar
+  position relative
+  display flex
+  flex-direction column
+  box-sizing border-box
+  padding 1rem
+  min-width $xxs
+  height 100%
+  overflow-x hidden
+  overflow-y auto
+  z-index 101
+
   inverted()
+
+  .qwb-lead
+    flex-direction column
+
+  .qwb-accordion
+    flex-grow 1
 
   .qwb-sidebar-header
     flex-shrink 0
+    text-align center
 
   .qwb-logo
     position fixed
     display inline-block
     width 100%
-    padding .5rem
     left 0
     top 0
     z-index 150
     margin-bottom 1rem
     text-align center
-    font-size 1.3em
+    font-size 1.5em
     line-height 1
     box-shadow $shadow
     background-color $dark-primary
 
     img
       vertical-align middle
-      margin-right .2em
+      margin-right .25em
 
     strong
       display inline-block
@@ -37,13 +56,8 @@
     em
       font-size .6em
 
-  .qwb-menu
-    flex-flow row wrap
-    margin-top -1rem
-    margin-bottom 2rem
-
   .qwb-accordion
-    margin -1rem
+    margin 0 -1rem
     padding 0
 
     h4.qwb-toggle
@@ -64,7 +78,7 @@
         font-size .8rem
         transition transform .2s, color .2s
 
-  h4.qwb-toggle.on+.list
+  .qwb-toggle.on+.list
     padding-top 1rem
     padding-bottom 1rem
 
@@ -89,7 +103,7 @@
         &+.list
           display flex
 
-  @media screen and (min-width $md)
+  @media screen and (min-width $lg)
     .qwb-logo
       position static
       background none

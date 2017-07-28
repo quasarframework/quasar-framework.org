@@ -61,7 +61,7 @@
 
   /* Toggles */
 
-  var toggleBtns = document.querySelectorAll('.btn.toggle');
+  var toggleBtns = document.querySelectorAll('.toggle');
 
   toggleBtns.forEach(function (toggle) {
     toggle.addEventListener('click', function (evt) {

@@ -1,21 +1,19 @@
-<div class="container">
-  <div class="row">
-    <div id="qwb-sidebar-toggle" class="btn qwb-toggle only xs sm simple fixed top left inverted">
+<div class="row">
+  <div id="qwb-sidebar" class="collapsible lg col">
+    <div id="qwb-sidebar-toggle" class="btn toggle simple compact iconized floating top left inverted">
       <i class="fa fa-bars"></i>
     </div>
-    <div id="qwb-sidebar" class="col">
-      <%- partial('partials/sidebar') %>
-    </div>
-
-    <div id="qwb-page" class="col">
-      <%- partial('partials/page-content') %>
-      <%- partial('partials/footer') %>
-    </div>
-
-    <div id="qwb-preview" class="col">
-      <%- partial('partials/preview') %>
-    </div>
+    <%- partial('partials/sidebar') %>
   </div>
 
-  <%- partial('partials/search') %>
+  <div id="qwb-page" class="col">
+    <%- partial('partials/page-content') %>
+    <%- partial('partials/footer') %>
+  </div>
+
+  <div id="qwb-preview" class="col">
+    <%- partial('partials/preview') %>
+  </div>
 </div>
+
+<%- partial('partials/search') %>
