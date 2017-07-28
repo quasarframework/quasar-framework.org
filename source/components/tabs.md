@@ -227,14 +227,14 @@ You will, in most cases, want to use tabs within a layout component. Below is an
   <q-tabs slot="navigation">
     <q-route-tab
       icon="mail"
-      route="/mails"
+      to="/mails"
       exact
       slot="title"
     />
 
     <q-route-tab
       icon="alarm"
-      route="/alarms"
+      to="/alarms"
       exact
       slot="title"
     />
