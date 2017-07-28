@@ -40,8 +40,8 @@ Supports `v-model` which should be a Number.
 | `step` | Number | Number representing difference between two values that the model can take. Default: `1`. |
 | `min` | Number | Minimum value that the model can take. |
 | `max` | Number | Maximum value that the model can take. |
-| `color` | String | One from [Quasar Color Palette](/componnets/color-palette.html). |
-| `trackColor` | String | One from [Quasar Color Palette](/componnets/color-palette.html). |
+| `color` | String | One from [Quasar Color Palette](/components/color-palette.html). |
+| `trackColor` | String | One from [Quasar Color Palette](/components/color-palette.html). |
 | `lineWidth` | String | Line width of Knob. Default is '6px'. |
 | `readonly` | Boolean | Sort of a "display" only mode. Model cannot be altered. |
 | `disable` | Boolean | When set to `true` the model cannot be altered. |

@@ -29,7 +29,7 @@ One alternative to using this directive is to place a [QScrollObservable](/compo
 
 > **IMPORTANT**
 > Please note that by default the method called is not debounced. For that you have to do it yourself, by wrapping your method with Quasar's debouncer (as an example) like in example below.
-> <br>Read more about `debouncing` [here](/components/utils.html#Debounce-Function).
+> <br>Read more about `debouncing` [here](/components/other-utils.html#Debounce-Function).
 
 ``` js
 import { debounce } from 'quasar'
@@ -53,4 +53,4 @@ export default {
 > There is one more scrolling-related directive available called "Scroll Fire" described on its own documentation page. Read more [here](/components/scroll-fire.html).
 
 ## Determining Scrolling Container
-Please read [here](components/scroll-observable.html#Determining-Scrolling-Container) about how Quasar determines the container to attach scrolling events to.
+Please read [here](/components/scroll-observable.html#Determining-Scrolling-Container) about how Quasar determines the container to attach scrolling events to.

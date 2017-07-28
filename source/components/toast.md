@@ -43,7 +43,7 @@ Toast.create({
 | Property | Type | Description |
 | --- | --- | --- | --- |
 | `html` | String | (**Required**) HTML to display. |
-| `icon` | String | Icon to use. See [Icons](/api/css-icons.html). |
+| `icon` | String | Icon to use. See [Icons](/components/icons.html). |
 | `image` | String | Image to include. |
 | `timeout` | 2500 | Timeout in milliseconds until being automatically dissmissed. |
 | `button` | Object | Place a button with an action, like "Undo". Specify `label` (String) and `handler` (Function). Optionally, specify `color` with a CSS color. |

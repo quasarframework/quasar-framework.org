@@ -131,7 +131,7 @@ There are some events emitted by Quasar already that you can hook into.
 | --- | --- | --- |
 | app:visibility | (String) state | App got focus if `state` is `visible` or lost focus if `state` is `hidden` |
 
-Read more about it [here](/api/js-app-visibility.html).
+Read more about it [here](/components/app-visibility.html).
 
 ### Toast
 

@@ -12,7 +12,7 @@ There are some initial steps you need to take before you can wrap your apps usin
 	$ npm install -g cordova
 	```
 
-2. After this step you will need to install the Android platform SDK on your machine. You can [download the Android Studio here](https://developer.android.com/studio/index.html#download) and follow these [installation steps](https://developer.android.com/studio/install.html) afterwards.
+2. After this step you will need to install the Android platform SDK on your machine. You can [download the Android Studio here](https://developer.android.com/studio/index.html) and follow these [installation steps](https://developer.android.com/studio/install.html) afterwards.
 
 3. Update your ~/.bashrc file to contain the correct paths to your installation of Android Studio:
 
@@ -81,7 +81,7 @@ To verify if you fulfill all requirements run the follow command:
 $ cordova requirements
 ```
 
-> On some newer Debian-based operating systems you might face a very persistent problem when running `cordova requiremets`. Please see the ["Android SDK not found" after installation](#android-sdk-not-found-after-installation-of-the-sdk) section for assistance.
+> On some newer Debian-based operating systems you might face a very persistent problem when running `cordova requiremets`. Please see the ["Android SDK not found" after installation](#“Android-SDK-not-found-”-after-installation-of-the-SDK) section for assistance.
 
 ### Running iOS simulator
 

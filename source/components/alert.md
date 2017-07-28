@@ -140,7 +140,7 @@ Here are the available properties, when using Alert as a component:
 
 | Property | Type | Description |
 | --- | --- | --- | --- |
-| `color` | String | This can be any color set up under the [Q Color Palette](/api/css-color-palette.html).  |
+| `color` | String | This can be any color set up under the [Quasar Color Palette](/components/color-palette.html).  |
 | `position` | String | Controls the position of the alerts, when it is displayed. The available positions are `top`, `top-right`, `right`, `bottom-right`, `bottom`, `bottom-left`, `left` and `top-left`|
 | `icon` | String | Icon to use. See [Icons](/components/icons.html). |
 | `actions` | Array of Objects | Place one or more buttons within the alert, like "Snooze" or "Abort". Each Object from Array must have `label` (String) and `handler` (Function) props.|

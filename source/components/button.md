@@ -182,7 +182,7 @@ export default {
 </script>
 ```
 
-If you'd like to add a different spinner than the default one of the theme you are building your website/app with, you can do so by slotting in the [Spinner](components/spinners.html) component you'd like.
+If you'd like to add a different spinner than the default one of the theme you are building your website/app with, you can do so by slotting in the [Spinner](/components/spinner.html) component you'd like.
 
 ```html
 <q-btn icon="mail" color="orange" @click="simulateProgress">
