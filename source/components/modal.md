@@ -9,7 +9,7 @@ Below you'll find the code to a very basic modal:
 ``` html
 <q-modal ref="basicModal">
   <h4>Basic Modal</h4>
-  <button class="primary" @click="$refs.basicModal.close()">Close</button>
+  <q-btn color="primary" @click="$refs.basicModal.close()">Close</q-btn>
 </q-modal>
 ```
 
