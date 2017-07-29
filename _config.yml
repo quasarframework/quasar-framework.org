@@ -44,7 +44,7 @@ highlight:
   tab_replace:
 
 search:
-  path: search.xml
+  path: search.json
   field: all
 
 markdown:

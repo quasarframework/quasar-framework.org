@@ -9,9 +9,14 @@
     var lowerKeywords = keywords.map(function (k) { return k.toLowerCase(); });
 
     if (window.searchTree) {
+
       // Perform local searching
       window.searchTree.forEach(function (data) {
-        var dataTitle = data.title.trim();
+        // Exit if raw data is not complete (missing title or content or url)
+        if (!data.title || !data.content || !data.url)
+          return;
+
+        var dataTitle = dataTitle = data.title.trim();
         var dataContent = data.content.trim().replace(/<[^>]+>/g,'');
         var dataUrl = data.url;
 
@@ -71,25 +76,13 @@
     return response;
   }
 
-  // Retrieve local content.
-  // Convert data from XML to JS and store it in 'window.searchTree'.
+  // Retrieve local content and store data in 'window.searchTree'.
 
   axios
-    .get('/search.xml')
+    .get('/search.json')
     .then(function (response) {
-      var parser = new DOMParser();
-      var xmlDoc = parser.parseFromString(response.data, "text/xml");
-      var xmlEntries = Array.from(xmlDoc.getElementsByTagName("entry"));
-
-      window.searchTree = xmlEntries.map(function (xmlEntry) {
-        var jsonEntry = {}
-
-        Array.from(xmlEntry.children).forEach(function (node) {
-          jsonEntry[node.nodeName] = node.textContent;
-        });
-
-        return jsonEntry;
-      });
+      window.searchTree = response.data;
+      return response.data;
     })
     .catch(function (error) {
       console.error(error);
