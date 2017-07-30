@@ -12,19 +12,19 @@ This component only has CSS code, so you just have to follow the HTML structure 
 <ul class="breadcrumb">
   <li>
     <a>
-      <i>home</i>
+      <q-icon name="home" />
     </a>
   </li>
 
   <li>
     <a>
-      <i>mail</i> Quasar
+      <q-icon name="mail" /> Quasar
     </a>
   </li>
 
   <li>
     <a>
-      <i>cloud</i> Breadcrumb
+      <q-icon name="cloud" /> Breadcrumb
     </a>
   </li>
 </ul>
