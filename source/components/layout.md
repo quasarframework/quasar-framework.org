@@ -364,3 +364,11 @@ export default {
 | `@scroll` | Event emitted on page scroll. |
 | `@left-breakpoint` | Event emitted when window width toggles above/below left side breakpoint (see `left-breakpoint` prop) |
 | `@right-breakpoint` | Event emitted when window width toggles above/below right side breakpoint (see `right-breakpoint` prop) |
+
+## Vue Injections
+
+| Property Name | Description |
+| --- | --- |
+| `layout` | This whole component. Usefull for accessing closing/opening methods from deep descendants.
+
+New to Vue Provide/Inject? Read [this](https://medium.com/@znck/provide-inject-in-vue-2-2-b6473a7f7816)!
