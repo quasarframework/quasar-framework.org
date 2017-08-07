@@ -88,7 +88,7 @@ Here are all of the properties of the Alert component, when used as a method:
 | `color` | String | This can be any color set up under the [Quasar Color Palette](/components/color-palette.html).  |
 | `html` | String | HTML to display as the message text. |
 | `icon` | String | Icon to use. See [Icons](/components/icons.html). |
-| `position` | String | Controls the position of the alerts, when it is displayed. The available positions are `top`, `top-right`, `right`, `bottom-right`, `bottom`, `bottom-left`, `left` and `top-left`|
+| `position` | String | Controls the position of the alerts, when it is displayed. The available positions are `top`, `top-center`, `top-right`, `right`, `bottom-right`, `bottom`, `bottom-center`, `bottom-left`, `left` and `top-left`|
 | `actions` | Array of Objects | Place one or more buttons within the alert, like "Snooze" or "Abort". Specify `label` (String) and `handler` (Function).|
 | `enter` | String | The transition animation for displaying the alert. |
 | `leave` | String | The transition animation for dismissing the alert. |
