@@ -88,6 +88,7 @@ Since QCollapsible is a wrapper over QItem components, it inherits some of their
 | `group` | String | Unique name which allows to group multiple Collapsible so they work as an Accordion. |
 | `indent` | Boolean | Indent Collapsible content. Useful when building a menu with it. |
 | `icon-toggle` | Boolean | Expand/Contract only by clicking/tapping on the arrow on the right. |
+| `disable` | Boolean | Disable current Collapsible. |
 
 QItem components inherited properties:
 
