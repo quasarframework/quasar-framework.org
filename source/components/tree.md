@@ -64,7 +64,7 @@ treeModel: [
 
 ### Handler Method
 Items containing a `handler` method will make those items trigger the handler method when clicked/tapped.
-The handler is passed the item as an argument
+The handler is passed the item as an argument.
 
 ### Vue Properties
 
