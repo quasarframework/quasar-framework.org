@@ -27,8 +27,8 @@ The list below is not complete. Also check the other CSS documentation pages lik
 
 ### Orientation Related
 | Class Name | Description |
-
-| `rotate-45` | Rotate by 45 degrees || --- | --- |
+| --- | --- |
+| `rotate-45` | Rotate by 45 degrees |
 | `rotate-90` | Rotate by 90 degrees |
 | `rotate-135` | Rotate by 135 degrees |
 | `rotate-180` | Rotate by 180 degrees |
