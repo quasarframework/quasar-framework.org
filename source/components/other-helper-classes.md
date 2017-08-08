@@ -1,4 +1,4 @@
--title: Other CSS Helper Classes
+title: Other CSS Helper Classes
 ---
 There are a lot of CSS classes that you can use while writing your Vue templates. Very handy to ease the complexity of your VueModels and templates.
 
