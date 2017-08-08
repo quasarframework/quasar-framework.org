@@ -4,7 +4,7 @@ There are a lot of CSS classes that you can use while writing your Vue templates
 
 The list below is not complete. Also check the other CSS documentation pages like Typography, Visibility, Shadows, Positioning.
 
-### Mouse Related
+## Mouse Related
 
 | Class Name | Description |
 | --- | --- |
@@ -15,7 +15,7 @@ The list below is not complete. Also check the other CSS documentation pages lik
 | `all-pointer-events` | The opposite of `no-pointer-events` |
 | `cursor-pointer` | Change mouse pointer on DOM element to look as if on a clickable link |
 
-### Size Related
+## Size Related
 | Class Name | Description |
 | --- | --- |
 | `fit` | Width and Height is set to 100% |
@@ -25,7 +25,7 @@ The list below is not complete. Also check the other CSS documentation pages lik
 | `window-width` | Width is set to 100vw with left and right margins 0 |
 | `block` | Sets `display` property set to `block` |
 
-### Orientation Related
+## Orientation Related
 | Class Name | Description |
 | --- | --- |
 | `rotate-45` | Rotate by 45 degrees |
