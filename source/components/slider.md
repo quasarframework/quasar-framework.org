@@ -46,6 +46,7 @@ Supports `v-model` which should be binded to a Number in your scope.
 | `label` | Boolean | Popup a label when user clicks/taps on the Range and moves it. |
 | `label-always` | Boolean | Always display the label. |
 | `label-value` | String | Override default label value. |
+| `fill-handle-always` | Boolean | Fill handle even if at minimum value. |
 | `step` | Number | Specify step amount between valid values. |
 | `snap` | Boolean | Range handler will snap on values, rather than sliding freely; good to use along `step`; also displays step markers on the Range. |
 | `markers` | Boolean | Display markers on background, one for each possible value for the model. |
