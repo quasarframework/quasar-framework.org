@@ -56,6 +56,7 @@ Available format tokens:
 | Second | <ul><li>**s**: 0 1 ... 58 59</li><li>**ss**: 00 01 ... 58 59</li></ul> |
 | Fractional Second | <ul><li>**S**: 0 1 ... 8 9</li><li>**SS**: 00 01 ... 98 99</li><li>**SSS**: 000 001 ... 998 999</li></ul> |
 | Timezone offset | <ul><li>**Z**: -07:00 -06:00 ... +06:00 +07:00</li><li>**ZZ**: -0700 -0600 ... +0600 +0700</li></ul> |
+| AM/PM | <ul><li>**A**: AM, PM</li><li>**a**: am, pm</li><li>**aa**: a.m, p.m</li></ul> |
 | Unix Timestamp | <ul><li>**X**: 1360013296</li><li>**x** (ms): 1360013296123</li></ul> |
 
 ## Manipulate dates
