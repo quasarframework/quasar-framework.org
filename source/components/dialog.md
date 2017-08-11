@@ -42,6 +42,7 @@ In order to create a Dialog, you'll need an object as a parameter to configure i
 | --- | --- | --- |
 | `title` | String | Title of the Dialog. |
 | `message` | String | Additional message below the title. |
+| `position` | String | Optional. One of 'top', 'right', 'bottom', 'left'. |
 | `form` | Object | Configure what types of form components to show. |
 | `buttons` | Array of Objects | Bottom buttons for the Dialog. Regardless of the `handler` that you specify, each button closes the Dialog. You can also specify a String instead of an Object as part of your Array for buttons that only closes the Dialog. |
 | `stackButtons` | Boolean | If you want your buttons placed one below the previous one instead of in the same row. |
@@ -573,7 +574,7 @@ Dialog.create({
 })
 ```
 
-### Complex Dialog with Form Components
+### Complex Dialog with Form
 ``` js
 import { Dialog, Toast } from 'quasar'
 
@@ -628,5 +629,17 @@ Dialog.create({
       }
     }
   ]
+})
+```
+
+### Sticking Dialog to an Edge
+``` js
+import { Dialog } from 'quasar'
+
+// works with any type of Dialog
+Dialog.create({
+  title: 'Positioned',
+  message: 'This dialog appears from top.',
+  position: 'top' // or 'right', 'bottom', 'left'
 })
 ```
