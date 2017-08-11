@@ -2,7 +2,7 @@ title: Tabs
 ---
 Quasar Tabs are a way of displaying more information using less window real estate.
 One common use case for this component is in Layout's header/footer in a QToolbar. Please refer to [Layouts](/components/layout.html) and [Toolbar](/components/toolbar.html) for references.
-<input type="hidden" data-fullpage-demo="navigation/tabs">
+<input type="hidden" data-fullpage-demo="navigation/tabs/basic-tabs">
 
 ## Basic Usage
 Below is a basic example of the Tabs component using many of its features.
