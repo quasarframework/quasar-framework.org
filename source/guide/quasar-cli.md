@@ -41,6 +41,10 @@ $ quasar list
 > **Tip** - You can also install your own base template from Github with the `@` indicator.
 <br>
 >`quasar init @myrepo/my-quasar-template my-new-app`
+<br>
+> If you want to refer to a specific branch, use a hash `#` and then the branch name.
+<br>
+> `quasar init @myrepo/my-quasar-template#my-branch my-new-app`
 
 ## Development Server
 The Quasar development server allows you to develop your App by compiling and maintaining code in-memory. A web server will serve your App while offering hot-reload out of the box. Running in-memory offers faster rebuilds when you change your code.
