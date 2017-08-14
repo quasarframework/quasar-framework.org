@@ -25,8 +25,8 @@ QScrollArea supports scrolling by user dragging the custom scrollbars or by usin
 
 ## Vue Properties
 
-| Property | Type | Description |
-| --- | --- | --- | --- |
+| Property | Description |
+| --- | --- |
 | `thumb-style` | Object with CSS properties and values for styling the thumb of custom scrollbar. |
 | `content-style` | Object with CSS properties and values for styling the container of QScrollArea. |
 | `content-active-style` | Object with CSS properties and values for styling the container of QScrollArea when scroll area becomes active (is mouse hovered). |
@@ -54,3 +54,9 @@ QScrollArea supports scrolling by user dragging the custom scrollbars or by usin
   ...Scrollable.Content...
 </q-scroll-area>
 ```
+
+## Vue Methods
+
+| Method | Description |
+| --- | --- |
+| `setScrollPosition(offset[, duration])` | Set scroll position to an offset. If a duration (in milliseconds) is specified then the scroll is animated. |
