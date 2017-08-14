@@ -131,6 +131,7 @@ If you want to use Vue Router with a Tab (clicking on a Tab triggers a route cha
 | Event | Description |
 | --- | --- |
 | `@select` | Triggered when QTab gets selected. |
+| `@click` | Triggered when user clicks/taps on Tab. |
 
 ## Usage with "v-model"
 Best way to programmatically switch between Tabs is by using a `v-model`. Here's another example, a little bit more complex which includes a QSelect to explain the effects of using a `v-model`.
