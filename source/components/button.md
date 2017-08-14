@@ -9,10 +9,17 @@ When not disabled or spinning, QBtn emits a `@click` event, as soon as it is cli
 
 ## Basic Usage
 
-Plain simple button with an icon:
+Plain simple button with an icon and a label:
 
 ``` html
 <q-btn icon="create">New item</q-btn>
+```
+
+Button with just an icon:
+``` html
+<q-btn>
+  <q-icon name="map" />
+</q-btn>
 ```
 
 A standard round button.
@@ -135,7 +142,7 @@ There are also the `outline`, `push`, `round`, `flat`, `rounded` and `glossy` pr
 <q-btn glossy color="primary">Glossy</q-btn>
 ```
 
-If you'd like a rectangular button with just an icon and not text, you should use the QIcon component inside the button. 
+If you'd like a rectangular button with just an icon and not text, you should use the QIcon component inside the button.
 
 ```
 <q-btn>
