@@ -71,9 +71,6 @@
   height 100%
   background-color $white
 
-  &.with-previewer
-    margin-right $preview-max-width
-
   h1, h2
     border-bottom 1px dotted $divider
 
@@ -94,9 +91,13 @@
   @media screen and (min-width $lg)
     padding 2rem
     margin-left $sidebar-max-width
+    width 'calc(100% - %s)' % $sidebar-max-width
 
   @media screen and (min-width $xl)
     &.with-previewer
+      width 'calc(100% - %s)' % ($sidebar-max-width + $preview-max-width)
+      margin-right $preview-max-width
+
       &+#qwb-preview
         display flex
 
