@@ -7,8 +7,9 @@ title: Quasar Framework
 subtitle: "A fast, simple & powerful framework to simultaneously build websites and phone/tablet apps."
 description: "Quasar is a fast, simple & powerful framework to simultaneously build websites and phone/tablet apps"
 author: Razvan Stoenescu
-language:
+language: en
 timezone: UTC
+quasar_version: 0.13.6
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
