@@ -22,41 +22,56 @@
 
         // Only match entries with not empty titles and contents
         if (dataTitle !== '' && dataContent !== '') {
-          var indexTitle = -1;
-          var indexContent = -1;
-          var firstOccur = -1;
-          var matchedKeywords = [];
+          var matchKeywords = [];
+          var matchContent = '';
+          var matchScore = 0;
           var lowerDataTitle = dataTitle.toLowerCase();
           var lowerDataContent = dataContent.toLowerCase();
+          var firstOccur = lowerDataContent.length;
 
+          // Calculate match keywords and first occurrence
           lowerKeywords.forEach(function (lowerKeyword, i) {
-            indexTitle = lowerDataTitle.indexOf(lowerKeyword);
-            indexContent = lowerDataContent.indexOf(lowerKeyword);
+            var occursInTitle = lowerDataTitle.split(lowerKeyword).length - 1;
+            var occursInContent = lowerDataContent.split(lowerKeyword).length - 1;
 
-            if (indexTitle >= 0 || indexContent >= 0) {
-              matchedKeywords.push(keywords[i]);
+            matchScore += occursInTitle + occursInContent;
 
-              if (indexContent < 0) {
-                indexContent = 0;
-              }
+            if (occursInTitle > 0 || occursInContent > 0) {
 
-              if (i == 0) {
-                firstOccur = indexContent;
+              matchKeywords.push(keywords[i]);
+
+              var firstOccurInContent = lowerDataContent.indexOf(lowerKeyword);
+
+              if (firstOccurInContent >= 0 && firstOccurInContent < firstOccur) {
+                firstOccur = firstOccurInContent;
               }
             }
           });
 
+          // Calculate relevance
+          matchScore = matchScore * matchKeywords.length;
+
+          // Extract an excerpt of match content
+          if (firstOccur < lowerDataContent.length) {
+            var start =  Math.max(firstOccur - 30, 0);
+
+            matchContent = '[...]' + lowerDataContent.substr(start, 150) + '[...]';
+
+            // Highlight all keywords
+            lowerKeywords.forEach(function(keyword) {
+              var reg = new RegExp(keyword, 'gi')
+              matchContent = matchContent.replace(reg, "<strong class=\"search-keyword\">" + keyword + "</strong>");
+            });
+          }
+
           // Store matched entry in response array
-          if (
-            matchedKeywords.length > 0 &&
-            dataContent.length > 0
-          ) {
+          if (matchScore > 0) {
             response.push({
               url: dataUrl,
               title: dataTitle,
-              content: dataContent,
-              firstOccur: firstOccur,
-              keywords: matchedKeywords
+              content: matchContent,
+              keywords: matchKeywords,
+              relevance: matchScore
             });
           }
         }
@@ -64,12 +79,7 @@
 
       // Sort for relevance
       response.sort(function(a, b) {
-        if (a.keywords.length > b.keywords.length)
-          return -1;
-        if (b.keywords.length > a.keywords.length)
-          return 1;
-
-        return a.firstOccur > b.firstOccur ? -1 : 1;
+        return a.relevance > b.relevance ? -1 : 1;
       });
     }
 

@@ -46,9 +46,8 @@
         searchResultList.innerHTML = '<p>Sorry, no results...</p>';
         if (response.length > 0) {
           searchResultList.innerHTML = response.map(function (entry) {
-            return '<p><a href="' + entry.url + '">' + entry.title + '</a><br/>' + entry.keywords.map(function () {
-              return '<i class="fa fa-star"></i>'
-            }).join('') + '</p>';
+            return '<p><a href="' + entry.url + '">' + entry.title + '</a></p>'
+              + '<p>' + entry.content + '</p>';
           }).join('');
         }
 
