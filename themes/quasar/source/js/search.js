@@ -28,16 +28,15 @@
           var lowerDataTitle = dataTitle.toLowerCase();
           var lowerDataContent = dataContent.toLowerCase();
           var firstOccur = lowerDataContent.length;
+          var occursInTitle = 0;
+          var occursInContent = 0;
 
-          // Calculate match keywords and first occurrence
+          // Calculate match keywords and occurrences
           lowerKeywords.forEach(function (lowerKeyword, i) {
-            var occursInTitle = lowerDataTitle.split(lowerKeyword).length - 1;
-            var occursInContent = lowerDataContent.split(lowerKeyword).length - 1;
-
-            matchScore += occursInTitle + occursInContent;
+            occursInTitle += lowerDataTitle.split(lowerKeyword).length - 1;
+            occursInContent += lowerDataContent.split(lowerKeyword).length - 1;
 
             if (occursInTitle > 0 || occursInContent > 0) {
-
               matchKeywords.push(keywords[i]);
 
               var firstOccurInContent = lowerDataContent.indexOf(lowerKeyword);
@@ -48,14 +47,15 @@
             }
           });
 
-          // Calculate relevance
-          matchScore = matchScore * matchKeywords.length;
+          // Calculate relevance:
+          // - Occurences in content is better than nothing
+          // - Occurrences in title are more relevant than in content
+          // - More keyword matches are more relevant than less
+          matchScore = ((occursInTitle * 5) + occursInContent) * matchKeywords.length * 10;
 
           // Extract an excerpt of match content
           if (firstOccur < lowerDataContent.length) {
-            var start =  Math.max(firstOccur - 30, 0);
-
-            matchContent = '[...]' + lowerDataContent.substr(start, 150) + '[...]';
+            matchContent = '[...]' + lowerDataContent.substr(Math.max(firstOccur - 30, 0), 150) + '[...]';
 
             // Highlight all keywords
             lowerKeywords.forEach(function(keyword) {
