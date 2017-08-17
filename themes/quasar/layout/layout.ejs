@@ -61,14 +61,19 @@
         FastClick.attach(document.body);
 
         // Init SmoothScroll.
-      	smoothScroll.init();
+      	smoothScroll.init({
+          offset: 60
+        });
 
         // Init Gumshoe.
       	gumshoe.init({
+          offset: -500,
           scrollDelay: true,
           callback: function (item) {
-            // Replace URL's hash with current active anchor.
-            history.replaceState(undefined, undefined, item.nav.hash);
+            if (item) {
+              // Replace URL's hash with current active anchor.
+              history.replaceState(undefined, undefined, item.nav.hash);
+            }
           }
         });
 
