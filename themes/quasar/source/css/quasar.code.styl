@@ -1,4 +1,5 @@
 @require 'quasar.theme'
+@require 'quasar.syntax'
 
 
 /* Code */
@@ -8,22 +9,85 @@ code, figure.highlight
   border-radius $border-radius
 
 code
+  color $primary-text // @stylint ignore
+  background-color $inverted-text
   white-space nowrap
 
+pre, figure.highlight
+  color $inverted-text // @stylint ignore
+  background-color $primary-text
+
 figure.highlight
+  position relative
   padding 1rem
   margin 0 0 1rem
   max-width 58rem
   width 100%
+  line-height 1em
 
   pre
     margin 0
     padding 0
 
-  .line
-    min-height 20px
-
   table
+    display block
     padding .5rem
     width auto
     border none
+    overflow auto
+    box-sizing border-box
+
+  table, tr, td
+    width 100%
+    border-collapse collapse
+    margin 0
+
+  tr, td, tbody, thead, tfooter
+    padding 0
+    border none
+    background none
+
+  .gutter
+    width 1.5em
+
+  .line
+    min-height 20px
+
+  .code pre
+    margin 0
+    padding 0
+    line-height 1.5em
+
+  &.html, &.js, &.bash, &.css, &.yaml, &.json, &.stylus
+    .code:after
+      position absolute
+      top 0
+      right 0
+      height 1rem
+      padding .25rem .5rem 0
+      color $normal-text // @stylint ignore
+      text-align right
+      font-size .75em
+      line-height 1rem
+      font-weight 600
+
+  &.html .code:after
+    content 'HTML'
+
+  &.js .code:after
+    content 'JS'
+
+  &.bash .code:after
+    content 'Shell'
+
+  &.css .code:after
+    content 'CSS'
+
+  &.json .code:after
+    content 'JSON'
+
+  &.yaml .code:after
+    content 'YAML'
+
+  &.stylus .code:after
+    content 'STYLUS'

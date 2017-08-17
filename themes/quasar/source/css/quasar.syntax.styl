@@ -1,14 +1,5 @@
-code
-  color $primary-text // @stylint ignore
-  background-color $inverted-text
+@require 'quasar.theme'
 
-pre,
-.highlight
-  color $inverted-text // @stylint ignore
-  background-color $primary-text
-
-.gutter pre
-  color $normal-text // @stylint ignore
 
 pre
   .function .keyword,
@@ -37,8 +28,7 @@ pre
   .value,
   .regexp
     color $inverted-primary-text // @stylint ignore
-  .title
-    color #A6E22E // @stylint ignore
+  .title,
   .tag .value,
   .string,
   .subst,
@@ -63,7 +53,7 @@ pre
   .apache .cbracket,
   .tex .command,
   .prompt
-    color $inverted-primary-text // @stylint ignore
+    color #A6E22E // @stylint ignore
   .comment,
   .java .annotation,
   .python .decorator,
@@ -74,7 +64,7 @@ pre
   .shebang,
   .apache .sqbracket,
   .tex .formula
-    color $normal-text // @stylint ignore
+    color $secondary-text // @stylint ignore
   .coffeescript .javascript,
   .javascript .xml,
   .tex .formula,
@@ -83,56 +73,3 @@ pre
   .xml .css,
   .xml .cdata
     opacity .5
-
-.highlight
-  position relative
-  padding 0
-  margin 0
-  line-height 1.1em
-  border-radius 5px
-  table, tr, td
-    width 100%
-    border-collapse collapse
-    margin 0
-  table
-    display block
-    padding 0 1.25rem
-    overflow auto
-    box-sizing border-box
-  tr, td, tbody, thead, tfooter
-    padding 0
-    border none
-    background none
-  .gutter
-    width 1.5em
-  .code
-    pre
-      margin 0
-      padding 0
-      line-height 1.5em
-  &.html, &.js, &.bash, &.css, &.yaml, &.json, &.stylus
-    .code:after
-      position absolute
-      top 0
-      right 0
-      color $normal-text // @stylint ignore
-      text-align right
-      font-size .75em
-      padding 5px 10px 0
-      line-height 15px
-      height 15px
-      font-weight 600
-  &.html .code:after
-    content 'HTML'
-  &.js .code:after
-    content 'JS'
-  &.bash .code:after
-    content 'Shell'
-  &.css .code:after
-    content 'CSS'
-  &.json .code:after
-    content 'JSON'
-  &.yaml .code:after
-    content 'YAML'
-  &.stylus .code:after
-    content 'STYLUS'
