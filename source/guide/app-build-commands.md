@@ -31,7 +31,8 @@ While developing with the Dev Server you will have:
 After creating an App folder with the CLI, you'll have a folder named `/templates` inside the generated app folder, which contains templates for: `layout`, `page`, or a generic Vue `component`.
 
 You can generate components for your App in your `/src` folder:
-```
+
+``` bash
 # get available Component templates
 $ quasar new -l
 $ quasar new --list
