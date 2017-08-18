@@ -51,6 +51,6 @@
     "imagemin-pngquant": "^5.0.0",
     "line-by-line": "^0.1.4",
     "run-sequence": "^1.1.4",
-    "eight.css": "^0.1.11"
+    "eight.css": "^0.1.12"
   }
 }
