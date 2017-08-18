@@ -27,13 +27,15 @@ $ npm install -g quasar-cli
 ## Create your first App
 
 ``` bash
-# create starter boilerplate folder
-$ quasar init default#beta <folder name>
+# create starter boilerplate folder;
+# "default" is the starter kit name
+$ quasar init default <folder name>
 $ cd <folder name>
 
 # npm install deps
 $ npm install
 ```
+
 ## The Dev Server
 Quasar also comes with a development server, which is equipped with [hot reload](https://www.youtube.com/watch?v=zSnL5W1RVkA). It makes your development process significantly easier. To get the server started:
 
