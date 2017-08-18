@@ -10,19 +10,19 @@ Works well with [QField](/components/field.html) for additional functionality su
 ## Basic Usage
 
 ``` html
-<q-chips v-model="model" />
+<q-chips-input v-model="model" />
 
 <!-- Disabled -->
-<q-chips v-model="model" disable />
+<q-chips-input v-model="model" disable />
 
 <!-- With floating label -->
-<q-chips v-model="model" float-label="Floating Label" />
+<q-chips-input v-model="model" float-label="Floating Label" />
 
 <!-- With custom placeholder -->
-<q-chips v-model="model" placeholder="Type some names" />
+<q-chips-input v-model="model" placeholder="Type some names" />
 
 <!-- On error state -->
-<q-chips v-model="model" error />
+<q-chips-input v-model="model" error />
 ```
 
 > The model variable must be an Array.
