@@ -6,7 +6,7 @@ Hi,
 While we wait for @rstoenescu to issue a complete guide, here’s a starting point for all of us impatient dudes who want to port a 0.13.x app to 0.14.
 
 1. npm update -g quasar-cli
-2. quasar init 'default#beta' FOLDERNAME (will create a new folder with 0.14beta basics)
+2. quasar init 'default' FOLDERNAME (will create a new folder with 0.14 basics)
 3. cd FOLDERNAME
 4. npm i
 5. Manually move your 0.13 code into that folder structure. Repeat step 4 once all your dependencies are set up.
@@ -22,8 +22,6 @@ To include icons you can now skip the respective CDNs and use quasar-extras, lik
 
 If you have used animations in your code, take a look at [this](http://beta.quasar-framework.org/components/transition.html#Adding-an-Animation-to-the-Bundle).
 
-Since the beta is still being updated several times daily, before running to github or gitter to report a problem, please make sure you have the LATEST 0.14 version by running:
-`npm update quasar-framework` from within your app folder (same for quasar-extras).
 
 # Starter kit
 
