@@ -15,8 +15,9 @@ $ npm install -g quasar-cli
 ## Create your first App
 
 ``` bash
-# create starter boilerplate folder
-$ quasar init <folder name>
+# create starter boilerplate folder;
+# "default#v0.13" is the starter kit name
+$ quasar init default#v0.13 <folder name>
 $ cd <folder name>
 
 # npm install deps
