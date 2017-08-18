@@ -89,7 +89,7 @@ google_analytics: UA-6317975-4
 deploy:
   type: git
   repo: git@github.com:quasarframework/dist-v0-13.quasar-framework.org.git
-  branch: gh-pages
+  branch: master
 
 sitemap:
   path: sitemap.xml
