@@ -71,7 +71,8 @@
               title: dataTitle,
               content: matchContent,
               keywords: matchKeywords,
-              relevance: matchScore
+              relevance: matchScore,
+              occurrences: occursInTitle + occursInContent
             });
           }
         }

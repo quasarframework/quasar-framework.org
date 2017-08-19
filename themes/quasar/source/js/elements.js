@@ -46,8 +46,12 @@
         searchResultList.innerHTML = '<p>Sorry, no results...</p>';
         if (response.length > 0) {
           searchResultList.innerHTML = response.map(function (entry) {
-            return '<p><a href="' + entry.url + '">' + entry.title + '</a></p>'
-              + '<p>' + entry.content + '</p>';
+            return '<div class="qwb-search-item">'
+              + '<a class="qwb-search-url" href="' + entry.url + '"></a>'
+              + '<h6>' + entry.title + '</h6>'
+              + '<p>' + entry.content + '</p>'
+              + '<span class="qwb-search-meta">' + entry.occurrences + ' occurrence/s of ' + entry.keywords.length + ' keyword/s</span>'
+              + '</div>';
           }).join('');
         }
 

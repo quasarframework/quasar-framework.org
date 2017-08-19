@@ -1,0 +1,34 @@
+@require 'quasar.theme'
+
+
+.qwb-search-item
+  position relative
+  margin 0 -1rem
+  padding 0 1rem
+  cursor pointer
+  border-bottom 1px solid $inverted-text
+
+  &:first-child
+    margin-top -1rem
+
+  &:last-child
+    border-bottom none
+    margin-bottom -1rem
+
+  &:hover
+    background-color $light-primary
+
+  h6
+    color $dark-primary
+
+  .qwb-search-meta
+    display inline-block
+    color $divider
+    margin-bottom 1rem
+
+  .qwb-search-url
+    position absolute
+    top 0
+    left 0
+    right 0
+    bottom 0
