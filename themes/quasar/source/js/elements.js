@@ -27,7 +27,7 @@
   var tables = document.querySelectorAll('#qwb-page > table');
 
   tables.forEach(function (table) {
-    table.classList.add("stackable", "celled");
+    table.classList.add("stackable", "celled", "striped");
   });
 
 
