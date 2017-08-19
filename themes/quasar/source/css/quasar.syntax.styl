@@ -5,14 +5,20 @@ pre
   .function .keyword,
   .constant
     color $primary // @stylint ignore
+
   .keyword,
   .attribute
     color $inverted-secondary-text // @stylint ignore
+
   .number,
   .literal
-    color #AE81FF // @stylint ignore
-  .tag,
+    color $primary // @stylint ignore
+
+  .tag
+    color $divider // @stylint ignore
+
   .tag .title,
+  .tag .name,
   .change,
   .winutils,
   .flow,
@@ -20,14 +26,20 @@ pre
   .clojure .built_in,
   .nginx .title,
   .tex .special
-    color $dark-primary // @stylint ignore
+    color $primary // @stylint ignore
+
+  .tag .attr
+    color $accent // @stylint ignore
+
   .class .title
     color $light-primary // @stylint ignore
+
   .symbol,
   .symbol .string,
   .value,
   .regexp
     color $inverted-primary-text // @stylint ignore
+
   .title,
   .tag .value,
   .string,
@@ -54,6 +66,7 @@ pre
   .tex .command,
   .prompt
     color #A6E22E // @stylint ignore
+
   .comment,
   .java .annotation,
   .python .decorator,
@@ -65,6 +78,7 @@ pre
   .apache .sqbracket,
   .tex .formula
     color $secondary-text // @stylint ignore
+
   .coffeescript .javascript,
   .javascript .xml,
   .tex .formula,
