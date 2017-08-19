@@ -6,6 +6,14 @@
 table
   border-radius $border-radius
 
-thead
+table.celled
+  td, td:last-of-type
+    border-color $inverted-text
+
+  &.stackable td
+    @media screen and (max-width: $sm)
+      border-color $inverted-text
+
+thead td, th
   color $inverted-primary-text
-  background-color $dark-primary
+  background-color $dark-primary !important

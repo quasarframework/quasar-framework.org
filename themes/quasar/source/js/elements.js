@@ -22,6 +22,15 @@
   }
 
 
+  /* Tables */
+
+  var tables = document.querySelectorAll('#qwb-page > table');
+
+  tables.forEach(function (table) {
+    table.classList.add("stackable", "celled");
+  });
+
+
   /* Search inputs */
 
   var searchInputs = document.querySelectorAll('.qwb-input.search > input');
