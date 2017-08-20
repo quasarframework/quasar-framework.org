@@ -55,8 +55,8 @@ Visible only on:
 | `touch-only` | Visible only on touch capable platforms |
 | `mat-only` | Visible only for Material Quasar Theme |
 | `ios-only` | Visible only for iOS Quasar Theme |
-| `platform-ios` | Visible only on an iOS platform |
-| `platform-android` | Visible only on an Android platform |
+| `platform-ios-only` | Visible only on an iOS platform |
+| `platform-android-only` | Visible only on an Android platform |
 | `within-iframe-only` | Visible only when entire website is under an IFRAME tag |
 
 Hide on:
@@ -70,8 +70,8 @@ Hide on:
 | `touch-hide` | Hide on touch capable platforms |
 | `mat-hide` | Hide for Material Quasar Theme |
 | `ios-hide` | Hide for iOS Quasar Theme |
-| `platform-ios` | Hide on iOS platform |
-| `platform-android` | Hide on Android platform |
+| `platform-ios-hide` | Hide on iOS platform |
+| `platform-android-hide` | Hide on Android platform |
 | `within-iframe-hide` | Hide only when entire website is under an IFRAME tag |
 
 Also check [Quasar Theming &gt; Platform Specific Styles](/guide/quasar-theming.html#Platform-Specific-Styles).
