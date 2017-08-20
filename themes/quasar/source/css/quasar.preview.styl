@@ -86,6 +86,10 @@
     background-color $white
     z-index 250
 
+  .platform-statusbar
+    position absolute
+    z-index 260
+
 #qwb-apple-preview
   iframe
     margin-top 80px
@@ -93,11 +97,9 @@
     height 568px
 
   img.platform-statusbar
-    position absolute
+    width 320px
     top 80px
     left 30px
-    width 320px
-    z-index 260
 
 #qwb-android-preview
   &:before
@@ -107,6 +109,11 @@
     margin-top 64px
     width 360px
     height 590px
+
+  img.platform-statusbar
+    width 360px
+    top 56px
+    left 10px
 
 #qwb-win-preview
   &:before
