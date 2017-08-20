@@ -125,22 +125,24 @@
       })
     },
     selectTheme: function (theme) {
-      themePickers.forEach(function (picker) {
-        picker.classList.remove('inverted')
-      })
+      if (theme) {
+        themePickers.forEach(function (picker) {
+          picker.classList.remove('inverted')
+        })
+        themeNodes.forEach(function (node) {
+          node.classList.remove('active')
+        })
+        
+        document.querySelector('#qwb-device-preview #qwb-device-preview-chooser a[data-theme="' + theme + '"]')
+          .classList.add('inverted')
+        document.querySelectorAll('#qwb-' + theme + '-preview').forEach(function (node) {
+          node.classList.add('active')
+        })
 
-      document.querySelector('#qwb-device-preview #qwb-device-preview-chooser a[data-theme="' + theme + '"]')
-        .classList.add('inverted')
+        localStorage.setItem('theme', theme)
+        selectedTheme = theme
+      }
 
-      themeNodes.forEach(function (node) {
-        node.classList.remove('active')
-      })
-      document.querySelectorAll('#qwb-' + theme + '-preview').forEach(function (node) {
-        node.classList.add('active')
-      })
-
-      localStorage.setItem('theme', theme)
-      selectedTheme = theme
       this.selectPage(currentPage)
     }
   }

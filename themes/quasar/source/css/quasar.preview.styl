@@ -1,6 +1,31 @@
 @require 'quasar.mixins'
 
+
+#qwb-device-preview-toggle-btn
+  border-radius 50%
+  width 3rem
+  height 3rem
+  font-size 2rem
+  line-height 3rem
+  padding 0
+  vertical-align middle
+  transition opacity .2s
+
+  &:hover
+    color $white
+
+  &.on i.fa:before
+    content '\f00d'
+
+  &:not(.on)+#qwb-device-preview
+    @media screen and (min-width $sm) and (max-width $xl)
+      opacity 0 !important
+
+  @media screen and (min-width $xl)
+    opacity 0
+
 #qwb-device-preview
+  position relative
   display flex
   z-index 101
   width 100%
@@ -9,16 +34,31 @@
   margin 0 auto
   text-align center
   flex-direction column
+  transition opacity .2s
+
+  &:before
+    position absolute
+    display block
+    content ''
+    width 100%
+    height 100%
+    background-color rgba(255,255,255,.9)
 
   .theme
     display none
+
     &.active
       display block
 
 #qwb-device-preview-chooser
-  margin 1rem auto
+  position absolute
   flex-direction row
   min-height min-content
+  max-height max-content
+  bottom 1rem
+  left 0
+  right 0
+  z-index 300
 
 #qwb-device-desktop-preview-btn
   display block
@@ -29,19 +69,29 @@
   position relative
   width 412px
   height 805px
-  background center top no-repeat url(/images/devices-sprite.jpg)
-  background-size 470px
-  margin 0 auto
+  margin 1rem auto 0
+
+  &:before
+    position absolute
+    display block
+    content ''
+    width 100%
+    height 100%
+    background center top no-repeat url(/images/devices-sprite.png)
+    background-size 470px
 
   iframe
+    position relative
     margin 0 auto
+    background-color $white
+    z-index 250
 
 #qwb-apple-preview
   iframe
     margin-top 80px
     width 320px
     height 568px
-    background $white
+
   img.platform-statusbar
     position absolute
     top 84px
@@ -49,17 +99,19 @@
     width 320px
 
 #qwb-android-preview
-  background-position center center
+  &:before
+    background-position center center
+
   iframe
     margin-top 64px
     width 360px
     height 590px
-    background $white
 
 #qwb-win-preview
-  background-position center bottom
+  &:before
+    background-position center bottom
+
   iframe
     margin-top 90px
     width 360px
     height 590px
-    background $white

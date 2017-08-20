@@ -88,18 +88,41 @@
     margin-left auto
     margin-right auto
 
-  @media screen and (min-width $lg)
-    padding 2rem
-    margin-left $sidebar-max-width
-    width 'calc(100% - %s)' % $sidebar-max-width
+  &.with-previewer
+    @media screen and (min-width $sm) and (min-height 760px)
+      &+#qwb-preview
+        opacity 1
 
-  @media screen and (min-width $xl)
-    &.with-previewer
+    @media screen and (min-width $sm) and (max-width $xl)
+      &+#qwb-preview #qwb-device-preview
+        position fixed
+        display block
+        width 100%
+        top 0
+        bottom 0
+        right 0
+        left 0
+
+    @media screen and (min-width $lg) and (max-width $xl)
+      &+#qwb-preview #qwb-device-preview
+        margin-left $sidebar-max-width
+        width 'calc(100% - %s)' % $sidebar-max-width
+
+    @media screen and (min-width $sm) and (max-width $lg)
+      &+#qwb-preview #qwb-device-preview
+        margin-top 3rem
+
+    @media screen and (min-width $xl)
       width 'calc(100% - %s)' % ($sidebar-max-width + $preview-max-width)
       margin-right $preview-max-width
 
       &+#qwb-preview
-        display flex
+        right 0
+
+  @media screen and (min-width $lg)
+    padding 2rem
+    margin-left $sidebar-max-width
+    width 'calc(100% - %s)' % $sidebar-max-width
 
 
 /* Page meta */
@@ -117,15 +140,16 @@
 /* Mobile preview */
 
 #qwb-preview
-  display none
+  display flex
   position fixed
   flex 0
-  max-width $preview-max-width
   width 100%
   height 100%
-  right 0
+  max-width $preview-max-width
+  right - $preview-max-width
+  opacity 0
   background-color $white
-  z-index 150
+  transition right .2s, opacity .2s
 
 
 /* Page content footer */
