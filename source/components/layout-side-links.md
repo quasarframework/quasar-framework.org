@@ -104,11 +104,13 @@ An even more compelling example with a complex menu on multiple levels.
 ```html
 <q-layout ref="layout" view="hHr LpR Fff">
   <div slot="left">
-    <q-side-link item icon="content_paste" to="/app" exact>
+    <q-side-link item to="/app" exact>
+      <q-item-side icon="content_paste" />
       <q-item-main label="Dashboard" />
     </q-side-link>
 
-    <q-side-link item icon="assignment" to="/app/registrations">
+    <q-side-link item to="/app/registrations">
+      <q-item-side icon="assignment">
       <q-item-main label="Registrations" />
     </q-side-link>
 
