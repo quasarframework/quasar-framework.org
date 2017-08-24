@@ -10,13 +10,14 @@ Below is an example of a Layout, which contains all possible elements:
 - a [QToolbar](/components/toolbar.html) (used for both header and footer, you can specify as many as you want)
 - a navigation with [QTabs](/components/tabs.html)
 - a left side drawer panel (which is shown alongside page content on wide screens)
+- a left side menu button (which is shown only when left side drawer panel is hidden)
 - and a right side drawer panel
 
 ``` html
 <q-layout ref="layout" view="hHr LpR lFf" :right-breakpoint="1100">
   <!-- Header -->
   <q-toolbar slot="header">
-    <q-btn flat @click="$refs.layout.toggleLeft()">
+    <q-btn class="lt-md" flat @click="$refs.layout.toggleLeft()">
       <q-icon name="menu" />
     </q-btn>
     <q-toolbar-title>
