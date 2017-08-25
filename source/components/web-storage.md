@@ -92,8 +92,8 @@ All items (clear the store):
 ``` js
 import { LocalStorage, SessionStorage } from 'quasar'
 
-LocalStorage.clear(key)
-SessionStorage.clear(key)
+LocalStorage.clear()
+SessionStorage.clear()
 ```
 
 ### Is Store Empty?
