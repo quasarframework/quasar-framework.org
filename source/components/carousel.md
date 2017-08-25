@@ -31,6 +31,7 @@ use you mouse to drag slides to left or right.
 | `arrows` | Boolean | Show arrows |
 | `dots` | Boolean | Show dots at bottom |
 | `fullscreen` | Boolean | Shows Fullscreen button |
+| `handle-arrow-keys` | Boolean | Allow navigation with left and right arrow key |
 | `actions` | Boolean | Show Actions slot |
 
 ## Vue Methods
