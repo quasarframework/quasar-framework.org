@@ -2,6 +2,7 @@ title: Cordova App Wrapper
 ---
 Cordova allows you to wrap your Quasar App into a native mobile App. In the following examples we'll be using Quasar CLI to manage this. After the initial setup you will need to wrap each project individually and add the desired platforms (Android and/or iOS).
 
+> The Quasar Cordova wrapper can be installed on top of the **default** starter kit. Won't work with any other specific starter kits, like "pwa".
 
 ## Initial setup steps
 

@@ -1,11 +1,16 @@
 title: App Folder Boilerplate
 ---
-The Quasar CLI helps you start an App folder with all the necessary boilerplate  you will need to get started building your application. To begin, there is a simple command: 
+The Quasar CLI helps you start an App folder with all the necessary boilerplate that you will need to get started building your application. To begin, there is a simple command:
 ```
-$ quasar init <folder name>
+$ quasar init <starter_kit> <folder name>
 ```
 
-> The boilerplate created is a fork of the [official Webpack + VueJs](https://github.com/vuejs-templates/webpack) repo. So, if you've worked with Vue's CLI, Quasar's CLI should seem quite familiar to you.
+To list all available starter kit names, type:
+```
+$ quasar list
+```
+
+> The created boilerplates are a fork of the [official Webpack + VueJs](https://github.com/vuejs-templates/webpack) repo. So, if you've worked with Vue's CLI, Quasar's CLI should seem quite familiar to you.
 
 If you want to tweak things specific for your App, you first need to understand the underlying tools being used in the generated boilerplate.
 

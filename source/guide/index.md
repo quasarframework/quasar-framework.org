@@ -21,16 +21,37 @@ Before you begin your awesome journey with Quasar, if you aren't yet a very expe
 After reading that article, or if you have JavaScript and Vue experience, you can start with the Quasar CLI. The CLI allows you to create new projects in no time, by generating a base application, filled with everything you need to begin working on your application. It does most of the heavy-lifting, so you need not concern yourself with the redundant tasks of building a base application. You should install the CLI globally, in order to generate and manage Quasar apps.
 
 ``` bash
+# installing Quasar CLI
 $ npm install -g quasar-cli
 ```
 
-## Create your first App
+## Quasar Starter Kits
+Quasar offers multiple starter kits which you can check out:
 
 ``` bash
-# create starter boilerplate folder;
-# "default" is the starter kit name
-$ quasar init default <folder name>
-$ cd <folder name>
+$ quasar list
+```
+
+Example of output:
+```
+Official Quasar App starter kits:
+
+ ★ default ($ quasar init default <folder_name>)
+   Boilerplate for website (with optional Cordova and Electron wrappers) with Quasar v0.14+
+
+ ★ pwa ($ quasar init pwa <folder_name>)
+   Boilerplate for PWA with Quasar v0.14+
+```
+
+## Create your first App
+Depending on what you want to build, choose a starter kit then use `quasar init` command like this:
+
+``` bash
+# create starter boilerplate folder
+$ quasar init <starter_kit_name> <folder_name>
+# example: quasar init default my-project
+
+$ cd <folder_name>
 
 # npm install deps
 $ npm install

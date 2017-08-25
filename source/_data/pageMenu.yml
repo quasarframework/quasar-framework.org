@@ -21,6 +21,8 @@ guide:
     API Proxying for Dev: app-$
     Prerendering for SEO: app-$
     Dev vs Production Code: app-$
+  Specific Starter Kits:
+    Progressive Web Apps: progressive-web-apps
   Wrappers:
     Cordova Wrapper: $
     Electron Wrapper: $
