@@ -42,6 +42,7 @@ Use this Web Component when you want to display multiple images together.
 | `arrows` | Boolean | Show arrows |
 | `dots` | Boolean | Show dots at bottom |
 | `fullscreen` | Boolean | Shows Fullscreen button |
+| `handle-arrow-keys` | Boolean | Allow navigation with left and right arrow key |
 | `actions` | Boolean | Show Actions slot |
 
 ## Image Gallery Carousel
