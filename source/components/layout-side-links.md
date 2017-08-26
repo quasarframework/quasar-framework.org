@@ -110,7 +110,7 @@ An even more compelling example with a complex menu on multiple levels.
     </q-side-link>
 
     <q-side-link item to="/app/registrations">
-      <q-item-side icon="assignment">
+      <q-item-side icon="assignment" />
       <q-item-main label="Registrations" />
     </q-side-link>
 
