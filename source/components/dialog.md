@@ -12,6 +12,10 @@ import { Dialog } from 'quasar'
 Dialog.create(configObj) (Object with `close` method)
 ```
 
+> **WARNING**
+> <br>Dialog is meant to be imported and used directly.
+> <br>It is **not** a Vue component and should not be declared in *components* object.
+
 A real life example:
 ``` js
 import { Dialog } from 'quasar'
