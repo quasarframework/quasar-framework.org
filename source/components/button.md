@@ -322,10 +322,10 @@ To disable the button, use the `disable` prop. Along a small fade applied to the
 <q-btn color="amber" :disabled="booleanVar">Amber Button</q-btn>
 ```
 
-## Using a Button with vue-router
+## Using a Button with Vue Router
 
 If you want to use a button to navigate to a new page you don't need to use a wrapping `<router-link>` tag. Instead, you can use the `@click` event to handle the route change.
 
 ```html
-<q-btn @click="$router.push('/path/to/new/page')"
+<q-btn @click="$router.push('/path/to/new/page')" color="primary" />
 ```
