@@ -183,7 +183,7 @@ If you'd like to call up data from the server, you may also do so with the follo
 export default {
   ...
   methods: {
-    search: (terms, done) {
+    search (terms, done) {
       // make an AJAX call
       // then call done(Array results)
 
