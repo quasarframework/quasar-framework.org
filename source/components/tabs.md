@@ -58,8 +58,8 @@ There is support for `v-model` (which is optional). In this case, you need a Vue
 
       ...optional `QTabPane`s...
     </q-tabs>
-  </div>
     <q-btn @click="selectThirdTab">Select Third Tab</q-btn>
+  </div>
 </template>
 
 <script>
