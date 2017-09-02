@@ -17,8 +17,7 @@ The QInnerLoading component allows you to add a progress animation within a comp
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       </p>
-    </div>
-  </q-transition>
+  </div>
   <q-inner-loading :visible="visible" />
 </div>
 ```
