@@ -45,6 +45,8 @@ To make sure all the pages in your application are automatically posted towards 
 > If you are not using Vue-router, you can log clicks manualy by calling the logPage function at any place you like.
 
 ```javascript
+import ga from 'analytics.js'
+
 router.afterEach((to, from) => {
     ga.logPage(to.path, to.name, sessionId)
 })
@@ -52,6 +54,8 @@ router.afterEach((to, from) => {
 Let's add some event logging into a component, by calling the `logEvent` function with the correct parameters. Import the `analytics.js` in your component as `ga`.
 
 ```javascript
+import ga from 'analytics.js'
+// in the Vue instance:
 methods: {
     clickRedButton function(){
         ga.logEvent("Buttons", "Click", "Red Button", sessionId)
