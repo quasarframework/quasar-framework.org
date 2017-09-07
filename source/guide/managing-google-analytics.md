@@ -29,7 +29,7 @@ export default {
         dataLayer.push({ 'event': 'appEvent' });
     },
 
-    logPage(path, name, userId = null) {
+    logPage(path, name, sessionId = null) {
         dataLayer.push({
             'screenPath': path,
             'screenName': name,
