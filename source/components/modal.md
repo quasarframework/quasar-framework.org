@@ -25,8 +25,8 @@ Modals are responsive to the width of the window (see demo on a desktop and resi
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `content-css` | Object | Applies CSS style Object to Modal container. |
-| `content-classes` | Object or String | Classes to apply to Modal inner content. |
+| `content-css` | Object/Array/String | Applies CSS style to Modal container. Use Object or Array of Object when also specifying `position` prop. |
+| `content-classes` | Object/Array/String | Classes to apply to Modal inner content. |
 | `transition` | String | Vue transition to use. Quasar comes with a `q-modal` transition out of the box. But you can write your own Vue transitions using CSS and use them. |
 | `noBackdropDismiss` | Boolean | Disable Modal dismissal by clicking/tapping on backdrop. |
 | `noEscDismiss` | Boolean | Disable Modal dismissal by hitting Escape key. |
