@@ -43,17 +43,17 @@ _Best way to display a Grid is on a desktop so you might want to check that firs
 
   <!-- Custom renderer for "action" column with button for custom action -->
   <template slot='col-action' scope='cell'>
-    <button class="primary" @click='doSomethingMethod(cell.row.id)'>View</button>
+    <q-btn color="primary" @click='doSomethingMethod(cell.row.id)'>View</q-btn>
   </template>
 
   <!-- Custom renderer when user selected one or more rows -->
   <template slot="selection" scope="selection">
-    <button class="primary clear" @click="changeMessage(selection)">
+    <q-btn color="primary" @click="changeMessage(selection)">
       <i>edit</i>
-    </button>
-    <button class="primary clear" @click="deleteRow(selection)">
+    </q-btn>
+    <q-btn color="primary" @click="deleteRow(selection)">
       <i>delete</i>
-    </button>
+    </q-btn>
   </template>
 </q-data-table>
 ```

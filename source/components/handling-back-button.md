@@ -35,7 +35,7 @@ What you'd like instead, is when you hit the Logout button, the `window.history.
 Let's rewrite the Logout button to act as we would actually want it to work, which is to make `window.history.length` be 1 again:
 ``` html
 <!-- Logout button -->
-<button class="primary" v-go-back=" '/' ">Logout</button>
+<q-btn class="primary" v-go-back=" '/' ">Logout</q-btn>
 ```
 
 This directive determines if the Platform is Cordova, and if so, it performs a `window.history.back()` call instead of a `$router.push('/')`.

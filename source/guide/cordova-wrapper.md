@@ -114,7 +114,7 @@ Use Google Chrome's emulator from Developer Tools. It's a fantastic tool. You ca
 When building an iOS app with Cordova and you want to disable the rubber band effect (https://www.youtube.com/watch?v=UjuNGpU29Mk), add this to your `config.xml` from the `cordova` wrapper folder inside your project:
 
 ``` xml
-<Preference name = "DisallowOverscroll" value = "true" />
+<preference name = "DisallowOverscroll" value = "true" />
 ```
 
 ### Remote Debugging
