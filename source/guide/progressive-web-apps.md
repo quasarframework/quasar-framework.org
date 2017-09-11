@@ -40,3 +40,7 @@ Please note that this is a PWA starter kit, and not a wrapper. This means that y
   - All static assets compiled with version hashes for efficient long-term caching, and a production `index.html` is auto-generated with proper URLs to these generated assets.
   - Use `npm run build --report`to build with bundle size analytics.
   - Generates a Service Worker for offline caching your static assets using [sw-precache-webpack-plugin](https://www.npmjs.com/package/sw-precache-webpack-plugin)
+  
+Please note that the lighthouse audit score of your PWA should be performed on the built version of your app, not on the dev server. This means that you should `quasar build` and `quasar serve` on the root folder of your app, then open the served url inside Google Chrome and perform the lighthouse audit.
+
+Lighthouse audits can be done from the 'audit' tab in your chrome dev tools. In case there is no 'audit' tab you can install lighthouse as a chrome extention.
