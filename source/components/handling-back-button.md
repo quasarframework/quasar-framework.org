@@ -14,7 +14,7 @@ How would you handle this situation? Normally, you'd write code like below for t
 <q-btn @click="$router.push('/list')">Login</q-btn>
 
 <!-- Logout button -->
-<q-btn @click="$router.push('/list')">Logout</q-btn>
+<q-btn @click="$router.push('/login')">Logout</q-btn>
 ```
 
 Now you build your App and install it on a phone. You open up the App, hit login then logout, then the phone's back button. What you most likely want is for your App to exit at this point... but it doesn't! It goes to the "/list" route instead. It's kind of obvious why. Web history builds up as you hit the buttons:
