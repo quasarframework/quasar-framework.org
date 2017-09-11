@@ -16,6 +16,8 @@ $ npm install
 > **Important!**
 > Do not use Quasar wrappers (Cordova/Electron) on top of this template.
 
+Please note that this is a PWA starter kit, and not a wrapper. This means that you will have to use this boilerplate from the beginning and cannot use src code of a quasar app you already built in the past. In case you want to use previously written Quasar-app code, you will have to manually migrate your source code and you will not be able to wrap your app with Cordova or Electron anymore.
+
 ## What's Included
 
 * Service Worker precaching of application shell + static assets (prod)
