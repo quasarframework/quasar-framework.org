@@ -73,7 +73,7 @@ Example on using a Toolbar on Layout header:
     <q-btn flat>
       <q-icon name="alarm" />
     </q-btn>
-  </div>
+  </q-toolbar>
   ...
 </q-layout>
 ```
