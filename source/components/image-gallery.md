@@ -61,6 +61,17 @@ User can switch between images using the arrow buttons or through swipe actions.
 | Property | Type | Description |
 | --- | --- | --- |
 | `src` | Array | Strings represting URLs. Use images from statics folder. |
+| `horizontal-quick-view` | Boolean | Show thumbnails at bottom. |
+| `infinite` | Boolean | Infinite slides scrolling |
+| `autoplay` | Boolean/Number | Auto scrolls between slides. Works great along `infinite` prop (but `infinite` is not required). If used as a number, it represents the number of milliseconds between scrolls. |
+| `arrows` | Boolean | Show arrows. (Default is **true**) |
+| `dots` | Boolean | Show dots at bottom |
+| `fullscreen` | Boolean | Shows Fullscreen button |
+| `handle-arrow-keys` | Boolean | Allow navigation with left and right arrow key |
+| `actions` | Boolean | Show Actions slot. (Default is **true**) |
+| `animation` | Boolean/Number | Show animation when slide changes. If used as number, represents the duration of the animation. Default is true, default duration is 300 ms. |
+| `easing` | Function | Easing function used when changing slide from autoplay or button press. |
+| `swipe-easing` | Function | Easing function used when changing slide with a swipe |
 
 ### Vue Methods
 | Property | Description |
