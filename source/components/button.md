@@ -34,7 +34,7 @@ A standard round button.
 
 <!-- Next is perfectly equivalent -->
 <q-btn round color="secondary">
-  <q-icon="card_giftcard" />
+  <q-icon name="card_giftcard" />
 </q-btn>
 ```
 > **Note**
