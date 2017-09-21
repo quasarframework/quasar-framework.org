@@ -28,9 +28,9 @@ Loading.show({
 Loading.show({
   spinner: QSpinnerGears,
   message: 'Some message',
-  messageColor: '#00ff00',
+  messageColor: 'blue',
   spinnerSize: 250, // in pixels
-  spinnerColor: '#f034a3'
+  spinnerColor: 'white'
 })
 ```
 
