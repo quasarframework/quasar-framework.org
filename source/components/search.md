@@ -57,6 +57,64 @@ Common input frame properties:
 | `before` | Array of Objects | Icon buttons on left side of input frame. Read below more details. |
 | `after` | Array of Objects | Icon buttons on right side of input frame. Read below more details. |
 
+### Icon buttons
+This section refers to `before` and `after` properties which can add additional buttons as icons to the textfield. Here is the structure of the two properties:
+
+```js
+{
+  // required icon
+  icon: String,
+  // required function to call when
+  // icon is clicked/tapped
+  handler: Function,
+
+  // Optional. Show icon button
+  // if model has a value
+  content: Boolean,
+
+  // Optional. Show icon button
+  // if textfield is marked with error
+  error: Boolean
+}
+```
+
+Examples:
+```html
+<!--
+  Show an icon button (with 'warning' as icon)
+  when there is an error on QInput (through "error" prop)
+-->
+<q-search
+  v-model="text"
+  :after="[
+    {
+      icon: 'warning',
+      error: true,
+      handler () {
+        // do something...
+      }
+    }
+  ]"
+/>
+
+<!--
+  Show an icon button (with 'attach_file' as icon)
+  when the model has a non empty value
+-->
+<q-search
+  v-model="text"
+  :after="[
+    {
+      icon: 'attach_file',
+      content: true,
+      handler () {
+        // do something...
+      }
+    }
+  ]"
+/>
+```
+
 ## Vue Methods
 | Vue Method | Description |
 | --- | --- |
