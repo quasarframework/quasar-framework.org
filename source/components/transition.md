@@ -168,7 +168,7 @@ Each of the classes mentioned above are prefixed with `v-`, but if for example y
 .custom-leave-active {
   transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
-.custom-enter, .custom-leave-to
+.custom-enter, .custom-leave-to {
   transform: translateX(10px);
   opacity: 0;
 }
