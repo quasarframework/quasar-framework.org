@@ -70,6 +70,7 @@ Common input frame properties:
 | `dark` | Boolean | Is QInput rendered on a dark background? |
 | `align` | String | One of 'left', 'center' or 'right' which determines the text align within textfield. |
 | `disable` | Boolean | If set to `true`, textfield is disabled and the user cannot type anything. |
+| `readonly` | Boolean | If set to `true`, textfield is readonly and the user cannot change value. |
 | `error` | Boolean | If set to true, the input fields colors are changed to show there is an error. |
 | `before` | Array of Objects | Icon buttons on left side of textfield. Read below more details. |
 | `after` | Array of Objects | Icon buttons on right side of textfield. Read below more details. |
