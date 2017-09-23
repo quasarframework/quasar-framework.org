@@ -217,7 +217,9 @@ selectListOptions: [
     label: 'Oracle',
     description: 'Some Java for today?',
     icon: 'mail',
+    iconColor: 'primary',
     rightIcon: 'alarm',
+    rightIconColor: 'negative',
     value: 'ora'
   },
   {
@@ -236,6 +238,7 @@ Use an Object for each option like above (notice that it uses some properties fr
 
 | Property | Type | Description |
 | --- | --- | --- |
+| `leftColor` | String | Color for left side from [Quasar Color Palette](/components/color-palette.html). |
 | `icon` | String | Icon on the left to use. |
 | `avatar` | String | URL pointing to statics for an avatar. |
 | `letter` | String | One character String. |
@@ -245,6 +248,7 @@ Use an Object for each option like above (notice that it uses some properties fr
 | `labelLines` | String/Number | Number of lines that label can expand to. |
 | `sublabelLines` | String/Number | Number of lines that the sublabel can expand to. |
 | `inset` | Boolean | Inset Label if no left-side is specified (no icon, avatar, letter or image). |
+| `rightColor` | String | Color for right side from [Quasar Color Palette](/components/color-palette.html). |
 | `rightIcon` | String | Icon on the right to use. |
 | `rightAvatar` | String | URL pointing to statics for an avatar on right side. |
 | `rightLetter` | String | One character String for right side. |
