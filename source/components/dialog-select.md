@@ -310,8 +310,7 @@ Use the `color`, `inverted` and `frame-color` props to control the coloring of t
   for both frame and chips, but specifying a frame-color overrides
   the color for the frame.
 -->
-<q-select
-  <q-dialog-select
+<q-dialog-select
   frame-color="amber"
   inverted
   color="dark"
