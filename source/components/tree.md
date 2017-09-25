@@ -11,8 +11,8 @@ easily stylize and turn them into anything you want.
 ``` html
 <q-tree
   :model="treeModel"
-  contract-html="<i>remove_circle</i>"
-  expand-html="<i>add_circle</i>"
+  contract-html="<i class='material-icons'>remove_circle</i>"
+  expand-html="<i class='material-icons'>add_circle</i>"
 ></q-tree>
 ```
 
