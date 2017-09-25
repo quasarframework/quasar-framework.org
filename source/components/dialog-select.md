@@ -76,8 +76,8 @@ Supports `v-model` which should be the String for single selection and Array for
 | `title` | String | The title of Dialog. |
 | `message` | String | An additional informational text for the Dialog. |
 | `display-value` | String | A text to show in the selection field, after selections have been made. |
-| `okLabel` | String | Label for the "OK" button on the Dialog. |
-| `cancelLabel` | String | Label for "Cancel" button on the Dialog. |
+| `ok-label` | String | Label for the "OK" button on the Dialog. |
+| `cancel-label` | String | Label for "Cancel" button on the Dialog. |
 
 Common input frame properties:
 
