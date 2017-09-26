@@ -76,8 +76,7 @@ When using static data, specify an Object (notice that it uses some properties f
 ``` js
 // static-data
 [
-  // Property name from array of objects below
-  // that will fill input box when suggestion is selected
+  // Property name that will be used by filter() to filter the array of objects below.
   field: 'value',
 
   list: [
