@@ -49,11 +49,18 @@ The idea is to place QPopover inside your DOM element / component that you want 
 
 ## Vue Methods
 
-| Vue Method | Description |
+If the popover includes buttons or other clickable items which cause navigation or other events to be raised within your app, it's vital to use the callback feature of these methods, and what's passed in must be a function. So, if you want to close a QModal and then navigate to a new route, the code _must_ look something like this:
+```
+<q-popover ref="myRef"
+  <q-btn @click="$refs.myRef.close(() => $router.push('/newroute'))" />
+</q-popover>
+```
+
+| Method | Description |
 | --- | --- |
-| `toggle()` | Toggle open/close state. |
-| `open()` | Open Popover. |
-| `close()` | Close Popover. |
+| `open` | Open Popover. Takes one optional Function parameter to trigger after Popover is opened. |
+| `close` | Close Popover. Takes one optional Function parameter to trigger after Popover is closed. |
+| `toggle` | Toggle open/close Popover state. Takes one optional Function parameter to trigger after Popover is toggled. |
 
 ## Vue Events
 
