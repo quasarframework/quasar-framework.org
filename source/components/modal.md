@@ -39,6 +39,13 @@ Modals are responsive to the width of the window (see demo on a desktop and resi
 
 ## Vue Methods
 
+If the modal includes buttons or other clickable items which cause navigation or other events to be raised within your app, it's vital to use the callback feature of these methods. So, if you want to close a QModal and then navigate to a new route, do this:
+```
+<q-modal ref="myRef"
+  <q-btn @click="$refs.myRef.close($router.push('/newroute'))" />
+</q-modal>
+```
+
 | Method | Description |
 | --- | --- |
 | `open` | Open Modal. Takes one optional Function parameter to trigger after Modal is opened. |
