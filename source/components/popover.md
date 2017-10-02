@@ -37,6 +37,31 @@ The idea is to place QPopover inside your DOM element / component that you want 
 > **IMPORTANT**
 > When on a browser, hitting the &lt;ESCAPE&gt; key also closes the QPopover.
 
+## Toggle through v-model
+``` html
+<template>
+  <div>
+    <q-btn color="primary" @click="showing = true" label="Show" />
+    <q-btn color="primary" @close="showing = false" label="Hide" />
+
+    <div>
+      ...
+      <q-popover v-model="showing">...</q-popover>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      showing: false
+    }
+  }
+}
+</script>
+```
+
 ## Vue Properties
 | Vue Property | Type | Description |
 | --- | --- | --- |

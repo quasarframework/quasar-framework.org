@@ -21,6 +21,28 @@ Modals are responsive to the width of the window (see demo on a desktop and resi
 </q-modal>
 ```
 
+## Toggle through v-model
+``` html
+<template>
+  <div>
+    <q-btn color="primary" @click="open = true" label="Open" />
+    <q-modal v-model="open">
+      <q-btn color="primary" @close="open = false" label="Close" />
+    </q-modal>
+  </div>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      open: false
+    }
+  }
+}
+</script>
+```
+
 ## Vue Properties
 
 | Property | Type | Description |

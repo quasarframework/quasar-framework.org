@@ -73,6 +73,32 @@ Expandable FABs are defined by two components: QFab (parent) and QFabAction (chi
 
 We'll continue describing only the expandable FAB, as the non-expandable FAB is, as mentioned above, a simple [round button](/components/button.html).
 
+## Toggle through v-model
+``` html
+<template>
+  <div>
+    <q-btn color="primary" @click="open = true" label="Show" />
+    <q-btn color="primary" @close="open = false" label="Hide" />
+
+    <q-fab
+      v-model="open"
+      color="primary"
+      icon="wifi"
+    >....</q-fab>
+  </div>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      open: false
+    }
+  }
+}
+</script>
+```
+
 ## QFab (Parent)
 
 ### QFab Vue Properties
