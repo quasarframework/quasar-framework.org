@@ -179,6 +179,7 @@ The Tabs Pane component is useful, when the content of each tab is relatively sm
 | Vue Property | Type | Description |
 | --- | --- | --- |
 | `name` | String | **Required** The name of the tab and also the target id. |
+| `keep-alive` | Boolean | Keeps components alive even if current selected Tab changes. |
 
 > In order to show the proper content for each tab in each pane, the names of the tabs and panes should match.
 
