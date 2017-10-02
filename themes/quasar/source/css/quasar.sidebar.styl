@@ -74,14 +74,13 @@
       text-transform uppercase
 
       &.on
-        i
-          transform rotateZ(180deg)
-          color $white
+        i:before
+          content '\f077'
 
       i
         float right
         font-size .8rem
-        transition transform .2s, color .2s
+        transition color .2s
 
   .qwb-toggle.on+.list
     padding-top 1rem
