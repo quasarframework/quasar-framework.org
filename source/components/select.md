@@ -216,10 +216,13 @@ selectListOptions: [
   {
     label: 'Oracle',
     description: 'Some Java for today?',
+
     icon: 'mail',
-    iconColor: 'primary',
+    leftColor: 'secondary', // color for left side, whatever it is (icon, letter, ...)
+
     rightIcon: 'alarm',
-    rightIconColor: 'negative',
+    rightColor: 'negative', // color for right side, whatever it is (icon, letter, ...)
+
     value: 'ora'
   },
   {
