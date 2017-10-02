@@ -34,6 +34,7 @@ use you mouse to drag slides to left or right.
 | `handle-arrow-keys` | Boolean | Allow navigation with left and right arrow key |
 | `actions` | Boolean | Show Actions slot |
 | `animation` | Boolean/Number | Show animation when slide changes. If used as number, represents the duration of the animation. Default is true, default duration is 300 ms. |
+| `no-swipe` | Boolean | Disable swiping. |
 | `easing` | Function | Easing function used when changing slide from autoplay or button press. |
 | `swipe-easing` | Function | Easing function used when changing slide with a swipe |
 
