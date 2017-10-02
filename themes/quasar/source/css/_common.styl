@@ -7,6 +7,7 @@ body
   -webkit-font-smoothing antialiased
   -moz-osx-font-smoothing grayscale
   color $medium
+  background white
   margin 0
 
 a
@@ -120,9 +121,10 @@ iframe
 #logo
   font-size 1.2rem !important
   img
-    vertical-align top
-    width $header-height
-    height $header-height
+    vertical-align middle
+    width $header-height - 20px
+    height $header-height - 20px
+    margin 0 10px 5px 0
 
 #main
   z-index 1
@@ -255,10 +257,15 @@ $color-donate = #FFD54F
 $color-idea   = #00C853
 
 .q-version
-  color grey
   float right
   margin-top 2px
   margin-right 35px
+
+.q-older-version
+  a
+    color grey
+  i
+    margin-right 5px
 
 .support-button
   font-size 1.1rem !important

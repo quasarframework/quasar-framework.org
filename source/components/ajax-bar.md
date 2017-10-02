@@ -1,12 +1,12 @@
 title: Ajax Bar
 ---
 Ajax Bar is a component which displays a loading bar (like Youtube) whenever an Ajax call (regardless of Ajax library used) is in progress. It can be manually triggered as well.
-<input type="hidden" data-fullpage-demo="web-components/ajax-bar">
+<input type="hidden" data-fullpage-demo="progress/ajax-bar">
 
 ## Basic Usage
 As long as this component is rendered by Vue it will capture all Ajax calls.
 ``` html
-<q-ajax-bar></q-ajax-bar>
+<q-ajax-bar />
 ```
 
 Best way is to place it in your App root component (`App.vue` if you are using the default Quasar template):
@@ -14,7 +14,7 @@ Best way is to place it in your App root component (`App.vue` if you are using t
 <template>
   <div id="q-app">
     <router-view></router-view>
-    <q-ajax-bar></q-ajax-bar>
+    <q-ajax-bar />
   </div>
 </template>
 ```
@@ -27,7 +27,7 @@ Best way is to place it in your App root component (`App.vue` if you are using t
 | --- | --- | --- | --- |
 | `position` | String | 'top' | Where to place the loading bar: 'top', 'bottom', 'left' or 'right'. |
 | `size` | String | '4px' | Thickness of loading bar. |
-| `color` | String | '#e21b0c' | CSS color of loading bar. |
+| `color` | String | 'red' | One from [Quasar Color Palette](/components/color-palette.html). |
 | `speed` | Number | 250 | How fast should loading bar update its value (in milliseconds). |
 | `delay` | Number | 1000 | How much should loading bar wait before showing loading bar after it's triggered (in milliseconds). |
 | `reverse` | Boolean | `false` | Reverse direction of loading bar. |

@@ -1,10 +1,10 @@
 title: Datetime Range
 ---
 
-When you need to specify a date, time or datetime interval, use DatetimeRange component.
-Before diving in, make sure you know how to configure a [Datetime component](/components/datetime.html) as this one supports the exactly same properties.
+The Datetime Range component offers the users the ability to input a date, time or datetime interval. It is based off of the [Datetime component](/components/datetime.html). Before diving in, make sure you know how to use the Datetime component, since this component shares same properties.
+<input type="hidden" data-fullpage-demo="forms/datetime/range-datetime">
 
-<input type="hidden" data-fullpage-demo="form/datetime/range">
+In essense, Datetime Range is made up of two Datetime components, one for "from" and one for "to", making up a date interval together.
 
 ## Basic Usage
 ``` html
@@ -14,7 +14,7 @@ Before diving in, make sure you know how to configure a [Datetime component](/co
   v-model="range"
   :min="min"
   :max="max"
-></q-datetime>
+/>
 
 <!-- Time Range -->
 <q-datetime-range
@@ -22,7 +22,7 @@ Before diving in, make sure you know how to configure a [Datetime component](/co
   v-model="range"
   :min="min"
   :max="max"
-></q-datetime>
+/>
 
 <!-- Datetime Range -->
 <q-datetime-range
@@ -30,31 +30,22 @@ Before diving in, make sure you know how to configure a [Datetime component](/co
   v-model="range"
   :min="min"
   :max="max"
-></q-datetime>
+/>
 ```
 
 ## Vue Properties
-Following properties are optional.
+> **Note**
+> The properties below are only special to the Datetime Range component. This component also shares all of the properties of the [Datetime component](/components/datetime.html) which get applied to both inner Datetimes.
 
-| Vue Property | Description |
+Supports `v-model` which must be an Object with `from` and `to` properties, which each holding the same types `String`, `Number` and `Date` as the model used for [Datetime component](/components/datetime.html). In effect, these are the models for each of the two datetime components used to create the range.
+
+| Vue Property | Type | Description |
 | --- | --- | --- |
-| `type` | One of `date`, `time` or `datetime` strings. |
-| `min` | Minimum datetime at which selection can start. |
-| `max` | Maximum datetime at which selection can stop. |
-| `format` | Format in MomentJs style of how input displays date and/or time. |
-| `ok-label` | Label for "OK" button on mobile Dialog. |
-| `cancel-label` | Label for "Cancel" button on mobile Dialog. |
-| `clear-label` | Label for "Clear" button on mobile Dialog. |
-| `label` | (Floating) label to use. |
-| `placeholder` | Placeholder text to use. |
-| `static-label` | Overrides `label` and `placeholder` and selected value. Display this label always regardless of selection status. |
-| `default-selection` | Set default date/time (as Momentjs string) when Popover is shown and no value is yet selected. |
-| `readonly` | When set to `true` the model cannot be altered. |
-| `disable` | When set to `true` the model cannot be altered. |
-
-> The model needs to be an Object with `{to, from}` String properties, same as the model used for Datetime component.
+| `default-from` | String, Number, Date | Used as "default-selection" for "from" model. |
+| `default-to` | String, Number, Date | Used as "default-selection" for "to" model. |
+| `css` | String/Object | CSS applied to each Datetime component
 
 ## Vue Events
 | Vue Event | Description |
 | --- | --- |
-| `@input` | Triggered when model (Object with `to` and `from` props) changes |
+| `@change(newVal)` | Triggered when model (Object with `to` and `from` props) changes. |

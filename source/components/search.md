@@ -1,85 +1,237 @@
-title: Search bar
+title: Search (Textfield)
 ---
+The Search component offers the users an input field with additional features for searching purposes. For autocomplete functionality, also refer to [QAutocomplete](/components/autocomplete.html) documentation.
+<input type="hidden" data-fullpage-demo="forms/search">
 
-<input type="hidden" data-fullpage-demo="form/search">
-
-Quasar Search bars lazy evaluate the input with a debounce of 300ms by default.
+Works well with [QField](/components/field.html) for additional functionality such as a helper, error message placeholder and many others.
 
 ## Basic Usage
 
-``` html
-<q-search v-model="searchModel"></q-search>
-
-<!-- Disabled state -->
-<q-search
-  disable
-  v-model="searchModel"
-></q-search>
-```
-
-### Error State
-Add `has-error` CSS class:
-``` html
-<q-search
-  class="has-error"
-  v-model="searchModel"
-></q-search>
+```html
+<q-search v-model="search" />
 ```
 
 ## Vue Properties
+Supports `v-model` which should be binded to a String or Number (depending on `type` property used) in your scope.
 
 | Vue Property | Type | Description |
 | --- | --- | --- |
-| `debounce` | Number | Number of ms to debounce input. Default to 300. |
 | `icon` | String | Icon to use. |
-| `placeholder` | String | Placeholder to use. |
-| `readonly` | Boolean | When set to `true` user can not change model value. |
-| `disable` | Boolean | When set to `true` user can not change model value. |
+| `type` | String |  Must be one of the following: `text` (default), `email`, `tel`, `number` and `url`. This is important as it determines the keyboard type popping up on mobile devices. |
+| `debounce` | Number | Number of ms to debounce input. Default is 300. |
 
-Example:
+A more involved example:
 ``` html
 <q-search
   v-model="searchModel"
   :debounce="600"
   placeholder="Hotels"
   icon="local_hotel"
-></q-search>
+  float-label="What is your hotel?"
+/>
+```
+
+Common input field properties:
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `autofocus` | Boolean | Focus input field after rendering component. |
+| `placeholder` | String | A text to be shown on textfield, mainly to explain what should be entered. |
+| `name` | String | Adds a "name" attribute to the input field. |
+| `max-length` | Number/String | Maximum characters allowed on input field. |
+
+Common input frame properties:
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `prefix` | String | A text that should be shown before the textfield. |
+| `suffix` | String | A text that should be shown after the textfield. |
+| `float-label` | String | A text label that will "float" up above the input field, once the input field gets focus. |
+| `stack-label` | String | A text label that will be shown above the input field and is static. |
+| `color` | String | One from [Quasar Color Palette](/components/color-palette.html). |
+| `inverted` | Boolean | Inverted mode. Color is applied to background instead. |
+| `dark` | Boolean | Is QSearch rendered on a dark background? |
+| `align` | String | One of 'left', 'center' or 'right' which determines the text align within textfield. |
+| `disable` | Boolean | If set to `true`, textfield is disabled and the user cannot type anything. |
+| `error` | Boolean | If set to true, the input fields colors are changed to show there is an error. |
+| `before` | Array of Objects | Icon buttons on left side of input frame. Read below more details. |
+| `after` | Array of Objects | Icon buttons on right side of input frame. Read below more details. |
+
+### Icon buttons
+This section refers to `before` and `after` properties which can add additional buttons as icons to the textfield. Here is the structure of the two properties:
+
+```js
+{
+  // required icon
+  icon: String,
+  // required function to call when
+  // icon is clicked/tapped
+  handler: Function,
+
+  // Optional. Show icon button
+  // if model has a value
+  content: Boolean,
+
+  // Optional. Show icon button
+  // if textfield is marked with error
+  error: Boolean
+}
+```
+
+Examples:
+```html
+<!--
+  Show an icon button (with 'warning' as icon)
+  when there is an error on QInput (through "error" prop)
+-->
+<q-search
+  v-model="text"
+  :after="[
+    {
+      icon: 'warning',
+      error: true,
+      handler () {
+        // do something...
+      }
+    }
+  ]"
+/>
+
+<!--
+  Show an icon button (with 'attach_file' as icon)
+  when the model has a non empty value
+-->
+<q-search
+  v-model="text"
+  :after="[
+    {
+      icon: 'attach_file',
+      content: true,
+      handler () {
+        // do something...
+      }
+    }
+  ]"
+/>
 ```
 
 ## Vue Methods
 | Vue Method | Description |
 | --- | --- |
 | `clear()` | Resets the model to an empty string. |
+| `clearAndFocus()` | Resets the model to an empty string and gives the input focus. |
+| `focus()` | Focused the textfield. |
+| `blur()` | Makes textfield lose focus. |
+| `select()` | Selects all textfield text and focuses. |
 
 ## Vue Events
 | Vue Event | Description |
 | --- | --- |
-| `@input` | Triggered on model value change with the new value. |
-| `@focus` | Triggered when search input gets focus. |
-| `@blur` | Triggered when search input loses focus. |
-| `@enter` | Triggered when `Enter` key is detected. |
+| `@change(newVal)` | Triggered on model value change. |
+| `@focus` | Triggered on focus. |
+| `@blur` | Triggered a blur. |
+| `@keydown` | Triggered by keydown event on textfield. |
+| `@keyup` | Triggered by keyup event on textfield. |
+| `@click` | Triggered by a native `click` event on textfield. |
 
-## Coloring
-Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`, `orange`, `teal` as CSS class:
+### Coloring
+Use the `color` prop with one of the Quasar colors from the [Color Palette](/components/color-palette.html), like `primary`, `secondary`, `orange-7`, `teal-2`:
 
 ``` html
-<q-search
-  class="orange"
-  v-model="searchModel"
-></q-search>
+<q-search color="orange" v-model="search" />
+```
+Use the `inverted` prop, to change the background of the input to the color.
+
+``` html
+<q-search inverted color="orange" v-model="search" />
+```
+### Error State
+Use the `error` prop to show there has been an error. This will turn the component color to red.
+``` html
+<q-search error v-model="search" />
+<q-search :error="hasError" inverted v-model="search" />
+```
+
+### Disable
+Use the `disable` prop to stop user input.
+``` html
+<q-search disable v-model="search" color="primary" />
 ```
 
 ## Usage with Layout
-If you want to place on Layout header or footer:
+If you'd like to set search within a QToolbar on QLayout:
 ``` html
 <q-layout>
   ...
-  <div slot="header" class="toolbar orange">
-    <q-search
-      class="orange"
-      v-model="searchModel"
-    ></q-search>
-  </div>
+  <!--
+    Notice we set a color for QToolbar and
+    QSearch has "inverted" and color="none" specified.
+    This makes QSearch use background color set by QToolbar.
+  -->
+  <q-toolbar slot="header" color="primary">
+    <q-search inverted color="none" v-model="search" />
+  </q-toolbar>
   ...
 </q-layout>
 ```
+
+## Formatting
+It is possible to add formatting to a QSearch in two ways. One is for the basic component. The other is with the QField component. Both methods offer "inverted" coloring.
+
+### Additional Vue Properties
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `color` | String | The color the QInput should have. The default is `primary`. |
+| `inverted`| Boolean | Set to `true`, to color field's background set by the `color` prop. |
+| `dark` | Boolean | Set to true, if the field is on a dark background. It will invert the text color to make it light. |
+| `align` | Text | Controls the 'right', 'center' or 'left' alignment of the input. The default is 'left'. |
+
+### Basic Formatting Examples
+This will color the field black.
+
+```html
+<q-search v-model="text" float-label="Colored" color="black" />
+```
+
+This will show an inverted colored input field in amber. Here, the text is automatically inverted to a lighter color.
+
+```html
+<q-search v-model="text" inverted color="amber" stack-label="Amber Colored Background" />
+```
+
+### Alignment
+You can also align the input to the right, center or left. The default is left. The below example will show a field for Euro currency input.
+
+```html
+<!-- Align textfield content to the right -->
+<q-search v-model="text" align="right" />  
+```
+
+### Basic Usage with QField
+It is also possible to further enhance a QInput by wrapping it in a [QField](/components/field.html) component.
+
+``` html
+<div class="bg-grey-9" style="width: 500px; padding: 25px">
+  <q-field
+    icon="wifi"
+    label="Some Label"
+    :count="10"
+    helper="Some helper"
+    :error="error"
+    error-label="Some error"
+  >
+    <q-search
+      v-model="text"
+      dark
+      inverted
+      color="black"
+      float-label="Textfield"
+    />
+  </q-field>
+</div>
+```
+
+The above usage of QField will show the input field within a dark grey background with an inverse white text. Notice the usage of the `dark` prop for QInput. This controls the inversion of the text color.
+
+Please refer to the [QField documentation](/components/field.html) for more info about its usage.

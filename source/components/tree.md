@@ -4,16 +4,15 @@ Quasar Tree represents a highly configurable component that displays hierarchica
 
 Trees are stripped out of any design by default so you can
 easily stylize and turn them into anything you want.
-
-<input type="hidden" data-fullpage-demo="web-components/tree">
+<input type="hidden" data-fullpage-demo="other-components/tree">
 
 ## Basic Usage
 
 ``` html
 <q-tree
   :model="treeModel"
-  contract-html="<i>remove_circle</i>"
-  expand-html="<i>add_circle</i>"
+  contract-html="<i class='material-icons'>remove_circle</i>"
+  expand-html="<i class='material-icons'>add_circle</i>"
 ></q-tree>
 ```
 
@@ -63,7 +62,9 @@ treeModel: [
 ]
 ```
 
+### Handler Method
 Items containing a `handler` method will make those items trigger the handler method when clicked/tapped.
+The handler is passed the item as an argument.
 
 ### Vue Properties
 

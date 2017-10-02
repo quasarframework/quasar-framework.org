@@ -6,113 +6,146 @@ guide:
     Roadmap: quasar-$
     Changelog: quasar-framework-$
     Contributing: $
+  Misc:
+    Browser Support: $
+    RTL Support: $
+    Troubleshoot and Tips: app-$
   Boilerplate:
     Overview: app-boilerplate
     Structure: app-$
+    Routes Lazy Loading: $
     Build Commands: app-$
     Linter Configuration: app-$
     Pre-Processors: app-$
     Handling Static Assets: app-$
     API Proxying for Dev: app-$
     Prerendering for SEO: app-$
-    Using Fonts from CDN: app-$
     Dev vs Production Code: app-$
-    Troubleshoot and Tips: app-$
+  Specific Starter Kits:
+    Progressive Web Apps: progressive-web-apps
   Wrappers:
     Cordova Wrapper: $
     Electron Wrapper: $
   Development:
+    Nightly Build: quasar-$
+    Theming: quasar-$
     Ajax Requests: $
     Components Sharing State: $
-    Form Validation: $
-    Handling Back Button: $
-    Nightly Build: quasar-$
+    Managing Google Analytics: $
+    Opening Dev Server To Public: $
     Router: $
-    Theming: quasar-$
-api:
-  Javascript:
-    App Visibility: js-$
-    App Fullscreen: js-$
-    Cookies: js-$
-    Events: js-$
-    Platform Detection: js-$
-    Utils: js-$
-    Touch Directives: js-$
-    Other Directives: js-$
-    Web Storage: js-$
-  CSS:
-    Stylus Variables: css-$
-    Color Palette: css-$
-    Icons: css-$
-    Typography: css-$
-    Shadows: css-$
-    Grid Layout: css-$
-    Visibility: css-$
-    Positioning: css-$
-    Other Helper Classes: css-$
+
 components:
   root:
-    Action Sheet: $
-    Dialog: $
-    Loading: $
-    Toast: $
+    Introduction for Beginners: $
+    Platform Detection: $
+    Global Event Bus: $
+    Vue Prototype Injections: $
+  Style & Identity:
+    Color Palette: $
+    Stylus Variables: $
+    Icons: $
+    Typography: $
+    Addressbar Color: $
+    Material Ripples: $
+  CSS Helpers:
+    Flex CSS: $
+    Shadows: $
+    Visibility: $
+    Positioning: $
+    Other Helper Classes: $
   Layout:
-    Overview: layout-$
-    Drawer: $
+    Layout: $
+    Integrating Layout with Router: $
+    Fixed Positioning on Layout: $
+    Floating Action Button: $
+    Element Resize Observable: $
+    Window Resize Observable: $
+  Navigation:
     Toolbar: $
     Tabs: $
-  CSS:
+    Pull to refresh: $
+    Layout Side Links: $
+    Handling Back Button: $
+    Context Menu: $
     Breadcrumb: $
-    Buttons: $
-    Cards: $
-    Chat: $
-    HTML Tables: $
-    Label: $
-    List: $
-    Timeline: $
-  Form Inputs:
+    Pagination: $
+  Scrolling:
+    Scroll Observable: $
+    Scroll Directive: $
+    Infinite Scroll: $
+    Scroll Area: $
+    Scroll Fire: $
+    Back to Top: $
+    Scrolling Utils: $
+  Forms:
+    Button: $
+    Field: $
+    Input: $
+    Form Validation: $
+    Chips Input: $
     Autocomplete: $
-    Checkbox: $
-    Chips Textbox: $
-    Datetime: $
-    Datetime Range: $
-    Inline Datetime: $
-    Input Textbox: $
-    Knob: $
-    Numeric: $
-    Radio: $
-    Range: $
-    Double Range: $
-    Rating: $
     Search: $
+    Slider: $
+    Range: $
+    Radio: $
+    Checkbox: $
+    Toggle: $
+    Option Group: $
+    Datetime: $
+    Inline Datetime: $
+    Datetime Range: $
     Select: $
     Dialog Select: $
-    Textarea: $
-    Toggle: $
-  Vue Components:
-    Ajax Bar: $
-    Back to Top: $
-    Collapsible (+ Accordion): collapsible
-    Context Menu: $
-    Data Table: $
-    Floating Action Buttons: $
-    Infinite Scroll: $
-    Modal: $
-    Image Gallery: $
-    List Item: $
-    Pagination: $
-    Parallax: $
-    Popover: $
-    Progress Bar: $
-    Progress Button: $
-    Pull to Refresh: $
-    Scroll Fire: $
-    Slider: $
-    Spinners: $
-    State: $
-    Stepper: $
-    Tooltip: $
-    Tree: $
+    Rating: $
+    Knob: $
     Uploader: $
+  Popups:
+    Action Sheet: $
+    Alert: $
+    Toast: $
+    Dialog: $
+    Modal: $
+    Popover: $
+    Tooltip: $
+  Grouping:
+    Card: $
+    Collapsible: $
+    DataTable: $
+    HTML Table: $
+    Lists and List Items: $
+    Carousel: $
+    Stepper: $
+  Progress:
+    Ajax Bar: $
+    Loading: $
+    Inner Loading: $
+    Progress Bar: $
+    Spinner: $
+  Touch/Mouse Actions:
+    Panning: $
+    Swiping: $
+    Touch Hold: $
+  Media:
+    Image Gallery: $
+    Parallax: $
     Video Embedding: $
-    Vue Transitions: $
+  Animation:
+    Transition: $
+    Slide Transition: $
+    JS Animations: $
+    Animation CSS Helper Classes: $
+  Other Components:
+    Chip: $
+    Chat: $
+    Tree: $
+  Utils:
+    Handling JS Date: $
+    DOM Utils: $
+    Formatter Utils: $
+    Other Utils: $
+  Web API Wrappers:
+    Cookies: $
+    Web Storage: $
+    App Visibility: $
+    App Fullscreen: $

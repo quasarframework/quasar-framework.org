@@ -45,7 +45,7 @@ Once installed, you can use the pre-processors inside your `*.vue` components us
 
 ### A note on SASS syntax
 
-* lang="scss" corresponds to the CSS-superset syntax (with curly braces and semicolones).
+* lang="scss" corresponds to the CSS-superset syntax (with curly braces and semicolons).
 * lang="sass" corresponds to the indentation-based syntax.
 
 ## PostCSS
@@ -55,7 +55,12 @@ Styles in `*.vue` files (and all other style files) are piped through PostCSS by
 By default, PostCSS is configured to use Autoprefixer.
 
 ## A note on Coffeescript
-If you are using Coffeescript then you need to disable ESLint. Open up `/build/webpack.base.conf.js` and remove the following section from `module/rules`:
+If you are using Coffeescript then you need to EITHER disable ESLint OR tell ESLint which Vue components are using Coffeescript. 
+
+### To disable ESLint
+
+Open up `/build/webpack.base.conf.js` and remove the following section from `module/rules`:
+
 ``` js
 { // eslint
   enforce: 'pre',
@@ -64,6 +69,19 @@ If you are using Coffeescript then you need to disable ESLint. Open up `/build/w
   include: projectRoot,
   exclude: /node_modules/
 }
+```
+
+### To tell ESLint which Vue components are using Coffeescript
+
+Note that `vue-loader` uses `lang="coffee"` to identify components which are using Coffeescript, but `lang="coffee"` is not recognizable for ESLint. Fortunately, ESLint (following traditional HTML) uses `type="xxx"` to identify the type of scripts. As long as a `<script>` tag has any `type` other than `javascript`, ESLint would mark the script as non-javascript, and skips linting it. Coffeescript's convention is to use `type="text/coffeescript"` to identify itself. Therefore, in your Vue components which are using Coffeescript, using both `lang` and `type` to avoid ESLint:
+
+```html
+<template>
+  ...
+</template>
+<script lang="coffee" type="text/coffeescript">
+  ...
+</script>
 ```
 
 ## Standalone CSS Files

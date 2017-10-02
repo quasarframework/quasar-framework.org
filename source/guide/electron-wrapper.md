@@ -2,6 +2,8 @@ title: Electron App Wrapper
 ---
 You can build Electron apps by wrapping your Quasar project with its Electron wrapper. We'll be using Quasar CLI to manage this.
 
+> The Quasar Electron wrapper can be installed on top of the **default** starter kit. Won't work with any other specific starter kits, like "pwa".
+
 ## Wrap your App
 Now let's create the Wrapper for your App.
 ``` bash

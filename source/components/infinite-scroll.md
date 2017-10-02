@@ -1,8 +1,7 @@
 title: Infinite Scroll
 ---
-When you want to progressively load new content as the user scrolls down your Page.
-
-<input type="hidden" data-fullpage-demo="web-components/infinite-scroll">
+When you want to progressively load new content as the user scrolls down your Page, use QInfiniteScroll component.
+<input type="hidden" data-fullpage-demo="scrolling/infinite-scroll">
 
 ## Basic Usage
 ``` html
@@ -14,14 +13,17 @@ When you want to progressively load new content as the user scrolls down your Pa
 
   <!--
     slot="message" for DOM element to display (in this example
-    a spinner) when loading additional content
+    a dots spinner) when loading additional content
   -->
-  <spinner slot="message" name="dots" :size="40"></spinner>
+  <q-spinner-dots slot="message" :size="40"></q-spinner-dots>
 </q-infinite-scroll>
 ```
 
 > **IMPORTANT**
 > Infinite Scroll loads items in advance when less than one screen height is left to be seen. If the content you fetch has height less than the container's height on screen then Infinite Scroll will continue loading more content. So make sure you load enough content.
+
+> **IMPORTANT**
+> This works best when placed as direct child of the Vue component rendering your Page. If you place it under an overflowed DOM element or component, don't forget to set the `inline` prop.
 
 ## Vue Properties
 | Vue Property | Required | Type | Description |

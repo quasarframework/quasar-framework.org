@@ -39,11 +39,11 @@ Note the above example will include every image under `./bgs/` in the final buil
 
 ## "Real" Static Assets
 
-In comparison, files in `src/statics/` are not processed by Webpack at all: they are directly copied to their final destination as-is, with the same filename. You must reference these files using absolute paths, which is determined by `build.publicPath` in `config.js`.
+In comparison, files in `src/statics/` are not processed by Webpack at all: they are directly copied to their final destination as-is, with the same filename. You must reference these files using absolute paths, which is determined by `build.publicPath` in `config/index.js`.
 
 As an example, with the following default values:
 ``` js
-// config.js
+// config/index.js
 module.exports = {
   // ...
   build: {

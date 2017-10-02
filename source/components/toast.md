@@ -1,10 +1,9 @@
 title: Toast
 ---
-Quasar Toasts appear on top of the screen above any other components to signal the user with a message and sometimes with an action too. They can be dismissed by clicking on the right side button.
+Quasar Toasts appear on top of the screen above any other components to signal the user with a message and sometimes with an action too. They can be dismissed by clicking on the right side button or waiting for them to timeout. Toasts are displayed one at a time, but you can build up a queue of them.
 
-> Toasts are displayed one at a time, but you can build up a queue of them.
-
-<input type="hidden" data-fullpage-demo="global/toast">
+Check the sibling [Alert](/components/alert.html) too.
+<input type="hidden" data-fullpage-demo="popups/toast">
 
 ## Basic Usage
 A Quasar App Toast is a message displayed to the user. Below is an example of a simple Toast containing only a message:
@@ -37,9 +36,6 @@ Toast.create({
       // Specify what to do when button is clicked/tapped
     },
     color: '#000'
-  },
-  vm: {
-    // VueModel for the Toast
   }
 })
 ```
@@ -47,7 +43,7 @@ Toast.create({
 | Property | Type | Description |
 | --- | --- | --- | --- |
 | `html` | String | (**Required**) HTML to display. |
-| `icon` | String | Icon to use. See [Icons](/api/css-icons.html). |
+| `icon` | String | Icon to use. See [Icons](/components/icons.html). |
 | `image` | String | Image to include. |
 | `timeout` | 2500 | Timeout in milliseconds until being automatically dissmissed. |
 | `button` | Object | Place a button with an action, like "Undo". Specify `label` (String) and `handler` (Function). Optionally, specify `color` with a CSS color. |

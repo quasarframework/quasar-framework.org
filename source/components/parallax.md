@@ -3,8 +3,7 @@ title: Parallax
 Parallax scrolling is a technique in computer graphics and web design, where background images move by the camera slower than foreground images, creating an illusion of depth in a 2D scene and adding to the immersion.
 
 Quasar provides an out of the box Vue Component you can use. It takes care of a lot of quirks, including image size which can actually be smaller than the window width/height.
-
-<input type="hidden" data-fullpage-demo="web-components/parallax">
+<input type="hidden" data-fullpage-demo="media/parallax">
 
 ## Basic Usage
 

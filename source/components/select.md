@@ -1,50 +1,189 @@
 title: Select
 ---
-A Quasar Select box can be of two types: single selection (using Radios or Lists) or multiple selection (using Checkboxes or Toggles). This component opens up a Popover. If for some reason you want it to open a Dialog, use the "sibling" [Dialog Select](/components/dialog-select.html) component.
+Select component has two types of selection: single selection (using Radios or Lists) or multiple selection (using Checkboxes or Toggles). This component opens up a Popover for the selection list and action. A filter can also be used for longer lists.
+<input type="hidden" data-fullpage-demo="forms/select/standard-select">
 
-<input type="hidden" data-fullpage-demo="form/select/basic">
+If you need a Dialog for the selection, use the sibling [Dialog Select](/components/dialog-select.html) component.
+
+Works well with [QField](/components/field.html) for additional functionality such as a helper, error message placeholder and many others.
 
 ## Basic Usage
 
 ``` html
-<!-- Single Selection using Radios -->
-<q-select
-  type="radio"
-  v-model="select"
-  :options="selectOptions"
-></q-select>
+<template>
+  <div>
+    <!-- Single Selection using Radios -->
+    <q-select
+      v-model="select"
+      float-label="Is Quasar Awesome?"
+      radio
+     :options="selectOptions"
+    />
 
-<!-- Single Selection using List -->
-<q-select
-  type="list"
-  v-model="select"
-  :options="selectOptions"
-></q-select>
+    <!-- Single Selection as a simple List -->
+    <q-select
+      v-model="select"
+      :options="selectOptions"
+    />
 
-<!-- Multiple Selection using Checkboxes-->
-<q-select
-  type="checkbox"
-  v-model="select"
-  :options="selectOptions"
-></q-select>
+    <!-- Multiple Selection using Checkboxes by default -->
+    <q-select
+      multiple
+      v-model="multipleSelect"
+      :options="selectOptions"
+    />
 
-<!-- Multiple Selection using Toggles-->
-<q-select
-  type="toggle"
-  v-model="select"
-  :options="selectOptions"
-></q-select>
+    <!-- Multiple Selection using Toggles -->
+    <q-select
+      multiple
+      toggle
+      v-model="multipleSelect"
+      :options="selectOptions"
+      @change="inputChange"
+    />
+  </div>
+</template>
 
-<!-- Disabled state -->
-<q-select
-  disable
-  type="checkbox"
-  v-model="select"
-  :options="selectOptions"
-></q-select>
+<script>
+export default {
+  data () {
+    return {
+      selectOptions: [
+        {
+          label: 'Google',
+          value: 'goog'
+        },
+        {
+          label: 'Facebook',
+          value: 'fb'
+        }
+      ]
+    }
+  }
+}
+</script>
 ```
 
-Options Object example:
+## Vue Properties
+Supports `v-model` which should be the String for single selection and Array for multiple selection.
+
+| Vue Property | Type | Description |
+| --- | --- | --- |
+| `options` | Array | (**Required**) A list of objects to present as the selection's options. See below for the data format for the array. |
+| `multiple` | Boolean | If set to `true`, multiple selections will be allowed. |
+| `radio` | Boolean | If set to `true`, the selection will be through radios. For single selection only. |
+| `toggle` | Boolean | If set to `true`, the selection options will offer a toggle to select them. |
+| `chips` | Boolean | If set to `true`, the selections will appear as chips (instead of comma separated strings) on the input frame (works for multiple selection only). |
+| `frame-color` | String | One from [Quasar Color Palette](/components/color-palette.html). Useful when `color` is to be used for Chips alone and you want a different color for the input frame. |
+| `filter` | Boolean | If set to `true`, the selections will offer an input to filter the selection options. |
+| `filter-placeholder` | String | A text to show in the filter input field. Default is "Filter". |
+| `separator` | Boolean | If set to `true`, the selection options will be separated by a line. |
+| `display-value` | String | Overrides text displayed in input frame. See "Working with Display Value" section below. |
+
+Common input frame properties:
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `prefix` | String | A text that should be shown before the textfield. |
+| `suffix` | String | A text that should be shown after the textfield. |
+| `float-label` | String | A text label that will "float" up above the input field, once the input field gets focus. |
+| `stack-label` | String | A text label that will be shown above the input field and is static. |
+| `color` | String | A color from the [Quasar Color Palette](/components/color-palette.html). |
+| `inverted` | Boolean | Inverted mode. The color is applied to the background instead. |
+| `dark` | Boolean | Is QSelect rendered on a dark background? |
+| `align` | String | One of 'left', 'center' or 'right' which determines the text align within the textfield. |
+| `disable` | Boolean | If set to `true`, the field is disabled and the user cannot select anything. |
+| `error` | Boolean | If set to `true`, the input field's colors are changed to show there is an error. |
+| `before` | Array of Objects | Icon buttons positioned on the left side of field. |
+| `after` | Array of Objects | Icon buttons on the right side of the field.
+
+### Icon buttons
+This section refers to `before` and `after` properties which can add additional buttons as icons to the textfield. Here is the structure of the two properties:
+
+```js
+{
+  // required icon
+  icon: String,
+  // required function to call when
+  // icon is clicked/tapped
+  handler: Function,
+
+  // Optional. Show icon button
+  // if model has a value
+  content: Boolean,
+
+  // Optional. Show icon button
+  // if textfield is marked with error
+  error: Boolean
+}
+```
+
+Examples:
+```html
+<!--
+  Show an icon button (with 'warning' as icon)
+-->
+<q-select
+  v-model="selection"
+  :options="selectListOptions"
+  :after="[
+    {
+      icon: 'warning',
+      handler () {
+        // do something...
+      }
+    }
+  ]"
+/>
+
+<!--
+  Show an icon button (with 'arrow_forward' as icon)
+  when the model has a non empty value (like something has
+  been selected).
+-->
+<q-select
+  v-model="selection"
+  :options="selectListOptions"
+  :after="[
+    {
+      icon: 'arrow_forward',
+      content: true,
+      handler () {
+        // do something...
+      }
+    }
+  ]"
+/>
+```
+
+### Selection Types
+You have a number of possible selection types to choose from. They are straight text with optional icons and stamp values, radios, checkboxes, and toggles. Text is default for single selections and checkboxes are default for multiple selections.
+
+Use the `radio` prop for single selections. These checkboxes are inserted where the icons would be, so you cannot have icons and checkboxes for multiple selections. If you still want icons with your multiple selections, use the `toggle` prop. This would, however, replace the stamp option.
+
+```html
+<!-- Radios for single selections -->
+<q-select
+  radio
+  @change="onChange"
+  v-model="select"
+  float-label="Gogu"
+  :options="selectListOptions"
+/>
+
+<!-- Toggles for Multiple Selection -->
+<q-select
+  toggle
+  multiple
+  v-model="multipleSelect"
+ :options="selectListOptions"
+/>
+```
+
+### The Options Array Format
+Below are examples of the array of options you must use to create the selection options:
+
+Select options object:
 ``` js
 selectOptions: [
   {
@@ -59,30 +198,112 @@ selectOptions: [
 ]
 ```
 
-### Error State
-Add `has-error` CSS class:
-``` html
+More advanced select list object example:
+
+``` js
+selectListOptions: [
+  {
+    label: 'Google',
+    icon: 'search',
+    value: 'goog'
+  },
+  {
+    label: 'Facebook',
+    inset: true,
+    description: 'Enables communication',
+    value: 'fb'
+  },
+  {
+    label: 'Oracle',
+    description: 'Some Java for today?',
+
+    icon: 'mail',
+    leftColor: 'secondary', // color for left side, whatever it is (icon, letter, ...)
+
+    rightIcon: 'alarm',
+    rightColor: 'negative', // color for right side, whatever it is (icon, letter, ...)
+
+    value: 'ora'
+  },
+  {
+    label: 'Apple Inc.',
+    inset: true,
+    stamp: '10 min',
+    value: 'appl'
+  },
+  ...
+]
+```
+> **Note**
+> Set "inset" to `true`, instead of an icon, so the label text is properly aligned with the other options that use icons or avatars.
+
+Use an Object for each option like above (notice that it uses some properties from [List and List Items](/components/lists-and-list-items.html) components, like "label", "sublabel", "stamp", "icon", "rightIcon" and so on. Here is the full list of properties that can be used for each option:
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `leftColor` | String | Color for left side from [Quasar Color Palette](/components/color-palette.html). |
+| `icon` | String | Icon on the left to use. |
+| `avatar` | String | URL pointing to statics for an avatar. |
+| `letter` | String | One character String. |
+| `image` | String | URL pointing to statics for an image. |
+| `label` | String | Main label of the selection. |
+| `sublabel` | String | Sub-label of the selection. |
+| `labelLines` | String/Number | Number of lines that label can expand to. |
+| `sublabelLines` | String/Number | Number of lines that the sublabel can expand to. |
+| `inset` | Boolean | Inset Label if no left-side is specified (no icon, avatar, letter or image). |
+| `rightColor` | String | Color for right side from [Quasar Color Palette](/components/color-palette.html). |
+| `rightIcon` | String | Icon on the right to use. |
+| `rightAvatar` | String | URL pointing to statics for an avatar on right side. |
+| `rightLetter` | String | One character String for right side. |
+| `rightImage` | String | URL pointing to statics for an image on right side. |
+| `stamp` | String | Stamp to use for right side. Example: '10 min ago'. |
+
+### Working with Display Value
+If for some reason you want to have total control over the text in the input frame (replacing the comma delimited option strings), then use `display-value` property:
+
+```html
 <q-select
-  class="has-error"
-  type="radio"
-  v-model="select"
-  :options="selectOptions"
-></q-select>
+  :display-value="`${ multipleSelect.length } item${ multipleSelect.length !== 1 ? 's' : '' } selected`"
+  multiple
+  v-model="multipleSelect"
+  float-label="Select a company"
+  :options="selectLongListOptions"
+/>
 ```
 
-## Vue Properties
-| Vue Property | Required | Description |
-| --- | --- | --- |
-| `options` | Yes | Array of options (Object with `label` and `value` properties). |
-| `type` | Yes | One of `radio`, `list`, `checkbox` or `toggle` strings. |
-| `label` | | (Floating) Label to use. |
-| `placeholder` | | Placeholder to use. |
-| `static-label` | | Overrides `label` and `placeholder` and selected value. Display this label always regardless of selection status. |
-| `readonly` | | When set to `true` the model cannot be altered. |
-| `disable` | | When set to `true` the model cannot be altered. |
+For a more elegant solution (and more efficient too), use a computed property:
+```html
+<template>
+  <!-- Notice "display-value" is binded to "text" variable -->
+  <q-select
+    :display-value="text"
+    multiple
+    v-model="multipleSelect"
+    float-label="Select a company"
+    :options="selectLongListOptions"
+  />
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      multipleSelect: /* value */,
+      selectOptions: /* options */
+    }
+  },
+  computed: {
+    text () {
+      // in this example we want to show how many items are selected,
+      // so we need to check model (multipleSelect) length
+      return `${this.multipleSelect.length} item${this.multipleSelect.length > 1 ? 's' : ''} selected`
+    }
+  }
+}
+</script>
+```
 
 ## Vue Methods
-
 | Vue Method | Description |
 | --- | --- |
 | `open()` | Opens the Popover |
@@ -91,51 +312,122 @@ Add `has-error` CSS class:
 ## Vue Events
 | Vue Event | Description |
 | --- | --- |
-| `@input` | Triggered on model value change with the new value. |
+| `@change(newValue)`| Triggered on model value change. |
+| `@focus` | Triggered, when the field gets focus. |
+| `@blur` | Triggered, when the field loses focus. |
 
-## Inside of a List Usage
+## More Examples
+
+### Error State
+Use the `error` prop, to change the color of the component to red:
+``` html
+<q-select
+  error
+  multiple
+  v-model="multipleSelect"
+  :options="selectOptions"
+/>
+```
+
+### Disable
+Use the `disable` prop, to stop access to the field.
+```html
+<!-- Disabled state -->
+  <q-select
+  disable
+  float-label="Disabled Select"
+  multiple
+  v-model="multipleSelect"
+  :options="selectOptions"
+/>
+```
+
+### Labeling
+As with any input, you have two options for labels. Stack and Floating. Unless you wrap it with a QField which has its own label.
+```html
+<!-- Floating Label -->
+<q-select
+  float-label="This Label Floats"
+  multiple
+  v-model="multipleSelect"
+  :options="selectOptions"
+/>
+
+<!-- Stack Label -->
+<q-select
+  static-label="Company"
+  multiple
+  v-model="multipleSelect"
+  :options="selectOptions"
+/>
+```
+
+### Coloring
+Use the `color`, `inverted` and `frame-color` props to control the coloring of the component.
+```html
+<!-- Color -->
+<q-select
+  color="amber"
+  v-model="select"
+  :options="selectListOptions"
+/>
+
+<!-- Inverted Color -->
+<q-select
+  inverted
+  color="secondary"
+  v-model="select"
+  :options="selectListOptions"
+/>
+
+<!--
+  With a color for chips and a different color for the frame.
+  Notice "color" and "frame-color". By default, "color" is used
+  for both frame and chips, but specifying a frame-color overrides
+  the color for the frame.
+-->
+<q-select
+  frame-color="amber"
+  inverted
+  color="dark"
+  multiple
+  chips
+  v-model="multipleSelect"
+  :options="selectListOptions"
+  float-label="Some label"
+/>
+```
+
+> **Note**
+> The optional `frame-color` prop is useful when using chips as selected values, so the chips stand out from the background color.
+
+### Usage Inside of a List
 
 ``` html
-<div class="list">
-  <div class="list-label">Single Selection</div>
-
-  <div class="item multiple-lines">
-    <i class="item-primary">supervisor_account</i>
-    <div class="item-content">
+<q-list>
+  <q-list-header>Single Selection</q-list-header>
+  <q-item>
+    <q-item-side icon="supervisor_account" />
+    <q-item-main>
       <q-select
-        class="full-width"
-        type="radio"
+        class="no-margin"
         v-model="select"
         :options="selectOptions"
-      ></q-select>
-    </div>
-  </div>
-
-  <hr>
-  <div class="list-label">Multiple Selection</div>
-
-  <div class="item multiple-lines">
-    <i class="item-primary">supervisor_account</i>
-    <div class="item-content">
+      />
+    </q-item-main>
+  </q-item>
+  <q-item-separator />
+  <q-list-header>Multiple Selection</q-list-header>
+  <q-item>
+    <q-item-side icon="supervisor_account" />
+    <q-item-main>
       <q-select
-        class="full-width"
-        type="checkbox"
+        multiple
+        class="no-margin"
         v-model="multipleSelect"
         :options="selectOptions"
-      ></q-select>
-    </div>
-  </div>
-
-  <div class="item multiple-lines">
-    <i class="item-primary">supervisor_account</i>
-    <div class="item-content">
-      <q-select
-        class="full-width"
-        type="toggle"
-        v-model="multipleSelect"
-        :options="selectOptions"
-      ></q-select>
-    </div>
-  </div>
-</div>
+      />
+    </q-item-main>
+  </q-item>
+</q-list>
 ```

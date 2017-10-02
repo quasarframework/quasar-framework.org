@@ -1,156 +1,118 @@
 title: Slider
 ---
-Quasar Slider is a Vue Component which you can use to display more information with less real estate, using slides.
+Quasar Slider is a great way to make the user specify a number value between a minimum and maximum value, with optional steps between valid values.
+<input type="hidden" data-fullpage-demo="forms/slider">
 
-The Slider height is determined by the slide with biggest height.
+Also check its "sibling", the [Range](/components/range.html) component.
+Remember you can use QSlider wrapped by a [QField](/components/field.html) too.
 
-<input type="hidden" data-fullpage-demo="web-components/slider">
+Works well with [QField](/components/field.html) for additional functionality such as a helper, error message placeholder and many others.
 
-## Basic Slider
-Basic Slider. No controls. Just swipe between slides or
-use you mouse to drag slides to left or right.
+## Basic Usage
 
 ``` html
-<q-slider class="text-white">
-  <div slot="slide" class="bg-primary">
-    Slide 1
-  </div>
-  <div slot="slide" class="bg-secondary">
-    Slide 2
-  </div>
-  <div slot="slide" class="bg-tertiary">
-    Slide 3
-  </div>
-</q-slider>
+<q-slider v-model="selectedValue" :min="1" :max="7" />
+```
+
+Example with `step`, `label` and `snap`:
+``` html
+<q-slider
+  v-model="selectedValue"
+  :min="0"
+  :max="10"
+  :step="2"
+  label
+  snap
+/>
+```
+
+Example with square slider button:
+``` html
+<q-slider
+  v-model="selectedValue"
+  :min="0"
+  :max="10"
+  square
+/>
 ```
 
 ## Vue Properties
+Supports `v-model` which should be binded to a Number in your scope.
+
 | Vue Property | Type | Description |
 | --- | --- | --- |
-| `infinite` | Boolean | Infinite slides scrolling |
-| `autoplay` | Boolean/Number | Auto scrolls between slides. Works great along `infinite` prop (but `infinite` is not required). If used as a number, it represents the number of milliseconds between scrolls. |
-| `arrows` | Boolean | Show arrows |
-| `dots` | Boolean | Show dots at bottom |
-| `fullscreen` | Boolean | Shows Fullscreen button |
-| `actions` | Boolean | Show Actions slot |
+| `min` | Number | Minimum value of the model. Default is 1. |
+| `max` | Number | Maximum value of the model. Default is 5. |
+| `label` | Boolean | Popup a label when user clicks/taps on the Range and moves it. |
+| `label-always` | Boolean | Always display the label. |
+| `label-value` | String | Override default label value. |
+| `fill-handle-always` | Boolean | Fill handle even if at minimum value. |
+| `step` | Number | Specify step amount between valid values. |
+| `snap` | Boolean | Range handler will snap on values, rather than sliding freely; good to use along `step`; also displays step markers on the Range. |
+| `markers` | Boolean | Display markers on background, one for each possible value for the model. |
+| `square` | Boolean | When `true`. the slider button is square instead of round. |
+| `color` | String | One of [Quasar Color Palette](/components/color-palette.html). |
+| `error` | Boolean | If set to `true`, the slider is turned red. |
+| `disable` | Boolean | If set to `true`, the user cannot change model value. |
 
-## Vue Methods
-| Vue Method | Description |
+> **IMPORTANT**
+> Make sure you choose the `min`, `max` and `step` value correctly. `step` must be a divisor of `max - min`, otherwise the component won't work right. This is because all valid steps must be able to hold an equal position within the `min` and `max` values.
+
+### Error State
+Use the `error` prop to indicate there is an error. This will turn the component red:
+``` html
+<q-slider error v-model="selectedValue" :min="0" :max="50" />
+```
+
+### Disabled
+Use the `disable` prop to stop the user from changing the slider value.
+``` html
+<q-slider v-model="selectedValue" :min="0" :max="50" disable />
+```
+
+### Overriding Label
+In the example below we add a "px" suffix to the label.
+``` html
+<q-range
+  v-model="label"
+  :min="-20" :max="20"
+  :label-value="`${label}px`"
+/>
+```
+
+### Coloring
+Use one of the Quasar colors from the Color Palette with the `color` prop, like `primary`, `secondary`, `orange-8`, `teal-4`:
+
+``` html
+<q-slider color="orange" v-model="standalone" :min="0" :max="50" label />
+```
+
+## Vue Events
+| Vue Event | Description |
 | --- | --- |
-| `next(doneFn)` | Goes to next slide. |
-| `previous(doneFn)` | Goes to previous slide. |
-| `goToSlide(slideNumber, doneFn)` | Go to the desired slide. `slideNumber` is 0-based. |
-| `toggleFullscreen()` | Toggles fullscreen mode. |
+| `@change(newVal)` | Triggered on model value change. |
 
-## Slider with Arrows, Dots and Fullscreen Controls
-Sliders can contain button controls, like:
-* Arrows so user can switch between slides if swipe actions are not enough.
-* Clickable small dots to also quickly switch between slides and give a hint on the number of current slide.
-* Fullscreen button so Slider can be displayed over all screen real-estate.
-
-To show these controls simply add `arrows`, `dots` and/or `fullscreen` DOM node attributes.
+## Usage Inside of a List
 
 ``` html
-<q-slider arrows dots fullscreen class="text-white">
-  <div slot="slide" class="bg-primary">
-    Slide 1
-  </div>
-  <div slot="slide" class="bg-secondary">
-    Slide 2
-  </div>
-</q-slider>
-```
-
-## Slider with Centered Content
-Add CSS class `centered` to the slide that you want to center its content.
-
-``` html
-<q-slider arrows dots class="text-white">
-  <div slot="slide" class="bg-primary centered">
-    Slide 1
-  </div>
-  <div slot="slide" class="bg-secondary centered">
-    Slide 2
-  </div>
-</q-slider>
-```
-
-## Slider with Infinite Scrolling
-Use `infinite` Vue prop.
-
-``` html
-<q-slider infinite class="text-white">
-  <div slot="slide" class="bg-primary centered">
-    Slide 1
-  </div>
-  <div slot="slide" class="bg-secondary centered">
-    Slide 2
-  </div>
-</q-slider>
-```
-
-## Slider with Autoplay
-Use `autoplay` Vue prop. Works great with `infinite` prop too (but `infinite` is not required).
-
-``` html
-<q-slider autoplay class="text-white">
-  <div slot="slide" class="bg-primary centered">
-    Slide 1
-  </div>
-  <div slot="slide" class="bg-secondary centered">
-    Slide 2
-  </div>
-</q-slider>
-```
-
-## Slider with Custom Actions
-Put icons on the same DOM hierarchical level as the slides.
-
-``` html
-<q-slider arrows dots actions class="text-white">
-  <div slot="slide" class="bg-primary">
-    Slide 1
-  </div>
-  <div slot="slide" class="bg-secondary">
-    Slide 2
-  </div>
-  <div slot="slide" class="bg-tertiary">
-    Slide 3
-  </div>
-
-  <i slot="action" @click="someMethod()">
-    camera_enhance
-  </i>
-  <i slot="action" @click="someOtherMethod()">
-    bookmark_border
-  </i>
-  <i slot="action" @click="thirdMethod()">
-    add_shopping_cart
-  </i>
-</q-slider>
-```
-
-## Launch Slider in Fullscreen
-You can launch a Slider in Fullscreen by using a [Modal](/components/modal.html) component:
-
-``` html
-<button class="primary glossy" @click="$refs.modal.open()">
-  Launch
-</button>
-<q-modal ref="modal" class="maximized">
-  <q-slider arrows dots class="text-white full-height">
-    <div slot="slide" class="bg-primary centered">
-      <h1>Slide 1</h1>
-      <button class="dark glossy" @click="$refs.modal.close()">Close Me</button>
-    </div>
-    <div slot="slide" class="bg-secondary centered">
-      <h1>Slide 2</h1>
-      <button class="dark glossy" @click="$refs.modal.close()">Close Me</button>
-    </div>
-    <div slot="slide" class="bg-tertiary centered">
-      <h1>Slide 3</h1>
-      <button class="dark glossy" @click="$refs.modal.close()">Close Me</button>
-    </div>
-  </q-slider>
-</q-modal>
+<q-list>
+  <q-item>
+    <q-item-side icon="volume_up" />
+    <q-item-main>
+      <q-slider v-model="standalone" :min="0" :max="50" label />
+    </q-item-main>
+  </q-item>
+  <q-item>
+    <q-item-side icon="brightness_medium" />
+    <q-item-main>
+      <q-slider v-model="standalone" :min="0" :max="50" label />
+    </q-item-main>
+  </q-item>
+  <q-item>
+    <q-item-side icon="mic" />
+    <q-item-main>
+      <q-slider v-model="standalone" :min="0" :max="50" label />
+    </q-item-main>
+  </q-item>
+</q-list>
 ```

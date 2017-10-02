@@ -95,10 +95,11 @@
       border-bottom 2px solid #eee // @stylint ignore
       text-align left
     th, td
-      padding 13px 15px
+      padding 10px 10px
     tr
       &:nth-child(2n)
         background $bg
+      vertical-align top
   figure
     table
       border 0
@@ -134,3 +135,20 @@
 
 #main
   padding ($header-height + 20px) 10px 30px 20px
+
+@media print
+  #header
+  #footer
+  #sidebar
+    display none
+
+  #preview
+    display none !important
+
+  #main
+    padding 20px
+
+  .content
+    padding 0
+    margin auto
+    max-width none
