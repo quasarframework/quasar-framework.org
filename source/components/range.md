@@ -59,6 +59,8 @@ Supports `v-model` which should be binded to an Object in your scope with "min" 
 | `label-always` | Boolean | Always display the label. |
 | `left-label-value` | String | Override default left label value. |
 | `right-label-value` | String | Override default right label value. |
+| `left-label-color` | String | Color from [Quasar Palette](/components/color-palette.html) for left label background. |
+| `right-label-color` | String | Color from [Quasar Palette](/components/color-palette.html) for right label background. |
 | `fill-handle-always` | Boolean | Fill handle even if at minimum value. |
 | `step` | Number | Specify step amount between valid values. |
 | `snap` | Boolean | Range handler will snap on values, rather than walking freely; good to use along `step`; also displays step markers on the Range. |

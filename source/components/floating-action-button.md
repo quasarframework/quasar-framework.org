@@ -99,6 +99,34 @@ export default {
 </script>
 ```
 
+## Labeling with Tooltips
+Notice `slot="tooltip"` for the Tooltip on main button and where are the Tooltips placed for the Fab action buttons.
+```html
+<q-fab
+  color="primary"
+  active-icon="alarm"
+  direction="up"
+>
+  <q-tooltip
+    slot="tooltip"
+    anchor="center left"
+    self="center right"
+    :offset="[20, 0]"
+  >
+    Tooltip in FAB
+  </q-tooltip>
+
+  <q-fab-action color="purple" @click="toast('mail')" icon="mail">
+    <q-tooltip anchor="center left" self="center right" :offset="[20, 0]">Mail</q-tooltip>
+  </q-fab-action>
+  <q-fab-action color="secondary" @click="toast('alarm')" icon="alarm">
+    <q-tooltip anchor="center left" self="center right" :offset="[20, 0]">Alarm</q-tooltip>
+  </q-fab-action>
+</q-fab>
+```
+
+For more information about Tooltips, please refer to the [Tooltip documentation](/components/tooltip.html).
+
 ## QFab (Parent)
 
 ### QFab Vue Properties
@@ -171,23 +199,3 @@ The cool bit about FABs is, they give the user the ability to select from a numb
 
 > **Note**
 > Clicking on a QFabAction will automatically close the list of sub-actions and return the FAB to its original state.
-
-### Labeling QFabAction with Tooltips
-You can also add labels to the actions with a Tooltip. Below is an example of how to do this.
-
-```HTML
-<q-fab
-  color="primary"
-  active-icon="alarm"
-  direction="right"
->
-  <q-fab-action color="purple" @click="toast('mail')" icon="mail">
-    <q-tooltip anchor="center left" self="center right" :offset="[20, 0]">Mail</q-tooltip>
-  </q-fab-action>
-  <q-fab-action color="secondary" @click="toast('alarm')" icon="alarm">
-    <q-tooltip anchor="center left" self="center right" :offset="[20, 0]">Alarm</q-tooltip>
-  </q-fab-action>
-</q-fab>
-```
-
-For more information about Tooltips, please refer to the [Tooltip documentation](/components/tooltip.html).

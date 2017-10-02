@@ -275,6 +275,7 @@ Dialog.create({
     option: {
       type: 'radio',
       model: 'opt1',
+      inline: true, // optional
       items: [
         {label: 'Option 1', value: 'opt1', color: 'secondary'},
         {label: 'Option 2', value: 'opt2'},
@@ -310,6 +311,7 @@ Dialog.create({
     group1: {
       type: 'checkbox',
       model: ['opt2', 'opt3'],
+      inline: false, // optional
       items: [
         {label: 'Option 1', value: 'opt1'},
         {label: 'Option 2', value: 'opt2', color: 'secondary'},
@@ -323,6 +325,7 @@ Dialog.create({
     group2: {
       type: 'toggle',
       model: [],
+      inline: true, // optional
       items: [
         {label: 'Option 1', value: 'opt1'},
         {label: 'Option 2', value: 'opt2', color: 'secondary'},
