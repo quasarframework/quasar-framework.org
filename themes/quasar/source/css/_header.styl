@@ -1,0 +1,70 @@
+@import '_variables'
+
+#header
+  position fixed
+  top 0
+  left 0
+  right 0
+  background-color $header-bg
+  box-shadow $header-shadow
+  height $header-height
+  z-index 100
+
+  display -webkit-flex
+  display -ms-flexbox
+  display flex
+  -webkit-flex-direction row
+  -ms-flex-direction row
+  flex-direction row
+
+  -webkit-align-items stretch
+  -ms-flex-align stretch // @stylint ignore
+  -ms-grid-row-align stretch  // @stylint ignore
+  align-items stretch
+
+  -webkit-justify-content flex-start
+  -ms-flex-pack start
+  justify-content flex-start
+
+  a
+    color $header-color
+    line-height $header-height
+    font-family $logo-font
+    font-weight 500
+  > a, ul > li > a
+    font-size 1rem
+    padding 0 15px
+    display inline-block
+  > a, ul > li
+    &:hover:not(.current)
+      background-color darken($header-bg, 15%)
+    &.current
+      background-color alpha($main, .6)
+      cursor default
+    span
+      display none
+  ul
+    list-style-type none
+    padding 0
+    margin 0
+    li
+      line-height $header-height
+      display inline-block
+      position relative
+      &:hover > ul
+        display inherit
+      > ul
+        background-color $header-bg
+        display none
+        position absolute
+        top 100%
+        left 0
+        margin-top -1px
+        li
+          min-width 110px
+        a, li
+          display block
+          line-height 2.5rem
+
+  i
+    font-size 1.2rem
