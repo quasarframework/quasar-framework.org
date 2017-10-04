@@ -80,6 +80,7 @@ Supports `v-model`, which is required. For "radio" type it must be a String, oth
 ## Vue Events
 | Vue Event | Description |
 | --- | --- |
+| `@change` | Fired when the component model changes. |
 | `@focus` | Fired when the component gets focus. |
 | `@blur` | Fired when the component loses focus. |
 
