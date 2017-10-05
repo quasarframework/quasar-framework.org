@@ -50,14 +50,14 @@ export default {
 | `content-css` | Object/Array/String | Applies CSS style to Modal container. Use Object or Array of Object when also specifying `position` prop. |
 | `content-classes` | Object/Array/String | Classes to apply to Modal inner content. |
 | `transition` | String | Vue transition to use. Quasar comes with a `q-modal` transition out of the box. But you can write your own Vue transitions using CSS and use them. |
-| `noBackdropDismiss` | Boolean | Disable Modal dismissal by clicking/tapping on backdrop. |
-| `noEscDismiss` | Boolean | Disable Modal dismissal by hitting Escape key. |
+| `no-backdrop-dismiss` | Boolean | Disable Modal dismissal by clicking/tapping on backdrop. |
+| `no-esc-dismiss` | Boolean | Disable Modal dismissal by hitting Escape key. |
 | `position` | String | Stick Modal to one of the screen edges (`top`, `right`, `bottom`, `left`). |
 | `position-classes` | String | Space delimited CSS classes that overwrite the default 'items-center justify-center' classes. Gets overridden by `position` if present. |
 | `minimized` | Boolean | Always minimized regardless of screen width. |
 | `maximized` | Boolean | Always maximized regardless of screen width. |
-| `enterClass` | String | enter transition class name |
-| `leaveClass` | String | leave transition class name |
+| `enter-class` | String | enter transition class name |
+| `leave-class` | String | leave transition class name |
 
 ## Vue Methods
 
