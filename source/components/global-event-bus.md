@@ -99,8 +99,8 @@ Events.$emit('event-name')
 Events.$emit('event-name', {
   status: 10,
   message: 'wow',
-  {obj: true}
-)
+  obj: true
+})
 // The parameters will be used when calling all registered
 // callbacks for 'event-name' --> callback({status: 10, message: 'wow',...});
 ```
