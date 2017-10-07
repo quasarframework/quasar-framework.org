@@ -84,3 +84,9 @@ Also check [Quasar Theming &gt; Platform Specific Styles](/guide/quasar-theming.
 | --- | --- |
 | `orientation-portrait` | Visible only when screen orientation is *Portrait* |
 | `orientation-landscape` | Visible only when screen orientation is *Landscape* |
+
+### Printing Related
+| Class Name | Description |
+| --- | --- |
+| `print-only` | Visible only on print media - hidden on *screen* media |
+| `print-hide` | Visible on *screen* media - hidden on *print* media |
