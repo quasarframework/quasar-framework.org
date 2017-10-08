@@ -54,3 +54,10 @@ The list below is not complete. Also check the other CSS documentation pages lik
 There are two special CSS class named `group` and `generic-margin`.
 
 `group` applies a small margin to all children DOM elements, while `generic-margin` applies same margin to the respective DOM element (this varies with each theme).
+
+## Printing Behaviour
+These classes help to cleanup/define whats going to be be printend.
+| Class Name | Description |
+| --- | --- |
+| `print-hide` | Will be hidden on print |
+| `print-only` | Will be the only part on print |
