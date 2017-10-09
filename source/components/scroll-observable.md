@@ -60,7 +60,7 @@ One more example with QScrollArea:
 ```
 
 ## Layout Scrolling
-When scrolling on a Layout with a Page, rather than injecting a QScrollObservable (and by so doing registering additional scroll events) you can take advantage of [QLayout](/components/layout.html)'s `@scroll` event directly on your component defining the Layout.
+When scrolling on a Layout with a Page, rather than injecting a QScrollObservable (and by so doing registering additional scroll events) you can take advantage of [QLayout](/components/layout.html)´s `@scroll` event directly on your component defining the Layout.
 
 ```html
 <q-layout @scroll="scrollHandler">...</q-layout>
