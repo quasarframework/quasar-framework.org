@@ -17,7 +17,7 @@ const { getScrollTarget } = scroll
 import { scroll } from 'quasar'
 const { getScrollPosition, setScrollPosition } = scroll
 
-// Get scroll position of a element or page. Use it in conjunction with `Utils.dom.getScrollTarget()`
+// Get scroll position of a element or page. Use it in conjunction with `getScrollTarget()`
 (Number pixels) getScrollPosition(scrollTargetDomElement)
 
 // Setting scroll position of an element or page:
