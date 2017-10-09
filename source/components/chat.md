@@ -38,6 +38,7 @@ This show a simple chat between two parties, and a to label
 | `stamp`      | String  | Creation timestamp string             |
 | `text-color` | String  | Color of the text |
 | `bg-color`   | String  | Color of the chat message bubble |
+| `size`       | String  | Size of the message in the container. Default is `auto`, allowed values from 1 to 12 (like col-X class |
 
 > **Note** that `text` property is an Array of Strings. This is useful when two or more messages share the same (or very close) timestamp. They will be displayed on separate bubbles, but grouped together more closely so that the name of the creator and timestamp are displayed only once for this kind of group.
 
