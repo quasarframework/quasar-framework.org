@@ -27,7 +27,7 @@ Modals are responsive to the width of the window (see demo on a desktop and resi
   <div>
     <q-btn color="primary" @click="open = true" label="Open" />
     <q-modal v-model="open">
-      <q-btn color="primary" @close="open = false" label="Close" />
+      <q-btn color="primary" @click="open = false" label="Close" />
     </q-modal>
   </div>
 </template>
