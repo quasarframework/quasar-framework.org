@@ -6,7 +6,7 @@
     "deploy": "./build && hexo deploy"
   },
   "hexo": {
-    "version": "3.3.8"
+    "version": "3.3.9"
   },
   "dependencies": {
     "eslint-config-standard": "^5.3.5",

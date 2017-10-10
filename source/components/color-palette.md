@@ -50,3 +50,20 @@ div
   background-color $grey-5
 </style>
 ```
+
+## Adding Your Own Colors
+If you want to use colors of your own for components, let's say we are adding a color named "brand", all you need to do is add the following CSS into your app:
+
+```css
+.text-brand {
+  color: #a2aa33;
+}
+.bg-brand {
+  background: #a2aa33;
+}
+```
+
+Now we can use this color for Quasar components:
+```html
+<q-input color="brand" ... />
+```
