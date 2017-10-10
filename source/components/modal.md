@@ -3,7 +3,8 @@ title: Modal
 The Quasar Modal component is a UI overlay, which offers extended screen space to allow the user to get more work done. Modals are used for such things as login or signup dialogs, for message composition windows or extended option selections, like offering a list of users to be friends with.
 <input type="hidden" data-fullpage-demo="popups/modal">
 
-Important : *During development open/close might not be triggered because of HMR. Best would be before updating source files to close the Modal. This way HMR will correctly do its job. In production this scenario can’t happen, so no bugs for final product.*
+> **IMPORTANT**
+> During development open/close might not be triggered because of HMR. Best would be before updating source files to close the Modal. This way HMR will correctly do its job. In production this scenario can’t happen, so no bugs for final product.
 
 ## Basic Usage
 Below you'll find the code to a very basic modal:
