@@ -43,7 +43,7 @@ const { style } = dom
 // Get COMPUTED style (when DomElement is visible!)
 // Computed means a DomElement might not have "height" CSS property set,
 // but that does not mean it doesn't have a height when it's displayed.
-// The follosing method accesses the computed CSS provided by the browser:
+// The following method accesses the computed CSS provided by the browser:
 console.log(style(DomElement, 'height'))
 // '10px' <<< notice it returns a String ending in 'px'
 ```
