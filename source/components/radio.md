@@ -10,7 +10,7 @@ Works well with [QField](/components/field.html) for additional functionality su
 ## Basic Usage
 
 ``` html
-<!-- Thre choices for the user -->
+<!-- Three choices for the user -->
 <q-radio v-model="option" val="opt1" label="Option 1" />
 <q-radio v-model="option" val="opt2" label="Option 2" />
 <q-radio v-model="option" val="opt3" label="Option 3" />
