@@ -17,7 +17,7 @@ Works well with [QField](/components/field.html) for additional functionality su
 ```
 
 ## Vue Properties
-Supports `v-model` which should be binded to a String in your scope. Choosing one option (clicking/tapping on a radio) makes your `v-movel` change to Radio's `val`.
+Supports `v-model` which should be binded to a String in your scope. Choosing one option (clicking/tapping on a radio) makes your `v-model` change to Radio's `val`.
 
 | Vue Property | Type | Description |
 | --- | --- | --- |
