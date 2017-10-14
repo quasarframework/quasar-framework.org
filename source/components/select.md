@@ -76,6 +76,7 @@ Supports `v-model` which should be the String for single selection and Array for
 | `chips` | Boolean | If set to `true`, the selections will appear as chips (instead of comma separated strings) on the input frame (works for multiple selection only). |
 | `frame-color` | String | One from [Quasar Color Palette](/components/color-palette.html). Useful when `color` is to be used for Chips alone and you want a different color for the input frame. |
 | `filter` | Boolean | If set to `true`, the selections will offer an input to filter the selection options. |
+| `autofocus-filter` | Boolean | Auto-focus on the filter input field (if available) when opening selection. |
 | `filter-placeholder` | String | A text to show in the filter input field. Default is "Filter". |
 | `separator` | Boolean | If set to `true`, the selection options will be separated by a line. |
 | `display-value` | String | Overrides text displayed in input frame. See "Working with Display Value" section below. |
