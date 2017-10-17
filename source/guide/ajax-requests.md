@@ -1,6 +1,6 @@
 title: Ajax Requests
 ---
-Quasar recommends using `Axios` or `Vue-Ressource`.
+Quasar recommends using `Axios` or `Vue-Resource`.
 These packages are not provided by default so you will have to npm install them and import from `src/main.js`.
 
 
