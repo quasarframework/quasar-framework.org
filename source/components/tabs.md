@@ -63,11 +63,12 @@ There is support for `v-model` (which is optional). In this case, you need a Vue
 </template>
 
 <script>
-import { QTabs, QBtn } from 'quasar'
+import { QTabs, QTab, QBtn } from 'quasar'
 
 export default {
   components: {
     QTabs,
+    QTab,
     QBtn
   },
   data () {
