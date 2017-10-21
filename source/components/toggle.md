@@ -23,12 +23,15 @@ Works well with [QField](/components/field.html) for additional functionality su
 
 <!-- Disabled state -->
 <q-toggle v-model="checked" disable label="Toggle Label" />
+
+<!-- Using separate value and handler -->
+<q-toggle value="setting" @change="toggleSetting" label="Toggle Label" />
 ```
 
 Check "Vue Properties" for even more options.
 
 ## Vue Properties
-Supports `v-model` which should be binded to a Boolean or Array in your scope.
+Supports `v-model` which should be bound to a Boolean or Array in your scope. This approach works well in most cases, but sometimes (for example if using with Vuex) it might be necessary to use the `value` prop and `@change` event so that a Vuex action or mutation can be used instead of changing the data directly.
 
 | Vue Property | Type | Description |
 | --- | --- | --- |
@@ -44,8 +47,9 @@ Supports `v-model` which should be binded to a Boolean or Array in your scope.
 ## Vue Events
 | Vue Event | Description |
 | --- | --- |
-| `@blur` | Triggered, when Toggle loses focus. |
-| `@focus` | Triggered, when Toggle gains focus. |
+| `@blur` | Triggered when Toggle loses focus. |
+| `@focus` | Triggered when Toggle gains focus. |
+| `@change` | Triggered when Toggle is clicked by the user. The _current_ value of the bound data element is passed as a parameter |
 
 ## Array as Model
 If you have a number of toggles for a selection, use can also use an Array as the model object and the `val` prop for the inserted value into the Array.
@@ -149,3 +153,22 @@ In the following example we use the right side of QItems to insert Toggle, but i
   </q-item>
 </q-list>
 ```
+
+Inside a `v-for`, the following construct can be used to pass the list element to a `@change` handler. Note this example assumes there is a `settings` object with `.key` and `.label` properties, a method `is()` which returns the current state, and `toggle()` which accepts the setting and current value to toggle it.
+
+```html
+<q-list link>
+  <q-item v-for="setting in settings" :key="setting.key" tag="label">
+    <q-item-side>
+      <q-toggle
+        :value="is(setting)"
+        @change="val => {toggle(setting, val)}"
+      />
+    </q-item-side>
+    <q-item-main>
+      <q-item-tile label>{{setting.label}}</q-item-tile>
+    </q-item-main>
+  </q-item>
+</q-list>
+````
+
