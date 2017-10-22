@@ -2,7 +2,7 @@ title: Icons
 ---
 
 The Quasar Icon component allows you to easily insert icons within other components or any other area of your pages, as you'd like.
-Quasar currently supports: [Material Icons](https://material.io/icons/) out of the box, but you can add [Font Awesome](http://fontawesome.io/icons/), [Ionicons](http://ionicons.com/) and [IcoMoon](https://icomoon.io/). Learn how to include the last three (which are optional) by reading on.
+Quasar currently supports: [Material Icons](https://material.io/icons/) out of the box, but you can add [Material Design Icons (mdi)](https://materialdesignicons.com/), [Font Awesome](http://fontawesome.io/icons/), [Ionicons](http://ionicons.com/) and [IcoMoon](https://icomoon.io/). Learn how to include the last three (which are optional) by reading on.
 
 Importing the required font icons is required in order to make them work. Read [Importing Icons](#Importing-Icons) section for more details.
 
@@ -14,6 +14,9 @@ Let's take a look at how we can use QIcon component. (Do not forget to check dow
 ```html
 <!-- Material icons have no prefix -->
 <q-icon name="thumb_up" />
+
+<!-- Material Design Icons (mdi) have "mdi-" prefix -->
+<q-icon name="mdi-bell" />
 
 <!-- Ionicons have "ion-" prefix -->
 <q-icon name="ion-heart" />
@@ -86,7 +89,7 @@ There's also a "size" property:
 ```
 
 ## Importing Icons
-The only required icon font is "Material Icons" one. The other (Fontawesome or Ionicons) are optional. In order for you to be able to use them, you have two options: either use [quasar-extras](https://github.com/quasarframework/quasar-extras) npm package, or add the appropriate CDN (Content Delivery Network) links in `<head>` of your index.html.
+The only required icon font is "Material Icons" one. The other (Material Design Icons (mdi), Fontawesome or Ionicons) are optional. In order for you to be able to use them, you have two options: either use [quasar-extras](https://github.com/quasarframework/quasar-extras) npm package, or add the appropriate CDN (Content Delivery Network) links in `<head>` of your index.html.
 
 If you are building a website only, then CDN approach can be an option you can follow. However, when building a mobile or Electron app, you will most likely do not want to depend on an Internet connection, so it's best that you import directly from `quasar-extras`.
 
@@ -102,6 +105,7 @@ If you are building a website only, then CDN approach can be an option you can f
   unless you use CDN to link to it.
  */
 import 'quasar-extras/material-icons'
+import 'quasar-extras/material-design-icons'
 import 'quasar-extras/ionicons'
 import 'quasar-extras/fontawesome'
 ```
@@ -121,6 +125,12 @@ The example link tag below would include Font Awesome v4.7.0 icons. Do a Google 
   <link
     rel="stylesheet"
     href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  >
+
+  <!-- CDN example for Material Design Icons (mdi) -->
+  <link
+    rel="stylesheet"
+    href="//cdn.materialdesignicons.com/2.0.46/css/materialdesignicons.min.css"
   >
 
   <!-- CDN example for Fontawesome -->
