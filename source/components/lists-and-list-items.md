@@ -295,7 +295,7 @@ Another complex example used on one of the sides of a QLayout, describing a menu
       <q-item-tile label>John Doe</q-item-tile>
       <q-item-tile sublabel>Administrator</q-item-tile>
     </q-item-main>
-  </q-item-main>
+  </q-item>
 
   <q-item-separator />
   <q-list-header>Menu</q-list-header>
