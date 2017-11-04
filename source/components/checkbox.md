@@ -28,7 +28,7 @@ Supports `v-model` which should be binded to a Boolean or Array in your scope.
 | `label` | String | The text label for the Checkbox. |
 | `left-label` | Boolean | Set to `true`, if the label should be placed to the left of the Checkbox. |
 | `checked-icon` | String | Optional icon to use, when the Checkbox is checked. |
-| `uncheck-icon` | String | Optional icon to use, when the Checkbox is not checked. |
+| `unchecked-icon` | String | Optional icon to use, when the Checkbox is not checked. |
 | `color` | String | Color from [Quasar Color Palette](/components/color-palette.html). |
 | `disable` | Boolean | Set to `true`, to disable the Checkbox. |
 | `val` | Object | Used to modify the v-model of the Checkbox when using an Array as `v-model`. |

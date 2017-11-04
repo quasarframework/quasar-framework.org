@@ -31,7 +31,7 @@ Loading.show({
   messageColor: 'blue',
   spinnerSize: 250, // in pixels
   spinnerColor: 'white',
-  customClass: 'my-loader'
+  customClass : 'bg-primary'
 })
 ```
 

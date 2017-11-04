@@ -23,7 +23,7 @@ You can replace the QBtn and the List with any DOM elements or components you li
       The DOM element(s) that make up the popup,
       in this case a list:
     -->
-    <q-list item-separator link>
+    <q-list separator link>
       <q-item @click="doSomething(), $refs.popover.close()">
         ...
       </q-item>
