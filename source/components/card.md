@@ -119,7 +119,7 @@ Cards can have some actions (buttons) attached to them.
 | Vue Property | Type | Description |
 | --- | --- | --- | --- |
 | `vertical` | Boolean | Stack actions vertically |
-| `align` | String | One of 'start', 'center', 'end', 'around' which aligns buttons in respect to the actions container |
+| `align` | String | One of 'start', 'center', 'end', 'around', 'between' which aligns buttons in respect to the actions container |
 
 ```html
 <!-- Horizontal actions -->

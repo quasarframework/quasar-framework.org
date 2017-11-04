@@ -6,7 +6,9 @@ There are CSS classes supplied by Quasar to help you position a DOM element easi
 | --- | --- |
 | `fullscreen` | Fix position covering all window real-estate |
 | `fixed` | Set `position` to `fixed` without specifying `top`, `left`, `right` or `bottom` properties |
+| `fixed-center` | Set position to `fixed` but in the middle of window. |
 | `absolute` | Set `position` to `absolute` without specifying `top`, `left`, `right` or `bottom` properties |
+| `absolute-center` | Set position to `absolute` but in the middle of the container (container needs relative position). |
 | `fixed-top`, `absolute-top` | Fixed or absolute position to top of screen |
 | `fixed-right`, `absolute-right` | Fixed or absolute position to the right edge of screen |
 | `fixed-bottom`, `absolute-bottom` | Fixed or absolute position to bottom of screen |

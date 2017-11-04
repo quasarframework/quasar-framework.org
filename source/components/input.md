@@ -31,6 +31,7 @@ Supports `v-model` which should be bound to a String or Number (depending on `ty
 | `clearable` | Boolean | If set to `true`, the component offers the user an actionable icon to remove the entered text. |
 | `no-pass-toggle` | Boolean | If type is 'password' and set to `true`, then password toggle is not shown. |
 | `readonly` | Boolean | Input is readonly. |
+| `attributes` | Object | Adds HTML attributes to the enclosing `<input>` tag. Useful for browser autocomplete, as an example: `:attributes="{autocompletetype: 'email', autocorrect: 'off'}"` |
 
 When you set type to "number", there are some additional properties that you can use:
 

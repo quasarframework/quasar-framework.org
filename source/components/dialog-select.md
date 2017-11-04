@@ -78,6 +78,7 @@ Supports `v-model` which should be the String for single selection and Array for
 | `display-value` | String | A text to show in the selection field, after selections have been made. |
 | `ok-label` | String | Label for the "OK" button on the Dialog. |
 | `cancel-label` | String | Label for "Cancel" button on the Dialog. |
+| `clearable` | Boolean | If set to `true`, the component offers the user an actionable icon to remove the current selection. |
 
 Common input frame properties:
 

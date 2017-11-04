@@ -30,7 +30,8 @@ Loading.show({
   message: 'Some message',
   messageColor: 'blue',
   spinnerSize: 250, // in pixels
-  spinnerColor: 'white'
+  spinnerColor: 'white',
+  customClass: 'my-loader'
 })
 ```
 

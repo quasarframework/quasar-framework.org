@@ -80,6 +80,7 @@ Supports `v-model` which should be the String for single selection and Array for
 | `filter-placeholder` | String | A text to show in the filter input field. Default is "Filter". |
 | `separator` | Boolean | If set to `true`, the selection options will be separated by a line. |
 | `display-value` | String | Overrides text displayed in input frame. See "Working with Display Value" section below. |
+| `clearable` | Boolean | If set to `true`, the component offers the user an actionable icon to remove the current selection. |
 
 Common input frame properties:
 
