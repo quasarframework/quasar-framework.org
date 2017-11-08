@@ -30,7 +30,7 @@ Works with ANY component, not only Form ones.
 | `icon` | String | An icon to use on left of label. |
 | `helper` | String | Helper text which gets placed below your wrapped form component. |
 | `error` | Boolean | Highlight field and wrapped form component has an error. |
-| `error-label` | String | If `error` is specified and `true`, then field helper is replaced by this prop. Doesn't depends on field helper existance. |
+| `error-label` | String | If `error` is specified and `true`, then field helper is replaced by this prop. Doesn't depend on field helper existance. |
 | `count` | Number/Boolean | Add a counter of characters or items (like Chips) in your wrapped form component. If Boolean, it just counts them. If Number, it also adds a maximum number to it, but doesn't acts as a restraint. |
 | `inset` | String | Inset you field to align with other fields when current one is missing an icon and/or label. One of 'icon', 'label' or 'full' (inset for both icon and label). |
 | `dark` | Boolean | Is your field used on a dark background? |
