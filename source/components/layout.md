@@ -298,15 +298,39 @@ If you want to also be able to toggle the left drawer with larger screen sizes, 
 
 ## Vue Methods
 
+Like QModal and QPopover, the drawer methods can also take callbacks which should be used if, for example, you want to hide the drawer and then emit an event, or do some other navigation (see also [QSideLink](/components/layout-side-links.html)). To ensure the proper sequencing of events, use code like this. Note the left drawer item hides the drawer and then emits an event to the app via the global event bus:
+```html
+<q-layout ref="layout" view="lHr lpr lFr" :left-breakpoint="0" :right-breakpoint="3200">
+
+  <q-toolbar>
+    <q-btn flat @click="$refs.layout.toggleLeft()">
+      <q-icon name="menu" />
+    </q-btn>
+  </q-toolbar>
+
+  <div slot="left">
+    <q-item @click="$refs.layout.hideLeft(() => $q.events.$emit('editPage'))">
+      <q-item-side>
+        <q-icon name="edit" />
+      </q-item-side>
+      <q-item-main>
+        Edit Page
+      </q-item-main>
+    </q-item>
+  </div>
+  
+</q-layout>
+```
+
 | Method | Description |
 | --- | --- |
-| `toggleLeft` | Toggle left side state (show / hide). |
-| `showLeft` | Show left side. |
-| `hideLeft` | Hide left side. |
-| `toggleRight` | Toggle right side state (show / hide). |
-| `showRight` | Show right side. |
-| `hideRight` | Hide right side. |
-| `hideCurrentSide` | Hide currently opened layout side (right or left). |
+| `toggleLeft` | Toggle left side state (show / hide). Takes one optional Function parameter to trigger after drawer is toggled. |
+| `showLeft` | Show left side. Takes one optional Function parameter to trigger after drawer is shown. |
+| `hideLeft` | Hide left side. Takes one optional Function parameter to trigger after drawer is hidden. |
+| `toggleRight` | Toggle right side state (show / hide). Takes one optional Function parameter to trigger after drawer is toggled. |
+| `showRight` | Show right side. Takes one optional Function parameter to trigger after drawer is shown. |
+| `hideRight` | Hide right side. Takes one optional Function parameter to trigger after drawer is hidden. |
+| `hideCurrentSide` | Hide currently opened layout side (right or left). Takes one optional Function parameter to trigger after drawer is hidden. |
 
 Example of placing a button on a toolbar in the header, which will toggle the left side / drawer:
 
@@ -326,7 +350,7 @@ Example of placing a button on a toolbar in the header, which will toggle the le
 </q-layout>
 ```
 
-There's also the possibility to use `v-model` to control the left/right sides toggling:
+There's also the possibility to use `v-model` to control the left/right sides toggling. Note this is _only_ when the viewport is above the threshold (so on desktop), and won't work on small mobile screens. For now, use the `showLeft()` / `hideLeft()` / `toggleLeft()` methods (see above):
 ```html
 <template>
   <q-layout v-model="sides">
