@@ -1,7 +1,7 @@
 title: App Linter Configuration
 ---
 
-The boilerplate created by Quasar CLI uses [ESLint](http://eslint.org/) as the linter, and uses the [Standard](https://github.com/feross/standard/blob/master/RULES.md) preset with some small customizations.
+The boilerplate created by Quasar CLI uses [ESLint](http://eslint.org/) as the linter, and uses the [Standard](https://github.com/feross/standard/blob/master/RULES.md) preset with some small customizations which can be found in .eslintrc.js.
 
 If you are not happy with the default linting rules, you have several options:
 
