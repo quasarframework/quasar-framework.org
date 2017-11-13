@@ -318,19 +318,22 @@ Like QModal and QPopover, the drawer methods can also take callbacks which shoul
       </q-item-main>
     </q-item>
   </div>
-  
+
 </q-layout>
 ```
 
 | Method | Description |
 | --- | --- |
-| `toggleLeft` | Toggle left side state (show / hide). Takes one optional Function parameter to trigger after drawer is toggled. |
-| `showLeft` | Show left side. Takes one optional Function parameter to trigger after drawer is shown. |
-| `hideLeft` | Hide left side. Takes one optional Function parameter to trigger after drawer is hidden. |
-| `toggleRight` | Toggle right side state (show / hide). Takes one optional Function parameter to trigger after drawer is toggled. |
-| `showRight` | Show right side. Takes one optional Function parameter to trigger after drawer is shown. |
-| `hideRight` | Hide right side. Takes one optional Function parameter to trigger after drawer is hidden. |
-| `hideCurrentSide` | Hide currently opened layout side (right or left). Takes one optional Function parameter to trigger after drawer is hidden. |
+| `toggleLeft(Fn callback)` | Toggle left side state (show / hide). Takes one optional Function parameter to trigger after drawer is toggled. |
+| `showLeft(Fn callback)` | Show left side. Takes one optional Function parameter to trigger after drawer is shown. |
+| `hideLeft(Fn callback)` | Hide left side. Takes one optional Function parameter to trigger after drawer is hidden. |
+| `toggleRight(Fn callback)` | Toggle right side state (show / hide). Takes one optional Function parameter to trigger after drawer is toggled. |
+| `showRight(Fn callback)` | Show right side. Takes one optional Function parameter to trigger after drawer is shown. |
+| `hideRight(Fn callback)` | Hide right side. Takes one optional Function parameter to trigger after drawer is hidden. |
+| `hideCurrentSide(Fn callback)` | Hide currently opened layout side (right or left). Takes one optional Function parameter to trigger after drawer is hidden. |
+
+> *IMPORTANT*
+> Use the callbacks to navigate to a new route or run some code logic after showing/hiding the left/right layout side.
 
 Example of placing a button on a toolbar in the header, which will toggle the left side / drawer:
 
