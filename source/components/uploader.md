@@ -27,6 +27,7 @@ Works well with [QField](/components/field.html) for additional functionality su
 | `hide-upload-button` | Boolean | Hides the Upload button. You can then trigger it manually by calling `upload()` on the Vue ref |
 | `hide-upload-progress` | Boolean | Hides the upload progress. Useful when you want some other means of signaling upload progress to the user. |
 | `additionalFields` | Array | **Additional fields to send along the upload request.** Useful for authentication and so on. Array of Objects containing `name` and `value` props. |
+| `send-raw` | Boolean | Don't use **multipart/form-data** and send the file content inside the request body. If using this approach you will need to specify the correct **Content-Type** header. Defaults to false.
 
 Common input frame properties:
 
@@ -101,3 +102,30 @@ Examples:
 | `@fail(file, xhr)` | Triggered individually for each file that has encountered error while uploading |
 | `@start` | Triggered when upload has started |
 | `@finish` | Triggered when upload of file(s) has ended (with success or failure) |
+
+## Examples
+
+### AWS S3 - Uploading Using Pre-Signed URLs
+
+```html
+<!--
+ x-amz-acl and content-type headers must match the ACL and ContentType
+ specified when generating the signed url.
+-->
+<q-uploader
+  url=""
+  method="PUT"
+  :headers="{ 'x-amz-acl': <acl>, 'content-type': <file-type> }"
+  :url-factory="getSignedUrl"
+  :send-raw="true"
+/>
+```
+
+```js
+async getSignedUrl (file) {
+  const contentType = file.type // To send the correct Content-Type
+  const fileName = file.name // If you want to use this value to calculate the S3 Key.
+  const response = await api.getSignedUrl({ fileName, contentType }) // Your api call to a sever that calculates the signed url.
+  return response.data.url
+}
+```
