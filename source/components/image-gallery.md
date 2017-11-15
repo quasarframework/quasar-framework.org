@@ -46,9 +46,9 @@ Use this Web Component when you want to display multiple images together.
 | `actions` | Boolean | Show Actions slot |
 
 ## Image Gallery Carousel
-When the real estate of the Page is an issue, use this Web Component which displays multiple images using a [Carousel Component](/components/slider.html).
+When the real estate of the Page is an issue, use this Web Component which displays multiple images using a [Carousel Component](/components/carousel.html).
 
-Gallery Carousel has two control buttons available: one which when clicked displays a list of thumbnails of all images in the gallery, and the other which can bring the slider to fullscreen.
+Gallery Carousel has two control buttons available: one which when clicked displays a list of thumbnails of all images in the gallery, and the other which can bring the component to fullscreen.
 
 User can switch between images using the arrow buttons or through swipe actions. When on desktop, user can also drag on images to left or right.
 
