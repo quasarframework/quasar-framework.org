@@ -28,12 +28,12 @@ _Best way to display a Grid is on a desktop so you might want to check that firs
   @refresh="refresh"
 >
   <!-- Custom renderer for "message" column -->
-  <template slot="col-message" scope="cell">
+  <template slot="col-message" slot-scope="cell">
     <span class="light-paragraph">{{cell.data}}</span>
   </template>
 
   <!-- Custom renderer for "source" column -->
-  <template slot="col-source" scope="cell">
+  <template slot="col-source" slot-scope="cell">
     <span v-if="cell.data === 'Audit'" class="label text-white bg-primary">
       Audit
       <q-tooltip>Some data</q-tooltip>
@@ -42,7 +42,7 @@ _Best way to display a Grid is on a desktop so you might want to check that firs
   </template>
 
   <!-- Custom renderer for "action" column with button for custom action -->
-  <template slot='col-action' scope='cell'>
+  <template slot='col-action' slot-scope='cell'>
     <q-btn color="primary" @click='doSomethingMethod(cell.row.id)'>View</q-btn>
   </template>
 
