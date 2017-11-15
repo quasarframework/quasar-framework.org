@@ -74,6 +74,7 @@ Common input frame properties:
 | `disable` | Boolean | If set to `true`, textfield is disabled and the user cannot type anything. |
 | `readonly` | Boolean | If set to `true`, textfield is readonly and the user cannot change value. |
 | `error` | Boolean | If set to true, the input fields colors are changed to show there is an error. |
+| `warning` | Boolean | Same as `error`, the input field color is changed to show there is a warning. |
 | `before` | Array of Objects | Icon buttons on left side of textfield. Read below more details. |
 | `after` | Array of Objects | Icon buttons on right side of textfield. Read below more details. |
 
