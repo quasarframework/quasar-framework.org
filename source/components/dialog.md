@@ -27,8 +27,10 @@ Dialog.create({
     'Cancel',
     {
       label: 'Empty Trash Bin',
-      handler () {
+      handler: () => {
         // empty the trash bin, yo
+        // Note the ES6 arrow function in the handler definition.
+        // See the `Tip on using "this" in the handler` below for an explanation
       }
     }
   ]
