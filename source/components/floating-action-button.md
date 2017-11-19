@@ -77,8 +77,12 @@ We'll continue describing only the expandable FAB, as the non-expandable FAB is,
 ``` html
 <template>
   <div>
-    <q-btn color="primary" @click="open = true" label="Show" />
-    <q-btn color="primary" @close="open = false" label="Hide" />
+    <q-btn color="primary" @click="open = true">
+      <q-icon name="menu" />
+    </q-btn>
+    <q-btn color="primary" @click="open = false">
+      <q-icon name="close" />
+    </q-btn>
 
     <q-fab
       v-model="open"
