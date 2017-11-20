@@ -23,6 +23,7 @@ treeModel: [
   {
     title: 'Item 1',
     expanded: true,
+    icon: 'alarm',
     children: [
       {
         title: 'Item 1.1',
