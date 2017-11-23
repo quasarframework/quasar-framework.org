@@ -1,6 +1,6 @@
 title: Button
 ---
-Quasar has a component called QBtn with is a button with a few extra useful features. For instance, it comes in two shapes: rectangle (default) and round. It also has the material ripple effect by default when building with Material theme.
+Quasar has a component called QBtn which is a button with a few extra useful features. For instance, it comes in two shapes: rectangle (default) and round. It also has the material ripple effect by default when building with Material theme.
 <input type="hidden" data-fullpage-demo="forms/button">
 
 The button component also comes with a spinner or loading effect. You would use this for times when app execution may cause a delay and you want to give the user some feedback about that delay. When used, the button will display a spinning animation as soon as the user clicks the button.
@@ -151,9 +151,9 @@ If you'd like a rectangular button with just an icon and not text, you should us
 ```
 
 ## Button with Progress
-Some button actions involve contacting a server, so an asynchronous response. It's best that you inform the user about a background process taking place until the asynchronous response is ready. QBtn offers this possibility through the `loader` prop. What this property does it it's displaying a QSpinner (by default) instead of the icon and/or label of the button. Custom loading content can also be used.
+Some button actions involve contacting a server, so an asynchronous response. It's best that you inform the user about a background process taking place until the asynchronous response is ready. QBtn offers this possibility through the `loader` prop. This property will display a QSpinner (by default) instead of the icon and/or label of the button. Custom loading content can also be used.
 
-Here is a full example highlighting what you can do with `loader` property.
+Here is a full example highlighting what you can do with the `loader` property.
 ```html
 <template>
   <!-- Notice `loader` prop -->
@@ -198,12 +198,12 @@ If you'd like to add a different spinner than the default one of the theme you a
 </q-btn>
 ```
 
-> The "loading" slot can contain anything. It's not reduced to text or spinners only. You can use whatever DOM elements or components you want. The end result is that while in "loading" state, the Button content will be replaced by whatever the "loading" slot contains. Also, while in this state, button gets disabled so no further click events are triggered, making your life easier to not call same button click handler while it's already in progress.
+> The "loading" slot can contain anything. It's not reduced to text or spinners only. You can use whatever DOM elements or components you want. The end result is that while in "loading" state, the Button content will be replaced by whatever the "loading" slot contains. Also, while in this state, the button gets disabled so no further click events are unnecessarily triggered.
 
-We'll learn how you can use `loader` prop along with `v-model` on buttons later on this page.
+We'll learn how you can use the `loader` prop along with `v-model` on buttons later on this page.
 
 ### Handling Deterministic Progress
-Should you wish, you can also display a deterministic progress within the button by using the additional "percentage" property along what you've learned so far about buttons with progress:
+Should you wish, you can also display a deterministic progress within the button by using the additional "percentage" property along with what you've already learned about buttons with progress:
 ```html
 <template>
   <q-btn
@@ -256,12 +256,12 @@ export default {
 </script>
 ```
 
-You also got `dark-percentage` prop if your button has a light color.
+You can also use the `dark-percentage` prop if your button has a light color.
 
 ### Controlling the Button for Form Submission
-When you have a button to submit a form's input to the server, like a "Save" button, more often than not you want to also give the user the ability to submit the form with a press of the enter key. If you would also like to give the user feedback of the saving process being in progress and to also avoid them pressing the button while saving too, you wouldd need the button to show a loading spinner and be disabled from click events. QBtn allows this behavior if configured so.
+When you have a button to submit a form's input to the server, like a "Save" button, more often than not you will also want to give the user the ability to submit the form with a press of the enter key. If you would also like to give the user feedback of the saving process being in progress, and to prevent the user repeatedly pressing the button, you would need the button to show a loading spinner and be disabled from click events. QBtn allows this behavior if configured so.
 
-To control this loading feature, all you need is logic in your form, which sets the `v-model` of the button to `true`. Once it is set to `true`, the button reacts as if it had been pressed and displays the spinner. To stop the process, set the `v-model` value back to false.
+To control this loading feature, all you need is logic in your form which sets the `v-model` of the button to `true`. Once it is set to `true`, the button displays the spinner. To stop the process, set the `v-model` value back to false.
 
 The example below demonstrates this button control with the Enter key.
 
@@ -315,7 +315,7 @@ export default {
 ```
 
 ## Disabling a Button
-To disable the button, use the `disable` prop. Along a small fade applied to the Button, the `@click` event will no longer be triggered.
+To disable the button, use the `disable` prop. Along with a small fade applied to the Button, the `@click` event will no longer be triggered.
 
 ``` html
 <q-btn color="primary" disabled>Primary Button</q-btn>
