@@ -224,13 +224,13 @@ There are 5 types of gutter, depending on the amount of space that you want betw
 | `lg-gutter` | 48px | large gutter |
 | `xl-gutter` | 64px | extra large gutter |
 
-Let's look at a basic example. Please take note of the structure. You need a wrapping `<div>` and your content must be **inside** the `<div>` which has `col-*` CSS helper classes.
+Let's look at a basic example. Please take note of the structure. You need a wrapping `<div>` and your content must be **inside** the `<div>` which has `col-*` CSS helper classes. The gutter classes make use of negative margins, so if your flex grid content is contained within, for example, a `q-collapsible` with a clickable area immediately above the flex grid, you must specify `class="overflow-hidden"` to avoid the contents overlapping the active area of the parent component.
 
 ```html
 <!-- Example with extra small gutter and two equal width cols -->
 
 <!-- wrapping <div> required -->
-<div>
+<div class="overflow-hidden">
   <!-- the row with a type of gutter -->
   <div class="row xs-gutter">
     <div class="col-6">
@@ -247,7 +247,7 @@ Let's look at a basic example. Please take note of the structure. You need a wra
 > Some components have default margins, like the form components. This will add to the gutter, which is probably not what you want. For such cases, use `no-margin` class on those components, like in the example below:
 
 ```html
-<div>
+<div class="overflow-hidden">
   <div class="row xs-gutter">
     <div class="col-6">
       <q-input v-model="model" class="no-margin" />
