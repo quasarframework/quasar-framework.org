@@ -197,12 +197,14 @@ If, for example, no QField uses icon, then it makes sense to not add inset for a
 </q-field>
 ```
 
-### Wrapping Side by Side (stack-label) QInputs
+### Wrapping Side by Side QInputs
 We use Quasar CSS Flex to create a non wrappable row where we place two QInputs.
 
 When more than one Form component is wrapped by QField, avoid adding a counter to QField because only one will end up synching its length to it. Each Form component has its own length and there's only one placeholder for the counter, so in the end you will only confuse the user.
 
 ```html
+<!-- Example featuring stacked labels -->
+
 <q-field
   icon="security"
   helper="Helper"
