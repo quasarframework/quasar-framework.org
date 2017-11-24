@@ -28,33 +28,33 @@ _Best way to display a Grid is on a desktop so you might want to check that firs
   @refresh="refresh"
 >
   <!-- Custom renderer for "message" column -->
-  <template slot="col-message" slot-scope="cell">
+  <div slot="col-message" slot-scope="cell">
     <span class="light-paragraph">{{cell.data}}</span>
-  </template>
+  </div>
 
   <!-- Custom renderer for "source" column -->
-  <template slot="col-source" slot-scope="cell">
+  <div slot="col-source" slot-scope="cell">
     <span v-if="cell.data === 'Audit'" class="label text-white bg-primary">
       Audit
       <q-tooltip>Some data</q-tooltip>
     </span>
     <span v-else class="label text-white bg-negative">{{cell.data}}</span>
-  </template>
+  </div>
 
   <!-- Custom renderer for "action" column with button for custom action -->
-  <template slot='col-action' slot-scope='cell'>
+  <div slot='col-action' slot-scope='cell'>
     <q-btn color="primary" @click='doSomethingMethod(cell.row.id)'>View</q-btn>
-  </template>
+  </div>
 
   <!-- Custom renderer when user selected one or more rows -->
-  <template slot="selection" scope="selection">
+  <div slot="selection" slot-scope="selection">
     <q-btn color="primary" @click="changeMessage(selection)">
       <i>edit</i>
     </q-btn>
     <q-btn color="primary" @click="deleteRow(selection)">
       <i>delete</i>
     </q-btn>
-  </template>
+  </div>
 </q-data-table>
 ```
 
