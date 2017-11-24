@@ -1,38 +1,67 @@
-<a href="<%- config.root %>guide/" class="menu-link<%- page.path.match(/guide\//) ? ' current' : '' %>">
-  Guide
-</a>
-
-<a href="<%- config.root %>components/" class="menu-link<%- page.path.match(/components\//) ? ' current' : '' %>">
-  Components
-</a>
-
-<!--
-<a href="<%- config.root %>blog/" class="menu-link<%- page.path.match(/blog\//) ? ' current' : '' %>">
-  Blog
-</a>
--->
-
-<a href="<%- config.root %>search/" class="menu-link<%- page.path.match(/search\//) ? ' current' : '' %>" title="Search">
-  <i class="fa fa-search" style="vertical-align: middle"></i>
-  <span>Search</span>
-</a>
-
-<a href="<%- config.github %>" class="menu-link" target="_blank" title="Github">
-  <i class="fa fa-github" style="vertical-align: middle"></i>
-  <span>Github</span>
-</a>
-
-<a href="<%- config.twitter %>" class="menu-link" target="_blank" title="Twitter">
-  <i class="fa fa-twitter" style="vertical-align: middle"></i>
-  <span>Twitter</span>
-</a>
-
-<a href="<%- config.gitter %>" class="menu-link" target="_blank" title="Gitter Chat">
-  <i class="fa fa-comments" style="vertical-align: middle"></i>
-  <span>Gitter Chat</span>
-</a>
-
-<a href="<%- config.forum %>" class="menu-link" target="_blank" title="Forum">
-  <i class="fa fa-group" style="vertical-align: middle"></i>
-  <span>Forum</span>
-</a>
+<ul>
+  <li class="menu-link<%- page.path.match(/guide\//) ? ' current' : '' %>">
+    <a href="<%- config.root %>guide/" >
+      Guide
+    </a>
+  </li>
+  <li class="menu-link<%- page.path.match(/components\//) ? ' current' : '' %>">
+    <a href="<%- config.root %>components/" >
+      Components
+    </a>
+  </li>
+  <!-- <li class="menu-link<%- page.path.match(/blog\//) ? ' current' : '' %>">
+    <a href="<%- config.root %>blog/" >
+      Blog
+    </a>
+  </li> -->
+  <li class="menu-link<%- page.path.match(/search\//) ? ' current' : '' %>">
+    <a href="<%- config.root %>search/" title="Search">
+      <i class="fa fa-search" style="vertical-align: middle"></i>
+      <span>Search</span>
+    </a>
+  </li>
+  <li>
+    <a href="<%- config.github %>" class="menu-link" target="_blank" title="Github">
+      <i class="fa fa-github" style="vertical-align: middle"></i>
+      <span>Github</span>
+    </a>
+  </li>
+  <li>
+    <a href="<%- config.twitter %>" class="menu-link" target="_blank" title="Twitter">
+      <i class="fa fa-twitter" style="vertical-align: middle"></i>
+      <span>Twitter</span>
+    </a>
+  </li>
+  <li>
+    <a href="<%- config.gitter %>" class="menu-link" target="_blank" title="Gitter Chat">
+      <i class="fa fa-comments" style="vertical-align: middle"></i>
+      <span>Gitter Chat</span>
+    </a>
+  </li>
+  <li>
+    <a href="<%- config.forum %>" class="menu-link" target="_blank" title="Forum">
+      <i class="fa fa-group" style="vertical-align: middle"></i>
+      <span>Forum</span>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="menu-link hide-on-sidebar-menu" target="_blank" title="Demo">
+      <i class="fa fa-play" style="vertical-align: middle"></i>
+      <span>Demo</span>
+    </a>
+    <ul>
+      <li><a
+        href="<%- config.root %>quasar-play/android/index.html"
+        target="_blank"
+      > <i class="fa fa-android"></i>
+        Material
+      </a></li>
+      <li><a
+        href="<%- config.root %>quasar-play/apple/index.html"
+        target="_blank"
+      > <i class="fa fa-apple"></i>
+        iOS
+      </a></li>
+    </ul>
+  </li>
+</ul>

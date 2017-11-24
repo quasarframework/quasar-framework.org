@@ -74,50 +74,6 @@ p
 iframe
   border 0
 
-#header
-  position fixed
-  top 0
-  left 0
-  right 0
-  background-color $header-bg
-  box-shadow $header-shadow
-  height $header-height
-  z-index 100
-  overflow hidden
-
-  display -webkit-flex
-  display -ms-flexbox
-  display flex
-  -webkit-flex-direction row
-  -ms-flex-direction row
-  flex-direction row
-
-  -webkit-align-items stretch
-  -ms-flex-align stretch // @stylint ignore
-  -ms-grid-row-align stretch  // @stylint ignore
-  align-items stretch
-
-  -webkit-justify-content flex-start
-  -ms-flex-pack start
-  justify-content flex-start
-
-  a
-    color $header-color
-    line-height $header-height
-    font-family $logo-font
-    font-weight 500
-    font-size 1rem
-    padding 0 15px
-    &.current
-      background-color alpha($main, .6)
-      cursor default
-    &:hover:not(.current)
-      background-color darken($header-bg, 15%)
-    span
-      display none
-  i
-    font-size 1.2rem
-
 #logo
   font-size 1.2rem !important
   img
@@ -236,6 +192,12 @@ iframe
 .sidebar-menu
   color $main
   margin-bottom 20px
+  .hide-on-sidebar-menu
+    display none
+  ul
+    padding 0
+  ul, ul li
+    list-style-type none
   a
     display block
     font-size 1rem
