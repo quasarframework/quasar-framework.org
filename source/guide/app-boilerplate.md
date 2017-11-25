@@ -19,7 +19,7 @@ The boilerplate is targeted towards large, serious projects and assumes you are 
 ## What's Included
 
 While developing with Dev Server (`$ quasar dev`):
-* Webbpack + vue-loader for single file Vue components
+* Webpack + vue-loader for single file Vue components
 * State preserving hot-reload
 * State preserving compilation error overlay
 * Lint-on-save with ESLint
