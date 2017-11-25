@@ -117,16 +117,10 @@ When used on a dark background, specify "dark" property.
 
 <!--
   Using "frame-color" for the input frame,
-  and "color" for the color of Chips.
--->
-<q-chips-input color="dark" bg-color="amber" v-model="model" />
-
-<!--
-  Using "frame-color" for the input frame,
   and "color" for the color of Chips
   on inverted mode (frame-color is applied as background).
 -->
-<q-chips-input color="dark" bg-color="amber" v-model="model" />
+<q-chips-input color="dark" frame-color="amber" inverted v-model="model" />
 
 <!--
   When we use the component on a dark background,
