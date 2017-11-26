@@ -73,8 +73,9 @@ Use the `disable` prop to stop the user from changing the slider value.
 ### Overriding Label
 In the example below we add a "px" suffix to the label.
 ``` html
-<q-range
+<q-slider
   v-model="label"
+  label-always
   :min="-20" :max="20"
   :label-value="`${label}px`"
 />
