@@ -62,21 +62,9 @@ A Progressive Web App, from the [developers documentation on Google](https://dev
 
 Down below are some of the few key concepts you need to understand when working with the PWA starter kit:
 
-## What is the app shell?
+## Basic understanding of PWA concepts
 
-The app's shell is the minimal HTML, CSS, and JavaScript that is required to power the user interface of a progressive web app and is one of the components that ensures reliably good performance. Its first load should be extremely quick and immediately cached. "Cached" means that the shell files are loaded once over the network and then saved to the local device. Every subsequent time that the user opens the app, the shell files are loaded from the local device's cache, which results in blazing-fast startup times.
-
-App shell architecture separates the core application infrastructure and UI from the data. All of the UI and infrastructure is cached locally using a service worker so that on subsequent loads, the Progressive Web App only needs to retrieve the necessary data, instead of having to load everything.
-
-## What is a service worker
-
-A service worker is a script that your browser runs in the background, separate from a web page, opening the door to features that don't need a web page or user interaction. Today, they already include features like push notifications and background sync. In the future, service workers will support other things like periodic sync or geofencing. The core feature discussed in this tutorial is the ability to intercept and handle network requests, including programmatically managing a cache of responses.
-
-The reason this is such an exciting API is that it allows you to support offline experiences, giving developers complete control over the experience.
-
-More on service workers can be read [here](https://developers.google.com/web/fundamentals/primers/service-workers/) at the developers documentation on Google.
-
-## The app manifest
+### What is the app manifest?
 
 The web app manifest is a simple JSON file that gives you, the developer, the ability to control how your app appears to the user in the areas that they would expect to see apps (for example the mobile home screen), direct what the user can launch and more importantly how they can launch it.
 
@@ -88,4 +76,34 @@ Using the web app manifest, your web app can:
 - Define a "splash screen" launch experience and theme color for the site
 - Track whether you're launched from the home screen or URL bar
 
+### What is the app shell?
+
+The app's shell is the minimal HTML, CSS, and JavaScript that is required to power the user interface of a progressive web app and is one of the components that ensures reliably good performance. Its first load should be extremely quick and immediately cached. "Cached" means that the shell files are loaded once over the network and then saved to the local device. Every subsequent time that the user opens the app, the shell files are loaded from the local device's cache, which results in blazing-fast startup times.
+
+App shell architecture separates the core application infrastructure and UI from the data. All of the UI and infrastructure is cached locally using a service worker so that on subsequent loads, the Progressive Web App only needs to retrieve the necessary data, instead of having to load everything.
+
+### What is a service worker?
+
+A service worker is a script that your browser runs in the background, separate from a web page, opening the door to features that don't need a web page or user interaction. Today, they already include features like push notifications and background sync. In the future, service workers will support other things like periodic sync or geofencing. The core feature discussed in this tutorial is the ability to intercept and handle network requests, including programmatically managing a cache of responses.
+
+The reason this is such an exciting API is that it allows you to support offline experiences, giving developers complete control over the experience.
+
+More on service workers can be read [here](https://developers.google.com/web/fundamentals/primers/service-workers/) at the developers documentation on Google.
+
+## Working with the Quasar PWA starter kit
+
+### The app manifest
+
 You can find the app manifest in the PWA starter kit at `/src/statics/manifest.json`. Please personalise this file to your app.
+
+### The service worker setup
+
+The PWA starter kit works with 2 plugins to create a basic service worker that will cache your app shell automatically. If you look at your webpack setup at `build/webpack.prod.conf.js`, you will see that it uses the 'sw-precache-webpack-plugin' and the 'html-webpack-plugin'.
+
+The 'sw-precache-webpack-plugin' is the plugin that “generates” a service worker file automatically and saves it in `dist/service-worker.js`. This file can be modified through the arguments passed at `new SWPrecacheWebpackPlugin()`. e.g. setting `minify: true` to `false` will make it so the `dist/service-worker.js` is not minified.
+
+More documentation for changing your service-worker.js file's setup can be found on the [sw-precache-webpack-plugin](https://github.com/goldhand/sw-precache-webpack-plugin) github page.
+And for an even better understanding, also look at the original [sw-precache](https://github.com/GoogleChromeLabs/sw-precache) github page, as *sw-precache-webpack-plugin* is only a webpack-wrapper for this.
+
+The 'html-webpack-plugin' only creates a short <script> inside your index.html file to "register" the service worker!
+The script to "register the service worker" is the file that can be found at `build/service-worker-prod.js`. **This is not your service-worker file, only the script to register the service worker!** Adding code meant for inside a service-worker might break your setup.
