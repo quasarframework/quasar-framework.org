@@ -7,7 +7,9 @@ Quasar injects Vue prototype with `$q` object:
 | `$q.version` | String | Quasar version. |
 | `$q.theme` | String | Theme being used. Examples: mat, ios |
 | `$q.platform` | Object | Same object as [Platform](/components/platform-detection.html) import from Quasar. |
-| `$q.events` | Object | Same object as [Events](/components/global-event-bus.html) import from Quasar. |
+| `$q.i18n` | Object | Internationalisation for Quasar, containing labels etc (one of [i18n files](https://github.com/quasarframework/quasar/tree/dev/i18n)). Designed for Quasar components, but you can use in your app components too. |
+| `$q.cordova` | Object | Reference to Cordova global object. Available only when running under a Cordova app. |
+| `$q.electron` | Object | Reference to Electron global object. Available only when running under an Electron app. |
 
 You can use it globally inside a Vue context (component script or template) like this:
 
@@ -40,6 +42,3 @@ export default {
 }
 </script>
 ```
-
-### Mobile Apps
-When running under Cordova, you'll be able to use `$cordova` injection too (`this.$cordova` in Vue components script, `$cordova` in Vue templates).

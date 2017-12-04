@@ -3,23 +3,49 @@ title: Quasar Typography
 See how headings, blockquotes, definitions lists and more are displayed in the demo. At the end of this page you can read about CSS helper classes.
 <input type="hidden" data-fullpage-demo="style-and-identity/typography">
 
-### Default MD Font
-The default font embedded in Quasar App *when built with Material Design Theme* is Roboto. It comes with 5 different font weights you can use: 100, 300, 400, 500, 700. Below is an image from Google's Roboto Specimen document displaying the different font weights:
+### Headings
+```html
+<h1>Light 112sp</h1>
+<!-- or: --><div class="q-display-4">Light 112sp</div>
 
-<div style="max-width: 550px">
-![Roboto Font](/images/roboto.png "Roboto Font")
-</div>
+<h2>Regular 56sp</h2>
+<!-- or: --><div class="q-display-3">Regular 56sp</div>
 
-> **NOTE**
-> You can embed it for iOS theme too by copying font related code from `themes/app.mat.styl` to `themes/app.ios.styl` and requiring the `.styl` version of CSS in `src/App.vue`
+<h3>Regular 45sp</h3>
+<!-- or: --><div class="q-display-2">Regular 45sp</div>
+
+<h4>Regular 34sp</h4>
+<!-- or: --><div class="q-display-1">Regular 34sp</div>
+
+<h5>Regular 24sp</h5>
+<!-- or: --><div class="q-headline">Regular 24sp</div>
+
+<h6>Medium 20sp</h6>
+<!-- or: --><div class="q-title">Medium 20sp</div>
+
+<div class="q-subheading">Regular 16sp</div>
+
+<div class="q-body-2">Medium 14sp</div>
+
+<div class="q-body-1">Regular 14sp</div>
+
+<div class="q-caption">Regular 12sp</div>
+```
+
+### Weights
+| Class Name |
+| --- |
+| `text-weight-thin` |
+| `text-weight-light` |
+| `text-weight-regular` |
+| `text-weight-medium` |
+| `text-weight-bold` |
+| `text-weight-bolder` |
 
 ### Text Types
 You can display text in a variety of ways.
 
 ``` html
-<!-- Token (as CSS class) -->
-<span class="token">blue</span>
-
 <!-- Small and Big text -->
 <small>Text</small>
 <big>Text</big>
@@ -27,12 +53,6 @@ You can display text in a variety of ways.
 <!-- sub and sup -->
 <sub>Subtext</sub>
 <sup>Supertext</sup>
-
-<!-- Paragraphs -->
-<p>Default Paragraph</p>
-<p class="caption">Caption Paragraph</p>
-<p class="light-paragraph">Light Paragraph</p>
-<p class="thin-paragraph">Thin Paragraph</p>
 
 <!-- Bold or italic -->
 <p class="text-bold">Bold text</p>
@@ -74,9 +94,6 @@ You can display text in a variety of ways.
   <dt>Euismod</dt>
   <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
 </dl>
-
-<!-- Tokens; alternative: Chips -->
-<span class="token">Some token</span>
 ```
 
 ### CSS Helper Classes
@@ -89,15 +106,24 @@ You can display text in a variety of ways.
 | `text-truncate` | Applies all CSS tweaks to truncate text when container is too small |
 | `text-bold` | Text will be in bold |
 | `text-italic` | Text will be in italic |
-| `caption` | For use on caption parapgraphs |
-| `light-paragraph` | Applies a font-weight of 300 |
-| `thin-paragraph` | Applies a font-weight of 200 |
+| `text-no-wrap` | Non wrapable text (applies `white-space: nowrap`) |
 | `uppercase` | Transform text to uppercase |
 | `lowercase` | Transform text to lowercase |
 | `capitalize` | Capitalize first letter of the text |
-| `strong` | DOM element's font becomes **bold** |
-| `emphasize` | DOM element's font becomes *italic* |
 | `round-borders` | Every Quasar Theme has a generic border radius. This radius is applied to the DOM node |
 | `block` | `display` property set to `block` |
 | `no-margin` | Margins are set to 0 |
 | `no-padding` | Padding is set to 0 |
+
+
+### Default MD Font
+The default font embedded in Quasar App *when built with Material Design Theme* is Roboto. But it is not required. You can use whatever font(s) you like.
+
+Roboto comes with 5 different font weights you can use: 100, 300, 400, 500, 700. Below is an image from Google's Roboto Specimen document displaying the different font weights:
+
+<div style="max-width: 550px">
+![Roboto Font](/images/roboto.png "Roboto Font")
+</div>
+
+> **NOTE**
+> You can embed it for iOS theme too by copying font related code from `themes/app.mat.styl` to `themes/app.ios.styl` and requiring the `.styl` version of CSS in `src/App.vue`
