@@ -56,7 +56,6 @@ components:
     Other Helper Classes: $
   Layout:
     Layout: $
-    Layout Side Links: $
     Integrating Layout with Router: $
     Fixed Positioning on Layout: $
     Floating Action Button: $
@@ -80,6 +79,9 @@ components:
     Scrolling Utils: $
   Forms:
     Button: $
+    Button Group: $
+    Button Toggle: $
+    Button Toggle Group: $
     Field: $
     Input: $
     Form Validation: $
