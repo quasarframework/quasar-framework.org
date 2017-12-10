@@ -19,7 +19,7 @@ Vue.use(VueRouter)
   to benefit from HMR
  */
 function load (component) {
-  return () => System.import(`components/${component}.vue`)
+  return () => System.import(`components/${component}.vue`) // eslint-disable-line no-undef
 }
 
 const routes = [
