@@ -62,7 +62,7 @@ Now we can use the component like this:
   import MySelect from './MySelect'
 
   export default {
-    data () => {
+    data () {
       return {
         selected: null,
         myOptions: []
