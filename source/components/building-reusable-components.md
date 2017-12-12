@@ -140,7 +140,7 @@ First, let us define the RegisterMixin:
 
 ```js
 export const RegisterMixin = {
-  data () => {
+  data () {
     return {
       id: ''
     }
