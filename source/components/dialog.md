@@ -52,7 +52,7 @@ In order to create a Dialog, you'll need an object as a parameter to configure i
 | `form` | Object | Configure what types of form components to show. |
 | `buttons` | Array of Objects | Bottom buttons for the Dialog. Regardless of the `handler` that you specify, each button closes the Dialog. You can also specify a String instead of an Object as part of your Array for buttons that only closes the Dialog. |
 | `stackButtons` | Boolean | If you want your buttons placed one below the previous one instead of in the same row. |
-| `nobuttons` | Boolean | When you don't want any buttons on your Dialog. By default, if no buttons are specified, an "OK" button is added. This property avoids this default addition. |
+| `noButtons` | Boolean | When you don't want any buttons on your Dialog. By default, if no buttons are specified, an "OK" button is added. This property avoids this default addition. |
 | `progress` | Object | When you want to make your Dialog display a progress bar. Check [Progress Dialog](#Progress-Dialog) below. |
 | `onDismiss` | Function | Function to be called when the Dialog gets closed (or dismissed). |
 | `noBackdropDismiss` | Boolean | If set true, the Dialog cannot be dismissed by clicking/tapping on backdrop. |
