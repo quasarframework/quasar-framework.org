@@ -63,6 +63,13 @@ You can add the ability to close the chip too.
   Joe
 </q-chip>
 ```
+...And to close this
+
+<p ref="chip">
+  <q-chip tag closable color="red" @close="$refs.chip.remove()">
+    Joe
+  </q-chip>
+</p>
 
 You can also use a chip to label a button.
 
