@@ -30,5 +30,5 @@ If you have a header or footer in your layout, the HTML elements wrapped by `<q-
 ### Vue Properties
 | Vue Property | Type | Description |
 | --- | --- | --- |
-| `corner` | String | The corner of the element where the content should be places. The choices are `top-right`, `top-left`, `bottom-right` or `bottom-left`. |
+| `corner` | String | The corner of the element where the content should be placed. The choices are `top-right`, `top-left`, `bottom-right` or `bottom-left`. |
 | `offset` | Array (2 integers) | Optional. The offset of the content, relative to the corner. First is offset on X axis, then on Y axis.<br>Example: `[0, 18]` (offset 0 on X axis and 18px on Y axis). |
