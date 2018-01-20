@@ -10,6 +10,7 @@ The Quasar Modal component is a UI overlay, which offers extended screen space t
 Below you'll find the code to a very basic modal:
 
 ``` html
+<q-btn color="primary" @click="$refs.basicModal.open()" label="Open" />
 <q-modal ref="basicModal">
   <h4>Basic Modal</h4>
   <q-btn color="primary" @click="$refs.basicModal.close()">Close</q-btn>
