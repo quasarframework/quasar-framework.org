@@ -5,6 +5,10 @@ Quasar Carousel is a Vue Component which you can use to display more information
 
 The Carousel height is determined by the slide with biggest height.
 
+## Image Gallery Carousel
+
+If you want to create a carousel for images, please have a look at the [Image Gallery Carousel](http://quasar-framework.org/components/image-gallery.html#Image-Gallery-Carousel).
+
 ## Basic Carousel
 Basic Carousel. No controls. Just swipe between slides or
 use you mouse to drag slides to left or right.
