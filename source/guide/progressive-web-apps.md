@@ -15,6 +15,7 @@ $ npm install
 
 > **Important!**
 > Do not use Quasar wrappers (Cordova/Electron) on top of this template.
+> You can, however, share the same /src folder with the two different build setups.
 
 Please note that this is a Quasar starter kit and not a wrapper, it creates a new Quasar-app folder for you. In case you want to use your previously written Quasar-app code, you will have to manually migrate your code from the `src` folder. Also note, after doing so you will not be able to wrap your app with Cordova or Electron anymore.
 
