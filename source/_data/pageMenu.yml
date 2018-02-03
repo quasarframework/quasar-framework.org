@@ -58,7 +58,10 @@ components:
   Layout:
     Layout: $
     Integrating Layout with Router: $
-    Fixed Positioning on Layout: $
+    Layout Header and Footer: $
+    Layout Drawer: $
+    Layout Page: $
+    Page Sticky: $
     Floating Action Button: $
     Element Resize Observable: $
     Window Resize Observable: $
