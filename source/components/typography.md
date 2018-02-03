@@ -114,6 +114,7 @@ You can display text in a variety of ways.
 | `block` | `display` property set to `block` |
 | `no-margin` | Margins are set to 0 |
 | `no-padding` | Padding is set to 0 |
+| `no-outline` | Outline is set to 0 |
 
 
 ### Default MD Font
@@ -125,5 +126,13 @@ Roboto comes with 5 different font weights you can use: 100, 300, 400, 500, 700.
 ![Roboto Font](/images/roboto.png "Roboto Font")
 </div>
 
-> **NOTE**
-> You can embed it for iOS theme too by copying font related code from `themes/app.mat.styl` to `themes/app.ios.styl` and requiring the `.styl` version of CSS in `src/App.vue`
+This is where Roboto font comes embedded by default, if you are looking to remove it:
+
+```js
+// file: /quasar.conf.js
+extras: [
+  ctx.theme.mat ? 'roboto-font' : null
+]
+```
+
+Notice that the font is only included when developing/building with Material Theme.

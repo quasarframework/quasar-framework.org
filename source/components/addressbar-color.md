@@ -9,10 +9,33 @@ Newer mobile browsers have the ability to specify a color for the addressbar, li
 
 ## Basic Usage
 
-It's best to set this in your `src/main.js`, but it can go anywhere:
+First, we need to indicate that we want the AddressbarColor Quasar plugin embedded into our website/app:
+
 ```js
-import { AddressbarColor } from 'quasar'
-AddressbarColor.set('#a2e3fa')
+// file: /quasar.conf.js
+framework: {
+  plugins: ['AddressbarColor']
+}
 ```
 
-What this does it that it inject some `<meta>` tags into your `index.html` at runtime. This means, as an example, that you can dynamically change this color during runtime multiple times, based on the page the user is on (by calling `set` method on `created()` lifecycle hook on the respective pages).
+Then we create an app plugin to initialize its usage: `quasar new plugin addressbar-color`. A file is created (`/src/plugins/addressbar-color.js`). We edit it:
+
+```js
+import { AddressbarColor } from 'quasar'
+
+export default () {
+  AddressbarColor.set('#a2e3fa')
+}
+```
+
+What this does is that it injects some `<meta>` tags into your `index.html` at runtime. This means, as an example, that you can dynamically change this color during runtime multiple times, based on the page the user is on (by calling `set` method on `created()` lifecycle hook on the respective pages):
+
+```js
+// a .vue file representing a page
+export default {
+  // ...,
+  created () {
+    this.$q.addressbarColor.set('#a2e3fa')
+  }
+}
+```

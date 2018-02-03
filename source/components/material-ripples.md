@@ -10,6 +10,14 @@ The color of the ripples are determined by the text color (CSS 'color' prop) of 
 
 <input type="hidden" data-fullpage-demo="style-and-identity/material-ripples">
 
+## Installing
+Edit `/quasar.conf.js`:
+```js
+framework: {
+  directives: ['Ripple']
+}
+```
+
 ## Basic Usage
 
 ```html
