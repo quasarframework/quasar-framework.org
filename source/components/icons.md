@@ -2,14 +2,102 @@ title: Icons
 ---
 
 The Quasar Icon component allows you to easily insert icons within other components or any other area of your pages, as you'd like.
-Quasar currently supports: [Material Icons](https://material.io/icons/) out of the box, but you can add [Font Awesome](http://fontawesome.io/icons/), [Ionicons](http://ionicons.com/) and [IcoMoon](https://icomoon.io/). Learn how to include the last three (which are optional) by reading on.
+Quasar currently supports: [Material Icons](https://material.io/icons/) , [Font Awesome](http://fontawesome.io/icons/), [Ionicons](http://ionicons.com/), [MDI](https://materialdesignicons.com/) and [IcoMoon](https://icomoon.io/).
 
-Importing the required font icons is required in order to make them work. Read [Importing Icons](#Importing-Icons) section for more details.
+Except for IcoMoon (which has a license), you can either choose to use only one of them or use multiple. Quasar just needs to know which icon set to use for its components.
 
+We'll see how we can install an icon set in the following section.
 Please [submit a request](https://github.com/quasarframework/quasar/issues/new) if your favorite font icon is not listed here.
 
+## Installing
+
+If you are building a website only, then using a CDN (Content Delivery Network) approach can be an option you can follow. However, when building a mobile or Electron app, you most likely do not want to depend on an Internet connection, so it's best that you follow the next steps.
+
+> **IMPORTANT**
+> Due to the license of IcoMoon and its custom build option, this icon font is not provided by out of the box. You will need to use [their website](https://icomoon.io/app/#/select) to create your custom icon font files and then copy them to your app's folder and import them in an app plugin (`$ quasar new plugin icomoon`).
+
+### Adding an Icon Set
+First step is to make an icon set available in your website/app. For this, edit `/quasar.conf.js`:
+
+```js
+extras: [
+  'material-icons'
+]
+```
+
+> Icon sets are available through [quasar-extras](https://github.com/quasarframework/quasar-extras) package. You don't need to import it in your app, just configure `/quasar.conf.js` as indicated.
+
+Adding more than one set (showing all options):
+```js
+extras: [
+  'material-icons',
+  'mdi',
+  'ionicons',
+  'fontawesome'
+]
+```
+
+### Quasar Using an Icon Set
+Unless configured otherwise, Quasar uses Material Icons as its icon set for its components. You can however tell Quasar to use some other icon set, but be sure to include that set in your website/app (see step above: [Adding an Icon Set](#Adding-an-icon-set)).
+
+So let's say we included Ionicons and we want Quasar to use it for its components. We edit `/quasar.conf.js` again:
+
+```js
+framework: {
+  iconSet: 'ionicons'
+}
+```
+
+### Full Example
+Here is an example of including Ionicons & Fontawesome and telling Quasar to use Fontawesome for its components.
+
+```js
+extras: [
+  'ionicons',
+  'fontawesome'
+],
+framework: {
+  iconSet: 'fontawesome'
+}
+```
+
+This will enable you to use both Ionicons & Fontawesome in your app, and all Quasar components will display Fontawesome icons.
+
+### Including from CDN
+If you want to make use of CDNs (Content Delivery Network), all you need is to include style tags in your `index.template.html` which point to the CDN URL.
+
+In case you follow this path, do not also add the icon sets that you want in `/quasar.conf.js > extras`. Simply edit `index.template.html` as follows.
+
+The example link tag below would include Font Awesome v4.7.0 icons. Do a Google search for CDNs to make sure you include the latest version. Following are just examples.
+
+```html
+<!-- in `/src/index.template.html` -->
+
+<head>
+  ...
+
+  <!-- CDN example for Material Icons -->
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  >
+
+  <!-- CDN example for Fontawesome -->
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  >
+
+  <!-- CDN example for Ioniocns -->
+  <link
+    rel="stylesheet"
+    href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
+  >
+</head>
+```
+
 ## Basic Usage
-Let's take a look at how we can use QIcon component. (Do not forget to check down below how to [import the icons](#Importing-Icons), otherwise they won't show up!)
+Let's take a look at how we can use QIcon component. Do not forget to check above how to [Install Icon Sets](#Installing), otherwise they won't show up!
 
 ```html
 <!-- Material icons have no prefix -->
@@ -20,6 +108,9 @@ Let's take a look at how we can use QIcon component. (Do not forget to check dow
 
 <!-- Fontawesome icons have "fa-" prefix -->
 <q-icon name="fa-id-card" />
+
+<!-- MDI icons have "mdi-" prefix -->
+<q-icon name="mdi-account-card-details" />
 
 <!-- IcoMoon icons have "icon-" prefix -->
 <q-icon name="icon-chrome" />
@@ -85,59 +176,7 @@ There's also a "size" property:
 <q-icon name="delete" size="24px" />
 ```
 
-## Importing Icons
-The only required icon font is "Material Icons" one. The other (Fontawesome or Ionicons) are optional. In order for you to be able to use them, you have two options: either use [quasar-extras](https://github.com/quasarframework/quasar-extras) npm package, or add the appropriate CDN (Content Delivery Network) links in `<head>` of your index.html.
-
-If you are building a website only, then CDN approach can be an option you can follow. However, when building a mobile or Electron app, you will most likely do not want to depend on an Internet connection, so it's best that you import directly from `quasar-extras`.
-
-> **IMPORTANT**
-> Due to the license of IcoMoon and its custom build option, this icon font is not provided by `quasar-extras`. You will need to use [their website](https://icomoon.io/app/#/select) to create your custom icon font files and then copy them to your app's folder and import them (`src/main.js` would probably be a good place).
-
-### Importing from "quasar-extras"
-
-```js
-/*
-  File: main.js
-  Remember only material-icons is required,
-  unless you use CDN to link to it.
- */
-import 'quasar-extras/material-icons'
-import 'quasar-extras/ionicons'
-import 'quasar-extras/fontawesome'
-```
-
-### Including from CDN
-If you want to make use of CDNs (Content Delivery Network), all you need is to include style tags in your `index.html` which point to the CDN URL.
-
-The example link tag below would include Font Awesome v4.7.0 icons. Do a Google search for CDNs to make sure you include the latest version. Following are just examples.
-
-```html
-<!-- in `index.html` -->
-
-<head>
-  ...
-
-  <!-- CDN example for Material Icons -->
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/icon?family=Material+Icons"
-  >
-
-  <!-- CDN example for Fontawesome -->
-  <link
-    rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-  >
-
-  <!-- CDN example for Ioniocns -->
-  <link
-    rel="stylesheet"
-    href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
-  >
-</head>
-```
-
-## More Examples
+### More Examples
 
 With HTML native `style` attribute:
 
@@ -159,4 +198,12 @@ To create the necessary CSS class, you would need to define the class within you
 .big-icon
   font-size: 5rem
 </style>
+```
+
+Adding a `click` event handle. Remember we want to capture a native DOM event and this is a Vue component, so we use the ['.native' modifier](https://vuejs.org/v2/guide/components.html#Binding-Native-Events-to-Components):
+```html
+<q-icon
+  name="map"
+  @click.native="handle"
+/>
 ```

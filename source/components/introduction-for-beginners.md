@@ -46,108 +46,119 @@ After installing the loader you need (remember Stylus is already installed for y
 In the above example, you would replace `stylus` with the preprocessor you've chosen.
 
 ## Using Quasar Directive
-Quasar comes with a few custom [Vue Directives](https://vuejs.org/v2/guide/custom-directive.html). In order to use them, you need to import them (globally or locally per Vue component where you use them).
+Quasar comes with a few custom [Vue Directives](https://vuejs.org/v2/guide/custom-directive.html). These directives can be applied on almost any DOM element or Component.
 
-Example importing Quasar directive locally:
+Example of a Quasar directive:
 ```html
-<template>
-  <div>
-    <div v-ripple>click me</div>
-  </div>
-</template>
-
-<script>
-import { Ripple } from 'quasar'
-
-export default {
-  directives: {
-    Ripple
-  },
-  ...
-}
-</script>
+<div v-ripple>Click Me</div>
 ```
 
-> Notice how Ripple is used in the Vue HTML template as `v-ripple`. Vue directives are prefixed with `v-`.
+> Notice how Ripple is used in the HTML template as `v-ripple`. Vue directives are prefixed with `v-`.
 
-Example importing Quasar directives globally. **This means you won't need to import the specified Quasar directive in every `*.vue` file where you are using them.**
+In order for you to use any of the directives that Quasar supplies, you first need to tell Quasar you want it embedded. Open `/quasar.conf.js` file and add the following reference:
+
 ```js
-// We edit "src/main.js":
-...
-import Quasar, { Ripple } from 'quasar'
-...
-Vue.use(Quasar, {
-  directives: {
-    Ripple
-  }
-})
-...
+framework: {
+  plugins: ['Ripple']
+}
+```
+
+Let's take another example. We now also want TouchPan and TouchSwipe directives, so we add them too in `/quasar.conf.js`:
+```js
+framework: {
+  plugins: ['Ripple', 'TouchPan', 'TouchSwipe']
+}
+```
+
+Now we can write in your Vue files template:
+
+```html
+<div v-touch-pan="handler">...</div>
+<div v-touch-swipe="handler">...</div>
+<div v-ripple>Click me. I got ripples.</div>
 ```
 
 ## Using Quasar Components
-Quasar components have names beginning with "Q" like "QBtn" or "QElementResizeObservable". In order to use them, you need to import them (globally or locally per Vue component where you use them).
+Quasar components have names beginning with "Q" like "QBtn" or "QElementResizeObservable". In order to use them, you need to add a reference to them in `/quasar.conf.js`.
 
-Example importing Quasar component locally:
+Let's take the following example with a QBtn and QIcon and then we'll see how to embed these components in our app:
 ```html
-<template>
-  <div>
-    <q-btn @click="doSomething">Do something</q-btn>
-    <q-icon name="alarm" />
-  </div>
-</template>
-
-<script>
-import { QBtn, QIcon } from 'quasar'
-
-export default {
-  components: {
-    QBtn,
-    QIcon
-  },
-  ...
-}
-</script>
+<div>
+  <q-btn @click="doSomething">Do something</q-btn>
+  <q-icon name="alarm" />
+</div>
 ```
 
 > Notice how QBtn is used in the Vue HTML template as `<q-btn>`. If we'd import QElementResizeObservable, then we'd use it in template as `<q-element-resize-observable>`.
 
-Example importing Quasar components globally. **This means you won't need to import the specified Quasar components in every `*.vue` file where you are using them.**
+Now on `/quasar.conf.js`, you would add:
 ```js
-// We edit "src/main.js":
-...
-import Quasar, { QBtn, QIcon } from 'quasar'
-...
-Vue.use(Quasar, {
-  components: {
-    QBtn,
-    QIcon
+framework: {
+  components: ['QBtn', 'QIcon']
+}
+```
+
+## Using Quasar Plugins
+Quasar Plugins are features that you can use both in your Vue files as well as outside of them, like Notify, ActionSheet, AppVisibility and so on.
+
+In order to use them, you need to add a reference to them in `/quasar.conf.js`:
+```js
+framework: {
+  plugins: ['Notify', 'ActionSheet']
+}
+```
+
+Let's take Notify as an example and see how we can then use it. In a Vue file, you'd write something like this:
+```html
+<template>
+  <div>
+    <q-btn
+      @click="$q.notify('My message')"
+      color="primary"
+      label="Show a notification"
+    />
+
+    <q-btn
+      @click="showNotification"
+      color="primary"
+      label="Show another notification"
+    />
+  </div>
+</template>
+
+<script>
+export default {
+  methods: {
+    showNotification () {
+      this.$q.notify('Some other message')
+    }
   }
-})
-...
+}
+</script>
+```
+
+> Notice that in the template area we're using `$q.<plugin-name>` and in our script we say `this.$q.<plugin-name>`.
+
+Now let's see an example of Notify being used outside of a Vue file:
+```js
+import { Notify } from 'quasar'
+
+// ...
+Notify.create('My message')
 ```
 
 ### Importing All Components and Directives for Quick Test
-You can import all Components and Directives globally.
+Referencing all Quasar Components, Directives and Plugins can be tiresome when you just want to do a quick test. In this case, you can tell Quasar to import them all by editing `/quasar.conf.js` like this:
+
+```js
+framework: 'all'
+```
 
 > **IMPORTANT**
 > This **will not** take advantage of tree shaking, causing your code to become bloated with unnescesary/unused code. **Not recommended for production**. Use this only for quick testing purposes.
 
-```js
-// src/main.js
-// (remember to use this for
-// quick testing purposes only!)
-...
-import Quasar, * as All from 'quasar'
-...
-Vue.use(Quasar, {
-  components: All,
-  directives: All
-})
-...
-```
-
 ### Self Closing Tags
-Some Quasar components do not need you to include HTML content inside them. In this case, you can use them as self closing tags. One example with QIcon below:
+Some Quasar components do not need you to include HTML content inside of them. In this case, you can use them as self closing tags. One example with QIcon below:
 
 ```html
 <q-icon name="cloud" />
@@ -159,7 +170,15 @@ Self-closing means the above template is the equivalent to:
 <q-icon name="cloud"></q-icon>
 ```
 
-Both forms are valid and can be used.
+Both forms are valid and can be used. It works the same with regular DOM elements:
+
+```html
+<div class="col" />
+<!-- equivalent to: -->
+<div class="col"></div>
+```
+
+Some eslint-plugin-vue linting rules actually enforce using the self-closing syntax.
 
 ## Handling Vue Properties
 You will notice throughout the documentation that Quasar components have a section called "Vue Properties". These are often called **Props** in Vue documentation. Example:
@@ -194,7 +213,7 @@ export default {
 </script>
 ```
 
-If, on the other hand, you know this Boolean value is not going to change, you can use the shorthand version of the variable like a component attribute and just specify it. In other words, if you don't bind the variable to a variable in the component's scope, it will always be `true`:
+If, on the other hand, you know this Boolean value is not going to change, you can use the shorthand version of the variable like a component attribute and just specify it. In other words, if you don't bind the variable to a variable in the component's scope as it will always be `true`:
 ```
 <template>
   <q-bogus infinite />
@@ -339,13 +358,11 @@ export default {
   // we can now access `this.$refs.myRef`
   // an example on the mounted() Vue component hook
   mounted () {
-    // on next Vue tick, to ensure
-    // our Vue reference exists
-    this.$nextTick(() => {
-      // calling "next()" method:
-      this.$refs.myRef.next()
-    })
+    // calling "next()" method:
+    this.$refs.myRef.next()
   }
+  // calling before mount point might result in errors
+  // as Vue hasn't yet prepared the Vue references
 }
 </script>
 ```
