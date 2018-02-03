@@ -44,13 +44,9 @@ The list below is not complete. Also check the other CSS documentation pages lik
 | `no-border` | Removes any border |
 | `round-borders` | Applies a generic border radius based on theme |
 
-## Box Model Related
-| Class Name | Description |
-| --- | --- |
-| `no-margin` | Sets margin to "0" |
-| `no-padding` | Sets padding to "0" |
-
 ## Groups
 There are two special CSS class named `group` and `generic-margin`.
 
 `group` applies a small margin to all children DOM elements, while `generic-margin` applies same margin to the respective DOM element (this varies with each theme).
+
+The recommended way to go is by using [CSS Flex Gutter](http://localhost:4000/components/flex-css.html#Using-Gutters) though.

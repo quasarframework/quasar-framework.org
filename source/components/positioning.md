@@ -22,8 +22,8 @@ There are CSS classes supplied by Quasar to help you position a DOM element easi
 ## Alignment
 | Class Name | Description |
 | --- | --- |
-| `float-left`/`pull-left` | Float to the left |
-| `float-right`/`pull-right` | Float to the right |
+| `float-left` | Float to the left |
+| `float-right` | Float to the right |
 | `on-left` | Sets a small margin to the right; commonly used for icon elements with other siblings |
 | `on-right` | Sets a small margin to the left; commonly used for icon elements with other siblings |
 
@@ -31,6 +31,6 @@ Vertical alignment:
 
 | Class Name | Description |
 | --- | --- |
-| `vertical-top` | Set vertical alignment to `top` |
-| `vertical-middle` | Set vertical alignment to `middle` |
-| `vertical-bottom` | Set vertical alignment to `bottom` |
+| `vertical-top` | Set CSS vertical alignment to `top` |
+| `vertical-middle` | Set CSS vertical alignment to `middle` |
+| `vertical-bottom` | Set CSS vertical alignment to `bottom` |

@@ -77,7 +77,7 @@ Hide on:
 Also check [Quasar Theming &gt; Platform Specific Styles](/guide/quasar-theming.html#Platform-Specific-Styles).
 
 > **NOTE**
-> There is also a non-recommended way to hide DOM elements through Javascript. Read more on [Javascript &gt; Environment](/components/platform-detection.html) page.
+> Based on your needs, you might want to also check [Javascript &gt; Environment](/components/platform-detection.html) page to see how you can achieve the same effect using Javascript. This latter method allows you to not even render a DOM element or component. It is useful when the rendering process is expensive.
 
 ### Orientation Related
 | Class Name | Description |

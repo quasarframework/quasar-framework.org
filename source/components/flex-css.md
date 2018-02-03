@@ -174,7 +174,7 @@ What we've learned so far is that, for example, we can size the columns regardle
 | `sm` | 768px | Small sized window |
 | `md` | 992px | Medium-sized window |
 | `lg` | 1200px | Large sized window |
-| `xl` | 1201+ px | Extra large sized window |
+| `xl` | Infinite | Extra large sized window |
 
 Example: `col-md-7`, `offset-lg-3`, `col-xs-auto`.
 
@@ -218,11 +218,11 @@ There are 5 types of gutter, depending on the amount of space that you want betw
 
 | Class Name | Size | Description |
 | --- | --- | --- |
-| `xs-gutter` | 8px | extra small gutter |
-| `sm-gutter` | 16px | small gutter |
-| `md-gutter` | 32px | medium gutter |
-| `lg-gutter` | 48px | large gutter |
-| `xl-gutter` | 64px | extra large gutter |
+| `gutter-xs` | 8px | extra small gutter |
+| `gutter-sm` | 16px | small gutter |
+| `gutter-md` | 32px | medium gutter |
+| `gutter-lg` | 48px | large gutter |
+| `gutter-xl` | 64px | extra large gutter |
 
 Let's look at a basic example. Please take note of the structure. You need a wrapping `<div>` and your content must be **inside** the `<div>` which has `col-*` CSS helper classes. The gutter classes make use of negative margins, so if your flex grid content is contained within, for example, a `q-collapsible` with a clickable area immediately above the flex grid, you must specify `class="overflow-hidden"` to avoid the contents overlapping the active area of the parent component.
 
@@ -232,7 +232,7 @@ Let's look at a basic example. Please take note of the structure. You need a wra
 <!-- wrapping <div> required -->
 <div class="overflow-hidden">
   <!-- the row with a type of gutter -->
-  <div class="row xs-gutter">
+  <div class="row gutter-xs">
     <div class="col-6">
       <!-- Your content here -->
     </div>
@@ -248,7 +248,7 @@ Let's look at a basic example. Please take note of the structure. You need a wra
 
 ```html
 <div class="overflow-hidden">
-  <div class="row xs-gutter">
+  <div class="row gutter-xs">
     <div class="col-6">
       <q-input v-model="model" class="no-margin" />
     </div>
@@ -259,7 +259,20 @@ Let's look at a basic example. Please take note of the structure. You need a wra
 </div>
 ```
 
-By default, the gutter applies both horizontally and vertically. If for example you want gutter only horizontally or only vertically, add `no-vert-gutter` or `no-horiz-gutter` (but not both).
+By default, the gutter applies both horizontally and vertically. If for example you different levels of gutter only horizontally or only vertically, use `gutter-x-*` and `gutter-y-*` CSS classes:
+```html
+<!-- small gutter horizontally, large gutter vertically -->
+<div class="overflow-hidden">
+  <div class="row gutter-x-sm gutter-y-lg">
+    <div class="col-6">
+      <q-input v-model="model" class="no-margin" />
+    </div>
+    <div class="col-6">
+      <q-input v-model="model" class="no-margin" />
+    </div>
+  </div>
+</div>
+```
 
 ### QInput Example
 Let's say we want to build something depicted in the two picture below.
@@ -270,7 +283,7 @@ Let's say we want to build something depicted in the two picture below.
 The template for this would look like below. Note we are using `no-margin` CSS helper class for QInputs to not add additional space to gutter.
 ```html
 <div>
-  <div class="row sm-gutter">
+  <div class="row gutter-sm">
     <div class="col-12">
       <q-input inverted v-model="model" class="no-margin" float-label="col-12" />
     </div>

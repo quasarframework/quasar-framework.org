@@ -49,6 +49,7 @@ components:
     Addressbar Color: $
     Material Ripples: $
   CSS Helpers:
+    Spacing: $
     Flex CSS: $
     Shadows: $
     Visibility: $

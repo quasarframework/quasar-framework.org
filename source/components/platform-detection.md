@@ -45,5 +45,18 @@ Example when running Chrome on a Linux desktop machine:
 }
 ```
 
+## Usage
+Let's say we want to render different components or DOM elements, based on the platform that the code is running under. We want to show something on desktop and something else on mobile. We would proceed like this:
+
+```html
+<div v-if="$q.platform.is.desktop">
+  I'm only rendered on desktop!
+</div>
+
+<div v-if="$q.platform.is.mobile">
+  I'm only rendered on mobile!
+</div>
+```
+
 > **NOTE**
-> When trying to show DOM elements only on a platform you can skip using Javascript and make use of Quasar CSS classes (which is more efficient). Read about this here: [Design Helpers &gt; Visibility](/components/visibility.html#Platform-Related).
+> Based on your needs, you might want to also check [Design Helpers &gt; Visibility](/components/visibility.html#Platform-Related) page to see how you can achieve the same effect using CSS alone. This latter method will render your DOM elements or components regardless of platform though, so choose wisely on how you want to handle the performance of your app.
