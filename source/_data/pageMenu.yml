@@ -129,8 +129,8 @@ components:
     Progress Bar: $
     Spinner: $
   Touch/Mouse Actions:
-    Panning: $
-    Swiping: $
+    Touch Pan: $
+    Touch Swipe: $
     Touch Hold: $
   Media:
     Image Gallery: $
