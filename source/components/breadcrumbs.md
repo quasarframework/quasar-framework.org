@@ -1,7 +1,7 @@
 title: Breadcrumbs
 ---
 Quasar Breadcrumbs is a component used as a navigational aid in UI. It allows users to keep track of their location within programs, documents, or websites.
-<input type="hidden" data-fullpage-demo="navigation/breadcrumb">
+<input type="hidden" data-fullpage-demo="navigation/breadcrumbs">
 
 ## Installation
 Edit `/quasar.conf.js`:
@@ -75,7 +75,7 @@ With different alignment:
 | `icon` | String | Icon for element |
 | `color` | String | A color from [Quasar Color Palette](/components/color-palette.html) |
 
-### Using QItem as a Router Link
+### Using QBreadcrumbsEl as a Router Link
 If you want your QBreadcrumbsEl to act the same as Vue's `<router-link>`, then you can use these additional properties (which work exactly the same as `<router-link>`):
 
 | Property | Type | Description |
