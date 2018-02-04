@@ -4,6 +4,14 @@ When you want to allow the user to refresh the content or add newest content.
 
 <input type="hidden" data-fullpage-demo="navigation/pull-to-refresh">
 
+## Installation
+Edit `/quasar.conf.js`:
+```js
+framework: {
+  components: ['QPullToRefresh']
+}
+```
+
 ## Basic Usage
 Use QPullToRefresh component as direct child of your page component, to encapsulate all its content. Refer to the source on the demo for a more detailed example.
 
@@ -28,6 +36,7 @@ Use QPullToRefresh component as direct child of your page component, to encapsul
 | `release-message` | String | 'Release to refresh' | Message to display after hitting the threshold above and before releasing |
 | `refresh-message` | String | 'Refreshing...' | Message to display when refreshing content |
 | `refresh-icon` | String | 'refresh' | Icon to display when refreshing the content, besides the text above |
+| `inline` | Boolean | false | If the component is not direct child of QPage, set this to "true". |
 | `disable` | Boolean | false | When set to `true` it disables its functionality. If no value is provided (empty attribute), then it's considered as set to `true`. |
 
 ## Vue Methods

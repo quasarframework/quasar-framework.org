@@ -40,7 +40,12 @@ Usually, the QPageContainer is part of the Layout template (where it contains a 
 </q-layout>
 
 <!-- vue file for a Page: -->
-<q-page>
+<q-page padding>
   <!-- page content -->
 </q-page>
 ```
+
+## QPage Vue Properties
+| Vue Property | Type | Description |
+| --- | --- | --- | --- |
+| `padding` | Boolean | Adds a default dynamic padding to the page. |

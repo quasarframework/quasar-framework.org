@@ -8,13 +8,13 @@ Edit `/quasar.conf.js`:
 ```js
 framework: {
   components: [
-    'QToolbar'
+    'QToolbar',
+    'QToolbarTitle'
   ]
 }
 ```
-## Basic Usage
-A Toolbar is defined by two Quasar components: **QToolbar** and optional **QToolbarTitle**.
 
+## Basic Usage
 ``` html
 <q-toolbar color="primary">
   <!--
@@ -27,19 +27,10 @@ A Toolbar is defined by two Quasar components: **QToolbar** and optional **QTool
 
   <!--
     In a Toolbar, buttons are best
-    configured as "flat" and with an icon,
+    configured as "flat, round, dense" and with an icon,
     but any button will do
   -->
-  <q-btn flat>
-    <q-icon name="mail" />
-  </q-btn>
-
-  <!--
-    ...and also small flat round buttons
-  -->
-  <q-btn flat round small>
-    <q-icon name="mail" />
-  </q-btn>
+  <q-btn flat round dense icon="mail" />
 </q-toolbar>
 
 <!-- A color "inverted" Toolbar -->
@@ -61,28 +52,28 @@ A Toolbar is defined by two Quasar components: **QToolbar** and optional **QTool
 Example on using a Toolbar on Layout header:
 
 ``` html
-<q-layout ref="layout">
+<q-layout>
   ...
-  <q-toolbar slot="header" color="secondary">
-    <!-- toggles QLayout left side -->
-    <q-btn
-      flat
-      @click="$refs.layout.toggleLeft()"
-    >
-      <q-icon name="menu" />
-    </q-btn>
+  <q-layout-header>
+    <q-toolbar color="secondary">
+      <!--
+        Toggles QLayout left side
+        (Assuming the Drawer has a model bound to "leftSide")
+      -->
+      <q-btn
+        flat round dense
+        icon="menu"
+        @click="leftSide = !leftSide"
+      />
 
-    <q-toolbar-title>
-      Title
-    </q-toolbar-title>
+      <q-toolbar-title>
+        Title
+      </q-toolbar-title>
 
-    <q-btn flat>
-      <q-icon name="mail" />
-    </q-btn>
-    <q-btn flat>
-      <q-icon name="alarm" />
-    </q-btn>
-  </q-toolbar>
+      <q-btn flat round dense icon="mail" />
+      <q-btn flat round dense icon="alarm" />
+    </q-toolbar>
+  </q-layout-header>
   ...
 </q-layout>
 ```

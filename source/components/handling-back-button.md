@@ -32,10 +32,23 @@ Now you build your App and install it on a phone. You open up the App, hit login
 What you'd like instead, is when you hit the Logout button, the `window.history.length` to be 1 again. Quasar can handle this automatically for you. Read about the `v-go-back` Vue directive.
 
 ## Directive "v-go-back"
-Let's rewrite the Logout button to act as we would actually want it to work, which is to make `window.history.length` be 1 again:
+Let's rewrite the Logout button to act as we would actually want it to work, which is to make `window.history.length` be 1 again.
+
+First, we install the directive. Edit `/quasar.conf.js`:
+```js
+framework: {
+  directives: ['GoBack']
+}
+```
+
+Then we use it:
 ``` html
 <!-- Logout button -->
-<q-btn class="primary" v-go-back=" '/' ">Logout</q-btn>
+<q-btn
+  v-go-back=" '/' "
+  color="primary"
+  label="Logout"
+/>
 ```
 
 This directive determines if the Platform is Cordova, and if so, it performs a `window.history.back()` call instead of a `$router.push('/')`.

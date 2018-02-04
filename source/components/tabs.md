@@ -16,6 +16,7 @@ framework: {
   ]
 }
 ```
+
 ## Basic Usage
 Below is a basic example of the Tabs component using many of its features.
 
@@ -38,9 +39,9 @@ Below is a basic example of the Tabs component using many of its features.
 ```
 The above example is using QTabPane component as the content container (or target container) for the tabs. There is also the ability to use Vue Router for each tab instead of targeting a QTabPane. Also, QTabPanes are optional and you can use `v-model` on QTabs. We'll cover those features later.
 
->The `name` prop on QTab and QTabPane links the tab to the targets (panes).
+> The `name` prop on QTab and QTabPane links the tab to the targets (panes).
 
-As you can see from the example, we have a main Tab container with (`<q-tabs>`) and singular Tabs themselves with (`<q-tab>`). Let's look at the Tabs container first:
+As you can see from the example, we have a main Tab container with (QTabs) and singular Tabs themselves with (QTab). Let's look at the Tabs container first:
 
 ## QTabs (Container Component)
 Use the QTabs component to wrap your Tabs.
@@ -164,7 +165,6 @@ Best way to programmatically switch between Tabs is by using a `v-model`. Here's
   <q-tab-pane name="xtab-1">Tab One</q-tab-pane>
   <q-tab-pane name="xtab-2">Tab Two</q-tab-pane>
   <q-tab-pane name="xtab-3">Tab Three</q-tab-pane>
-
 </q-tabs>
 ```
 
@@ -218,7 +218,7 @@ Please refer to [Vue-Router Link](http://router.vuejs.org/en/api/router-link.htm
     icon="mail"
     to="/mails"
     exact
-    slot="title"    
+    slot="title"
   />
   <q-route-tab
     icon="alarm"
@@ -239,26 +239,26 @@ You will, in most cases, want to use tabs within a layout component. Below is an
 ``` html
 <q-layout>
   ...
-  <q-tabs slot="navigation">
-    <q-route-tab
-      icon="mail"
-      to="/mails"
-      exact
-      slot="title"
-    />
+  <q-layout-header>
+    <q-tabs>
+      <q-route-tab
+        icon="mail"
+        to="/mails"
+        exact
+        slot="title"
+      />
 
-    <q-route-tab
-      icon="alarm"
-      to="/alarms"
-      exact
-      slot="title"
-    />
-  </q-tabs>
+      <q-route-tab
+        icon="alarm"
+        to="/alarms"
+        exact
+        slot="title"
+      />
+    </q-tabs>
+  </q-layout-header>
   ...
 </q-layout>
 ```
-
-Notice the `slot="navigation"` attribute. This allows Quasar to know where to place your Tabs depending on the theme. With the Material Design theme, the tabs will be placed between the Layout header and the page view. And, with the iOS theme, it will be placed between the page view and the Layout footer.
 
 Please refer to the following documentation for more information: [Quasar Layout Component](/components/layout.html)
 
