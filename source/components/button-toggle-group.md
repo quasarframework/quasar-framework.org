@@ -1,2 +1,0 @@
-title: Button Toggle Group
----

@@ -65,14 +65,65 @@ components:
     Floating Action Button: $
     Element Resize Observable: $
     Window Resize Observable: $
+  Buttons:
+    Button: $
+    Button Group: $
+    Dropdown Button: $
   Navigation:
     Toolbar: $
     Tabs: $
     Pull to refresh: $
     Handling Back Button: $
     Context Menu: $
-    Breadcrumb: $
+    Breadcrumbs: $
     Pagination: $
+  Form Components:
+    Field: $
+    Input: $
+    Form Validation: $
+    Chips Input: $
+    Color Picker: $
+    Autocomplete: $
+    Editor: $
+    Search: $
+    Slider: $
+    Range: $
+    Radio: $
+    Checkbox: $
+    Toggle: $
+    Button Toggle: $
+    Option Group: $
+    Datetime: $
+    Select: $
+    Rating: $
+    Knob: $
+    Uploader: $
+  Grouping:
+    Card: $
+    Collapsible: $
+    DataTable: $
+    HTML Table: $
+    Lists and List Items: $
+    Stepper: $
+    Tree: $
+  Popups:
+    Action Sheet: $
+    Alert: $
+    Dialog: $
+    Modal: $
+    Notify: $
+    Popover: $
+    Tooltip: $
+  Progress:
+    Ajax Bar: $
+    Loading: $
+    Inner Loading: $
+    Progress Bar: $
+    Spinner: $
+  Media:
+    Carousel: $
+    Parallax: $
+    Video Embedding: $
   Scrolling:
     Scroll Observable: $
     Scroll Directive: $
@@ -81,70 +132,20 @@ components:
     Scroll Fire: $
     Back to Top: $
     Scrolling Utils: $
-  Forms:
-    Button: $
-    Button Group: $
-    Button Toggle: $
-    Button Toggle Group: $
-    Field: $
-    Input: $
-    Form Validation: $
-    Chips Input: $
-    Autocomplete: $
-    Search: $
-    Slider: $
-    Range: $
-    Radio: $
-    Checkbox: $
-    Toggle: $
-    Option Group: $
-    Datetime: $
-    Inline Datetime: $
-    Datetime Range: $
-    Select: $
-    Dialog Select: $
-    Rating: $
-    Knob: $
-    Uploader: $
-  Popups:
-    Action Sheet: $
-    Alert: $
-    Toast: $
-    Dialog: $
-    Modal: $
-    Popover: $
-    Tooltip: $
-  Grouping:
-    Card: $
-    Collapsible: $
-    DataTable: $
-    HTML Table: $
-    Lists and List Items: $
-    Carousel: $
-    Stepper: $
-  Progress:
-    Ajax Bar: $
-    Loading: $
-    Inner Loading: $
-    Progress Bar: $
-    Spinner: $
-  Touch/Mouse Actions:
-    Panning: $
-    Swiping: $
-    Touch Hold: $
-  Media:
-    Image Gallery: $
-    Parallax: $
-    Video Embedding: $
   Animation:
     Transition: $
     Slide Transition: $
     JS Animations: $
     Animation CSS Helper Classes: $
   Other Components:
+    Alert: $
     Chip: $
     Chat: $
-    Tree: $
+    Timeline: $
+  Touch/Mouse Actions:
+    Touch Pan: $
+    Touch Swipe: $
+    Touch Hold: $
   Utils:
     Handling JS Date: $
     DOM Utils: $

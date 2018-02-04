@@ -251,9 +251,9 @@ Another form of reusable code in Vue are [directives](https://vuejs.org/v2/guide
 
 Quasar provides a set of directives out of the box you can use.
 
-### Swiping, Panning and Hold 
+### Swiping, Panning and Hold
 
-The [`v-touch-pan`](/components/panning.html), [`v-touch-swipe`](/components/swiping.html) and [`v-touch-hold`](/components/touch-hold.html) directives allow you to add gesture and touch interactions to your custom components.
+The [`v-touch-pan`](/components/touch-pan.html), [`v-touch-swipe`](/components/touch-swipe.html) and [`v-touch-hold`](/components/touch-hold.html) directives allow you to add gesture and touch interactions to your custom components.
 
 ### Ripple
 
