@@ -7,6 +7,15 @@ Quasar offers full-featured Vue directives that can totally replace libraries li
 
 We will be describing `v-touch-pan` on the lines below.
 
+## Installation
+Edit `/quasar.conf.js`:
+```js
+framework: {
+  directives: [
+    'TouchPan'
+  ]
+}
+```
 ## Basic Usage
 ``` html
 <div v-touch-pan="handler">...</div>

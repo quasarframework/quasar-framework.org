@@ -2,6 +2,15 @@ title: Window Resize Observable
 ---
 QWindowResizeObservable is a Quasar component that emits a `resize` event whenever the document viewport (window) changes its size, with no polling involved.
 
+## Installation
+Edit `/quasar.conf.js`:
+```js
+framework: {
+  components: [
+    'QWindowResizeObservable'
+  ]
+}
+```
 ## Basic Usage
 ```html
 <template>

@@ -5,7 +5,15 @@ Quasar Tree represents a highly configurable component that displays hierarchica
 Trees are stripped out of any design by default so you can
 easily stylize and turn them into anything you want.
 <input type="hidden" data-fullpage-demo="other-components/tree">
-
+## Installation
+Edit `/quasar.conf.js`:
+```js
+framework: {
+  components: [
+    'QTree'
+  ]
+}
+```
 ## Basic Usage
 
 ``` html
