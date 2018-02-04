@@ -2,6 +2,16 @@ title: Element Resize Observable
 ---
 QResizeObservable is a Quasar component that emits a `resize` event whenever the wrapping DOM element / component (defined as direct parent of QResizeObservable) changes its size. Note that no polling is involved, but overusing it is costly too.
 
+## Installation
+Edit `/quasar.conf.js`:
+```js
+framework: {
+  components: [
+    'QResizeObservable'
+  ]
+}
+```
+
 ## Basic Usage
 ```html
 <template>

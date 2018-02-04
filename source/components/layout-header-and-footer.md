@@ -1,6 +1,7 @@
 title: Layout Header & Footer
 ---
 [QLayout](/components/layout.html) allows you to configure your views as a 3x3 matrix, containing an optional Header and/or Footer. If you haven't already, please read QLayout documentation page first.
+<input type="hidden" data-fullpage-demo="layout-demo/play-with-layout">
 
 ## Installation
 Edit `/quasar.conf.js`:

@@ -1,16 +1,27 @@
 title: Floating Action Buttons
 ---
-A Quasar Floating Action Button (FAB) represents the primary action in an App Page. But, it's not limited to only a single action. It can contain any number of sub-actions too. And more importantly, it can also be used inline in your Pages or Layouts.
-<input type="hidden" data-fullpage-demo="layout/floating-action-button">
+A Floating Action Button (FAB) represents the primary action in an App Page. But, it's not limited to only a single action. It can contain any number of sub-actions too. And more importantly, it can also be used inline in your Pages or Layouts.
+<input type="hidden" data-fullpage-demo="layout-demo/floating-action-button">
 
 Note that you don't need a QLayout to use FABs.
+
+## Installation
+Edit `/quasar.conf.js`:
+```js
+framework: {
+  components: [
+    'QFab',
+    'QFabAction'
+  ]
+}
+```
 
 ## Basic Usage
 
 There are two types of FABs: expandable (has sub-actions) and non-expandable.
 
 ### Non-Expandable
-If you want a non-expandable FAB, [all you need is a round button](/components/button.html) -- wrapped in [QFixedPosition](/components/fixed-positioning-on-layout.html) if used on a QLayout.
+If you want a non-expandable FAB, [all you need is a round button](/components/button.html) -- wrapped in [QPageSticky](/components/page-sticky.html) if used on a QLayout.
 
 ```html
 <!-- Non-expandable without being on a QLayout -->
@@ -19,17 +30,19 @@ If you want a non-expandable FAB, [all you need is a round button](/components/b
   color="primary"
   @click="method"
   class="fixed"
+  icon="mail"
   style="right: 18px; bottom: 18px"
->
-  <q-icon name="mail" />
-</q-btn>
+/>
 
 <!-- Non-expandable on a QLayout -->
-<q-fixed-position corner="bottom-right" :offset="[18, 18]">
-  <q-btn round color="primary" @click="method">
-    <q-icon name="mail" />
-  </q-btn>
-</q-fixed-position>
+<q-page-sticky position="bottom-right" :offset="[18, 18]">
+  <q-btn
+    round
+    color="primary"
+    @click="method"
+    icon="mail"
+  />
+</q-page-sticky>
 ```
 
 ### Expandable
@@ -63,12 +76,12 @@ Expandable FABs are defined by two components: QFab (parent) and QFabAction (chi
 >....</q-fab>
 
 <!-- Expandable, fixed position on a QLayout -->
-<q-fixed-position corner="bottom-right" :offset="[18, 18]">
+<q-page-sticky position="bottom-right" :offset="[18, 18]">
   <q-fab
     color="primary"
     icon="wifi"
   >....</q-fab>
-</q-fixed-position>
+</q-page-sticky>
 ```
 
 We'll continue describing only the expandable FAB, as the non-expandable FAB is, as mentioned above, a simple [round button](/components/button.html).
@@ -77,13 +90,6 @@ We'll continue describing only the expandable FAB, as the non-expandable FAB is,
 ``` html
 <template>
   <div>
-    <q-btn color="primary" @click="open = true">
-      <q-icon name="menu" />
-    </q-btn>
-    <q-btn color="primary" @click="open = false">
-      <q-icon name="close" />
-    </q-btn>
-
     <q-fab
       v-model="open"
       color="primary"
@@ -97,6 +103,11 @@ export default {
   data () {
     return {
       open: false
+    }
+  },
+  methods: {
+    toggleFab () {
+      this.open = !this.open
     }
   }
 }
@@ -138,6 +149,7 @@ For more information about Tooltips, please refer to the [Tooltip documentation]
 | Vue Property | Type | Default Value | Description |
 | --- | --- | --- |
 | `color` | String | n/a | The color of the button, from [Quasar Color Palette](/components/color-palette.html). |
+| `text-color` | String | n/a | The color of the button icon, from [Quasar Color Palette](/components/color-palette.html). |
 | `direction` | String | "right" | The direction in which to expand; one of the following values: "up", "down", "left", "right". |
 | `icon` | String | "add" | Icon to use when not expanded |
 | `active-icon` | String | "close" | The icon to change to when expanded. |
@@ -150,18 +162,18 @@ For more information about Tooltips, please refer to the [Tooltip documentation]
 | Vue Method | Description |
 | --- | --- |
 | `toggle()` | Toggle open/close state. |
-| `open()` | Open FAB. |
-| `close()` | Close FAB. |
+| `show()` | Open FAB. |
+| `hide()` | Close FAB. |
 
 ### QFab Vue Events
 | Vue Method | Description |
 | --- | --- |
-| `@open` | Triggered when clicking/tapping on main FAB to open it. |
-| `@close` | Triggered when clicking/tapping on main FAB to close it. |
+| `@show` | Triggered when clicking/tapping on main FAB to open it. |
+| `@hide` | Triggered when clicking/tapping on main FAB to close it. |
 | `@click` | Triggered when clicking/tapping on main FAB after it was already opened. |
 
 ## QFabAction (Child)
-The cool bit about FABs is, they give the user the ability to select from a number of actions. These actions can be offered through a list of `q-fab-action` components witin the FAB component.
+The cool bit about FABs is, they give the user the ability to select from a number of actions. These actions can be offered through a list of QFabAction components witin the QFab.
 
 ### Basic Usage
 
@@ -190,6 +202,7 @@ The cool bit about FABs is, they give the user the ability to select from a numb
 | Vue Property | Type | Description |
 | --- | --- | --- |
 | `color` | String | The color of the button. |
+| `text-color` | String | n/a | The color of the button icon. |
 | `icon` | String | The icon of the button. |
 | `outline` | Boolean | Set true, for an outlined button. |
 | `push` | Boolean | Set true, for a push styled button. |
