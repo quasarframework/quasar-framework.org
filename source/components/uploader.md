@@ -8,7 +8,15 @@ Works well with [QField](/components/field.html) for additional functionality su
 
 ![Uploader Screenshot 1](/images/uploader-1.png)
 ![Uploader Screenshot 2](/images/uploader-2.png)
-
+## Installation
+Edit `/quasar.conf.js`:
+```js
+framework: {
+  components: [
+    'QUploader'
+  ]
+}
+```
 ## Basic Usage
 ``` html
 <q-uploader :url="url" />
