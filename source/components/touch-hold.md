@@ -2,11 +2,19 @@ title: Swipe Touch/Mouse Action
 ---
 
 Quasar offers full-featured Vue directives that can totally replace libraries like Hammerjs: `v-touch-pan`, `v-touch-swipe` and `v-touch-hold`.
-
 > **These directives also work with mouse events, not only touch events**, so you are able to build cool functionality for your App on desktops too.
 
 We will be describing `v-touch-hold` on the lines below.
 
+## Installation
+Edit `/quasar.conf.js`:
+```js
+framework: {
+  directives: [
+    'TouchHold'
+  ]
+}
+```
 ## Basic Usage
 ``` html
 <div v-touch-hold="handler">...</div>

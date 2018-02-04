@@ -7,6 +7,15 @@ Please also refer to the [Option Group documentation](/components/option-group.h
 
 Works well with [QField](/components/field.html) for additional functionality such as a helper, error message placeholder and many others.
 
+## Installation
+Edit `/quasar.conf.js`:
+```js
+framework: {
+  components: [
+    'QToggle'
+  ]
+}
+```
 ## Basic Usage
 
 ``` html
