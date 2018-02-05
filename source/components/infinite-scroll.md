@@ -3,6 +3,14 @@ title: Infinite Scroll
 When you want to progressively load new content as the user scrolls down your Page, use QInfiniteScroll component.
 <input type="hidden" data-fullpage-demo="scrolling/infinite-scroll">
 
+## Installation
+Edit `/quasar.conf.js`:
+```js
+framework: {
+  components: ['QInfiniteScroll']
+}
+```
+
 ## Basic Usage
 ``` html
 <q-infinite-scroll :handler="loadMore">

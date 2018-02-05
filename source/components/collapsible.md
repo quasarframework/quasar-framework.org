@@ -5,6 +5,14 @@ Quasar Collapsibles allow the hiding of content that is not immediately relevant
 
 They are basically QItem components wrapped with additional functionality. So they can be included in QLists and inherit QItem component properties.
 
+## Installation
+Edit `/quasar.conf.js`:
+```js
+framework: {
+  components: ['QCollapsible']
+}
+```
+
 ## Basic Usage
 ``` html
 <q-list>

@@ -1,7 +1,19 @@
 title: Spinners
 ---
-A Spinner is used to show the user a timely process is currently taking place. It is an important UX feature, which gives the user the feeling the system is continuing to work for longer term activities, like grabbing data from the server or some heavy calculations.   
+A Spinner is used to show the user a timely process is currently taking place. It is an important UX feature, which gives the user the feeling the system is continuing to work for longer term activities, like grabbing data from the server or some heavy calculations.
 <input type="hidden" data-fullpage-demo="progress/spinner">
+
+## Installation
+Edit `/quasar.conf.js`:
+```js
+framework: {
+  components: [
+    'QSpinner',
+    'QSpinnerAudio',
+    ...
+  ]
+}
+```
 
 ## Basic Usage
 ``` html
@@ -44,6 +56,6 @@ Example:
 ```
 
 > **Note**
-> Having to use an extra component to identify specific spinners might seem like extra work, however, the goal is to be able to remove all other spinner components in your final build, in order to keep the overall package size of your application down to a minimum.  
+> Having to use an extra component to identify specific spinners might seem like extra work, however, the goal is to be able to remove all other spinner components in your final build, in order to keep the overall package size of your application down to a minimum.
 
 The spinners are used in components such as the [QInnerLoading](/components/inner-loading.html) and [QBtn](/components/button.html) components or within the [Loading](/components/loading.html) feature, just to name a few examples.

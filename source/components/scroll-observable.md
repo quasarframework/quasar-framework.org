@@ -2,6 +2,14 @@ title: Scroll Observable
 ---
 QScrollObservable is a Quasar component that emits a `scroll` event whenever the user scrolls the page or overflowed container with `.scroll` CSS class applied to it.
 
+## Installation
+Edit `/quasar.conf.js`:
+```js
+framework: {
+  components: ['QScrollObservable']
+}
+```
+
 ## Basic Usage
 ```html
 <template>

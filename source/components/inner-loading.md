@@ -7,30 +7,38 @@ The QInnerLoading component allows you to add a progress animation within a comp
 > **Note**
 > In order for the spinner to be properly placed in the center of the element you want the loading display to show over, that element must have the `relative-position` CSS class declared.
 
+## Installation
+Edit `/quasar.conf.js`:
+```js
+framework: {
+  components: ['QInnerLoading']
+}
+```
+
 ## Basic Usage
 
 ```html
-      <div class="row justify-center" style="margin-top: 40px">
-        <q-card style="width: 288px; height: 262px;" color="grey-2" class="text-dark relative-position">
-          <q-card-title>
-            Lorem Ipsum
-          </q-card-title>
-          <q-card-main>
-            <q-transition
-              appear
-              enter="fadeIn"
-              leave="fadeOut"
-            >
-              <div v-show="showSimulatedReturnData">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel magna eu risus laoreet tristique. Nulla ut fermentum elit, nec consequat augue. Morbi et dolor nec metus tincidunt pellentesque. Nullam non semper ante. Fusce pellentesque sagittis felis quis porta. Aenean condimentum neque sed erat suscipit malesuada. Nulla eget rhoncus enim. Duis dictum interdum eros.
-              </div>
-            </q-transition>
-          </q-card-main>
-          <q-inner-loading :visible="visible">
-            <q-spinner-gears size="50px" color="primary"></q-spinner-gears>
-          </q-inner-loading>
-        </q-card>
-      </div>
+<div class="row justify-center" style="margin-top: 40px">
+  <q-card style="width: 288px; height: 262px;" color="grey-2" class="text-dark relative-position">
+    <q-card-title>
+      Lorem Ipsum
+    </q-card-title>
+    <q-card-main>
+      <q-transition
+        appear
+        enter="fadeIn"
+        leave="fadeOut"
+      >
+        <div v-show="showSimulatedReturnData">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel magna eu risus laoreet tristique. Nulla ut fermentum elit, nec consequat augue. Morbi et dolor nec metus tincidunt pellentesque. Nullam non semper ante. Fusce pellentesque sagittis felis quis porta. Aenean condimentum neque sed erat suscipit malesuada. Nulla eget rhoncus enim. Duis dictum interdum eros.
+        </div>
+      </q-transition>
+    </q-card-main>
+    <q-inner-loading :visible="visible">
+      <q-spinner-gears size="50px" color="primary"></q-spinner-gears>
+    </q-inner-loading>
+  </q-card>
+</div>
 ```
 
 View the source of the demo for the full example.
