@@ -3,8 +3,16 @@ title: Chat
 Quasar supplies a chat component called QChatMessage which is really a chat entry that renders the data given by the props.
 <input type="hidden" data-fullpage-demo="other-components/chat">
 
+## Installation
+Edit `/quasar.conf.js`:
+```js
+framework: {
+  components: ['QChatMessage']
+}
+```
+
 ## Basic Usage
-This show a simple chat between two parties, and a to label
+This show a simple chat between two parties.
 
 ```html
   <q-chat-message
@@ -38,6 +46,7 @@ This show a simple chat between two parties, and a to label
 | `stamp`      | String  | Creation timestamp string             |
 | `text-color` | String  | Color of the text |
 | `bg-color`   | String  | Color of the chat message bubble |
+| `size` | Number | 1-12 out of 12 (same as col-*). |
 
 > **Note** that `text` property is an Array of Strings. This is useful when two or more messages share the same (or very close) timestamp. They will be displayed on separate bubbles, but grouped together more closely so that the name of the creator and timestamp are displayed only once for this kind of group.
 
