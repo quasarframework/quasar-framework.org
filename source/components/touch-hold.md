@@ -1,18 +1,17 @@
-title: Swipe Touch/Mouse Action
+title: Touch/Mouse Hold Action
 ---
-
 Quasar offers full-featured Vue directives that can totally replace libraries like Hammerjs: `v-touch-pan`, `v-touch-swipe` and `v-touch-hold`.
+
 > **These directives also work with mouse events, not only touch events**, so you are able to build cool functionality for your App on desktops too.
 
 We will be describing `v-touch-hold` on the lines below.
+<input type="hidden" data-fullpage-demo="touch-directives/touch-hold">
 
 ## Installation
 Edit `/quasar.conf.js`:
 ```js
 framework: {
-  directives: [
-    'TouchHold'
-  ]
+  directives: ['TouchHold']
 }
 ```
 ## Basic Usage
@@ -38,11 +37,24 @@ handler (obj) {
 ```
 
 ## Modifiers
-When you don't want to capture mouse actions too, use the `nomouse` modifier:
+| Property | Description |
+| --- | --- |
+| `noMouse` | Avoid capturing mouse events too. |
+| `stop` | Stop event propagation once panning has been detected. |
+| `prevent` | Prevent default browser behavior of the event once panning has been detected. |
+
+### Avoid Capturing Mouse Events
+When you don't want to capture mouse actions too, use the `noMouse` modifier:
 ``` html
 <!--
   directive won't be triggered by mouse actions;
   it's exclusively triggered by touch actions now:
 -->
-<div v-touch-hold.nomouse="userHasSwiped">...</div>
+<div v-touch-hold.noMouse="userHasHold">...</div>
+```
+
+### Preventing Scroll (on touch capable devices)
+By default, the directive does not block page scrolling. If you want to prevent scrolling, then use the `prevent` modifier.
+``` html
+<div v-touch-hold.prevent="userHasHold">...</div>
 ```
