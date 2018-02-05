@@ -50,7 +50,148 @@ You can group multiple Collapsibles to act as an Accordion, which is to open onl
 
 You can add `item-separator` class on the list `<div>` element if you want separators between Collapsibles.
 
-## Preselecting Items
+## Vue Properties
+Since QCollapsible is a wrapper over QItem components, it inherits some of their properties as you can see below.
+
+Supports `v-model` to control the state (open/close).
+
+| Own Property | Type | Description |
+| --- | --- | --- |
+| `opened` | Boolean | Control if Collapsible is opened or not when first rendered. |
+| `group` | String | Unique name which allows to group multiple Collapsible so they work as an Accordion. |
+| `popup` | Boolean | "Popup" mode instead of default behavior. |
+| `indent` | Boolean | Indent Collapsible content. Useful when building a menu with it. |
+| `icon-toggle` | Boolean | Expand/Contract only by clicking/tapping on the arrow on the right. |
+| `collapse-icon` | String | Icon used instead of default arrow on the right side. |
+| `header-style` | Array/String/Object | Vue style binding for header. |
+| `header-class` | Array/String/Object | Vue class binding for header. |
+| `disable` | Boolean | Disable current Collapsible. |
+
+QItem components inherited properties:
+
+| Inherited Property | Type | Description |
+| --- | --- | --- |
+| `icon`, `right-icon` | String | Icon to use. Either use an icon, image, avatar or letter. |
+| `image`, `right-image` | String | URL to image to use (point to statics). Either use an icon, image, avatar or letter. |
+| `avatar`, `right-avatar` | String | URL to avatar to use (point to statics). Either use an icon, image, avatar or letter. |
+| `letter`, `right-letter` | String | One character String to define a letter. Either use an icon, image, avatar or letter. |
+| `label` | String | Label to use as title. |
+| `sublabel` | String | Label to use as subtitle. |
+| `label-lines` | String / Number | Number of lines the label can span to. Ellipsis are used when overflowing. |
+| `sublabel-lines` | String / Number | Number of lines the sublabel can span to. Ellipsis are used when overflowing. |
+| `dense` | Boolean | Use a dense QItem. |
+| `sparse` | Boolean | Use a sparse QItem. |
+| `multiline` | Boolean | Use a multiline QItem. Useful in cases where you use label and sublabel that spans multiple lines, but even then it's optional. |
+| `separator` | Boolean | Use a separator from other QItems or QCollapsibles, just like on QItem. |
+| `inset-separator` | Boolean | Inset separator, same behavior as `separator`. |
+
+## Vue Methods
+| Vue Methods | Description |
+| --- | --- |
+| `toggle()` | Toggle open/close state. |
+| `show()` | Open it. |
+| `hide()` | Close it. |
+
+## Vue Events
+
+| Vue Method | Description |
+| --- | --- |
+| `@show` | Triggered after opening Collapsible. |
+| `@hide` | Triggered after closing Collapsible. |
+
+## Examples
+
+### Using a v-model
+```html
+<template>
+  <q-collapsible
+    v-model="open"
+    icon="perm_identity"
+    label="With a model and events"
+  >
+    <div>...content...</div>
+  </q-collapsible>
+</template>
+
+<script>
+export default {
+  data () {
+    return { open: true }
+  },
+  methods: {
+    toggle () {
+      this.open = !this.open
+    }
+  }
+}
+</script>
+```
+
+### Custom Header
+```html
+<q-collapsible>
+  <template slot="header">
+    <q-chip color="primary" small class="q-mr-sm">
+      Custom header
+    </q-chip>
+    <q-item-main label="using slot" />
+    <q-item-side right>
+      <q-icon name="star" color="red" size="24px" />
+    </q-item-side>
+  </template>
+
+  <div>Collapsible content</div>
+</q-collapsible>
+```
+
+### Popup Mode
+```html
+<q-collapsible popup icon="mail" label="Inbox" sublabel="5 unread emails">
+  <div>...content...</div>
+</q-collapsible>
+<q-collapsible popup icon="send" label="Outbox" sublabel="Empty">
+  <div>...content...</div>
+</q-collapsible>
+```
+
+### Creating a Menu
+```html
+<q-list separator>
+  <q-collapsible indent icon="mail" label="Inbox" sublabel="5 unread emails" opened>
+
+    <q-collapsible indent icon="receipt" label="Receipts">
+
+      <q-collapsible label="Today">
+        <div>...content...</div>
+      </q-collapsible>
+      <q-collapsible label="Yesterday">
+        <div>...content...</div>
+      </q-collapsible>
+
+    </q-collapsible>
+
+    <q-collapsible indent icon="schedule" label="Postponed">
+      <div>...content...</div>
+    </q-collapsible>
+
+  </q-collapsible>
+
+  <q-collapsible indent icon="send" label="Outbox" sublabel="Empty">
+    <q-collapsible label="Today">
+      <div>...content...</div>
+    </q-collapsible>
+    <q-collapsible label="Yesterday">
+      <div>...content...</div>
+    </q-collapsible>
+  </q-collapsible>
+
+  <q-collapsible indent icon="drafts" label="Draft" sublabel="Draft a new email">
+    <div>...content...</div>
+  </q-collapsible>
+</q-list>
+```
+
+### Preselecting Items
 Collapsible items can be opened by default:
 
 ``` html
@@ -68,7 +209,7 @@ Collapsible items can be opened by default:
 </q-collapsible>
 ```
 
-## Indenting Content
+### Indenting Content
 When you are building a complex menu (with sub-menus), like for example on a Left or Right side of QLayout, it's useful to also have some kind of left-side indentation on the Collapsible content:
 
 ```html
@@ -79,50 +220,49 @@ When you are building a complex menu (with sub-menus), like for example on a Lef
 </q-collapsible>
 ```
 
-## Vue Properties
-Since QCollapsible is a wrapper over QItem components, it inherits some of their properties as you can see below.
+### Making Use of Events
+```html
+<template>
+  <q-collapsible
+    indent
+    icon="explore"
+    label="Counter"
+    @show="startCounting"
+    @hide="stopCounting"
+  >
+    <div>
+      <q-chip color="secondary">
+        Counting: {{ counter }}
+      </q-chip>
+    </div>
+    <div class="q-mt-md">
+      Will only count when opened, using the show/hide events to control count timer.
+    </div>
+  </q-collapsible>
+</template>
 
-| Own Property | Type | Description |
-| --- | --- | --- |
-| `opened` | Boolean | Control if Collapsible is opened or not. |
-| `group` | String | Unique name which allows to group multiple Collapsible so they work as an Accordion. |
-| `indent` | Boolean | Indent Collapsible content. Useful when building a menu with it. |
-| `icon-toggle` | Boolean | Expand/Contract only by clicking/tapping on the arrow on the right. |
-| `disable` | Boolean | Disable current Collapsible. |
+<script>
+export default {
+  data () {
+    return {
+      counter: 0
+    }
+  },
+  methods: {
+    startCounting () {
+      this.hndl = setInterval(() => {
+        this.counter++
+      }, 1000)
+    },
+    stopCounting () {
+      clearInterval(this.hndl)
+    }
+  }
+}
+</script>
+```
 
-QItem components inherited properties:
-
-| Inherited Property | Type | Description |
-| --- | --- | --- |
-| `icon` | String | Icon to use. Either use an icon, image, avatar or letter. |
-| `image` | String | URL to image to use (point to statics). Either use an icon, image, avatar or letter. |
-| `avatar` | String | URL to avatar to use (point to statics). Either use an icon, image, avatar or letter. |
-| `letter` | String | One character String to define a letter. Either use an icon, image, avatar or letter. |
-| `label` | String | Label to use as title. |
-| `sublabel` | String | Label to use as subtitle. |
-| `label-lines` | String / Number | Number of lines the label can span to. Ellipsis are used when overflowing. |
-| `sublabel-lines` | String / Number | Number of lines the sublabel can span to. Ellipsis are used when overflowing. |
-| `dense` | Boolean | Use a dense QItem. |
-| `sparse` | Boolean | Use a sparse QItem. |
-| `multiline` | Boolean | Use a multiline QItem. Useful in cases where you use label and sublabel that spans multiple lines, but even then it's optional. |
-| `separator` | Boolean | Use a separator from other QItems or QCollapsibles, just like on QItem. |
-| `inset-separator` | Boolean | Inset separator, same behavior as `separator`. |
-
-## Vue Methods
-| Vue Methods | Description |
-| --- | --- |
-| `toggle()` | Toggle open/close state. |
-| `open()` | Open it. |
-| `close()` | Close it. |
-
-## Vue Events
-
-| Vue Method | Description |
-| --- | --- |
-| `@open` | Triggered after opening Collapsible. |
-| `@close` | Triggered after closing Collapsible. |
-
-## Ubiquity
+### Ubiquity
 Be creative. In the example below we're using a Card as Collapsible content.
 
 ``` html
