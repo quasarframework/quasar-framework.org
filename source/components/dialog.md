@@ -5,7 +5,7 @@ Quasar Dialogs are a great way to offer the user the ability to choose a specifi
 From a UI perspective, you can think of Dialogs as a type of “floating” modal, which covers only a portion of the screen. This means Dialogs should only be used for quick actions, like password verification, small App notifications or quick options. More in depth user flows should be reserved for ​Modals​.
 <input type="hidden" data-fullpage-demo="popups/dialog">
 
-Dialogs can be used either as a component in your Vue file templates, or as a globally available method.
+> Dialogs can be used either as a component in your Vue file templates (for complex use-cases, like specific form components with validation etc), or as a globally available method (for some basic use cases, equivalent to native JS alert(), prompt(), ...).
 
 ## Basic Usage as a Method
 First, we install it:
