@@ -6,20 +6,26 @@ Quasar has a component called QBtn which is a button with a few extra useful fea
 The button component also comes with a spinner or loading effect. You would use this for times when app execution may cause a delay and you want to give the user some feedback about that delay. When used, the button will display a spinning animation as soon as the user clicks the button.
 
 When not disabled or spinning, QBtn emits a `@click` event, as soon as it is clicked or tapped.
-
+## Installation
+Edit `/quasar.conf.js`:
+```js
+framework: {
+  components: [
+    'QBtn'
+  ]
+}
+```
 ## Basic Usage
 
 Plain simple button with an icon and a label:
 
 ``` html
-<q-btn icon="create">New item</q-btn>
+<q-btn icon="create" label="New item" />
 ```
 
 Button with just an icon:
 ``` html
-<q-btn>
-  <q-icon name="map" />
-</q-btn>
+<q-btn icon="map" />
 ```
 
 A standard round button.
@@ -65,6 +71,7 @@ Button with "loading" state (we'll go over these in more detail in its own secti
 In the example above, the `clickMethod` would be a function to control the value of `submit`, which must be a Boolean.
 
 ## Vue Properties
+
 | Vue Property | Type    | Description |
 | ---          | ---     | --- |
 | `icon`       | String  | Name of the icon to use. |
@@ -72,17 +79,33 @@ In the example above, the `clickMethod` would be a function to control the value
 | `loader`     | Boolean | Display a spinner, if true. Can be optionally used along `v-model`. Check [Button with Progress](#Button-with-Progress) section. |
 | `percentage` | Number | Optional property for displaying a determinate progress. Use along `loader`. |
 | `dark-percentage` | Boolean | Optional property for displaying a determinate progress on a light button color. Use along `loader` and `percentage`. |
+| `disable`    | Boolean | The button is disabled, if true. `@click` event won't be triggered while in this state. |
+| `label`      | String/Number | Button label. |
+| `tabindex`   | Number | Set explicit tab index. See [here](/components/material-ripples.html). |
+| `repeat-timeout` | Number/Function | Sets delay and enables multiple `@click` events on click and hold. Function gets `repeated` (Number) parameter |
+| `wait-for-ripple` | Boolean | Wait for ripple then before emitting `@click` event. Mat theme only. |
+
+#### Apearance
+| Vue Property | Type    | Description |
+| ---          | ---     | --- |
+| `size`       | String | Button size. One of `xs`, `sm`, `md`, `lg`, `xl`, or a css string size eg. `25px`, `2rem`, `3vw`. |
+| `color`      | String  | A color from [Quasar Color Palette](/components/color-palette.html). |
+| `text-color` | String  | A color from [Quasar Color Palette](/components/color-palette.html). |
+| `align`      | String  | Label/Content alignment. One of `left`, `center`, `right`. |
+| `dense`      | Boolean | Dense Button. |
 | `round`      | Boolean | Set true, if you want a round button. |
 | `outline`    | Boolean | Set true, if you want an outlined button. |
 | `flat`       | Boolean | Set true, if you want a flat button. |
-| `rounded`    | Boolean | Set true, if the square button should have rounded corners. |
 | `push`       | Boolean | Set true, if the button should have a push effect. |
-| `small`      | Boolean | Set true, if the button should be small. |
-| `big`        | Boolean | Set true, if the button should be big. |
-| `glossy`     | Boolean  | Set true, if the button should be glossy. |
-| `disable`    | Boolean | The button is disabled, if true. `@click` event won't be triggered while in this state. |
-| `color`      | String  | A color from [Quasar Color Palette](/components/color-palette.html). |
+| `rounded`    | Boolean | Set true, if the square button should have rounded corners. |
+| `glossy`     | Boolean | Set true, if the button should be glossy. |
+| `fab`        | Boolean | Floating Action Button. [See](/components/floating-action-button.html) |
+| `fab-mini`   | Boolean | Smaller Floating Action Button. |
+| `no-wrap`    | Boolean | Prevent text wrapping |
 | `no-caps`    | Boolean | Set true, if you don't want button content/label to be transformed to uppercase letter on Material Theme. |
+| `no-ripple`  | Boolean | Disable [Material Ripple](/components/material-ripples.html). Mat theme only. |
+
+
 
 ## Vue Events
 | Vue Event | Description |
@@ -95,37 +118,46 @@ When adding an icon to a regular button, there are two possibilities for its pos
 
 ``` html
 <!-- icon will be placed on the left -->
-<q-btn icon="mail" color="primary">
-  Button Label
-</q-btn>
+<q-btn icon="mail" color="primary" label="Button Label" />
 
 <!-- icon will be placed on the right -->
-<q-btn icon-right="mail" color="teal">
-  Button Label
-</q-btn>
+<q-btn icon-right="mail" color="teal" label="Button Label" />
 ```
 
 ## Button Sizes
 
-Use `small` or `big` as attributes. You don't need to specify `standard`, because that's the default size.
-
+Use `size` atribute with one of the following values: `xs`, `sm`, `md`, `lg`, `xl`. You don't need to specify `md`, because that's the default size.
 ``` html
-<q-btn color="primary" small>
-  Small Button
-</q-btn>
+<q-btn color="primary" size="xs" label="Extra Small Button"/>
 
-<q-btn color="primary" big>
-  Big Button
-</q-btn>
+<q-btn color="primary" size="sm" label="Small Button"/>
+
+<q-btn color="primary" size="md" label="Medium Button"/>
+
+<q-btn color="primary" size="lg" label="Large Button"/>
+
+<q-btn color="primary" size="xl" label="Extra Large Button"/>
+
 ```
+You can also use a css string size:
+``` html
+<q-btn color="primary" size="25px" label="25 Pixels">
+
+<q-btn color="primary" size="2rem" label="2 Rem">
+
+<q-btn color="primary" size="3vw" label="3 View Width">
+
+```
+
 You can also make use of globally available CSS helper class `block` (sets CSS `display` property to `block`) or `full-width` to expand the button.
 
 ## Button Colors
 Use any color from the [Quasar Color Palette](/components/color-palette.html). Examples: `primary`, `orange`, `lime`, 'amber-8'.
 
 ``` html
-<q-btn color="primary">Primary Button</q-btn>
-<q-btn color="amber">Amber Button</q-btn>
+<q-btn color="primary" label="Primary Button"/>
+<q-btn color="amber" label="Amber Button"/>
+<q-btn color="primary" text-color="amber" label="Primary Button with Amber text" />
 ```
 
 ## Button Style Types
@@ -133,21 +165,16 @@ There are also the `outline`, `push`, `round`, `flat`, `rounded` and `glossy` pr
 
 ``` html
 <!-- an outlined button -->
-<q-btn outline color="teal">Outlined Button</q-btn>
+<q-btn outline color="teal" label="Outlined Button" />
 
 <!-- a rounded push button -->
-<q-btn rounded push color="secondary">Rounded Push Button</q-btn>
+<q-btn rounded push color="secondary" label="Rounded Push Button"/>
 
 <!-- a glossy button -->
-<q-btn glossy color="primary">Glossy</q-btn>
-```
+<q-btn glossy color="primary" label="Glossy" />
 
-If you'd like a rectangular button with just an icon and not text, you should use the QIcon component inside the button.
-
-```
-<q-btn>
-  <q-icon name="mail" />
-</q-btn>
+<!-- a flat dense round button -->
+<q-btn flat dense round icon="menu" color="primary" />
 ```
 
 ## Button with Progress
@@ -221,8 +248,7 @@ Should you wish, you can also display a deterministic progress within the button
 </template>
 
 <script>
-// remember to also import necessary
-// Quasar components (not added here)
+// remember to also register nescessary components in quasar.conf.js
 export default {
   data () {
     return {
@@ -318,8 +344,8 @@ export default {
 To disable the button, use the `disable` prop. Along with a small fade applied to the Button, the `@click` event will no longer be triggered.
 
 ``` html
-<q-btn color="primary" disabled>Primary Button</q-btn>
-<q-btn color="amber" :disabled="booleanVar">Amber Button</q-btn>
+<q-btn color="primary" disable>Primary Button</q-btn>
+<q-btn color="amber" :disable="booleanVar">Amber Button</q-btn>
 ```
 
 ## Using a Button with Vue Router
