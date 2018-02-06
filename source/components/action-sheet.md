@@ -117,6 +117,8 @@ Now let's see how we can use it:
     title="Action Sheet"
     @ok="onOk"
     @cancel="onCancel"
+    @show="onShow"
+    @hide="onHide"
     :actions="[
       {
         label: 'Delete',
@@ -144,6 +146,11 @@ Now let's see how we can use it:
       }
     ]"
   />
+  <!--
+    there's an optional "title" slot if you have
+    something very specific for the ActionSheet title
+    (it replaces "title" prop)
+  -->
 </template>
 
 <script>
@@ -178,7 +185,13 @@ export default {
         icon: 'done',
         message: 'Action Sheet was dismissed'
       })
-    }
+    },
+
+    // when we show it to the user
+    onShow () { },
+
+    // when it gets hidden
+    onHide () { }
   }
 }
 </script>
