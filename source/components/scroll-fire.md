@@ -8,6 +8,16 @@ For ease of use, its implementation is through a Vue Directive called `v-scroll-
 > **NOTE**
 > There is also a `v-scroll` directive which fires whenever user scrolls the page, available to read [here](/components/scroll-directive.html)..
 
+## Installation
+Edit `/quasar.conf.js`:
+```js
+framework: {
+  directives: ['ScrollFire']
+}
+```
+
+## Basic Usage
+
 ``` html
 <!-- Template for VueModel below -->
 ....

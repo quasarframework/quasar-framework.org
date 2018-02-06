@@ -4,14 +4,39 @@ Quasar makes use of the Web [Page Visibility API](https://developer.mozilla.org/
 
 <input type="hidden" data-fullpage-demo="web-api-wrappers/app-visibility">
 
-``` js
-import { AppVisibility } from 'quasar'
-
-(Boolean) AppVisibility.isVisible()
+## Installation
+Edit `/quasar.conf.js`:
+```js
+framework: {
+  plugins: ['AppVisibility']
+}
 ```
 
-There is also an event triggered when focus changes (read about Quasar Global Event Bus [here](/components/global-event-bus.html)):
+## Basic Usage
+``` js
+// outside of a Vue file
+import { AppVisibility } from 'quasar'
 
-| Event Name | Parameters | Description |
-| --- | --- | --- |
-| app:visibility | (String) state | App got focus if `state` is `visible` or lost focus if `state` is `hidden` |
+(Boolean) AppVisibility.appVisible
+
+// inside of a Vue file
+(Boolean) this.$q.appVisible
+```
+
+## Example
+Watching for browser tab / app visibility changes:
+
+```html
+// vue file
+<template>...</template>
+
+<script>
+export default {
+  watch: {
+    '$q.appVisible' (val) {
+      console.log(val ? 'App has focus now' : 'App lost focus (was minimized')
+    }
+  }
+}
+</script>
+```

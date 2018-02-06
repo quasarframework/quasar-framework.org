@@ -5,6 +5,14 @@ Parallax scrolling is a technique in computer graphics and web design, where bac
 Quasar provides an out of the box Vue Component you can use. It takes care of a lot of quirks, including image size which can actually be smaller than the window width/height.
 <input type="hidden" data-fullpage-demo="media/parallax">
 
+## Installation
+Edit `/quasar.conf.js`:
+```js
+framework: {
+  components: ['QParallax']
+}
+```
+
 ## Basic Usage
 
 ``` html

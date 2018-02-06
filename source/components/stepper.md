@@ -9,6 +9,18 @@ The stepper component is built from three different child components:
 - **QStep** - individual steps
 - **QStepperNavigation** - helper for encapsulating Stepper navigation buttons (within QStep or globally for the stepper as direct child of QStepper)
 
+## Installation
+Edit `/quasar.conf.js`:
+```js
+framework: {
+  components: [
+    'QStepper',
+    'QStep',
+    'QStepperNavigation'
+  ]
+}
+```
+
 ## Basic Usage
 
 Here's a small example showcasing a very basic Stepper to understand how components fit together.
@@ -34,8 +46,15 @@ Here's a small example showcasing a very basic Stepper to understand how compone
     be using it for that step only.
   -->
   <q-stepper-navigation>
-    <q-btn flat @click="$refs.stepper.previous()">Back</q-btn>
-    <q-btn @click="$refs.stepper.next()">Next</q-btn>
+    <q-btn
+      flat
+      @click="$refs.stepper.previous()"
+      label="Back"
+    />
+    <q-btn
+      @click="$refs.stepper.next()"
+      label="Next"
+    />
   </q-stepper-navigation>
 </q-stepper>
 ```
@@ -48,36 +67,36 @@ A more involved example. This one doesn't uses QStepperNavigation as direct chil
 
     <!-- Navigation for this step at the end of QStep-->
     <q-stepper-navigation>
-      <q-btn color="secondary" @click="$refs.stepper.next()">Continue</q-btn>
+      <q-btn color="secondary" @click="$refs.stepper.next()" label="Continue" />
     </q-stepper-navigation>
   </q-step>
 
   <q-step error name="second" title="Custom channels" subtitle="Alert message">
     <div v-for="n in 10">Step 2</div>
     <q-stepper-navigation>
-      <q-btn color="secondary" @click="$refs.stepper.next()">Next</q-btn>
-      <q-btn color="secondary" flat @click="$refs.stepper.previous()">Back</q-btn>
+      <q-btn color="secondary" @click="$refs.stepper.next()" label="Next" />
+      <q-btn color="secondary" flat @click="$refs.stepper.previous()" label="Back" />
     </q-stepper-navigation>
   </q-step>
   <q-step name="third" title="Get code">
     <div v-for="n in 3">Step 3</div>
     <q-stepper-navigation>
-      <q-btn color="secondary" @click="$refs.stepper.next()">Next</q-btn>
-      <q-btn color="secondary" flat @click="$refs.stepper.previous()">Back</q-btn>
+      <q-btn color="secondary" @click="$refs.stepper.next()" label="Next" />
+      <q-btn color="secondary" flat @click="$refs.stepper.previous()" label="Back" />
     </q-stepper-navigation>
   </q-step>
   <q-step name="fifth" disable title="Disabled">
     <div v-for="n in 3">Step 4</div>
     <q-stepper-navigation>
-      <q-btn color="secondary" @click="$refs.stepper.next()">Next</q-btn>
-      <q-btn color="secondary" flat @click="$refs.stepper.previous()">Back</q-btn>
+      <q-btn color="secondary" @click="$refs.stepper.next()" label="Next" />
+      <q-btn color="secondary" flat @click="$refs.stepper.previous()" label="Back" />
     </q-stepper-navigation>
   </q-step>
   <q-step name="fourth" title="Review and Finalize">
     <div v-for="n in 3">Step 5</div>
     <q-stepper-navigation>
-      <q-btn color="secondary" @click="$refs.stepper.goToStep('first')">Restart</q-btn>
-      <q-btn color="secondary" flat @click="$refs.stepper.previous()">Back</q-btn>
+      <q-btn color="secondary" @click="$refs.stepper.next()" label="Next" />
+      <q-btn color="secondary" flat @click="$refs.stepper.previous()" label="Back" />
     </q-stepper-navigation>
   </q-step>
 </q-stepper>
@@ -92,9 +111,9 @@ A more involved example. This one doesn't uses QStepperNavigation as direct chil
 | `alternative-labels` | Boolean | Use alternative labels (applies only to horizontal Stepper). |
 | `contractable` | Boolean | Labels are hidden on narrow windows. |
 | `order` | Number / String | If you add/remove Steps dynamically, it's good to use this prop to specify the order in which Steps should be displayed. |
-| `doneIcon` | String, Boolean | Used to change the display of the Step icon, when the step is finished. Default is the "check" icon. |
-| `selectedIcon` | String, Boolean | Used to change the icon, when a Step is selected. Default is the "edit" icon. |
-| `errorIcon` | String / Boolean | Used to change the icon, when there is an error in a Step. Default is the "warning" icon. |
+| `done-icon` | String, Boolean | Used to change the display of the Step icon, when the step is finished. Default is the "check" icon. |
+| `selected-icon` | String, Boolean | Used to change the icon, when a Step is selected. Default is the "edit" icon. |
+| `error-icon` | String / Boolean | Used to change the icon, when there is an error in a Step. Default is the "warning" icon. |
 
 You can also control the current step by using `v-model` on QStep. More details in next section.
 
@@ -116,14 +135,22 @@ The example below shows how you can use `v-model` alone to control navigation. N
     <q-step name="first">
       ...
       <q-stepper-navigation>
-        <q-btn color="primary" @click="currentStep = 'second'">Go to Step 2</q-btn>
+        <q-btn
+          color="primary"
+          @click="currentStep = 'second'"
+          label="Go to Step 2"
+        />
       </q-stepper-navigation>
     </q-step>
 
     <q-step name="second">
       ...
       <q-stepper-navigation>
-        <q-btn color="primary" @click="currentStep = 'first'">Go Back</q-btn>
+        <q-btn
+          color="primary"
+          @click="currentStep = 'first'"
+          label="Go Back"
+        />
       </q-stepper-navigation>
     </q-step>
   </q-stepper>
@@ -146,6 +173,7 @@ export default {
 | Vue Property | Type | Description |
 | --- | --- | --- |
 | `name` | Number, String | Step name, used by QStepper's `v-model` or `goToStep()` method. |
+| `default` | Boolean | (Optional) Use it on only one Step. Becomes default selected one. |
 | `error` | Boolean | Mark Step as having an error. |
 | `default` | Boolean | Use on only one Step to make it be the active one by default. Previous steps will be marked as `done`. Useful when refreshing page. |
 | `title` | String | Step title. |
@@ -154,6 +182,7 @@ export default {
 | `active-icon` | String | The icon used for the Step when it's currently active. Defaults to `icon` prop value when `active-icon` isn't specified. |
 | `done-icon` | String | The icon to use for Step when it's finished. |
 | `error-icon` | String | The icon to use for Step when it's marked as having an error. |
+| `disable` | Boolean | Step is disabled. |
 
 Methods for this component:
 
@@ -168,8 +197,16 @@ This component allows you to place buttons within QStepper or QStep to navigate 
 <q-stepper ref="myStepper">
   ...
   <q-stepper-navigation>
-    <q-btn color="secondary" @click="$refs.myStepper.next()">Next</q-btn>
-    <q-btn color="secondary" flat @click="$refs.myStepper.previous()">Back</q-btn>
+    <q-btn
+      color="secondary"
+      @click="$refs.myStepper.next()"
+      label="Next"
+    />
+    <q-btn
+      color="secondary"
+      @click="$refs.myStepper.previous()"
+      label="Back"
+    />
   </q-stepper-navigation>
 </q-stepper>
 ```

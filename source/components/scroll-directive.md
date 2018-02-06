@@ -4,6 +4,15 @@ title: Directive "v-scroll"
 
 One alternative to using this directive is to place a [QScrollObservable](/components/scroll-observable.html) component on your page.
 
+## Installation
+Edit `/quasar.conf.js`:
+```js
+framework: {
+  directives: ['Scroll']
+}
+```
+
+## Basic Usage
 ``` html
 <!-- Template for VueModel below -->
 ...

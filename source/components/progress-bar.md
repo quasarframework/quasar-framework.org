@@ -1,8 +1,15 @@
 title: Progress Bar (QProgress)
 ---
 A Progress bar is used to show a process is being worked on, so the user isn't staring at a static page, even though the system is working in the background. It is a good visual indicator (i.e. good UX) for the user, when waiting for longer term operations to be accomplished.
-
 <input type="hidden" data-fullpage-demo="progress/progress">
+
+## Installation
+Edit `/quasar.conf.js`:
+```js
+framework: {
+  components: ['QProgress']
+}
+```
 
 ## Basic usage
 ``` html
@@ -25,6 +32,7 @@ A Progress bar is used to show a process is being worked on, so the user isn't s
 | `stripe` | Boolen | If set to `true`, the progress bar will be striped. |
 | `animate` | Boolean | If set to `true`, the progress bar will be animated. |
 | `indeterminate` | Boolean | If set to `true`, the state is indeterminate, meaning it is unknown when the progress will stop. |
+| `height` | String | CSS unit for height of QProgress. |
 
 Percentage and buffer, being percentage values, must be between 0 and 100, and `percentage` + `buffer` must be lower or equal to 100. If `percentage` is outside this interval the component will parse it and make it be within the interval.
 

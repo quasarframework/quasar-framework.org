@@ -1,21 +1,20 @@
 title: Panning Touch/Mouse Action
 ---
-
 Quasar offers full-featured Vue directives that can totally replace libraries like Hammerjs: `v-touch-pan`, `v-touch-swipe` and `v-touch-hold`.
 
 > **These directives also work with mouse events, not only touch events**, so you are able to build cool functionality for your App on desktops too.
 
 We will be describing `v-touch-pan` on the lines below.
+<input type="hidden" data-fullpage-demo="touch-directives/touch-pan">
 
 ## Installation
 Edit `/quasar.conf.js`:
 ```js
 framework: {
-  directives: [
-    'TouchPan'
-  ]
+  directives: ['TouchPan']
 }
 ```
+
 ## Basic Usage
 ``` html
 <div v-touch-pan="handler">...</div>
@@ -45,19 +44,34 @@ The `handler` function/method will be called by the directive when a `pan` touch
     console.log(obj.distance.x) // 273
   }
   ```
+
 ## Modifiers
+| Property | Description |
+| --- | --- |
+| `horizontal` | Capture only horizontal panning. |
+| `vertical` | Capture only vertical panning. |
+| `noMouse` | Avoid capturing mouse events too. |
+| `stop` | Stop event propagation once panning has been detected. |
+| `prevent` | Prevent default browser behavior of the event once panning has been detected. |
+| `mightPrevent` | If not using `prevent` prop, but you might call `event.preventDefault()`, specify this modifier otherwise you'll get console warnings. |
+
 Use `horizontal` or `vertical` when you only want to capture horizontal or vertical swipes.
 ``` html
-<div v-touch-pan.horizontal="userSwiped">...</div>
+<div v-touch-pan.horizontal="userHasPanned">...</div>
 ```
 
-> Directive allows vertical scroll when capturing only horizontal panning.
-
-When you don't want to capture mouse actions too, use the `nomouse` modifier:
+### Avoid Capturing Mouse Events
+When you don't want to capture mouse actions too, use the `noMouse` modifier:
 ``` html
 <!--
   directive won't be triggered by mouse actions;
   it's exclusively triggered by touch actions now:
 -->
-<div v-touch-pan.nomouse="userHasSwiped">...</div>
+<div v-touch-pan.noMouse="userHasPanned">...</div>
+```
+
+### Preventing Scroll (on touch capable devices)
+By default, the directive does not block page scrolling. If you want to prevent scrolling, then use the `prevent` modifier.
+``` html
+<div v-touch-pan.prevent="userHasPanned">...</div>
 ```

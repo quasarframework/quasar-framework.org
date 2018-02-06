@@ -293,3 +293,24 @@ The second parameter indicates a unit to reset to (beginning of it or end of it)
 | `day` | reset days |
 | `month` | reset months |
 | `year` | reset years |
+
+### Get Format
+```js
+import { date } from 'quasar'
+
+date.inferDateFormat(new Date()) // 'date'
+date.inferDateFormat(35346363) // 'number'
+date.inferDateFormat('Mon Feb 05 2018 23:05:29') // string
+```
+
+### Cloning Date
+```js
+import { date } from 'quasar'
+
+const date = new Date()
+const clonedDate = date.clone(date)
+
+date.addToDate(date, { days: 1 })
+
+console.log(date.getDate() === clonedDate.getDate()) // false
+```

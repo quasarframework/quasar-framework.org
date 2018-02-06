@@ -5,31 +5,58 @@ This is a wrapper over the standardized `document.cookie`.
 > **NOTE**
 > In addition, you can read and write cookies using JSON objects.
 
+## Installation
+Edit `/quasar.conf.js`:
+```js
+framework: {
+  plugin: ['Cookies']
+}
+```
+
 ## Read a Cookie
 ``` js
+// outside of a Vue file
 import { Cookies } from 'quasar'
 
 var value = Cookies.get('cookie_name')
 ```
 When cookie is not set, the return value is `undefined`.
 
+```js
+// inside of a Vue file
+this.$q.cookies.get('cookie_name')
+```
+
 ## Read All Cookies
 ``` js
+// outside of a Vue file
 import { Cookies } from 'quasar'
 
 var cookies = Cookies.all()
 ```
 `cookies` variable will be an object with key-value pairs (cookie_name : cookie_value).
 
+```js
+// inside of a Vue file
+this.$q.cookies.all()
+```
+
 ## Verify if Cookie is Set
 ``` js
+// outside of a Vue file
 import { Cookies } from 'quasar'
 
 (Boolean) Cookies.has('cookie_name')
 ```
 
+```js
+// inside of a Vue file
+this.$q.cookies.has('cookie_name')
+```
+
 ## Write a Cookie
 ``` js
+// outside of a Vue file
 import { Cookies } from 'quasar'
 
 Cookies.set('cookie_name', cookie_value, options)
@@ -38,11 +65,17 @@ Cookies.set('cookie_name', cookie_value, options)
 `options` is an Object which can have the following properties: `expire`, `path`, `domain`, `secure`. They are explained below.
 
 ``` js
+// outside of a Vue file
 import { Cookies } from 'quasar'
 
 Cookies.set('quasar', 'framework', {
   secure: true
 })
+```
+
+```js
+// inside of a Vue file
+this.$q.cookies.set('cookie_name', cookie_value, options)
 ```
 
 ### Option `expires`
@@ -71,7 +104,13 @@ If true, the cookie transmission requires a secure protocol (HTTPS) and will NOT
 
 ## Remove a Cookie
 ``` js
+// outside of a Vue file
 import { Cookies } from 'quasar'
 
 Cookies.remove('cookie_name')
+```
+
+```js
+// inside of a Vue file
+this.$q.cookies.remove('cookie_name')
 ```

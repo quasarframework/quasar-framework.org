@@ -96,8 +96,20 @@ It's cross-browser.
 import { event } from 'quasar'
 
 node.addEventListener('click', evt => {
+  // left clicked?
+  (Boolean) event.leftClick(evt)
+
+  // middle clicked?
+  (Boolean) event.middleClick(evt)
+
   // right clicked?
   (Boolean) event.rightClick(evt)
+
+  // key in number format
+  (Number) event.getEventKey(evt)
+
+  // Mouse wheel distance (in pixels)
+  (Number) event.getMouseWheelDistance(evt)
 
   // position on viewport
   // works both for mouse and touch events!
@@ -106,6 +118,9 @@ node.addEventListener('click', evt => {
   // get target DOM Element on which mouse or touch
   // event has fired upon
   (DOM Element) event.targetElement(evt)
+
+  // call stopPropagation and preventDefault
+  event.stopAndPrevent(evt)
 })
 ```
 

@@ -5,6 +5,14 @@ Quasar offers a neat way of customizing the scrollbars with the help of QScrollA
 
 This is especially useful for desktop as scrollbars are hidden on a mobile device. When on a mobile device, QScrollArea simply wraps the content in a `<div>` configured for default browser scrolling.
 
+## Installation
+Edit `/quasar.conf.js`:
+```js
+framework: {
+  components: ['QScrollArea']
+}
+```
+
 ## Basic Usage
 
 QScrollArea supports scrolling by user dragging the custom scrollbars or by using the mousewheel. If on a desktop that has a touch screen then scrolling will work with touch actions too.

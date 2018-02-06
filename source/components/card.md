@@ -5,6 +5,21 @@ Quasar Cards are a great way to display important pieces of content, and are qui
 Quasar Cards are a collection of components that you can use, based on the needs. It's all about being creative. Experiment with different Web Components by embedding them in Card components to create awesome results.
 <input type="hidden" data-fullpage-demo="grouping/card">
 
+## Installation
+Edit `/quasar.conf.js`:
+```js
+framework: {
+  components: [
+    'QCard',
+    'QCardTitle',
+    'QCardMain',
+    'QCardMedia',
+    'QCardSeparator',
+    'QCardActions'
+  ]
+}
+```
+
 ## Basic Usage
 
 Familiarize yourself with Card components with the examples below. The only requirement is that QCard needs to wrap all the other ones. Everything else is optional and can be inserted into your template anywhere as long as they are direct children of QCard.
@@ -17,6 +32,7 @@ Following are Vue properties of QCard component:
 | `flat` | Boolean | Remove shadow. |
 | `inline` | Boolean | Make it inline. Also set a CSS width to work. Take a look at Grid example on the "More Examples" section. |
 | `color` | String | One color from [Quasar Color Palette](/components/color-palette.html). |
+| `text-color` | String | Override color of text, one from [Quasar Color Palette](/components/color-palette.html). |
 
 ``` html
 <!-- An basic example -->
@@ -50,11 +66,11 @@ A more complex example:
   </q-card-main>
   <q-card-separator />
   <q-card-actions>
-    <q-btn flat round small><q-icon name="event" /></q-btn>
-    <q-btn flat>5:30PM</q-btn>
-    <q-btn flat>7:30PM</q-btn>
-    <q-btn flat>9:00PM</q-btn>
-    <q-btn flat color="primary">Reserve</q-btn>
+    <q-btn flat round dense icon="event" />
+    <q-btn flat label="5:30PM" />
+    <q-btn flat label="7:30PM" />
+    <q-btn flat label="9:00PM" />
+    <q-btn flat color="primary" label="Reserve" />
   </q-card-actions>
 </q-card>
 ```
@@ -81,15 +97,15 @@ Note that you can set title and subtitle as overlay on an image or video through
     Notice the slot="right"
   -->
   <q-icon slot="right" name="more_vert">
-    <q-popover ref="popover">
+    <q-popover>
       <q-list link class="no-border">
-        <q-item @click="$refs.popover.close()">
+        <q-item v-close-overlay>
           <q-item-main label="Remove Card" />
         </q-item>
-        <q-item @click="$refs.popover.close()">
+        <q-item v-close-overlay>
           <q-item-main label="Send Feedback" />
         </q-item>
-        <q-item @click="$refs.popover.close()">
+        <q-item v-close-overlay>
           <q-item-main label="Share" />
         </q-item>
       </q-list>
@@ -128,17 +144,17 @@ Cards can have some actions (buttons) attached to them.
     Define the buttons to your liking,
     these are just examples
   -->
-  <q-btn flat round small><q-icon name="event" /></q-btn>
-  <q-btn flat>5:30PM</q-btn>
-  <q-btn flat>7:30PM</q-btn>
-  <q-btn flat>9:00PM</q-btn>
-  <q-btn flat color="primary">Reserve</q-btn>
+  <q-btn flat round dense icon="event" />
+  <q-btn flat label="5:30PM" />
+  <q-btn flat label="7:30PM" />
+  <q-btn flat label="9:00PM" />
+  <q-btn flat color="primary" label="Reserve" />
 </q-card-actions>
 
 <!-- Vertical actions -->
 <q-card-actions vertical>
-  <q-btn flat>Action 1</q-btn>
-  <q-btn flat>Action 2</q-btn>
+  <q-btn flat label="Action 1" />
+  <q-btn flat label="Action 2" />
 </q-card-actions>
 ```
 
@@ -238,7 +254,7 @@ Use colors from [Quasar Color Palette](/components/color-palette.html) to set a 
   ...
 </q-card>
 
-<q-card color="amber-8">
+<q-card color="amber-8" text-color="black">
   ...
 </q-card>
 ```
