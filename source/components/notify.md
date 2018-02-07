@@ -55,13 +55,14 @@ this.$q.notify({
   type: 'positive',
 
   color: 'positive',
+  textColor: 'black', // if default 'white' doesn't fits
 
   icon: 'wifi',
   // or
   avatar: 'statics/boy-avatar.png',
 
   detail: 'Optional detail message.',
-  position: 'top-right',
+  position: 'top-right', // 'top', 'left', 'bottom-left' etc
 
   actions: [
     {
