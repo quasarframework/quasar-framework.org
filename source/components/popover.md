@@ -3,6 +3,18 @@ title: Popover
 QPopover should be used when you want a menu (or any content) to be displayed on a popup as a result of user clicking/tapping on a DOM element / component.
 <input type="hidden" data-fullpage-demo="popups/popover">
 
+## Installation
+Edit `/quasar.conf.js`:
+```js
+framework: {
+  components: ['QPopover'],
+
+  // optional if you want to use
+  // directive `v-close-overlay`
+  plugins: ['CloseOverlay']
+}
+```
+
 ## Basic Usage
 In the example below we use a Button (as a target) and when clicking/tapping on it Quasar will display a List.
 
@@ -14,17 +26,16 @@ You can replace the QBtn and the List with any DOM elements or components you li
   must be direct parent of QPopover on the
   DOM hierarchy.
 -->
-<q-btn ref="target">
-  Email
-
+<q-btn label="Email">
   <!-- Direct child of target -->
-  <q-popover ref="popover">
+  <q-popover>
     <!--
       The DOM element(s) that make up the popup,
       in this case a list:
     -->
     <q-list separator link>
-      <q-item @click="doSomething(), $refs.popover.close()">
+      <!-- notice `v-close-overlay` which closes popover -->
+      <q-item v-close-overlay @click="doSomething">
         ...
       </q-item>
     </q-list>
@@ -71,31 +82,25 @@ export default {
 | `touch-position` | Boolean | Open Popover from the position where user clicked/tapped on anchor. |
 | `fit` | Boolean | Popover has `min-width` set as same as the `width` of the container. |
 | `disable` | Boolean | When set to `true`, Popover won't be triggered. |
+| `offset` | Array of 2 Numbers | Offset on horizontal and vertical (in pixels). Example: `[18, 18]`. |
+| `disable` | Boolean | Disable Popover |
 
 ## Vue Methods
-
-If the popover includes buttons or other clickable items which cause navigation or other events to be raised within your app, it's vital to use the callback feature of these methods, and what's passed in must be a function. So, if you want to close a popover and then navigate to a new route, the code _must_ look something like this:
-```
-<q-popover ref="myRef"
-  <q-btn @click="$refs.myRef.close(() => $router.push('/newroute'))" />
-</q-popover>
-```
-
 | Method | Description |
 | --- | --- |
-| `open` | Open Popover. Takes one optional Function parameter to trigger after Popover is opened. |
-| `close` | Close Popover. Takes one optional Function parameter to trigger after Popover is closed. |
+| `show` | Open Popover. Takes one optional Function parameter to trigger after Popover is opened. |
+| `hide` | Close Popover. Takes one optional Function parameter to trigger after Popover is closed. |
 | `toggle` | Toggle open/close Popover state. Takes one optional Function parameter to trigger after Popover is toggled. |
 
 ## Vue Events
 
 | Vue Method | Description |
 | --- | --- |
-| `@open` | Triggered after opening Popover. |
-| `@close` | Triggered after closing Popover. |
+| `@show` | Triggered after opening Popover. |
+| `@hide` | Triggered after closing Popover. |
 
 ## Handling Popover Dismissal
-By default, clicking/tapping outside the QPopover content will close it. But if you'd like elements from the QPopover content to close it, then use a Vue reference on QPopover to call `close()` method, like on the "Basic Usage" example above.
+By default, clicking/tapping outside the QPopover content will close it. But if you'd like elements from the QPopover content to close it, then use the `v-close-overlay` Quasar directive.
 
 ## Handling Positioning
 Position of the QPopover can be customized. It keeps account of the `anchor` and `self` optional Vue properties. See demo and play with them.

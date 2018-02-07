@@ -108,7 +108,6 @@ components:
     Tree: $
   Popups:
     Action Sheet: $
-    Alert: $
     Dialog: $
     Modal: $
     Notify: $
