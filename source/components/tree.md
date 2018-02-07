@@ -61,7 +61,7 @@ export default {
 
 Notice that nodes must have a unique key defined by a property of each key. In the example above, labels are unique so we're using `label` prop to define these keys. However, you can add any property to the nodes (like 'id' or anything you want) and then use that property (like `node-key="id"`).
 
-### Vue Properties
+## Vue Properties
 
 | Vue Property | Type | Description |
 | --- | --- | --- |
@@ -123,6 +123,25 @@ There are three ticking strategy: 'leaf', 'leaf-filtered', 'strict' with an addi
 | `strict` | Ticked nodes are independent of parent or children tick state. |
 
 You can apply a global tick strategy for a QTree and locally change the ticking strategy for a certain node by specifying the `tickStrategy` in the `nodes` model.
+
+### Custom Filter Method
+You can customize the filtering method by specifying the `filter-method` prop. The method below is actually the default filtering strategy:
+```html
+<template>
+  <q-tree :filter-method="myFilterMethod" ...>
+</template>
+
+<script>
+export default {
+  methods: {
+    myFilterMethod (node, filter) {
+      const filt = filter.toLowerCase()
+      return node.label && node.label.toLowerCase().indexOf(filt) > -1
+    }
+  }
+}
+</script>
+```
 
 ## Examples
 
