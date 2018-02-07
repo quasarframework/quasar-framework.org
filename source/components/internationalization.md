@@ -65,3 +65,14 @@ Although the Quasar I18n is designed only for Quasar components, you can still u
 "Close" label in current Quasar I18n language is:
 {{ $q.i18n.label.close }}
 ```
+
+## Detecting Locale
+There's also a method to determine user locale which is supplied by Quasar out of the box:
+```js
+// outside of a Vue file
+import Quasar from 'quasar'
+(String) Quasar.i18n.getLocale()
+
+// inside of a Vue file
+(String) this.$q.i18n.getLocale()
+```
