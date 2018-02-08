@@ -234,3 +234,17 @@ These settings are completely up to you to use as you'd like. You could even go 
 | `@resize` | Event emitted on window resize. |
 | `@scroll` | Event emitted on page scroll. |
 | `@scrollHeight` | Event emitted on page scroll height change. |
+
+# Caveats
+
+## Using *margin* will break the layout
+
+QLayout depends on taking the whole screen. So you **cannot** use *margins* as a style neither on QLayout itself nor on 
+any of the slots (e.g. *header*, *footer* , ...). Instead, use *padding*.
+
+```
+   <!-- Use padding instead of margin! -->
+   <q-layout :header-style="{'padding-top': '50px'}>
+      <div slot="header"></div>
+   </q-layout>
+```
