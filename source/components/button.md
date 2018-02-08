@@ -392,5 +392,3 @@ If you want to trigger a button's `@click` event multiple times on click and hol
   }
 </script>
 ```
-
-
