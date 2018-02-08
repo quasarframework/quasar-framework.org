@@ -7,6 +7,14 @@ Please also refer to the [Option Group documentation](/components/option-group.h
 
 Works well with [QField](/components/field.html) for additional functionality such as a helper, error message placeholder and many others.
 
+## Installation
+Edit `/quasar.conf.js`:
+```js
+framework: {
+  components: ['QCheckbox']
+}
+```
+
 ## Basic Usage
 
 ``` html
@@ -25,17 +33,26 @@ Supports `v-model` which should be binded to a Boolean or Array in your scope.
 
 | Vue Property | Type | Description |
 | --- | --- | --- |
+| `val` | Object | Used to modify the v-model of the Checkbox when using an Array as `v-model`. |
+| `true-value` | Any | Gets into "true" state when model has this value. |
+| `false-value` | Any | Gets into "false" state when model has this value. |
+| `indeterminate-value` | Any | Gets into "indeterminate" state when model has this value. Default is `null`. |
+| `toggle-indeterminate` | Boolean | Toggle between 3 states, including "indeterminate". |
 | `label` | String | The text label for the Checkbox. |
 | `left-label` | Boolean | Set to `true`, if the label should be placed to the left of the Checkbox. |
 | `checked-icon` | String | Optional icon to use, when the Checkbox is checked. |
 | `unchecked-icon` | String | Optional icon to use, when the Checkbox is not checked. |
+| `indeterminate-icon` | String | Optional icon to use, when the Checkbox is in indeterminate state. |
 | `color` | String | Color from [Quasar Color Palette](/components/color-palette.html). |
-| `disable` | Boolean | Set to `true`, to disable the Checkbox. |
-| `val` | Object | Used to modify the v-model of the Checkbox when using an Array as `v-model`. |
+| `keep-color` | Boolean | Keep color when not truthy too. |
+| `readonly` | Boolean | Set to `true`, to make the checkbox read-only. |
+| `disable` | Boolean | Set to `true`, to disable the checkbox. |
+| `dark` | Boolean | Set to `true` when background is dark. |
 
 ## Vue Events
 | Vue Event | Description |
 | --- | --- |
+| `@input` | Triggered when it changes model. |
 | `@blur` | Triggered, when Checkbox loses focus. |
 | `@focus` | Triggered, when Checkbox gains focus. |
 
@@ -66,6 +83,18 @@ Ticking all Checkboxes will make `selection` scope variable to be `['one', 'two'
 
 ## More Examples
 There are a number of props, which are available to help quickly format a Checkbox. An interesting feature of Checkbox is the ripple effect that user gets when clicking/tapping on it to change its state.
+
+### Custom Model Values
+Instead of the default `true/false` values, you can use custom ones:
+```html
+<q-checkbox
+  v-model="customModel"
+  color="secondary"
+  label="Do you agree with the terms & conditions?"
+  true-value="yes"
+  false-value="no"
+/>
+```
 
 ### Specific Icons
 Sometimes, you might need a checkbox simply as a type of button, to maybe turn something on or off. You can do this with the `checked-icon` and `unchecked-icon` props.
@@ -121,7 +150,7 @@ In the following example we use the Right side of QItems to insert Checkbox, but
   -->
   <q-item tag="label">
     <q-item-side>
-      <q-checkbox v-model="checked"></q-checkbox>
+      <q-checkbox v-model="checked" />
     </q-item-side>
     <q-item-main>
       <q-item-tile label>Events and reminders</q-item-tile>
@@ -129,7 +158,7 @@ In the following example we use the Right side of QItems to insert Checkbox, but
   </q-item>
   <q-item tag="label">
     <q-item-side>
-      <q-checkbox v-model="checked"></q-checkbox>
+      <q-checkbox v-model="checked" />
     </q-item-side>
     <q-item-main>
       <q-item-tile label>Events and reminders</q-item-tile>
@@ -138,7 +167,7 @@ In the following example we use the Right side of QItems to insert Checkbox, but
   </q-item>
   <q-item tag="label" multiline>
     <q-item-side>
-      <q-checkbox v-model="checked"></q-checkbox>
+      <q-checkbox v-model="checked" />
     </q-item-side>
     <q-item-main>
       <q-item-tile label>Events and reminders</q-item-tile>

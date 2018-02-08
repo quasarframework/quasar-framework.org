@@ -7,6 +7,14 @@ Please also refer to the [Option Group documentation](/components/option-group.h
 
 Works well with [QField](/components/field.html) for additional functionality such as a helper, error message placeholder and many others.
 
+## Installation
+Edit `/quasar.conf.js`:
+```js
+framework: {
+  components: ['QRadio']
+}
+```
+
 ## Basic Usage
 
 ``` html
@@ -27,11 +35,15 @@ Supports `v-model` which should be binded to a String in your scope. Choosing on
 | `checked-icon` | String | The icon to use, when the radio is checked. Default is a simple radio icon. |
 | `uncheck-icon` | String | The icon to use, when the radio is not checked. Default is simple unchecked radio icon. |
 | `color` | String | Color from [Quasar Color Palette](/components/color-palette.html) of the Radio. |
+| `keep-color` | Boolean | Keep color when not selected too. |
+| `readonly` | Boolean | Set to `true`, to make the radio read-only. |
 | `disable` | Boolean | Set to `true`, to disable the radio. |
+| `dark` | Boolean | Set to `true` when background is dark. |
 
 ## Vue Events
 | Vue Event | Description |
 | --- | --- |
+| `@input` | Triggered when it gets selected. |
 | `@blur` | Triggered, when Radio loses focus. |
 | `@focus` | Triggered, when Radio gains focus. |
 

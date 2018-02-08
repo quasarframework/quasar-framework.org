@@ -18,8 +18,8 @@ Works well with [QField](/components/field.html) for additional functionality su
   type="textarea"
   float-label="Textarea"
   :max-height="100"
-  :min-rows="7"
-/>
+  rows="7"
+/><!-- max-height refers to pixels -->
 ```
 
 ## Vue Properties
@@ -27,27 +27,28 @@ Supports `v-model` which should be bound to a String or Number (depending on `ty
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `type` | String |  Must be one of the following: `text` (default), `textarea`, `email`, `tel`, `file`, `number`, `password` and `url`. This is important as it determines the keyboard type popping up on mobile devices. |
+| `type` | String |  Must be one of the following: `text` (default), `textarea`, `email`, `tel`, `number`, `password` and `url`. This is important as it determines the keyboard type popping up on mobile devices. |
+| `readonly` | Boolean | If set to `true`, textfield is readonly and the user cannot change value. |
 | `clearable` | Boolean | If set to `true`, the component offers the user an actionable icon to remove the entered text. |
 | `no-pass-toggle` | Boolean | If type is 'password' and set to `true`, then password toggle is not shown. |
-| `readonly` | Boolean | Input is readonly. |
-| `attributes` | Object | Adds HTML attributes to the enclosing `<input>` tag. Useful for browser autocomplete, as an example: `:attributes="{autocompletetype: 'email', autocorrect: 'off'}"` |
+| `upper-case` | Boolean | Transform input to upper case. |
 
 When you set type to "number", there are some additional properties that you can use:
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `min` | Number | Minimum number. It's only enforced when user hits UP or DOWN keys. Don't use only this property for validation. |
-| `max` | Number | Maximum number. It's only enforced when user hits UP or DOWN keys. Don't use only this property for validation. |
-| `step` | Number | Default is `1`. If Up or Down keys are used, this tells the increment amount. |
-| `max-decimals` | Number | Maximum number of decimals that should be displayed. |
+| `decimals` | Number | Maximum number of decimals that should be displayed. |
+| `numeric-keyboard-toggle` | Boolean | Some mobile keyboards do not allow to type the dot to compose a floating number, so this property adds an icon that when clicked/tapped it toggles the keyboard to/from an alphanumeric one. |
 
-When you set type to "textarea", these are additional properties that you can use:
+Also note you can use the native DOM attributes of an input: "min", "max", "step".
+
+When you set type to "textarea", these is an additional property that you can use:
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `min-rows` | Number | Minimum number of rows to display regardless of how many rows the content spans to. |
 | `max-height` | Number | Number in pixels that determines the maximum height of textarea which auto-grows. |
+
+There's also the native DOM attribute of a textarea: 'rows'.
 
 Common input field properties:
 
@@ -55,8 +56,6 @@ Common input field properties:
 | --- | --- | --- |
 | `autofocus` | Boolean | Focus input field after rendering component. |
 | `placeholder` | String | A text to be shown on textfield, mainly to explain what should be entered. |
-| `name` | String | Adds a "name" attribute to the input field. |
-| `max-length` | Number/String | Maximum number of characters allowed on textual input field. This property only affects inputs with type `text`, `textarea`, `email`, `tel`, `password` and `url` |
 | `loading` | Boolean | Place the default spinner of the theme after textfield to highlight some process takes place in the background. |
 
 Common input frame properties:
@@ -69,14 +68,18 @@ Common input frame properties:
 | `stack-label` | String | A text label that will be shown above the input field and is static. |
 | `color` | String | One from [Quasar Color Palette](/components/color-palette.html). |
 | `inverted` | Boolean | Inverted mode. Color is applied to background instead. |
+| `inverted-light` | Boolean | Inverted mode with a light color. Color is applied to background instead. |
 | `dark` | Boolean | Is QInput rendered on a dark background? |
 | `align` | String | One of 'left', 'center' or 'right' which determines the text align within textfield. |
 | `disable` | Boolean | If set to `true`, textfield is disabled and the user cannot type anything. |
-| `readonly` | Boolean | If set to `true`, textfield is readonly and the user cannot change value. |
+| `hide-underline` | Boolean | Hides the bottom border. |
 | `error` | Boolean | If set to true, the input fields colors are changed to show there is an error. |
 | `warning` | Boolean | Same as `error`, the input field color is changed to show there is a warning. |
 | `before` | Array of Objects | Icon buttons on left side of textfield. Read below more details. |
 | `after` | Array of Objects | Icon buttons on right side of textfield. Read below more details. |
+
+> **IMPORTANT**
+> All DOM attributes that apply to a native `<input>` or `<textarea>` can be used. Example: `max-length`, `rows`, `min`/`max`/`step`, `autocomplete` and so on.
 
 ### Icon buttons
 This section refers to `before` and `after` properties which can add additional buttons as icons to the textfield. Here is the structure of the two properties:
@@ -214,7 +217,8 @@ If, for some reason, the input requires some longer term background action or pr
 ## Vue Events
 | Vue Event | Description |
 | --- | --- |
-| `@change(newVal)` | Triggered on model value change. |
+| `@input(newVal)` | Triggered on immediate model value change. |
+| `@change(newVal)` | Triggered on lazy model value change. |
 | `@focus` | Triggered on focus. |
 | `@blur` | Triggered a blur. |
 | `@keydown` | Triggered by keydown event on textfield. |
@@ -230,6 +234,7 @@ It is possible to add formatting to a QInput in two ways. One is for the basic c
 | --- | --- | --- |
 | `color` | String | The color the QInput should have. The default is `primary`. |
 | `inverted`| Boolean | Set to `true`, to color field's background set by the `color` prop. |
+| `inverted-light`| Boolean | Set to `true`, to color field's background set by the `color` prop (when that color is light). |
 | `dark` | Boolean | Set to true, if the field is on a dark background. It will invert the text color to make it light. |
 | `align` | Text | Controls the 'right', 'center' or 'left' alignment of the input. The default is 'left'. |
 
@@ -243,7 +248,7 @@ This will color the field black.
 This will show an inverted colored input field in amber. Here, the text is automatically inverted to a lighter color.
 
 ```html
-<q-input v-model="text" inverted color="amber" stack-label="Amber Colored Background" />
+<q-input v-model="text" inverted-light color="amber" stack-label="Amber Colored Background" />
 ```
 
 ### Alignment
@@ -251,7 +256,7 @@ You can also align the input to the right, center or left. The default is left. 
 
 ```html
 <!-- Align textfield content to the right -->
-<q-input v-model="number" align="right" type="number" suffix="€" stack-label="Number" />  
+<q-input v-model="number" align="right" type="number" suffix="€" stack-label="Number" />
 ```
 
 ### Basic Usage with QField
@@ -317,12 +322,12 @@ For more options like displaying an error label, a helper or character counter, 
 Vue comes with standard modifiers on `v-model`, which can be useful in conjunction with QInput. They are `.lazy` and `.trim`.
 
 ### `.lazy`
-
-By default, `v-model` syncs the input with the data after each `input` event. You can add the `lazy` modifier to instead sync after `change` events:
-
-``` html
-<!-- synced after "change" instead of "input" -->
-<q-input v-model.lazy="msg">
+Vue will soon supply the `.lazy` modifier for v-model on components too, but until then, you can use the longer equivalent form:
+```html
+<q-input
+  :value="model"
+  @change="val => { model = val }"
+/>
 ```
 
 ### `.trim`
@@ -330,5 +335,5 @@ By default, `v-model` syncs the input with the data after each `input` event. Yo
 If you want the user's input to be trimmed automatically, you can add the `trim` modifier to your `v-model` managed inputs:
 
 ```html
-<q-input v-model.trim="msg">
+<q-input v-model.trim="msg" />
 ```

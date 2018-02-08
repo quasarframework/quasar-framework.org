@@ -5,6 +5,14 @@ The Search component offers the users an input field with additional features fo
 
 Works well with [QField](/components/field.html) for additional functionality such as a helper, error message placeholder and many others.
 
+## Installation
+Edit `/quasar.conf.js`:
+```js
+framework: {
+  components: ['QSearch']
+}
+```
+
 ## Basic Usage
 
 ```html
@@ -19,6 +27,7 @@ Supports `v-model` which should be binded to a String or Number (depending on `t
 | `icon` | String | Icon to use. |
 | `type` | String |  Must be one of the following: `text` (default), `email`, `tel`, `number` and `url`. This is important as it determines the keyboard type popping up on mobile devices. |
 | `debounce` | Number | Number of ms to debounce input. Default is 300. |
+| `readonly` | Boolean | If set to `true`, textfield is readonly and the user cannot change value. |
 
 A more involved example:
 ``` html
@@ -38,7 +47,9 @@ Common input field properties:
 | `autofocus` | Boolean | Focus input field after rendering component. |
 | `placeholder` | String | A text to be shown on textfield, mainly to explain what should be entered. |
 | `name` | String | Adds a "name" attribute to the input field. |
-| `max-length` | Number/String | Maximum characters allowed on input field. |
+| `clearable` | Boolean | If set to `true`, the component offers the user an actionable icon to remove the entered text. |
+
+Also note you can use the native DOM attributes of an input: "max-length", "autocomplete" and so on.
 
 Common input frame properties:
 
@@ -50,6 +61,8 @@ Common input frame properties:
 | `stack-label` | String | A text label that will be shown above the input field and is static. |
 | `color` | String | One from [Quasar Color Palette](/components/color-palette.html). |
 | `inverted` | Boolean | Inverted mode. Color is applied to background instead. |
+| `inverted-light` | Boolean | Inverted mode with a light color. Color is applied to background instead. |
+| `hide-underline` | Boolean | Hides the bottom border. |
 | `dark` | Boolean | Is QSearch rendered on a dark background? |
 | `align` | String | One of 'left', 'center' or 'right' which determines the text align within textfield. |
 | `disable` | Boolean | If set to `true`, textfield is disabled and the user cannot type anything. |
@@ -115,6 +128,15 @@ Examples:
 />
 ```
 
+### Lazy Input
+Vue will soon supply the `.lazy` modifier for v-model on components too, but until then, you can use the longer equivalent form:
+```html
+<q-search
+  :value="model"
+  @change="val => { model = val }"
+/>
+```
+
 ## Vue Methods
 | Vue Method | Description |
 | --- | --- |
@@ -127,7 +149,8 @@ Examples:
 ## Vue Events
 | Vue Event | Description |
 | --- | --- |
-| `@change(newVal)` | Triggered on model value change. |
+| `@input(newVal)` | Triggered immediately on model value change. |
+| `@change(newVal)` | Triggered on lazy model value change. |
 | `@focus` | Triggered on focus. |
 | `@blur` | Triggered a blur. |
 | `@keydown` | Triggered by keydown event on textfield. |
@@ -205,7 +228,7 @@ You can also align the input to the right, center or left. The default is left. 
 
 ```html
 <!-- Align textfield content to the right -->
-<q-search v-model="text" align="right" />  
+<q-search v-model="text" align="right" />
 ```
 
 ### Basic Usage with QField
