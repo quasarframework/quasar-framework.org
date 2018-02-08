@@ -377,7 +377,7 @@ If you want to trigger a button's `@click` event multiple times on click and hol
   <q-btn @click="clickHandler" :repeat-timeout="1000" label="click me" />
 
   <!-- Click and hold to triger faster over time -->
-  <q-btn @click="clickHandler" :repeat-timeout="repeat" label="click me" />
+  <q-btn @click="clickHandler" :repeat-timeout="repeatFunction" label="click me" />
 </template>
 <script>
   export default {
@@ -385,13 +385,12 @@ If you want to trigger a button's `@click` event multiple times on click and hol
       clickHandler () {
         console.log('Handler Triggered')
       },
-      repeat (timesTriggered) {
-
-        timesTriggered += 1
-
-        return 1000 / timesTriggered
+      repeatFunction (timesTriggered) {
+        return 1000 / (timesTriggered + 1) // cannot divide by 0, so add 1
       }
     }
   }
 </script>
 ```
+
+
