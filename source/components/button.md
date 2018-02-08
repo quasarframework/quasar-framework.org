@@ -91,7 +91,7 @@ In the example above, the `clickMethod` would be a function to control the value
 | `size`       | String | Button size. One of `xs`, `sm`, `md`, `lg`, `xl`, or a css string size eg. `25px`, `2rem`, `3vw`. |
 | `color`      | String  | A color from [Quasar Color Palette](/components/color-palette.html). |
 | `text-color` | String  | A color from [Quasar Color Palette](/components/color-palette.html). |
-| `align`      | String  | Label/Content alignment. One of `left`, `center`, `right`. |
+| `align`      | String  | Label/Content alignment. One of `left`, `center`, `right`, `around`, `between`. |
 | `dense`      | Boolean | Dense Button. |
 | `round`      | Boolean | Set true, if you want a round button. |
 | `outline`    | Boolean | Set true, if you want an outlined button. |
@@ -122,6 +122,9 @@ When adding an icon to a regular button, there are two possibilities for its pos
 
 <!-- icon will be placed on the right -->
 <q-btn icon-right="mail" color="teal" label="Button Label" />
+
+<!-- icona will be placed on both sides -->
+<q-btn icon="mail" icon-right="mail" color="teal" label="Button Label" />
 ```
 
 ## Button Sizes
@@ -366,7 +369,7 @@ On material theme you can delay a button's `@click` until the material ripple ha
 
 ## Using a click and hold button
 
-If you want to trigger a button's `@click` event multiple times on clikc and hold use the `repeat-timeout` prop. Accepts either a number or function
+If you want to trigger a button's `@click` event multiple times on click and hold use the `repeat-timeout` prop. Accepts either a number or function
 
 ```html
 <template>
