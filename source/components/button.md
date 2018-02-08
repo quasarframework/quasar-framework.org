@@ -353,5 +353,42 @@ To disable the button, use the `disable` prop. Along with a small fade applied t
 If you want to use a button to navigate to a new page you don't need to use a wrapping `<router-link>` tag. Instead, you can use the `@click` event to handle the route change.
 
 ```html
-<q-btn @click="$router.push('/path/to/new/page')" color="primary" />
+<q-btn @click="$router.push('/path/to/new/page')" color="primary" label="navigate" />
+```
+
+## Delaying button click event
+
+On material theme you can delay a button's `@click` until the material ripple has reached the edge of the button using the `wait-for-ripple` prop
+
+```html
+<q-btn @click="clickHandler" wait-for-ripple label="click me" />
+```
+
+## Using a click and hold button
+
+If you want to trigger a button's `@click` event multiple times on clikc and hold use the `repeat-timeout` prop. Accepts either a number or function
+
+```html
+<template>
+  <!-- Click and hold to triger every second -->
+  <q-btn @click="clickHandler" :repeat-timeout="1000" label="click me" />
+
+  <!-- Click and hold to triger faster over time -->
+  <q-btn @click="clickHandler" :repeat-timeout="repeat" label="click me" />
+</template>
+<script>
+  export default {
+    methods: {
+      clickHandler () {
+        console.log('Handler Triggered')
+      },
+      repeat (timesTriggered) {
+
+        timesTriggered += 1
+
+        return 1000 / timesTriggered
+      }
+    }
+  }
+</script>
 ```
