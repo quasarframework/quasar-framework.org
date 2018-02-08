@@ -6,9 +6,11 @@ QTooltip should be used when you want to offer the user more information about a
 Edit `/quasar.conf.js`:
 ```js
 framework: {
-  components: [
-    'QTooltip'
-  ]
+  components: ['QTooltip'],
+
+  // optional if you want to use
+  // directive `v-close-overlay`
+  plugins: ['CloseOverlay']
 }
 ```
 ## Basic Usage
@@ -22,9 +24,7 @@ You can replace QBtn and the QPopover content with any DOM elements or component
   must be direct parent of QTooltip on the
   DOM hierarchy.
 -->
-<q-btn>
-  Email
-
+<q-btn label="Email">
   <!-- Direct child of target -->
   <q-tooltip>
     <!--
@@ -68,18 +68,18 @@ export default {
 | --- | --- | --- |
 | `anchor` | Object | String of form `bottom left` (vertical horizontal). |
 | `self` | Object | String of form `top left` (vertical horizontal). |
-| `offset` | Array | Array with two numbers. Offset on horizontal and vertical (in pixels). |
-| `max-height` | String | Optional maximum height of Popover content. Example: `500px` |
-| `disable` | Boolean | When set to `true`, Popover won't be triggered. |
+| `offset` | Array of 2 Numbers | Offset on horizontal and vertical (in pixels). Example: `[18, 18]`. |
+| `max-height` | String | Optional maximum height of Tooltip content. Example: `500px` |
 | `delay` | Number | Set the delay, when tooltip should appear. |
+| `disable` | Boolean | When set to `true`, Tooltip won't be triggered. |
 
 ## Vue Methods
 
 | Vue Method | Description |
 | --- | --- |
+| `show()` | Open Tooltip. |
+| `hide()` | Close Tooltip. |
 | `toggle()` | Toggle open/close state. |
-| `open()` | Open Popover. |
-| `close()` | Close Popover. |
 
 ## Handling Positioning
 The position of QTooltip can be customized. It keeps account of the `anchor` and `self` optional Vue properties. Check out the demo and play with them.

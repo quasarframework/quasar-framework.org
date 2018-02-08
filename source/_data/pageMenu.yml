@@ -41,6 +41,7 @@ components:
     Platform Detection: $
     Global Event Bus: $
     Vue Prototype Injections: $
+    Internationalization (I18n): internationalization
   Style & Identity:
     Color Palette: $
     Stylus Variables: $
@@ -102,13 +103,11 @@ components:
     Card: $
     Collapsible: $
     DataTable: $
-    HTML Table: $
     Lists and List Items: $
     Stepper: $
     Tree: $
   Popups:
     Action Sheet: $
-    Alert: $
     Dialog: $
     Modal: $
     Notify: $
