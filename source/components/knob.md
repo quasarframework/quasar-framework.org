@@ -5,6 +5,14 @@ Quasar Knob is another way of making the user select a Number value from a prede
 
 Works well with [QField](/components/field.html) for additional functionality such as a helper, error message placeholder and many others.
 
+## Installation
+Edit `/quasar.conf.js`:
+```js
+framework: {
+  components: ['QKnob']
+}
+```
+
 ## Basic Usage
 
 ``` html
@@ -12,7 +20,7 @@ Works well with [QField](/components/field.html) for additional functionality su
   v-model="model"
   :min="min"
   :max="max"
-></q-knob>
+/>
 
 <!-- With custom placeholder -->
 <q-knob
@@ -20,7 +28,7 @@ Works well with [QField](/components/field.html) for additional functionality su
   :min="min"
   :max="max"
   :placeholder="'$ ' + model"
-></q-knob>
+/>
 
 <!-- Disabled state -->
 <q-knob
@@ -28,7 +36,7 @@ Works well with [QField](/components/field.html) for additional functionality su
   v-model="model"
   :min="min"
   :max="max"
-></q-knob>
+/>
 ```
 
 ## Vue Properties
@@ -49,11 +57,23 @@ Supports `v-model` which should be a Number.
 ## Vue Events
 | Vue Event | Description |
 | --- | --- |
-| `@change(newVal)` | Triggered on v-model value change. |
+| `@input(newVal)` | Triggered immediately on model value change. |
+| `@change(newVal)` | Triggered on lazy model value change. |
 
 ## More Examples
-Multi-colored with a Euro icon.
 
+### Lazy Input
+Vue will soon supply the `.lazy` modifier for v-model on components too, but until then, you can use the longer equivalent form:
+```html
+<q-knob
+  :value="model"
+  @change="val => { model = val }"
+  :min="min"
+  :max="max"
+/>
+```
+
+### Multi-colored with a Euro icon.
 ``` html
  <q-knob
   v-model="model"
@@ -70,8 +90,7 @@ Multi-colored with a Euro icon.
 </q-knob>
 ```
 
-Read-only state (different than disabled, as the mouse pointer doesn't change).
-
+### Read-only state (different than disabled, as the mouse pointer doesn't change).
 ``` html
 <q-knob
   v-model="model"
@@ -84,7 +103,7 @@ Read-only state (different than disabled, as the mouse pointer doesn't change).
 </q-knob>
 ```
 
-Using a [QField](/components/field.html) to highlight error state.
+### Using a [QField](/components/field.html) to highlight error state.
 ```html
 <q-field
   label="Knob"

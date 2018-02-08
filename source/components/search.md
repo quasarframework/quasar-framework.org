@@ -46,10 +46,9 @@ Common input field properties:
 | --- | --- | --- |
 | `autofocus` | Boolean | Focus input field after rendering component. |
 | `placeholder` | String | A text to be shown on textfield, mainly to explain what should be entered. |
-| `name` | String | Adds a "name" attribute to the input field. |
 | `clearable` | Boolean | If set to `true`, the component offers the user an actionable icon to remove the entered text. |
 
-Also note you can use the native DOM attributes of an input: "max-length", "autocomplete" and so on.
+Also note you can use the native DOM attributes of an input: "name", "max-length", "autocomplete" and so on.
 
 Common input frame properties:
 
@@ -66,6 +65,7 @@ Common input frame properties:
 | `dark` | Boolean | Is QSearch rendered on a dark background? |
 | `align` | String | One of 'left', 'center' or 'right' which determines the text align within textfield. |
 | `disable` | Boolean | If set to `true`, textfield is disabled and the user cannot type anything. |
+| `warning` | Boolean | If set to true, the input fields colors are changed to show there is a warning. |
 | `error` | Boolean | If set to true, the input fields colors are changed to show there is an error. |
 | `before` | Array of Objects | Icon buttons on left side of input frame. Read below more details. |
 | `after` | Array of Objects | Icon buttons on right side of input frame. Read below more details. |

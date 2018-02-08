@@ -3,20 +3,18 @@ title: Uploader
 Quasar supplies a way for you to upload files through QUploader component.
 
 Works well with [QField](/components/field.html) for additional functionality such as a helper, error message placeholder and many others.
+<input type="hidden" data-fullpage-demo="forms/uploader">
 
-> The documentation website only allows static content, so a demo with QUploader is not possible as this assumes a server script running. As a result you can only see some screenshots (may be out of date) below:
+![Uploader Screenshot 2](/images/uploader.png)
 
-![Uploader Screenshot 1](/images/uploader-1.png)
-![Uploader Screenshot 2](/images/uploader-2.png)
 ## Installation
 Edit `/quasar.conf.js`:
 ```js
 framework: {
-  components: [
-    'QUploader'
-  ]
+  components: ['QUploader']
 }
 ```
+
 ## Basic Usage
 ``` html
 <q-uploader :url="url" />
@@ -34,8 +32,14 @@ framework: {
 | `multiple` | Boolean | Allow multiple file uploads |
 | `hide-upload-button` | Boolean | Hides the Upload button. You can then trigger it manually by calling `upload()` on the Vue ref |
 | `hide-upload-progress` | Boolean | Hides the upload progress. Useful when you want some other means of signaling upload progress to the user. |
-| `additionalFields` | Array | **Additional fields to send along the upload request.** Useful for authentication and so on. Array of Objects containing `name` and `value` props. |
-| `send-raw` | Boolean | Don't use **multipart/form-data** and send the file content inside the request body. If using this approach you will need to specify the correct **Content-Type** header. Defaults to false.
+| `additional-fields` | Array | **Additional fields to send along the upload request.** Useful for authentication and so on. Array of Objects containing `name` and `value` props. |
+| `no-thumbnails` | Boolean | Don't display thumbnails when files are images. |
+| `auto-expand` | Boolean | Auto-expand the list of files when some are added to the queue. |
+| `expand-style` | String/Array/Object | Style of the expanded file list container. |
+| `expand-class` | String/Array/Object | Classes of the expanded file list container. |
+| `send-raw` | Boolean | Don't use **multipart/form-data** and send the file content inside the request body. If using this approach you will need to specify the correct **Content-Type** header. Defaults to false. |
+| `readonly` | Boolean | If set to `true`, Uploader is displayed as read-only. |
+| `clearable` | Boolean | If set to `true`, the component offers the user an actionable icon to remove the current selection. |
 
 Common input frame properties:
 
@@ -47,9 +51,11 @@ Common input frame properties:
 | `stack-label` | String | A text label that will be shown above the input field and is static. |
 | `color` | String | One from [Quasar Color Palette](/components/color-palette.html). |
 | `inverted` | Boolean | Inverted mode. Color is applied to background instead. |
+| `inverted-light` | Boolean | Inverted mode with a light color. Color is applied to background instead. |
 | `dark` | Boolean | Is QUploader rendered on a dark background? |
+| `hide-underline` | Boolean | Hides the bottom border. |
 | `align` | String | One of 'left', 'center' or 'right' which determines the text align within textfield. |
-| `disable` | Boolean | If set to `true`, textfield is disabled and the user cannot type anything. |
+| `disable` | Boolean | If set to `true`, Uploader is disabled and the user cannot change anything. |
 | `error` | Boolean | If set to true, the input fields colors are changed to show there is an error. |
 | `before` | Array of Objects | Icon buttons on left side of input frame. Read below more details. |
 | `after` | Array of Objects | Icon buttons on right side of input frame. Read below more details. |

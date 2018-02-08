@@ -57,6 +57,7 @@ Common input field properties:
 | `autofocus` | Boolean | Focus input field after rendering component. |
 | `placeholder` | String | A text to be shown on textfield, mainly to explain what should be entered. |
 | `loading` | Boolean | Place the default spinner of the theme after textfield to highlight some process takes place in the background. |
+| `clearable` | Boolean | If set to `true`, the component offers the user an actionable icon to remove the current selection. |
 
 Common input frame properties:
 

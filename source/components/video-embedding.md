@@ -2,15 +2,15 @@ title: Video Embedding
 ---
 Embedding a video like Youtube is easy. It also resizes to fit the container by default.
 <input type="hidden" data-fullpage-demo="media/video">
+
 ## Installation
 Edit `/quasar.conf.js`:
 ```js
 framework: {
-  components: [
-    'QVideo'
-  ]
+  components: ['QVideo']
 }
 ```
+
 ## Using QVideo
 ``` html
 <q-video
