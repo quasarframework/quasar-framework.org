@@ -386,7 +386,9 @@ If you want to trigger a button's `@click` event multiple times on click and hol
         console.log('Handler Triggered')
       },
       repeatFunction (timesTriggered) {
-        return 1000 / (timesTriggered + 1) // cannot divide by 0, so add 1
+        // first time timesTriggered is 0, so we add 1
+        // to be sure we don't divide by 0
+        return 1000 / (timesTriggered + 1)
       }
     }
   }
