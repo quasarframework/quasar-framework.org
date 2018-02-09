@@ -1,7 +1,7 @@
 title: Select
 ---
 Select component has two types of selection: single selection (using Radios or Lists) or multiple selection (using Checkboxes or Toggles). This component opens up a Popover for the selection list and action. A filter can also be used for longer lists.
-<input type="hidden" data-fullpage-demo="forms/select/standard-select">
+<input type="hidden" data-fullpage-demo="forms/select">
 
 If you need a Dialog for the selection, use the sibling [Dialog Select](/components/dialog-select.html) component.
 

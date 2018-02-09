@@ -1,7 +1,7 @@
 title: Color Picker
 ---
 The ColorPicker component provides a method to input colors. There is also one more version available: [Color Input](/components/color-input.html).
-<input type="hidden" data-fullpage-demo="forms/color-picker/color-picker">
+<input type="hidden" data-fullpage-demo="forms/color/color-picker">
 
 Works well with [QField](/components/field.html) for additional functionality such as a helper, error message placeholder and many others.
 

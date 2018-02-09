@@ -80,7 +80,7 @@ components:
     Pagination: $
   Form Components:
     Field: $
-    Input: $
+    Input TextField: $
     Form Validation: $
     Chips Input: $
     Color Input: $

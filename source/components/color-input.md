@@ -1,7 +1,7 @@
 title: Color Input
 ---
 The Color component provides a method to input colors. There is also one more version available: [Color Picker](/components/color-picker.html).
-<input type="hidden" data-fullpage-demo="forms/color-picker/color">
+<input type="hidden" data-fullpage-demo="forms/color/color-input">
 
 Works well with [QField](/components/field.html) for additional functionality such as a helper, error message placeholder and many others.
 

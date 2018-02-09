@@ -1,7 +1,7 @@
 title: Datetime Input
 ---
 The Datetime component provides a method to input dates and time or both. There is also one more version available: [Datetime Picker](/components/datetime-picker.html).
-<input type="hidden" data-fullpage-demo="forms/datetime/datetime">
+<input type="hidden" data-fullpage-demo="forms/datetime/datetime-input">
 
 You'll notice in the demos that the iOS and Material Datetime pickers look and act totally different, just like their native counterparts.
 
