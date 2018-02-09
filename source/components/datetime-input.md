@@ -1,13 +1,19 @@
-title: Datetime
+title: Datetime Input
 ---
-The Datetime component provides a method to input dates and time or both. There are also two more versions available: [Inline Datetime](/components/inline-datetime.html) and [Datetime Range](/components/datetime-range.html).
-<input type="hidden" data-fullpage-demo="forms/datetime/input-datetime">
+The Datetime component provides a method to input dates and time or both. There is also one more version available: [Datetime Picker](/components/datetime-picker.html).
+<input type="hidden" data-fullpage-demo="forms/datetime/datetime">
 
 You'll notice in the demos that the iOS and Material Datetime pickers look and act totally different, just like their native counterparts.
 
 Works well with [QField](/components/field.html) for additional functionality such as a helper, error message placeholder and many others.
 
-<input type="hidden" data-fullpage-demo="form/datetime/input">
+## Installation
+Edit `/quasar.conf.js`:
+```js
+framework: {
+  components: ['QDatetime']
+}
+```
 
 ## Basic Usage
 
@@ -28,41 +34,57 @@ Supports `v-model` which must be a String, Number or Date Object.
 | Vue Property | Type | Description |
 | --- | --- | --- |
 | `type` | String | One of `date`, `time` or `datetime`. Default is `date`. |
+| `clearable` | Boolean | If set to `true`, the component offers the user an actionable icon to remove the current selection. |
+| `readonly` | Boolean | If set to `true`, component is displayed as read-only. |
 | `min` | String | Optional minimum value it can take. Has same format as Datetime model. |
 | `max` | String | Optional maximum value it can take. Has same format as Datetime model. |
-| `month-names` | Array | Array of month names, starting with January. |
-| `day-names` | Array | Array of day names, starting with Sunday, Monday, ... |
-| `default-selection` | String/Number/Date | Default date/time for picker when model is not yet set. |
-| `monday-first` | Boolean | Use Monday as first day of week. Otherwise it's Sunday. |
-| `saturday-first` | Boolean | Use Saturday as first day of week. Otherwise it's Sunday. |
+| `default-view` | String | One of 'year', 'month', 'day', 'hour', 'minute'. |
+| `default-value` | String/Number/Date | Default date/time for picker when model is not yet set. |
+| `display-value` | String | Text to display on input frame. Supersedes 'placeholder'. |
+| `first-day-of-week` | Number | 0-6, 0 - Sunday, 1 Monday, .... |
+| `hide-underline` | Boolean | Hides the bottom border. |
+| `popover` | Boolean | Always display with a Popover, regardless of Platform. |
+| `modal` | Boolean | Always display with a Modal, regardless of Platform. |
 | `format` | String | Format as described on Handling JS Date page under [Format for display](/components/handling-js-date.html#Format-for-display) section. |
-| `format24h` | Boolean | Use 24 hour time for Material picker instead of AM/PM system which is default. |
+| `format-model` | String | Data type of model (useful especially when starting out with undefined or null. One of 'auto', 'date', 'number', 'string'. |
+| `format24h` | Boolean | Override default i18n setting. Use 24 hour time for Material picker instead of AM/PM system which is default. |
 | `placeholder` | String | Placeholder text for input frame to use when model is not set (empty). |
-| `display-value` | String | Text to display on input frame. Superseeds 'placeholder'. |
-| `no-clear` | Boolean | If set to `true`, the clear button won't be shown. |
-| `ok-label` | String | Text for the button to accept the input. |
-| `clear-label` | String | Text for the button to clear the field. |
-| `cancel-label` | String | Text for the button to cancel input with no change. |
+| `ok-label` | String | Text for the button to accept the input (when using Modal). |
+| `cancel-label` | String | Text for the button to cancel input with no change (when using Modal). |
+| `month-names` | Array | If you want to override the default i18n. Array of month names, starting with January. |
+| `day-names` | Array | If you want to override the default i18n. Array of day names, starting with Sunday, Monday, ... |
 
 Common input frame properties:
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `prefix` | String | A text that should be shown before the textfield. |
-| `suffix` | String | A text that should be shown after the textfield. |
+| `prefix` | String | A text that should be shown before the value of model. |
+| `suffix` | String | A text that should be shown after the value of model. |
 | `float-label` | String | A text label that will "float" up above the input field, once the input field gets focus. |
 | `stack-label` | String | A text label that will be shown above the input field and is static. |
 | `color` | String | One from [Quasar Color Palette](/components/color-palette.html). |
 | `inverted` | Boolean | Inverted mode. Color is applied to background instead. |
-| `dark` | Boolean | Is QDatetime rendered on a dark background? |
-| `align` | String | One of 'left', 'center' or 'right' which determines the text align within textfield. |
-| `disable` | Boolean | If set to `true`, textfield is disabled and the user cannot type anything. |
+| `inverted-light` | Boolean | Inverted mode with a light color. Color is applied to background instead. |
+| `dark` | Boolean | Is component rendered on a dark background? |
+| `align` | String | One of 'left', 'center' or 'right' which determines the text align. |
+| `disable` | Boolean | If set to `true`, component is disabled and the user cannot change model. |
+| `warning` | Boolean | If set to true, the input fields colors are changed to show there is a warning. |
 | `error` | Boolean | If set to true, the input fields colors are changed to show there is an error. |
 | `before` | Array of Objects | Icon buttons on left side of input frame. Read below more details. |
 | `after` | Array of Objects | Icon buttons on right side of input frame. Read below more details. |
 
+### Lazy Input
+Vue will soon supply the `.lazy` modifier for v-model on components too, but until then, you can use the longer equivalent form:
+```html
+<q-datetime
+  type="date"
+  :value="model"
+  @change="val => { model = val }"
+/>
+```
+
 ### Icon buttons
-This section refers to `before` and `after` properties which can add additional buttons as icons to the textfield. Here is the structure of the two properties:
+This section refers to `before` and `after` properties which can add additional buttons as icons to the component. Here is the structure of the two properties:
 
 ```js
 {
@@ -77,7 +99,7 @@ This section refers to `before` and `after` properties which can add additional 
   content: Boolean,
 
   // Optional. Show icon button
-  // if textfield is marked with error
+  // if model is marked with error
   error: Boolean
 }
 ```
@@ -91,7 +113,6 @@ Examples:
 <q-datetime
   v-model="date"
   :error="error"
-  type="password"
   :after="[
     {
       icon: 'warning',
@@ -124,14 +145,16 @@ Examples:
 ## Vue Methods
 | Vue Method | Description |
 | --- | --- |
-| `open()` | Show Popover (on desktop) and Dialog (on mobile) to select date and/or time. |
-| `close([Function])` | Hide Popover (on desktop) and Dialog (on mobile) to select date and/or time and execute Function after it's been hidden. |
+| `show()` | Show Popover (on desktop) and Dialog (on mobile) to select date and/or time. Returns a Promise. |
+| `hide()` | Hide Popover (on desktop) and Dialog (on mobile) to select date and/or time and execute Function after it's been hidden. Returns a Promise. |
+| `toggle()` | Toggle the Popover or Modal. |
 | `clear()` | Sets model to empty string (removes current value). |
 
 ## Vue Events
 | Vue Event | Description |
 | --- | --- |
-| `@change(newValue)` | Triggered on model value change. |
+| `@input(newVal)` | Triggered on immediate model value change. |
+| `@change(newVal)` | Triggered on lazy model value change. |
 | `@blur` | Triggered, when the modal/ popup is closed. |
 | `@focus` | Triggered, when the modal/ popup is opened. |
 
@@ -177,26 +200,8 @@ export default {
 
 ## More Examples
 
-### Error State
-Use the `error` prop, if you'd like for the component to turn red:
-``` html
-<q-datetime :error="hasError" v-model="model" type="datetime" />
-```
-
-### Disabled State
-Use the `disable` prop to completely disable the field.
-``` html
-<q-datetime disable v-model="model" type="datetime" />
-```
-
-### 24h Mode
-Sometimes, the locale of your user will be one where 24h formatting is needed. Use the `format24h` prop for this purpose.
-```html
-<q-datetime format24h v-model="model" type="time" />
-```
-
 ### Coloring
-Use the `color` and `inverse` props to control the color.
+Use the `color` and `inverted`/`inverted-light` props to control the color.
 ```html
 <q-datetime
   color="amber-7"
@@ -226,13 +231,13 @@ Also, if QDatetime is displayed on a dark background, add the `dark` property.
   <q-item>
     <q-item-side icon="access_time" />
     <q-item-main>
-      <q-datetime class="no-margin" v-model="model" type="time" />
+      <q-datetime v-model="model" type="time" />
     </q-item-main>
   </q-item>
   <q-item>
     <q-item-side icon="update" />
     <q-item-main>
-      <q-datetime class="no-margin" v-model="model" type="date" />
+      <q-datetime v-model="model" type="date" />
     </q-item-main>
   </q-item>
   <q-item-separator />
@@ -240,7 +245,7 @@ Also, if QDatetime is displayed on a dark background, add the `dark` property.
   <q-item>
     <q-item-side icon="notifications" />
     <q-item-main>
-      <q-datetime class="no-margin" v-model="model" type="datetime" />
+      <q-datetime v-model="model" type="datetime" />
     </q-item-main>
   </q-item>
 </q-list>

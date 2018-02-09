@@ -83,6 +83,7 @@ components:
     Input: $
     Form Validation: $
     Chips Input: $
+    Color Input: $
     Color Picker: $
     Autocomplete: $
     Editor: $
@@ -94,7 +95,8 @@ components:
     Toggle: $
     Button Toggle: $
     Option Group: $
-    Datetime: $
+    Datetime Input: $
+    Datetime Picker: $
     Select: $
     Rating: $
     Knob: $
