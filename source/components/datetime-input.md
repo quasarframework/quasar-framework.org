@@ -46,7 +46,7 @@ Supports `v-model` which must be a String, Number or Date Object.
 | `popover` | Boolean | Always display with a Popover, regardless of Platform. |
 | `modal` | Boolean | Always display with a Modal, regardless of Platform. |
 | `format` | String | Format as described on Handling JS Date page under [Format for display](/components/handling-js-date.html#Format-for-display) section. |
-| `format-model` | String | Data type of model (useful especially when starting out with undefined or null. One of 'auto', 'date', 'number', 'string'. |
+| `format-model` | String | Data type of model (useful especially when starting out with undefined or null). One of 'auto', 'date', 'number', 'string'. |
 | `format24h` | Boolean | Override default i18n setting. Use 24 hour time for Material picker instead of AM/PM system which is default. |
 | `placeholder` | String | Placeholder text for input frame to use when model is not set (empty). |
 | `ok-label` | String | Text for the button to accept the input (when using Modal). |
@@ -108,7 +108,7 @@ Examples:
 ```html
 <!--
   Show an icon button (with 'warning' as icon)
-  when there is an error on QDatetime (through "error" prop)
+  when there is an error on component (through "error" prop)
 -->
 <q-datetime
   v-model="date"

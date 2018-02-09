@@ -42,7 +42,7 @@ Supports `v-model` which must be a String, Number or Date Object.
 | `default-value` | String/Number/Date | Default date/time for picker when model is not yet set. |
 | `display-value` | String | Text to display on input frame. Supersedes 'placeholder'. |
 | `first-day-of-week` | Number | 0-6, 0 - Sunday, 1 Monday, .... |
-| `format-model` | String | Data type of model (useful especially when starting out with undefined or null. One of 'auto', 'date', 'number', 'string'. |
+| `format-model` | String | Data type of model (useful especially when starting out with undefined or null). One of 'auto', 'date', 'number', 'string'. |
 | `color` | String | One from [Quasar Color Palette](/components/color-palette.html). |
 | `dark` | Boolean | Is component rendered on a dark background? |
 | `format24h` | Boolean | Override default i18n setting. Use 24 hour time for Material picker instead of AM/PM system which is default. |
