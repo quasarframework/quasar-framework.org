@@ -8,6 +8,14 @@ Remember you can use QSlider wrapped by a [QField](/components/field.html) too.
 
 Works well with [QField](/components/field.html) for additional functionality such as a helper, error message placeholder and many others.
 
+## Installation
+Edit `/quasar.conf.js`:
+```js
+framework: {
+  components: ['QSlider']
+}
+```
+
 ## Basic Usage
 
 ``` html
@@ -48,36 +56,37 @@ Supports `v-model` which should be binded to a Number in your scope.
 | `label-value` | String | Override default label value. |
 | `fill-handle-always` | Boolean | Fill handle even if at minimum value. |
 | `step` | Number | Specify step amount between valid values. |
+| `decimals` | Number | Specify maximum number of decimals. |
 | `snap` | Boolean | Range handler will snap on values, rather than sliding freely; good to use along `step`; also displays step markers on the Range. |
 | `markers` | Boolean | Display markers on background, one for each possible value for the model. |
 | `square` | Boolean | When `true`. the slider button is square instead of round. |
 | `color` | String | One of [Quasar Color Palette](/components/color-palette.html). |
 | `error` | Boolean | If set to `true`, the slider is turned red. |
+| `warning` | Boolean | If set to `true`, the slider is turned yellowish. |
+| `readonly` | Boolean | If set to `true`, the user cannot change model value. |
 | `disable` | Boolean | If set to `true`, the user cannot change model value. |
 
 > **IMPORTANT**
 > Make sure you choose the `min`, `max` and `step` value correctly. `step` must be a divisor of `max - min`, otherwise the component won't work right. This is because all valid steps must be able to hold an equal position within the `min` and `max` values.
 
-### Error State
-Use the `error` prop to indicate there is an error. This will turn the component red:
-``` html
-<q-slider error v-model="selectedValue" :min="0" :max="50" />
-```
-
-### Disabled
-Use the `disable` prop to stop the user from changing the slider value.
-``` html
-<q-slider v-model="selectedValue" :min="0" :max="50" disable />
-```
-
 ### Overriding Label
 In the example below we add a "px" suffix to the label.
 ``` html
 <q-slider
-  v-model="label"
+  v-model="model"
   label-always
   :min="-20" :max="20"
-  :label-value="`${label}px`"
+  :label-value="`${model}px`"
+/>
+```
+
+### Lazy Input
+Vue will soon supply the `.lazy` modifier for v-model on components too, but until then, you can use the longer equivalent form:
+```html
+<q-slider
+  :value="model"
+  @change="val => { model = val }"
+  :min="0" :max="20"
 />
 ```
 
@@ -85,13 +94,20 @@ In the example below we add a "px" suffix to the label.
 Use one of the Quasar colors from the Color Palette with the `color` prop, like `primary`, `secondary`, `orange-8`, `teal-4`:
 
 ``` html
-<q-slider color="orange" v-model="standalone" :min="0" :max="50" label />
+<q-slider
+  color="orange"
+  v-model="standalone"
+  :min="0"
+  :max="50"
+  label
+/>
 ```
 
 ## Vue Events
 | Vue Event | Description |
 | --- | --- |
-| `@change(newVal)` | Triggered on model value change. |
+| `@input(newVal)` | Triggered immediately on model value change. |
+| `@change(newVal)` | Triggered on lazy model value change. |
 
 ## Usage Inside of a List
 

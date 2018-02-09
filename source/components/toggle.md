@@ -11,11 +11,10 @@ Works well with [QField](/components/field.html) for additional functionality su
 Edit `/quasar.conf.js`:
 ```js
 framework: {
-  components: [
-    'QToggle'
-  ]
+  components: ['QToggle']
 }
 ```
+
 ## Basic Usage
 
 ``` html
@@ -41,18 +40,25 @@ Supports `v-model` which should be binded to a Boolean or Array in your scope.
 
 | Vue Property | Type | Description |
 | --- | --- | --- |
+| `val` | Object  | Used to modify the v-model of the Toggle when using an Array as `v-model`. |
+| `true-value` | Any | Gets into "true" state when model has this value. |
+| `false-value` | Any | Gets into "false" state when model has this value. |
 | `label` | String | The text label for the Toggle. |
 | `left-label` | Boolean | Set to `true`, if the label should be placed to the left of the Toggle. |
 | `icon` | String | Optional icon to use. Overriden by `checked-icon` and `unchecked-icon` if the latter are used. |
 | `checked-icon` | String | The icon to use, when the Toggle is checked. |
 | `unchecked-icon` | String | The icon to use, when the Toggle is not checked. |
 | `color` | String | Color from [Quasar Color Palette](/components/color-palette.html). |
-| `disable` | Boolean | Set to true, to disable the toggle. |
-| `val` | Object  | Used to modify the v-model of the Toggle when using an Array as `v-model`. |
+| `keep-color` | Boolean | Keep color when not truthy too. |
+| `readonly` | Boolean | Set to `true`, to make the toggle read-only. |
+| `disable` | Boolean | Set to `true`, to disable the toggle. |
+| `dark` | Boolean | Set to `true` when background is dark. |
 
 ## Vue Events
 | Vue Event | Description |
 | --- | --- |
+| `@input(newVal)` | Triggered immediately on model value change. |
+| `@change(newVal)` | Triggered on lazy model value change. |
 | `@blur` | Triggered, when Toggle loses focus. |
 | `@focus` | Triggered, when Toggle gains focus. |
 
@@ -83,6 +89,18 @@ Ticking all toggles will make `selection` scope variable to be `['one', 'two', '
 
 ## More Examples
 There are a number of props, which are available to help quickly format a Toggle. An interesting feature of Toggle is the ripple effect that user gets when clicking/tapping on it to change its state.
+
+### Custom Model Values
+Instead of the default `true/false` values, you can use custom ones:
+```html
+<q-toggle
+  v-model="customModel"
+  color="secondary"
+  label="Do you agree with the terms & conditions?"
+  true-value="yes"
+  false-value="no"
+/>
+```
 
 ### Specific State Icons
 For a more informational Toggle, you can also use the `checked-icon` and `unchecked-icon` props to display an inset icon in the toggle.

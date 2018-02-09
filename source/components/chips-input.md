@@ -7,6 +7,14 @@ For more details on Chips used within Chips Input, please refer to its [document
 
 Works well with [QField](/components/field.html) for additional functionality such as a helper, error message placeholder and many others.
 
+## Installation
+Edit `/quasar.conf.js`:
+```js
+framework: {
+  components: ['QChipsInput']
+}
+```
+
 ## Basic Usage
 
 ``` html
@@ -34,8 +42,12 @@ Supports `v-model` which should be binded to an Array of Strings in your scope.
 
 | Vue Property | Type | Description |
 | --- | --- | --- |
-| `frame-color` | String | One from [Quasar Color Palette](/components/color-palette.html). See "Coloring" section. |
+| `chips-color` | String | Override default children chips text color. |
+| `chips-bg-color` | String | Override default children chips background color. |
+| `add-icon` | String | Override add icon (the one on the right side) to another one. |
 | `readonly` | Boolean | If readonly user can not add or remove chips. |
+
+Also note you can use the native DOM attributes of an input: "max-length", "autocomplete" and so on.
 
 Common input field properties:
 
@@ -43,9 +55,9 @@ Common input field properties:
 | --- | --- | --- |
 | `autofocus` | Boolean | Focus input field after rendering component. |
 | `placeholder` | String | A text to be shown on textfield, mainly to explain what should be entered. |
-| `name` | String | Adds a "name" attribute to the input field. |
-| `max-length` | Number/String | Maximum characters allowed on input field. |
 | `loading` | Boolean | Place the default spinner of the theme after textfield to highlight some process takes place in the background. |
+
+Also note you can use the native DOM attributes of an input: "name", "max-length", "autocomplete" and so on. They are applied to the native `<input>` contained by QChipsInput.
 
 Common input frame properties:
 
@@ -57,9 +69,12 @@ Common input frame properties:
 | `stack-label` | String | A text label that will be shown above the input field and is static. |
 | `color` | String | One from [Quasar Color Palette](/components/color-palette.html). |
 | `inverted` | Boolean | Inverted mode. Color is applied to background instead. |
+| `inverted-light` | Boolean | Inverted mode with a light color. Color is applied to background instead. |
+| `hide-underline` | Boolean | Hides the bottom border. |
 | `dark` | Boolean | Is QChipsInput rendered on a dark background? |
 | `align` | String | One of 'left', 'center' or 'right' which determines the text align within textfield. |
 | `disable` | Boolean | If set to `true`, textfield is disabled and the user cannot type anything. |
+| `warning` | Boolean | If set to true, the component colors are changed to show there is a warning. |
 | `error` | Boolean | If set to true, the input fields colors are changed to show there is an error. |
 | `before` | Array of Objects | Icon buttons on left side of input frame. Read below more details. |
 | `after` | Array of Objects | Icon buttons on right side of input frame. Read below more details. |
@@ -103,9 +118,9 @@ Examples:
 ```
 
 ### Coloring
-As you may have noticed above, there's a "color" and "frame-color" along "inverted" and "dark" properties.
-By default, if you only use "color" then the input frame and Chips will share the color. If there's also a "frame-color" specified then the input frame color can differ from Chips' one.
-When you want the frame inverted (color is applied to background), then specify "inverted" property.
+As you may have noticed above, there's a "color", "chips-color" and "chips-bg-color" along with "inverted"/"inverted-light" and "dark" properties.
+By default, if you only use "color" then the input frame and Chips will share the color. If there's also a "chips-color" or "chips-bg-color" specified then the encapsulated chips' colors will be overwritten.
+When you want the frame inverted (color is applied to background), then specify "inverted" property. Use "inverted-light" when the color is light.
 When used on a dark background, specify "dark" property.
 
 ```html
@@ -116,17 +131,15 @@ When used on a dark background, specify "dark" property.
 <q-chips-input color="secondary" v-model="model" />
 
 <!--
-  Using "frame-color" for the input frame,
-  and "color" for the color of Chips.
+  Coloring the encapsulated Chips.
 -->
-<q-chips-input color="dark" bg-color="amber" v-model="model" />
-
-<!--
-  Using "frame-color" for the input frame,
-  and "color" for the color of Chips
-  on inverted mode (frame-color is applied as background).
--->
-<q-chips-input color="dark" bg-color="amber" v-model="model" />
+<q-chips-input
+  color="amber"
+  chips-color="yellow"
+  chips-bg-color="black"
+  inverted-light
+  v-model="model"
+/>
 
 <!--
   When we use the component on a dark background,
@@ -135,6 +148,15 @@ When used on a dark background, specify "dark" property.
 <div class="bg-grey-9" style="padding: 15px">
   <q-chips-input dark color="amber" v-model="model" />
 </div>
+```
+
+### Lazy Input
+Vue will soon supply the `.lazy` modifier for v-model on components too, but until then, you can use the longer equivalent form:
+```html
+<q-chips-input
+  :value="model"
+  @change="val => { model = val }"
+/>
 ```
 
 ## Vue Methods
@@ -148,7 +170,8 @@ When used on a dark background, specify "dark" property.
 ## Vue Events
 | Vue Event | Description |
 | --- | --- |
-| `@change(newVal)` | Triggered on model value change. |
+| `@input(newVal)` | Triggered immediately on model value change. |
+| `@change(newVal)` | Triggered on lazy model value change. |
 
 ## More Examples
 
@@ -170,7 +193,7 @@ When used on a dark background, specify "dark" property.
   <q-item multiline>
     <q-item-side icon="edit" />
     <q-item-main>
-      <q-chips-input v-model="model" class="no-margin" placeholder="Type names"/>
+      <q-chips-input v-model="model" placeholder="Type names"/>
     </q-item-main>
   </q-item>
 </q-list>

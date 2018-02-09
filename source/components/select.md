@@ -1,11 +1,19 @@
 title: Select
 ---
 Select component has two types of selection: single selection (using Radios or Lists) or multiple selection (using Checkboxes or Toggles). This component opens up a Popover for the selection list and action. A filter can also be used for longer lists.
-<input type="hidden" data-fullpage-demo="forms/select/standard-select">
+<input type="hidden" data-fullpage-demo="forms/select">
 
 If you need a Dialog for the selection, use the sibling [Dialog Select](/components/dialog-select.html) component.
 
 Works well with [QField](/components/field.html) for additional functionality such as a helper, error message placeholder and many others.
+
+## Installation
+Edit `/quasar.conf.js`:
+```js
+framework: {
+  components: ['QSelect']
+}
+```
 
 ## Basic Usage
 
@@ -74,12 +82,15 @@ Supports `v-model` which should be the String for single selection and Array for
 | `radio` | Boolean | If set to `true`, the selection will be through radios. For single selection only. |
 | `toggle` | Boolean | If set to `true`, the selection options will offer a toggle to select them. |
 | `chips` | Boolean | If set to `true`, the selections will appear as chips (instead of comma separated strings) on the input frame (works for multiple selection only). |
-| `frame-color` | String | One from [Quasar Color Palette](/components/color-palette.html). Useful when `color` is to be used for Chips alone and you want a different color for the input frame. |
+| `chips-color` | String | Override default children chips text color. |
+| `chips-bg-color` | String | Override default children chips background color. |
+| `readonly` | Boolean | If set to `true`, select is readonly and the user cannot change model. |
 | `filter` | Boolean | If set to `true`, the selections will offer an input to filter the selection options. |
 | `autofocus-filter` | Boolean | Auto-focus on the filter input field (if available) when opening selection. |
 | `filter-placeholder` | String | A text to show in the filter input field. Default is "Filter". |
 | `separator` | Boolean | If set to `true`, the selection options will be separated by a line. |
 | `display-value` | String | Overrides text displayed in input frame. See "Working with Display Value" section below. |
+| `placeholder` | String | Placeholder text. |
 | `clearable` | Boolean | If set to `true`, the component offers the user an actionable icon to remove the current selection. |
 
 Common input frame properties:
@@ -90,11 +101,14 @@ Common input frame properties:
 | `suffix` | String | A text that should be shown after the textfield. |
 | `float-label` | String | A text label that will "float" up above the input field, once the input field gets focus. |
 | `stack-label` | String | A text label that will be shown above the input field and is static. |
-| `color` | String | A color from the [Quasar Color Palette](/components/color-palette.html). |
-| `inverted` | Boolean | Inverted mode. The color is applied to the background instead. |
-| `dark` | Boolean | Is QSelect rendered on a dark background? |
+| `color` | String | One from [Quasar Color Palette](/components/color-palette.html). |
+| `inverted` | Boolean | Inverted mode. Color is applied to background instead. |
+| `inverted-light` | Boolean | Inverted mode with a light color. Color is applied to background instead. |
+| `hide-underline` | Boolean | Hides the bottom border. |
+| `dark` | Boolean | Is QChipsInput rendered on a dark background? |
 | `align` | String | One of 'left', 'center' or 'right' which determines the text align within the textfield. |
 | `disable` | Boolean | If set to `true`, the field is disabled and the user cannot select anything. |
+| `warning` | Boolean | If set to true, the component colors are changed to show there is a warning. |
 | `error` | Boolean | If set to `true`, the input field's colors are changed to show there is an error. |
 | `before` | Array of Objects | Icon buttons positioned on the left side of field. |
 | `after` | Array of Objects | Icon buttons on the right side of the field.
@@ -167,7 +181,6 @@ Use the `radio` prop for single selections. These checkboxes are inserted where 
 <!-- Radios for single selections -->
 <q-select
   radio
-  @change="onChange"
   v-model="select"
   float-label="Gogu"
   :options="selectListOptions"
@@ -247,6 +260,8 @@ Use an Object for each option like above (notice that it uses some properties fr
 | `icon` | String | Icon on the left to use. |
 | `avatar` | String | URL pointing to statics for an avatar. |
 | `letter` | String | One character String. |
+| `leftInverted` | Boolean | Invert mode, but only for icon and letter. |
+| `leftTextColor` | String | Override default "white" text-color when using an icon or letter only. |
 | `image` | String | URL pointing to statics for an image. |
 | `label` | String | Main label of the selection. |
 | `sublabel` | String | Sub-label of the selection. |
@@ -258,6 +273,8 @@ Use an Object for each option like above (notice that it uses some properties fr
 | `rightAvatar` | String | URL pointing to statics for an avatar on right side. |
 | `rightLetter` | String | One character String for right side. |
 | `rightImage` | String | URL pointing to statics for an image on right side. |
+| `rightInverted` | Boolean | Invert mode, but only for icon and letter. |
+| `rightTextColor` | String | Override default "white" text-color when using an icon or letter only. |
 | `stamp` | String | Stamp to use for right side. Example: '10 min ago'. |
 
 ### Working with Display Value
@@ -305,6 +322,16 @@ export default {
 </script>
 ```
 
+### Lazy Input
+Vue will soon supply the `.lazy` modifier for v-model on components too, but until then, you can use the longer equivalent form:
+```html
+<q-select
+  :value="model"
+  @change="val => { model = val }"
+  :options="selectOptions"
+/>
+```
+
 ## Vue Methods
 | Vue Method | Description |
 | --- | --- |
@@ -314,7 +341,8 @@ export default {
 ## Vue Events
 | Vue Event | Description |
 | --- | --- |
-| `@change(newValue)`| Triggered on model value change. |
+| `@input(newVal)` | Triggered immediately on model value change. |
+| `@change(newVal)` | Triggered on lazy model value change. |
 | `@focus` | Triggered, when the field gets focus. |
 | `@blur` | Triggered, when the field loses focus. |
 
@@ -383,15 +411,13 @@ Use the `color`, `inverted` and `frame-color` props to control the coloring of t
 />
 
 <!--
-  With a color for chips and a different color for the frame.
-  Notice "color" and "frame-color". By default, "color" is used
-  for both frame and chips, but specifying a frame-color overrides
-  the color for the frame.
+  With custom colors for Chips.
 -->
 <q-select
-  frame-color="amber"
-  inverted
-  color="dark"
+  color="amber"
+  chips-color="yellow"
+  chips-bg-color="black"
+  inverted-light
   multiple
   chips
   v-model="multipleSelect"
