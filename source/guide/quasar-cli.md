@@ -49,7 +49,7 @@ $ quasar list
 ## Development Server
 The Quasar development server allows you to develop your App by compiling and maintaining code in-memory. A web server will serve your App while offering hot-reload out of the box. Running in-memory offers faster rebuilds when you change your code.
 
-> Hot Reload is much more than just refreshing your browser when code changes. It skips the refresh and updates your code on the fly, while maintaining your App's state (like your VueModel's data). Please note that there are cases when this is impossible, so the dev webserver will simply refresh your browser. (Always ensure you are running only one instance of quasar-cli at once, otherwise Hot-Reload and other will break!)
+> Hot Reload is much more than just refreshing your browser when code changes. It skips the refresh and updates your code on the fly, while maintaining your App's state (like your VueModel's data). Please note that there are cases when this is impossible, so the dev webserver will simply refresh your browser. (Always ensure you are running only one instance of quasar-cli at once, otherwise Hot-Reload and other stuff will break!)
 
 Furthermore, you can develop your App directly on a phone and still benefit from Hot-Reload. Download and install the Quasar Play App (currently only on Google Play Store) to achieve this functionality.
 
