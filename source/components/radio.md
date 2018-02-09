@@ -1,6 +1,6 @@
 title: Radio
 ---
-The Quasar Radio component is another basic element for user input. You can use this for one or multiple selections between one or more choices.
+The Quasar Radio component is another basic element for user input. You can use this to supply a way for the user to pick an option from multiple choices.
 <input type="hidden" data-fullpage-demo="forms/radio">
 
 Please also refer to the [Option Group documentation](/components/option-group.html) on other possibilities for creating groups of Toggles.
