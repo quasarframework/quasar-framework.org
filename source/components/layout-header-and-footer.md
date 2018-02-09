@@ -74,3 +74,8 @@ export default {
 }
 </script>
 ```
+
+## QLayoutHeader/QLayoutFooter Vue Events
+| Vue Event | Description |
+| --- | --- |
+| `@reveal(state)` | Emitted when reveal state changes. |

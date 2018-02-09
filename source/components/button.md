@@ -91,7 +91,7 @@ In the example above, the `clickMethod` would be a function to control the value
 | `size`       | String | Button size. One of `xs`, `sm`, `md`, `lg`, `xl`, or a css string size eg. `25px`, `2rem`, `3vw`. |
 | `color`      | String  | A color from [Quasar Color Palette](/components/color-palette.html). |
 | `text-color` | String  | A color from [Quasar Color Palette](/components/color-palette.html). |
-| `align`      | String  | Label/Content alignment. One of `left`, `center`, `right`. |
+| `align`      | String  | Label/Content alignment. One of `left`, `center`, `right`, `around`, `between`. |
 | `dense`      | Boolean | Dense Button. |
 | `round`      | Boolean | Set true, if you want a round button. |
 | `outline`    | Boolean | Set true, if you want an outlined button. |
@@ -122,6 +122,9 @@ When adding an icon to a regular button, there are two possibilities for its pos
 
 <!-- icon will be placed on the right -->
 <q-btn icon-right="mail" color="teal" label="Button Label" />
+
+<!-- icona will be placed on both sides -->
+<q-btn icon="mail" icon-right="mail" color="teal" label="Button Label" />
 ```
 
 ## Button Sizes
@@ -353,5 +356,41 @@ To disable the button, use the `disable` prop. Along with a small fade applied t
 If you want to use a button to navigate to a new page you don't need to use a wrapping `<router-link>` tag. Instead, you can use the `@click` event to handle the route change.
 
 ```html
-<q-btn @click="$router.push('/path/to/new/page')" color="primary" />
+<q-btn @click="$router.push('/path/to/new/page')" color="primary" label="navigate" />
+```
+
+## Delaying button click event
+
+On material theme you can delay a button's `@click` until the material ripple has reached the edge of the button using the `wait-for-ripple` prop
+
+```html
+<q-btn @click="clickHandler" wait-for-ripple label="click me" />
+```
+
+## Using a click and hold button
+
+If you want to trigger a button's `@click` event multiple times on click and hold use the `repeat-timeout` prop. Accepts either a number or function
+
+```html
+<template>
+  <!-- Click and hold to triger every second -->
+  <q-btn @click="clickHandler" :repeat-timeout="1000" label="click me" />
+
+  <!-- Click and hold to triger faster over time -->
+  <q-btn @click="clickHandler" :repeat-timeout="repeatFunction" label="click me" />
+</template>
+<script>
+  export default {
+    methods: {
+      clickHandler () {
+        console.log('Handler Triggered')
+      },
+      repeatFunction (timesTriggered) {
+        // first time timesTriggered is 0, so we add 1
+        // to be sure we don't divide by 0
+        return 1000 / (timesTriggered + 1)
+      }
+    }
+  }
+</script>
 ```
