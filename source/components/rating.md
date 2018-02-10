@@ -5,6 +5,14 @@ Quasar Rating is a Component which allows users to rate items, usually known as 
 
 Works well with [QField](/components/field.html) for additional functionality such as a helper, error message placeholder and many others.
 
+## Installation
+Edit `/quasar.conf.js`:
+```js
+framework: {
+  components: ['QRating']
+}
+```
+
 ## Basic Usage
 
 ``` html
@@ -38,6 +46,7 @@ Supports `v-model` which should be binded to a Number in your scope.
 ## Vue Events
 | Vue Event | Description |
 | --- | --- |
+| `@input(newVal)` | Triggered on model value change. |
 | `@change(newVal)` | Triggered on model value change. |
 
 ## Coloring

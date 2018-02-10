@@ -5,6 +5,14 @@ The Quasar Option Group component is a helper component, which allows you to bet
 
 Works well with [QField](/components/field.html) for additional functionality such as a helper, error message placeholder and many others.
 
+## Installation
+Edit `/quasar.conf.js`:
+```js
+framework: {
+  components: ['QOptionGroup']
+}
+```
+
 ## Basic Usage
 
 Example on a group of checkboxes:
@@ -72,17 +80,36 @@ Supports `v-model`, which is required. For "radio" type it must be a String, oth
 | --- | --- | --- |
 | `type` | String | The type of input component to be used. The default is `radio`. The other choices are `checkbox` and `toggle`. |
 | `options` | Array | An array of objects with `value` and `label` properties. The binary components will be created according to this array. |
-| `color` | String | One from [Quasar Color Palette](/components/color-palette.html). |
 | `left-label` | Boolean | When set to `true`, the labels will be put on the left side. |
 | `inline` | Boolean | Adjusts the display of the binary components fill out the row, instead of being stacked vertically. |
+| `color` | String | Color from [Quasar Color Palette](/components/color-palette.html). |
+| `keep-color` | Boolean | Keep color when not selected/truthy too. |
+| `readonly` | Boolean | Set to `true`, to make the binary components read-only. |
 | `disable` | Boolean | When set to `true`, the binary components are not selectable thus cannot change your `v-model`. |
+| `dark` | Boolean | Set to `true` when background is dark. |
 
 ## Vue Events
 | Vue Event | Description |
 | --- | --- |
+| `@input` | Triggered immediately when model changes. |
 | `@change` | Fired when the component model changes. |
 | `@focus` | Fired when the component gets focus. |
 | `@blur` | Fired when the component loses focus. |
+
+### Lazy Input
+Vue will soon supply the `.lazy` modifier for v-model on components too, but until then, you can use the longer equivalent form:
+```html
+<q-option-group
+  type="radio"
+  :value="model"
+  @change="val => { model = val }"
+  :options="[
+    { label: 'Option 1', value: 'op1' },
+    { label: 'Option 2', value: 'op2' },
+    { label: 'Option 3', value: 'op3' }
+  ]"
+/>
+```
 
 ## Other Examples
 A group of radios with different colors.

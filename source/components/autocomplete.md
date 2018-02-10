@@ -3,6 +3,14 @@ title: Autocomplete
 The Quasar Autocomplete component binds to the parent textfield (eg. QInput, QSearch) and offers suggestions to the user, while the user is typing. The suggestions offered to the user are based on either a static list of results or on an asynchronous function call (eg. containing an Ajax request).
 <input type="hidden" data-fullpage-demo="forms/autocomplete">
 
+## Installation
+Edit `/quasar.conf.js`:
+```js
+framework: {
+  components: ['QAutocomplete']
+}
+```
+
 ## Basic Usage
 As long as this component is rendered by Vue, it will capture all Ajax calls.
 ``` html
@@ -102,6 +110,8 @@ Here is the full list of properties that can be used:
 | `icon` | String | Icon on the left to use. |
 | `avatar` | String | URL pointing to statics for an avatar. |
 | `letter` | String | One character String. |
+| `leftInverted` | Boolean | Invert mode, but only for icon and letter. |
+| `leftTextColor` | String | Override default "white" text-color when using an icon or letter only. |
 | `image` | String | URL pointing to statics for an image. |
 | `label` | String | Main label of the selection. |
 | `sublabel` | String | Sub-label of the selection. |
@@ -113,6 +123,8 @@ Here is the full list of properties that can be used:
 | `rightAvatar` | String | URL pointing to statics for an avatar on right side. |
 | `rightLetter` | String | One character String for right side. |
 | `rightImage` | String | URL pointing to statics for an image on right side. |
+| `rightInverted` | Boolean | Invert mode, but only for icon and letter. |
+| `rightTextColor` | String | Override default "white" text-color when using an icon or letter only. |
 | `stamp` | String | Stamp to use for right side. Example: '10 min ago'. |
 
 ```html
@@ -188,7 +200,7 @@ export default {
       // make an AJAX call
       // then call done(Array results)
 
-      // DO NOT forget to call done! When no results or an error occured,
+      // DO NOT forget to call done! When no results or an error occurred,
       // just call with empty array as param. Example: done([])
     }
   },

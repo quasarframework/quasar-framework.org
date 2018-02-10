@@ -3,6 +3,24 @@ title: Form Validation
 Recommended package for Form Validations is `Vuelidate`.
 Get started with the [documentation](https://monterail.github.io/vuelidate/).
 
+## Installation of Vuelidate
+```bash
+$ npm install --save vuelidate
+$ quasar new plugin vuelidate
+```
+An app plugin file got created: `/src/plugins/vuelidate.js`. We edit it:
+```js
+import Vuelidate from 'vuelidate'
+
+export default ({ Vue }) => {
+  Vue.use(Vuelidate)
+}
+```
+We then edit `/quasar.conf.js` to add the app plugin file to the build:
+```js
+plugins: ['vuelidate']
+```
+
 ## Example
 
 ``` html
