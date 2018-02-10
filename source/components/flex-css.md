@@ -213,6 +213,18 @@ Like previously mentioned, rows wrap content by default, so when 12 (or more) gr
 
 Also check [CSS Helpers &gt; Visibility](/components/visibility.html#Window-Width-Related) page to see thresholds on window width and these tokens (xs, sm, md, lg, xl) used on their own to hide or show DOM elements.
 
+### Customize breakpoints
+If you want to customize existing responsive breakpoints or add new ones, you can edit the `$size` Stylus variable:
+
+```
+// Change existing breakpoint
+$size.lg = 1000px
+
+// Adding new brealkpoints
+$sizes.xxs = 400px
+$sizes.xxl = 1400px
+```
+
 ## Using Gutters
 There are 5 types of gutter, depending on the amount of space that you want between your elements:
 
