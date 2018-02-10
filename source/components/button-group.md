@@ -1,7 +1,7 @@
 title: Button Group
 ---
 
-You can conveniently group [QBtn](/components/button) and [QBtnDropdown](/components/button-dropdown) using QBtnGroup. Be sure to check those component's respective pages to see their props and methods.
+You can conveniently group [QBtn](/components/button.html) and [QBtnDropdown](/components/button-dropdown.html) using QBtnGroup. Be sure to check those component's respective pages to see their props and methods.
 
 ## Installation
 Edit `/quasar.conf.js`:
