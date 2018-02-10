@@ -59,14 +59,14 @@ In order for you to use any of the directives that Quasar supplies, you first ne
 
 ```js
 framework: {
-  plugins: ['Ripple']
+  directives: ['Ripple']
 }
 ```
 
 Let's take another example. We now also want TouchPan and TouchSwipe directives, so we add them too in `/quasar.conf.js`:
 ```js
 framework: {
-  plugins: ['Ripple', 'TouchPan', 'TouchSwipe']
+  directives: ['Ripple', 'TouchPan', 'TouchSwipe']
 }
 ```
 
