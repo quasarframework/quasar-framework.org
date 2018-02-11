@@ -6,26 +6,25 @@ Quasar has a component called QBtn which is a button with a few extra useful fea
 The button component also comes with a spinner or loading effect. You would use this for times when app execution may cause a delay and you want to give the user some feedback about that delay. When used, the button will display a spinning animation as soon as the user clicks the button.
 
 When not disabled or spinning, QBtn emits a `@click` event, as soon as it is clicked or tapped.
+
 ## Installation
 Edit `/quasar.conf.js`:
 ```js
 framework: {
-  components: [
-    'QBtn'
-  ]
+  components: ['QBtn']
 }
 ```
+
 ## Basic Usage
-
-Plain simple button with an icon and a label:
-
 ``` html
-<q-btn icon="create" label="New item" />
-```
+<!-- Just label -->
+<q-btn label="New item" />
 
-Button with just an icon:
-``` html
+<!-- Just icon -->
 <q-btn icon="map" />
+
+<!-- Icon & Label -->
+<q-btn icon="create" label="New item" />
 ```
 
 A standard round button.
@@ -34,41 +33,77 @@ A standard round button.
   Notice "round" specified and
   self-closing tag (as we don't need to specify any
   content for button -- the icon fills all available
-  space anyway).
+  space anyway). The label is discarded.
 -->
 <q-btn round color="secondary" icon="card_giftcard" />
 
-<!-- Next is perfectly equivalent -->
+<!--
+  Next is perfectly equivalent, but use "icon"
+  property whenever you can.
+-->
 <q-btn round color="secondary">
   <q-icon name="card_giftcard" />
 </q-btn>
 ```
-> **Note**
+
+> **IMPORTANTe**
 > For round buttons, only use an icon as content, through "icon" property or QIcon component as the only child. Do not add anything else besides the icon, unless you want a Popover or Tooltip.
 
-Small primary button:
+Primary colored button of small size:
 
 ``` html
-<q-btn icon="edit" color="primary" small>
-  Edit
-</q-btn>
+<q-btn
+  color="primary"
+  size="sm"
+  label="Edit"
+/>
 ```
 
 Button with "loading" state (we'll go over these in more detail in its own section later):
 
 ```html
 <!-- Regular shaped -->
-<q-btn loader color="primary" @click="clickMethod">
-  Button Label
-</q-btn>
-
-<!-- Round shaped; only use icon as content -->
-<q-btn v-model="submit" loader round color="primary" @click="clickMethod">
-  <q-spinner-oval slot="loading" />
-</q-btn>
+<q-btn
+  loader
+  color="primary"
+  @click="clickMethod"
+  label="Button Label"
+/>
 ```
 
-In the example above, the `clickMethod` would be a function to control the value of `submit`, which must be a Boolean.
+```html
+<template>
+  <!-- Round shaped (only use icon or spinner as content!) with loading state -->
+  <q-btn
+    :loading="loading"
+    round
+    icon="map"
+    color="primary"
+    @click="handler"
+  >
+    <q-spinner-oval slot="loading" />
+  </q-btn>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      loading: false
+    }
+  },
+  methods: {
+    handler () {
+      this.loading = true
+      // we simulate a delay here:
+      setTimeout(() => {
+        this.loading = false
+      }, 3000)
+    }
+  }
+}
+</script>
+```
 
 ## Vue Properties
 
@@ -76,16 +111,16 @@ In the example above, the `clickMethod` would be a function to control the value
 | ---          | ---     | --- |
 | `icon`       | String  | Name of the icon to use. |
 | `icon-right` | String  | Name of the icon to place on right side of button. |
-| `loader`     | Boolean | Display a spinner, if true. Can be optionally used along `v-model`. Check [Button with Progress](#Button-with-Progress) section. |
+| `loading`    | Boolean | Display a spinner, if true. Check [Button with Progress](#Button-with-Progress). |
 | `percentage` | Number | Optional property for displaying a determinate progress. Use along `loader`. |
 | `dark-percentage` | Boolean | Optional property for displaying a determinate progress on a light button color. Use along `loader` and `percentage`. |
 | `disable`    | Boolean | The button is disabled, if true. `@click` event won't be triggered while in this state. |
 | `label`      | String/Number | Button label. |
-| `tabindex`   | Number | Set explicit tab index. See [here](/components/material-ripples.html). |
-| `repeat-timeout` | Number/Function | Sets delay and enables multiple `@click` events on click and hold. Function gets `repeated` (Number) parameter |
+| `tabindex`   | Number | Set explicit tab index. |
+| `repeat-timeout` | Number/Function | Enables multiple `@click` events on click/tap and hold. Function gets a Number (timesTriggered) as parameter. |
 | `wait-for-ripple` | Boolean | Wait for ripple then before emitting `@click` event. Mat theme only. |
 
-#### Apearance
+#### Appearance
 | Vue Property | Type    | Description |
 | ---          | ---     | --- |
 | `size`       | String | Button size. One of `xs`, `sm`, `md`, `lg`, `xl`, or a css string size eg. `25px`, `2rem`, `3vw`. |
@@ -105,8 +140,6 @@ In the example above, the `clickMethod` would be a function to control the value
 | `no-caps`    | Boolean | Set true, if you don't want button content/label to be transformed to uppercase letter on Material Theme. |
 | `no-ripple`  | Boolean | Disable [Material Ripple](/components/material-ripples.html). Mat theme only. |
 
-
-
 ## Vue Events
 | Vue Event | Description |
 | --- | --- |
@@ -123,33 +156,33 @@ When adding an icon to a regular button, there are two possibilities for its pos
 <!-- icon will be placed on the right -->
 <q-btn icon-right="mail" color="teal" label="Button Label" />
 
-<!-- icona will be placed on both sides -->
+<!-- icons will be placed on both sides -->
 <q-btn icon="mail" icon-right="mail" color="teal" label="Button Label" />
 ```
 
 ## Button Sizes
 
-Use `size` atribute with one of the following values: `xs`, `sm`, `md`, `lg`, `xl`. You don't need to specify `md`, because that's the default size.
+Use `size` attribute with one of the following values: `xs`, `sm`, `md`, `lg`, `xl`. You don't need to specify `md`, because that's the default size.
 ``` html
-<q-btn color="primary" size="xs" label="Extra Small Button"/>
+<q-btn color="primary" size="xs" label="Extra Small Button" />
 
-<q-btn color="primary" size="sm" label="Small Button"/>
+<q-btn color="primary" size="sm" label="Small Button" />
 
-<q-btn color="primary" size="md" label="Medium Button"/>
+<q-btn color="primary" size="md" label="Medium Button" />
 
-<q-btn color="primary" size="lg" label="Large Button"/>
+<q-btn color="primary" size="lg" label="Large Button" />
 
-<q-btn color="primary" size="xl" label="Extra Large Button"/>
+<q-btn color="primary" size="xl" label="Extra Large Button" />
 
 ```
-You can also use a css string size:
+
+You can also use a CSS unit as size:
 ``` html
-<q-btn color="primary" size="25px" label="25 Pixels">
+<q-btn color="primary" size="25px" label="25 Pixels" />
 
-<q-btn color="primary" size="2rem" label="2 Rem">
+<q-btn color="primary" size="2rem" label="2 Rem" />
 
-<q-btn color="primary" size="3vw" label="3 View Width">
-
+<q-btn color="primary" size="3vh" label="3 View Height" />
 ```
 
 You can also make use of globally available CSS helper class `block` (sets CSS `display` property to `block`) or `full-width` to expand the button.
@@ -181,13 +214,13 @@ There are also the `outline`, `push`, `round`, `flat`, `rounded` and `glossy` pr
 ```
 
 ## Button with Progress
-Some button actions involve contacting a server, so an asynchronous response. It's best that you inform the user about a background process taking place until the asynchronous response is ready. QBtn offers this possibility through the `loader` prop. This property will display a QSpinner (by default) instead of the icon and/or label of the button. Custom loading content can also be used.
+Some button actions involve contacting a server, so an asynchronous response. It's best that you inform the user about a background process taking place until the asynchronous response is ready. QBtn offers this possibility through the `loading` prop. This property will display a QSpinner (by default) instead of the icon and/or label of the button. Custom loading content can also be used.
 
-Here is a full example highlighting what you can do with the `loader` property.
+Here is a full example highlighting what you can do with the `loading` property.
 ```html
 <template>
   <!-- Notice `loader` prop -->
-  <q-btn loader @click="simulateProgress">
+  <q-btn :loading="loading" @click="simulateProgress">
     Button Label
     <!--
       Notice slot="loading". This is optional.
@@ -199,19 +232,22 @@ Here is a full example highlighting what you can do with the `loader` property.
 
 <script>
 export default {
+  data () {
+    return { loading: false }
+  },
   methods: {
-    // notice parameter "done" (Function)
-    simulateProgress (event, done) {
+    simulateProgress () {
+      // we set loading state
+      this.loading = true
+
       // simulate a delay, like in
       // waiting for an Ajax call
       setTimeout(() => {
-        // delay is over, now we call
-        // done() function to inform button
-        // it must go to its initial state
-        done()
-        // DON't forget to call done() otherwise
-        // the button will keep on being in
-        // "loading" state
+        // delay is over, now we reset loading state
+        this.loading = false
+        // DON't forget to reset loading state
+        // otherwise the button will keep on
+        // being in "loading" state
       }, 3000)
     }
   }
@@ -219,18 +255,20 @@ export default {
 </script>
 ```
 
-If you'd like to add a different spinner than the default one of the theme you are building your website/app with, you can do so by slotting in the [Spinner](/components/spinner.html) component you'd like.
+If you'd like to add a different spinner than the default one of the theme you are building your website/app with, you can do so by slotting in the [Spinner](/components/spinner.html) component that you'd like.
 
 ```html
-<q-btn icon="mail" color="orange" @click="simulateProgress">
-  Get Mail
+<q-btn
+  icon="mail"
+  label="Get Mail"
+  color="orange"
+  @click="simulateProgress"
+>
   <q-spinner-facebook slot="loading" size="20px" />
 </q-btn>
 ```
 
-> The "loading" slot can contain anything. It's not reduced to text or spinners only. You can use whatever DOM elements or components you want. The end result is that while in "loading" state, the Button content will be replaced by whatever the "loading" slot contains. Also, while in this state, the button gets disabled so no further click events are unnecessarily triggered.
-
-We'll learn how you can use the `loader` prop along with `v-model` on buttons later on this page.
+> The "loading" slot can contain anything. It's not limited to text or spinners only. You can use whatever DOM elements or components you want. The end result is that while in "loading" state, the Button content will be replaced by whatever the "loading" slot contains. Also, while in this state, the button gets disabled so no further click events are unnecessarily triggered.
 
 ### Handling Deterministic Progress
 Should you wish, you can also display a deterministic progress within the button by using the additional "percentage" property along with what you've already learned about buttons with progress:
@@ -238,11 +276,11 @@ Should you wish, you can also display a deterministic progress within the button
 <template>
   <q-btn
     :percentage="percentage"
-    loader
+    :loading="loading"
+    label="Compute PI"
     color="primary"
     @click="startComputing"
   >
-    Compute PI
     <span slot="loading">
       <q-spinner-gears class="on-left" />
       Computing...
@@ -251,15 +289,17 @@ Should you wish, you can also display a deterministic progress within the button
 </template>
 
 <script>
-// remember to also register nescessary components in quasar.conf.js
+// remember to also register necessary components in quasar.conf.js
 export default {
   data () {
     return {
+      loading: false
       percentage: 0
     }
   },
   methods: {
-    startComputing (e, done) {
+    startComputing () {
+      this.loading = true
       this.percentage = 0
 
       // we simulate progress here
@@ -270,8 +310,8 @@ export default {
         // and when we are done...
         if (this.percentage >= 100) {
           clearInterval(this.interval)
-          // DON'T forget to call "done()" (the second param of handler)
-          done()
+          // DON'T forget to reset loading state:
+          this.loading = false
         }
       }, 700)
     }
@@ -298,15 +338,14 @@ The example below demonstrates this button control with the Enter key.
 <template>
   <div>
     <!-- a simple text field watching for the enter key release -->
-    <q-input v-model="test" @keyup.enter="simulateSubmit"></q-input>
+    <q-input v-model="test" @keyup.enter="simulateSubmit" />
 
     <!--
       A button with v-model set to submit.
       v-model scope variable must be a strict Boolean
     -->
-    <q-btn v-model="submit" loader @click="simulateSubmit">
-      Save
-      <q-spinner-facebook slot="loading"></q-spinner-facebook>
+    <q-btn :loading="submitting" @click="simulateSubmit" label="Save">
+      <q-spinner-facebook slot="loading" />
     </q-btn>
   </div>
 </template>
@@ -316,26 +355,21 @@ export default {
   data () {
     return {
       test: '',
-      submit: false
+      submitting: false
     }
   },
   methods: {
     simulateSubmit () {
-      // if clicking/tapping on the button,
-      // due to using `v-model`, "submit" will already
-      // be `true`, but we also want to handle QInput triggering
-      // this method, so we need to manually set `submit` to `true`
-      // in this case.
-      this.submit = true
+      this.submitting = true
 
       // Simulating a delay here.
-      // When we are done, we reset "submit"
+      // When we are done, we reset "submitting"
       // Boolean to false to restore the
       // initial state.
       setTimeout(() => {
         // delay simulated, we are done,
         // now restoring submit to its initial state
-        this.submit = false
+        this.submitting = false
       }, 3000)
     }
   }
@@ -347,37 +381,42 @@ export default {
 To disable the button, use the `disable` prop. Along with a small fade applied to the Button, the `@click` event will no longer be triggered.
 
 ``` html
-<q-btn color="primary" disable>Primary Button</q-btn>
-<q-btn color="amber" :disable="booleanVar">Amber Button</q-btn>
+<q-btn color="primary" disable label="Primary Button" />
+<q-btn color="amber" :disable="booleanVar" label="Amber Button" />
 ```
 
 ## Using a Button with Vue Router
-
 If you want to use a button to navigate to a new page you don't need to use a wrapping `<router-link>` tag. Instead, you can use the `@click` event to handle the route change.
 
 ```html
-<q-btn @click="$router.push('/path/to/new/page')" color="primary" label="navigate" />
+<q-btn
+  @click="$router.push('/path/to/new/page')"
+  color="primary"
+  label="navigate"
+/>
 ```
 
 ## Delaying button click event
-
-On material theme you can delay a button's `@click` until the material ripple has reached the edge of the button using the `wait-for-ripple` prop
+On Material theme you can delay a button's `@click` until the material ripple has reached the edge of the button using the `wait-for-ripple` prop. Useful from a UI perspective as an example when you want a button to dismiss a Modal.
 
 ```html
-<q-btn @click="clickHandler" wait-for-ripple label="click me" />
+<q-btn
+  wait-for-ripple
+  @click="clickHandler"
+  label="Click Me"
+/>
 ```
 
 ## Using a click and hold button
-
-If you want to trigger a button's `@click` event multiple times on click and hold use the `repeat-timeout` prop. Accepts either a number or function
+If you want to trigger a button's `@click` event multiple times on click and hold use the `repeat-timeout` prop. Accepts either a Number or a Function (returning a Number). The Number represents the time amount to wait until triggering `@click` event again.
 
 ```html
 <template>
-  <!-- Click and hold to triger every second -->
-  <q-btn @click="clickHandler" :repeat-timeout="1000" label="click me" />
+  <!-- Click and hold to trigger every second -->
+  <q-btn @click="clickHandler" :repeat-timeout="1000" label="Click Me" />
 
-  <!-- Click and hold to triger faster over time -->
-  <q-btn @click="clickHandler" :repeat-timeout="repeatFunction" label="click me" />
+  <!-- Click and hold to trigger faster over time -->
+  <q-btn @click="clickHandler" :repeat-timeout="repeatFunction" label="Click Me" />
 </template>
 <script>
   export default {
