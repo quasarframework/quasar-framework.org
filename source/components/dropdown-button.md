@@ -57,6 +57,8 @@ All props except `split` are shared with [QBtn](/components/button.html).
 | `tabindex`   | Number | Set explicit tab index. |
 | `repeat-timeout` | Number/Function | Enables multiple `@click` events on click/tap and hold. Function gets a Number (timesTriggered) as parameter. |
 | `wait-for-ripple` | Boolean | Wait for ripple then before emitting `@click` event. Mat theme only. |
+| `content-class` | String/Array/Object | Classes applied to the Popover container. |
+| `content-style` | String/Array/Object | Style applied to the Popover container. |
 
 #### Apearance
 | Vue Property | Type    | Description |
