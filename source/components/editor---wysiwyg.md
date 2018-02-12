@@ -3,6 +3,10 @@ title: Editor (WYSIWYG)
 QEditor is a WYSIWYG ("what you see if what you get") editor component.
 <input type="hidden" data-fullpage-demo="forms/editor">
 
+> WARNING
+Using [v-html](https://vuejs.org/v2/api/#v-html) on the resulting v-model renders you vulnerable to Cross Site Scripting attacks.
+If the content is user generated, be sure to [sanitize](https://github.com/punkave/sanitize-html) it either on render or server side.
+
 ## Installation
 Edit `/quasar.conf.js`:
 ```js
