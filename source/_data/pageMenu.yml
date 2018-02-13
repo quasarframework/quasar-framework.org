@@ -1,39 +1,53 @@
 guide:
   root:
-    Getting Started: index
+    Introduction: $
+    Contribution Guide: $
+    Release Notes: $
+    Roadmap: $
+
+  Getting Started:
+    Installation: index
     Quasar CLI: $
-    Quasar Play App: $
-    Roadmap: quasar-$
-    Changelog: quasar-framework-$
-    Contributing: $
+
+  UMD Starter Kit:
+    Embedding Quasar: $
+
+  Main Starter Kit:
+    Installation: sr-$
+    Directory Structure: sr-$
+    Configuration: sr-$
+    Build Commands: sr-$
+    Routing: sr-$
+    API Proxying: sr-$
+    Pre-Processors: sr-$
+    Handling Assets: sr-$
+    App Plugins: sr-$
+    Vuex Store: sr-$
+    Linter: sr-$
+
+  Developing PWA:
+    What is a PWA: pwa-$
+    Configuring PWA: pwa-$
+    Build Commands: pwa-$
+
+  Developing Mobile Apps:
+    What is Cordova: cordova-$
+    Configuring Cordova: cordova-$
+    Build Commands: cordova-$
+    Troubleshoot and Tips: cordova-$
+
+  Developing Electron Apps:
+    What is Electron: electron-$
+    Configuring Electron: electron-$
+    Build Commands: electron-$
+    Troubleshoot and Tips: electron-$
+
   Misc:
-    Browser Support: $
-    RTL Support: $
-    Troubleshoot and Tips: app-$
-  Boilerplate:
-    Overview: app-boilerplate
-    Structure: app-$
-    Routes Lazy Loading: $
-    Build Commands: app-$
-    Linter Configuration: app-$
-    Pre-Processors: app-$
-    Handling Static Assets: app-$
-    API Proxying for Dev: app-$
-    Prerendering for SEO: app-$
-    Dev vs Production Code: app-$
-  Specific Starter Kits:
-    Progressive Web Apps: progressive-web-apps
-  Wrappers:
-    Cordova Wrapper: $
-    Electron Wrapper: $
-  Development:
-    Nightly Build: quasar-$
     Theming: quasar-$
+    RTL Support: $
     Ajax Requests: $
-    Components Sharing State: $
-    Managing Google Analytics: $
     Opening Dev Server To Public: $
-    Router: $
+    Managing Google Analytics: $
 
 components:
   root:
