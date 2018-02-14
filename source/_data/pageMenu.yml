@@ -20,11 +20,11 @@ guide:
     Build Commands: app-$
     Routing: app-$
     Handling Assets: app-$
-    App Plugins: app-$
+    App Plugins: $
     API Proxying: app-$
     Pre-Processors and Webpack: app-$
     Vuex Store: app-$
-    Linter: app-$
+    App Linter: $
 
   Developing PWA:
     What is a PWA: pwa-$
