@@ -19,6 +19,7 @@ guide:
     Configuring quasar.conf.js: app-$
     Build Commands: app-$
     Routing: app-$
+    Adding Pages and Layouts: app-$
     Handling Assets: app-$
     App Plugins: $
     API Proxying: app-$
