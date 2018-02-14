@@ -5,15 +5,12 @@ If you are building a website, you might want to support IE 11+. This support is
 ## Installation of IE Support
 In order to support IE, you'll need to edit `/quasar.conf.js`:
 ```js
-module.exports = function (ctx) {
-  return {
-    supportIE: true,
-    ...
-  }
+build: {
+  supportIE: true
 }
 ```
 
 That's it. This will inject the Promise polyfill, along with some other smaller pollyfills, adding an extra ~6k worth of code (minified) to your bundle.
 
 > **NOTE**
-> Quasar CLI is smart enough to include the IE pollyfills only if it is really needed. Building a Mobile or Electron app won't include this (because it's not necessary), even if you leave `supportIE` set to "true" in quasar.conf.js
+> Quasar CLI is smart enough to include the IE pollyfills only if it is really needed. An Electron app for example doesn't need it and as a result, even if you leave `build > supportIE` set to "true" in quasar.conf.js it won't be bundled.
