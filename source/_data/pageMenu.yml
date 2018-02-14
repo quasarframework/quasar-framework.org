@@ -27,7 +27,8 @@ guide:
     Vuex Store: app-$
     Theming: quasar-$
     App Linter: $
-    RTL Support: $
+    RTL Support: app-$
+    Supporting IE: app-$
 
   Developing PWA:
     What is a PWA: pwa-$
