@@ -1,23 +1,18 @@
 title: Dropdown Button
 ---
-
-QBtnDropdown is very convenient dropdown button. Goes very well with [QList](/components/lists-and-list-items.html)
-
+QBtnDropdown is a very convenient dropdown button. Goes very well with [QList](/components/lists-and-list-items.html) as dropdown content, but it's by no means limited to it.
+<input type="hidden" data-fullpage-demo="buttons/btn-dropdown">
 
 ## Installation
 Edit `/quasar.conf.js`:
 ```js
 framework: {
-  components: [
-    'QBtnDropdown'
-  ]
+  components: ['QBtnDropdown']
 }
 ```
 
 ## Basic usage
-
 Simple dropdown menu
-
 ```html
 <q-btn-dropdown label="Button">
   <!-- dropdown content -->
@@ -47,22 +42,23 @@ Use the `split` prop to separate target areas for opening dropdown and triggerin
 ```
 
 ## Vue Properties
-
-All props except `split` are shared with [QBtn](/components/button.html)
+All props except `split` are shared with [QBtn](/components/button.html).
 
 | Vue Property | Type    | Description |
 | ---          | ---     | --- |
 | `split`      | Boolean | Use a split QBtnDropdown |
 | `icon`       | String  | Name of the icon to use. |
 | `icon-right` | String  | Name of the icon to place on right side of button. |
-| `loader`     | Boolean | Display a spinner, if true. Can be optionally used along `v-model`. Check [Button with Progress](#Button-with-Progress) section. |
+| `loading`    | Boolean | Display a spinner, if true. Can be optionally used along `v-model`. Check [Button with Progress](#Button-with-Progress) section. |
 | `percentage` | Number | Optional property for displaying a determinate progress. Use along `loader`. |
 | `dark-percentage` | Boolean | Optional property for displaying a determinate progress on a light button color. Use along `loader` and `percentage`. |
 | `disable`    | Boolean | The button is disabled, if true. `@click` event won't be triggered while in this state. |
 | `label`      | String/Number | Button label. |
-| `tabindex`   | Number | Set explicit tab index. See [here](/components/material-ripples.html). |
-| `repeat-timeout` | Number/Function | Sets delay and enables multiple `@click` events on click and hold. Function gets `repeated` (Number) parameter |
+| `tabindex`   | Number | Set explicit tab index. |
+| `repeat-timeout` | Number/Function | Enables multiple `@click` events on click/tap and hold. Function gets a Number (timesTriggered) as parameter. |
 | `wait-for-ripple` | Boolean | Wait for ripple then before emitting `@click` event. Mat theme only. |
+| `content-class` | String/Array/Object | Classes applied to the Popover container. |
+| `content-style` | String/Array/Object | Style applied to the Popover container. |
 
 #### Apearance
 | Vue Property | Type    | Description |
@@ -84,18 +80,15 @@ All props except `split` are shared with [QBtn](/components/button.html)
 | `no-caps`    | Boolean | Set true, if you don't want button content/label to be transformed to uppercase letter on Material Theme. |
 | `no-ripple`  | Boolean | Disable [Material Ripple](/components/material-ripples.html). Mat theme only. |
 
-
-
 ## Vue Events
 | Vue Event | Description |
 | --- | --- |
 | `@click` | Triggered on button click/tap, if button is not disabled. |
 
 ## More examples
+Complete example with [QList](/components/lists-and-list-items.html):
 
-Complete example with [QList](/components/lists-and-list-items.html)
-
-> Note the use of the `CloseOverlay` directive to close the dropdown on click. Don't forget to register it in `quasar.conf.js`
+> Note the use of the `v-close-overlay` directive to close the dropdown on click. Don't forget to register it in `quasar.conf.js`
 
 ```html
 <q-btn-dropdown

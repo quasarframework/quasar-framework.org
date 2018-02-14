@@ -83,7 +83,7 @@ export default {
 | `selection` | String | Set selection mode. One of 'single', 'multiple' or (default) 'none'. |
 | `selected` | Array | **Use with .sync**. Array of unique keys for selected row(s). |
 | `visible-columns` | Array | Array of Strings containing the 'name' column property value of the visible columns. |
-| `loader` | Boolean | Show a background process in in progress (like fetching data and so on). |
+| `loading` | Boolean | Show a background process in in progress (like fetching data and so on). |
 | `color` | String | Color of the default Table controls (pagination, checkboxes, ...). |
 | `dark` | Boolean | When using Table on a dark background. |
 | `dense` | Boolean | Dense Table, when you want to display more data using the same real estate on window. Gets activated by default on narrow windows. |
@@ -102,7 +102,7 @@ Label properties are by default defined in Quasar's i18n, but you can override t
 | --- | --- | --- |
 | `no-data-label` | String | Message to display when no rows are available. |
 | `no-results-label` | String | Message to display when no rows match the filter. |
-| `loader-label` | String | Message to display when Table currently has no rows but it fetches them. |
+| `loading-label` | String | Message to display when Table currently has no rows but it fetches them. |
 | `selected-rows-label(rowsNumber)` | Function | Function that returns a message (String) to display how many rows are selected. Takes a Number parameter which is the actual rows number that are selected. |
 | `rows-per-page-label` | String | Override 'Rows per page:' message. |
 | `pagination-label(start,end,total)` | Function | Override default 'x-y of z' pagination label. |
@@ -216,7 +216,7 @@ When your database contains a big number of rows for a Table, obviously it's not
 
 2. Second step is to listen for `@request` event on QTable. This event is triggered when data needs to be fetched from the server because either page number or sorting or filtering changed.
 
-3. It's best that you also specify the `loader` prop in order for notifying the user that a background process is in progress.
+3. It's best that you also specify the `loading` prop in order for notifying the user that a background process is in progress.
 
 ```html
 <template>
@@ -227,7 +227,7 @@ When your database contains a big number of rows for a Table, obviously it's not
     :filter="filter"
     row-key="name"
     :pagination.sync="serverPagination"
-    :loader="loader"
+    :loading="loading"
     @request="request"
   >
     <template slot="top-right" slot-scope="props">
@@ -243,7 +243,7 @@ export default {
   data () {
     return {
       filter: '',
-      loader: false,
+      loading: false,
       serverPagination: {
         page: 1,
         rowsNumber: 10 // specifying this determines pagination is server-side
@@ -272,7 +272,7 @@ export default {
   methods: {
     request ({ pagination, filter }) {
       // we set QTable to "loading" state
-      this.loader = true
+      this.loading = true
 
       // we do the server data fetch, based on pagination and filter received
       // (using Axios here, but can be anything; parameters vary based on backend implementation)
@@ -290,13 +290,13 @@ export default {
         this.serverData = data.rows
 
         // finally we tell QTable to exit the "loading" state
-        this.loader = false
+        this.loading = false
       })
       .catch(error => {
         // there's an error... do SOMETHING
 
         // we tell QTable to exit the "loading" state
-        this.loader = false
+        this.loading = false
       })
     }
   },
@@ -381,7 +381,7 @@ export default {
     :columns="columns"
     :selection="selection"
     :selected.sync="selected"
-    :loader="loader"
+    :loading="loading"
     row-key="name"
     color="secondary"
     :class="tableClass"
@@ -414,7 +414,7 @@ export default {
     </template>
     <div slot="top-right" slot-scope="props" class="column">
       <q-toggle
-        v-model="loader"
+        v-model="loading"
         label="Loading state"
         color="secondary"
         class="q-mb-sm"
@@ -433,7 +433,7 @@ export default {
   data: () => ({
     tableData: [ ... ],
     columns: [ ... ],
-    loader: false,
+    loading: false,
     dark: true,
     selection: 'multiple',
     selected: [
