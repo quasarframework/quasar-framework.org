@@ -19,7 +19,10 @@ This is the structure of a project with all modes installed. If you are a beginn
 │   ├── router/              # pure static assets (directly copied)
 |   |   ├── index.js         # Vue Router definition
 |   │   └── routes.js        # App Routes definitions
-│   ├── store/               # Vuex Store definition
+│   ├── store/               # Vuex Store
+|   |   ├── index.js         # Vuex Store definition
+|   │   ├── <folder>         # Vuex Store Module...
+|   │   └── <folder>         # Vuex Store Module...
 │   ├── App.vue              # root Vue component of your App
 │   └── index.template.html  # Template for index.html
 ├── src-pwa/                 # PWA specific code (like Service Worker)

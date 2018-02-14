@@ -16,14 +16,13 @@ guide:
   Main Starter Kit:
     Installation: app-$
     Directory Structure: app-$
-    Configuration: app-$
+    Configuring quasar.conf.js: app-$
     Build Commands: app-$
     Routing: app-$
     Handling Assets: app-$
     App Plugins: app-$
     API Proxying: app-$
-    Configure Webpack: app-$
-    Pre-Processors: app-$
+    Pre-Processors and Webpack: app-$
     Vuex Store: app-$
     Linter: app-$
 
