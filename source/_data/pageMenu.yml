@@ -25,7 +25,9 @@ guide:
     API Proxying: app-$
     Pre-Processors and Webpack: app-$
     Vuex Store: app-$
+    Theming: quasar-$
     App Linter: $
+    RTL Support: $
 
   Developing PWA:
     What is a PWA: pwa-$
@@ -37,6 +39,7 @@ guide:
     Configuring Cordova: cordova-$
     Build Commands: cordova-$
     Troubleshoot and Tips: cordova-$
+    Managing Google Analytics: cordova-$
 
   Developing Electron Apps:
     What is Electron: electron-$
@@ -45,11 +48,8 @@ guide:
     Troubleshoot and Tips: electron-$
 
   Misc:
-    Theming: quasar-$
-    RTL Support: $
     Ajax Requests: $
     Opening Dev Server To Public: $
-    Managing Google Analytics: $
 
 components:
   root:

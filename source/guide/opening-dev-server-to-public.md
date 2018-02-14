@@ -19,8 +19,8 @@ $ quasar dev
 
 3. Create your ngrok connection
 ``` bash
-$ ngrok http 80
-# In case your development server doesn't run on port 80 you need to change the number to the correct port
+$ ngrok http 8080
+# In case your development server doesn't run on port 8080 you need to change the number to the correct port
 ```
 
 4. ngrok shows the url in the command line when it started.
@@ -28,13 +28,13 @@ $ ngrok http 80
 Tunnel Status                 online
 Version                       2.0/2.0
 Web Interface                 http://127.0.0.1:4040
-Forwarding                    http://92832de0.ngrok.io -> localhost:80
-Forwarding                    https://92832de0.ngrok.io -> localhost:80
+Forwarding                    http://92832de0.ngrok.io -> localhost:8080
+Forwarding                    https://92832de0.ngrok.io -> localhost:8080
 
 Connnections                  ttl     opn     rt1     rt5     p50     p90
                               0       0       0.00    0.00    0.00    0.00
 ```
-Please be careful as the 'Forwarding' URL will be accesible to anyone until this connection is closed again.
+Please be careful as the 'Forwarding' URL will be accessible to anyone until this connection is closed again.
 
 ### Inspecting traffic
 
