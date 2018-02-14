@@ -1,6 +1,7 @@
 guide:
   root:
     Introduction: $
+    Playground: quasar-$
     Contribution Guide: $
     Release Notes: $
     Roadmap: $
@@ -13,17 +14,18 @@ guide:
     Embedding Quasar: $
 
   Main Starter Kit:
-    Installation: sr-$
-    Directory Structure: sr-$
-    Configuration: sr-$
-    Build Commands: sr-$
-    Routing: sr-$
-    API Proxying: sr-$
-    Pre-Processors: sr-$
-    Handling Assets: sr-$
-    App Plugins: sr-$
-    Vuex Store: sr-$
-    Linter: sr-$
+    Installation: app-$
+    Directory Structure: app-$
+    Configuration: app-$
+    Build Commands: app-$
+    Routing: app-$
+    Handling Assets: app-$
+    App Plugins: app-$
+    API Proxying: app-$
+    Configure Webpack: app-$
+    Pre-Processors: app-$
+    Vuex Store: app-$
+    Linter: app-$
 
   Developing PWA:
     What is a PWA: pwa-$

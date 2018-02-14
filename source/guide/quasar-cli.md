@@ -170,7 +170,7 @@ $ quasar clean
 $ quasar build --clean
 ```
 
-## new (Generating Pages, Layouts, Vuex Store, ...)
+## new (Generating Components, Pages, Layouts, Vuex Store)
 ```bash
 $ quasar new -h
 

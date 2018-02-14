@@ -1,0 +1,7 @@
+title: App Routing
+---
+You'll notice that your Quasar project contains a `/src/router` folder. This holds the routing configuration of your website/app:
+* "/src/router/index.js" holds the Vue Router initialization code
+* "/src/router/routes.js" holds the routes of your website/app
+
+Make sure to read [Vue Router documentation](https://router.vuejs.org/) to understand how it works.
