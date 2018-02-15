@@ -36,7 +36,8 @@ guide:
     Build Commands: pwa-$
 
   Developing Mobile Apps:
-    What is Cordova: cordova-$
+    Introduction: cordova-$
+    Preparation: cordova-$
     Configuring Cordova: cordova-$
     Cordova Plugins: $
     Build Commands: cordova-$
@@ -45,7 +46,8 @@ guide:
     Publishing to Store: cordova-$
 
   Developing Electron Apps:
-    What is Electron: electron-$
+    Introduction: electron-$
+    Preparation: electron-$
     Configuring Electron: electron-$
     Electron Packages: $
     Build Commands: electron-$

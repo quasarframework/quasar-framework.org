@@ -1,6 +1,8 @@
 title: Publishing to Store
 ---
 
+So you've finished working on your Mobile App. Now it's time to deploy it. Let's learn how.
+
 ## Android Publishing
 To generate a release build for Android, we can use the following Quasar CLI command:
 ```bash

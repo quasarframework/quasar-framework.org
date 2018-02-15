@@ -7,10 +7,29 @@ Choose a starter kit based on what you want to do:
  * UMD Starter Kit (embed into an existing project through CDN install)
  * Main Starter Kit (**recommended**)
 
+Here's a comparison:
+
+| Feature | UMD | Main Starter Kit |
+| --- | --- | --- |
+| Ability to embed into an existing project | **Yes** | - |
+| Ability to use CDN | **Yes** | **Yes** |
+| ES6 support | - | **Yes** |
+| Build System | - | **Yes** |
+| Take advantage of Quasar CLI for a stellar developer experience | - | **Yes** |
+| Tree Shaking | - | **Yes** |
+| SFC (Single File Component - for Vue) | - | **Yes** |
+| Share same code for SPA, PWA, Mobile Apps, Electron Apps | - | **Yes** |
+| Installation through CSS and JS html tags | **Yes** | - |
+| Advanced configuration through quasar.conf.js | - | **Yes** |
+
 ## UMD Starter Kit (CDN install)
 If you want to embed Quasar into your existing website project, integrating it in a progressive manner, then go for the UMD/Standalone (Unified Module Definition) version. The UMD starter kit will ask you some questions and will generate a simple HTML file that will show you how to use CDN to add Quasar:
 
 ```bash
+# make sure you have vue-cli globally installed
+$ npm install -g vue-cli
+
+# then...
 $ vue init quasarframework/quasar-starter-kit-umd <folder_name>
 ```
 
