@@ -42,10 +42,12 @@ guide:
     Build Commands: cordova-$
     Troubleshoot and Tips: cordova-$
     Managing Google Analytics: cordova-$
+    Publishing to Store: cordova-$
 
   Developing Electron Apps:
     What is Electron: electron-$
     Configuring Electron: electron-$
+    Electron Packages: $
     Build Commands: electron-$
     Troubleshoot and Tips: electron-$
 
