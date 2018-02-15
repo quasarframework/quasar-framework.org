@@ -2,9 +2,9 @@ guide:
   root:
     Introduction: $
     Playground: quasar-$
-    Contribution Guide: $
-    Release Notes: $
-    Roadmap: $
+    Contribution Guide: quasar-$
+    Release Notes: quasar-$
+    Roadmap: quasar-$
 
   Getting Started:
     Installation: index

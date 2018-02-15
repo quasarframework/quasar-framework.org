@@ -14,13 +14,13 @@ Here's a comparison:
 | Ability to embed into an existing project | **Yes** | - |
 | Ability to use CDN | **Yes** | **Yes** |
 | ES6 support | - | **Yes** |
-| Build System | - | **Yes** |
+| Build System (HMR, minification, source maps, optimization, ...) | - | **Yes** |
 | Take advantage of Quasar CLI for a stellar developer experience | - | **Yes** |
 | Tree Shaking | - | **Yes** |
 | SFC (Single File Component - for Vue) | - | **Yes** |
 | Share same code for SPA, PWA, Mobile Apps, Electron Apps | - | **Yes** |
 | Installation through CSS and JS html tags | **Yes** | - |
-| Advanced configuration through quasar.conf.js | - | **Yes** |
+| Advanced configuration through dynamic quasar.conf.js | - | **Yes** |
 
 ## UMD Starter Kit (CDN install)
 If you want to embed Quasar into your existing website project, integrating it in a progressive manner, then go for the UMD/Standalone (Unified Module Definition) version. The UMD starter kit will ask you some questions and will generate a simple HTML file that will show you how to use CDN to add Quasar:

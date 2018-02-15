@@ -10,6 +10,7 @@ You can fork and use this jsFiddle for reporting issues on Github too. This link
 Live Demo:
 * [Material Theme](http://quasar-framework.org/quasar-play/android/index.html#/showcase)
 * [iOS Theme](http://quasar-framework.org/quasar-play/apple/index.html#/showcase)
+* [Google Play Store](https://play.google.com/store/apps/details?id=com.quasarframework.quasarplay) (currently it's outdated, using a very old Quasar version)
 
 Quasar Play is used for these documentation pages too, on the right side, on the mobile frame.
 You can clone it and play with it by visiting its [Github page](https://github.com/quasarframework/quasar-play).
