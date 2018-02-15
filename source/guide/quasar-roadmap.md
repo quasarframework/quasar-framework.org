@@ -1,10 +1,11 @@
 title: Quasar Roadmap
 ---
 
-Next version is v1.0, with two main focus points:
+Next version is v1.0, with four main focus points:
 * SSR (Server Side Rendering)
 * Nuxt starter kit
 * Notable improvements to the form components
+* Total documentation website revamp, using Quasar SSR. Better "view source" functionality, with ability to fork and play each example on JsFiddle.
 
 Notable features on the roadmap too (some might end up in v1.0):
 * Chrome (+ Firefox) extension support
