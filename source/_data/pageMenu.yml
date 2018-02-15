@@ -16,7 +16,7 @@ guide:
   Main Starter Kit:
     Installation: app-$
     Directory Structure: app-$
-    Configuring quasar.conf.js: app-$
+    quasar.conf.js: app-$
     Build Commands: app-$
     Routing: app-$
     Adding Pages and Layouts: app-$
