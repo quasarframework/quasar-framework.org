@@ -1,97 +1,64 @@
-title: Introduction
+title: Introduction to Quasar Framework
 ---
 
+![Quasar - Empowering your websites and apps](/images/responsive-logo.png)
 
+## What is Quasar?
+Quasar is the ultimate framework (powered with [Vue](https://vuejs.org/)) that you'll need when developing:
+* A (responsive) website
+* A PWA (Progress Web App)
+* A Mobile App (Android, iOS, ...) through Cordova
+* An Electron App
 
-There are 2 sections on this documentation website that will get you familiarized with Quasar:
-  * **Guide** - Information about CLI, starter kits, how to get you started working on a project folder
-  * [**Components**](/components) - Quasar components
+Write code once then simultaneously deploy as website, PWA, Mobile App and/or Electron App using the same base-code. All it takes is just changing a parameter to the build command.
 
-It will help you a lot if you are familiar with these awesome tools/technologies:
+Quasar offers very fast web components so you can design an app in record time. And it's not just about components. When using Quasar you won't need additional heavy libraries like Hammerjs, Momentjs or Bootstrap. It got that covered too, and with a small footprint!
 
-* [ES6 Javascript](http://www.2ality.com/2015/08/getting-started-es6.html)
-* [Vue JS](http://vuejs.org) and [NPM](http://npmjs.org) ecosystems
-* [Vue Router](http://router.vuejs.org/)
-* Writing [.vue files](http://vue-loader.vuejs.org/en/index.html)
-* [Optional] [Vuex](http://vuex.vuejs.org/) if building large scale Apps.
-* [Optional] [Webpack](http://webpack.github.io/) for tweaking the build system to your specific needs
-* [Optional] [Cordova](https://cordova.apache.org/) for building native mobile phone Apps out of your Quasar App
+## Why Quasar?
+Because of what is offered out of the box. Follow our [Twitter](https://twitter.com/quasarframework) account for testimonials.
 
-# First steps
+### All Platforms in One Go
+One source code for all platforms simultaneously: responsive desktop/mobile website, PWAs (Progressive Web Apps), native mobile Apps (that really look native!) and Electron apps.
 
-Before you begin your awesome journey with Quasar, if you aren't yet a very experienced JavaScript and Vue developer, we recommend you [read through this article first](/components/introduction-for-beginners.html). In that article we clarify simple prerequisites and basic knowledge needed to work with Quasar, which expands on the list above.
+### Top class, fast web components
+There's almost a component for every needs you might have. All these components are carefully crafted to offer the best possible experience to your users. **Quasar is designed with performance & responsiveness in mind** -- so the overhead of using Quasar is barely noticeable. We take great pride in this.
 
-After reading that article, or if you have JavaScript and Vue experience, you can start with the Quasar CLI. The CLI allows you to create new projects in no time, by generating a base application, filled with everything you need to begin working on your application. It does most of the heavy-lifting, so you need not concern yourself with the redundant tasks of building a base application. You should install the CLI globally, in order to generate and manage Quasar apps.
+### Best practices integrated by default
+You don't need to worry about what the best practices in web development are. You get that for free out of the box. HTML/CSS/JS minification, cache busting, tree shaking, sourcemapping, code-splitting & lazy loading, ES6 transpiling, linting code. This just barely scratches the surface. Quasar takes care of this for you. No configuration needed.
 
-``` bash
-# installing Quasar CLI
-$ npm install -g quasar-cli
-```
+### Two Themes (more to come)
+Material theme and iOS theme.
 
-## Quasar Starter Kits
-Quasar offers multiple starter kits which you can check out:
+### Progressively migrate your existing project
+Quasar offers an UMD (Unified Module Definition) version which means you can add a CSS and JS HTML tag into existing project and you're ready to use it. No build step is required.
 
-``` bash
-$ quasar list
-```
+### Unparalleled developer experience through Quasar CLI
+You'll benefit from:
+* State preserving hot-reload when you make changes to your source code, no matter if you develop a PWA, a Mobile App (directly on your phone or on an emulator) or an Electron app. Change code and watch it get updated on the fly, without the need of any page refresh.
+* State preserving compilation error overlay.
+* Lint-on-save with ESLint -- if you like linting your code only
+* ES6 code transpiling
+* Sourcemaps
+* Changing build options won't require you to manually reload the dev server
 
-Example of output:
-```
-Official Quasar App starter kits:
+Again, this is barely scratching the surface.
 
- ★ default ($ quasar init default <folder_name>)
-   Boilerplate for website (with optional Cordova and Electron wrappers) with Quasar v0.14+
+### Get up to speed fast
+The top class starter kit will make it easy for you to get up to speed. Bring an idea to reality in record time. All the heavy lifting is done for you, not by you. You will just need to focus on your features and let the boilerplating be done by Quasar.
 
- ★ pwa ($ quasar init pwa <folder_name>)
-   Boilerplate for PWA with Quasar v0.14+
-```
+### Awesome ever-growing community
+Whenever you got a problem you can't or don't know yet how to solve, visit Quasar forum or Gitter chat. The community is there to help you.
 
-## Create your first App
-Depending on what you want to build, choose a starter kit then use `quasar init` command like this:
+### Wide platform support
+Google Chrome, Firefox, IE11/Edge, Safari, Opera, iOS, Android, Windows Phone, Blackberry.
 
-``` bash
-# create starter boilerplate folder
-$ quasar init <starter_kit_name> <folder_name>
-# example: quasar init default my-project
+### Great documentation
+Finally, it's worth mentioning about the huge amount of time that is spent on writing great, bloat free, focused, complete documentation pages so that you can quickly pick up Quasar. There will be no room for confusion.
 
-$ cd <folder_name>
+## Underlying technologies
+[Vue](https://vuejs.org/), [Babel](https://babeljs.io/), [Webpack](https://webpack.js.org/), [Cordova](https://cordova.apache.org/), [Electron](https://electronjs.org/).
 
-# npm install deps
-$ npm install
-```
+Except for Vue, which takes half a day to pick up and will change you forever, you are not really required to know the other technologies. Most of them are integrated and already configured for you.
 
-## The Dev Server
-Quasar also comes with a development server, which is equipped with [hot reload](https://www.youtube.com/watch?v=zSnL5W1RVkA). It makes your development process significantly easier. To get the server started:
-
-``` bash
-$ quasar dev [theme]
-
-# start with 'mat' theme
-$ quasar dev
-# or
-$ quasar dev mat
-
-# start with 'ios' theme
-$ quasar dev ios
-```
-
-## Vue Component Boilerplate
-Although it isn't all that inconvenient, there is still some boilerplate involved with creating Vue's single file components, which Quasar makes great use of. So, to help you with the boilerplate code creation, Quasar offers a component creation process in the CLI. To create `*.vue` components from ready to use component templates folder (`/templates`):
-
-``` bash
-$ quasar new [type] <name of your component with optional subfolder>
-```
-
-The type can be `layout`, `page`, `component` (generic `*.vue` component).
-You can even make your own component templates and use the CLI to generate them in your App.
-
-## Quasar Play App
-If you want to **develop mobile Apps with hot reload directly on your mobile phone**, install the [Quasar Play](/guide/quasar-play-app.html) app, currently only on Google Play Store.
-
-``` bash
-$ quasar dev --play
-```
-
-This generates a QR code that you can scan with the Quasar Play app and you'll have your App on the phone as long as the development server is running.
-
-> That's it. You're all set now. Continue to read the guide about Quasar and don't forget to have fun! :)
+## Get started in under a minute
+Having said this, let's [get started](/guide/index.html)! You'll be running a website or app in under a minute.

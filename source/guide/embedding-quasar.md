@@ -45,7 +45,13 @@ So, after you figured out the CDN links that you need to embed into your webpage
 
 By using the UMD version, you got all components, directives and Quasar plugins already installed for you. You just need to start using them.
 
+**As opposed to using Quasar through Quasar CLI, you can't use self-closing tags:**
+
 ```html
+<!-- [BAD] instead of: -->
+<q-btn label="Button" />
+
+<!-- [GOOD] close tag: -->
 <q-btn label="My Button"></q-btn>
 ```
 

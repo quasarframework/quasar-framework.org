@@ -17,6 +17,8 @@ So what can you configure through `/quasar.conf.js`?
 * IE11+ support
 * Extend Webpack config Object
 
+**You'll notice that changing any of these settings does not require you to manually reload the dev server. Quasar detects if the changes can be injected through Hot Module Reload and in case it can't, it will reload the dev server for you. You won't lose your development flow as you will just sit back while Quasar CLI quickly takes care of it.**
+
 ## Structure
 You'll notice that `/quasar.conf.js` exports a function that takes a `ctx` (context) parameter and returns an Object. This allows you to dynamically change your website/app config based on this context:
 
