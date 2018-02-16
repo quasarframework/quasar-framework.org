@@ -45,6 +45,9 @@ this.$q.dialog({
   // optional; prevent user dismissal when not clicking on a Dialog button
   preventClose: true,
 
+  noBackdropDismiss: false, // gets set to "true" automatically if preventClose is "true"
+  noEscDismiss: false, // gets set to "true" automatically if preventClose is "true"
+
   // optional; stacks button vertically instead of horizontally (default)
 
   // optional; a position of the Dialog (top, bottom, left, right)
@@ -309,10 +312,12 @@ export default {
 | `message` | String | Message of Dialog. |
 | `prompt` | Object | Check below table for details. |
 | `options` | Object | Check below table for details. |
-| `ok` | Boolean/String | Title of Dialog. |
-| `cancel` | Boolean/String | Title of Dialog. |
-| `stack-buttons` | Boolean | Title of Dialog. |
-| `prevent-close` | Boolean | Title of Dialog. |
+| `ok` | Boolean/String | Do we have an OK button? Optionally specify which label to use for it. |
+| `cancel` | Boolean/String | Do we have a Cancel button? Optionally specify which label to use for it. |
+| `stack-buttons` | Boolean | Stack buttons vertically instead of default horizontally. |
+| `prevent-close` | Boolean | Dialog can be dismissed only by clicking/tapping on OK/Cancel buttons. |
+| `no-esc-dismiss` | Boolean | "ESC" key won't dismiss the Dialog. Overriden to "true" if "prevent-close" is "true". |
+| `no-backdrop-dismiss` | Boolean | Click/Tap on backdrop won't dismiss Dialog. Overriden to "true" if "prevent-close" is "true". |
 | `position` | String | Position of Dialog (top, bottom, left, right). |
 | `color` | String | A color from [Quasar Color Palette](/components/color-palette.html). |
 
