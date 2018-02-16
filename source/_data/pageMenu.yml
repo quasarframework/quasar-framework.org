@@ -1,6 +1,6 @@
 guide:
   root:
-    Introduction: $
+    Introduction to Quasar: $
     Playground: quasar-$
     Contribution Guide: quasar-$
     Release Notes: quasar-$
@@ -10,16 +10,17 @@ guide:
     Installation: index
     Quasar CLI: $
 
-  UMD Starter Kit:
+  UMD / Standalone:
     Embedding Quasar: $
 
-  Main Starter Kit:
+  Starter Kit:
     Installation: app-$
     Directory Structure: app-$
     quasar.conf.js: app-$
     Build Commands: app-$
     Routing: app-$
     Adding Pages and Layouts: app-$
+    Lazy Loading - Code Splitting: app-$
     Handling Assets: app-$
     App Plugins: $
     API Proxying: app-$
@@ -31,7 +32,7 @@ guide:
     Supporting IE: app-$
 
   Developing PWA:
-    What is a PWA: pwa-$
+    Introduction: pwa-$
     Configuring PWA: pwa-$
     Build Commands: pwa-$
 

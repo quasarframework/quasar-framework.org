@@ -2,16 +2,32 @@ title: Adding Pages and Layouts
 ---
 Your Pages (`/src/pages`) and Layouts (`/src/layouts`) are injected into your website/app (and also managed) through Vue Router in `/src/router/routes.js`. Each Page and Layout needs to be referenced there.
 
-You may want to read [Routing](/guide/routing.html) first.
+You may want to read [Routing](/guide/routing.html) first and also understand [Lazy Loading / Code Splitting](/guide/app-lazy-loading.html).
 
 Example of `routes.js`:
 ```js
-// we define our routes here.
+// we define our routes in this file
+
+import LandingPage from 'pages/Landing'
 
 const routes = [
   {
     path: '/',
-    component: () => import('pages/landing')
+    component: LandingPages
+  }
+]
+
+export default routes
+```
+
+Example of `routes.js` using lazy-loading / on-demand loading:
+```js
+// we define our routes in this file
+
+const routes = [
+  {
+    path: '/',
+    component: () => import('pages/Landing')
   }
 ]
 
