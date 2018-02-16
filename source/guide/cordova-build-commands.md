@@ -19,6 +19,9 @@ $ quasar dev -m cordova -T ios -t ios
 
 # with a specific Quasar theme, for Android platform:
 $ quasar dev -m cordova -T android -t mat
+
+# using a specific emulator (--emulator, -e)
+$ quasar dev -m cordova -T android -e iPhone-7
 ```
 
 > **IMPORTANT**
