@@ -201,6 +201,27 @@ this.$q.dialog({
 })
 ```
 
+#### Custom Buttons
+``` js
+this.$q.dialog({
+  title: 'Custom buttons',
+  message: 'Go to a movie.',
+  ok: {
+    push: true,
+    label: 'Yes, please!'
+  },
+  cancel: {
+    push: true,
+    color: 'negative',
+    label: 'Uhm, nope'
+  }
+}).then(() => {
+  this.$q.notify('Agreed!')
+}).catch(() => {
+  this.$q.notify('Disagreed...')
+})
+```
+
 #### Prevent accidental close
 ``` js
 this.$q.dialog({
@@ -312,8 +333,8 @@ export default {
 | `message` | String | Message of Dialog. |
 | `prompt` | Object | Check below table for details. |
 | `options` | Object | Check below table for details. |
-| `ok` | Boolean/String | Do we have an OK button? Optionally specify which label to use for it. |
-| `cancel` | Boolean/String | Do we have a Cancel button? Optionally specify which label to use for it. |
+| `ok` | Boolean/String/Object | Do we have an OK button? Optionally specify which label to use for it OR the button props in an Object. |
+| `cancel` | Boolean/String/Object | Do we have a Cancel button? Optionally specify which label to use for it OR the button props in an Object. |
 | `stack-buttons` | Boolean | Stack buttons vertically instead of default horizontally. |
 | `prevent-close` | Boolean | Dialog can be dismissed only by clicking/tapping on OK/Cancel buttons. |
 | `no-esc-dismiss` | Boolean | "ESC" key won't dismiss the Dialog. Overriden to "true" if "prevent-close" is "true". |
