@@ -10,7 +10,7 @@ Quasar provides a wrapper over [Web Storage API](https://developer.mozilla.org/e
 Edit `/quasar.conf.js`:
 ```js
 framework: {
-  plugin: [
+  plugins: [
     'LocalStorage',
     'SessionStorage'
   ]
