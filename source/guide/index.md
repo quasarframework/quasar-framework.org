@@ -1,7 +1,7 @@
 title: Getting Started - Installation
 ---
 
-**If you want to learn what Quasar is and what it can do for you**, read the [Introduction to Quasar](/guide/introduction.html). Otherwise, let's get started and choose how you want to use Quasar:
+**If you want to learn what Quasar is and what it can do for you**, read the [Introduction to Quasar](/guide/introduction-to-quasar.html). Otherwise, let's get started and choose how you want to use Quasar:
  * UMD/Standalone (embed into an existing project through CDN, progressive integration)
  * Starter Kit handled by Quasar CLI (**recommended**)
 
