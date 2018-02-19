@@ -6,7 +6,7 @@ title: Introduction to Quasar Framework
 ## What is Quasar?
 Quasar is the ultimate framework (powered with [Vue](https://vuejs.org/)) that you'll need when developing:
 * A (responsive) website
-* A PWA (Progress Web App)
+* A PWA (Progressive Web App)
 * A Mobile App (Android, iOS, ...) through Cordova
 * An Electron App
 

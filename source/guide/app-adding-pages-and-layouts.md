@@ -111,6 +111,12 @@ const routes = [
     // hey, it has children routes and User has <router-view> in it;
     // It is really a Layout then!
     children: [
+      // Default child route
+      {
+        path: '', // default child route for '/user'
+        redirect: '/user/profile' // redirect to our desired default route
+      }
+
       // Profile page
       {
         path: 'profile', // here it is, route /user/profile

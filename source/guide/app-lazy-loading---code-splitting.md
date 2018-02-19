@@ -54,7 +54,7 @@ So how can we limit the number of chunks created in this case? The idea is to li
 1. Add file extension, even if it works without it too. This will create chunks only for that file types. Useful when that folder contains many file types.
   ```js
   // bad
-  import('./folder/' + pageName')
+  import('./folder/' + pageName)
 
   // much better
   import('./folder/' + pageName + '.vue')
@@ -63,7 +63,7 @@ So how can we limit the number of chunks created in this case? The idea is to li
   ```js
   // bad -- makes chunks for any JSON inside ./folder (recursive search)
   const asset = 'my/jsons/categories.json'
-  import('./folder/' + asset')
+  import('./folder/' + asset)
 
   // good -- makes chunks only for JSONs inside ./folder/my/jsons
   const asset = 'categories.json'
