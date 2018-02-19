@@ -45,18 +45,8 @@ So, after you figured out the CDN links that you need to embed into your webpage
 
 By using the UMD version, you got all components, directives and Quasar plugins already installed for you. You just need to start using them.
 
-**As opposed to using Quasar through Quasar CLI, you can't use self-closing tags:**
-
-```html
-<!-- [BAD] instead of: -->
-<q-btn label="Button" />
-
-<!-- [GOOD] close tag: -->
-<q-btn label="My Button"></q-btn>
-```
-
-### Quasar Components
-You will also notice that you won't be able to use the self-closing tag form of any of the components. You must close all components tags.
+**Do not use self closing tags with UMD version:**
+You will notice that you won't be able to use the self-closing tag form of any of the components. You must close all components tags.
 
 ```html
 <!-- In docs, but for Main Starter Kit usage -->
@@ -64,6 +54,13 @@ You will also notice that you won't be able to use the self-closing tag form of 
 <!-- ^^^ can't use it like this on UMD -->
 
 <!-- Instead, include a self-closing tag too: -->
+<q-btn label="My Button"></q-btn>
+```
+
+### Quasar Components
+An example. No need to install any component in UMD version.
+
+```html
 <q-btn label="My Button"></q-btn>
 ```
 

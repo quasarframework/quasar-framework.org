@@ -32,7 +32,7 @@ So, you need a loader for it. You search Google to see what webpack loader you n
 $ npm install json-loader --save-dev
 ```
 
-After installing your new loader, we want to tell Webpack to use it. So we edit `/quasar.conf.js` and change build.extendWebpack() to add entries to `module/rules` for this new loader:
+After installing your new loader, we want to tell Webpack to use it. So we edit `/quasar.conf.js` and change `build.extendWebpack()` to add entries to `module/rules` for this new loader:
 
 ``` js
 build: {
@@ -78,7 +78,7 @@ By default, PostCSS is configured to use Autoprefixer. Take a look at `/.postcss
 ## Coffeescript
 If you are using Coffeescript then you need to EITHER disable ESLint OR tell ESLint which Vue components are using Coffeescript.
 
-Note that `vue-loader` uses `lang="coffee"` to identify components which are using Coffeescript, but `lang="coffee"` is not recognizable for ESLint. Fortunately, ESLint (following traditional HTML) uses `type="xxx"` to identify the type of scripts. As long as a `<script>` tag has any `type` other than `javascript`, ESLint would mark the script as non-javascript, and skips linting it. Coffeescript's convention is to use `type="text/coffeescript"` to identify itself. Therefore, in your Vue components which are using Coffeescript, using both `lang` and `type` to avoid ESLint:
+Note that `vue-loader` uses `lang="coffee"` to identify components which are using Coffeescript, but `lang="coffee"` is not recognizable for ESLint. Fortunately, ESLint (following traditional HTML) uses `type="xxx"` to identify the type of scripts. As long as a `<script>` tag has any `type` other than `javascript`, ESLint would mark the script as non-javascript, and skips linting it. Coffeescript's convention is to use `type="text/coffeescript"` to identify itself. Therefore, in your Vue components which are using Coffeescript, using both `lang` and `type` to avoid ESLint warnings:
 
 ```html
 <template>

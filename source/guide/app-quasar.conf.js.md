@@ -12,7 +12,7 @@ So what can you configure through `/quasar.conf.js`?
 * [App Plugins](/guide/app-plugins.html) list (that determines order of execution too) -- which are files in `/src/plugins` that tell how your app is initialized before mounting the root Vue component
 * Global CSS/Stylus/... files to be included in the bundle
 * What should be added or removed from "vendor" chunk
-* PWA [manifest](/guide/pwa-configuring-pwa.html))
+* PWA [manifest](/guide/pwa-configuring-pwa.html)
 * [Electron Packager](/guide/electron-configuring-electron.html)
 * IE11+ support
 * Extend Webpack config Object
@@ -85,11 +85,11 @@ Let's take each option one by one:
 
 | Property | Type | Description |
 | --- | --- | --- |
-| css | Array | Global CSS/Stylus/... files from `/src/css/`, except for themes files which are included by default. Example: ['app.styl'] (referring /src/css/app.styl) |
-| extras | Array | What to import from [quasar-extras](https://github.com/quasarframework/quasar-extras) package. Example: ['material-icons', 'roboto-font', 'ionicons'] |
+| css | Array | Global CSS/Stylus/... files from `/src/css/`, except for themes files which are included by default. Example: _['app.styl']_ (referring /src/css/app.styl) |
+| extras | Array | What to import from [quasar-extras](https://github.com/quasarframework/quasar-extras) package. Example: _['material-icons', 'roboto-font', 'ionicons']_ |
 | supportIE | Boolean | Add support for IE11+. |
-| framework | Object/String | What Quasar components/directives/plugins to import, what Quasar I18n language pack to use, what icon set to use for Quasar components. Example: { components: ['QBtn', 'QIcon'], directives: ['TouchSwipe'], plugins: ['Notify'], iconSet: 'fontawesome', i18n: 'de' }. Note that for iconSet to work, you also need to tell Quasar to embed that icon pack through `extras` prop. |
-| animations | Object/String | What [CSS animations](http://localhost:4000/components/transition.html) to import. Example: ['bounceInLeft', 'bounceOutRight'] |
+| framework | Object/String | What Quasar components/directives/plugins to import, what Quasar I18n language pack to use, what icon set to use for Quasar components. Example: _{ components: ['QBtn', 'QIcon'], directives: ['TouchSwipe'], plugins: ['Notify'], iconSet: 'fontawesome', i18n: 'de' }_. Note that for iconSet to work, you also need to tell Quasar to embed that icon pack through `extras` prop. |
+| animations | Object/String | What [CSS animations](http://localhost:4000/components/transition.html) to import. Example: _['bounceInLeft', 'bounceOutRight']_ |
 | devServer | Object | Dev server [options](https://webpack.js.org/configuration/dev-server/). Some properties are overwritten based on the Quasar mode you're using in order to ensure a correct config. |
 | build | Object | Build configuration options. See [section](#Build-Property) below. |
 | cordova | Object | Cordova specific [config](/guide/cordova-configuring-cordova.html). |
