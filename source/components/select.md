@@ -92,6 +92,7 @@ Supports `v-model` which should be the String for single selection and Array for
 | `display-value` | String | Overrides text displayed in input frame. See "Working with Display Value" section below. |
 | `placeholder` | String | Placeholder text. |
 | `clearable` | Boolean | If set to `true`, the component offers the user an actionable icon to remove the current selection. |
+| `no-icon` | Boolean | Use no icon on left side |
 
 Common input frame properties:
 

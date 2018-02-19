@@ -123,7 +123,7 @@ export default {
 #### Appearance
 | Vue Property | Type    | Description |
 | ---          | ---     | --- |
-| `size`       | String | Button size. One of `xs`, `sm`, `md`, `lg`, `xl`, or a css string size eg. `25px`, `2rem`, `3vw`. |
+| `size`       | String | Button size. One of `xs`, `sm`, `md`, `lg`, `xl`, or a css string size eg. `25px`, `2rem`, `3vw`. More info below this table. |
 | `color`      | String  | A color from [Quasar Color Palette](/components/color-palette.html). |
 | `text-color` | String  | A color from [Quasar Color Palette](/components/color-palette.html). |
 | `align`      | String  | Label/Content alignment. One of `left`, `center`, `right`, `around`, `between`. |
@@ -139,6 +139,18 @@ export default {
 | `no-wrap`    | Boolean | Prevent text wrapping |
 | `no-caps`    | Boolean | Set true, if you don't want button content/label to be transformed to uppercase letter on Material Theme. |
 | `no-ripple`  | Boolean | Disable [Material Ripple](/components/material-ripples.html). Mat theme only. |
+
+Size property values:
+
+| Size value | Description |
+| --- | --- |
+| xs, ..., xl | Predefined sizes |
+| form | Same size as an input form component |
+| form-label | Same size as an input form component with stack/float label |
+| form-hide-underline | Same size as an input form component with no bottom border |
+| form-label-hide-underline | Same size as an input form component with stack/float label and no bottom border |
+| form-inverted | Same size as an inverted input form component |
+| form-label-inverted | Same size as an inverted input form component with stack/float label |
 
 ## Vue Events
 | Vue Event | Description |

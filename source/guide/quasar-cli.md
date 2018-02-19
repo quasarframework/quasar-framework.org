@@ -62,9 +62,11 @@ $ quasar dev -h
       --hostname, -H   A hostname to use for serving the application
       --help, -h       Displays this message
 
-      Only for Cordova mode (required):
-      --target, -T     App target
+      Only for Cordova mode:
+      --target, -T     (required) App target
                          [android|ios|blackberry10|browser|osx|ubuntu|webos|windows]
+      --emulator, -e   (optional) Emulator name
+                         Example: iPhone-7, iPhone-X
 ```
 
 The Quasar development server allows you to develop your App by compiling and maintaining code in-memory. A web server will serve your App while offering hot-reload out of the box. Running in-memory offers faster rebuilds when you change your code.
@@ -170,7 +172,7 @@ $ quasar clean
 $ quasar build --clean
 ```
 
-## new (Generating Pages, Layouts, Vuex Store, ...)
+## new (Generating Components, Pages, Layouts, Vuex Store)
 ```bash
 $ quasar new -h
 

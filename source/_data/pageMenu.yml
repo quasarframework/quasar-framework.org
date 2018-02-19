@@ -1,53 +1,62 @@
 guide:
   root:
-    Introduction: $
-    Contribution Guide: $
-    Release Notes: $
-    Roadmap: $
+    Introduction to Quasar: $
+    Playground: quasar-$
+    Contribution Guide: quasar-$
+    Release Notes: quasar-$
+    Roadmap: quasar-$
 
   Getting Started:
     Installation: index
     Quasar CLI: $
 
-  UMD Starter Kit:
+  UMD / Standalone:
     Embedding Quasar: $
 
-  Main Starter Kit:
-    Installation: sr-$
-    Directory Structure: sr-$
-    Configuration: sr-$
-    Build Commands: sr-$
-    Routing: sr-$
-    API Proxying: sr-$
-    Pre-Processors: sr-$
-    Handling Assets: sr-$
-    App Plugins: sr-$
-    Vuex Store: sr-$
-    Linter: sr-$
+  Starter Kit:
+    Installation: app-$
+    Directory Structure: app-$
+    quasar.conf.js: app-$
+    Build Commands: app-$
+    Routing: app-$
+    Adding Pages and Layouts: app-$
+    Lazy Loading - Code Splitting: app-$
+    Handling Assets: app-$
+    App Plugins: $
+    API Proxying: app-$
+    Pre-Processors and Webpack: app-$
+    Vuex Store: app-$
+    Theming: quasar-$
+    App Linter: $
+    RTL Support: app-$
+    Supporting IE: app-$
 
   Developing PWA:
-    What is a PWA: pwa-$
+    Introduction: pwa-$
     Configuring PWA: pwa-$
     Build Commands: pwa-$
 
   Developing Mobile Apps:
-    What is Cordova: cordova-$
+    Introduction: cordova-$
+    Preparation: cordova-$
     Configuring Cordova: cordova-$
+    Cordova Plugins: $
     Build Commands: cordova-$
     Troubleshoot and Tips: cordova-$
+    Managing Google Analytics: cordova-$
+    Publishing to Store: cordova-$
 
   Developing Electron Apps:
-    What is Electron: electron-$
+    Introduction: electron-$
+    Preparation: electron-$
     Configuring Electron: electron-$
+    Electron Packages: $
     Build Commands: electron-$
     Troubleshoot and Tips: electron-$
 
   Misc:
-    Theming: quasar-$
-    RTL Support: $
     Ajax Requests: $
     Opening Dev Server To Public: $
-    Managing Google Analytics: $
 
 components:
   root:

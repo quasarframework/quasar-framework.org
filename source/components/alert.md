@@ -1,6 +1,7 @@
 title: Alert
 ---
 QAlert is a component that allows you to display an informational message to the users, with optional action buttons.
+<input type="hidden" data-fullpage-demo="other-components/alert">
 
 ## Installation
 Edit `/quasar.conf.js`:
