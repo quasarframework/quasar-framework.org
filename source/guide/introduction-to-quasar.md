@@ -20,8 +20,8 @@ Because of what is offered out of the box. Follow our [Twitter](https://twitter.
 ### All Platforms in One Go
 One source code for all platforms simultaneously: responsive desktop/mobile website, PWAs (Progressive Web Apps), native mobile Apps (that really look native!) and Electron apps.
 
-### Top class, fast web components
-There's almost a component for every needs you might have. All these components are carefully crafted to offer the best possible experience to your users. **Quasar is designed with performance & responsiveness in mind** -- so the overhead of using Quasar is barely noticeable. We take great pride in this.
+### Top class, fast web responsive components
+There's almost a component for every needs you might have. All these components are carefully crafted to offer the best possible experience to your users, including well designed responsiveness. **Quasar is designed with performance & responsiveness in mind** -- so the overhead of using Quasar is barely noticeable. We take great pride in this.
 
 ### Best practices integrated by default
 You don't need to worry about what the best practices in web development are. You get that for free out of the box. HTML/CSS/JS minification, cache busting, tree shaking, sourcemapping, code-splitting & lazy loading, ES6 transpiling, linting code. This just barely scratches the surface. Quasar takes care of this for you. No configuration needed.

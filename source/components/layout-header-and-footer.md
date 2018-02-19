@@ -79,3 +79,26 @@ export default {
 | Vue Event | Description |
 | --- | --- |
 | `@reveal(state)` | Emitted when reveal state changes. |
+
+## Handling Quasar Themes
+You can make some tweaks to distinguish between Material and iOS themes. You'll notice in the demo that header and footer has different looks based on Quasar theme. Here's an example how to do it below. Notice that in this example we also place navigational tabs in header (for Material) or footer (for iOS):
+
+```html
+<!-- layout.vue -->
+<q-layout-header reveal>
+  <q-toolbar :inverted="$q.theme === 'ios'">
+    ....
+  </q-toolbar>
+
+  <nav-tabs v-if="$q.theme === 'mat'" />
+</q-layout-header>
+
+<q-layout-footer reveal v-if="$q.theme === 'ios'">
+  <nav-tabs />
+</q-layout-footer>
+
+<!-- nav-tabs.vue -->
+<q-tabs :inverted="$q.theme === 'ios'">
+  <q-route-tab......
+</q-tabs>
+```
