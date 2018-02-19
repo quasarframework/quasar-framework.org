@@ -1,6 +1,6 @@
 title: Directory Structure
 ---
-This is the structure of a project with all modes installed. Do not be intimidated!
+This is the structure of a project with all modes installed. There's no reason to be intimidated though!
 > If you are a beginner, all you'll need to care about is `/quasar.conf.js` (Quasar App Config file), `/src/router`, `/src/layouts`, `/src/pages` and optionally `/src/assets`.
 ``` bash
 .
