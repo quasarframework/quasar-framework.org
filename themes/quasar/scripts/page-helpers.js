@@ -102,7 +102,7 @@
   });
 
   hexo.extend.helper.register('latest_quasar_version', function() {
-    return '0.14.7';
+    return '0.14.9';
   });
 
 }());
