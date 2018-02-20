@@ -84,7 +84,7 @@ Also notice QInlineDatetime has been renamed to QDatetimePicker.
 ### New Components or Features
 * [Spacing](/components/spacing.html) CSS classes
 * [QTable](/components/datatable.html) - It's on the Revamps list too, but it sure deserves a place here too. Prepare for next level Data Tables, now fully customizable! Check out the demo too.
-* [QEditor](/components/editor.html) - Quasar's own WYSIWYG approach! This alone would deserve its own section.
+* [QEditor](/components/editor---wysiwyg.html) - Quasar's own WYSIWYG approach! This alone would deserve its own section.
 * [Notify](/components/notify.html) - A merge between Toast and Alert, with flexible positioning and awesome animations.
 * [QColor](/components/color-input.html) - Color Picker!
 * New button types: [QBtnGroup](/components/button-group.html) and [QBtnDropdown](/components/dropdown-button.html)
