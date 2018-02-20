@@ -19,11 +19,11 @@ Quasar CLI is installed both globally and locally. When you issue a Quasar comma
 
 Watch for Quasar CLI version. It's not the same thing as Quasar version. Type `$ quasar info`. All you need to know is that the major and minor part of Quasar CLI version matches Quasar version. So for example installing latest Quasar CLI v0.15.x will ensure you are using latest Quasar v0.15.x. While working on v0.15.x, no breaking changes will occur, so you are safe (& recommended) to upgrade to latest Quasar CLI as it's released.
 
-#### Caveat
-Sometimes after you npm install a package, or even update current packages, NPM might screw things up. You'll get errors that some packages are missing and you need to install them. In such cases, delete node_modules and package-lock.json and npm install again.
+> **Caveat**
+> Sometimes after you npm install a package, or even update current packages, NPM might screw things up. You'll get errors that some packages are missing and you need to install them. In such cases, delete node_modules and package-lock.json and npm install again.
 
 ## Upgrading to Quasar v0.15
-There's been A LOT of work done for v0.15. The Quasar CLI has been rewritten from scratch to allow for a stellar development experience. Only one starter kit is required in order to handle websites, PWAs, Mobile Apps and Electron Apps. Building any of those is a matter of just adding a parameter to the dev/build command.
+There's been A LOT of work done for v0.15. The Quasar CLI has been rewritten from scratch to allow for a stellar development experience (Mobile App developers and Electron will fall in love with it!). Only one starter kit is required in order to handle websites, PWAs, Mobile Apps and Electron Apps. Building any of those is a matter of just adding a parameter to the dev/build command.
 
 **Furthermore, you can now use an UMD/standalone version of Quasar to embed in an existing project. No build step is required.**
 
@@ -31,8 +31,19 @@ Take some time to read all "Guide" pages once again. It will help you understand
 
 So, what is new and what has changed? Everything has been polished. The full list of enhancements and new features is exhausting. We'll try to cover the major parts only. This is just a guide to get you started so that you know where to look in docs for things that have changed.
 
+### First step - when using starter kit
+Ok, so you've globally installed/updated "quasar-cli" to latest v0.15.x. Now it's time for you to create a new project folder:
+```bash
+$ npm install -g quasar-cli
+
+# Then we create a project folder with Quasar CLI:
+$ quasar init <folder_name>
+```
+
+Observe the new [project structure](/guide/app-directory-structure.html). Start to port out files to the new project folder, taking into account the far superior structure. **Using the new starter kit will allow you to take advantage of future seamless upgrades!** In any case, do not simply copy your `/src` folder over to the new starter kit.
+
 ### Build configuration no longer required
-You'll notice the new starter kit doesn't provide a `/build` or `/config` folders. They are no longer required. Everything can be easily configured from `/quasar.conf.js` now. You don't need to know Webpack.
+You'll notice the new starter kit doesn't provide a `/build` or `/config` folders. They are no longer required. Everything can be easily configured from `/quasar.conf.js` now. You don't need to know Webpack. [More Info](/guide/app-quasar.conf.js.html).
 
 ### No main.js?
 Yes. It's no longer there because you don't need it anymore. For initialization code and importing libraries into your website/app, read about [App Plugins](/guide/app-plugins.html).
@@ -53,10 +64,10 @@ Yes, this refer to Action Sheet, Notify (replacement of Toast and Alert), LocalS
 * QPagination (major improvements)
 * QCollapsible (new powerful features!)
 * QTable (replacing QDataTable -- full customization now!)
-* Lists & List Items
+* Lists & List Items -- more options, better control, "dark" theme
 * QTree (the most advanced you'll ever see and need!)
-* ActionSheet (now as a Quasar Plugin & QActionSheet component too!)
-* Dialog (now as a Quasar Plugin & QDialog component too for unlimited flexibility!)
+* ActionSheet (now as a Quasar Plugin & QActionSheet component too! -- has new features too)
+* Dialog (now as a Quasar Plugin & QDialog component too for unlimited flexibility! -- has new features too)
 * QModal - Easier to use than ever! Now with full v-model support.
 * QPopover & QTooltip - new animation, ability to close it without the need of a Vue reference (through `v-close-overlay` directive), full support for v-model now
 * Loading (now as a Quasar Plugin)
@@ -67,6 +78,8 @@ Yes, this refer to Action Sheet, Notify (replacement of Toast and Alert), LocalS
 * TouchSwipe, TouchHold and TouchPan - Much better implementation, more control. Read about these directive's modifiers.
 * AppFullscreen & AppVisibility - Now as Quasar Plugins, with reactive state properties that can be used in Vue watchers
 * QUploader - new features & design
+
+Also notice QInlineDatetime has been renamed to QDatetimePicker.
 
 ### New Components or Features
 * [Spacing](/components/spacing.html) CSS classes
@@ -104,6 +117,7 @@ You can use `$q` injection for convenience, accesing Quasar Theme, Quasar I18n, 
 * HTML Table. You can however check code from v0.14 and embed it yourself into your app.
 * Image Gallery - no longer needed. The new QCarousel is so powerful that you'll immediately see the benefit of switching to it.
 * QTransition - no longer required. Simply use Vue's `<transition>` instead. [More Info](/components/transition.html)
+* QDatetimeRange - it's so easy to simply write two QDatetime side by side that this component is simply not required anymore; this allows you full flexibility too.
 
 ### New Layout
 The following upgrade guide for [QLayout](/components/layout.html) barely scratches the surface, but it's a starting point.
@@ -221,8 +235,73 @@ We upgrade it to v0.15. Notice that in order for us to place navigation tabs on 
 ```
 
 ### Form Components
-*
+In previous versions you would listen for `@change` event to detect changes. Now you can listen to `@input` for immediate changes or `@change` for **lazy update**. Vue `v-model.lazy` support is a pending change, so until then you can use the equivalent form (details below).
 
-v-model on comps
-Promises for some comps
-Modal back button
+```html
+<!-- QInput example -->
+
+<!-- same as listening for @input -->
+<q-input v-model="myModel" />
+
+<!-- listening for lazy update />
+<q-input :value="myModel" @change="val => { myModel = val }" />
+```
+
+You'll notice all form components have been polished. Also, you'll be pleasantly surprised by new properties. To name just a few: "hide-underline", "inverted-light", "dark" or "warning" (for highlighting a warning state).
+
+QCheckbox now supports an indeterminate state as well. You can specify a value for "true"/"false"/"indeterminate" states, so it no longer operates with Booleans (or Arrays) only.
+
+QDatetime now doesn't require the "Set" button when using Popovers. Clicking on a date will simply select it and close the popover.
+
+QChipsInput (& QChips) have new props that allow for better customization now.
+
+### Using Promises
+Modals, Popovers, Tooltips, Layout Drawer, Dialog, Notify (just to name a few) now use Promises instead of taking a callback parameter. This allows you to take advantage of async/await and simplifies your code.
+
+```js
+methods: {
+  async showNotify () {
+    await this.$q.dialog('Some dialog...')
+    console.log('Dialog has been closed')
+  }
+}
+```
+
+### Vue refs no longer necessary for a lot of components
+You were also used to use Vue refs for a few components (Layout left/right drawer, Modals, ...). This is no longer necessary. You can use a "v-model" instead to show (open) / hide (close) them. This wasn't quite possible pre v0.15 because you needed for them to close in order to, as an example, navigate away. Now it's no longer needed, so a Boolean scoped variable will suffice.
+
+### New directive: v-close-overlay
+All components using popups, like Modal, Dialog, Popover, Context Menu, now support a much simplified way of closing them. Instead of using a Vue reference, which is troublesome for some use cases, you can simply add `v-close-overlay` to the element/component that you wish to close the popup. This directive listens for the `@click` event, determines the first parent popup component and closes it.
+
+```html
+<q-btn label="I got a Popover">
+  <q-popover>
+    ...
+    <q-icon v-close-overlay name="close" />
+    ...
+  </q-popover>
+</q-btn>
+```
+
+### Handling Back Button
+Unfortunately, the automatic handling of back button was a top feature hard to comprehend. It required you to handle Vue references (which beginners on Vue were struggling with) and didn't fully allow you to connect components like Drawers & Modals to Vuex in an easy way. Now it only works on Mobile Apps (for example Android has a back button that is handled by Quasar). The removal of this feature for websites greatly simplify your code:
+
+```html
+<q-modal v-model="modal">...</q-modal>
+<q-btn label="Open modal" @click="modal = true" />
+```
+
+### Buttons
+While QBtn still allows to specify icon and label as children nodes, it is now recommended that you use the "icon" and "label" props instead:
+
+```html
+<q-btn icon="map" label="See map" />
+
+<!-- instead of old: -->
+<q-btn>
+  <q-icon class="on-left" name="map" />
+  See map
+</q-btn>
+```
+
+Be sure to check out the new button types and props too.
