@@ -34,6 +34,7 @@ So, what is new and what has changed? Everything has been polished. The full lis
 ### First step - when using starter kit
 Ok, so you've globally installed/updated "quasar-cli" to latest v0.15.x. Now it's time for you to create a new project folder:
 ```bash
+# Latest NodeJS is required.
 $ npm install -g quasar-cli
 
 # Then we create a project folder with Quasar CLI:

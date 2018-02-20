@@ -5,6 +5,7 @@ The Quasar CLI allows you to create new projects in no time, by generating a bas
 **You only need Quasar CLI if using the Main Starter Kit**. If you want the UMD version, you won't be using it.
 
 ``` bash
+# Latest NodeJS is required.
 $ npm install -g quasar-cli
 ```
 

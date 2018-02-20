@@ -10,6 +10,7 @@ Using the Main Starter Kit is the recommended way to go in order to benefit from
 First, we install Quasar CLI. Make sure you have Node >=8 and NPM >=5 installed on your machine.
 
 ```bash
+# Latest NodeJS is required.
 $ npm install -g quasar-cli
 ```
 

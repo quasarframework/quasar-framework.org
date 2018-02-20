@@ -25,6 +25,7 @@ If you want to embed Quasar into your existing website project, integrating it i
 
 ```bash
 # make sure you have vue-cli globally installed
+# Latest NodeJS is required.
 $ npm install -g vue-cli
 
 # then...
@@ -54,6 +55,7 @@ If you want to be able to build:
 First, we install Quasar CLI. Make sure you have Node >=8 and NPM >=5 installed on your machine.
 
 ```bash
+# Latest NodeJS is required.
 $ npm install -g quasar-cli
 ```
 
@@ -64,4 +66,4 @@ $ quasar init <folder_name>
 
 Note that you don't need separate starter kits if you want to build any of the options described above. This one can seamlessly handle all of them.
 
-Now head on to read about [Main Starter Kit](/guide/sr-installation.html) and also familiarize yourself with the [Quasar CLI](/guide/quasar-cli.html).
+Now head on to read about [Main Starter Kit](/guide/app-installation.html) and also familiarize yourself with the [Quasar CLI](/guide/quasar-cli.html).
