@@ -18,7 +18,7 @@ Here's a comparison:
 | SFC (Single File Component - for Vue) | - | **Yes** |
 | Advanced configuration through dynamic quasar.conf.js | - | **Yes** |
 
-> If you are upgrading from previous Quasar versions, check [Upgrade Guide](/guide/upgrade-guide.html).
+> If you are upgrading from previous Quasar versions, check [Upgrade Guide](/guide/quasar-upgrade-guide.html).
 
 ## UMD / Standalone (uses CDN)
 If you want to embed Quasar into your existing website project, integrating it in a progressive manner, then go for the UMD/Standalone (Unified Module Definition) version. There a helper UMD starter kit which will show you how to get started and what CSS and JS tags to include into your project. It will ask you some questions (what Quasar theme will you be using, what Quasar I18n to include, ...) and it will generate a simple HTML file that will demo on how to use CDN to add Quasar:
