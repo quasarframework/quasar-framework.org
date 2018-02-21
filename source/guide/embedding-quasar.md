@@ -41,7 +41,7 @@ Quasar = {
 ## Usage
 So, after you figured out the CDN links that you need to embed into your webpages (hopefully you've inspected the project folder created by UMD Starter Kit), now it's time to use Quasar.
 
-> You'll notice that all the Quasar Components, Quasar Directives and Quasar Plugins have an installation section at the top of their pages. When using UMD, you can skip this section, as it is intended only for when your project is generated from the [Main Starter Kit](/sr-installation.html).
+> You'll notice that all the Quasar Components, Quasar Directives and Quasar Plugins have an installation section at the top of their pages. When using UMD, you can skip this section, as it is intended only for when your project is generated from the [Main Starter Kit](/app-installation.html).
 
 By using the UMD version, you got all components, directives and Quasar plugins already installed for you. You just need to start using them.
 
