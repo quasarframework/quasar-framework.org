@@ -12,9 +12,14 @@ Notice that as opposed to the Main Starter Kit, you don't need to import anythin
 
 However, the disadvantage is that you won't benefit from the top notch development experience provided by Quasar CLI -- which allows you to simultaneously develop and build SPA, PWA, Mobile and Electron Apps.
 
-### JsFiddle
-You can fork and use this jsFiddle for reporting issues on Github too: https://jsfiddle.net/rstoenescu/waugrryy/ (Material Theme)
-https://jsfiddle.net/rstoenescu/7gu065yg/ (iOS Theme)
+### JsFiddle / Codepen
+You can fork and use these links for reporting issues on Github too:
+
+| | Material Theme | iOS Theme |
+| --- | --- | --- |
+| jsFiddle | https://jsfiddle.net/rstoenescu/waugrryy/ | https://jsfiddle.net/rstoenescu/7gu065yg/ |
+| Codepen | https://codepen.io/rstoenescu/pen/KQRZJg | https://codepen.io/rstoenescu/pen/paVpBN |
+
 These links (obviously) use the Quasar UMD version.
 
 ## Quasar Global Object
