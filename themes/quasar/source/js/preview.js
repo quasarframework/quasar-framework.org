@@ -16,7 +16,7 @@ $(function() {
     ;
 
   function getSourceURL(page) {
-    return 'https://github.com/quasarframework/quasar-play/tree/master/src/components/showcase/' + (page.indexOf('layout') !== 0 ? page + '.vue' : 'layout/layout.vue');
+    return 'https://github.com/quasarframework/quasar-play/tree/master/src/pages/showcase/' + (page.indexOf('layout') !== 0 ? page + '.vue' : 'layout/layout.vue');
   }
 
   function getDemoURL(theme, page) {
