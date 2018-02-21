@@ -2,9 +2,10 @@ title: Quasar Playground
 ---
 
 ### jsFiddle
-https://jsfiddle.net/rstoenescu/waugrryy/
+https://jsfiddle.net/rstoenescu/waugrryy/ (Material Theme)
+https://jsfiddle.net/rstoenescu/7gu065yg/ (iOS Theme)
 
-You can fork and use this jsFiddle for reporting issues on Github too. This link (obviously) uses the Quasar UMD version. Make sure to read [about it](/guide/embedding-quasar.html) before diving in. When you use jsFiddle you can skip the Installation section.
+You can fork and use these jsFiddles for reporting issues on Github too. These links (obviously) use the Quasar UMD version. Make sure to read [about it](/guide/embedding-quasar.html) before diving in. When you use jsFiddle you can skip the Installation section.
 
 ### Quasar Play
 Live Demo:
