@@ -109,4 +109,4 @@ Quasar.i18n.set(Quasar.i18n.de)
 Quasar.i18n.set(Quasar.i18n.ptBr)
 ```
 
-The list of available languages can be found on [Github](/https://github.com/quasarframework/quasar/tree/dev/i18n). **If your desired language pack is not available yet, you can help by providing a PR. We welcome any languages!**
+The list of available languages can be found on [Github](https://github.com/quasarframework/quasar/tree/dev/i18n). **If your desired language pack is not available yet, you can help by providing a PR. We welcome any languages!**
