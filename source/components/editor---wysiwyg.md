@@ -1,6 +1,6 @@
 title: Editor (WYSIWYG)
 ---
-QEditor is a WYSIWYG ("what you see if what you get") editor component.
+QEditor is a WYSIWYG ("what you see is what you get") editor component.
 <input type="hidden" data-fullpage-demo="forms/editor">
 
 > WARNING
@@ -30,7 +30,7 @@ Supports `v-model` which should be binded to a String in your scope, which is es
 | `min-height` | String | CSS unit for minimum height of the input area. |
 | `max-height` | String | CSS unit for maximum height of the input area. |
 | `definitions` | Object | Object with definitions (see next sections). |
-| `fonts` | Object | Obect with fonts definitions (see next sections). |
+| `fonts` | Object | Object with fonts definitions (see next sections). |
 | `toolbar` | Array | Array of Arrays of Objects/Strings with toolbar commands (see next sections). |
 | `toolbar-color` | String | Color (from Quasar Palette) of toolbar commands. |
 | `toolbar-text-color` | String | Text color (from Quasar Palette) of toolbar commands. |
