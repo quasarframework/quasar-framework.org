@@ -47,7 +47,7 @@ Again, this is barely scratching the surface.
 The top class starter kit will make it easy for you to get up to speed. Bring an idea to reality in record time. All the heavy lifting is done for you, not by you. You will just need to focus on your features and let the boilerplating be done by Quasar.
 
 ### Awesome ever-growing community
-Whenever you got a problem you can't or don't know yet how to solve, visit Quasar forum or Discord chat. The community is there to help you.
+Whenever you got a problem you can't or don't know yet how to solve, visit Quasar forum or [Discord chat](questions ask in the Discord chat room: https://discord.gg/5TDhbDg). The community is there to help you.
 
 ### Wide platform support
 Google Chrome, Firefox, IE11/Edge, Safari, Opera, iOS, Android, Windows Phone, Blackberry.

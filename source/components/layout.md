@@ -123,7 +123,7 @@ Below is another example of a Layout, which contains some useful elements:
       </q-item>
       <q-item to="/chat">
         <q-item-side icon="chat" />
-        <q-item-main label="Discord Server" sublabel="Quasar Community Chat" />
+        <q-item-main label="Discord Chat Channel" sublabel="https://discord.gg/5TDhbDg" />
       </q-item>
       <q-item to="/twitter">
         <q-item-side icon="rss feed" />

@@ -2,7 +2,7 @@ title: Quasar Framework Contributing Guide
 ---
 The Quasar team is really excited, when anyone helps by contributing to Quasar Framework. It's what OSS community is all about!
 
-There are lots of features waiting for someone to write them and make the Quasar experience even better. Check [Github](https://github.com/quasarframework/quasar) or contact [Razvan Stoenescu](https://github.com/rstoenescu) through [Discord](https://discord.gg/5TDhbDg)/email.
+There are lots of features waiting for someone to write them and make the Quasar experience even better. Check [Github](https://github.com/quasarframework/quasar) or contact [Razvan Stoenescu](https://github.com/rstoenescu) through [Discord chat](https://discord.gg/5TDhbDg)/email.
 
 > Before submitting your contribution though, please make sure to take a moment and read through [the contributing guidelines](https://github.com/quasarframework/quasar/blob/dev/.github/CONTRIBUTING.md) and also [the code of conduct](https://github.com/quasarframework/quasar/blob/dev/.github/CODE_OF_CONDUCT.md).
 
