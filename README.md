@@ -18,7 +18,7 @@
 
 I'm excited if you want to contribute to Quasar under any form (report bugs, write a plugin, fix an issue, write a new feature).
 
-I'm only asking that you [read this](http://quasar-framework.org/guide/contributing.html) first.
+I'm only asking that you [read this](http://quasar-framework.org/guide/quasar-contribution-guide.html) first.
 
 ## License
 
