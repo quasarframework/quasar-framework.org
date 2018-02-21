@@ -13,8 +13,9 @@ Notice that as opposed to the Main Starter Kit, you don't need to import anythin
 However, the disadvantage is that you won't benefit from the top notch development experience provided by Quasar CLI -- which allows you to simultaneously develop and build SPA, PWA, Mobile and Electron Apps.
 
 ### JsFiddle
-You can fork and use this jsFiddle for reporting issues on Github too: https://jsfiddle.net/rstoenescu/waugrryy/
-This link (obviously) uses the Quasar UMD version.
+You can fork and use this jsFiddle for reporting issues on Github too: https://jsfiddle.net/rstoenescu/waugrryy/ (Material Theme)
+https://jsfiddle.net/rstoenescu/7gu065yg/ (iOS Theme)
+These links (obviously) use the Quasar UMD version.
 
 ## Quasar Global Object
 When you embed Quasar UMD into a webpage you'll get injected a `Quasar` global Object:
