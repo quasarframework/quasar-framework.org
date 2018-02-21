@@ -41,4 +41,4 @@ Developing for production (`$ quasar build`):
 * CSS across all components extracted (and auto-prefixed) into a single file and minified with [cssnano](https://github.com/ben-eb/cssnano)
 * All static assets are compiled with version hashes for efficient long-term caching, and a production index.html is auto-generated with proper URLs to these generated assets.
 
-Take note of '/quasar.conf.js' file in the root of your project folder. This file helps you quickly configure the way your website/App works. We'll go over it in [Configuration](/guide/sr-configuration.html) section.
+Take note of '/quasar.conf.js' file in the root of your project folder. This file helps you quickly configure the way your website/App works. We'll go over it in [Configuration](/guide/app-quasar-conf.html) section.
