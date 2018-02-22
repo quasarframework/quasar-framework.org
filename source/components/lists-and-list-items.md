@@ -1,7 +1,7 @@
 title: Lists and List Items
 ---
 Quasar Lists and List Items are a group of components which can work together to present multiple line items vertically as a single continuous element. They are best suited for displaying similar data types as rows of information, such as a contact list, a playlist, or menu. Each row is called an Item. Items can also be used outside of a List.
-<input type="hidden" data-fullpage-demo="grouping/list/email">
+<input type="hidden" data-fullpage-demo="grouping/list/email" data-source="grouping/list">
 
 Lists can encapsulate Items or Item-like components, for example [QCollapsible](/components/collapsible.html).
 

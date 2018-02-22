@@ -1,7 +1,7 @@
 title: Floating Action Buttons
 ---
 A Floating Action Button (FAB) represents the primary action in an App Page. But, it's not limited to only a single action. It can contain any number of sub-actions too. And more importantly, it can also be used inline in your Pages or Layouts.
-<input type="hidden" data-fullpage-demo="layout-demo/floating-action-button">
+<input type="hidden" data-fullpage-demo="layout-demo/floating-action-button"  data-source="../layout-demo/floating-action-button.vue">
 
 Note that you don't need a QLayout to use FABs.
 

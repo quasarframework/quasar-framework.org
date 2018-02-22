@@ -1,7 +1,7 @@
 title: Layout
 ---
 Layouts are the elements that wrap page content, like a navigational bar or drawer. Multiple pages can share the same Layout, so the code is reusable, which is one of their key points.
-<input type="hidden" data-fullpage-demo="layout-demo/play-with-layout">
+<input type="hidden" data-fullpage-demo="layout-demo/play-with-layout" data-source="../../layouts/layout-demo.vue">
 
 **Quasar Layouts are NOT mandatory**, but they do help you better structure your website/app. They have a number of features which offer you major benefits in simplifying your app's layout design, right out of the box.
 

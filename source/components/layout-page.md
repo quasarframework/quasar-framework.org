@@ -1,7 +1,7 @@
 title: Layout Page
 ---
 [QLayout](/components/layout.html) must contain page content. If you haven't already, please read QLayout documentation page first.
-<input type="hidden" data-fullpage-demo="layout-demo/play-with-layout">
+<input type="hidden" data-fullpage-demo="layout-demo/play-with-layout" data-source="../../layouts/layout-demo.vue">
 
 ## Installation
 Edit `/quasar.conf.js`:

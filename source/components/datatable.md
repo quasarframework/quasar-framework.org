@@ -10,7 +10,7 @@ QTable is a Component which allows you to display data in a tabular manner. Feat
   * Columns picker (through QTableColumns component described in one of the sections)
   * Custom top and/or bottom Table controls
   * Responsive design ("dense" mode for narrow windows)
-<input type="hidden" data-fullpage-demo="grouping/table/table-features">
+<input type="hidden" data-fullpage-demo="grouping/table/table-features" data-source="grouping/table">
 
 ## Installation
 Edit `/quasar.conf.js`:

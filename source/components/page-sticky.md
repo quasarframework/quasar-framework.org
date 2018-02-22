@@ -5,7 +5,7 @@ The PageSticky component helps in placing DOM elements / components wrapped by i
 
 The great advantage of this is that the elements wrapped by this component will never overlap the layout header, footer or left/right sides, even if those are not configured to be fixed. In the latter case, the position will be offsetted so that the overlap won't occur.
 Try it out with a non fixed footer for example. When user reaches bottom of screen and footer comes into view, the component will shift up so it won't overlap with the footer.
-<input type="hidden" data-fullpage-demo="layout-demo/page-sticky">
+<input type="hidden" data-fullpage-demo="layout-demo/page-sticky" data-source="../layout-demo/page-sticky.vue">
 
 > **Important!**
 > In order for QPageSticky to work, it must be placed within a QLayout component.

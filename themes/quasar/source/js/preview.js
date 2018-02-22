@@ -12,11 +12,14 @@ $(function() {
     viewSourceButtons = previewNode.find('.view-source'),
     desktopLauncher = previewNode.find('.desktop-launcher'),
     currentPage,
+    currentSource,
     mobileThemes = ['android', 'apple']
     ;
 
-  function getSourceURL(page) {
-    return 'https://github.com/quasarframework/quasar-play/tree/master/src/pages/showcase/' + (page.indexOf('layout') !== 0 ? page + '.vue' : 'layout/layout.vue');
+  function getSourceURL(page, source) {
+    console.log(page, source)
+    return 'https://github.com/quasarframework/quasar-play/tree/master/src/pages/showcase/' +
+      (source || (page + '.vue'));
   }
 
   function getDemoURL(theme, page) {
@@ -26,23 +29,24 @@ $(function() {
     return '/quasar-play/' + theme + '/index.html#/showcase/' + page;
   }
 
-  function getExternalLinks(page, alwaysVisible) {
+  function getExternalLinks(page, source, alwaysVisible) {
     return '<div class="demo-links ' + (alwaysVisible ? 'demo-always-visible' : '') + '">Demo: ' +
       mobileThemes.map(function(theme) {
         return '<a class="spawn-demo" ' +
           'href="' + getDemoURL(theme, page) + '" target="_blank"><i class="fa fa-' + theme + '"></i></a>';
       }).join(' ') +
-      ' <a class="spawn-demo" target="_blank" href="' + getSourceURL(page) + '">' +
+      ' <a class="spawn-demo" target="_blank" href="' + getSourceURL(page, source) + '">' +
       'Source <i class="fa fa-file-code-o"></i></a></div>';
   }
 
   externalPoints.each(function() {
     var
       $this = $(this),
-      page = $this.data('external-demo')
+      page = $this.data('external-demo'),
+      source = $this.data('source')
       ;
 
-    $this.after(getExternalLinks(page, true));
+    $this.after(getExternalLinks(page, source, true));
   });
 
   /* eslint-disable no-extra-parens */
@@ -66,6 +70,7 @@ $(function() {
     fullPageDemo.replaceWith(
       getExternalLinks(
         fullPageDemo.data('fullpage-demo'),
+        fullPageDemo.data('source'),
         true
       )
     );
@@ -82,10 +87,11 @@ $(function() {
   });
 
   window.themePreview = {
-    show: function(page) {
+    show: function(page, source) {
       previewNode.css('display', 'block');
       contentNode.addClass('with-previewer');
       currentPage = page;
+      currentSource = source
       this.selectTheme(selectedTheme);
     },
     hide: function() {
@@ -93,8 +99,6 @@ $(function() {
       contentNode.removeClass('with-previewer');
     },
     selectPage: function(page) {
-      currentPage = page;
-
       iframes.each(function() {
         var
           $this = $(this),
@@ -112,7 +116,7 @@ $(function() {
             .add(desktopLauncher)
             .css('display', page.indexOf('http') === 0 ? 'none' : 'inline-block');
 
-          viewSourceButtons.attr('href', getSourceURL(page));
+          viewSourceButtons.attr('href', getSourceURL(page, currentSource));
           desktopLauncher.attr('href', getDemoURL(theme, page));
         }
         else {
@@ -139,7 +143,7 @@ $(function() {
 
   if (fullPageDemo.length > 0) {
     window.themePreview.fullPageDemo = true;
-    window.themePreview.show(fullPageDemo.data('fullpage-demo'));
+    window.themePreview.show(fullPageDemo.data('fullpage-demo'), fullPageDemo.data('source'));
   }
   else {
     window.themePreview.show();
