@@ -64,8 +64,8 @@ No need to trigger these methods manually as they are invoked automatically. Onl
 | --- | --- |
 | `@search(terms, Function done)` | Triggered by the component when a search should start and offer some results. |
 | `@selected(item)` | Triggered when user has selected a suggestion. |
-| `@open` | Triggered when the selections popup opens. |
-| `@close` | Triggered when selections popup closes. |
+| `@show` | Triggered when the selections popup opens. |
+| `@hide` | Triggered when selections popup closes. |
 
 Example for `search` event:
 
