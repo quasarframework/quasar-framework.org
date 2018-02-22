@@ -12,7 +12,7 @@ Simply replace the version string in all the CSS and JS tags that refer to Quasa
 As you may have noticed, the only dependency in your project (unless you've also installed a linter or your own deps) is `quasar-cli`. All you need is to update this dependency.
 
 ```bash
-$ npm update quasar-cli@latest
+$ npm install quasar-cli@latest
 ```
 
 Quasar CLI is installed both globally and locally. When you issue a Quasar command, the global installation defers to the project locally installed Quasar CLI. This allows you to skip writing npm scripts in your package.json (for Quasar commands), and also it allows you to run different Quasar versions in multiple projects.
@@ -34,7 +34,7 @@ So, what is new and what has changed? Everything has been polished. The full lis
 ### First step - when using starter kit
 Ok, so you've globally installed/updated "quasar-cli" to latest v0.15.x. Now it's time for you to create a new project folder:
 ```bash
-# Latest NodeJS is required.
+# Node.js >= 8.9.0 is required.
 $ npm install -g quasar-cli
 
 # Then we create a project folder with Quasar CLI:
