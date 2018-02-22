@@ -118,7 +118,7 @@ Most used properties are:
 | productName | String | Default value is taken from package.json > productName field. |
 | distDir | String | Relative path to project root directory. Default is 'dist/{ctx.modeName}-{ctx.themeName}'. Applies to all Modes except for Cordova. |
 | devtool | String | Source map [strategy](https://webpack.js.org/configuration/devtool/) to use. |
-| env | Object | Add properties to `process.env` that you can use in your website/app JS code. Each property needs to be JSON encoded. Example: { SOMETHING: JSON.encode('someValue') }. |
+| env | Object | Add properties to `process.env` that you can use in your website/app JS code. Each property needs to be JSON encoded. Example: { SOMETHING: JSON.stringify('someValue') }. |
 | gzip | Boolean | Gzip the distributables. Useful when the web server with which you are serving the content does not have gzip. |
 | scopeHoisting | Boolean | Default: `true`. Use Webpack scope hoisting for slightly better runtime performance. |
 | analyze | Boolean | Show analysis of build bundle with webpack-bundle-analyzer. |
@@ -133,6 +133,20 @@ The following properties of `build` are automatically configured by Quasar CLI d
 | webpackManifest | Boolean | Improves caching strategy. Use a webpack manifest file to avoid cache bust on vendor chunk changing hash on each build. |
 
 If, for example, you run "quasar build --debug", sourceMap and extractCSS will be set to "true" regardless of what you configure.
+
+### Example setting env for dev/build
+```
+build: {
+  env: ctx.dev
+    ? { // so on dev we'll have
+      API: JSON.stringify('https://dev.api.com')
+    }
+    : { // and on build (production):
+      API: JSON.stringify('https://prod.api.com')
+    }
+}
+```
+Then in your website/app you can access `process.env.API` and it's gonna point to one of those two links above, based on dev or production build type.
 
 ### Extending Webpack Config Object
 This is achieved through `build > extendWebpack()` Function. Example adding a Webpack loader.
