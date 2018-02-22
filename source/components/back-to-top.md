@@ -46,7 +46,7 @@ framework: {
 When using a [Layout](/components/layout.html) then you can take advantage of the [Fixed Positioning on Layout](/components/fixed-positioning-on-layout.html) component too and wrap your element with it, like this:
 
 ```html
-<q-fixed-position corner="top-right" :offset="[18, 18]">
+<q-page-sticky position"top-right" :offset="[18, 18]">
   <q-btn
     v-back-to-top
     round
@@ -54,7 +54,7 @@ When using a [Layout](/components/layout.html) then you can take advantage of th
     @click="alert"
     icon="keyboard_arrow_up"
   />
-</q-fixed-position>
+</q-page-sticky>
 ```
 
 ## Vue Modifiers
