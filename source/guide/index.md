@@ -57,6 +57,8 @@ First, we install Quasar CLI. Make sure you have Node >=8 and NPM >=5 installed 
 ```bash
 # Latest NodeJS is required.
 $ npm install -g quasar-cli
+# If using Windows, and you are having issues with the install, try
+$ npm install -g --no-bin-links quasar-cli
 ```
 
 Then we create a project folder with Quasar CLI:
