@@ -269,7 +269,7 @@ methods: {
 ```
 
 ### Vue refs no longer necessary for a lot of components
-You were also used to use Vue refs for a few components (Layout left/right drawer, Modals, ...). This is no longer necessary. You can use a "v-model" instead to show (open) / hide (close) them. This wasn't quite possible pre v0.15 because you needed for them to close in order to, as an example, navigate away. Now it's no longer needed, so a Boolean scoped variable will suffice.
+You were also used to using Vue refs for a few components (Layout left/right drawer, Modals, ...). This is no longer necessary. You can use a "v-model" instead to show (open) / hide (close) them. This wasn't quite possible pre v0.15 because you needed for them to close in order to, as an example, navigate away. Now it's no longer needed, so a Boolean scoped variable will suffice.
 
 ### New directive: v-close-overlay
 All components using popups, like Modal, Dialog, Popover, Context Menu, now support a much simplified way of closing them. Instead of using a Vue reference, which is troublesome for some use cases, you can simply add `v-close-overlay` to the element/component that you wish to close the popup. This directive listens for the `@click` event, determines the first parent popup component and closes it.
