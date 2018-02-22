@@ -74,15 +74,15 @@ Simple group of three flat buttons
 </q-btn-group>
 ```
 
-Simple group of two outline buttons and one outline dropdown button:
+Simple group of two rounded buttons and one rounded dropdown button:
 ```html
-<q-btn-group outline>
-  <q-btn outline label="One" @click="clickHandler1" />
-  <q-btn outline label="Two" @click="clickHandler2" />
-  <q-btn-dropdown outline label="Three" split @click="clickHandler3">
+<q-btn-group rounded>
+  <q-btn rounded color="primary" label="One" />
+  <q-btn rounded color="primary" label="Two" />
+  <q-btn-dropdown rounded color="primary" label="Three" split>
     <!-- dropdown content goes here -->
     <q-list link>
-      <q-item v-close-overlay @click.native="handler">
+      <q-item v-close-overlay>
         <q-item-side icon="folder" inverted color="primary" />
         <q-item-main>
           <q-item-tile label>Photos</q-item-tile>
@@ -92,10 +92,10 @@ Simple group of two outline buttons and one outline dropdown button:
       </q-item>
       <q-item-separator inset />
       <q-list-header inset>Files</q-list-header>
-      <q-item v-close-overlay @click.native="handler">
-        <q-item-side icon="folder" inverted color="primary" />
+      <q-item v-close-overlay>
+        <q-item-side icon="assignment" inverted />
         <q-item-main>
-          <q-item-tile label>Photos</q-item-tile>
+          <q-item-tile label>Vacation</q-item-tile>
           <q-item-tile sublabel>February 22, 2016</q-item-tile>
         </q-item-main>
         <q-item-side right icon="info" color="amber" />
