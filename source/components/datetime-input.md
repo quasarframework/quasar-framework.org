@@ -51,8 +51,6 @@ Supports `v-model` which must be a String, Number or Date Object.
 | `placeholder` | String | Placeholder text for input frame to use when model is not set (empty). |
 | `ok-label` | String | Text for the button to accept the input (when using Modal). |
 | `cancel-label` | String | Text for the button to cancel input with no change (when using Modal). |
-| `month-names` | Array | If you want to override the default i18n. Array of month names, starting with January. |
-| `day-names` | Array | If you want to override the default i18n. Array of day names, starting with Sunday, Monday, ... |
 
 Common input frame properties:
 

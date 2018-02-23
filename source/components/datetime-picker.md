@@ -46,8 +46,6 @@ Supports `v-model` which must be a String, Number or Date Object.
 | `color` | String | One from [Quasar Color Palette](/components/color-palette.html). |
 | `dark` | Boolean | Is component rendered on a dark background? |
 | `format24h` | Boolean | Override default i18n setting. Use 24 hour time for Material picker instead of AM/PM system which is default. |
-| `month-names` | Array | If you want to override the default i18n. Array of month names, starting with January. |
-| `day-names` | Array | If you want to override the default i18n. Array of day names, starting with Sunday, Monday, ... |
 
 ### Lazy Input
 Vue will soon supply the `.lazy` modifier for v-model on components too, but until then, you can use the longer equivalent form:
