@@ -287,7 +287,7 @@ Some components, like QItem or QCard & co now need the `.native` modifier for bi
 A few Quasar components were of functional type. These pass native events right through, so there's no need to add the native modifier. But during a thorough benchmarking session it turned out having these as regular components meant better performance due to a number of reasons. Switching these components from functional to regular adds this small breaking change where you need to use the native modifier.
 
 ### We were using different env for dev and production
-You still can! Only now it's even better, due to `/quasar.conf.js` features. [More Info](http://localhost:4000/guide/app-quasar.conf.js.html#Example-setting-env-for-dev-build)
+You still can! Only now it's even better, due to `/quasar.conf.js` features. [More Info](/guide/app-quasar.conf.js.html#Example-setting-env-for-dev-build)
 
 ### New directive: v-close-overlay
 All components using popups, like Modal, Dialog, Popover, Context Menu, now support a much simplified way of closing them. Instead of using a Vue reference, which is troublesome for some use cases, you can simply add `v-close-overlay` to the element/component that you wish to close the popup. This directive listens for the `@click` event, determines the first parent popup component and closes it.
