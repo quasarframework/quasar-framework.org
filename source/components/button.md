@@ -64,7 +64,7 @@ Button with "loading" state (we'll go over these in more detail in its own secti
 ```html
 <!-- Regular shaped -->
 <q-btn
-  loader
+  loading
   color="primary"
   @click="clickMethod"
   label="Button Label"
@@ -112,8 +112,8 @@ export default {
 | `icon`       | String  | Name of the icon to use. |
 | `icon-right` | String  | Name of the icon to place on right side of button. |
 | `loading`    | Boolean | Display a spinner, if true. Check [Button with Progress](#Button-with-Progress). |
-| `percentage` | Number | Optional property for displaying a determinate progress. Use along `loader`. |
-| `dark-percentage` | Boolean | Optional property for displaying a determinate progress on a light button color. Use along `loader` and `percentage`. |
+| `percentage` | Number | Optional property for displaying a determinate progress. Use along `loading`. |
+| `dark-percentage` | Boolean | Optional property for displaying a determinate progress on a light button color. Use along `loading` and `percentage`. |
 | `disable`    | Boolean | The button is disabled, if true. `@click` event won't be triggered while in this state. |
 | `label`      | String/Number | Button label. |
 | `tabindex`   | Number | Set explicit tab index. |
@@ -231,7 +231,7 @@ Some button actions involve contacting a server, so an asynchronous response. It
 Here is a full example highlighting what you can do with the `loading` property.
 ```html
 <template>
-  <!-- Notice `loader` prop -->
+  <!-- Notice `loading` prop -->
   <q-btn :loading="loading" @click="simulateProgress">
     Button Label
     <!--

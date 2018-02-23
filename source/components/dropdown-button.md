@@ -50,8 +50,8 @@ All props except `split` are shared with [QBtn](/components/button.html).
 | `icon`       | String  | Name of the icon to use. |
 | `icon-right` | String  | Name of the icon to place on right side of button. |
 | `loading`    | Boolean | Display a spinner, if true. Can be optionally used along `v-model`. Check [Button with Progress](#Button-with-Progress) section. |
-| `percentage` | Number | Optional property for displaying a determinate progress. Use along `loader`. |
-| `dark-percentage` | Boolean | Optional property for displaying a determinate progress on a light button color. Use along `loader` and `percentage`. |
+| `percentage` | Number | Optional property for displaying a determinate progress. Use along `loading`. |
+| `dark-percentage` | Boolean | Optional property for displaying a determinate progress on a light button color. Use along `loading` and `percentage`. |
 | `disable`    | Boolean | The button is disabled, if true. `@click` event won't be triggered while in this state. |
 | `label`      | String/Number | Button label. |
 | `tabindex`   | Number | Set explicit tab index. |
