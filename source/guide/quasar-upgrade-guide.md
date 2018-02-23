@@ -244,11 +244,13 @@ In previous versions you would listen for `@change` event to detect changes. Now
 <!-- same as listening for @input -->
 <q-input v-model="myModel" />
 
-<!-- listening for lazy update />
+<!-- listening for lazy update -->
 <q-input :value="myModel" @change="val => { myModel = val }" />
 ```
 
 You'll notice all form components have been polished. Also, you'll be pleasantly surprised by new properties. To name just a few: "hide-underline", "inverted-light", "dark" or "warning" (for highlighting a warning state).
+
+Prior to v0.15, form components had a default margin. This was removed to allow easier customization. You can now use the new [Spacing CSS classes](/components/spacing.html) to do it.
 
 QCheckbox now supports an indeterminate state as well. You can specify a value for "true"/"false"/"indeterminate" states, so it no longer operates with Booleans (or Arrays) only.
 
