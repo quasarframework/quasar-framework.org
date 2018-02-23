@@ -137,7 +137,7 @@ The following properties of `build` are automatically configured by Quasar CLI d
 If, for example, you run "quasar build --debug", sourceMap and extractCSS will be set to "true" regardless of what you configure.
 
 ### Example setting env for dev/build
-```
+```js
 build: {
   env: ctx.dev
     ? { // so on dev we'll have
