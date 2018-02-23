@@ -273,6 +273,22 @@ methods: {
 ### Vue refs no longer necessary for a lot of components
 You were also used to using Vue refs for a few components (Layout left/right drawer, Modals, ...). This is no longer necessary. You can use a "v-model" instead to show (open) / hide (close) them. This wasn't quite possible pre v0.15 because you needed for them to close in order to, as an example, navigate away. Now it's no longer needed, so a Boolean scoped variable will suffice.
 
+### Some components need .native modifier for events now
+Some components, like QItem or QCard & co now need the `.native` modifier for binding to native DOM events like `click`. A general rule is: if `@click` is not mentioned in the component's docs Vue Events section, then you need to use [the native modifier](https://vuejs.org/v2/guide/components.html#Binding-Native-Events-to-Components).
+
+```html
+<!-- prior to v0.15 -->
+<q-item @click="...">....</q-item>
+
+<!-- v0.15 way: -->
+<q-item @click.native="...">...</q-item>
+```
+
+A few Quasar components were of functional type. These pass native events right through, so there's no need to add the native modifier. But during a thorough benchmarking session it turned out having these as regular components meant better performance due to a number of reasons. Switching these components from functional to regular adds this small breaking change where you need to use the native modifier.
+
+### We were using different env for dev and production
+You still can! Only now it's even better, due to `/quasar.conf.js` features. [More Info](http://localhost:4000/guide/app-quasar.conf.js.html#Example-setting-env-for-dev-build)
+
 ### New directive: v-close-overlay
 All components using popups, like Modal, Dialog, Popover, Context Menu, now support a much simplified way of closing them. Instead of using a Vue reference, which is troublesome for some use cases, you can simply add `v-close-overlay` to the element/component that you wish to close the popup. This directive listens for the `@click` event, determines the first parent popup component and closes it.
 

@@ -19,6 +19,8 @@ So what can you configure through `/quasar.conf.js`?
 
 **You'll notice that changing any of these settings does not require you to manually reload the dev server. Quasar detects if the changes can be injected through Hot Module Reload and in case it can't, it will reload the dev server for you. You won't lose your development flow as you will just sit back while Quasar CLI quickly takes care of it.**
 
+> `/quasar.conf.js` is run by the Quasar CLI build system, so this code runs under Node directly, not in the context of your app. So you can require modules like 'fs', 'path', 'webpack' and so on. Make sure the ES6 features that you want to write this file with are supported by the installed version of your Node (which should be >= 8.9.0).
+
 ## Structure
 You'll notice that `/quasar.conf.js` exports a function that takes a `ctx` (context) parameter and returns an Object. This allows you to dynamically change your website/app config based on this context:
 
@@ -147,6 +149,23 @@ build: {
 }
 ```
 Then in your website/app you can access `process.env.API` and it's gonna point to one of those two links above, based on dev or production build type.
+
+You can even go one step further. Supply it with values taken from the `quasar dev/build` env variables:
+```
+# we set an env variable in terminal
+$ MY_API=api.com quasar build
+
+# then we pick it up in /quasar.conf.js
+build: {
+  env: ctx.dev
+    ? { // so on dev we'll have
+      API: JSON.stringify('https://dev.'+ process.env.MY_API)
+    }
+    : { // and on build (production):
+      API: JSON.stringify('https://prod.'+ process.env.MY_API)
+    }
+}
+```
 
 ### Extending Webpack Config Object
 This is achieved through `build > extendWebpack()` Function. Example adding a Webpack loader.
