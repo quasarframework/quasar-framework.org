@@ -20,6 +20,9 @@ framework: {
 <q-editor v-model="model" />
 ```
 
+## Internationalization
+The tooltips content of QEditor are part of [Quasar I18n](/components/internationalization.html). If your desired language pack is missing, please provide a PR for it.
+
 ## Vue Properties
 Supports `v-model` which should be binded to a String in your scope, which is essentially HTML code.
 
