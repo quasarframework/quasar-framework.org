@@ -10,7 +10,7 @@ Please note that the behavior is different depending on the platform the code is
 Edit `/quasar.conf.js`:
 ```js
 framework: {
-  plugins: ['AppVisibility']
+  plugins: ['AppFullscreen']
 }
 ```
 
