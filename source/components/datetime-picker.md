@@ -28,6 +28,9 @@ framework: {
 <q-datetime-picker v-model="model" type="datetime" />
 ```
 
+## Internationalization
+The day and month names are taken care of by default through [Quasar I18n](/components/internationalization.html). If your desired language pack is missing, please provide a PR for it.
+
 ## Vue Properties
 Supports `v-model` which must be a String, Number or Date Object.
 

@@ -72,6 +72,9 @@ export default {
 </script>
 ```
 
+## Internationalization
+The default value of the different QTable labels are taken care of by default through [Quasar I18n](/components/internationalization.html). If your desired language pack is missing, please provide a PR for it.
+
 ## QTable Vue Properties
 | Vue Property | Type | Description |
 | --- | --- | --- |
