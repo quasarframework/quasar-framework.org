@@ -18,11 +18,11 @@ Context menus can contain anything. In the example below, we display a menu.
 ``` html
 <q-context-menu>
   <q-list link separator style="min-width: 150px; max-height: 300px;">
-    <q-item v-close-overlay @click="showToast()">
+    <q-item v-close-overlay @click.native="showToast()">
       <q-item-main label="Label" sublabel="Value" />
     </q-item>
 
-    <q-item v-close-overlay @click="showOtherToast()">
+    <q-item v-close-overlay @click.native="showOtherToast()">
       <q-item-main label="Other Label" sublabel="Other Value" />
     </q-item>
   </q-list>
