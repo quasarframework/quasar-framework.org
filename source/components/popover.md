@@ -35,7 +35,7 @@ You can replace the QBtn and the List with any DOM elements or components you li
     -->
     <q-list separator link>
       <!-- notice `v-close-overlay` which closes popover -->
-      <q-item v-close-overlay @click="doSomething">
+      <q-item v-close-overlay @click.native="doSomething">
         ...
       </q-item>
     </q-list>
@@ -53,7 +53,7 @@ The idea is to place QPopover inside your DOM element / component that you want 
 <template>
   <div>
     <q-btn color="primary" @click="showing = true" label="Show" />
-    <q-btn color="primary" @close="showing = false" label="Hide" />
+    <q-btn color="primary" @click="showing = false" label="Hide" />
 
     <div>
       ...
