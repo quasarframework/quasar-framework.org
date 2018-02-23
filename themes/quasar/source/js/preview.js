@@ -17,7 +17,6 @@ $(function() {
     ;
 
   function getSourceURL(page, source) {
-    console.log(page, source)
     return 'https://github.com/quasarframework/quasar-play/tree/master/src/pages/showcase/' +
       (source || (page + '.vue'));
   }
