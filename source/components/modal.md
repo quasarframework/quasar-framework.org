@@ -11,7 +11,7 @@ framework: {
 
   // optional if you want to use
   // directive `v-close-overlay`
-  plugins: ['CloseOverlay']
+  directives: ['CloseOverlay']
 }
 ```
 
