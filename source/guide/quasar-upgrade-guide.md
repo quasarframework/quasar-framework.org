@@ -53,7 +53,7 @@ Yes. It's no longer there because you don't need it anymore. For initialization 
 You're no longer required to import Quasar components and directives anywhere in your app. Simply configuring `/quasar.conf.js` in `framework` Object will suffice. [More Info](/guide/app-quasar.conf.js.html).
 
 ### Quasar Plugins?
-Yes, this refer to Action Sheet, Notify (replacement of Toast and Alert), LocalStorage/SessionStorage and so on. They are available globally or under the Vue `$q` Object injection, and need to be specified in `/quasar.conf.js > framework > plugins` in order for them to be available.
+Yes, this refers to Action Sheet, Notify (replacement of Toast and Alert), LocalStorage/SessionStorage and so on. They are available globally or under the Vue `$q` Object injection, and need to be specified in `/quasar.conf.js > framework > plugins` in order for them to be available.
 
 ### Revamps
 * Typography
@@ -108,7 +108,7 @@ Also, small change for Fontawesome icons:
 ```
 
 ### Vue Prototype Injections
-You can use `$q` injection for convenience, accesing Quasar Theme, Quasar I18n, Quasar Platform, and many more. Quasar Plugins add functionality to it. Read [doc page](/components/vue-prototype-injections.html), especially if you build Cordova or Electron apps.
+You can use `$q` injection for convenience, accessing Quasar Theme, Quasar I18n, Quasar Platform, and many more. Quasar Plugins add functionality to it. Read [doc page](/components/vue-prototype-injections.html), especially if you build Cordova or Electron apps.
 
 ### What has been dropped?
 * Global Event Bus (Events) -- no longer needed. Use Vue root component events instead. [More Info](/components/global-event-bus.html)
@@ -293,7 +293,7 @@ Unfortunately, the automatic handling of back button was a top feature hard to c
 ```
 
 ### Buttons
-While QBtn still allows to specify icon and label as children nodes, it is now recommended that you use the "icon" and "label" props instead:
+While QBtn still allows you to specify icon and label as children nodes, it is now recommended that you use the "icon" and "label" props instead:
 
 ```html
 <q-btn icon="map" label="See map" />
