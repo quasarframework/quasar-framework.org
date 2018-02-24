@@ -74,5 +74,10 @@ If you cannot calculate the progress in percent, use the indeterminate prop.
 
 If you'd like to set a specific height of the progress bar, add inline styling to the component:
 ``` html
-  <q-progress :percentage="progress" stripe animate style="height: 45px" />
+<q-progress
+  :percentage="progress"
+  stripe
+  animate
+  height="45px"
+/>
 ```
