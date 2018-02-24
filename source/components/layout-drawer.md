@@ -93,11 +93,9 @@ There's the possibility to use `v-model` to control the state of Drawer (opened/
 export default {
   data () {
     return {
-      sides: {
-        // "false" means hidden
-        // "true" means visible
-        drawer: true
-      }
+      // "false" means hidden
+      // "true" means visible
+      drawer: true
     }
   }
 }
