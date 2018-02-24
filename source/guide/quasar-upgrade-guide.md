@@ -324,3 +324,21 @@ While QBtn still allows you to specify icon and label as children nodes, it is n
 ```
 
 Be sure to check out the new button types and props too.
+
+### Quasar CLI and Pre-0.15 Apps
+
+The Quasar CLI v0.15+ is not compatible with pre-0.15 apps. You can install the latest CLI globally while still supporting `quasar` commands in legacy apps by adding `quasar-cli` as a development dependency. To support 0.14 and earlier you need quasar-cli v0.6.5.
+
+```bash
+$ npm install --save-dev quasar-cli@0.6.5
+```
+
+This will add the legacy `quasar` CLI tool to your projects `./node_modules/.bin/` directory.
+
+Use the [npx](https://www.npmjs.com/package/npx) tool (automatically installed alongside npm) to run `quasar` from your local node modules. For example:
+
+```bash
+$ npx quasar dev
+```
+
+
