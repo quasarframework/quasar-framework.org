@@ -101,3 +101,11 @@ QToolbarTitle is a component used to wrap the "title" of your Toolbar. It spread
   </q-toolbar-title>
 </q-toolbar>
 ```
+
+### Shrink
+By default, QToolbarTitle is set to grow to the available space. However, you can change that with the `shrink` Boolean prop:
+```
+<q-toolbar-title shrink>
+  Title
+</q-toolbar-title>
+```
