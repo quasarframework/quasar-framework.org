@@ -36,6 +36,7 @@ framework: {
 | --- | --- | --- |
 | `label` | String | Main label to use. |
 | `icon` | String | An icon to use on left of label. |
+| `icon-color` | String | Optional color of icon. |
 | `helper` | String | Helper text which gets placed below your wrapped form component. |
 | `error` | Boolean | Highlight field and wrapped form component has an error. |
 | `error-label` | String | If `error` is specified and `true`, then field helper is replaced by this prop. Doesn't depend on field helper existance. |
