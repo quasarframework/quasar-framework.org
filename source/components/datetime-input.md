@@ -48,7 +48,7 @@ Supports `v-model` which must be a String, Number or Date Object.
 | `hide-underline` | Boolean | Hides the bottom border. |
 | `popover` | Boolean | Always display with a Popover, regardless of Platform. |
 | `modal` | Boolean | Always display with a Modal, regardless of Platform. |
-| `format` | String | Format as described on Handling JS Date page under [Format for display](/components/handling-js-date.html#Format-for-display) section. |
+| `format` | String | Format as described on Handling JS Date page under [Format for display](/components/date-utils.html#Format-for-display) section. |
 | `format-model` | String | Data type of model (useful especially when starting out with undefined or null). One of 'auto', 'date', 'number', 'string'. |
 | `format24h` | Boolean | Override default i18n setting. Use 24 hour time for Material picker instead of AM/PM system which is default. |
 | `placeholder` | String | Placeholder text for input frame to use when model is not set (empty). |
@@ -165,7 +165,7 @@ Quasar uses its own date utility to work with date values within the model of th
 > **IMPORTANT**
 > The model (variable binded to `v-model`) must either be empty (undefined) or a string in the form of a valid ISO 8601 datetime value, like `2016-10-24T10:40:14.674Z`. It can also be a shorter derivative of this string, like `2016-10-24` or `2016-10-24T10:40`. The value can also be a Unix Timestamp (including milliseconds), like `1477298414674`. Last but not least, it can also be an instance of the Javascript Date Object, like `new Date()`.
 
-For more information about how Quasar works with dates, please refer to the [Handling JS Date](/components/handling-js-date.html) documentation page.
+For more information about how Quasar works with dates, please refer to the [Handling JS Date](/components/date-utils.html) documentation page.
 
 Here are a few examples of setting up the value prop:
 

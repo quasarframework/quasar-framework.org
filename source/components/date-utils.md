@@ -1,4 +1,4 @@
-title: Handling JS Date
+title: Date Utils
 ---
 
 Quasar provides a set of useful functions to manipulate JS Date easily in most use cases, without the high additional cost of integrating dedicated libraries like [moment](https://momentjs.com).
@@ -167,14 +167,21 @@ let max = date.getMaxDate(new Date(2017, 6, 24), new Date(2017, 5, 20), new Date
 ```
 
 ### Time range
-To check if a date is **strictly** (i.e. exclusive range) in a given date/time range use:
+To check if a date is in a given date/time range use:
 ``` js
 import { date } from 'quasar'
 
 let date = new Date()
 let dateFrom = new Date()
 let dateTo = new Date()
+
+// **strictly** (i.e. exclusive range)
 if (date.isBetweenDates(date, dateFrom, dateTo)) {
+  // Do something with date
+}
+
+// including which margin you want
+if (date.isBetweenDates(date, dateFrom, dateTo, { inclusiveFrom: true, inclusiveTo: true })) {
   // Do something with date
 }
 ```

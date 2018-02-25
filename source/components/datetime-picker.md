@@ -83,7 +83,7 @@ Quasar uses its own date utility to work with date values within the model of th
 > **IMPORTANT**
 > The model (variable binded to `v-model`) must either be empty (undefined) or a string in the form of a valid ISO 8601 datetime value, like `2016-10-24T10:40:14.674Z`. It can also be a shorter derivative of this string, like `2016-10-24` or `2016-10-24T10:40`. The value can also be a Unix Timestamp (including milliseconds), like `1477298414674`. Last but not least, it can also be an instance of the Javascript Date Object, like `new Date()`.
 
-For more information about how Quasar works with dates, please refer to the [Handling JS Date](/components/handling-js-date.html) documentation page.
+For more information about how Quasar works with dates, please refer to the [Handling JS Date](/components/date-utils.html) documentation page.
 
 Here are a few examples of setting up the value prop:
 

@@ -172,7 +172,7 @@ components:
     Touch Swipe: $
     Touch Hold: $
   Utils:
-    Handling JS Date: $
+    Date Utils: $
     DOM Utils: $
     Formatter Utils: $
     Other Utils: $
