@@ -31,7 +31,7 @@ This command creates a new file: `/src/plugins/axios.js` with the following cont
 // import something here
 
 // leave the export, even if you don't use it
-export default ({ app, router, Vue }) => {
+export default ({ app, router, store, Vue }) => {
   // something to do
 }
 ```
@@ -77,7 +77,7 @@ import VueI18n from 'vue-i18n'
 // let's say we have a file in /src/i18n containing the language pack
 import messages from 'src/i18n'
 
-export default ({ app, store, Vue }) => {
+export default ({ app, Vue }) => {
   // we tell Vue to use our Vue package:
   Vue.use(VueI18n)
 
@@ -85,7 +85,7 @@ export default ({ app, store, Vue }) => {
   // We inject it into root component by doing so;
   // new Vue({..., i18n: ... }).$mount(...)
   app.i18n = new VueI18n({
-    locale: store.state.locale,
+    locale: 'en',
     fallbackLocale: 'en',
     messages
   })
@@ -103,9 +103,9 @@ Please take note of some things:
 * Plugin files are run **before** the App's Vue root component is instantiated
 * We are exporting a function. This is required, regardless of whether you do something in it or not.
 * Import packages outside of the exporting function and handle them within the exporting function. Outside of the exporting function you shouldn't write anything but the imports.
-* The default exporting function takes one Object as parameter and this Object has some properties: app, router, Vue:
+* The default exporting function takes one Object as parameter and this Object has some properties: app, router, store (if using Vuex), Vue:
   ```js
-  export default ({ app, router, Vue }) => {
+  export default ({ app, router, store, Vue }) => {
   ```
   * "app" is the Object with which the root component gets instantiated by Vue -- you can use it to inject things into it; some vue packages need this, like vue-i18n;
   * "router" is the instance of Vue Router from 'src/router/index.js'
