@@ -39,7 +39,6 @@ plugins: ['vuelidate']
 
 <script>
 import { required, email } from 'vuelidate/lib/validators'
-import { Toast } from 'quasar'
 
 export default {
   data () {
@@ -59,7 +58,7 @@ export default {
       this.$v.form.$touch()
 
       if (this.$v.form.$error) {
-        Toast.create('Please review fields again.')
+        this.$q.notify('Please review fields again.')
         return
       }
 
