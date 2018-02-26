@@ -123,7 +123,7 @@ Most used properties are:
 | env | Object | Add properties to `process.env` that you can use in your website/app JS code. Each property needs to be JSON encoded. Example: { SOMETHING: JSON.stringify('someValue') }. |
 | gzip | Boolean | Gzip the distributables. Useful when the web server with which you are serving the content does not have gzip. |
 | scopeHoisting | Boolean | Default: `true`. Use Webpack scope hoisting for slightly better runtime performance. |
-| analyze | Boolean | Show analysis of build bundle with webpack-bundle-analyzer. |
+| analyze | Boolean/Object | Show analysis of build bundle with webpack-bundle-analyzer. If using as Object, it represents the webpack-bundle-analyzer config Object. |
 
 The following properties of `build` are automatically configured by Quasar CLI depending on dev/build commands and Quasar mode. But if you like to override some (make sure you know what you are doing), you can do so:
 
