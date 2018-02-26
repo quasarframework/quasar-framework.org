@@ -14,7 +14,8 @@ There are some CSS classes that you can use out of the box for common functional
 | `ellipsis` | Truncates text and shows ellipsis when not enough space available. |
 | `ellipsis-2-lines` | Truncates text and shows ellipsis when not enough space available on two lines (works only on Webkit browsers). |
 | `ellipsis-3-lines` | Truncates text and shows ellipsis when not enough space available on three lines (works only on Webkit browsers). |
-| `z-absolute` | Positions your element on top of any other component (including Drawer, Modals, Toasts, Layout header/footer, ...) |
+| `z-top` | Positions your element on top of any other component, but behind Popovers, Tooltips, Notifications. |
+| `z-max` | Positions your element on top of any other component (including Drawer, Modals, Notifications, Layout header/footer, ...) |
 
 ### Window Width Related
 First of all, let's define what does a small, medium, big or large window means:
