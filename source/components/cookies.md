@@ -9,7 +9,7 @@ This is a wrapper over the standardized `document.cookie`.
 Edit `/quasar.conf.js`:
 ```js
 framework: {
-  plugin: ['Cookies']
+  plugins: ['Cookies']
 }
 ```
 
