@@ -13,7 +13,7 @@ import LandingPage from 'pages/Landing'
 const routes = [
   {
     path: '/',
-    component: LandingPages
+    component: LandingPage
   }
 ]
 
