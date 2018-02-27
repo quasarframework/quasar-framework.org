@@ -5,6 +5,9 @@ We'll cover how to upgrade to a new Quasar version in your project, both for [UM
 ## Upgrading to a newer Quasar version
 This applies when upgrading from v0.15 to a newer v0.15 or a next major Quasar version.
 
+> **IMPORTANT**
+> **Quasar v0.15+ requires Node.js version 8.9.0 or greater**
+
 ### UMD
 Simply replace the version string in all the CSS and JS tags that refer to Quasar to the newer version.
 
