@@ -336,8 +336,8 @@ Vue will soon supply the `.lazy` modifier for v-model on components too, but unt
 ## Vue Methods
 | Vue Method | Description |
 | --- | --- |
-| `open()` | Opens the Popover |
-| `close()` | Closes the Popover |
+| `show()` | Opens the Popover |
+| `hide()` | Closes the Popover |
 
 ## Vue Events
 | Vue Event | Description |
