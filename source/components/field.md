@@ -104,6 +104,8 @@ The following are just a glimpse of what QField can do for you.
 ### Validations with Vuelidate
 Quasar's recommendation for doing form components validations is  [Vuelidate](https://monterail.github.io/vuelidate/) as it fits great with the overall architecture. It's simple, lightweight and **model-based**.
 
+You need to have Vuelidate added to your project first. See [here](/components/form-validation.html).
+
 ```html
 <template>
   <q-field
