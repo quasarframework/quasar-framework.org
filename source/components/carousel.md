@@ -61,7 +61,9 @@ Supports `v-model` which determines the slide number.
 ### QCarousel Vue Events
 | Vue Event | Description |
 | --- | --- |
-| `@slide(index, direction)` | Emits the index of the current slide and the direction of the slide when the transition animation finishes. Emits even if navigating to the same slide. |
+| `@input(index)` | Emits the index of the current slide. |
+| `@slide-trigger(oldIndex, newIndex, direction)` | Emitted before animating to the new slide. |
+| `@slide(index, direction)` | Emits the index of the current slide and the direction of the slide after the transition animation finishes. Emits even if navigating to the same slide. |
 | `@slide-direction('next'/'previous')` | Emitted when navigating to a slide, describing direction (next / previous). |
 
 ## QCarouselSlide (Child)
