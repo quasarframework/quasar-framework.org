@@ -32,10 +32,36 @@ framework: {
 
 The above would position a circular button at the top right corner of the content area of a layout. It would also pad the button with 18 pixels from the top and right edges of the layout.
 
+### Expand mode
+> Needs Quasar v0.15.4+
+> Beware that you need to manually set the according padding to your QPage element so that your sticky elements won't overlap page content.
+
+By default, QPageSticky shrinks to the size of its content. In case you want to place something like a QToolbar (works with any element/component) in a QPageSticky with position set to "top" (works for top/right/bottom/left), you can use the `expand` Boolean property:
+
+```html
+<!-- Example of a toolbar placed at top of the page -->
+<q-page-sticky expand position="top">
+  <q-toolbar>
+    <q-btn flat round dense icon="menu" />
+    <q-toolbar-title>Title</q-toolbar-title>
+  </q-toolbar>
+</q-page-sticky>
+
+<!-- Example of placing something on the right side of the page -->
+<q-page-sticky expand position="left">
+  <div class="fit bg-tertiary">
+    ....content...
+  </div>
+</q-page-sticky>
+```
+
+**Tip**: For left/right positions you can use the Quasar [Flex CSS](/components/flex-css.html) classes to center content.
+
 ### Vue Properties
 | Vue Property | Type | Description |
 | --- | --- | --- |
 | `position` | String | Check below for valid values. |
+| `expand` | Boolean | (v0.15.4+) Expand mode. Overrides default "shrinking" mode where Page Sticky shrinks to the size of content. |
 | `offset` | Array (2 integers) | Optional. The offset of the content, relative to the corner. First is offset on X axis, then on Y axis.<br>Example: `[0, 18]` (offset 0 on X axis and 18px on Y axis). |
 
 Valid values for "position" property: `top-right`, `top-left`, `bottom-right`, `bottom-left`, `top`, `right`, `bottom`, `left`.
