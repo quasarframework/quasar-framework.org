@@ -47,6 +47,9 @@ framework: {
     </span>
   </q-toolbar-title>
 </q-toolbar>
+
+<!-- A Toolbar with light color and overriden text color -->
+<q-toolbar color="amber" text-color="black">...</q-toolbar>
 ```
 
 Example on using a Toolbar on Layout header:
@@ -83,6 +86,7 @@ Example on using a Toolbar on Layout header:
 | Property | Type | Description |
 | --- | --- | --- |
 | `color` | String | A color from [Quasar Color Palette](/components/color-palette.html) |
+| `text-color` | String | One from Quasar Palette to override color of text |
 | `inverted` | Boolean | Invert color: background becomes transparent while text has `color` |
 | `glossy` | Boolean | Apply a glossy effect |
 
