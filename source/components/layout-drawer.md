@@ -34,8 +34,8 @@ framework: {
 | `behavior` | String | One of 'default', 'desktop', 'mobile'. The last two override the breakpoint and makes Drawer act only as on desktop or only as on mobile modes, regardless of window width. |
 | `no-swipe-open` | Boolean | Disable ability to open Drawer by touch actions. |
 | `no-swipe-close` | Boolean | Disable ability to close Drawer by touch actions. Useful if you have components in your Drawer which require touch actions. The backdrop will still work with touch actions. |
-| `contentStyle` | Object | CSS Style in Object format for the Drawer container element. |
-| `contentClass` | String/Object/Array | CSS classes for the Drawer container element. |
+| `content-style` | Object | CSS Style in Object format for the Drawer container element. |
+| `content-class` | String/Object/Array | CSS classes for the Drawer container element. |
 
 ## Styling Examples
 
