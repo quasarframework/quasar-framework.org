@@ -80,7 +80,7 @@ Common input frame properties:
 | `after` | Array of Objects | Icon buttons on right side of textfield. Read below more details. |
 
 > **IMPORTANT**
-> All DOM attributes that apply to a native `<input>` or `<textarea>` can be used. Example: `max-length`, `rows`, `min`/`max`/`step`, `autocomplete` and so on.
+> All DOM attributes that apply to a native `<input>` or `<textarea>` can be used. Example: `maxlength`, `rows`, `min`/`max`/`step`, `autocomplete` and so on.
 
 ### Icon buttons
 This section refers to `before` and `after` properties which can add additional buttons as icons to the textfield. Here is the structure of the two properties:
