@@ -99,42 +99,44 @@ The example link tag below would include Font Awesome v4.7.0 icons. Do a Google 
 ### Using Fontawesome-Pro
 If you have a Fontawesome 5 Pro license and want to use it instead Fontawesome Free version. Following this instructions.
 
-1. Open [Linked Accounts section](https://fontawesome.com/account/linked-accounts) in Fontawesome's user account page to grab npm TOKENID (login if necessary)
-2. Create or append TOKENID into file .npmrc (file path same as package.json)
-```
-@fortawesome:registry=https://npm.fontawesome.com/TOKENID
-```
-3. Install Fontawesome webfonts.
-```bash
-$ yarn add @fortawesome/fontawesome-pro-webfonts
-```
-4. Create new Quasar plugin.
-```bash
-$ quasar new plugin fontawesome-pro
-```
-5. Edit `/quasar.conf.js`
+1. Open [Linked Accounts section](https://fontawesome.com/account/linked-accounts) in Fontawesome's user account page to grab npm TOKENID (login if necessary).
+2. Create or append TOKENID into file .npmrc (file path same as package.json):
+  ```
+  @fortawesome:registry=https://npm.fontawesome.com/TOKENID
+  ```
+3. Install Fontawesome webfonts:
+  ```bash
+  # npm install --save or yarn add
+  $ npm install --save @fortawesome/fontawesome-pro-webfonts
+  ```
+4. Create new App plugin:
+  ```bash
+  $ quasar new plugin fontawesome-pro
+  ```
+5. Edit `/quasar.conf.js`:
+  ```js
+  plugins: [
+    ...
+    'fontawesome-pro' // Add app plugin
+  ],
+  extras: [
+    // 'fontawesome' // Disable free version!
+  ],
+  framework: {
+    // if you want Quasar to use Fontawesome for its icons
+    iconSet: 'fontawesome'
+  }
+  ```
+6. Edit `/src/plugins/fontawesome-pro.js`:
 ```js
-plugins: [
-  ...
-  'fontawesome-pro' // Add plugin
-],
-extras: [
-  // 'fontawesome' // Disable free version
-],
-framework: {
-  iconSet: 'fontawesome'
-}
-```
-6. Edit `/src/plugins/fontawesome-pro.js`
-```js
-require('@fortawesome/fontawesome-pro-webfonts/css/fontawesome.css')
-require('@fortawesome/fontawesome-pro-webfonts/css/fa-solid.css')
-require('@fortawesome/fontawesome-pro-webfonts/css/fa-regular.css')
+import '@fortawesome/fontawesome-pro-webfonts/css/fontawesome.css'
+import '@fortawesome/fontawesome-pro-webfonts/css/fa-solid.css'
+import '@fortawesome/fontawesome-pro-webfonts/css/fa-regular.css'
+// do you want these too?
+// import '@fortawesome/fontawesome-pro-webfonts/css/fa-light.css'
+// import '@fortawesome/fontawesome-pro-webfonts/css/fa-brands.css'
 
-// require('@fortawesome/fontawesome-pro-webfonts/css/fa-light.css')
-// require('@fortawesome/fontawesome-pro-webfonts/css/fa-brands.css')
-
-export default ({ app, router, Vue }) => {
+export default () => {
   // Leave blank or make something cool.
 }
 ```
