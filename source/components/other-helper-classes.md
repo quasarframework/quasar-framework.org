@@ -49,4 +49,4 @@ There are two special CSS class named `group` and `generic-margin`.
 
 `group` applies a small margin to all children DOM elements, while `generic-margin` applies same margin to the respective DOM element (this varies with each theme).
 
-The recommended way to go is by using [CSS Flex Gutter](http://localhost:4000/components/flex-css.html#Using-Gutters) though.
+The recommended way to go is by using [CSS Flex Gutter](/components/flex-css.html#Using-Gutters) though.
