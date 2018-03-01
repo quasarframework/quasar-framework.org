@@ -96,6 +96,49 @@ The example link tag below would include Font Awesome v4.7.0 icons. Do a Google 
 </head>
 ```
 
+### Using Fontawesome-Pro
+If you have a Fontawesome 5 Pro license and want to use it instead Fontawesome Free version. Following this instructions.
+
+1. Open [Linked Accounts section](https://fontawesome.com/account/linked-accounts) in Fontawesome's user account page to grab npm TOKENID (login if necessary)
+2. Create or append TOKENID into file .npmrc (file path same as package.json)
+```
+@fortawesome:registry=https://npm.fontawesome.com/TOKENID
+```
+3. Install Fontawesome webfonts.
+```bash
+$ yarn add @fortawesome/fontawesome-pro-webfonts
+```
+4. Create new Quasar plugin.
+```bash
+$ quasar new plugin fontawesome-pro
+```
+5. Edit `/quasar.conf.js`
+```js
+plugins: [
+  ...
+  'fontawesome-pro' // Add plugin
+],
+extras: [
+  // 'fontawesome' // Disable free version
+],
+framework: {
+  iconSet: 'fontawesome'
+}
+```
+6. Edit `/src/plugins/fontawesome-pro.js`
+```js
+require('@fortawesome/fontawesome-pro-webfonts/css/fontawesome.css')
+require('@fortawesome/fontawesome-pro-webfonts/css/fa-solid.css')
+require('@fortawesome/fontawesome-pro-webfonts/css/fa-regular.css')
+
+// require('@fortawesome/fontawesome-pro-webfonts/css/fa-light.css')
+// require('@fortawesome/fontawesome-pro-webfonts/css/fa-brands.css')
+
+export default ({ app, router, Vue }) => {
+  // Leave blank or make something cool.
+}
+```
+
 ## Basic Usage
 Let's take a look at how we can use QIcon component. Do not forget to check above how to [Install Icon Sets](#Installing), otherwise they won't show up!
 
