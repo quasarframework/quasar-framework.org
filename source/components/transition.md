@@ -55,7 +55,7 @@ This is just an example. Notice the string "animated" in front of the actual ani
 ```
 
 ### Wrapping Multiple Elements
-You can also group components or DOM elements in a QTransition so that the same effects are applied to all of them simultaneously.
+You can also group components or DOM elements in a transition so that the same effects are applied to all of them simultaneously.
 
 ``` html
 <!-- Example with wrapping multiple DOM elements / components -->
@@ -74,7 +74,7 @@ You can also group components or DOM elements in a QTransition so that the same 
     icon="mail"
     label="Email"
   />
-</q-transition>
+</transition>
 ```
 
 Please note two things in the above example.
