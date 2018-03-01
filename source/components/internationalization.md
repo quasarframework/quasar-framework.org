@@ -76,3 +76,16 @@ import Quasar from 'quasar'
 // inside of a Vue file
 (String) this.$q.i18n.getLocale()
 ```
+
+## Handling Quasar UMD
+To add a Quasar language pack you need to include the language pack JS tag for your Quasar version and also tell Quasar to use it. Example:
+
+```html
+<!-- include this after Quasar JS tag -->
+<script src="https://unpkg.com/quasar-framework@latest/dist/umd/i18n.pt-br.umd.min.js"></script>
+<script>
+  Quasar.i18n.set(Quasar.i18n.ptBr)
+</script>
+```
+
+Check what tags you need to include in your HTML files by generating a sample with `$ vue init quasarframework/quasar-starter-kit-umd <folder>` and specifying a language code for Quasar I18n (other than default "en-us").

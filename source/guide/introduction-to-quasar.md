@@ -26,6 +26,9 @@ There's almost a component for every needs you might have. All these components 
 ### Best practices integrated by default
 You don't need to worry about what the best practices in web development are. You get that for free out of the box. HTML/CSS/JS minification, cache busting, tree shaking, sourcemapping, code-splitting & lazy loading, ES6 transpiling, linting code. This just barely scratches the surface. Quasar takes care of this for you. No configuration needed.
 
+### Full RTL Support
+RTL (right to left) support for both Quasar components & you own code. Your own website/app CSS code gets automatically converted to RTL.
+
 ### Two Themes (more to come)
 Material theme and iOS theme.
 
@@ -51,6 +54,9 @@ Whenever you got a problem you can't or don't know yet how to solve, visit Quasa
 
 ### Wide platform support
 Google Chrome, Firefox, IE11/Edge, Safari, Opera, iOS, Android, Windows Phone, Blackberry.
+
+### Quasar components Internationalization (I18n)
+I18n provided by default for Quasar components. If your language pack is missing it takes just 5 minutes to add it.
 
 ### Great documentation
 Finally, it's worth mentioning about the huge amount of time that is spent on writing great, bloat free, focused, complete documentation pages so that you can quickly pick up Quasar. There will be no room for confusion.

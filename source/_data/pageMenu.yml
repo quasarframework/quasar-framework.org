@@ -29,7 +29,6 @@ guide:
     Vuex Store: app-$
     Theming: quasar-$
     App Linter: $
-    RTL Support: app-$
     Supporting IE: app-$
 
   Developing PWA:
@@ -67,6 +66,7 @@ components:
     Global Event Bus: $
     Vue Prototype Injections: $
     Internationalization (I18n): internationalization
+    RTL Support: $
   Style & Identity:
     Color Palette: $
     Stylus Variables: $

@@ -13,6 +13,8 @@ Here's a comparison:
 | Progressive integration of Quasar | **Yes** | - |
 | Ability to use CDN | **Yes** | **Yes*** |
 | Build SPA, PWA, Mobile Apps, Electron Apps | **Yes** | **Yes** |
+| Dynamic RTL support for Quasar components | **Yes** | **Yes** |
+| Generating your own website/app RTL equivalent CSS rules automatically by Quasar | - | **Yes** |
 | Take advantage of Quasar CLI for a stellar developer experience | - | **Yes** |
 | Tree Shaking | - | **Yes** |
 | SFC (Single File Component - for Vue) | - | **Yes** |
