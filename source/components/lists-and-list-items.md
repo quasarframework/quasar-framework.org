@@ -21,7 +21,10 @@ framework: {
     'QItemSeparator',
     'QItemSide',
     'QItemTile'
-  ]
+  ],
+
+  // if you use v-close-overlay:
+  directives: ['CloseOverlay']
 }
 ```
 
