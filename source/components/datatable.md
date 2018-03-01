@@ -282,7 +282,7 @@ export default {
 
       axios
       .get(`/data/${pagination.page}?sortBy=${pagination.sortBy}&descending=${pagination.descending}&filter=${filter}`)
-      .then({ data } => {
+      .then(({ data }) => {
         // updating pagination to reflect in the UI
         this.serverPagination = pagination
 
