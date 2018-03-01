@@ -537,6 +537,32 @@ export default {
 />
 ```
 
+### Display a nested property or format a column
+You can display the value of a nested property. For example:
+```js
+columns: [
+  {
+    name: 'author',
+    label: 'Author',
+    field: row => row.author.name
+  }
+]
+```
+
+Then you can go even further and format the value for a specific column in your column definition. Example:
+```js
+columns: [
+  {
+    name: 'author',
+    label: 'Author',
+    field: row => row.author.name,
+    format: val => `${val}%`
+  }
+]
+```
+
+The value returned by `field` is used for sorting rows, while the `format` value is specifically meant for displaying a value to the user. This is very useful for cases where you need to sort by the initial value of your data. You can (if you want to), however, avoid the `format` and use custom scoped slots (row, column cell) for defining how Quasar should format the cell(s).
+
 ## Examples - Customization
 
 ### Custom table top & bottom
