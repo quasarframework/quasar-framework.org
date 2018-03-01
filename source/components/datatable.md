@@ -537,6 +537,32 @@ export default {
 />
 ```
 
+### Display a nested property or format a column
+
+You can display the value of a nested property. For example:
+
+```js
+columns: [
+  {
+    name: 'author',
+    label: 'Author',
+    field: row => row.author.name,
+  }
+]
+```
+
+You can use this same technique to format a specific column in your column definition. For example:
+
+```js
+columns: [
+  {
+    name: 'percentage',
+    label: 'Percentage',
+    field: row => `${row.percentage}%`,
+  }
+]
+```
+
 ## Examples - Customization
 
 ### Custom table top & bottom
