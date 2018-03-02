@@ -86,7 +86,7 @@ The default values of the different QTable labels are taken care of by default t
 | `selection` | String | Set selection mode. One of 'single', 'multiple' or (default) 'none'. |
 | `selected` | Array | **Use with .sync**. Array of unique keys for selected row(s). |
 | `visible-columns` | Array | Array of Strings containing the 'name' column property value of the visible columns. |
-| `loading` | Boolean | Show a background process in in progress (like fetching data and so on). |
+| `loading` | Boolean | Show a background process is in progress (like fetching data and so on). |
 | `color` | String | Color of the default Table controls (pagination, checkboxes, ...). |
 | `dark` | Boolean | When using Table on a dark background. |
 | `dense` | Boolean | Dense Table, when you want to display more data using the same real estate on window. Gets activated by default on narrow windows. |
@@ -105,7 +105,7 @@ Label properties are by default defined in Quasar's i18n, but you can override t
 | --- | --- | --- |
 | `no-data-label` | String | Message to display when no rows are available. |
 | `no-results-label` | String | Message to display when no rows match the filter. |
-| `loading-label` | String | Message to display when Table currently has no rows but it fetches them. |
+| `loading-label` | String | Message to display when Table currently has no rows but is in the process of fetching them. |
 | `selected-rows-label(rowsNumber)` | Function | Function that returns a message (String) to display how many rows are selected. Takes a Number parameter which is the actual rows number that are selected. |
 | `rows-per-page-label` | String | Override 'Rows per page:' message. |
 | `pagination-label(start,end,total)` | Function | Override default 'x-y of z' pagination label. |
@@ -213,13 +213,13 @@ export default {
 | `@request` | Object { pagination, filter, getCellValue } | Gets triggered when using server-side pagination (`pagination` property Object contains `rowsNumber`) |
 
 ## Server-side Pagination, Filtering, Sorting
-When your database contains a big number of rows for a Table, obviously it's not feasible to load them all for multiple reasons (memory, UI rendering performance, ...). Instead, you can load only a Table page. Whenever user wants to navigate to another Table page, or wants to sort by a column or wants to filter the Table, a request is sent to the server to fetch the partial data.
+When your database contains a big number of rows for a Table, obviously it's not feasible to load them all for multiple reasons (memory, UI rendering performance, ...). Instead, you can load only a Table page. Whenever the user wants to navigate to another Table page, or wants to sort by a column or wants to filter the Table, a request is sent to the server to fetch the partial data.
 
 1. First step to enable this behavior is to specify `pagination` prop, which MUST contain `rowsNumber`. QTable needs to know the total number of rows available in order to correctly render the pagination links.
 
 2. Second step is to listen for `@request` event on QTable. This event is triggered when data needs to be fetched from the server because either page number or sorting or filtering changed.
 
-3. It's best that you also specify the `loading` prop in order for notifying the user that a background process is in progress.
+3. It's best that you also specify the `loading` prop in order to notify the user that a background process is in progress.
 
 ```html
 <template>
