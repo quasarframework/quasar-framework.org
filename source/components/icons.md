@@ -124,7 +124,7 @@ If you have a Fontawesome 5 Pro license and want to use it instead Fontawesome F
   ],
   framework: {
     // if you want Quasar to use Fontawesome for its icons
-    iconSet: 'fontawesome'
+    iconSet: 'fontawesome-pro'
   }
   ```
 6. Edit `/src/plugins/fontawesome-pro.js`:
