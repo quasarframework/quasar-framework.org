@@ -19,7 +19,7 @@ Next, we can find our unsigned APK file in `/src-cordova/platforms/android/build
 Let’s generate our private key using the keytool command that comes with the JDK. If this tool isn’t found, refer to the installation guide:
 
 ```bash
-$ keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000
+$ keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 20000
 ```
 
 You’ll first be prompted to create a password for the keystore. Then, answer the rest of the nice tools’s questions and when it’s all done, you should have a file called my-release-key.keystore created in the current directory.
