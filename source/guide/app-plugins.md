@@ -2,7 +2,8 @@ title: App Plugins
 ---
 Quasar allows you to define Javascript App plugins to be run before instantiating the root Vue application component. **This is especially helpful when using your own libraries or external modules**.
 
-> Do not mistake this with Quasar plugins, like ActionSheet, Dialog, Notify. These are something else entirely and they will be covered in [Components](/components) section.
+> **IMPORTANT**
+> **Do not mistake app plugins this with Quasar plugins, like ActionSheet, Dialog, Notify. These are something else entirely and they will be covered in [Components](/components) section**.
 
 Quasar pre-v0.15 developers were used to having a `/src/main.js` file where they would import and configure external modules/packages. The problem with this is that main.js becomes very cluttered, hard to read and reason with.
 
@@ -110,3 +111,47 @@ Please take note of some things:
   * "app" is the Object with which the root component gets instantiated by Vue -- you can use it to inject things into it; some vue packages need this, like vue-i18n;
   * "router" is the instance of Vue Router from 'src/router/index.js'
   * "Vue" is same as if we do `import Vue from 'vue'` and it's there for convenience
+
+## Special "Boot" App Plugin
+Every Quasar website/app is booted up after plugins have been loaded and executed. Last step is to call `new Vue()` and attach it to the DOM.
+
+If, for whatever reason, you need to control this final step and decide the specific moment when Vue kicks in, you can create a special Quasar plugin named "boot".
+
+> Remember to only use this plugin for eventually calling `new Vue(app)`. Don't use this for initializating any library you may have -- for that, use a regular app plugin.
+
+```bash
+# we create the boot plugin
+$ quasar new plugin boot
+ app:new Generated plugin: src/plugins/boot.js +0ms
+ app:new Make sure to reference it in quasar.conf.js > plugins +2ms
+```
+
+We then add this plugin to app plugins list in `/quasar.conf.js`:
+```
+module.export = function (ctx) {
+  return {
+    plugin: [
+      'boot'
+    ],
+    ...
+  }
+}
+```
+
+> **IMPORTANT**
+> The name "boot" for your plugin has meaning to Quasar CLI. It runs this plugin after all other app initialization has been executed and right before kicking off Vue with `new Vue()`. By adding this plugin you are responsible of kicking off Vue yourself, as we'll see next.
+
+We edit our new plugin (`/src/plugins/boot.js`):
+```js
+export default ({ app, Vue }) => {
+  // do some logic here...
+
+  // ... then, kick off our Quasar website/app:
+  new Vue(app)
+  // "app" has everything cooked in by Quasar CLI,
+  // you don't need to inject it with anything at this point
+}
+```
+
+> **IMPORTANT**
+> Do not forget to have at least one decisional branch where you call `new Vue(app)` otherwise your app won't boot and you'll only see a blank page!
