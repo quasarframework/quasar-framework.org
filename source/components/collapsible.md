@@ -75,7 +75,7 @@ Supports `v-model` to control the state (open/close).
 | `header-class` | Array/String/Object | Vue class binding for header. |
 | `disable` | Boolean | Disable current Collapsible. |
 
-QItem components inherited properties:
+QItem & QItem related components inherited properties:
 
 | Inherited Property | Type | Description |
 | --- | --- | --- |
