@@ -11,7 +11,13 @@ The QInnerLoading component allows you to add a progress animation within a comp
 Edit `/quasar.conf.js`:
 ```js
 framework: {
-  components: ['QInnerLoading']
+  components: [
+  'QInnerLoading',
+  
+  //... if using custom spinner, add it too
+  //whatever that is
+  'QSpinnerGears'
+  ]
 }
 ```
 
