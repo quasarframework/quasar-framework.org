@@ -112,7 +112,7 @@ Please take note of some things:
   * "router" is the instance of Vue Router from 'src/router/index.js'
   * "Vue" is same as if we do `import Vue from 'vue'` and it's there for convenience
 
-## Special "Boot" App Plugin
+## Special App Plugin: Boot
 Every Quasar website/app is booted up after plugins have been loaded and executed. Last step is to call `new Vue()` and attach it to the DOM.
 
 If, for whatever reason, you need to control this final step and decide the specific moment when Vue kicks in, you can create a special Quasar plugin named "boot" (**requires Quasar v0.15.6+**).
