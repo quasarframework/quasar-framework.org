@@ -115,7 +115,7 @@ Please take note of some things:
 ## Special "Boot" App Plugin
 Every Quasar website/app is booted up after plugins have been loaded and executed. Last step is to call `new Vue()` and attach it to the DOM.
 
-If, for whatever reason, you need to control this final step and decide the specific moment when Vue kicks in, you can create a special Quasar plugin named "boot".
+If, for whatever reason, you need to control this final step and decide the specific moment when Vue kicks in, you can create a special Quasar plugin named "boot" (**requires Quasar v0.15.6+**).
 
 > Remember to only use this plugin for eventually calling `new Vue(app)`. Don't use this for initializating any library you may have -- for that, use a regular app plugin.
 
