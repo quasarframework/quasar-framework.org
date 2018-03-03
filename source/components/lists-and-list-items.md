@@ -74,7 +74,7 @@ Below is a list of Quasar components that you can use to define lists and list i
 * QItemMain (for main content of an Item)
 * QItemTile (for individual parts of QItemSide and QItemMain, like label, icon, avatar, image, …)
 
-![Quasar List and List Items](/images/list-and-list-items.svg "Quasar List and List Items")
+![Quasar List and List Items](/images/q-list.svg "Quasar List and List Items")
 
 ### QList
 QList encapsulates all other components mentioned. It's not mandatory, but does help with maintaining a good design and can also define some properties that will be applied to all QItems (or QItem-like components) like multiline, separator, link, highlight and so on.
