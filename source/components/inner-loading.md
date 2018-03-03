@@ -8,11 +8,14 @@ The QInnerLoading component allows you to add a progress animation within a comp
 > In order for the spinner to be properly placed in the center of the element you want the loading display to show over, that element must have the `relative-position` CSS class declared.
 
 ## Installation
-Edit `/quasar.conf.js` add the `QInnerLoading` and an Animation like `QSpinnerGears`:
+Edit `/quasar.conf.js`:
 ```js
 framework: {
   components: [
   'QInnerLoading',
+  
+  //... if using custom spinner, add it too
+  //whatever that is
   'QSpinnerGears'
   ]
 }
