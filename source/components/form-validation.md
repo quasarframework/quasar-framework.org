@@ -21,6 +21,8 @@ We then edit `/quasar.conf.js` to add the app plugin file to the build:
 plugins: ['vuelidate']
 ```
 
+Note: ensure you add this to the main plugins at the top of the file, not in the `framework` plugins section.
+
 ## Example
 
 ``` html
