@@ -235,15 +235,6 @@ QItemTile can be used for more control over the content of the left, right side 
 | `letter` | String | One character String to define a letter. Either use an icon, image, avatar or letter as props. |
 | `tag` | String | Default HTML tag that QItemTile gets rendered with is 'div', but this can be any HTML tag if you need to. |
 
-There are more props available, but use only these within QItemMain:
-
-| Vue Property | Type | Description |
-| --- | --- | --- | --- |
-| `label` | String | Encapsulates the label / title of QItem. |
-| `sublabel` | String | Encapsulates the sub-label / sub-title of QItem. |
-| `lines` | String / Number | Number of lines the label/sublacel can span to. Ellipsis are used when overflowing. Use only in conjunction with `label` and `sublabel`. |
-
-
 ## Using QCollapsible with QItems
 [QCollapsible](/components/collapsible.html) is a QItem wrapper, so you can use them as (and along) QItems within a QList. Here are two examples:
 
