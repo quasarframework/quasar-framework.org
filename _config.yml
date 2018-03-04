@@ -93,3 +93,20 @@ deploy:
 
 sitemap:
   path: sitemap.xml
+
+jsonContent:
+  meta: false
+  keywords: true
+  pages:
+    title: true
+    slug: true
+    updated: true
+    link: true
+    permalink: true
+    text: true
+  posts: false
+  ignore:
+    - index
+    - quasar-play-privacy-policy
+    - support-quasar-framework
+    - blog/index
