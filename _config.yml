@@ -105,8 +105,3 @@ jsonContent:
     permalink: true
     text: true
   posts: false
-  ignore:
-    - index
-    - quasar-play-privacy-policy
-    - support-quasar-framework
-    - blog/index
