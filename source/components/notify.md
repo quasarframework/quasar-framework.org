@@ -67,6 +67,7 @@ this.$q.notify({
   actions: [
     {
       label: 'Snooze',
+      icon: 'timer', // optional
       handler: () => {
         console.log('acting')
       }
