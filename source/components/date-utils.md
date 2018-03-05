@@ -106,7 +106,7 @@ import { date } from 'quasar'
 
 let date = new Date(2017, 2, 7)
 
-date = date.addToDate(date, { days: 7, months: 1 })
+date = date.addToDate(date, { days: 7, month: 1 })
 // `date` is now 2017-3-14 00:00:00
 
 date = date.subtractFromDate(date, { hours: 24, milliseconds: 10000 })
