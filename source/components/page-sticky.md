@@ -8,7 +8,10 @@ Try it out with a non fixed footer for example. When user reaches bottom of scre
 <input type="hidden" data-fullpage-demo="layout-demo/page-sticky" data-source="../layout-demo/page-sticky.vue">
 
 > **Important!**
-> In order for QPageSticky to work, it must be placed within a QLayout component.
+> In order for QPageSticky to work, it must be placed within a QLayout component
+
+> **Note**
+> QPageSticky must be the last child element within it's parent, so it can display on top of other content
 
 ## Installation
 Edit `/quasar.conf.js`:
