@@ -45,7 +45,7 @@ framework: {
 | `count` | Number/Boolean | Add a counter of characters or items (like Chips) in your wrapped form component. If Boolean, it just counts them. If Number, it also adds a maximum number to it, but doesn't acts as a restraint. |
 | `inset` | String | Inset you field to align with other fields when current one is missing an icon and/or label. One of 'icon', 'label' or 'full' (inset for both icon and label). |
 | `orientation` | String | Overrides the responsive orientation. One of 'vertical' or 'horizontal'. |
-| `labelWidth` | Number | Out of 12 grid points, how much should the label take? Default is 5. Minimum is 1 and maximum is 12. |
+| `label-width` | Number | Out of 12 grid points, how much should the label take? Default is 5. Minimum is 1 and maximum is 12. |
 | `dark` | Boolean | Is your field used on a dark background? |
 
 ## Examples
