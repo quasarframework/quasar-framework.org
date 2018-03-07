@@ -16,7 +16,7 @@ Edit `/quasar.conf.js`:
 framework: {
   components: [
   'QInnerLoading',
-  
+
   //... if using custom spinner, add it too
   //whatever that is
   'QSpinnerGears'
@@ -43,9 +43,10 @@ framework: {
         </div>
       </q-transition>
     </q-card-main>
+
     <!--
-      Note q-inner-loading is the last child element.
-      This is important for it to display on top of the other content
+      Place QInnerLoading as the last child element.
+      This is important for it to be displayed on top of the other content.
     -->
     <q-inner-loading :visible="visible">
       <q-spinner-gears size="50px" color="primary"></q-spinner-gears>
