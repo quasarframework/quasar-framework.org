@@ -54,10 +54,8 @@ No need to trigger these methods manually as they are invoked automatically. Onl
 | Vue Method | Description |
 | --- | --- |
 | `trigger()` | Trigger suggestions (parent textfield must be focused). |
-| `close()` | Close suggestions Popover. |
+| `hide()` | Hide suggestions Popover. |
 | `setValue()` | Set textfield string to the value supplied. |
-| `move(offset)` | Move selection cursor on suggestions popover by offset (Number, example: 3 for three selections down, -1 for one selection up). |
-| `setCurrentSelection()` | Sets the value for the current selection. |
 
 ## Vue Events
 | Vue Event | Description |
