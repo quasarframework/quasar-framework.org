@@ -80,7 +80,7 @@ Below is a list of Quasar components that you can use to define lists and list i
 QList encapsulates all other components mentioned. It's not mandatory, but does help with maintaining a good design and can also define some properties that will be applied to all QItems (or QItem-like components) like multiline, separator, link, highlight and so on.
 
 | Vue Property | Type | Description |
-| --- | --- | --- | --- |
+| --- | --- | --- |
 | `striped` | Boolean | Apply highlight to QItems intermittently, starting with second QItem. |
 | `striped-odd` | Boolean | Apply highlight to QItems intermittently, starting with first QItem. |
 | `highlight` | Boolean | Apply highlight to all QItems. This works only on desktop when user hovers QItems. |
@@ -97,7 +97,7 @@ QList encapsulates all other components mentioned. It's not mandatory, but does 
 Within QList, you can display a section header / title.
 
 | Vue Property | Type | Description |
-| --- | --- | --- | --- |
+| --- | --- | --- |
 | `inset` | Boolean | Place an inset separator. |
 
 ```html
@@ -114,7 +114,7 @@ Within QList, you can display a section header / title.
 If you want QItem external separators (there are internal ones too as you can see on QItem's description later on this page), use the QItemSeparator component. It's useful also to separate different sections of your QList, like for example, before a QListHeader.
 
 | Vue Property | Type | Description |
-| --- | --- | --- | --- |
+| --- | --- | --- |
 | `inset` | Boolean | Place an inset separator. |
 
 ```html
@@ -147,7 +147,7 @@ If you want QItem external separators (there are internal ones too as you can se
 ### QItem
 
 | Vue Property | Type | Description |
-| --- | --- | --- | --- |
+| --- | --- | --- |
 | `dense` | Boolean | Make QItem dense (narrow paddings). |
 | `sparse` | Boolean | Make QItem sparse (large paddings). |
 | `separator` | Boolean | Make QItem have a separator between it and previous QItem. |
@@ -164,7 +164,7 @@ Also check the next section for more properties and to learn about how you can u
 If you want your QItem to act the same as Vue's `<router-link>`, then you can use these additional properties (which work exactly the same as `<router-link>`):
 
 | Property | Type | Description |
-| --- | --- | --- | --- |
+| --- | --- | --- |
 | `to` | String / Object | Route to navigate to |
 | `exact` | Boolean | Match the exact route specified (and not also its children) when adding `router-link-active` CSS class. |
 | `append` | Boolean | Append route definition to current route when navigating. |
@@ -194,7 +194,7 @@ Please refer to the example on how to use the `tag` property shown below. In thi
 ### QItemSide
 
 | Vue Property | Type | Description |
-| --- | --- | --- | --- |
+| --- | --- | --- |
 | `color` | String | Use a color from [Quasar Color Palette](/components/color-palette.html). |
 | `text-color` | String | Override text color, one from [Quasar Color Palette](/components/color-palette.html). |
 | `inverted` | Boolean | Invert colors. |
@@ -211,7 +211,7 @@ Use the icon, image, avatar, letter or stamp properties or, for more control, in
 ### QItemMain
 
 | Vue Property | Type | Description |
-| --- | --- | --- | --- |
+| --- | --- | --- |
 | `label` | String | Label to use as title. |
 | `sublabel` | String | Label to use as subtitle. |
 | `label-lines` | String / Number | Number of lines the label can span to. |
@@ -225,7 +225,7 @@ Use the label properties or, for more control, insert QItemTiles to define the l
 QItemTile can be used for more control over the content of the left, right side or main content of QItem.
 
 | Vue Property | Type | Description |
-| --- | --- | --- | --- |
+| --- | --- | --- |
 | `color` | String | Use a color from [Quasar Color Palette](/components/color-palette.html). |
 | `text-color` | String | Override text color, one from [Quasar Color Palette](/components/color-palette.html). |
 | `inverted` | Boolean | Invert colors. |
@@ -238,9 +238,9 @@ QItemTile can be used for more control over the content of the left, right side 
 There are more props available for QItemTile, but only use the following when QItemTile is wrapped with QItemMain:
 
 | Vue Property | Type | Description |
-| --- | --- | --- | --- |
-| `label` | String | Encapsulates the label / title of QItem. |
-| `sublabel` | String | Encapsulates the sub-label / sub-title of QItem. |
+| --- | --- | --- |
+| `label` | Boolean | Encapsulates the label / title of QItem. |
+| `sublabel` | Boolean | Encapsulates the sub-label / sub-title of QItem. |
 | `lines` | String / Number | Number of lines the label/sublabel can span to. Ellipsis are used when overflowing. Use only in conjunction with `label` and `sublabel`. |
 
 
