@@ -26,10 +26,13 @@ framework: {
 ```html
 <q-layout>
   ...
+  <!--
+    Place QPageSticky as the last child element of your page.
+    This is important for it to be displayed on top of the other page content.
+  -->
   <q-page-sticky position="top-right" :offset="[18, 18]">
     <q-btn round color="primary" @click="alert" icon="alarm" />
   </q-page-sticky>
-  ...
 </q-layout>
 ```
 
