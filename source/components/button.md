@@ -46,7 +46,7 @@ A standard round button.
 </q-btn>
 ```
 
-> **IMPORTANTe**
+> **IMPORTANT**
 > For round buttons, only use an icon as content, through "icon" property or QIcon component as the only child. Do not add anything else besides the icon, unless you want a Popover or Tooltip.
 
 Primary colored button of small size:
