@@ -40,9 +40,7 @@ In your app's `*.vue` files you can use the colors as `$primary`, `$red-1`, and 
 ```html
 <!-- Notice lang="stylus" -->
 <style lang="stylus">
-// "variables" is a Webpack alias (defined in /config/index.js)
-// which points to /src/themes/quasar.variables.styl
-// in your starter kit
+// "variables" is a Webpack alias injected by Quasar CLI
 @import '~variables'
 
 div
