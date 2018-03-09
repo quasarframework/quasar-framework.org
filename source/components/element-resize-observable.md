@@ -46,4 +46,4 @@ Please note that QResizeObservable will issue an event as soon as it gets render
 ### Vue Properties
 | Property | Type | Description |
 | --- | --- | --- |
-| debounce | Number | (Default: 100) Debounce time in milliseconds |
+| `debounce` | Number | (Quasar v0.15.7+, default: 100) Debounce time in milliseconds |
