@@ -2,7 +2,12 @@ title: Internationalization (I18n)
 ---
 Internationalization is a design process that ensures a product (a website or application) can be adapted to various languages and regions without requiring engineering changes to the source code. Think of internationalization as readiness for localization.
 
-Recommended package for handling website/app is [vue-i18n](https://github.com/kazupon/vue-i18n).
+Recommended package for handling website/app is [vue-i18n](https://github.com/kazupon/vue-i18n). To use that package's [single file component](https://kazupon.github.io/vue-i18n/en/sfc.html) feature, add this line to `quasar.conf.js` under `extendWebpack`: 
+```
+extendWebpack (cfg) {
+    cfg.module.rules[0].options.loaders['i18n'] = '@kazupon/vue-i18n-loader'
+}
+```
 
 However, handling I18n in app-space is not enough. Quasar components have their own labels too. One option is to configure labels through label properties on each instance of Quasar components like QTable or QDatetime. This takes time and adds unnecessary complexity to your website/app. Instead, use the Quasar I18n (applies to Quasar components only!) system.
 
