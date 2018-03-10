@@ -82,7 +82,7 @@ To add a Quasar language pack you need to include the language pack JS tag for y
 
 ```html
 <!-- include this after Quasar JS tag -->
-<script src="https://unpkg.com/quasar-framework@latest/dist/umd/i18n.pt-br.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/quasar-framework@latest/dist/umd/i18n.pt-br.umd.min.js"></script>
 <script>
   Quasar.i18n.set(Quasar.i18n.ptBr)
 </script>

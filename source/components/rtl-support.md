@@ -77,7 +77,7 @@ To enable RTL UIs in UMD you need to include the RTL equivalent CSS tag for your
 <html>
   <head>
     ...
-    <link href="https://unpkg.com/quasar-framework@latest/dist/umd/quasar.mat.rtl.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/quasar-framework@latest/dist/umd/quasar.mat.rtl.min.css" rel="stylesheet" type="text/css">
   </head>
 
   <body>
@@ -87,7 +87,7 @@ To enable RTL UIs in UMD you need to include the RTL equivalent CSS tag for your
       we also need an RTL Quasar language pack; let's take Hebrew as example;
       include this after Quasar JS tag
     -->
-    <script src="https://unpkg.com/quasar-framework@latest/dist/umd/i18n.he.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quasar-framework@latest/dist/umd/i18n.he.umd.min.js"></script>
     <script>
       Quasar.i18n.set(Quasar.i18n.he)
     </script>
