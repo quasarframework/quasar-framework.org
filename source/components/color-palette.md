@@ -67,3 +67,57 @@ Now we can use this color for Quasar components:
 ```html
 <q-input color="brand" ... />
 ```
+
+
+## Dynamic Change of Brand Colors (Dynamic Color Themes)
+
+> **WARNING**
+> This is only supported on [browsers that support CSS Variables (Custom Properties)](https://caniuse.com/#feat=css-variables).
+> It is not going to work on IE11, but it will fall back to the brand colors from the CSS theme.
+
+You can dynamically customize the full list of out of the box colors used by Quasar: `primary`, `secondary`, `tertiary`, `positive`, `negative`, `info`, `warning`, `light`, `dark`, `faded`. That means you can have one build of your application with a default color theme but show it with a runtime selected one.
+
+The main color configuration is done using CSS custom properties, stored on the root element (`:root`). Each property has a name of `--q-color-${name}` and should have as value a valid color value.
+
+The CSS Custom properties use the same inheritance rules as normal CSS, so you can only redefine your desired colors and the rest will be inherited from the parent elements.
+
+The recommended workflow is to set your customized color properties on the `html` (`document.documentElement`) or `body` (`document.body`) elements. This will allow you to revert to the default color by just deleting your custom one.
+
+Quasar offers a helper function for setting custom colors in the `colors` utils: `setBrand(colorName, colorValue, element)`
+
+| Parameter | Type | Default Value | Description |
+| --- | --- | --- | --- |
+| `colorName` | String | *None* | One of `primary`, `secondary`, `tertiary`, `positive`, `negative`, `info`, `warning`, `light`, `dark`, `faded` |
+| `colorValue` | String | *None* | Valid CSS color value |
+| `element` | Element | `document.body` | Element where the custom property will be set. |
+
+Example of setting brand colors using helper:
+
+```js
+import { colors } from 'quasar'
+
+colors.setBrand('light', '#DDD')
+colors.setBrand('primary', '#33F')
+colors.setBrand('primary', '#F33', document.getElementById('rebranded-section-id'))
+```
+
+The helper function will also take care of setting dependent custom properties for some colors (`positive`, `negative`, `light`), so this is the recommended way of usage.
+
+If you need to read or set the cutom properties you can use:
+
+```js
+document.body.style.setProperty(`--q-color-primary`, '#b37')
+
+const
+  colors = ['primary', 'secondary', 'tertiary', 'positive', 'negative', 'info', 'warning', 'faded', 'dark', 'light'],
+  defaultStyle = getComputedStyle(document.documentElement),
+  customStyle = getComputedStyle(document.body),
+  defaultColors = colors.reduce((acc, color) => {
+    acc[color] = defaultStyle.getPropertyValue(`--q-color-${color}`) || null
+    return acc
+  }, {}),
+  customColors = colors.reduce((acc, color) => {
+    acc[color] = customStyle.getPropertyValue(`--q-color-${color}`) || null
+    return acc
+  }, {})
+```
