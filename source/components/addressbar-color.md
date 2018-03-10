@@ -23,7 +23,7 @@ Then we create an app plugin to initialize its usage: `quasar new plugin address
 ```js
 import { AddressbarColor } from 'quasar'
 
-export default () {
+export default () => {
   AddressbarColor.set('#a2e3fa')
 }
 ```
@@ -39,3 +39,5 @@ export default {
   }
 }
 ```
+
+Calling `set()` with no parameters will use the primary color.
