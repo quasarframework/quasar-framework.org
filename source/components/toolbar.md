@@ -38,6 +38,11 @@ framework: {
   ...
 </q-toolbar>
 
+<!-- A color "inverted" Toolbar with custom text color -->
+<q-toolbar color="amber" text-color="dark" inverted>
+  ...
+</q-toolbar>
+
 <!-- A Toolbar with a title and subtitle -->
 <q-toolbar color="primary" inverted>
   <q-toolbar-title>

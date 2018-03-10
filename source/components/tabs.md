@@ -52,6 +52,7 @@ Use the QTabs component to wrap your Tabs.
 | `align` | String | The type of the alignment for the tabs within the tabs container. The allowed values are `left` (default), `center`, `right` or `justify`. |
 | `position` | String | The screen position of the tabs. The allowed values are `top` or `bottom`. |
 | `color` | String | A Quasar standard CSS color. |
+| `text-color` | String | (Quasar v0.15.7+) One from Quasar Palette to override color of text |
 | `inverted` | Boolean | Set to true, to invert the tab color. |
 | `two-lines` | Boolean | Set to true, should a tab's label wrap to a second line. |
 | `no-pane-border` | Boolean | Avoid drawing a border around QTabPanes. |
