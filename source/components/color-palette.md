@@ -4,7 +4,7 @@ Quasar Framework offers a wide selection of colors out of the box. You can use t
 
 <input type="hidden" data-fullpage-demo="style-and-identity/color-palette">
 
-This page comes really handy after reading [Quasar Theming](/guide/quasar-theming.html).
+This page comes really handy after reading [Quasar Theming](/guide/quasar-theming.html). You might also want to check [Color Utils](/components/color-utils.html).
 
 ## Brand Colors
 There can be three main colors used throughout your App, called `primary`, `secondary` and `tertiary`.

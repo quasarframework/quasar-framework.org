@@ -4,6 +4,7 @@ The ColorPicker component provides a method to input colors. There is also one m
 <input type="hidden" data-fullpage-demo="forms/color/color-picker">
 
 Works well with [QField](/components/field.html) for additional functionality such as a helper, error message placeholder and many others.
+**You might also want to check** [Color Utils](/components/color-utils.html).
 
 ## Installation
 Edit `/quasar.conf.js`:
