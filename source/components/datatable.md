@@ -530,12 +530,14 @@ export default {
 <q-table
   :data="tableData"
   :columns="columns"
+  :pagination="{rowsPerPage: 0}"
   row-key="name"
   color="primary"
   hide-header
   hide-bottom
 />
 ```
+By hiding the bottom the pagination is not shown anymore. To ensure that all rows are displayed at once, the default row limitation should be deactivated by using the `pagination` property as shown in the example.
 
 ### Display a nested property or format a column
 You can display the value of a nested property. For example:
