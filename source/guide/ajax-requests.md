@@ -15,21 +15,22 @@ export default ({app, router, Vue}) => {
 
 Usage in you single file components methods will be like:
 ```
-    methods: {
-      loadData () {
-        this.$axios.get('/api/backend')
-          .then((response) => {
-            this.data = response.data.data
-          })
-          .catch(() => {
-            this.$q.notify({
-              color: 'negative',
-              position: 'top',
-              message: 'Loading failed',
-              icon: 'report_problem'
-            })
-          })
-      },
+methods: {
+  loadData () {
+    this.$axios.get('/api/backend')
+      .then((response) => {
+        this.data = response.data.data
+      })
+      .catch(() => {
+        this.$q.notify({
+          color: 'negative',
+          position: 'top',
+          message: 'Loading failed',
+          icon: 'report_problem'
+        })
+      })
+  }
+}
 ```
 
 Usage in Vuex Actions for globally adding headers to axios (like during authentication):
