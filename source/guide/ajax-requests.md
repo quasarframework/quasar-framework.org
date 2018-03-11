@@ -1,10 +1,55 @@
 title: Ajax Requests
 ---
-Quasar recommends using `Axios` or `Vue-Resource`.
 
-> These packages are not provided by default so you will have to npm install them, create an [app plugin](/guide/app-plugins.html) and edit `/quasar.conf.js` to tell Quasar to use them.
+> Quasar recommends Axios during project initialization: `Use Axios for Ajax calls? (Y/n)`
 
-- Get started with [axios](https://github.com/mzabriskie/axios)
-- Get started with [vue-resource](https://github.com/pagekit/vue-resource)
-- Vue Cookbook topic [vuejs-cookbook](https://vuejs.org/v2/cookbook/adding-instance-properties.html)
-- Using libraries from npm with vue: [vuejsdevelopers.com](http://vuejsdevelopers.com/2017/04/22/vue-js-libraries-plugins/)
+Then you should create a new plugin `axios.js` that looks like this:   
+(Here you can also specifiy additional settings for your axios instance)
+```
+import axios from 'axios'
+
+export default ({app, router, Vue}) => {
+  Vue.prototype.$axios = axios
+  // ^ ^ ^ this will allow you to use this.$axios
+  //       so you won't necessarily have to import axios in each vue file
+}
+```
+
+Usage in you single file components methods will be like:
+```
+methods: {
+  loadData () {
+    this.$axios.get('/api/backend')
+      .then((response) => {
+        this.data = response.data.data
+      })
+      .catch(() => {
+        this.$q.notify({
+          color: 'negative',
+          position: 'top',
+          message: 'Loading failed',
+          icon: 'report_problem'
+        })
+      })
+  },
+```
+
+Usage in Vuex Actions for globally adding headers to axios (like during authentication):
+```
+import axios from 'axios'
+
+export function register ({commit}, form) {
+  return axios.post('api/auth/register', form)
+    .then(response => {
+      commit('login', {token: response.data.token, user: response.data.user})
+      LocalStorage.set('token', response.data.token)
+      setAxiosHeaders(response.data.token)
+    })
+}
+
+function setAxiosHeaders (token) {
+  axios.defaults.headers.common['Authorization'] = 'Bearer ' + token
+}
+```
+
+Also look at [Axios docs](https://github.com/axios/axios) for more information.
