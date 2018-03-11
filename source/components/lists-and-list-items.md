@@ -256,7 +256,7 @@ There are more props available for QItemTile, but only use the following when QI
 -->
 <q-list separator>
   <!-- collapsible to hide sub-level menu entries -->
-  <q-collapsible icon="inbox" label="Inbox" label="Where your email is">
+  <q-collapsible icon="inbox" label="Inbox" sublabel="Where your email is">
     <q-item link to="/inbox/1">
       <q-item-side icon="mail" />
       <q-item-main label="Email 1" />
