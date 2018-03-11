@@ -89,7 +89,7 @@ let uid = uid()
 // Example: 501e7ae1-7e6f-b923-3e84-4e946bff31a8
 ```
 
-## Handling "event" on a DOM event handler
+## Handling event on a DOM event handler
 It's cross-browser.
 
 ``` js
