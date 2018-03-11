@@ -111,6 +111,26 @@ Please take note of some things:
   * "app" is the Object with which the root component gets instantiated by Vue -- you can use it to inject things into it; some vue packages need this, like vue-i18n;
   * "router" is the instance of Vue Router from 'src/router/index.js'
   * "Vue" is same as if we do `import Vue from 'vue'` and it's there for convenience
+  * You can add your own named exports, if you need to access a resource defined in a plugin inside other files. Example:
+  ```js
+  import axios from 'axios'
+  
+  const $axios = axios.create({
+    // axios options
+    timeout: 1000
+  })
+  export default ({ app, router, store, Vue }) => {
+    Vue.prototype.$axios = $axios
+  }
+  
+  // custom named exports
+  export {
+    $axios
+  }
+  
+  // usage in another file
+  import { $axios } from 'src/plugins/axios'
+  ```
 
 ## Special App Plugin: Boot
 Every Quasar website/app is booted up after plugins have been loaded and executed. Last step is to call `new Vue()` and attach it to the DOM.
