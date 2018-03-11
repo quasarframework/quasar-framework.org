@@ -1,7 +1,7 @@
 title: Ajax Requests
 ---
 
-> Quasar recommends axios during project initialization: `Use Axios for Ajax calls? (Y/n)`
+> Quasar recommends Axios during project initialization: `Use Axios for Ajax calls? (Y/n)`
 
 Then you should create a new plugin `axios.js` that looks like this:   
 (Here you can also specifiy additional settings for your axios instance)
@@ -10,6 +10,8 @@ import axios from 'axios'
 
 export default ({app, router, Vue}) => {
   Vue.prototype.$axios = axios
+  // ^ ^ ^ this will allow you to use this.$axios
+  //       so you won't necessarily have to import axios in each vue file
 }
 ```
 
@@ -29,8 +31,7 @@ methods: {
           icon: 'report_problem'
         })
       })
-  }
-}
+  },
 ```
 
 Usage in Vuex Actions for globally adding headers to axios (like during authentication):
@@ -51,4 +52,4 @@ function setAxiosHeaders (token) {
 }
 ```
 
-- Also look at axios docs for more information: [axios](https://github.com/axios/axios)
+Also look at [Axios docs](https://github.com/axios/axios) for more information.
