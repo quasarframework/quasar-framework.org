@@ -122,13 +122,14 @@ Please take note of some things:
   export default ({ app, router, store, Vue }) => {
     Vue.prototype.$axios = $axios
   }
+  
+  // custom named exports
   export {
     $axios
   }
   
   // usage in another file
   import { $axios } from 'src/plugins/axios'
-  
   ```
 
 ## Special App Plugin: Boot
