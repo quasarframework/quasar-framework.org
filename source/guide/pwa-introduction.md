@@ -32,4 +32,4 @@ More information on the Service Worker API can be read by accessing:
 https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
 
 > **NOTE**
-> The Service Worker is not compatible with Hot Module Reload, so it is disabled during development.
+> A full-blown Service Worker is not available during development due to the fact that it is not compatible with HMR (Hot Module Reload). So, as opposed to production code, development has a very simple Service Worker that just invalidates cache. Take a look at `/src-pwa` for the two service workers used. You can change these files to meet your needs.
