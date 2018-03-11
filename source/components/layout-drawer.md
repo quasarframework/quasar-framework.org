@@ -32,6 +32,7 @@ framework: {
 | `overlay` | Boolean | Overlay mode |
 | `breakpoint` | Number | Breakpoint (in pixels, defining window width) at which point the Drawer will be placed directly over the layout and won't act as a mobile drawer anymore. Default is 992 (up to "sm", including). |
 | `behavior` | String | One of 'default', 'desktop', 'mobile'. The last two override the breakpoint and makes Drawer act only as on desktop or only as on mobile modes, regardless of window width. |
+| `no-hide-on-route-change` | Boolean | (Quasar v0.15.7+) Disable hiding of Drawer during route changes. |
 | `no-swipe-open` | Boolean | Disable ability to open Drawer by touch actions. |
 | `no-swipe-close` | Boolean | Disable ability to close Drawer by touch actions. Useful if you have components in your Drawer which require touch actions. The backdrop will still work with touch actions. |
 | `content-style` | Object | CSS Style in Object format for the Drawer container element. |
