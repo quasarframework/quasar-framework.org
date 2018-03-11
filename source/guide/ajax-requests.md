@@ -42,7 +42,6 @@ export function register ({commit}, form) {
   return axios.post('api/auth/register', form)
     .then(response => {
       commit('login', {token: response.data.token, user: response.data.user})
-      LocalStorage.set('token', response.data.token)
       setAxiosHeaders(response.data.token)
     })
 }
