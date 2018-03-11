@@ -3,13 +3,12 @@ title: Ajax Requests
 
 > Quasar recommends axios during project initialization: `Use Axios for Ajax calls? (Y/n)`
 
-Then you should create a new plugin `axios.js` that looks like this:
+Then you should create a new plugin `axios.js` that looks like this:   
 (Here you can also specifiy additional settings for your axios instance)
 ```
 import axios from 'axios'
 
 export default ({app, router, Vue}) => {
-  H
   Vue.prototype.$axios = axios
 }
 ```
