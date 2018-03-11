@@ -30,3 +30,6 @@ The Service worker provides a programmatic way to cache app resources. Be it Jav
 
 More information on the Service Worker API can be read by accessing:
 https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
+
+> **NOTE**
+> The Service Worker is not compatible with Hot Module Reload, so it is disabled during development.
