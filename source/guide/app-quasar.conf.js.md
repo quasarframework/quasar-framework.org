@@ -125,6 +125,7 @@ Most used properties are:
 | scopeHoisting | Boolean | Default: `true`. Use Webpack scope hoisting for slightly better runtime performance. |
 | analyze | Boolean/Object | Show analysis of build bundle with webpack-bundle-analyzer. If using as Object, it represents the webpack-bundle-analyzer config Object. |
 | vueCompiler | Boolean | (Quasar v0.15.7+) Include vue runtime + compiler version, instead of default Vue runtime-only |
+| scriptNonce | String | Value of nonce to be included with inline scripts to enable [Content-Security-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/script-src).  The developer will need to add a response header with the nonce eg. `Content-Security-Policy: script-src 'nonce-2726c7f26c'`. Works really well when combined with [Webpack SubResouce Integrity](https://github.com/waysact/webpack-subresource-integrity).
 
 The following properties of `build` are automatically configured by Quasar CLI depending on dev/build commands and Quasar mode. But if you like to override some (make sure you know what you are doing), you can do so:
 
