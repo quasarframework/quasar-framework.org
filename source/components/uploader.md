@@ -104,6 +104,7 @@ Examples:
 | --- | --- |
 | `upload()` | Start file(s) upload. |
 | `abort()` | Abort uploading file(s). |
+| `reset()` | Reset uploader state. |
 
 ## Vue Events
 | Vue Event | Description |
