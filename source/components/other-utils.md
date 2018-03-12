@@ -124,16 +124,6 @@ node.addEventListener('click', evt => {
 })
 ```
 
-## Colors
-You can change colors from RGB to Hex format (and reverse too).
-
-``` js
-import { colors } from 'quasar'
-
-console.log(colors.rgbToHex(85, 165, 1)) // #55a532
-console.log(colors.hexToRgb('#55a532')) // [85, 165, 1]
-```
-
 ## Filter
 Filter out an array of Objects based on a certain field:
 
