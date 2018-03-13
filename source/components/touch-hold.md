@@ -40,8 +40,8 @@ handler (obj) {
 | Property | Description |
 | --- | --- |
 | `noMouse` | Avoid capturing mouse events too. |
-| `stop` | Stop event propagation once panning has been detected. |
-| `prevent` | Prevent default browser behavior of the event once panning has been detected. |
+| `stop` | Stop event propagation once holding has been detected. |
+| `prevent` | Prevent default browser behavior of the event once holding has been detected. |
 
 ### Avoid Capturing Mouse Events
 When you don't want to capture mouse actions too, use the `noMouse` modifier:
