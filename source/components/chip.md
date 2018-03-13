@@ -34,7 +34,7 @@ Some basic examples:
   q-chip
 </q-chip>
 
-<!-- floating chip applied to a button -->
+<!-- floating chip applied to a button (v0.15.7+) -->
 <q-btn round dense color="dark" icon="announcement">
   <q-chip floating color="red">1</q-chip>
 </q-btn>
@@ -52,7 +52,7 @@ There are a number of properties available:
 | `icon-right` | String | Icon for right side. |
 | `avatar` | String | URL pointing to statics folder for an image which gets placed on left side. |
 | `small` | Boolean | Reduces the size of the chip. Makes it compact. Use this or "dense", but not both. |
-| `dense` | Boolean | Makes chip small, with minimum padding. Use this or "small", but not both. |
+| `dense` | Boolean | (Quasar v0.15.7+) Makes chip small, with minimum padding. Use this or "small", but not both. |
 | `square` | Boolean | Gives the chip right-angled corners. Rounded corners are default. |
 | `pointing` | String | Adds a carat to the chip, pointing either `up`, `right`, `down` or `left`.  |
 | `color` | String | The color the chip should be. |
