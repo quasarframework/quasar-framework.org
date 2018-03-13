@@ -19,7 +19,7 @@ framework: {
 <div v-touch-hold="handler">...</div>
 ```
 "`handler`" is a Function which receives an Object as parameter.
-Please note that the default "hold" duration is 800ms. This means that your `handler` function will run after 800ms.
+Please note that the default "hold" duration is 600ms. This means that your `handler` function will run after 600ms.
 
 ## Handler Parameter
 The `handler` function/method is called by the directive when user taps/clicks and holds on the DOM element and it receives the following parameter:
@@ -33,7 +33,7 @@ The `handler` function/method is called by the directive when user taps/clicks a
 // example:
 handler (obj) {
   console.log(obj.position) // {x: 22, y: 451}
-  console.log(obj.duration) // 800
+  console.log(obj.duration) // 600
 }
 ```
 
@@ -58,4 +58,9 @@ When you don't want to capture mouse actions too, use the `noMouse` modifier:
 By default, the directive does not block page scrolling. If you want to prevent scrolling, then use the `prevent` modifier.
 ``` html
 <div v-touch-hold.prevent="userHasHold">...</div>
+```
+
+### Custom Duration
+```html
+<div v-touch-hold:1000="userHasHold">...</div>
 ```
