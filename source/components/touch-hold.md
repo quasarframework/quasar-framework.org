@@ -31,7 +31,7 @@ The `handler` function/method is called by the directive when user taps/clicks a
 
 // example:
 handler (obj) {
-  console.log(obj.psoition) // {x: 22, y: 451}
+  console.log(obj.position) // {x: 22, y: 451}
   console.log(obj.duration) // 78
 }
 ```
