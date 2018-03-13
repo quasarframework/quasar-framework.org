@@ -174,7 +174,6 @@ For more details on these properties, please refer to the [Vue Router documentat
 
 #### Render with specific HTML tag
 Please refer to the example on how to use the `tag` property shown below. In this example, we take advantage of the `<label>` tag that browsers automatically connect to checkboxes (QCheckbox, QToggle) or radio inputs (QRadio). When a `<label>` is clicked/tapped, then the wrapped checkboxes toggle their state (check / uncheck) and wrapped radios are being selected.
-When use the `tag` property, you can also add custom attributes. For example, `href` for `<a>`.
 ```html
 <!--
   We want a click/tap on the whole QItem
@@ -743,22 +742,6 @@ One more example:
     <q-item-main inset>
       <q-item-tile label>john.doe@some-company.com</q-item-tile>
       <q-item-tile sublabel>Office</q-item-tile>
-    </q-item-main>
-  </q-item>
-</q-list>
-```
-
-### List with `<a>`
-```html
-<q-list>
-  <q-item link tag="a" href="/index.html">
-    <q-item-main>
-      <q-item-tile label>Index</q-item-tile>
-    </q-item-main>
-  </q-item>
-  <q-item link tag="a" href="/contact.html">
-    <q-item-main>
-      <q-item-tile label>Contact</q-item-tile>
     </q-item-main>
   </q-item>
 </q-list>
