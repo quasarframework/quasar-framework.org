@@ -35,7 +35,7 @@ Some basic examples:
 </q-chip>
 
 <!-- floating chip applied to a button -->
-<q-btn round dense color="dark" class="relative-position" icon="announcement">
+<q-btn round dense color="dark" icon="announcement">
   <q-chip floating color="red">1</q-chip>
 </q-btn>
 ```
@@ -79,11 +79,19 @@ You can add the ability to hide the chip too.
 </q-chip>
 ```
 
-You can also use a chip to label a button. Notice the `relative-position` Quasar CSS class.
+You can also use a chip to label a button.
 ```html
 <q-btn color="light" label="Inbox">
   <q-chip floating color="primary">22</q-chip>
 </q-btn>
+```
+
+Or to label anything you want, as long as the container has `position: relative` (hint: use `relative-position` Quasar CSS helper class):
+```html
+<div class="relative-position">
+  ....content...
+  <q-chip floating color="primary">22</q-chip>
+</div>
 ```
 
 You can also use chips as pointing labels.
