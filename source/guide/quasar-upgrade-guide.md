@@ -120,7 +120,7 @@ You can use `$q` injection for convenience, accessing Quasar Theme, Quasar I18n,
 * Alert and Toast as methods. They've been merged into [Notify](/components/notify.html).
 * HTML Table. You can however check code from v0.14 and embed it yourself into your app.
 * Image Gallery - no longer needed. The new QCarousel is so powerful that you'll immediately see the benefit of switching to it.
-* QTransition - no longer required. Simply use Vue's `<transition>` instead. [More Info](/components/transition.html)
+* QTransition - no longer required. Simply use Vue's `<transition>` (or `<transition-group>`) instead. [More Info](/components/transition.html)
 * QDatetimeRange - it's so easy to simply write two QDatetime side by side that this component is simply not required anymore; this allows you full flexibility too.
 
 ### New Layout

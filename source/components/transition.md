@@ -59,8 +59,7 @@ You can also group components or DOM elements in a transition so that the same e
 
 ``` html
 <!-- Example with wrapping multiple DOM elements / components -->
-<transition
-  group
+<transition-group
   enter-active-class="animated fadeIn"
   leave-active-class="animated fadeOut"
 >
@@ -79,7 +78,7 @@ You can also group components or DOM elements in a transition so that the same e
 
 Please note two things in the above example.
 
-1. The `group` property must be added to animate a group of components and/or DOM elements.
+1. Note `<transition-group>` instead of `<transition>`.
 2. The components and DOM elements must be keyed, like `key="text"` or `key="email-button"` in the example above.
 3. Both examples above have the Boolean property `appear` specified, which makes the entering animation kick in right after component(s) have been rendered. This property is optional.
 
