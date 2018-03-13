@@ -73,7 +73,7 @@ You can also group components or DOM elements in a transition so that the same e
     icon="mail"
     label="Email"
   />
-</transition>
+</transition-group>
 ```
 
 Please note two things in the above example.
