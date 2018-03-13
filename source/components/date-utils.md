@@ -19,7 +19,7 @@ import { date } from 'quasar'
 // destructuring to keep only what is needed
 const { addToDate } = date
 
-let date = addToDate(new Date(), { days: 7, months: 1 })
+let newDate = addToDate(new Date(), { days: 7, months: 1 })
 ```
 
 ## Format for display
@@ -72,7 +72,7 @@ The following method is just a wrapper to help you in cases where you just need 
 ``` js
 import { date } from 'quasar'
 
-let date = date.buildDate({ year:2010, date:5, hours:15, milliseconds:123})
+let newDate = date.buildDate({ year:2010, date:5, hours:15, milliseconds:123})
 ```
 You can pass a third argument (a boolean) for setting UTC time (true) instead of local time.
 
@@ -104,13 +104,13 @@ To add/subtract some duration to/from a date use:
 ``` js
 import { date } from 'quasar'
 
-let date = new Date(2017, 2, 7)
+let newDate = new Date(2017, 2, 7)
 
-date = date.addToDate(date, { days: 7, month: 1 })
-// `date` is now 2017-3-14 00:00:00
+newDate = date.addToDate(newDate, { days: 7, month: 1 })
+// `newDate` is now 2017-3-14 00:00:00
 
-date = date.subtractFromDate(date, { hours: 24, milliseconds: 10000 })
-// `date` is now 2017-3-12 23:59:50
+newDate = date.subtractFromDate(newDate, { hours: 24, milliseconds: 10000 })
+// `newDate` is now 2017-3-12 23:59:50
 ```
 The object literal provided can contain the following keys (all are optional):
 
@@ -129,8 +129,8 @@ To set a specified unit(s) of date/time:
 ``` js
 import { date } from 'quasar'
 
-let date = new Date(2017, 10, 2)
-let adjustedDate = date.adjustDate(date, { year: 2010, month: 2 })
+let newDate = new Date(2017, 10, 2)
+let adjustedDate = date.adjustDate(newDate, { year: 2010, month: 2 })
 // `adjustedDate` is 2010-2-2
 ```
 You can pass a third argument (a Boolean) for setting UTC time (`true`) instead of local time.
@@ -171,18 +171,18 @@ To check if a date is in a given date/time range use:
 ``` js
 import { date } from 'quasar'
 
-let date = new Date()
+let dateTarget = new Date()
 let dateFrom = new Date()
 let dateTo = new Date()
 
 // **strictly** (i.e. exclusive range)
-if (date.isBetweenDates(date, dateFrom, dateTo)) {
-  // Do something with date
+if (date.isBetweenDates(dateTarget, dateFrom, dateTo)) {
+  // Do something with dateTarget
 }
 
 // including which margin you want
-if (date.isBetweenDates(date, dateFrom, dateTo, { inclusiveFrom: true, inclusiveTo: true })) {
-  // Do something with date
+if (date.isBetweenDates(dateTarget, dateFrom, dateTo, { inclusiveFrom: true, inclusiveTo: true })) {
+  // Do something with dateTarget
 }
 ```
 
@@ -190,11 +190,11 @@ To normalize a date in a given date/time range use:
 ``` js
 import { date } from 'quasar'
 
-let date = new Date()
+let newDate = new Date()
 let dateMin = new Date(2010, 2, 23)
 let dateMax = new Date(2012, 4, 12)
-let dateNormalized = date.getDateBetween(date, dateMin, dateMax)
-// Returns `date` if it's between 2010-2-23 and 2012-4-12; `dateMin` if it's lower; `dateMax` if it's greater
+let dateNormalized = date.getDateBetween(newDate, dateMin, dateMax)
+// Returns `newDate` if it's between 2010-2-23 and 2012-4-12; `dateMin` if it's lower; `dateMax` if it's greater
 ```
 
 ### Equality
@@ -250,32 +250,32 @@ To get the week number in year for a given date object use:
 ``` js
 import { date } from 'quasar'
 
-let date = new Date(2017, 0, 4)
-let week = date.getWeekOfYear(date) // `week` is 1
+let newDate = new Date(2017, 0, 4)
+let week = date.getWeekOfYear(newDate) // `week` is 1
 ```
 
 To get the day number in year for a given date object use:
 ``` js
 import { date } from 'quasar'
 
-let date = new Date(2017, 1, 4)
-let day = date.getDayOfYear(date) // `day` is 35
+let newDate = new Date(2017, 1, 4)
+let day = date.getDayOfYear(newDate) // `day` is 35
 ```
 
 To get the day number in week for a given date object use:
 ``` js
 import { date } from 'quasar'
 
-let date = new Date(2017, 1, 9)
-let day = date.getDayOfWeek(date) // `day` is 4
+let newDate = new Date(2017, 1, 9)
+let day = date.getDayOfWeek(newDate) // `day` is 4
 ```
 
 To get the number of days in the month for the specified date:
 ``` js
 import { date } from 'quasar'
 
-let date = new Date()
-let days = date.daysInMonth(date) // e.g. 30
+let newDate = new Date()
+let days = date.daysInMonth(newDate) // e.g. 30
 ```
 
 ### Start/End of time
@@ -283,11 +283,11 @@ To mutate the original date object by setting it to the start of a unit of time 
 ``` js
 import { date } from 'quasar'
 
-let date = new Date(2000)
+let newDate = new Date(2000)
 // set to beginning of year 2000 (January 1st, 2000, 00:00:00.000)
-date = date.startOfDate(date, 'year')
+newDate = date.startOfDate(newDate, 'year')
 // set to end of year 2000 (December 31st, 2000, 23:59:59.999)
-date = date.endOfDate(date, 'year')
+newDate = date.endOfDate(newDate, 'year')
 ```
 
 The second parameter indicates a unit to reset to (beginning of it or end of it):
@@ -314,10 +314,10 @@ date.inferDateFormat('Mon Feb 05 2018 23:05:29') // string
 ```js
 import { date } from 'quasar'
 
-const date = new Date()
-const clonedDate = date.clone(date)
+const newDate = new Date()
+const clonedDate = date.clone(newDate)
 
-date.addToDate(date, { days: 1 })
+date.addToDate(newDate, { days: 1 })
 
-console.log(date.getDate() === clonedDate.getDate()) // false
+console.log(newDate.getDate() === clonedDate.getDate()) // false
 ```
