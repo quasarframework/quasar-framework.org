@@ -33,6 +33,11 @@ Some basic examples:
 <q-chip avatar="/statics/some.png" color="primary">
   q-chip
 </q-chip>
+
+<!-- floating chip applied to a button -->
+<q-btn round dense color="dark" class="relative-position" icon="announcement">
+  <q-chip floating color="red">1</q-chip>
+</q-btn>
 ```
 
 ## Vue Properties
@@ -40,13 +45,14 @@ There are a number of properties available:
 
 | Vue Property | Type | Description |
 | --- | --- | --- |
-| `floating` | Boolean | Allows the chip to float over other elements. |
+| `floating` | Boolean | Allows the chip to float over other elements on top-right side of them. |
 | `tag` | Boolean | Makes it a "tag" type. |
 | `detail` | Boolean | Highlights the area on the right (icon or avatar), should there be one. |
 | `icon` | String | Icon for left side. |
 | `icon-right` | String | Icon for right side. |
 | `avatar` | String | URL pointing to statics folder for an image which gets placed on left side. |
-| `small` | Boolean | Reduces the size of the chip. Makes it compact. |
+| `small` | Boolean | Reduces the size of the chip. Makes it compact. Use this or "dense", but not both. |
+| `dense` | Boolean | Makes chip small, with minimum padding. Use this or "small", but not both. |
 | `square` | Boolean | Gives the chip right-angled corners. Rounded corners are default. |
 | `pointing` | String | Adds a carat to the chip, pointing either `up`, `right`, `down` or `left`.  |
 | `color` | String | The color the chip should be. |
@@ -75,7 +81,7 @@ You can add the ability to hide the chip too.
 
 You can also use a chip to label a button. Notice the `relative-position` Quasar CSS class.
 ```html
-<q-btn class="light relative-position" label="Inbox">
+<q-btn color="light" label="Inbox">
   <q-chip floating color="primary">22</q-chip>
 </q-btn>
 ```
