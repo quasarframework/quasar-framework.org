@@ -37,7 +37,7 @@ If you are building a website, you can also skip configuring quasar.conf.js and 
 ```
 
 ## Basic Usage
-This is just an example. Notice the string "animated" in front of the actual animation name.
+Notice the string "animated" in front of the actual animation name.
 ``` html
 <!-- Example with wrapping only one DOM element / component -->
 <transition
