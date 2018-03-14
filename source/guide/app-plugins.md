@@ -29,9 +29,11 @@ An app plugin is a simple JavaScript file which needs to export a function. Quas
 App plugins fulfill one special purpose: they run code **before** the App's Vue root component is instantiated while giving you access to certain variables, which is required if you need to initialize a library, interfere with Vue Router, inject Vue prototype or inject the root instance of the Vue app.
 
 ### Examples of appropriate usage of app plugins
+* Your Vue plugin has installation instructions, like needing to call `Vue.use()` on it.
 * Your Vue plugin requires instantiation of data that is added to the root instance - An example would be [vue-i18n](https://github.com/kazupon/vue-i18n/).
 * You want to add something to the Vue prototype for convenient access - An example would be to be conveniently use `this.$axios` inside your Vue files instead of importing Axios in each such file.
 * You want to interfere with the router - An example would be to use `router.beforeEach` for authentication
+* You want to interfere with the Vuex store instance - An example would be to use `vuex-router-sync` package
 * Configure aspects of libraries - An example would be to create an instance of Axios with a base URL; you can then inject it into Vue prototype and/or export it (so you can import the instance from anywhere else in your app)
 
 ### Examples of unneeded usage of app plugins
@@ -160,6 +162,8 @@ In any JavaScript file, you'll be able to import the i18n instance like this
 // we import one of the named exports from src/plugins/i18n.js
 import { i18n } from 'plugins/i18n'
 ```
+
+Further reading on syntax: [ES6 import](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/import), [ES6 export](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export) syntax: 
 
 ## Special App Plugin: Boot
 Every Quasar website/app is booted up after plugins have been loaded and executed. The last step is to call `new Vue()` and attach it to the DOM.
