@@ -40,7 +40,7 @@ Supports `v-model` which must be a String, Number or Date Object.
 | Vue Property | Type | Description |
 | --- | --- | --- |
 | `dark` | Boolean | Is component rendered on a dark background? |
-| `default-value` | String/Number/Date | Default date/time for picker when model is not yet set. |
+| `default-value` | String/Object | Default color hex/rgb for picker when model is not yet set. |
 | `format-model` | String | Data type of model (useful especially when starting out with undefined or null). One of 'auto', 'hex', 'rgb', 'hexa', 'rgba'. |
 | `readonly` | Boolean | If set to `true`, component is displayed as read-only. |
 | `disable` | Boolean | If set to `true`, component is disabled and the user cannot change model. |
