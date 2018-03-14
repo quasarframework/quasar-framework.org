@@ -165,6 +165,9 @@ You can also use [QScrollArea](/components/scroll-area.html) for the left or rig
 
 ## Tips to Understanding QLayout
 
+> **Using margin CSS will break the layout**
+> QLayout depends on taking up the whole screen and so QPageContainer, QLayoutHeader, QLayoutFooter and QLayoutDrawer positions are managed by it (through `view` prop). You **cannot** use *CSS margins* as a style neither on QLayout itself nor on any of the components mentioned above. However use can safely use *CSS padding*.
+
 ### Routing
 If your layout uses Vue Router sub-routes (recommended), then it makes sense to use Vue's `<router-view />` component, which is just a placeholder where sub-routes are injected.
 
@@ -234,17 +237,3 @@ These settings are completely up to you to use as you'd like. You could even go 
 | `@resize` | Event emitted on window resize. |
 | `@scroll` | Event emitted on page scroll. |
 | `@scrollHeight` | Event emitted on page scroll height change. |
-
-# Caveats
-
-## Using *margin* will break the layout
-
-QLayout depends on taking the whole screen. So you **cannot** use *margins* as a style neither on QLayout itself nor on 
-any of the slots (e.g. *header*, *footer* , ...). Instead, use *padding*.
-
-```
-   <!-- Use padding instead of margin! -->
-   <q-layout :header-style="{'padding-top': '50px'}>
-      <div slot="header"></div>
-   </q-layout>
-```
