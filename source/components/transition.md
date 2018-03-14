@@ -76,7 +76,7 @@ You can also group components or DOM elements in a transition so that the same e
 </transition-group>
 ```
 
-Please note two things in the above example.
+Please note some things in the above example:
 
 1. Note `<transition-group>` instead of `<transition>`.
 2. The components and DOM elements must be keyed, like `key="text"` or `key="email-button"` in the example above.
