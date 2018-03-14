@@ -13,14 +13,22 @@ There is one problem with this approach. With a growing project size your `main.
 With app plugins, it is possible to split each of your dependency into a self-contained, easy to maintain file. It will also be very easy to disable any of the app plugins or even contextually determine which of the app plugins get into the build through `quasar.conf.js` configuration.
 
 ## Anatomy of an app plugin
-An app plugin is a simple JavaScript file which needs to export a function. Quasar will then call the exported function when it boots the application and additionally pass an object with the following properties to the function:
+An app plugin is a simple JavaScript file which needs to export a function. Quasar will then call the exported function when it boots the application and additionally pass **an object** with the following properties to the function:
 
 | Prop name | Description |
 | --- | --- |
 | `app` | Object with which the root component gets instantiated by Vue |
 | `router` | Instance of Vue Router from 'src/router/index.js' |
-| `store` | Instance of Vuex from 'src/store/index.js' - **store only will be passed if your project uses vuex** |
+| `store` | Instance of Vuex from 'src/store/index.js' - **store only will be passed if your project uses Vuex (you have src/store)** |
 | `Vue` | Is same as if we do `import Vue from 'vue'` and it's there for convenience |
+
+```js
+export default ({ app, router, store, Vue }) => {
+  // something to do
+}
+```
+
+Notice we are using [ES6 destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment). Only assign what you actually need/use.
 
 ## When to use app plugins
 > **IMPORTANT**
@@ -71,6 +79,21 @@ plugins: [
   '<name>' // references /src/plugins/<name>.js
 ]
 ```
+
+### Quasar App Flow
+In order to better understand how and what a plugin does, you need to understand how your website/app is booted up:
+
+1. Quasar gets initialized (components, directives, plugins, Quasar i18n, Quasar icon sets)
+2. Quasar Extras get imported (Roboto font -- if used, icons, animations, ...)
+3. Quasar CSS & your app's global CSS is imported
+4. App.vue is loaded up (not yet being used)
+5. Store is imported (if using Vuex Store in src/store)
+6. App plugins are imported
+7. App plugins get their default export function executed, except for App Boot plugin
+7. (if on Electron mode) Electron is imported and injected into Vue prototype
+8. (if on Cordova mode) Listening for "deviceready" event and only then continuing with following steps
+9. (if App Boot plugin exists) Executing App Boot plugin
+10. (if no App Boot plugin exists) Instantiating Vue with root component and attaching to DOM
 
 ## Examples of app plugins
 
@@ -163,7 +186,7 @@ In any JavaScript file, you'll be able to import the i18n instance like this
 import { i18n } from 'plugins/i18n'
 ```
 
-Further reading on syntax: [ES6 import](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/import), [ES6 export](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export) syntax: 
+Further reading on syntax: [ES6 import](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/import), [ES6 export](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export) syntax:
 
 ## Special App Plugin: Boot
 Every Quasar website/app is booted up after plugins have been loaded and executed. The last step is to call `new Vue()` and attach it to the DOM.

@@ -94,7 +94,7 @@ Since User layout wraps inner pages, they need an injection point. This is suppl
 
 Our example has some routes specified (/user/profile and /user/posts). **So how can we put everything together now?** We edit the routes file. That's where we will configure routes, tell which components are Layouts and which are Pages and also reference/import them into our app:
 
-```
+```js
 // src/router/routes.js
 
 import User from 'layouts/User'
