@@ -322,15 +322,18 @@ For more options like displaying an error label, a helper or character counter, 
 
 ## Directive Modifiers for `v-model`
 
-Vue comes with standard modifiers on `v-model`, which can be useful in conjunction with QInput. They are `.lazy` and `.trim`.
+Vue comes with [standard modifiers](https://vuejs.org/v2/guide/forms.html#Modifiers) on `v-model`, which can be useful in conjunction with QInput. They are `.lazy`, `.number` and `.trim`.
 
 ### `.lazy`
-Vue will soon supply the `.lazy` modifier for v-model on components too, but until then, you can use the longer equivalent form:
+If you want the user's input to be synced after the change event, you can add the `lazy` modifier to your `v-model` managed inputs:
 ```html
-<q-input
-  :value="model"
-  @change="val => { model = val }"
-/>
+<q-input v-model.lazy="msg" />
+```
+
+### `.number`
+If you want the user's input to be automatically typecasted to a number, you can add the `number` modifier to your `v-model` managed inputs:
+```html
+<q-input v-model.number="num" type="number" />
 ```
 
 ### `.trim`
