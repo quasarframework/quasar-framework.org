@@ -18,6 +18,11 @@ electron: {
   // electron-packager options
   packager: {
     //...
+  },
+  
+  // run custom code once the build is finished
+  afterBuild (appPaths) {
+    // run some code
   }
 }
 ```
