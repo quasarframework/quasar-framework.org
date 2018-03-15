@@ -5,10 +5,10 @@ These are very basic effects so for advanced ones check [Transition](/components
 
 | Class Name | Description |
 | --- | --- |
-| `animate-spin` | Apply a continuous spin/rotation to the DOM element |
-| `animate-spin-reverse` | Apply a continuous spin/rotation (opposite direction to `animate-spin`) to the DOM element |
-| `animate-blink` | Apply a blinking effect to the DOM element |
 | `animate-pop` | Apply a pop-in effect to the DOM element |
 | `animate-scale` | Apply a scale-in effect to the DOM element |
 | `animate-fade` | Apply a fade-in effect to the DOM element |
+| `animate-spin` | Apply a continuous spin/rotation to the DOM element |
+| `animate-spin-reverse` | Apply a continuous spin/rotation (opposite direction to `animate-spin`) to the DOM element |
+| `animate-blink` | Apply a continuous blinking effect to the DOM element |
 | `animate-bounce` | Apply a continuous bouncing effect to the DOM element |
