@@ -217,12 +217,13 @@ Also check [CSS Helpers &gt; Visibility](/components/visibility.html#Window-Widt
 If you want to customize existing responsive breakpoints or add new ones, you can edit the `$size` Stylus variable:
 
 ```
-// Change existing breakpoint
-$size.lg = 1000px
-
-// Adding new brealkpoints
-$sizes.xxs = 400px
-$sizes.xxl = 1400px
+$sizes = {
+  xs: 0,
+  sm: 575px
+  md: 767px
+  lg: 991px
+  xl: 1199px
+}
 ```
 
 ## Using Gutters
