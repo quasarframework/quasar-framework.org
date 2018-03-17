@@ -25,6 +25,21 @@ setScrollPosition (scrollTargetElement, offset[, duration])
 // if "duration" is specified then it will animate the scrolling
 ```
 
+### Scrolling to an element
+A full example using the scroll utils to scroll to an element:
+
+```js
+import { scroll } from 'quasar'
+const { getScrollTarget, setScrollPosition } = scroll
+// takes an element object
+function scrollToElement (el) {
+  let target = getScrollTarget(el)
+  let offset = el.offsetTop - el.scrollHeight
+  let duration = 1000
+  setScrollPosition(target, offset, duration)
+}
+```
+
 ## Determine Scroll Height
 ```js
 import { scroll } from 'quasar'
