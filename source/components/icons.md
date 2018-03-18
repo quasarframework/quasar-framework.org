@@ -151,8 +151,8 @@ Let's take a look at how we can use QIcon component. Do not forget to check abov
 <!-- Ionicons have "ion-" prefix -->
 <q-icon name="ion-heart" />
 
-<!-- Fontawesome icons have "fa-" prefix -->
-<q-icon name="fa-id-card" />
+<!-- Fontawesome icons have "fa[s|r|l|b] fa-" prefix -->
+<q-icon name="fas fa-id-card" />
 
 <!-- MDI icons have "mdi-" prefix -->
 <q-icon name="mdi-account-card-details" />
