@@ -264,7 +264,7 @@ You will, in most cases, want to use tabs within a layout component. Below is an
 Please refer to the following documentation for more information: [Quasar Layout Component](/components/layout.html)
 
 ## Coloring
-Use one of the Quasar colors from the Color Palette, like `primary`, `secondary`, `orange`, `teal` or variants (`teal-4`, `orange-10`) as CSS class:
+Use one of the Quasar colors from the Color Palette, like "primary", "secondary", "orange", "teal" or variants ("teal-4", "orange-10") for `color`/`text-color` properties:
 
 ``` html
 <!-- Applied to all tabs: -->
@@ -282,9 +282,16 @@ You can also invert the colors (see demo for example) by adding the Boolean `inv
 ``` html
 <!-- default color, on `inverted` color mode -->
 <q-tabs color="orange" inverted>...</q-tabs>
+```
 
-<!-- `orange` color, on `inverted` color mode -->
-<q-tabs color="orange" inverted>...</q-tabs>
+Example of transparent background with green text color (v0.15.7+):
+```html
+<q-tabs color="transparent" text-color="green">...</q-tabs>
+```
+
+Example of light color with custom text color (v0.15.7+):
+```html
+<q-tabs color="amber" text-color="dark">...</q-tabs>
 ```
 
 ## Alignment of Tabs in the Header

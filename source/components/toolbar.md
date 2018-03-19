@@ -55,6 +55,9 @@ framework: {
 
 <!-- A Toolbar with light color and overriden text color -->
 <q-toolbar color="amber" text-color="black">...</q-toolbar>
+
+<!-- A Toolbar with transparent background and green text color -->
+<q-toolbar color="transparent" text-color="green">...</q-toolbar>
 ```
 
 Example on using a Toolbar on Layout header:
@@ -92,8 +95,9 @@ Example on using a Toolbar on Layout header:
 | --- | --- | --- |
 | `color` | String | A color from [Quasar Color Palette](/components/color-palette.html) |
 | `text-color` | String | One from Quasar Palette to override color of text |
-| `inverted` | Boolean | Invert color: background becomes transparent while text has `color` |
+| `inverted` | Boolean | Invert color: background becomes "white" while text has `color` |
 | `glossy` | Boolean | Apply a glossy effect |
+| `shrink` | Boolean | Check [Shrink section](#Shrink) |
 
 ## QToolbarTitle
 QToolbarTitle is a component used to wrap the "title" of your Toolbar. It spreads horizontally to the full real estate space it can get. If not enough space to cover the full extent of the content then ending ellipsis are used.
