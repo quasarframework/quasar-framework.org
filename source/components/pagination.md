@@ -58,6 +58,12 @@ export default {
 ```
 This will cause the pagination to initially render to page 4 and not allow the user to go below page 4.
 
+## Vue Events
+| Vue Event | Description |
+| --- | --- |
+| `@input(newVal)` | Triggered immediately on model value change. |
+| `@change(newVal)` | Triggered on lazy model value change. |
+
 ## Examples
 
 ### With buttons
