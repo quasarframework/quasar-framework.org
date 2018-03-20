@@ -268,11 +268,11 @@ There are more props available for QItemTile, but only use the following when QI
     <q-collapsible icon="favorite" label="Favorites">
       <q-item link to="/inbox/favorites/1">
         <q-item-side icon="mail" />
-        <q-item-main :label="Favorite 1" />
+        <q-item-main label="Favorite 1" />
       </q-item>
       <q-item to="/inbox/favorites/2">
         <q-item-side icon="mail" />
-        <q-item-main :label="Favorite 2" />
+        <q-item-main label="Favorite 2" />
       </q-item>
     </q-collapsible>
     <q-item to="/inbox/3">
