@@ -172,6 +172,7 @@ Vue will soon supply the `.lazy` modifier for v-model on components too, but unt
 | --- | --- |
 | `@input(newVal)` | Triggered immediately on model value change. |
 | `@change(newVal)` | Triggered on lazy model value change. |
+| `@duplicate(val)` | Triggered when user tries to add a duplicate value. |
 
 ## More Examples
 
