@@ -12,7 +12,7 @@ Quasar (pronounced /ˈkweɪ.zɑɹ/) is an MIT licensed open-source framework (po
 
 Quasar allows developers to write code once then simultaneously deploy as website, PWA, Mobile App and/or Electron App using the same codebase. Design an app in record time, using a state of the art CLI and backed by well-written, very fast Quasar web components.
 
-When using Quasar, you won't need additional heavy libraries like Hammerjs, Momentjs or Bootstrap. It got that covered too, and with a small footprint!
+When using Quasar, you won't need additional heavy libraries like Hammerjs, Momentjs or Bootstrap. It's got that covered too, and with a small footprint!
 
 ## Why Quasar?
 Because of what is offered out of the box. Follow our [Twitter](https://twitter.com/quasarframework) account for testimonials.
