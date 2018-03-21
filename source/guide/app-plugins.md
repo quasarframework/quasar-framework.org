@@ -152,38 +152,37 @@ Sometimes you want to access data which you configure in your app plugin in file
 
 Fortunately, because app plugins are just normal JavaScript files you can add as many named exports to your app plugin as you want.
 
-Let's take the example of vue-i18n. Sometimes you want to translate strings inside your JavaScript files, but you can not access the root Vue instance. To solve this you can export the i18n instance in your plugin and import it elsewhere.
+Let's take the example of Axios. Sometimes you want to access your Axios instance inside your JavaScript files, but you can not access the root Vue instance. To solve this you can export the Axios instance in your plugin and import it elsewhere.
 
-Consider the following plugin file for vue-i18n:
+Consider the following plugin file for axios:
 
 ```js
-// i18n app plugin file (src/plugins/i18n.js)
+// axios app plugin file (src/plugins/axios.js)
 
-import VueI18n from 'vue-i18n'
-import messages from 'src/i18n'
+import axios from 'axios'
 
-const i18n = new VueI18n({
-    locale: 'en',
-    fallbackLocale: 'en',
-    messages
-  })
+// We create our own axios instance and set a custom base URL.
+// Note that if we wouldn't set any config here we do not need
+// a named export, as we could just `import axios from 'axios'`
+const axiosInstance = axios.create({
+  baseURL: 'https://api.example.com'
+})
 
-export default ({ app, Vue }) => {
-  Vue.use(VueI18n)
-
-  app.i18n = i18n
+export default ({ Vue }) => {
+  // for use inside Vue files through this.$axios
+  Vue.prototype.$axios = axiosInstance
 }
 
-// Here we have a named export
+// Here we define a named export
 // that we can later use inside .js files:
-export { i18n }
+export { axiosInstance }
 ```
 
-In any JavaScript file, you'll be able to import the i18n instance like this
+In any JavaScript file, you'll be able to import the axios instance like this
 
 ```js
-// we import one of the named exports from src/plugins/i18n.js
-import { i18n } from 'plugins/i18n'
+// we import one of the named exports from src/plugins/axios.js
+import { axiosInstance } from 'plugins/axios'
 ```
 
 Further reading on syntax: [ES6 import](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/import), [ES6 export](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export).
