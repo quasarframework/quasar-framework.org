@@ -104,7 +104,7 @@ Common input frame properties:
 | `inverted` | Boolean | Inverted mode. Color is applied to background instead. |
 | `inverted-light` | Boolean | Inverted mode with a light color. Color is applied to background instead. |
 | `hide-underline` | Boolean | Hides the bottom border. |
-| `dark` | Boolean | Is QChipsInput rendered on a dark background? |
+| `dark` | Boolean | Is it rendered on a dark background? |
 | `align` | String | One of 'left', 'center' or 'right' which determines the text align within the textfield. |
 | `disable` | Boolean | If set to `true`, the field is disabled and the user cannot select anything. |
 | `warning` | Boolean | If set to true, the component colors are changed to show there is a warning. |
