@@ -152,7 +152,7 @@ Sometimes you want to access data which you configure in your app plugin in file
 
 Fortunately, because app plugins are just normal JavaScript files you can add as many named exports to your app plugin as you want.
 
-Let's take the example of axios. Sometimes you want to access your axios instance inside your JavaScript files, but you can not access the root Vue instance. To solve this you can export the axios instance in your plugin and import it elsewhere.
+Let's take the example of Axios. Sometimes you want to access your Axios instance inside your JavaScript files, but you can not access the root Vue instance. To solve this you can export the Axios instance in your plugin and import it elsewhere.
 
 Consider the following plugin file for axios:
 
@@ -164,11 +164,12 @@ import axios from 'axios'
 // We create our own axios instance and set a custom base URL.
 // Note that if we wouldn't set any config here we do not need
 // a named export, as we could just `import axios from 'axios'`
-const axiosInstance axios.create({
+const axiosInstance = axios.create({
   baseURL: 'https://api.example.com'
 })
 
 export default ({ Vue }) => {
+  // for use inside Vue files through this.$axios
   Vue.prototype.$axios = axiosInstance
 }
 
