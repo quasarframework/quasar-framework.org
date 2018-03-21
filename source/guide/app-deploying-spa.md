@@ -28,60 +28,67 @@ The web server requires no special setup it only must be able to serve static fi
 so consult the documentation of your web server on how to set up static file serving.
 
 ## Deploying with Now
-Todo: from the docs on https://zeit.co/docs/getting-started/deployment it is not really clear which deploy strategy is right for Quasar.
+Deploying your Quasar application with [now](https://zeit.co) is really easy.
+All you have to do is to download the [now-cli](https://zeit.co/download#now-cli) and log in by running
+```bash
+$ now
+```
 
-Is it enough to just run `quasar build` and cd into dis and run `now`?
+Then proceed to build your Quasar application using the steps described in [general deployment](#general-deployment).
 
-Or should we do the nodejs way (which would require us to add quasar build as an npm command)
+After the build is finished change directory into your deploy root and run
+```bash
+$ now
+```
+
+You should now be presented with information regarding your deploy
+and that's all you have to do to deploy your Quasar application.
 
 ## Deploying with Heroku
 
 Unfortunately, Heroku does not support static sites out of the box.
-But don't worry, due to the [heroku-buildpack-static](https://github.com/heroku/heroku-buildpack-static) you will still be able to deploy your Quasar application to Heroku in no time.
+But don't worry, we just need to add an HTTP server to our project so Heroku can serve our Quasar application.
 
-We will assume that you have installed the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) installed and are logged into Heroku as described in the Heroku CLI docs.
+In this example, we will use [Express](https://expressjs.com/) to create a minimal server which Heroku can use.
 
-Next, you need to install the static CLI plugin for Heroku by running 
+First, we need to install the required dependencies to our project
 ```bash
-$ heroku plugins:install heroku-cli-static
+$ npm install express serve-static connect-history-api-fallback
 ```
 
-This will provide us with a set of tool in the `static` namespace.
+Now that we have installed the required dependencies we can add our server.
+Create a file called `server.js` in the root directory of your project.
+```js
+const
+  express = require('express'),
+  serveStatic = require('serve-static'),
+  history = require('connect-history-api-fallback'),
+  port = process.env.PORT || 5000
+
+const app = express()
+
+app.use(history())
+app.use(serveStatic(__dirname + '/dist/spa-<theme>'))
+app.listen(port)
+
+```
+Make sure to exchange `<theme>` to the theme you use.
+
+Heroku assumes a set of npm scripts to be availabe, so we have to alter our `package.json` and add the following under the `script` section:
+```js
+"build": "quasar build",
+"start": "node server.js",
+"heroku-postbuild": "npm install --only=dev --no-shrinkwrap && npm run build"
+```
 
 Now it is time to create an app on Heroku by running 
 ```bash
 $ heroku create
 ```
 
-You now have created a new Heroku app, but we still need to configure the buildpack.
-To do this run
-
-```bash
-$ heroku buildpacks:set https://github.com/heroku/heroku-buildpack-static.git
-```
-
-The last thing you have to do before you can start deploying your application is to configure how Heroku should serve your files.
-
-So create a file called `static.json` in your application root with the following content:
-```json
-{
-  "root": "dist/spa-<theme>",
-  "clean_urls": "false",
-  "routes": {
-    "/**": "index.html"
-  }
-}
-```
-Remember to replace `<theme>` with your actual theme.
-
-Now you can build your Quasar application with
-```bash
-$ quasar build
-```
-
 and deploy to Heroku using
 ```bash
-$ heroku static:deploy
+$ heroku deploy
 ```
 
 ## Deploying with Surge
@@ -112,7 +119,3 @@ Now your application should be successfully deployed using Surge.
 You should be able to adapt this guide to any other static site deployment tool.
 
 ## Deploying on Github Pages
-
-## Deploying on Dokku
-
-Todo: Should be very similar to Heroku
