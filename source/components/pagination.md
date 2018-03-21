@@ -122,6 +122,7 @@ This will cause the pagination to initially render to page 4 and not allow the u
 ```
 
 ### With direction links
+```html
 <q-pagination
   v-model="page2"
   color="teal"
