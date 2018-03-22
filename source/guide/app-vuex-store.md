@@ -62,7 +62,7 @@ const store = new Vuex.Store({
 // if we want some HMR magic for it, we handle
 // the hot update like below. Notice we guard this
 // code with "process.env.DEV" -- so this doesn't
-// gets into our production build (and it shouldn't).
+// get into our production build (and it shouldn't).
 if (process.env.DEV && module.hot) {
   module.hot.accept(['./showcase'], () => {
     const newShowcase = require('./showcase').default
@@ -73,7 +73,7 @@ if (process.env.DEV && module.hot) {
 export default store
 ```
 
-Now we can use this Vuex Module in our Vue files. Quick example. Assumes we configured "drawerState" into the state and added updateDrawerState mutation.
+Now we can use this Vuex Module in our Vue files. Quick example. Assume we configured "drawerState" into the state and added updateDrawerState mutation.
 
 ```js
 // src/store/showcase/mutations.js
