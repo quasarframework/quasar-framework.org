@@ -24,7 +24,7 @@ You can use it globally inside a Vue context (component script or template) like
 </template>
 
 <script>
-// not availabel here outside
+// not available here outside
 // of the export
 
 export default {
