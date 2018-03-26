@@ -201,7 +201,7 @@ build: {
     ...cfg.resolve.alias, // This adds the existing alias
 
     // Add you own alias like this
-    components: path.resolve(__dirname, './src/components'),
+    myalias: path.resolve(__dirname, './src/somefolder'),
   }
 }
 ```
