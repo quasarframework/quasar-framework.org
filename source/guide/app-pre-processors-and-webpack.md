@@ -21,10 +21,9 @@ Notice that you don't need to return anything. The parameter of extendWebpack(cf
 
 Let's discuss about Webpack loaders now. It's probably where you'll make the most additions.
 
-## Webpack alias
-Quasar comes with a bunch of useful webpack alias preconfigured.
-You can use them anywhere in your project and webpack will resolve the correct path.
-If you want to add you own alias, se the section about [adding your own alias to Webpack](/guide/app-quasar.conf.js.html#Adding-you-own-alias-to-Webpack).
+## Webpack Aliases
+Quasar comes with a bunch of useful Webpack aliases preconfigured.
+You can use them anywhere in your project and webpack will resolve the correct path. If you want to add you own alias, se the section about [adding your own alias to Webpack](/guide/app-quasar.conf.js.html#Adding-you-own-alias-to-Webpack).
 
 | Alias | Resolves to |
 | --- | --- |
@@ -37,7 +36,7 @@ If you want to add you own alias, se the section about [adding your own alias to
 | `plugins` | `/src/plugins` |
 | `variables` | `/.quasar/variables.styl` |
 
-Also if you configure to build with the Vue compiler version, `vue$` resolves to  `vue/dist/vue.esm.js`.
+Also if you configure to build with the Vue compiler version (build > vueCompiler: true), `vue$` resolves to  `vue/dist/vue.esm.js`.
 
 ## Webpack Loaders
 The build system uses Webpack, so it relies on using webpack loaders to handle different types of files (js, css, styl, scss, json, and so on). By default, the most used loaders are provided by default.
