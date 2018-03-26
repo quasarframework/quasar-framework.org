@@ -39,6 +39,7 @@ Supports `v-model` which must be a String, Number or Date Object.
 | `type` | String | One of `date`, `time` or `datetime`. Default is `date`. |
 | `readonly` | Boolean | If set to `true`, component is displayed as read-only. |
 | `disable` | Boolean | If set to `true`, component is disabled and the user cannot change model. |
+| `minimal` | Boolean | (v0.15.9+) Don't display header. |
 | `min` | String | Optional minimum value it can take. Has same format as Datetime model. |
 | `max` | String | Optional maximum value it can take. Has same format as Datetime model. |
 | `default-view` | String | One of 'year', 'month', 'day', 'hour', 'minute'. |

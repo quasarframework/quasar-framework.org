@@ -6,7 +6,7 @@ To list all of them would not be possible so we will focus on the general deploy
 
 If your favorite deployment tool is missing feel free to create a pull request on GitHub to add it to the list.
 
-# General deployment
+## General deployment
 
 The first step in deploying you Quasar SPA is alway to build a production-ready bundle of your files, which gets rid of development statements and minifies your source.
 
@@ -30,7 +30,7 @@ Deploying your Quasar application with [now](https://zeit.co/now) is really easy
 $ now login
 ```
 
-Then proceed to build your Quasar application using the steps described in [general deployment](#general-deployment).
+Then proceed to build your Quasar application using the steps described in [General deployment](#General-deployment).
 
 After the build is finished, change directory into your deploy root (example: `/dist/spa-mat`) and run:
 ```bash
