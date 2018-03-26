@@ -1,4 +1,4 @@
-title: Deployment for SPA
+title: Deployment of SPA
 ---
 
 There exist lots of services which allow deploying applications with ease.
@@ -118,4 +118,48 @@ Now your application should be successfully deployed using Surge.
 
 You should be able to adapt this guide to any other static site deployment tool.
 
-## Deploying on Github Pages
+## Deploying on GitHub Pages
+
+To deploy your Quasar application to GitHub pages the first step is to create a special repository on GitHub which is named `<username>.github.io`. Clone this repository to your local machine.
+
+Next, you need to build your Quasar application like it is described in [the general deployment section](#General-deployment). This will result in a `spa-<theme>` directory inside the `dist` directory.
+Copy the content of this folder to your cloned repository.
+
+The last step is to add a commit in your repository an push to GitHub.
+After a short time, you should be able to visit your Quasar application at [https://<username>.github.io/].
+
+### Adding a custom domain to GitHub pages
+
+Please see the [GitHub pages guides](https://help.github.com/articles/using-a-custom-domain-with-github-pages/) for an in-depth explanation on how to set up a custom domain.
+
+### Automated deployment to GitHub pages with push-dir
+
+Manual copying all your files to your GitHub Pages repository can be a cumbersome task to do.
+Using the [push-dir](https://github.com/L33T-KR3W/push-dir) package this step can be automated.
+
+First, install the package with
+```js
+$ npm install push-dir --save-dev
+```
+
+Then add a `deploy` command to your `package.json`.
+```json
+"scripts": {
+  "lint": "eslint --ext .js,.vue src",
+  "test": "echo \"No test specified\" && exit 0",
+  "deploy": "push-dir --dir=dist/spa-<theme> --remote=gh-pages --branch=master"
+}
+```
+Make sure to exchange `<theme>` to the theme you use.
+
+Add your GitHub Pages repository as a remote named `gh-pages`:
+```bash
+$ git remote add gh-pages git@github.com:<username>/<username>.github.io.git
+```
+
+Now you can build and deploy your application using
+```bash
+$ quasar build
+$ npm run deploy
+```
+which will push the content of your build directory to your master branch on your Github Pages repository.
