@@ -8,8 +8,7 @@ If your favorite deployment tool is missing feel free to create a pull request o
 
 # General deployment
 
-The first step in deploying you Quasar SPA is alway to build a production-ready bundle of your files,
-which gets rid of development statements and minifies your source.
+The first step in deploying you Quasar SPA is alway to build a production-ready bundle of your files, which gets rid of development statements and minifies your source.
 
 To produce such a build use Quasar CLI with the following command
 ```bash
@@ -17,47 +16,41 @@ $ quasar build
 ```
 For possible build options please refer to the [Quasar CLI docs](/guide/quasar-cli).
 
-This command will build your project in SPA mode and output you production ready bundle to a newly created folder `/dist/spa-<theme>` were `<theme>` is replaced by your apps theme choice.
+This command will build your project in SPA mode and output your production ready bundle to a newly created folder `/dist/spa-<theme>` were `<theme>` is replaced by the theme you chose to build with.
 
-To serve your production files it is *required*  to use a web server.
-Simply opening the `index.html` file from within your Browser will not work.
+To serve your production files it is *required* to use a web server, so to serve over http:// protocol. Simply opening the `index.html` file from within your browser will not work, since this uses file:// protocol instead.
 
-Common choices for web server are [nginx](https://www.nginx.com/) and [caddy](https://caddyserver.com/) but you should be able to use whatever web server you want.
+Common choices for web server are [nginx](https://www.nginx.com/), [Caddy](https://caddyserver.com/), [Apache](https://httpd.apache.org/), [Express](https://expressjs.com/), but you should be able to use whatever web server you want.
 
-The web server requires no special setup it only must be able to serve static files from a directory,
-so consult the documentation of your web server on how to set up static file serving.
+The web server requires no special setup (unless you built with Vue Router in "history" mode). The main requirement is to be able to serve static files from a directory, so consult the documentation of your web server on how to set up static file serving.
 
 ## Deploying with Now
-Deploying your Quasar application with [now](https://zeit.co) is really easy.
-All you have to do is to download the [now-cli](https://zeit.co/download#now-cli) and log in by running
+Deploying your Quasar application with [now](https://zeit.co/now) is really easy. All you have to do is to download the [now-cli](https://zeit.co/download#now-cli) and log in by running:
 ```bash
-$ now
+$ now login
 ```
 
 Then proceed to build your Quasar application using the steps described in [general deployment](#general-deployment).
 
-After the build is finished change directory into your deploy root and run
+After the build is finished, change directory into your deploy root (example: `/dist/spa-mat`) and run:
 ```bash
 $ now
 ```
 
-You should now be presented with information regarding your deploy
-and that's all you have to do to deploy your Quasar application.
+The Now CLI should now display information regarding your deployment, like the URL. That's it. You're done.
 
 ## Deploying with Heroku
 
-Unfortunately, Heroku does not support static sites out of the box.
-But don't worry, we just need to add an HTTP server to our project so Heroku can serve our Quasar application.
+Unfortunately, Heroku does not support static sites out of the box. But don't worry, we just need to add an HTTP server to our project so Heroku can serve our Quasar application.
 
 In this example, we will use [Express](https://expressjs.com/) to create a minimal server which Heroku can use.
 
-First, we need to install the required dependencies to our project
+First, we need to install the required dependencies to our project:
 ```bash
 $ npm install express serve-static connect-history-api-fallback
 ```
 
-Now that we have installed the required dependencies we can add our server.
-Create a file called `server.js` in the root directory of your project.
+Now that we have installed the required dependencies we can add our server. Create a file called `server.js` in the root directory of your project.
 ```js
 const
   express = require('express'),
@@ -70,23 +63,22 @@ const app = express()
 app.use(history())
 app.use(serveStatic(__dirname + '/dist/spa-<theme>'))
 app.listen(port)
-
 ```
 Make sure to exchange `<theme>` to the theme you use.
 
-Heroku assumes a set of npm scripts to be availabe, so we have to alter our `package.json` and add the following under the `script` section:
+Heroku assumes a set of npm scripts to be available, so we have to alter our `package.json` and add the following under the `script` section:
 ```js
 "build": "quasar build",
 "start": "node server.js",
 "heroku-postbuild": "npm install --only=dev --no-shrinkwrap && npm run build"
 ```
 
-Now it is time to create an app on Heroku by running 
+Now it is time to create an app on Heroku by running:
 ```bash
 $ heroku create
 ```
 
-and deploy to Heroku using
+and deploy to Heroku using:
 ```bash
 $ heroku deploy
 ```
@@ -95,38 +87,31 @@ $ heroku deploy
 
 [Surge](https://surge.sh/) is a popular tool to host and deploy static sites.
 
-If you want to deploy your application with Surge you first need to install the Surge CLI tool
+If you want to deploy your application with Surge you first need to install the Surge CLI tool:
 ```bash
 $ npm install -g surge
 ```
 
-Next, we will use Quasar CLI to build our app
+Next, we will use Quasar CLI to build our app:
 ```bash
 $ quasar build
 ```
 
-This will generate you production ready bundle as described above.
-
-Now we can deploy our application using Surge by calling
+Now we can deploy our application using Surge by calling:
 ```bash
+# make sure to replace <theme> with your actual theme
 $ surge dist/spa-<theme>
 ```
 
-Make sure to replace `<theme>` with your actual theme.
-
-Now your application should be successfully deployed using Surge.
-
-You should be able to adapt this guide to any other static site deployment tool.
+Now your application should be successfully deployed using Surge. You should be able to adapt this guide to any other static site deployment tool.
 
 ## Deploying on GitHub Pages
 
 To deploy your Quasar application to GitHub pages the first step is to create a special repository on GitHub which is named `<username>.github.io`. Clone this repository to your local machine.
 
-Next, you need to build your Quasar application like it is described in [the general deployment section](#General-deployment). This will result in a `spa-<theme>` directory inside the `dist` directory.
-Copy the content of this folder to your cloned repository.
+Next, you need to build your Quasar application like it is described in [the general deployment section](#General-deployment). This will result in a `spa-<theme>` directory inside the `dist` directory. Copy the content of this folder to your cloned repository.
 
-The last step is to add a commit in your repository an push to GitHub.
-After a short time, you should be able to visit your Quasar application at [https://<username>.github.io/].
+The last step is to add a commit in your repository an push to GitHub. After a short time, you should be able to visit your Quasar application at https://<username>.github.io/.
 
 ### Adding a custom domain to GitHub pages
 
@@ -134,30 +119,27 @@ Please see the [GitHub pages guides](https://help.github.com/articles/using-a-cu
 
 ### Automated deployment to GitHub pages with push-dir
 
-Manual copying all your files to your GitHub Pages repository can be a cumbersome task to do.
-Using the [push-dir](https://github.com/L33T-KR3W/push-dir) package this step can be automated.
+Manual copying all your files to your GitHub Pages repository can be a cumbersome task to do. This step can be automated by using the [push-dir](https://github.com/L33T-KR3W/push-dir) package.
 
-First, install the package with
+First, install the package with:
 ```js
 $ npm install push-dir --save-dev
 ```
 
-Then add a `deploy` command to your `package.json`.
+Then add a `deploy` script command to your `package.json`:
 ```json
+// replace <theme> with your actual theme (mat, ios)
 "scripts": {
-  "lint": "eslint --ext .js,.vue src",
-  "test": "echo \"No test specified\" && exit 0",
   "deploy": "push-dir --dir=dist/spa-<theme> --remote=gh-pages --branch=master"
 }
 ```
-Make sure to exchange `<theme>` to the theme you use.
 
 Add your GitHub Pages repository as a remote named `gh-pages`:
 ```bash
 $ git remote add gh-pages git@github.com:<username>/<username>.github.io.git
 ```
 
-Now you can build and deploy your application using
+Now you can build and deploy your application using:
 ```bash
 $ quasar build
 $ npm run deploy
