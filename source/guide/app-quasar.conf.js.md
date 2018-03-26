@@ -186,3 +186,22 @@ build: {
   }
 }
 ```
+
+#### Adding you own alias to Webpack
+
+To add you own alias you can extend the webpack config and merge it with the existing alias.
+Use the `path.resolve` helper to resolve the path to your intended alias.
+
+```js
+// quasar.conf.js
+
+build: {
+  extendWebpack (cfg) {
+   cfg.resolve.alias = {
+    ...cfg.resolve.alias, // This adds the existing alias
+
+    // Add you own alias like this
+    myalias: path.resolve(__dirname, './src/somefolder'),
+  }
+}
+```
