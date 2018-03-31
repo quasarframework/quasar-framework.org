@@ -26,7 +26,7 @@ $ quasar new store <store_name>
 ```
 It will create a folder in `/src/store` named by "store_name" from the command above. It will contain all the boilerplate that you need.
 
-Let's say that you want to create a "showcase" Vuex Module. You issue `$ quasar new store showcase`. You then notice the newly created `/src/store/showcase` folder which holds the following files:
+Let's say that you want to create a "showcase" Vuex Module. You issue `$ quasar new store showcase`. You then notice the newly created `/src/store/showcase` folder, which holds the following files:
 
 ```bash
 .
@@ -34,7 +34,7 @@ Let's say that you want to create a "showcase" Vuex Module. You issue `$ quasar 
     └── store/
         ├── index.js         # Vuex Store definition
         └── showcase         # Module "showcase"
-            ├── index.js     # Glueing the module together
+            ├── index.js     # Gluing the module together
             ├── actions.js   # Module actions
             ├── getters.js   # Module getters
             ├── mutations.js # Module mutations

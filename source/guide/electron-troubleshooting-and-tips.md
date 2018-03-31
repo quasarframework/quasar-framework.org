@@ -1,4 +1,4 @@
-title: Troubleshoot and Tips
+title: Troubleshooting and Tips
 ---
 
 ## Read & Write Local Files

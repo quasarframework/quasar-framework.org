@@ -87,7 +87,7 @@ export default {
     window.addEventListener('batterystatus', this.updateBatteryStatus, false)
   },
   beforeDestroy () {
-    // we make some cleanup;
+    // we do some cleanup;
     // we need to remove the event listener
     window.removeEventListener('batterystatus', this.updateBatteryStatus, false)
   }
@@ -100,7 +100,7 @@ First step is to read the documentation of the Cordova plugin that we want to us
 
 There's a mention of the `deviceready` event. But we already know how to handle it from the previous sections.
 
-We see instructions on how to install this plugin. It's always a Cordova command. **So we "cd" into `/src-cordova`** (which is a Cordova generated folder) **and issue the install command form there**:
+We read the instructions on how to install this plugin. It's always a Cordova command. **So we "cd" into `/src-cordova`** (which is a Cordova generated folder) **and issue the install command form there**:
 ```bash
 # from /src-cordova:
 $ cordova plugin add cordova-plugin-camera

@@ -306,7 +306,7 @@ All components using popups, like Modal, Dialog, Popover, Context Menu, now supp
 ```
 
 ### Handling Back Button
-Unfortunately, the automatic handling of back button was a top feature hard to comprehend. It required you to handle Vue references (which beginners on Vue were struggling with) and didn't fully allow you to connect components like Drawers & Modals to Vuex in an easy way. Now it only works on Mobile Apps (for example Android has a back button that is handled by Quasar). The removal of this feature for websites greatly simplify your code:
+Unfortunately, the automatic handling of back button was a one of the features that was the hardest to comprehend. It required you to handle Vue references (which beginners on Vue were struggling with) and didn't fully allow you to connect components like Drawers & Modals to Vuex in an easy way. Now it only works on Mobile Apps (for example Android has a back button that is handled by Quasar). The removal of this feature for websites greatly simplify your code:
 
 ```html
 <q-modal v-model="modal">...</q-modal>

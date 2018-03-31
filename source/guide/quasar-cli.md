@@ -120,12 +120,12 @@ If you wish to change the hostname or port serving your App you have 3 options:
 If there appears to be an issue with hot reload, you can try two fixes:
 * Change the permissions for the project folder with
 
-  ``` bash
+  ```bash
   sudo chown -R username: .
   ```
 * or run the dev server with root privileges
 
-  ``` bash
+  ```bash
   sudo quasar dev
   ```
 
@@ -227,7 +227,7 @@ These modes will add a "src-*" folder into your project with very specific code 
 | src-cordova | cordova | Is a Cordova project folder that will be using your 'src' as content. Tweak Cordova config, add/remove platforms, splash screens, Cordova plugins and so on from this folder. Do NOT touch "src-cordova/www" folder though as it will get overwritten at every build. |
 | src-electron | electron | Has code for the main Electron thread. The renderer thread will be your app in 'src'. |
 
-If for some reason you decide you don't need a mode, you can remove it. This will delete the respective "src-*" folder.
+If for some reason you decide you don't need a mode, you can remove it. This will permanently delete the respective "src-*" folder.
 ```bash
 $ quasar mode --remove pwa
 ```

@@ -23,7 +23,7 @@ You can fork and use these links for reporting issues on Github too:
 These links (obviously) use the Quasar UMD version.
 
 ## Quasar Global Object
-When you embed Quasar UMD into a webpage you'll get injected a `Quasar` global Object:
+When you embed Quasar UMD into a webpage you'll get a `Quasar` global Object injected:
 
 ```js
 Quasar = {
@@ -49,9 +49,9 @@ So, after you figured out the CDN links that you need to embed into your webpage
 
 > You'll notice that all the Quasar Components, Quasar Directives and Quasar Plugins have an installation section at the top of their pages. When using UMD, you can skip this section, as it is intended only for when your project is generated from the [Main Starter Kit](/app-installation.html).
 
-By using the UMD version, you got all components, directives and Quasar plugins already installed for you. You just need to start using them.
+By using the UMD version, you'll have all of the components, directives and Quasar plugins already installed for you. You just need to start using them.
 
-**Do not use self closing tags with UMD version:**
+**Do not use self-closing tags with the UMD version:**
 You will notice that you won't be able to use the self-closing tag form of any of the components. You must close all components tags.
 
 ```html

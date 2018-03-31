@@ -13,5 +13,5 @@ Some properties from this file will get overwritten as we'll see in next section
 Quasar CLI helps you in setting some properties of the mobile Apps automatically (from config.xml): the Cordova "id", app version and description. This is for convenience so you'll be able to have a single point where, for example, you change the version of your app, not multiple files that you need to simultaneously touch which is error prone.
 
 For determining the values for each of the properties mentioned above, Quasar CLI:
-1. Looks in `/quasar.conf.js` for a "cordova" Object. Does it has "id", "version" and/or "description"? If yes, it'll use it/them.
+1. Looks in `/quasar.conf.js` for a "cordova" Object. Does it have "id", "version" and/or "description"? If yes, it will use it/them.
 2. If not, then it looks into your `/package.json` for "cordovaId", "version" and "description" fields.
