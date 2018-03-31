@@ -1,14 +1,14 @@
 title: Deployment of SPA
 ---
 
-There exist lots of services which allow deploying applications with ease.
+There exist many services that allow deploying applications with ease.
 To list all of them would not be possible so we will focus on the general deployment process and some specifics for common services.
 
 If your favorite deployment tool is missing feel free to create a pull request on GitHub to add it to the list.
 
 ## General deployment
 
-The first step in deploying you Quasar SPA is alway to build a production-ready bundle of your files, which gets rid of development statements and minifies your source.
+The first step in deploying you Quasar SPA is always to build a production-ready bundle of your files, which gets rid of development statements and minifies your source.
 
 To produce such a build use Quasar CLI with the following command
 ```bash
@@ -18,9 +18,9 @@ For possible build options please refer to the [Quasar CLI docs](/guide/quasar-c
 
 This command will build your project in SPA mode and output your production ready bundle to a newly created folder `/dist/spa-<theme>` were `<theme>` is replaced by the theme you chose to build with.
 
-To serve your production files it is *required* to use a web server, so to serve over http:// protocol. Simply opening the `index.html` file from within your browser will not work, since this uses file:// protocol instead.
+To serve your production files it is *required* to use a web server, so to serve over http:// protocol. Simply opening the `index.html` file from within your browser will not work, since this uses the file:// protocol instead.
 
-Common choices for web server are [nginx](https://www.nginx.com/), [Caddy](https://caddyserver.com/), [Apache](https://httpd.apache.org/), [Express](https://expressjs.com/), but you should be able to use whatever web server you want.
+Common choices for web servers are [nginx](https://www.nginx.com/), [Caddy](https://caddyserver.com/), [Apache](https://httpd.apache.org/), [Express](https://expressjs.com/); but you should be able to use whatever web server you want.
 
 The web server requires no special setup (unless you built with Vue Router in "history" mode). The main requirement is to be able to serve static files from a directory, so consult the documentation of your web server on how to set up static file serving.
 
@@ -50,7 +50,7 @@ First, we need to install the required dependencies to our project:
 $ npm install express serve-static connect-history-api-fallback
 ```
 
-Now that we have installed the required dependencies we can add our server. Create a file called `server.js` in the root directory of your project.
+Now that we have installed the required dependencies, we can add our server. Create a file called `server.js` in the root directory of your project.
 ```js
 const
   express = require('express'),
