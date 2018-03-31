@@ -43,7 +43,7 @@ guide:
     Configuring Cordova: cordova-$
     Cordova Plugins: $
     Build Commands: cordova-$
-    Troubleshoot and Tips: cordova-$
+    Troubleshooting and Tips: cordova-$
     Managing Google Analytics: cordova-$
     Publishing to Store: cordova-$
 
@@ -54,7 +54,7 @@ guide:
     Electron Packages: $
     Build Commands: electron-$
     Electron Static Assets: $
-    Troubleshoot and Tips: electron-$
+    Troubleshooting  and Tips: electron-$
 
   Misc:
     Ajax Requests: $

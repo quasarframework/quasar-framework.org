@@ -1,6 +1,6 @@
 title: Quasar Framework Contributing Guide
 ---
-The Quasar team is really excited, when anyone helps by contributing to Quasar Framework. It's what OSS community is all about!
+The Quasar team is really excited when people help by contributing to Quasar Framework. It's what the FLOSS community is all about!
 
 There are lots of features waiting for someone to write them and make the Quasar experience even better. Check [Github](https://github.com/quasarframework/quasar) or contact [Razvan Stoenescu](https://github.com/rstoenescu) through [Discord chat](https://discord.gg/5TDhbDg)/email.
 

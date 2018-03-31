@@ -34,7 +34,7 @@ const routes = [
 export default routes
 ```
 
-**Configuring routes to use Layouts and Pages basically consists in correctly nesting routes, as we'll see in the next section.**
+**Configuring routes to use Layouts and Pages basically consists of correctly nesting routes, as we'll see in the next section.**
 
 ## Nested Routes
 Real app UIs are usually composed of components that are nested multiple levels deep. It is also very common that the segments of a URL corresponds to a certain structure of nested components, for example:
@@ -66,7 +66,7 @@ $ quasar new page Profile Posts
  app:new Make sure to reference it in src/router/routes.js +0ms
 ```
 
-Since User layout wraps inner pages, they need an injection point. This is supplied by `<router-view>` component:
+Since User layout wraps inner pages, they need an injection point. This is supplied by the `<router-view>` component:
 ```html
 <!-- /src/layouts/User.vue -->
 <template>
@@ -129,6 +129,6 @@ const routes = [
 export default routes
 ```
 
-**Note that nested paths that start with `/` will be treated as a root path. This allows you to leverage the component nesting without having to use a nested URL.**
+**Note that nested paths that start with `/` will be treated as a root path. This allows you to leverage component nesting without having to use a nested URL.**
 
 > For further in-detail reading please take a look on [Vue Router](https://router.vuejs.org/en/essentials/nested-routes.html#) documentation.

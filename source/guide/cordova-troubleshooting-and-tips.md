@@ -1,4 +1,4 @@
-title: Cordova Troubleshoot and Tips
+title: Cordova Troubleshooting and Tips
 ---
 
 ### Browser Simulator

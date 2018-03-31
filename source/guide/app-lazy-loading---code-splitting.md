@@ -1,6 +1,6 @@
 title: Lazy Loading / Code Splitting
 ---
-When your website/app is small, you can load all layouts/pages/components into the initial bundle and serve everything at startup. But when the code gets complex, with lots of layouts/pages/components, it won't be optimal to do this as it will hurt the loading time. Fortunately, there is a way to solve this.
+When your website/app is small, you can load all layouts/pages/components into the initial bundle and serve everything at startup. But when your code gets complex and has many layouts/pages/components, it won't be optimal to do this as it will massively impact loading time. Fortunately, there is a way to solve this.
 
 We'll cover how you can lazy load / code split parts of your app so that they are automatically requested only on demand. This is done through dynamic imports. Let's start with an example and then convert it so that we use lazy loading -- we'll focus this example on loading a page, but the same principle can be applied to load anything (assets, JSONs, ...):
 
@@ -25,7 +25,7 @@ const routes = [
 ]
 ```
 
-Easy, right? What this does is that it creates a separate chunk for `/src/pages/SomePage.vue` which can be loaded only when it is needed. In this case, when user visits the '/same-page' route.
+Easy, right? What this does is that it creates a separate chunk for `/src/pages/SomePage.vue` which is then loaded only when it is needed. In this case, when a user visits the '/same-page' route.
 
 As you noticed above, we're using dynamic imports (`import('..resource..')`) instead of regular imports (`import Resource from './path/to/resource'`). Dynamic imports are essentially returning a Promise that you can use:
 
@@ -36,7 +36,7 @@ import('./categories.json')
     // and we have its content in "categories"
   })
   .catch(() => {
-    // ooops, something went wrong...
+    // oops, something went wrong...
     // couldn't load the resource
   })
 ```

@@ -1,16 +1,16 @@
 title: App Plugins
 ---
 A common use case for Quasar applications is to run code before the root Vue instance is instantiated.
-Quasar provides a very elegant solution to that problem by allowing users to define so-called app plugins.
+Quasar provides an elegant solution to that problem by allowing users to define so-called app plugins.
 
 > **IMPORTANT**
-> Do not mistake app plugins this with Quasar plugins, like ActionSheet, Dialog, Notify. These are something else entirely and they will be covered in [Components](/components) section.
+> Do not mistake app plugins with Quasar plugins, like ActionSheet, Dialog, Notify. These are something else entirely and they will be covered in [Components](/components) section.
 
 In earlier Quasar versions, to run code before the root Vue instance was instantiated, you could alter the `/src/main.js` file and add any code you needed to execute.
 
-There is one problem with this approach. With a growing project size your `main.js` file most likely would get very cluttered and hard to maintain, which breaks with Quasars concept of encouraging developers to write maintainable and elegant cross-platform applications.
+There is a major problem with this approach: With a growing project, your `main.js` file was very likely to get cluttered and challenging to maintain, which breaks with Quasar's concept of encouraging developers to write maintainable and elegant cross-platform applications.
 
-With app plugins, it is possible to split each of your dependency into a self-contained, easy to maintain file. It will also be very easy to disable any of the app plugins or even contextually determine which of the app plugins get into the build through `quasar.conf.js` configuration.
+With app plugins, it is possible to split each of your dependencies into a self-contained, easy to maintain file. It is also trivial to disable any of the app plugins or even contextually determine which of the app plugins get into the build through `quasar.conf.js` configuration.
 
 ## Anatomy of an app plugin
 An app plugin is a simple JavaScript file which needs to export a function. Quasar will then call the exported function when it boots the application and additionally pass **an object** with the following properties to the function:
@@ -28,7 +28,7 @@ export default ({ app, router, store, Vue }) => {
 }
 ```
 
-Notice we are using [ES6 destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment). Only assign what you actually need/use.
+Notice we are using the [ES6 destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment). Only assign what you actually need/use.
 
 ## When to use app plugins
 > **IMPORTANT**
@@ -45,7 +45,7 @@ App plugins fulfill one special purpose: they run code **before** the App's Vue 
 * Configure aspects of libraries - An example would be to create an instance of Axios with a base URL; you can then inject it into Vue prototype and/or export it (so you can import the instance from anywhere else in your app)
 
 ### Examples of unneeded usage of app plugins
-* For plain JavaScript libraries like Lodash, which don't need any initialization prior to their usage. Lodash, for example, might only make sense to have an app plugin only if you want to inject Vue prototype with it, like being able to use `this.$_` inside your Vue files.
+* For plain JavaScript libraries like Lodash, which don't need any initialization prior to their usage. Lodash, for example, might make sense to use as an app plugin only if you want to inject Vue prototype with it, like being able to use `this.$_` inside your Vue files.
 * Make API requests - You probably want to do this inside your pages Vue component
 
 ## Usage of app plugins
@@ -67,7 +67,7 @@ export default ({ app, router, store, Vue }) => {
 }
 ```
 
-You can now add content to that file depending on what the intended use of your plugin is.
+You can now add content to that file depending on the intended use of your plugin.
 
 > Do not forget that your default export needs to be a function.
 > However, you can have as many named exports as you want, should the plugin expose something for later usage. In this case, you can import any of these named exports anywhere in your app.
@@ -142,13 +142,13 @@ Some plugins might need to interfere with Vue Router configuration:
 ```js
 export default ({ router, store, Vue }) => {
   router.beforeEach((to, from, next) => {
-    // Now you need to add your authentication logic here like calling an API endpoint
+    // Now you need to add your authentication logic here, like calling an API endpoint
   })
 }
 ```
 
 ## Accessing data from plugins
-Sometimes you want to access data which you configure in your app plugin in files where you don't have access to the root Vue instance.
+Sometimes you want to access data that you configure in your app plugin in files where you don't have access to the root Vue instance.
 
 Fortunately, because app plugins are just normal JavaScript files you can add as many named exports to your app plugin as you want.
 
@@ -178,7 +178,7 @@ export default ({ Vue }) => {
 export { axiosInstance }
 ```
 
-In any JavaScript file, you'll be able to import the axios instance like this
+In any JavaScript file, you'll be able to import the axios instance like this.
 
 ```js
 // we import one of the named exports from src/plugins/axios.js
@@ -190,7 +190,7 @@ Further reading on syntax: [ES6 import](https://developer.mozilla.org/en-US/docs
 ## Special App Plugin: Boot
 Every Quasar website/app is booted up after plugins have been loaded and executed. The last step is to call `new Vue()` and attach it to the DOM.
 
-If for whatever reason, you need to control this final step and decide the specific moment when Vue kicks in, you can create a special Quasar plugin named "boot" (**requires Quasar v0.15.6+**).
+If, for whatever reason, you need to control this final step and decide the specific moment when Vue kicks in, you can create a special Quasar plugin named "boot" (**requires Quasar v0.15.6+**).
 
 > Remember to only use this plugin for eventually calling `new Vue(app)`. Don't use this for initializing any library you may have -- for that, use a regular app plugin.
 

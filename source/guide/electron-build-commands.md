@@ -16,7 +16,7 @@ $ quasar dev -m electron -t ios
 $ quasar dev -m electron -t mat
 ```
 
-It opens up an Electron window with dev-tools included. You got HMR for the renderer process and changes to main process are also picked up (but the latter restarts the Electron window on each change).
+It opens up an Electron window with dev-tools included. You have HMR for the renderer process and changes to main process are also picked up (but the latter restarts the Electron window on each change).
 
 Check how you can tweak Webpack config Object for the Main Process on [Configuring Electron](/guide/electron-configuring-electron.html) page.
 
