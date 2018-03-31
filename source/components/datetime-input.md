@@ -38,6 +38,7 @@ Supports `v-model` which must be a String, Number or Date Object.
 | --- | --- | --- |
 | `type` | String | One of `date`, `time` or `datetime`. Default is `date`. |
 | `clearable` | Boolean | If set to `true`, the component offers the user an actionable icon to remove the current selection. |
+| `minimal` | Boolean | (v0.15.9+) Don't display header. |
 | `readonly` | Boolean | If set to `true`, component is displayed as read-only. |
 | `min` | String | Optional minimum value it can take. Has same format as Datetime model. |
 | `max` | String | Optional maximum value it can take. Has same format as Datetime model. |

@@ -30,6 +30,7 @@ guide:
     Theming: quasar-$
     App Linter: $
     Supporting IE: app-$
+    Deploying SPA: app-$
 
   Developing PWA:
     Introduction: pwa-$
