@@ -18,8 +18,15 @@ electron: {
   // electron-packager options
   packager: {
     //...
+  },
+
+  // optional; Electron Main Process dependencies
+  dependencies: {
+    // specify Electron Main Process dependencies
   }
 }
 ```
 
 The "packager" prop refers to [electron-packager options](https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#options). The `dir` and `out` properties are overwritten by Quasar CLI to ensure the best results.
+
+When Electron App is built, all packages listed in project's package.json are included to be used by Electron Main Process. This might include unnecessary packages, which are only used by a renderer. To include Electron Main Process dependencies only, specify them in ["dependencies"](https://docs.npmjs.com/files/package.json#dependencies) prop.
