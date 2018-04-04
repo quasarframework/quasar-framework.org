@@ -205,7 +205,7 @@ We then add this plugin to app plugins list in `/quasar.conf.js`:
 ```
 module.export = function (ctx) {
   return {
-    plugin: [
+    plugins: [
       'boot'
     ],
     ...
