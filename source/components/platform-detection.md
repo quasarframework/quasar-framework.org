@@ -19,6 +19,7 @@ import { Platform } from 'quasar'
 | --- | --- | --- |
 | Platform.is.mobile | boolean | Is the code running on a mobile device? |
 | Platform.is.cordova | boolean | Is the code running within Cordova? |
+| Platform.is.electron | boolean | Is the code running within Electron? |
 | Platform.is.desktop | boolean | Is the code running on a desktop browser? |
 | Platform.is.chromeExt | boolean | Is the code running is a Chrome extension environment? |
 | Platform.has.touch | boolean | Is the code running on a touch capable screen? |
@@ -55,6 +56,10 @@ Let's say we want to render different components or DOM elements, based on the p
 
 <div v-if="$q.platform.is.mobile">
   I'm only rendered on mobile!
+</div>
+
+<div v-if="$q.platform.is.electron">
+  I'm only rendered on Electron!
 </div>
 ```
 
