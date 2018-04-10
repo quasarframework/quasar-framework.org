@@ -57,7 +57,7 @@ There are a number of properties available:
 | `pointing` | String | Adds a carat to the chip, pointing either `up`, `right`, `down` or `left`.  |
 | `color` | String | The color the chip should be. |
 | `text-color` | String | Override the text color of the chip. |
-| `closable` | Boolean | Adds a close button to the right of the chip, which when clicked, will emit `@close` event. |
+| `closable` | Boolean | Adds a close button to the right of the chip, which when clicked, will emit `@hide` event. |
 
 ## Vue Events
 | Vue Property | Description |
