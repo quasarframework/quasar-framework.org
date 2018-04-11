@@ -58,6 +58,7 @@ Common input field properties:
 | `placeholder` | String | A text to be shown on textfield, mainly to explain what should be entered. |
 | `loading` | Boolean | Place the default spinner of the theme after textfield to highlight some process takes place in the background. |
 | `clearable` | Boolean | If set to `true`, the component offers the user an actionable icon to remove the current selection. |
+| `clear-value` | String | If `clearable` property set to `true` and user click on action icon, set predefined value. |
 
 Common input frame properties:
 
@@ -225,6 +226,7 @@ If, for some reason, the input requires some longer term background action or pr
 | `@keydown` | Triggered by keydown event on textfield. |
 | `@keyup` | Triggered by keyup event on textfield. |
 | `@click` | Triggered by a native `click` event on textfield. |
+| `@clear` | Triggered on clear. |
 
 ## Formatting
 It is possible to add formatting to a QInput in two ways. One is for the basic component. The other is with the QField component. Both methods offer "inverted" coloring.
