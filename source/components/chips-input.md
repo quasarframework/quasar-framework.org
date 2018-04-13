@@ -5,6 +5,8 @@ The Quasar Chips Input allows user to enter a group of text items, which is also
 
 For more details on Chips used within Chips Input, please refer to its [documentation](/components/chip.html).
 
+For autocomplete functionality, also refer to [QAutocomplete](/components/autocomplete.html) documentation.
+
 Works well with [QField](/components/field.html) for additional functionality such as a helper, error message placeholder and many others.
 
 ## Installation
@@ -157,6 +159,16 @@ Vue will soon supply the `.lazy` modifier for v-model on components too, but unt
   :value="model"
   @change="val => { model = val }"
 />
+```
+
+### Autocomplete
+You can use [QAutocomplete](/components/autocomplete.html) to provide the user a list of values to select from.
+While the list of found values is open `<ENTER>` key will select a value from it and add it to the list.
+If you want to add a value not found in the list either hit the `send` icon or press `<ESC>` key to hide the list and then the `<ENTER>` key.
+```html
+<q-chips-input v-model="model" placeholder="Add from list or new ones">
+  <q-autocomplete @search="search" @selected="selected" />
+</q-chips-input>
 ```
 
 ## Vue Methods
