@@ -151,6 +151,7 @@ Vue will soon supply the `.lazy` modifier for v-model on components too, but unt
 | --- | --- |
 | `@input(newVal)` | Triggered immediately on model value change. |
 | `@change(newVal)` | Triggered on lazy model value change. |
+| `@clear(clearVal)` | Triggered when the model is cleared. |
 | `@focus` | Triggered on focus. |
 | `@blur` | Triggered a blur. |
 | `@keydown` | Triggered by keydown event on textfield. |

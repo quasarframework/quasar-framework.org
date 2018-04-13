@@ -220,6 +220,7 @@ If, for some reason, the input requires some longer term background action or pr
 | --- | --- |
 | `@input(newVal)` | Triggered on immediate model value change. |
 | `@change(newVal)` | Triggered on lazy model value change. |
+| `@clear(clearVal)` | Triggered when the model is cleared. |
 | `@focus` | Triggered on focus. |
 | `@blur` | Triggered a blur. |
 | `@keydown` | Triggered by keydown event on textfield. |

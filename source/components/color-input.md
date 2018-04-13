@@ -151,8 +151,9 @@ Examples:
 | --- | --- |
 | `@input(newVal)` | Triggered on immediate model value change. |
 | `@change(newVal)` | Triggered on lazy model value change. |
-| `@blur` | Triggered, when the modal/ popup is closed. |
-| `@focus` | Triggered, when the modal/ popup is opened. |
+| `@clear(clearVal)` | Triggered when the model is cleared. |
+| `@blur` | Triggered when the modal/ popup is closed. |
+| `@focus` | Triggered when the modal/ popup is opened. |
 
 ## More Examples
 
