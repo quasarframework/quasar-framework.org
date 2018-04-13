@@ -1,6 +1,6 @@
 title: Autocomplete
 ---
-The Quasar Autocomplete component binds to the parent textfield (eg. QInput, QSearch) and offers suggestions to the user, while the user is typing. The suggestions offered to the user are based on either a static list of results or on an asynchronous function call (eg. containing an Ajax request).
+The Quasar Autocomplete component binds to the parent textfield (eg. QInput, QSearch, QChipsInput) and offers suggestions to the user, while the user is typing. The suggestions offered to the user are based on either a static list of results or on an asynchronous function call (eg. containing an Ajax request).
 <input type="hidden" data-fullpage-demo="forms/autocomplete">
 
 ## Installation
@@ -36,6 +36,11 @@ As long as this component is rendered by Vue, it will capture all Ajax calls.
     @selected="selected"
   />
 </q-search>
+
+<!-- Binds to parent QChipsInput -->
+<q-chips-input v-model="terms" placeholder="Start typing a country name">
+  <q-autocomplete @search="search" @selected="selected" />
+</q-chips-input>
 ```
 
 ## Vue Properties
