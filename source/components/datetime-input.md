@@ -157,8 +157,9 @@ Examples:
 | --- | --- |
 | `@input(newVal)` | Triggered on immediate model value change. |
 | `@change(newVal)` | Triggered on lazy model value change. |
-| `@blur` | Triggered, when the modal/ popup is closed. |
-| `@focus` | Triggered, when the modal/ popup is opened. |
+| `@clear(clearVal)` | Triggered when the model is cleared. |
+| `@blur` | Triggered when the modal/ popup is closed. |
+| `@focus` | Triggered when the modal/ popup is opened. |
 
 ## The Model
 Quasar uses its own date utility to work with date values within the model of the component.

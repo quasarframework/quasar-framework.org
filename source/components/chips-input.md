@@ -166,12 +166,14 @@ Vue will soon supply the `.lazy` modifier for v-model on components too, but unt
 | `remove(index)` | Removes value at `index` in model. |
 | `focus()` | Focuses the input text field within Chips Input. |
 | `select()` | Selects all textfield text and focuses. |
+| `clear()` | Resets the model to an empty string. |
 
 ## Vue Events
 | Vue Event | Description |
 | --- | --- |
 | `@input(newVal)` | Triggered immediately on model value change. |
 | `@change(newVal)` | Triggered on lazy model value change. |
+| `@clear(clearVal)` | Triggered when the model is cleared. |
 | `@duplicate(val)` | Triggered when user tries to add a duplicate value. |
 
 ## More Examples

@@ -336,14 +336,16 @@ Vue will soon supply the `.lazy` modifier for v-model on components too, but unt
 | --- | --- |
 | `show()` | Opens the Popover |
 | `hide()` | Closes the Popover |
+| `clear()` | Resets the model to an empty string. |
 
 ## Vue Events
 | Vue Event | Description |
 | --- | --- |
 | `@input(newVal)` | Triggered immediately on model value change. |
 | `@change(newVal)` | Triggered on lazy model value change. |
-| `@focus` | Triggered, when the field gets focus. |
-| `@blur` | Triggered, when the field loses focus. |
+| `@clear(clearVal)` | Triggered when the model is cleared. |
+| `@focus` | Triggered when the field gets focus. |
+| `@blur` | Triggered when the field loses focus. |
 
 ## More Examples
 
