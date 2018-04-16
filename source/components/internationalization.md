@@ -71,10 +71,10 @@ There's also a method to determine user locale which is supplied by Quasar out o
 ```js
 // outside of a Vue file
 import Quasar from 'quasar'
-(String) Quasar.i18n.getLocale()
+Quasar.i18n.getLocale() // returns a string
 
 // inside of a Vue file
-(String) this.$q.i18n.getLocale()
+this.$q.i18n.getLocale() // returns a string
 ```
 
 ## Handling Quasar UMD
