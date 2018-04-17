@@ -48,7 +48,11 @@ this.$q.dialog({
   noBackdropDismiss: false, // gets set to "true" automatically if preventClose is "true"
   noEscDismiss: false, // gets set to "true" automatically if preventClose is "true"
 
+  // optional; do not refocus (on dialog close) the element that had focus before opening (default is to refocus)
+  noRefocus: true,
+
   // optional; stacks button vertically instead of horizontally (default)
+  stackButtons: true,
 
   // optional; a position of the Dialog (top, bottom, left, right)
   position: 'top',
@@ -338,6 +342,7 @@ export default {
 | `stack-buttons` | Boolean | Stack buttons vertically instead of default horizontally. |
 | `prevent-close` | Boolean | Dialog can be dismissed only by clicking/tapping on OK/Cancel buttons. |
 | `no-esc-dismiss` | Boolean | "ESC" key won't dismiss the Dialog. Overriden to "true" if "prevent-close" is "true". |
+| `no-refocus` | Boolean | Do not refocus (on dialog close) the element that had focus before opening (by default it tries to refocus) |
 | `no-backdrop-dismiss` | Boolean | Click/Tap on backdrop won't dismiss Dialog. Overriden to "true" if "prevent-close" is "true". |
 | `position` | String | Position of Dialog (top, bottom, left, right). |
 | `color` | String | A color from [Quasar Color Palette](/components/color-palette.html). |
