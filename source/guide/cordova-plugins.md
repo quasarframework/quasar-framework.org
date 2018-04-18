@@ -19,7 +19,7 @@ A few examples of such plugins:
 * Statusbar
 
 ## Deviceready Event
-You'll notice that some Cordova plugins are usable only after the `deviceready` event has been triggered. We don't need to worry about it too much. Quasar listens to this event and takes care of our root Vue component to be mounted **after** this event has been triggered.
+You'll notice that some Cordova plugins are usable only after the `deviceready` event has been triggered. We don't need to worry about it too much. Quasar listens to this event and takes care of our root Vue component to be mounted **after** this event has been triggered. But if you need some plugin's own variable and that is initialized after `deviceready` you can follow the example of using the plugin device below
 
 ### Caveat
 Let's take a vue file for example:
@@ -143,6 +143,64 @@ export default {
         }
       )
     }
+  }
+}
+</script>
+```
+
+### Example: Device
+First step is to read the documentation of the Cordova plugin that we want to use. We look at [Cordova Plugins list](https://cordova.apache.org/docs/en/latest/#plugin-apis) and click on [Device doc page](https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-device/index.html).
+
+This plugin initializes a global variable called `device` which describes the device's hardware and software. As Quasar is the one who captures this event, you need modify the .eslintrc.js file, leaving the property globals in this way:
+
+```
+globals: {
+    'ga': true, // Google Analytics
+    'cordova': true,
+    'device': true,
+    '__statics': true
+  }
+```
+
+We read the instructions on how to install this plugin. It's always a Cordova command. **So we "cd" into `/src-cordova`** (which is a Cordova generated folder) **and issue the install command form there**:
+```bash
+# from /src-cordova:
+$ cordova plugin add cordova-plugin-device
+```
+
+Now let's put this plugin to some good use. If you need the information of your device when starting the application, you will have to capture the created event. In one of your Quasar project's pages/layouts/components Vue file, we write:
+
+```html
+// some Vue file
+// remember this is simply an example;
+// only look at how we use the API described in the plugin's page;
+// the rest of things here are of no importance
+
+<template>
+  <div>
+    <q-page class="flex flex-center">
+      <div>IMEI {{IMEI}}</div>
+    </q-btn>
+  </q-page>
+  </div>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      IMEI: ''
+    }
+  },
+  created () {
+    if (typeof device === 'undefined') {
+      this.IMEI = 'Run this on one mobile'
+    } else {
+      this.IMEI = device.uuid
+    }
+  },
+  methods: {
+    
   }
 }
 </script>
