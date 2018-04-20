@@ -187,7 +187,7 @@ export default {
 <template>
   <q-table
     :filter="terms"
-    :filter-method="myFiler"
+    :filter-method="myFilter"
     ...
 </template>
 
