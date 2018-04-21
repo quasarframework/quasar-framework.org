@@ -58,6 +58,7 @@ Modals are responsive to the width of the window (see demo on a desktop and resi
 | `no-route-dismiss` | Boolean | By default, when route changes, the modal gets closed. This prop inhibits the behavior. |
 | `no-esc-dismiss` | Boolean | Disable Modal dismissal by hitting Escape key. |
 | `no-backdrop-dismiss` | Boolean | Disable Modal dismissal by clicking/tapping on backdrop. |
+| `no-refocus` | Boolean | Do not refocus (on modal close) the element that had focus before opening (by default it tries to refocus) |
 | `content-css` | Object/Array/String | Applies CSS style to Modal container. Use Object or Array of Object when also specifying `position` prop. |
 | `content-classes` | Object/Array/String | Classes to apply to Modal inner content. |
 | `position` | String | Stick Modal to one of the screen edges (`top`, `right`, `bottom`, `left`). |
