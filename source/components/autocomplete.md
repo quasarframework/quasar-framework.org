@@ -86,7 +86,7 @@ function search (terms, done) {
 When using static data, specify an Object (notice that it uses some properties from [List and List Items](/components/lists-and-list-items.html) components:
 ``` js
 // static-data
-[
+{
   // Property name that will be used by filter() to filter the array of objects below.
   field: 'value',
 
@@ -102,7 +102,7 @@ When using static data, specify an Object (notice that it uses some properties f
     },
     ...
   ]
-]
+}
 ```
 
 Here is the full list of properties that can be used:
