@@ -87,6 +87,7 @@ Let's take each option one by one:
 
 | Property | Type | Description |
 | --- | --- | --- |
+| entry | Object | Entry file options. See [section](#Entry-Property) below. |
 | css | Array | Global CSS/Stylus/... files from `/src/css/`, except for theme files, which are included by default. Example: _['app.styl']_ (referring /src/css/app.styl) |
 | extras | Array | What to import from [quasar-extras](https://github.com/quasarframework/quasar-extras) package. Example: _['material-icons', 'roboto-font', 'ionicons']_ |
 | supportIE | Boolean | Add support for IE11+. |
@@ -97,6 +98,15 @@ Let's take each option one by one:
 | cordova | Object | Cordova specific [config](/guide/cordova-configuring-cordova.html). |
 | pwa | Object | PWA specific [config](/guide/pwa-configuring-pwa.html). |
 | electron | Object | Electron specific [config](/guide/electron-configuring-electron.html). |
+
+### Entry Property
+Allows you to modify `.quasar/entry.js`.
+
+| Property | Type | Description |
+| --- | --- | --- |
+| rootComponent | String | Modifies the root component of the application. Defalt: `App` (relative to `RootOfProject/src`) |
+| routerFile | String | Modifies the router file of the application. Defalt: `router` (relative to `RootOfProject/src`) |
+
 
 ### DevServer Property
 Take a look at the [full list](https://webpack.js.org/configuration/dev-server/) of options. Some are overwritten by Quasar CLI based on "quasar dev" parameters and Quasar mode in order to ensure that everything is setup correctly.
