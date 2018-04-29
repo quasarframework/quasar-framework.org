@@ -13,7 +13,7 @@ Don't forget to check the demo.
 | `shadow-1` | Set a depth of 1 |
 | `shadow-2` | Set a depth of 2 |
 | `shadow-N` | Where `N` is an integer from 1 to 24. |
-| `shadow-transition` | Apply a CSS transition on the shadow; best use in conjonction with `hoverable` classes |
+| `shadow-transition` | Apply a CSS transition on the shadow; best use in conjunction with `hoverable` classes |
 
 Example:
 ``` html
