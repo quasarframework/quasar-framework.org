@@ -21,7 +21,7 @@ methods: {
   loadData () {
     this.$axios.get('/api/backend')
       .then((response) => {
-        this.data = response.data.data
+        this.data = response.data
       })
       .catch(() => {
         this.$q.notify({
