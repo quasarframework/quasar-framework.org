@@ -2,7 +2,7 @@ title: App Linter
 ---
 Having a code linter in place is highly recommended and ensures your code looks legible. It also helps you capture some errors before even running the code.
 
-When you create a Quasar project folder with [Quasar CLI](http://localhost:4000/guide/quasar-cli.html#init-Create-Project-Folder) it will ask you if you want a linter and which setup you want for ESLint:
+When you create a Quasar project folder with [Quasar CLI](/guide/quasar-cli.html#init-Create-Project-Folder) it will ask you if you want a linter and which setup you want for ESLint:
 
 * Standard - https://github.com/standard/standard
 * Airbnb - https://github.com/airbnb/javascript
