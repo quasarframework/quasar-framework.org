@@ -59,6 +59,7 @@ Supports `v-model` which should be a Number.
 | --- | --- |
 | `@input(newVal)` | Triggered immediately on model value change. |
 | `@change(newVal)` | Triggered on lazy model value change. |
+| `@drag-value(val)` | (v0.15.11+) Triggered while dragging (or clicking) on Knob. |
 
 ## More Examples
 
@@ -71,6 +72,20 @@ Vue will soon supply the `.lazy` modifier for v-model on components too, but unt
   :min="min"
   :max="max"
 />
+```
+
+We can go a step further and display the current value while dragging:
+```html
+<!-- v0.15.11+ -->
+<q-knob
+  :value="model"
+  @change="val => { model = val }"
+  @drag-value="val => { currentValue = val }"
+  :min="min"
+  :max="max"
+>
+  {{ currentValue }}
+</q-knob>
 ```
 
 ### Multi-colored with a Euro icon.
