@@ -6,11 +6,7 @@ QTooltip should be used when you want to offer the user more information about a
 Edit `/quasar.conf.js`:
 ```js
 framework: {
-  components: ['QTooltip'],
-
-  // optional if you want to use
-  // directive `v-close-overlay`
-  directives: ['CloseOverlay']
+  components: ['QTooltip']
 }
 ```
 ## Basic Usage
