@@ -187,9 +187,9 @@ build: {
 }
 ```
 
-#### Adding you own alias to Webpack
+#### Adding your own alias to Webpack
 
-To add you own alias you can extend the webpack config and merge it with the existing alias.
+To add your own alias you can extend the webpack config and merge it with the existing alias.
 Use the `path.resolve` helper to resolve the path to your intended alias.
 
 ```js
@@ -200,7 +200,7 @@ build: {
    cfg.resolve.alias = {
     ...cfg.resolve.alias, // This adds the existing alias
 
-    // Add you own alias like this
+    // Add your own alias like this
     myalias: path.resolve(__dirname, './src/somefolder'),
   }
 }
