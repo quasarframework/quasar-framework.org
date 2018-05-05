@@ -4,7 +4,7 @@ A common use case for Quasar applications is to run code before the root Vue ins
 Quasar provides an elegant solution to that problem by allowing users to define so-called app plugins.
 
 > **IMPORTANT**
-> Do not mistake app plugins with Quasar plugins, like ActionSheet, Dialog, Notify. These are something else entirely and they will be covered in [Components](/components) section.
+> Do not confuse app plugins with Quasar plugins, like ActionSheet, Dialog, Notify. Quasar plugins are something else entirely and will be covered in the [Components](/components) section.
 
 In earlier Quasar versions, to run code before the root Vue instance was instantiated, you could alter the `/src/main.js` file and add any code you needed to execute.
 
