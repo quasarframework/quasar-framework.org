@@ -39,7 +39,7 @@ App plugins fulfill one special purpose: they run code **before** the App's Vue 
 ### Examples of appropriate usage of app plugins
 * Your Vue plugin has installation instructions, like needing to call `Vue.use()` on it.
 * Your Vue plugin requires instantiation of data that is added to the root instance - An example would be [vue-i18n](https://github.com/kazupon/vue-i18n/).
-* You want to add something to the Vue prototype for convenient access - An example would be to be conveniently use `this.$axios` inside your Vue files instead of importing Axios in each such file.
+* You want to add something to the Vue prototype for convenient access - An example would be to conveniently use `this.$axios` inside your Vue files instead of importing Axios in each such file.
 * You want to interfere with the router - An example would be to use `router.beforeEach` for authentication
 * You want to interfere with the Vuex store instance - An example would be to use `vuex-router-sync` package
 * Configure aspects of libraries - An example would be to create an instance of Axios with a base URL; you can then inject it into Vue prototype and/or export it (so you can import the instance from anywhere else in your app)
