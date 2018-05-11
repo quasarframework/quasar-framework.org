@@ -302,7 +302,22 @@ figure
   img.arrow
     display none
 
-@media only screen and (max-width 790px)
+.q-main-sponsors
+  display flex
+  align-items center
+  justify-content center
+
+@media (max-width 619px)
+  .q-taylored
+    width 250px
+  .q-main-sponsors
+    flex-direction column
+
+@media (min-width 620px)
+  .q-taylored
+    width 350px
+
+@media (max-width 790px)
   .q-body
     padding-top 50px
     padding-bottom 0

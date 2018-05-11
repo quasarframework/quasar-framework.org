@@ -105,3 +105,9 @@ jsonContent:
     permalink: true
     text: true
   posts: false
+
+autoprefixer:
+  exclude:
+    - '*.min.css'
+  browsers:
+    - 'last 2 versions'
