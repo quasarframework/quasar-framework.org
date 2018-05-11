@@ -232,8 +232,7 @@ Here is a full example highlighting what you can do with the `loading` property.
 ```html
 <template>
   <!-- Notice `loading` prop -->
-  <q-btn :loading="loading" @click="simulateProgress">
-    Button Label
+  <q-btn :loading="loading" @click="simulateProgress" label="Button Label">
     <!--
       Notice slot="loading". This is optional.
       If missing, the default theme spinner will be used.
