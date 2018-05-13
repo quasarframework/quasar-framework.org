@@ -54,10 +54,8 @@ window.addEventListener(
 Throttling enforces a maximum number of times a function can be called over time. As in "execute this function at most once every 300 milliseconds."
 
 ``` js
-// Returns a function, that, as long as it continues to be invoked, will not
-// be triggered. The function will be called after it stops being called for
-// N milliseconds. If `immediate` is passed, trigger the function on the
-// leading edge, instead of the trailing.
+// Returns a function, that will be executed only the first time it is invoked 
+// or if more than a specified time limit has passed since the last execution. 
 import { throttle } from 'quasar'
 
 (Throttled Function) throttle(Function fn, Number limit_in_milliseconds)
