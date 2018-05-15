@@ -49,7 +49,8 @@ Supports `v-model` which determines the slide number.
 | `no-swipe` | Boolean | Disable navigation by touch/mouse actions. |
 | `handle-arrow-keys` | Boolean | Allow navigation with left and right arrow key. In this case, it's best to render only one such Carousel at a time. |
 | `easing` | Function | Easing function used when changing slide from autoplay or button press. |
-| `swipe-easing` | Function | Easing function used when changing slide with a swipe |
+| `swipe-easing` | Function | Easing function used when changing slide with a swipe. |
+| `thumbnails` | Array | (v0.15.11+) Array of thumbnails pointing to "statics" folder. Check examples. |
 
 ### QCarousel Vue Methods
 | Vue Method | Description |
@@ -116,6 +117,27 @@ Supports `v-model` which determines the slide number.
   background: rgba(0, 0, 0, 0.5);
 }
 </style>
+```
+
+### Carousel with image slides and thumbnails
+> Requires Quasar v0.15.11+
+
+```html
+<q-carousel
+  color="white"
+  arrows
+  quick-nav
+  height="300px"
+  :thumbnails="[
+    'statics/mountains.jpg',
+    'statics/parallax1.jpg',
+    'statics/parallax2.jpg'
+  ]"
+>
+  <q-carousel-slide img-src="statics/mountains.jpg" />
+  <q-carousel-slide img-src="statics/parallax1.jpg" />
+  <q-carousel-slide img-src="statics/parallax2.jpg" />
+</q-carousel>
 ```
 
 ### Infinite scroll, auto-play and custom Quick Navigation icon. Second slide has a Youtube video.

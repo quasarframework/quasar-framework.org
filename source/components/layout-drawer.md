@@ -37,6 +37,8 @@ framework: {
 | `no-swipe-close` | Boolean | Disable ability to close Drawer by touch actions. Useful if you have components in your Drawer which require touch actions. The backdrop will still work with touch actions. |
 | `content-style` | Object | CSS Style in Object format for the Drawer container element. |
 | `content-class` | String/Object/Array | CSS classes for the Drawer container element. |
+| `mini` | Boolean | (v0.15.11+) If drawer is in mini mode or not. |
+| `mini-width` | String | (v0.15.11+) CSS unit for drawer width when in mini mode. Default: '60px' |
 
 ## Styling Examples
 
@@ -104,3 +106,122 @@ export default {
 ```
 
 Please note that the model can instantly get changed upon Drawer being rendered if the breakpoint requires it.
+
+## Mini mode
+*Requires Quasar v0.15.11+*
+
+Drawer can operate in two modes: 'normal' and 'mini', and you can switch between them by using the Boolean `mini` property on QLayoutDrawer. **Please note that "mini" mode does not apply when in "mobile" behavior.**
+
+### CSS classes
+There are some CSS classes that will help you customize the drawer when dealing with "mini" mode. These are very useful especially when using the "click" trigger:
+
+| CSS Class | Description |
+| --- | --- |
+| `q-mini-drawer-hide` | Hide when drawer is in "mini" mode. |
+| `q-mini-drawer-only` | Show only when drawer is in "mini" mode. |
+
+You can also write your own CSS classes based on the fact that QLayoutDrawer has `q-layout-drawer-normal` CSS class when in "normal" mode and `q-layout-drawer-mini` when in "mini" mode. Also, when drawer is in "mobile" behavior, it gets `q-layout-drawer-mobile` CSS class.
+
+### Slots
+By default, when in "mini" mode, Quasar CSS hides a few DOM elements to provide a neat narrow drawer. But there may certainly be use-cases where you need a deep tweak. You can use the "mini" Vue slot of QLayoutDrawer just for that. The content of this slot will replace your drawer's default content when in "mini" mode.
+
+```html
+<template>
+  ...
+  <q-layout-drawer
+    :mini="miniState"
+  >
+    <!-- drawer content when not "mini" -->
+
+    <div slot="mini">
+      <!-- drawer content when in "mini" mode -->
+    </div>
+  </q-layout-drawer>
+  ...
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      miniState: false
+    }
+  }
+}
+</script>
+```
+
+### Example with mouseover/mouseout trigger
+```html
+<template>
+  ...
+  <q-layout-drawer
+    :mini="miniState"
+    @mouseover="miniState = false"
+    @mouseout="miniState = true"
+  >
+    <!-- drawer content -->
+  </q-layout-drawer>
+  ...
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      miniState: false
+    }
+  }
+}
+</script>
+```
+
+### Example with click trigger
+When in "mini" mode, if user clicks on Drawer then we switch to normal mode.
+
+```html
+<template>
+  ...
+  <q-layout-drawer
+    :mini="miniState"
+    @click.capture="drawerClick"
+  >
+    <!-- drawer content -->
+    <!--
+      we also need a way for user to be able to switch
+      back to "mini" mode, so here's an example with a button
+      which gets hidden when on "mini" mode:
+    -->
+    <q-btn
+      class="q-mini-drawer-hide"
+      label="Go to mini state"
+      @click="miniState = true"
+    />
+  </q-layout-drawer>
+  ...
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      miniState: false
+    }
+  },
+  methods: {
+    drawerClick (e) {
+      // if in "mini" state and user
+      // click on drawer, we switch it to "normal" mode
+      if (this.miniState) {
+        this.miniState = false
+
+        // notice we have registered an event with capture flag;
+        // we need to stop further propagation as this click is
+        // intended for switching drawer to "normal" mode only
+        e.stopPropagation()
+      }
+    }
+  }
+}
+</script>
+```
