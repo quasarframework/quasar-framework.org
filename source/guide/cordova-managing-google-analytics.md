@@ -8,7 +8,7 @@ Follow this guide to implement Google Analytics into your Cordova powered Quasar
 > You'll need to include a `<script>` tag provided by Google in `/src/index.template.html`, which will make your App depend on an Internet connection!
 
 ## Prerequisites
-* Make sure all your routes have a name and path parameter specified. Otherwise, they cannot be posted to the `ga.logPage` function. Please refer to [Routing](/guide/routing.html) for more info on routing.
+* Make sure all your routes have a name and path parameter specified. Otherwise, they cannot be posted to the `ga.logPage` function. Please refer to [Routing](/guide/app-routing.html) for more info on routing.
 * Have Basic knowledge of Google Analytics
 
 ## Preparation
