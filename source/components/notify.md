@@ -68,6 +68,7 @@ this.$q.notify({
     {
       label: 'Snooze',
       icon: 'timer', // optional
+      noDismiss: true, // optional, v0.15.11+
       handler: () => {
         console.log('acting')
       }
@@ -78,7 +79,11 @@ this.$q.notify({
         console.log('dismissed')
       }
     }
-  ]
+  ],
+
+  onDismiss () { // v0.15.11+
+    //...
+  }
 })
 ```
 

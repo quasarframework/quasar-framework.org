@@ -66,6 +66,7 @@ Modals are responsive to the width of the window (see demo on a desktop and resi
 | `transition` | String | Vue transition to use. Quasar comes with a `q-modal` transition out of the box. But you can write your own Vue transitions using CSS and use them. |
 | `enter-class` | String | enter transition class name |
 | `leave-class` | String | leave transition class name |
+| `no-refocus` | Boolean | (v0.15.11+) Do not refocus previously focused DOM element after closing the Modal. |
 
 ## Vue Methods
 | Method | Description |

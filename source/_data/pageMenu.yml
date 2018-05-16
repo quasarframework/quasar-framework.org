@@ -68,6 +68,7 @@ components:
     Vue Prototype Injections: $
     Internationalization (I18n): internationalization
     RTL Support: $
+    Screen Plugin: $
   Style & Identity:
     Color Palette: $
     Stylus Variables: $

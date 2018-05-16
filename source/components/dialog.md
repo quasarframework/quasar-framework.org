@@ -72,7 +72,9 @@ this.$q.dialog({
       {label: 'Option 2', value: 'opt2'},
       {label: 'Option 3', value: 'opt3'}
     ]
-  }
+  },
+
+  noRefocus: true // (v0.15.11+) Do not refocus previously focused DOM element after closing the Dialog |
 })
 ```
 
@@ -346,6 +348,7 @@ export default {
 | `no-backdrop-dismiss` | Boolean | Click/Tap on backdrop won't dismiss Dialog. Overriden to "true" if "prevent-close" is "true". |
 | `position` | String | Position of Dialog (top, bottom, left, right). |
 | `color` | String | A color from [Quasar Color Palette](/components/color-palette.html). |
+| `no-refocus` | Boolean | (v0.15.11+) Do not refocus previously focused DOM element after closing the Dialog. |
 
 Prompt Object:
 ```js
