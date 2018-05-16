@@ -51,6 +51,7 @@ Supports `v-model` which determines the slide number.
 | `easing` | Function | Easing function used when changing slide from autoplay or button press. |
 | `swipe-easing` | Function | Easing function used when changing slide with a swipe. |
 | `thumbnails` | Array | (v0.15.11+) Array of thumbnails pointing to "statics" folder. Check examples. |
+| `thumbnails-horizontal` | Boolean | (v0.15.11+) Thumbnails get displayed horizontally. |
 
 ### QCarousel Vue Methods
 | Vue Method | Description |
@@ -139,6 +140,12 @@ Supports `v-model` which determines the slide number.
   <q-carousel-slide img-src="statics/parallax2.jpg" />
 </q-carousel>
 ```
+
+Horizontal thumbnails:
+```html
+<q-carousel :thumbnails="...." thumbnails-horizontal>
+  ...
+</q-carousel>
 
 ### Infinite scroll, auto-play and custom Quick Navigation icon. Second slide has a Youtube video.
 Use `infinite` Vue prop.
