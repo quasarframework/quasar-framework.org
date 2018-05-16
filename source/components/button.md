@@ -158,7 +158,6 @@ Size property values:
 | `@click` | Triggered on button click/tap, if button is not disabled. |
 
 ## More examples
-
 When adding an icon to a regular button, there are two possibilities for its position. The default position is left. Use `icon-right` property instead to position the icon to the right:
 
 ``` html
@@ -173,7 +172,6 @@ When adding an icon to a regular button, there are two possibilities for its pos
 ```
 
 ## Button Sizes
-
 Use `size` attribute with one of the following values: `xs`, `sm`, `md`, `lg`, `xl`. You don't need to specify `md`, because that's the default size.
 ``` html
 <q-btn color="primary" size="xs" label="Extra Small Button" />
@@ -394,6 +392,20 @@ To disable the button, use the `disable` prop. Along with a small fade applied t
 ``` html
 <q-btn color="primary" disable label="Primary Button" />
 <q-btn color="amber" :disable="booleanVar" label="Amber Button" />
+```
+
+## Dealing with forms
+*Requires Quasar v0.15.11+*
+
+Should you wish to use QBtn inside of a `<form>` tag, you should know about the difference between (type="button", which is implicit, and type="submit"):
+
+```html
+<form>
+  ...
+  <q-btn label="I do not submit form" />
+  <q-btn type="submit" label="I do submit the form" />
+  ...
+</form>
 ```
 
 ## Using a Button with Vue Router
