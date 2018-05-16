@@ -5,7 +5,7 @@ rm -rf assets/quasar-play
 mkdir -p assets/quasar-play
 mkdir -p assets/quasar-play/android
 mkdir -p assets/quasar-play/apple
-cd /work/quasar-play; quasar clean; quasar build -t mat; cp -R dist/spa-mat/* /work/quasar-framework.org/assets/quasar-play/android/; quasar clean; quasar build -t ios; cp -R dist/spa-ios/* /work/quasar-framework.org/assets/quasar-play/apple/; cd /work/quasar-framework.org
+cd /work/quasar-play; quasar build -c -t mat; cp -R dist/spa-mat/* /work/quasar-framework.org/assets/quasar-play/android/; quasar build -c -t ios; cp -R dist/spa-ios/* /work/quasar-framework.org/assets/quasar-play/apple/; cd /work/quasar-framework.org
 node node_modules/gulp/bin/gulp.js variables
 hexo generate
 node node_modules/gulp/bin/gulp.js
