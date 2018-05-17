@@ -51,3 +51,5 @@ You can also trigger the animation when rendering the component for first time (
   ...
 </q-slide-transition>
 ```
+
+(v0.15.13+) You can also use `@show` and `@hide` Vue events if you want to trigger something after animation is over.
