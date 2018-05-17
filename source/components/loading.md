@@ -68,7 +68,7 @@ Checking whether the Loading is active is easy.
 
 Inside a Vue component:
 ```
-this.$q.loading.active
+this.$q.loading.isActive
 ```
 
 Outside of a Vue component:
