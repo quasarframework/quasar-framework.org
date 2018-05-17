@@ -24,6 +24,39 @@ Common choices for web servers are [nginx](https://www.nginx.com/), [Caddy](http
 
 The web server requires no special setup (unless you built with Vue Router in "history" mode). The main requirement is to be able to serve static files from a directory, so consult the documentation of your web server on how to set up static file serving.
 
+An example config for nginx may look like this:
+```
+server {
+    listen 80 http2;
+    server_name quasar.myapp.com;
+    
+    root /home/user/quasar.myapp.com/public;
+
+    add_header X-Frame-Options "SAMEORIGIN";
+    add_header X-XSS-Protection "1; mode=block";
+    add_header X-Content-Type-Options "nosniff";
+
+    index index.html;
+
+    charset utf-8;
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location = /robots.txt  { access_log off; log_not_found off; }
+
+    access_log off;
+    error_log  /var/log/nginx/quasar.myapp.com-error.log error;
+
+    location ~ /\.(?!well-known).* {
+        deny all;
+    }
+}
+```
+
+
 ## Deploying with Now
 Deploying your Quasar application with [now](https://zeit.co/now) is really easy. All you have to do is to download the [now-cli](https://zeit.co/download#now-cli) and log in by running:
 ```bash
