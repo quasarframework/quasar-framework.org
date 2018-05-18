@@ -56,7 +56,8 @@ loadMore: function(index, done) {
   // index - called for nth time
   // done - Function to call when you made all necessary updates.
   //        DO NOT forget to call it otherwise your loading message
-  //        will continue to be displayed
+  //        will continue to be displayed. Has optional boolean
+  //        parameter that invokes stop() when true
 
   // make some Ajax call then call done()
 }
