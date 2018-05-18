@@ -6,16 +6,22 @@
       <%- partial('partials/menu') %>
     </div>
 
-    <div class="q-version">
-      v<%- latest_quasar_version() %>
-    </div>
     <div class="support-link">
       <a href="<%- config.root %>support-quasar-framework.html">
         <i class="fa fa-ambulance"></i>
         Support Quasar
       </a>
     </div>
-    <br><br>
+    <h3 class="q-version-select">
+      <i class="fa fa-book"></i> Docs for
+      <select id="version-select">
+        <option value="">v<%- latest_quasar_version() %></option>
+        <option value="v0-15">v0.15</option>
+        <option value="v0-14">v0.14</option>
+        <option value="v0-13">v0.13</option>
+      </select>
+    </h3>
+
     <div style="margin-bottom: 7px">Proudly sponsored by:</div>
     <div style="margin-bottom: 7px">
       <a href="http://truelogic.com/" target="_blank">
@@ -25,23 +31,11 @@
         <img src="/images/logo_tayloredtechnology_small.jpeg" height="110px" width="110px" />
       </a>
     </div>
-    <div style="margin-bottom: 7px">
+    <div style="margin-bottom: 25px">
       <a href="http://campuscloudservices.com/" target="_blank">
         <img src="/images/logo_campuscloud.png" width="200px" />
       </a>
     </div>
-    <div class="q-older-version">
-      <a href="http://v0-14.quasar-framework.org">
-        <i class="fa fa-book"></i>
-        Go to docs for older v0.14
-      </a>
-      <br>
-      <a href="http://v0-13.quasar-framework.org">
-        <i class="fa fa-book"></i>
-        Go to docs for older v0.13
-      </a>
-    </div>
-    <br>
 
     <h2>
       <% var type = page_type(page); %>

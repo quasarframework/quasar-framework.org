@@ -120,6 +120,20 @@ export default {
 | `repeat-timeout` | Number/Function | Enables multiple `@click` events on click/tap and hold. Function gets a Number (timesTriggered) as parameter. |
 | `wait-for-ripple` | Boolean | Wait for ripple then before emitting `@click` event. Mat theme only. |
 
+#### Router syntax sugar
+| Vue Property | Type    | Description |
+| ---          | ---     | --- |
+| `to` | String/Object | Makes button go to the indicated route when clicked. |
+| `replace` | Boolean | Replaces current route instead of pushing to window history. |
+
+The properties above are just syntactic sugar and work similar to `<router-link>` Vue component.
+
+```html
+<q-btn label="Home" to="/" />
+<!-- equivalent to: -->
+<q-btn label="Home" @click="$router.push('/')" />
+```
+
 #### Appearance
 | Vue Property | Type    | Description |
 | ---          | ---     | --- |

@@ -10,8 +10,18 @@
     content = document.querySelector('.content'),
     scrollSpeed = 400,
     menuButton = header.querySelector('.menu-button'),
-    sidebarBackdrop = document.querySelector('.sidebar-backdrop')
+    sidebarBackdrop = document.querySelector('.sidebar-backdrop'),
+    versionSelect = document.getElementById('version-select')
     ;
+
+  versionSelect.addEventListener('change', function () {
+    var val = versionSelect.options[versionSelect.selectedIndex].value
+    if (val) {
+      versionSelect.selectedIndex = 0
+      var win = window.open('https://' + val + '.quasar-framework.org', '_blank')
+      win.focus()
+    }
+  });
 
   function toggleSidebar() {
     menu.classList.toggle('open');
