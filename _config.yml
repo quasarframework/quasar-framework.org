@@ -88,7 +88,7 @@ google_analytics: UA-6317975-4
 # Deployment
 deploy:
   type: git
-  repo: git@github.com:quasarframework/dist-v0-15-quasar-framework.org.git
+  repo: git@github.com:quasarframework/dist-v0-15.quasar-framework.org.git
   branch: master
 
 sitemap:
