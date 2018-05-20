@@ -1,6 +1,6 @@
 title: Upgrade Guide
 ---
-We'll cover how to upgrade to a new Quasar version in your project, both for [UMD](/guide/embedding-quasar.html) and using the [Starter Kit](/guide/app-installation.html). Then we'll go on to discuss how you can migrate your pre v0.15 project.
+We'll cover how to upgrade to a new Quasar version in your project, both for [UMD](/guide/embedding-quasar.html) and using the [Starter Kit](/guide/app-installation.html). Then we'll go on to discuss how you can migrate v0.15 to v0.16 and your pre v0.15 project to v0.15+.
 
 ## Upgrading to a newer Quasar version
 This applies when upgrading from v0.15+ to a newer Quasar version, including v0.16.
@@ -27,6 +27,16 @@ Watch for Quasar CLI version. It's not the same thing as Quasar version. Type `$
 > **Caveat**
 > Sometimes after you npm install a package, or even update current packages, might screw things up. You'll get errors that some packages are missing and you need to install them. In such cases, delete node_modules and package-lock.json and npm install again.
 > Same goes for Yarn. In case you get errors, delete node_modules and yarn.lock then install again.
+
+## Upgrading v0.15 to v0.16
+The difference between Quasar v0.15.x and v0.16 is minimal. No big breaking changes as you can see below. The only reason for bumping Quasar's version is to maintain consistency (same major + minor version) with Quasar CLI (which got an important update: webpack 4, babel 7, Workbox, electron-builder support, ionicons v4 and many more).
+
+Upgrading from v0.15.x should be seamless if you are using Quasar CLI -- which will guide you to do some minor changes to your project folder. Note that Ionicons v4 has breaking changes, so if you are using it in your project, then you need to update each such icon to its new name.
+
+### Breaking Changes:
+* QIcon: removed "mat" & "ios" props for performance reasons (use `:name="$q.theme === 'mat' ? val : otherVal"` instead)
+* Removed utils > dom > viewport() method (use window.innerHeight/innerWidth instead)
+* Updated Quasar ionicons set to Ionicons v4 -- compatible with quasar-extras@2.0
 
 ## Upgrading pre v0.15 to Quasar v0.15+
 There's been A LOT of work done for v0.15. The Quasar CLI has been rewritten from scratch to allow for a stellar development experience (Mobile App developers and Electron will fall in love with it!). Only one starter kit is required in order to handle websites, PWAs, Mobile Apps and Electron Apps. Building any of those is a matter of just adding a parameter to the dev/build command.

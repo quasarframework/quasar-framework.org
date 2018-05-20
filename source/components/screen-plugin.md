@@ -4,7 +4,8 @@ The Quasar Screen plugin allows you to have a dynamic and responsive UI when dea
 
 ## Installation
 ```js
-// file: /quasar.conf.js
+// quasar.conf.js
+
 framework: {
   plugins: ['Screen']
 }
