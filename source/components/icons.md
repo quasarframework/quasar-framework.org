@@ -170,11 +170,6 @@ Let's take a look at how we can use QIcon component. Do not forget to check abov
 </q-icon>
 ```
 
-There are cases where you want to differentiate icons displayed based on the Quasar theme you are using, so you can use `mat` and `ios` props. This is practical for cross-platform application development where you use different themes for each platform.
-```html
-<q-icon mat="settings" ios="ion-ios-gear-outline" />
-```
-
 For "icon" properties on different Quasar components you won't have the means to specify an icon for each platform, but you can achieve the same effect with:
 
 ```html
@@ -187,13 +182,9 @@ For "icon" properties on different Quasar components you won't have the means to
 | Vue Property | Type | Description |
 | --- | --- | --- |
 | `name` | String | The name of the icon to be used (for both Quasar themes). |
-| `ios` | String | The name of the icon to be used for Quasar iOS theme only. |
-| `mat` | String | The name of the icon to be used for Quasar Material theme only. |
 | `color` | String | One color from the Quasar Color Palette. |
 | `size` | String | Example: '12px', '3.2rem', '14pt'. |
 
-> **Note**
-> If you add the `name` prop, it overrides the `ios` and `mat` props.
 
 ### Size & Colors
 All icons are **font icons**. This means that you can change size by manipulating `font-size` CSS property. And also, they inherit the current CSS `color` used.
