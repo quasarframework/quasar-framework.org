@@ -6,6 +6,8 @@ The Quasar CLI allows you to create new projects in no time, by generating a bas
 
 ``` bash
 # Node.js >= 8.9.0 is required.
+$ yarn global add quasar-cli
+# or:
 $ npm install -g quasar-cli
 ```
 
@@ -242,7 +244,7 @@ $ quasar serve -h
     This command has been deprecated in favor of using the
     "http-server" NPM package: https://www.npmjs.com/package/http-server
 
-    Install it by typing: "npm install -g http-server"
+    Install it by typing: "yarn global add http-server" or "npm install -g http-server"
     Check its usage by visiting the link above.
 
     Basic usage is:

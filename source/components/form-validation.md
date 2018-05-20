@@ -5,7 +5,10 @@ Get started with the [documentation](https://monterail.github.io/vuelidate/).
 
 ## Installation of Vuelidate
 ```bash
+$ yarn add vuelidate
+# or:
 $ npm install --save vuelidate
+
 $ quasar new plugin vuelidate
 ```
 An app plugin file got created: `/src/plugins/vuelidate.js`. We edit it:

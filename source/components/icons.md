@@ -106,8 +106,9 @@ If you have a Fontawesome 5 Pro license and want to use it instead Fontawesome F
   ```
 3. Install Fontawesome webfonts:
   ```bash
-  # npm install --save or yarn add
-  $ npm install --save @fortawesome/fontawesome-pro-webfonts
+  $ yarn add @fortawesome/fontawesome-pro-webfonts
+  # or:
+  $ npm install @fortawesome/fontawesome-pro-webfonts
   ```
 4. Create new App plugin:
   ```bash

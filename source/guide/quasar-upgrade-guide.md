@@ -3,7 +3,7 @@ title: Upgrade Guide
 We'll cover how to upgrade to a new Quasar version in your project, both for [UMD](/guide/embedding-quasar.html) and using the [Starter Kit](/guide/app-installation.html). Then we'll go on to discuss how you can migrate your pre v0.15 project.
 
 ## Upgrading to a newer Quasar version
-This applies when upgrading from v0.15 to a newer v0.15 or a next major Quasar version.
+This applies when upgrading from v0.15+ to a newer Quasar version, including v0.16.
 
 > **IMPORTANT**
 > **Quasar v0.15+ requires Node.js version 8.9.0 or greater**
@@ -15,6 +15,8 @@ Simply replace the version string in all the CSS and JS tags that refer to Quasa
 As you may have noticed, the only dependency in your project (unless you've also installed a linter or your own deps) is `quasar-cli`. All you need is to update this dependency.
 
 ```bash
+$ yarn add --dev quasar-cli@latest
+# or:
 $ npm install quasar-cli@latest
 ```
 
@@ -23,22 +25,25 @@ Quasar CLI is installed both globally and locally. When you issue a Quasar comma
 Watch for Quasar CLI version. It's not the same thing as Quasar version. Type `$ quasar info`. All you need to know is that the major and minor part of Quasar CLI version matches Quasar version. So for example installing latest Quasar CLI v0.15.x will ensure you are using latest Quasar v0.15.x. While working on v0.15.x, no breaking changes will occur, so you are safe (& recommended) to upgrade to latest Quasar CLI as it's released.
 
 > **Caveat**
-> Sometimes after you npm install a package, or even update current packages, NPM might screw things up. You'll get errors that some packages are missing and you need to install them. In such cases, delete node_modules and package-lock.json and npm install again.
+> Sometimes after you npm install a package, or even update current packages, might screw things up. You'll get errors that some packages are missing and you need to install them. In such cases, delete node_modules and package-lock.json and npm install again.
+> Same goes for Yarn. In case you get errors, delete node_modules and yarn.lock then install again.
 
-## Upgrading to Quasar v0.15
+## Upgrading pre v0.15 to Quasar v0.15+
 There's been A LOT of work done for v0.15. The Quasar CLI has been rewritten from scratch to allow for a stellar development experience (Mobile App developers and Electron will fall in love with it!). Only one starter kit is required in order to handle websites, PWAs, Mobile Apps and Electron Apps. Building any of those is a matter of just adding a parameter to the dev/build command.
 
 **Furthermore, you can now use an UMD/standalone version of Quasar to embed in an existing project. No build step is required.**
 
-Take some time to read all "Guide" pages once again. It will help you understand the true power of Quasar v0.15 and what you can do with it.
+Take some time to read all "Guide" pages once again. It will help you understand the true power of Quasar v0.15+ and what you can do with it.
 
 So, what is new and what has changed? Everything has been polished. The full list of enhancements and new features is exhausting. We'll try to cover the major parts only. This is just a guide to get you started so that you know where to look in docs for things that have changed.
 
 ### First step - when using starter kit
-Ok, so you've globally installed/updated "quasar-cli" to latest v0.15.x. Now it's time for you to create a new project folder:
+First we make sure we update the globally installed Quasar version (needs to be at least v0.15). Then we create a new project folder:
 ```bash
 # Node.js >= 8.9.0 is required.
-$ npm install -g quasar-cli
+$ yarn global add quasar-cli@latest
+# or:
+$ npm install -g quasar-cli@latest
 
 # Then we create a project folder with Quasar CLI:
 $ quasar init <folder_name>
@@ -179,7 +184,7 @@ The following upgrade guide for [QLayout](/components/layout.html) barely scratc
 </q-layout>
 ```
 
-We upgrade it to v0.15. Notice that in order for us to place navigation tabs on header (for Material) and on Footer (for iOS), we also write a NavTabs component. Notice no slots, no QSideLink, "flat round dense" buttons, v-model on left/right drawers, QLayout* components:
+We upgrade it to v0.15+. Notice that in order for us to place navigation tabs on header (for Material) and on Footer (for iOS), we also write a NavTabs component. Notice no slots, no QSideLink, "flat round dense" buttons, v-model on left/right drawers, QLayout* components:
 ```html
 <!-- layout component -->
 
@@ -283,7 +288,7 @@ Some components, like QItem or QCard & co now need the `.native` modifier for bi
 <!-- prior to v0.15 -->
 <q-item @click="...">....</q-item>
 
-<!-- v0.15 way: -->
+<!-- v0.15+ way: -->
 <q-item @click.native="...">...</q-item>
 ```
 
@@ -333,6 +338,8 @@ Be sure to check out the new button types and props too.
 The Quasar CLI v0.15+ is not compatible with pre-0.15 apps. You can install the latest CLI globally while still supporting `quasar` commands in legacy apps by adding `quasar-cli` as a development dependency. To support 0.14 and earlier you need quasar-cli v0.6.5.
 
 ```bash
+$ yarn add --dev quasar-cli@0.6.5
+# or:
 $ npm install --save-dev quasar-cli@0.6.5
 ```
 

@@ -15,11 +15,20 @@ electron: {
     // no need to return anything
   },
 
+  bundler: 'packager', // or 'builder'
+
   // electron-packager options
   packager: {
+    //...
+  },
+
+  // electron-builder options
+  builder: {
     //...
   }
 }
 ```
 
 The "packager" prop refers to [electron-packager options](https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#options). The `dir` and `out` properties are overwritten by Quasar CLI to ensure the best results.
+
+The "builder" prop refers to [electron-builder options](https://www.electron.build/configuration/configuration).

@@ -11,6 +11,8 @@ First, we install Quasar CLI. Make sure you have Node >=8 and NPM >=5 installed 
 
 ```bash
 # Node.js >= 8.9.0 is required.
+$ yarn global add quasar-cli
+# or:
 $ npm install -g quasar-cli
 ```
 

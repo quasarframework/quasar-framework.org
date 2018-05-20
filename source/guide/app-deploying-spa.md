@@ -29,7 +29,7 @@ An example config for nginx may look like this:
 server {
     listen 80 http2;
     server_name quasar.myapp.com;
-    
+
     root /home/user/quasar.myapp.com/public;
 
     add_header X-Frame-Options "SAMEORIGIN";

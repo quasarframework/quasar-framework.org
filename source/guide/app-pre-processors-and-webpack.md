@@ -44,9 +44,11 @@ The build system uses Webpack, so it relies on using webpack loaders to handle d
 ### Installing loaders:
 Let's take an example. You want to be able to import `.json` files. **Out of the box, Quasar supplies json support so you don't actually need to follow these steps, but for the sake of demonstrating how to add a loader, we'll pretend Quasar doesn't offer it.**
 
-So, you need a loader for it. You search Google to see what webpack loader you need. In this case, it's "json-loader". We first npm install it:
+So, you need a loader for it. You search Google to see what webpack loader you need. In this case, it's "json-loader". We first install it:
 ``` bash
-$ npm install json-loader --save-dev
+$ yarn add --dev json-loader
+# or:
+$ npm install --save-dev json-loader
 ```
 
 After installing your new loader, we want to tell Webpack to use it. So we edit `/quasar.conf.js` and change `build.extendWebpack()` to add entries to `module/rules` for this new loader:
@@ -65,10 +67,12 @@ build: {
 And you're done.
 
 ## SASS/SCSS support
-So you want to be able to write SASS/SCSS CSS code. You need a loader for it. We first npm install it. Note that for this particular case you also need to install node-sass because sass-loader depends on it as a peer dependency.
+So you want to be able to write SASS/SCSS CSS code. You need a loader for it. We first install it. Note that for this particular case you also need to install node-sass because sass-loader depends on it as a peer dependency.
 
 ``` bash
-$ npm install sass-loader node-sass --save-dev
+$ yarn add --dev sass-loader node-sass
+# or:
+$ npm install --save-dev sass-loader node-sass
 ```
 
 And you're done. For SCSS/SASS it's all it takes. You don't need to further configure `/quasar.conf.js`.
