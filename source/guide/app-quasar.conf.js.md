@@ -225,3 +225,15 @@ build: {
   }
 }
 ```
+#### Fixing Global Object availability for Web Workers
+
+```js
+// quasar.conf.js
+
+build: {
+  extendWebpack (cfg) {
+   cfg.output.globalObject = 'this'
+  }
+}
+```
+
