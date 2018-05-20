@@ -17,7 +17,7 @@ As you may have noticed, the only dependency in your project (unless you've also
 ```bash
 $ yarn add --dev quasar-cli@latest
 # or:
-$ npm install quasar-cli@latest
+$ npm install --save-dev quasar-cli@latest
 ```
 
 Quasar CLI is installed both globally and locally. When you issue a Quasar command, the global installation defers to the project locally installed Quasar CLI. This allows you to skip writing npm scripts in your package.json (for Quasar commands), and also it allows you to run different Quasar versions in multiple projects.
@@ -32,6 +32,29 @@ Watch for Quasar CLI version. It's not the same thing as Quasar version. Type `$
 The difference between Quasar v0.15.x and v0.16 is minimal. No big breaking changes as you can see below. The only reason for bumping Quasar's version is to maintain consistency (same major + minor version) with Quasar CLI (which got an important update: webpack 4, babel 7, Workbox, electron-builder support, ionicons v4 and many more).
 
 Upgrading from v0.15.x should be seamless if you are using Quasar CLI -- which will guide you to do some minor changes to your project folder. Note that Ionicons v4 has breaking changes, so if you are using it in your project, then you need to update each such icon to its new name.
+
+If you face any problems, there is probably something conflicting in your npm modules. It is either babel, webpack or eslint. The console messages will tell you more about what is wrong.
+
+If you are seeing issues about eslint, that is the easiest to fix. Make sure you have these in your package.json:
+```json
+ "eslint-loader": "^2.0.0",
+ "eslint": "^4.19.1",
+```
+
+If you are seeing babel issues when you run `quasar dev`, then you have probably installed a package that is using babel-core instead of @babel/core - such as `cypress-vue-unit-test`. To find out which one it is, run:
+
+`npm ls babel-core`
+
+And then remove the offending source.
+
+Here are the commands that will help you to reset all of your modules (using npm).
+```bash
+rm package-lock.json 
+rm -rf node_modules/
+npm install --global quasar-cli@latest
+npm install --save-dev quasar-cli@latest
+npm install && npm update request --depth 2
+```
 
 ### Breaking Changes:
 * QIcon: removed "mat" & "ios" props for performance reasons (use `:name="$q.theme === 'mat' ? val : otherVal"` instead)
