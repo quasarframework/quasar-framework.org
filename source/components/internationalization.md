@@ -2,10 +2,13 @@ title: Internationalization (I18n)
 ---
 Internationalization is a design process that ensures a product (a website or application) can be adapted to various languages and regions without requiring engineering changes to the source code. Think of internationalization as readiness for localization.
 
-Recommended package for handling website/app is [vue-i18n](https://github.com/kazupon/vue-i18n). To use that package's [single file component](https://kazupon.github.io/vue-i18n/en/sfc.html) feature, add this line to `quasar.conf.js` under `extendWebpack`: 
+Recommended package for handling website/app is [vue-i18n](https://github.com/kazupon/vue-i18n). To use that package's [single file component](https://kazupon.github.io/vue-i18n/en/sfc.html) feature, add this to `quasar.conf.js` under `extendWebpack`: 
 ```
 extendWebpack (cfg) {
-    cfg.module.rules[0].options.loaders['i18n'] = '@kazupon/vue-i18n-loader'
+    cfg.module.rules.push({
+      resourceQuery: /blockType=i18n/,
+      loader: '@kazupon/vue-i18n-loader'
+    })
 }
 ```
 
