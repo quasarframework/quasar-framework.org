@@ -35,25 +35,23 @@ Upgrading from v0.15.x should be seamless if you are using Quasar CLI -- which w
 
 If you face any problems, there is probably something conflicting in your npm modules. It is either babel, webpack or eslint. The console messages will tell you more about what is wrong.
 
-If you are seeing issues about eslint, that is the easiest to fix. Make sure you have these in your package.json:
+> **Remember you'll be using Webpack 4, so all your webpack plugins must be compatible with it**. For example, you need to upgrade to a newer `eslint-loader` package if you already have it in your package.json as dev dependency.
+
+If you're using ESLint, make sure you have these in your package.json:
 ```json
  "eslint-loader": "^2.0.0",
  "eslint": "^4.19.1",
 ```
 
-If you are seeing babel issues when you run `quasar dev`, then you have probably installed a package that is using babel-core instead of @babel/core - such as `cypress-vue-unit-test`. To find out which one it is, run:
+If you are seeing babel issues when you run `quasar dev`, then you have probably installed a package that is using babel-core instead of @babel/core - such as `cypress-vue-unit-test`. To find out which one it is, run: `npm ls babel-core` and then remove the offending source.
 
-`npm ls babel-core`
-
-And then remove the offending source.
-
-Here are the commands that will help you to reset all of your modules (using npm).
 ```bash
-rm package-lock.json 
-rm -rf node_modules/
-npm install --global quasar-cli@latest
-npm install --save-dev quasar-cli@latest
-npm install && npm update request --depth 2
+# cd into project folder
+$ rm yarn.lock                       # or: package-lock.json (if installed through npm) 
+$ rm -rf node_modules/
+$ yarn global add quasar-cli@latest  # or: npm install --global quasar-cli@latest
+$ yarn add --dev quasar-cli@latest   # or: npm install --save-dev quasar-cli@latest
+$ yarn                               # or: npm install
 ```
 
 ### Breaking Changes:
