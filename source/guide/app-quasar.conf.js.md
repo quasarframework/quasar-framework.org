@@ -11,7 +11,7 @@ So what can you configure through `/quasar.conf.js`?
 * [CSS animations](/components/transition.html) that you wish to use
 * [App Plugins](/guide/app-plugins.html) list (that determines order of execution too) -- which are files in `/src/plugins` that tell how your app is initialized before mounting the root Vue component
 * Global CSS/Stylus/... files to be included in the bundle
-* PWA [manifest](/guide/pwa-configuring-pwa.html#Configuring-Manifest-File) and [Workbox options](http://localhost:4000/guide/pwa-configuring-pwa.html#Quasar-conf-js)
+* PWA [manifest](/guide/pwa-configuring-pwa.html#Configuring-Manifest-File) and [Workbox options](/guide/pwa-configuring-pwa.html#Quasar-conf-js)
 * [Electron Packager](/guide/electron-configuring-electron.html) and/or [Electron Builder](/electron-configuring-electron.html)
 * IE11+ support
 * Extend Webpack config Object
@@ -90,7 +90,7 @@ Let's take each option one by one:
 | extras | Array | What to import from [quasar-extras](https://github.com/quasarframework/quasar-extras) package. Example: _['material-icons', 'roboto-font', 'ionicons']_ |
 | supportIE | Boolean | Add support for IE11+. |
 | framework | Object/String | What Quasar components/directives/plugins to import, what Quasar I18n language pack to use, what icon set to use for Quasar components. Example: _{ components: ['QBtn', 'QIcon'], directives: ['TouchSwipe'], plugins: ['Notify'], iconSet: 'fontawesome', i18n: 'de' }_. Note that for iconSet to work, you also need to tell Quasar to embed that icon pack through `extras` prop. |
-| animations | Object/String | What [CSS animations](http://localhost:4000/components/transition.html) to import. Example: _['bounceInLeft', 'bounceOutRight']_ |
+| animations | Object/String | What [CSS animations](/components/transition.html) to import. Example: _['bounceInLeft', 'bounceOutRight']_ |
 | devServer | Object | Dev server [options](https://webpack.js.org/configuration/dev-server/). Some properties are overwritten based on the Quasar mode you're using in order to ensure a correct config. |
 | build | Object | Build configuration options. See [section](#build-Property) below. |
 | sourceFiles | Object | (v0.16+) Change the default name of parts of your app. [More info](#sourceFiles-Property) |
