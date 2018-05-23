@@ -96,6 +96,28 @@ Styles in `*.vue` files (and all other style files) are piped through PostCSS by
 
 By default, PostCSS is configured to use Autoprefixer. Take a look at `/.postcssrc.js where you can tweak it if you need to.
 
+## Pug
+First, you need to install some dependencies:
+
+```bash
+$ yarn add --dev pug pug-plain-loader
+# or:
+$ npm install --save-dev pug pug-plain-loader
+```
+
+Then you need to extend the webpack configuration through quasar.conf.js:
+```js
+// quasar.conf.js
+build: {
+  extendWebpack (cfg) {
+    cfg.module.rules.push({
+      test: /\.pug$/,
+      loader: 'pug-plain-loader'
+    })
+  }
+}
+```
+
 ## Coffeescript
 If you are using Coffeescript then you need to EITHER disable ESLint OR tell ESLint which Vue components are using Coffeescript.
 
