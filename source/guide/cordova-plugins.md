@@ -19,7 +19,7 @@ A few examples of such plugins:
 * Statusbar
 
 ## Deviceready Event
-You'll notice that some Cordova plugins are usable only after the `deviceready` event has been triggered. We don't need to worry about it too much. Quasar listens to this event and takes care of our root Vue component to be mounted **after** this event has been triggered.
+You'll notice that some Cordova plugins are usable only after the `deviceready` event has been triggered. We don't need to worry about it too much. Quasar listens to this event and takes care of our root Vue component to be mounted **after** this event has been triggered. But if you need some plugin's own variable and that is initialized after `deviceready` you can follow the example of using the plugin device below
 
 ### Caveat
 Let's take a vue file for example:
@@ -142,6 +142,47 @@ export default {
           // camera options
         }
       )
+    }
+  }
+}
+</script>
+```
+
+### Example: Device
+First step is to read the documentation of the Cordova plugin that we want to use. Look at the [Cordova Plugins list](https://cordova.apache.org/docs/en/latest/#plugin-apis) and click on [Device doc page](https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-device/index.html).
+
+This plugin initializes a global variable called `device` which describes the device's hardware and software. So it can be accessed with `window.device`.
+
+Read the instructions on how to install this plugin on its cordova doc page. It's always a Cordova command. **So we "cd" into `/src-cordova`** (which is a Cordova generated folder) and **issue the install command from there**:
+```bash
+# from /src-cordova:
+$ cordova plugin add cordova-plugin-device
+```
+
+Now let's put this plugin to some good use. If you need the information of your device when starting the application, you will have to capture the created event. In one of your Quasar project's pages/layouts/components Vue file, we write:
+
+```html
+// some Vue file
+// remember this is simply an example;
+// only look at how we use the API described in the plugin's page;
+// the rest of things here are of no importance
+
+<template>
+  <div>
+    <q-page class="flex flex-center">
+      <div>IMEI {{IMEI}}</div>
+    </q-btn>
+  </q-page>
+  </div>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      IMEI: window.device === void 0
+        ? 'Run this on a mobile/tablet device'
+        : window.device
     }
   }
 }
