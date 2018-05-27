@@ -149,20 +149,11 @@ export default {
 ```
 
 ### Example: Device
-First step is to read the documentation of the Cordova plugin that we want to use. We look at [Cordova Plugins list](https://cordova.apache.org/docs/en/latest/#plugin-apis) and click on [Device doc page](https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-device/index.html).
+First step is to read the documentation of the Cordova plugin that we want to use. Look at the [Cordova Plugins list](https://cordova.apache.org/docs/en/latest/#plugin-apis) and click on [Device doc page](https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-device/index.html).
 
-This plugin initializes a global variable called `device` which describes the device's hardware and software. As Quasar is the one who captures this event, you need modify the .eslintrc.js file, leaving the property globals in this way:
+This plugin initializes a global variable called `device` which describes the device's hardware and software. So it can be accessed with `window.device`.
 
-```
-globals: {
-    'ga': true, // Google Analytics
-    'cordova': true,
-    'device': true,
-    '__statics': true
-  }
-```
-
-We read the instructions on how to install this plugin. It's always a Cordova command. **So we "cd" into `/src-cordova`** (which is a Cordova generated folder) **and issue the install command form there**:
+Read the instructions on how to install this plugin on its cordova doc page. It's always a Cordova command. **So we "cd" into `/src-cordova`** (which is a Cordova generated folder) and **issue the install command from there**:
 ```bash
 # from /src-cordova:
 $ cordova plugin add cordova-plugin-device
@@ -189,18 +180,10 @@ Now let's put this plugin to some good use. If you need the information of your 
 export default {
   data () {
     return {
-      IMEI: ''
+      IMEI: window.device === void 0
+        ? 'Run this on a mobile/tablet device'
+        : window.device
     }
-  },
-  created () {
-    if (typeof device === 'undefined') {
-      this.IMEI = 'Run this on one mobile'
-    } else {
-      this.IMEI = device.uuid
-    }
-  },
-  methods: {
-    
   }
 }
 </script>
