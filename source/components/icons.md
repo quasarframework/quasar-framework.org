@@ -38,13 +38,13 @@ extras: [
 ```
 
 ### Quasar Using an Icon Set
-Unless configured otherwise, Quasar uses Material Icons as its icon set for its components. You can however tell Quasar to use some other icon set, but be sure to include that set in your website/app (see step above: [Adding an Icon Set](#Adding-an-icon-set)).
+Unless configured otherwise, Quasar uses Material Icons for material themes and Ionicons for iOS themes as its icon set. You can however tell Quasar to use some other icon set, but be sure to include that set in your website/app (see step above: [Adding an Icon Set](#Adding-an-icon-set)).
 
-So let's say we included Ionicons and we want Quasar to use it for its components. We edit `/quasar.conf.js` again:
+So let's say we included Font Awesome and we want Quasar to use it for its components. We edit `/quasar.conf.js` again:
 
 ```js
 framework: {
-  iconSet: 'ionicons'
+  iconSet: 'fontawesome'
 }
 ```
 
