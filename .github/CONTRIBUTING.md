@@ -12,9 +12,9 @@ Hi! I’m really excited that you are interested in contributing to Quasar. Befo
 
 - The issue list of this repo is **exclusively** for bug reports and feature requests. Non-conforming issues will be closed immediately.
 
-  - For simple beginner questions, you can get quick answers from the [Quasar Discord Community](https://discord.gg/5TDhbDg).
+  - For simple beginner questions, you can get quick answers from the [Quasar Discord Community](http://chat.quasar-framework.org).
 
-  - For more complicated questions, you can use [the official forum](http://forum.quasar-framework.org/). Make sure to provide enough information when asking your questions - this makes it easier for others to help you!
+  - For more complicated questions, you can use [the official forum](https://forum.quasar-framework.org/). Make sure to provide enough information when asking your questions - this makes it easier for others to help you!
 
 - Try to search for your issue, it may have already been answered or even fixed in the development branch (`dev`).
 
@@ -37,7 +37,7 @@ Hi! I’m really excited that you are interested in contributing to Quasar. Befo
 - It's OK to have multiple small commits as you work on the PR - we will let GitHub automatically squash it before merging.
 
 - If adding new feature:
-  - Provide convincing reason to add this feature. Ideally you should open a suggestion issue first and have it greenlighted before working on it.
+  - Provide convincing reason to add this feature. Ideally you should open a suggestion issue first and have it green-lighted before working on it.
 
 - If fixing a bug:
   - If you are resolving a special issue, add `(fix: #xxxx[,#xxx])` (#xxxx is the issue id) in your PR title for a better release log, e.g. `fix: update entities encoding/decoding (fix #3899)`.
@@ -45,15 +45,15 @@ Hi! I’m really excited that you are interested in contributing to Quasar. Befo
 
 ## Development Setup
 
-You will need [Node.js](http://nodejs.org) **version 4+** along [NPM](https://docs.npmjs.com/getting-started/installing-node). Read `package.json` and take notice of the scripts you can use.
+You will need [Node.js](http://nodejs.org) **version 8.9+** along [Yarn](https://yarnpkg.com/) or [NPM](https://docs.npmjs.com/getting-started/installing-node).
 
 After cloning the repo, run:
 
 ``` bash
-$ npm install
+$ yarn # or: npm install
 
 ## globally install Hexo CLI
-$ npm i -g hexo-cli
+$ yarn global add hexo-cli # or: npm i -g hexo-cli
 ```
 
 Then start development server with live-reload:

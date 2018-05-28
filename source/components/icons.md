@@ -82,16 +82,18 @@ The example link tag below would include Font Awesome v4.7.0 icons. Do a Google 
     href="https://fonts.googleapis.com/icon?family=Material+Icons"
   >
 
-  <!-- CDN example for Fontawesome -->
+  <!-- CDN example for Fontawesome 5.0.13 -->
   <link
     rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+    integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous"
   >
 
-  <!-- CDN example for Ioniocns -->
+  <!-- CDN example for Ionicons -->
   <link
     rel="stylesheet"
-    href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
+    href="https://unpkg.com/ionicons@4.1.1/dist/css/ionicons.min.css"
   >
 </head>
 ```
@@ -149,7 +151,7 @@ Let's take a look at how we can use QIcon component. Do not forget to check abov
 <!-- Material icons have no prefix -->
 <q-icon name="thumb_up" />
 
-<!-- Ionicons have "ion-" prefix -->
+<!-- Ionicons have "ion-", "ion-logo", "ion-md-" or "ion-ios-" as prefix -->
 <q-icon name="ion-heart" />
 
 <!-- Fontawesome icons have "fa[s|r|l|b] fa-" prefix -->
@@ -212,6 +214,15 @@ There's also a "size" property:
 <q-icon name="wifi" size="2rem" />
 <q-icon name="delete" size="24px" />
 ```
+
+### Cheatsheet
+
+| Name | Prefix | Examples | Notes |
+| --- | --- | --- | --- |
+| material-icons | *None* | thumb_up | Notice the underline character instead of dash or space |
+| ionicons | ion-, ion-md-, ion-ios-, ion-logo- | ion-heart, ion-logo-npm, ion-md-airplane | Use QIcon instead of `<ion-icon>` component; Logo icons require 'ion-logo-' prefix |
+| fontawesome | fa[s,r,l,b] fa- | "fas fa-ambulance" | QIcon "name" property is same as "class" attribute value in Fontawesome docs examples (where they show `<i>` tags) |
+| mdi | mdi- | mdi-alert-circle-outline | Notice the use of dash characters |
 
 ### More Examples
 
