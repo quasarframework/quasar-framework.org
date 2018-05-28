@@ -41,6 +41,8 @@ Initializes an App folder with a starter boilerplate.
 $ quasar init <folder-name>
 ```
 
+You'll need `@vue/cli` and `@vue/cli-init` globally installed, or just `vue-cli`.
+
 ## info (Package Versions)
 The Quasar CLI is equipped with a stable combination of multiple NPM build packages (Webpack, Vue, etc) which gets updated frequently after heavy testing.
 
@@ -145,15 +147,21 @@ $ quasar build -h
       --target, -T   App target
                        - Cordova (default: all installed)
                           [android|ios|blackberry10|browser|osx|ubuntu|webos|windows]
-                       - Electron (default: yours)
+                       - Electron with default "electron-packager" bundler (default: yours)
                           [darwin|win32|linux|mas|all]
+                       - Electron with "electron-builder" bundler (default: yours)
+                          [darwin|mac|win32|win|linux|all]
       --debug, -d    Build for debugging purposes
-      --clean, -c    Clean build artifact first
       --help, -h     Displays this message
 
       ONLY for Electron mode:
+      --bundler, -b  Bundler (electron-packager or electron-builder)
+                       [packager|builder]
       --arch, -A     App architecture (default: yours)
-                       [ia32|x64|armv7l|arm64|all]
+                       - with default "electron-packager" bundler:
+                           [ia32|x64|armv7l|arm64|mips64el|all]
+                       - with "electron-builder" bundler:
+                           [ia32|x64|armv7l|arm64|all]
 ```
 
 The Quasar CLI can pack everything together and optimize your App for production. It minifies source code, extracts vendor components, leverages browser cache and much more.
@@ -168,11 +176,9 @@ $ quasar build -t ios
 $ quasar build -m pwa -t mat
 ```
 
-You can also clean up the build assets. Best to do this for your final distributables, otherwise you'll get a big distributable folder including assets from previous builds:
+You can also clean up the build assets:
 ``` bash
 $ quasar clean
-# .. or clean then build
-$ quasar build --clean
 ```
 
 ## new (Generating Components, Pages, Layouts, Vuex Store)
@@ -229,7 +235,7 @@ These modes will add a "src-*" folder into your project with very specific code 
 | src-cordova | cordova | Is a Cordova project folder that will be using your 'src' as content. Tweak Cordova config, add/remove platforms, splash screens, Cordova plugins and so on from this folder. Do NOT touch "src-cordova/www" folder though as it will get overwritten at every build. |
 | src-electron | electron | Has code for the main Electron thread. The renderer thread will be your app in 'src'. |
 
-If for some reason you decide you don't need a mode, you can remove it. This will permanently delete the respective "src-*" folder.
+If for some reason you decide you don't need a mode, you can remove it. **This will permanently delete** the respective "src-*" folder.
 ```bash
 $ quasar mode --remove pwa
 ```
