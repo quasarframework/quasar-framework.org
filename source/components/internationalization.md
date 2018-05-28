@@ -7,15 +7,20 @@ The recommended package for handling website/app is [vue-i18n](https://github.co
 The following is an example recipe for using **vue-i18n** embedded `<i18n>` template components in your vue files with **vue-i18n-loader**, which you have to add in your `quasar.conf.js`. In this case the translations are stored in yaml format in the block.
 
 ```js
-extendWebpack (cfg) {
-  cfg.module.rules.push({
-    resourceQuery: /blockType=i18n/,
-    use: [
-      {loader: '@kazupon/vue-i18n-loader'},
-      {loader: 'yaml-loader'}
-    ]
-  })
-  ...
+// quasar.conf
+build: {
+  // OR use the equivalent chainWebpack()
+  // with its own chain statements (CLI v0.16.2+)
+  extendWebpack (cfg) {
+    cfg.module.rules.push({
+      resourceQuery: /blockType=i18n/,
+      use: [
+        {loader: '@kazupon/vue-i18n-loader'},
+        {loader: 'yaml-loader'}
+      ]
+    })
+    ...
+  }
 }
 ```
 
