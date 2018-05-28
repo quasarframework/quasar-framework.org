@@ -39,7 +39,7 @@ You can now verify if everything is in order. "cd" into `/src-cordova` and type:
 ```bash
 $ cordova requirements
 ```
-> On some newer Debian-based operating systems you might face a very persistent problem when running `cordova requirements`. Please see the ["Android SDK not found" after installation](/guide/cordova-troubleshoot-and-tips.html#Android-SDK-not-found-after-installation-of-the-SDK) section for assistance.
+> On some newer Debian-based operating systems you might face a very persistent problem when running `cordova requirements`. Please see the ["Android SDK not found" after installation](/guide/cordova-troubleshooting-and-tips.html#Android-SDK-not-found-after-installation-of-the-SDK) section for assistance.
 
 ## 3. Start Developing
 If you want to jump right in and start developing, you can skip the previous step with "quasar mode" command and issue:
