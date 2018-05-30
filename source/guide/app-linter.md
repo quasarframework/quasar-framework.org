@@ -94,3 +94,28 @@ build: {
   }
 }
 ```
+
+## Linting Errors
+There are several situations where you can face universe-bending errors. Here are a couple that we know about and suggestions for fixing the errors:
+
+#### Different development machines lint the same commit differently.
+> Solution: make sure that each developer is using the "local" not the "global" settings in their IDE.
+
+#### Plugin import errors
+You might hit this error depending on the way that the target file was built.
+```
+ ERROR  Failed to compile with 1 errors
+ error  in vue-form-generator/dist/vfg.js
+```
+
+> Solution 1: add the exact name of the offending js file in `.eslintignore`
+```
+vfg.js
+```
+
+> Solution 2: wrap the import in an `eslint-disable` block as follows:
+```js
+/* eslint-disable */
+import VueFormGenerator from 'vue-form-generator'
+/* eslint-enable */
+
