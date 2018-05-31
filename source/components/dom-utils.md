@@ -75,18 +75,6 @@ css(DomElement, {
 })
 ```
 
-## Get Viewport Dimensions
-```js
-import { dom } from 'quasar'
-const { viewport } = dom
-
-// Get Window height and width
-let {height, width} = viewport()
-console.log(height, width)
-// 800 600
-```
-If you want to retrieve the viewport dimensions reactively, even after/during you are resizing the browser window, take a look at the [window resize observable](http://quasar-framework.org/components/window-resize-observable.html).
-
 ## Execute when DOM is ready
 ```js
 import { dom } from 'quasar'
