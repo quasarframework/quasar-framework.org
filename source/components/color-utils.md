@@ -106,3 +106,31 @@ What this helper does is wrap the raw Javascript `getPropertyValue()` and it's a
 getComputedStyle(document.documentElement)
   .getPropertyValue('--q-color-primary') // #0273d4
 ```
+
+### Create Dynamic Custom Colors
+You can use `setBrand` and `getBrand` to define custom brand colors to use in your application.
+An example of such a new custom color usage:
+
+```styl
+$primary-darkened = darken($primary, 10%)
+
+:root
+  --q-color-primary-darkened $primary-darkened
+
+.text-primary-darkened
+  color $primary-darkened !important
+  color var(--q-color-primary-darkened) !important
+.bg-primary-darkened
+  background $primary-darkened !important
+  background var(--q-color-primary-darkened) !important
+```
+
+```js
+import { colors } from 'quasar'
+
+const { lighten, setBrand } = colors
+
+const newPrimaryColor = '#933'
+setBrand('primary', newPrimaryColor)
+setBrand('primary-darkened', lighten(newPrimaryColor, -10))
+```
