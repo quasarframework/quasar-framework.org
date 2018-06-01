@@ -32,6 +32,7 @@ Supports `v-model` which should be bound to a String or Number (depending on `ty
 | `clearable` | Boolean | If set to `true`, the component offers the user an actionable icon to remove the entered text. |
 | `no-pass-toggle` | Boolean | If type is 'password' and set to `true`, then password toggle is not shown. |
 | `upper-case` | Boolean | Transform input to upper case. |
+| `lower-case` | Boolean | Transform input to lower case. |
 
 When you set type to "number", there are some additional properties that you can use:
 
