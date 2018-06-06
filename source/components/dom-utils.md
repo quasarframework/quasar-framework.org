@@ -49,10 +49,10 @@ console.log(style(DomElement, 'height'))
 ```
 
 ## Get Height / Width
+> Deprecated since Quasar v0.16! Use `window.innerHeight/Width` instead.
 ``` js
 import { dom } from 'quasar'
 const { height, width } = dom
-
 
 // Some aliases of the previous method for "width" and "height" which
 // returns Numbers instead of Strings:
