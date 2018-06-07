@@ -44,7 +44,7 @@ handler (obj) {
 | --- | --- |
 | `horizontal` | Capture only horizontal swipe. |
 | `vertical` | Capture only vertical swipe. |
-| `up`, `right`, `bottom`, `left` | Capture swipe on the respective direction. |
+| `up`, `right`, `down`, `left` | Capture swipe on the respective direction. |
 | `noMouse` | Avoid capturing mouse events too. |
 
 Use `horizontal` or `vertical` when you only want to capture horizontal or vertical swipes, or specify which directions are of interest:
