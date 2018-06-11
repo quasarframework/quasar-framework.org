@@ -125,6 +125,12 @@ You can also control the current step by using `v-model` on QStep. More details 
 | `previous()` | Stepper goes to the previous step. |
 | `reset()` | Returns the stepper back to the first step. |
 
+Component events:
+
+| Vue Event | Description |
+| --- | --- |
+| `@step` | Emitted when navigating to another step. |
+
 ### Using `v-model`
 Each QStep has a `name` prop (which is optional). Use this prop along with `v-model` to control the current step.
 
