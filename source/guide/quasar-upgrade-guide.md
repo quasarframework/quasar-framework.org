@@ -39,16 +39,16 @@ If you face any problems, there is probably something conflicting in your npm mo
 
 If you're using ESLint, make sure you have these in your package.json (minimum version required):
 ```json
-"babel-eslint": "^8.2.2",
-"eslint": "^4.15.0",
+"babel-eslint": "^8.2.1",
+"eslint": "^4.18.2",
 "eslint-config-standard": "^11.0.0",
-"eslint-friendly-formatter": "^3.0.0",
+"eslint-friendly-formatter": "^4.0.1",
 "eslint-loader": "^2.0.0",
-"eslint-plugin-import": "^2.7.0",
+"eslint-plugin-import": "^2.9.0",
 "eslint-plugin-node": "^6.0.1",
 "eslint-plugin-promise": "^3.7.0",
 "eslint-plugin-standard": "^3.0.1",
-"eslint-plugin-vue": "^4.0.0",
+"eslint-plugin-vue": "^4.3.0",
 ```
 
 If you are seeing babel issues when you run `quasar dev`, then you have probably installed a package that is using babel-core instead of @babel/core - such as `cypress-vue-unit-test`. To find out which one it is, run: `npm ls babel-core` and then remove the offending source.
