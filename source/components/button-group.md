@@ -75,6 +75,8 @@ Simple group of three flat buttons
 ```
 
 Simple group of two rounded buttons and one rounded dropdown button:
+> Note the use of the `v-close-overlay` directive to close the dropdown on click. Don't forget to register it in `quasar.conf.js`:<br>
+> `directives: ['CloseOverlay'],`
 ```html
 <q-btn-group rounded>
   <q-btn rounded color="primary" label="One" />
