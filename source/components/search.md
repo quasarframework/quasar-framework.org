@@ -25,6 +25,7 @@ Supports `v-model` which should be binded to a String or Number (depending on `t
 | Vue Property | Type | Description |
 | --- | --- | --- |
 | `icon` | String | Icon to use. |
+| `no-icon` | Boolean | Hide the icon |
 | `type` | String |  Must be one of the following: `text` (default), `email`, `tel`, `number` and `url`. This is important as it determines the keyboard type popping up on mobile devices. |
 | `debounce` | Number | Number of ms to debounce input. Default is 300. |
 | `readonly` | Boolean | If set to `true`, textfield is readonly and the user cannot change value. |
