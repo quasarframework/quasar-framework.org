@@ -132,15 +132,42 @@ If you have a Fontawesome 5 Pro license and want to use it instead Fontawesome F
   ```
 6. Edit `/src/plugins/fontawesome-pro.js`:
 ```js
+// required
 import '@fortawesome/fontawesome-pro-webfonts/css/fontawesome.css'
-import '@fortawesome/fontawesome-pro-webfonts/css/fa-solid.css'
-import '@fortawesome/fontawesome-pro-webfonts/css/fa-regular.css'
 import '@fortawesome/fontawesome-pro-webfonts/css/fa-light.css'
 // do you want these too?
 // import '@fortawesome/fontawesome-pro-webfonts/css/fa-brands.css'
+// import '@fortawesome/fontawesome-pro-webfonts/css/fa-solid.css'
+// import '@fortawesome/fontawesome-pro-webfonts/css/fa-regular.css'
 
 export default () => {
   // Leave blank or make something cool.
+}
+```
+7. (Optional) Override default icons:
+
+Since the default `font-weight` for fontawesome-pro is `light` or `fal`, some icons used by the framework components may not be desirable. The best way to handle this is to override it in the plugin you created.
+
+For instance, to override the `fal` version of the close icon for chips, do this:
+
+_First_, find the icon used for chip close in Quasar's `quasar/icons/fontawesome-pro.js`
+
+(Alternatively, you can check inside the render function of the component you are overriding.)
+
+```js
+chip: {
+  close: 'fal fa-times-circle'
+},
+```
+
+_Then_, override it in your `/src/plugins/fontawesome-pro.js`
+```js
+import '@fortawesome/fontawesome-pro-webfonts/css/fontawesome.css'
+import '@fortawesome/fontawesome-pro-webfonts/css/fa-solid.css'
+import '@fortawesome/fontawesome-pro-webfonts/css/fa-light.css'
+
+export default ({ Vue }) => {
+  Vue.prototype.$q.icon.chip.close = 'fas fa-times-circle'
 }
 ```
 
