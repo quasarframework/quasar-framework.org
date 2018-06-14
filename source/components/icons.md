@@ -135,8 +135,8 @@ If you have a Fontawesome 5 Pro license and want to use it instead Fontawesome F
 import '@fortawesome/fontawesome-pro-webfonts/css/fontawesome.css'
 import '@fortawesome/fontawesome-pro-webfonts/css/fa-solid.css'
 import '@fortawesome/fontawesome-pro-webfonts/css/fa-regular.css'
+import '@fortawesome/fontawesome-pro-webfonts/css/fa-light.css'
 // do you want these too?
-// import '@fortawesome/fontawesome-pro-webfonts/css/fa-light.css'
 // import '@fortawesome/fontawesome-pro-webfonts/css/fa-brands.css'
 
 export default () => {
