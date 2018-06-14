@@ -220,7 +220,7 @@ If, for some reason, the input requires some longer term background action or pr
 | Vue Event | Description |
 | --- | --- |
 | `@input(newVal)` | Triggered on immediate model value change. |
-| `@change(newVal)` | Triggered on lazy model value change. |
+| `@change(newVal)` | Triggered on lazy model value change. This will not trigger when using `v-model`. See [.lazy](#lazy) below for more info. |
 | `@clear(clearVal)` | Triggered when the model is cleared. |
 | `@focus` | Triggered on focus. |
 | `@blur` | Triggered a blur. |
@@ -334,6 +334,8 @@ Vue will soon supply the `.lazy` modifier for v-model on components too, but unt
   @change="val => { model = val }"
 />
 ```
+The lazy modifier (or the method above) makes it so a `@change` event is emitted only when the changes are considered done (eg. when the user blurs the input field).
+If you use `v-model` without lazy modifier your internal and external models are always in sync, so no `@change` events will be emitted.
 
 ### `.trim`
 
