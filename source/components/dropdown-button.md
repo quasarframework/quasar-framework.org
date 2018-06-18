@@ -88,7 +88,8 @@ All props except `split` are shared with [QBtn](/components/button.html).
 ## More examples
 Complete example with [QList](/components/lists-and-list-items.html):
 
-> Note the use of the `v-close-overlay` directive to close the dropdown on click. Don't forget to register it in `quasar.conf.js`
+> Note the use of the `v-close-overlay` directive to close the dropdown on click. Don't forget to register it in `quasar.conf.js`:<br>
+> `directives: ['CloseOverlay'],`
 
 ```html
 <q-btn-dropdown
