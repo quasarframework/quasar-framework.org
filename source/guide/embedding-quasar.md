@@ -87,7 +87,7 @@ Quasar.plugins.actionSheet.create({...})
 An example.
 
 ```js
-Quasar.util.event.getEventKey(evt)
+Quasar.utils.event.getEventKey(evt)
 ```
 
 ### Changing Quasar Icon Set
