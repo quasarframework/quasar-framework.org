@@ -170,7 +170,6 @@ For more information about Tooltips, please refer to the [Tooltip documentation]
 | --- | --- |
 | `@show` | Triggered when clicking/tapping on main FAB to open it. |
 | `@hide` | Triggered when clicking/tapping on main FAB to close it. |
-| `@click` | Triggered when clicking/tapping on main FAB after it was already opened. |
 
 ## QFabAction (Child)
 The cool bit about FABs is, they give the user the ability to select from a number of actions. These actions can be offered through a list of QFabAction components witin the QFab.
