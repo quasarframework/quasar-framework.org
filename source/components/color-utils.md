@@ -82,7 +82,7 @@ colors.setBrand('primary', '#F33', document.getElementById('rebranded-section-id
 > The helper function will also take care of setting dependent custom properties for some colors (`positive`, `negative`, `light`), so this is the recommended way of usage instead of the raw Javascript `setProperty()`.
 
 ### Helper - getBrand
-Quasar offers a helper function for setting custom colors in the `colors` utils: `getBrand(colorName[, element])`
+Quasar offers a helper function for getting custom colors in the `colors` utils: `getBrand(colorName[, element])`
 
 | Parameter | Type | Required | Description |
 | --- | --- | --- | --- |
