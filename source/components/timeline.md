@@ -38,7 +38,7 @@ framework: {
 ## QTimeline (Parent) Vue Properties
 | Vue Property | Type    | Description                            |
 | ---          | ---     | ---                                    |
-| `color` | String  | Color of the text |
+| `color` | String  | Color of the timeline element |
 | `dark` | Boolean | When rendering on a dark background. |
 
 ## QTimelineEntry (Child) Vue Properties
