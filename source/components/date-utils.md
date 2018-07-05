@@ -72,7 +72,7 @@ The following method is just a wrapper to help you in cases where you just need 
 ``` js
 import { date } from 'quasar'
 
-let newDate = date.buildDate({ year:2010, date:5, hours:15, milliseconds:123})
+let newDate = date.buildDate({ year:2010, day:5, hours:15, milliseconds:123})
 ```
 You can pass a third argument (a boolean) for setting UTC time (true) instead of local time.
 
@@ -84,7 +84,7 @@ The object literal provided can contain the following keys (all are optional):
 | `seconds` | for the seconds component of the date/time |
 | `minutes` | for the minutes component of the date/time |
 | `hours` | for the hours component of the date/time |
-| `date` | for the day component of the date/time |
+| `day` | for the day component of the date/time |
 | `month` | for the month component of the date/time |
 | `year` | for the year component of the date/time |
 
@@ -143,7 +143,7 @@ The object literal provided can contain the following keys (all are optional):
 | `seconds` | for the seconds component of the date/time |
 | `minutes` | for the minutes component of the date/time |
 | `hours` | for the hours component of the date/time |
-| `date` | for the day component of the date/time |
+| `day` | for the day component of the date/time |
 | `month` | for the month component of the date/time |
 | `year` | for the year component of the date/time |
 
