@@ -25,7 +25,7 @@ Use QPullToRefresh component as direct child of your page component, to encapsul
 ```
 
 > **IMPORTANT**
-> Do not wrap `<q-pull-to-refresh>` by a `<div class="layout-padding>"`. If you must, place that `<div>` as direct child of `<q-pull-to-refresh>`.
+> Do not wrap `<q-pull-to-refresh>` by a `<div class="layout-padding">`. If you must, place that `<div>` as direct child of `<q-pull-to-refresh>`.
 
 ## Vue Properties
 | Vue Property | Type | Default Value | Description |

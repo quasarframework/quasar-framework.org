@@ -5,6 +5,13 @@ Quasar's Input component is the basis for text (we'll call it "Singe Line Input"
 
 Works well with [QField](/components/field.html) for additional functionality such as a helper, error message placeholder and many others.
 
+## Installation
+Edit `/quasar.conf.js`:
+```js
+framework: {
+  components: ['QInput']
+}
+```
 ## Basic Usage
 ``` html
 <!-- Single Line Input -->

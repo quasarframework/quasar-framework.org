@@ -224,12 +224,12 @@ selectListOptions: [
   {
     label: 'Facebook',
     inset: true,
-    description: 'Enables communication',
+    sublabel: 'Enables communication',
     value: 'fb'
   },
   {
     label: 'Oracle',
-    description: 'Some Java for today?',
+    sublabel: 'Some Java for today?',
 
     icon: 'mail',
     leftColor: 'secondary', // color for left side, whatever it is (icon, letter, ...)
