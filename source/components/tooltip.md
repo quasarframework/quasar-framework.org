@@ -34,8 +34,36 @@ You can replace QBtn and the QPopover content with any DOM elements or component
 
 The idea is to place QTooltip inside your DOM element / component (as **direct child in DOM hierarchy**), when you want it to be the trigger for the QTooltip. Don't worry about QTooltip content inheriting CSS from the container. This won't occur, since QTooltip will be injected as a direct child of `<body>`.
 
+With that in mind, if you want to have a tooltip for say, a rating component, it is best to wrap the component in a ´div´ and add the tool tip as a child of the ´div . Note: this isn't necessary for buttons, as ´QBtn´ is built to support Tooltips. 
+
+``` html 
+<template>
+  <div class="q-ma-xl">
+     <div class="inline-block">
+        <q-tooltip class="tooltip-style" anchor="top middle" self="bottom middle" :offset="[15,15]">Rate to the best of your ability!</q-tooltip> 
+        <q-rating
+          v-model="ratingModel"
+          :max="5"
+          >     
+          </q-rating>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      ratingModel: 4
+    }
+  }
+}
+</script>
+```
+You can also use `v-model`and Vue's event system to toggle, show or hide the Tooltip on certain events.
+
 ## Toggle through v-model
-``` html
+``` html 
 <template>
   <div>
     <q-btn color="primary" @click="showing = true" label="Show" />
