@@ -110,7 +110,8 @@ Common input frame properties:
 | `warning` | Boolean | If set to true, the component colors are changed to show there is a warning. |
 | `error` | Boolean | If set to `true`, the input field's colors are changed to show there is an error. |
 | `before` | Array of Objects | Icon buttons positioned on the left side of field. |
-| `after` | Array of Objects | Icon buttons on the right side of the field.
+| `after` | Array of Objects | Icon buttons on the right side of the field. |
+| `no-parent-field` | Boolean | Avoid trying to connect to a parent QField. |
 
 ### Icon buttons
 This section refers to `before` and `after` properties which can add additional buttons as icons to the textfield. Here is the structure of the two properties:

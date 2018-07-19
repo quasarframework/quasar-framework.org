@@ -46,12 +46,16 @@ Supports `v-model` which determines the slide number.
 | `autoplay` | Boolean/Number | Auto scrolls between slides. Works great along `infinite` prop (but `infinite` is not required). If used as a number, it represents the number of milliseconds between scrolls. |
 | `quick-nav` | Boolean | Shows navigational dots at bottom. |
 | `quick-nav-icon` | String | Icon to use instead of the navigational dots at bottom. |
+| `quick-nav-position` | String | (v0.17+) One of "top" or "bottom" for the quick navigation toolbar position. |
 | `no-swipe` | Boolean | Disable navigation by touch/mouse actions. |
 | `handle-arrow-keys` | Boolean | Allow navigation with left and right arrow key. In this case, it's best to render only one such Carousel at a time. |
 | `easing` | Function | Easing function used when changing slide from autoplay or button press. |
 | `swipe-easing` | Function | Easing function used when changing slide with a swipe. |
 | `thumbnails` | Array | (v0.15.11+) Array of thumbnails pointing to "statics" folder. Check examples. |
 | `thumbnails-horizontal` | Boolean | (v0.15.11+) Thumbnails get displayed horizontally. |
+| `thumbnails-icon` | String | Icon to use for thumbnails. |
+| `height` | String | (v0.17+) CSS unit optionally defining the height of Carousel. |
+| `animation` | Boolean/Number | If Boolean, enable/disable animation; if Number, tells the animation duration. |
 
 ### QCarousel Vue Methods
 | Vue Method | Description |

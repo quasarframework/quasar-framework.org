@@ -46,6 +46,7 @@ Supports `v-model` which should be binded to a String in your scope. Choosing on
 | `no-caps`    | Boolean | Set true, if you don't want button content/label to be transformed to uppercase letter on Material Theme. |
 | `no-ripple`  | Boolean | Disable [Material Ripple](/components/material-ripples.html). Mat theme only. |
 | `wait-for-ripple` | Boolean | Wait for ripple then before emitting `@click` event. Mat theme only. |
+| `size`       | String | (v0.16+) Button size. One of `xs`, `sm`, `md`, `lg`, `xl`, or a css unit string size eg. `25px`, `2rem`, `3vw`. More info below this table. |
 
 ### Color Properties
 All can take values from [Quasar Color Palette](/components/color-palette.html).

@@ -53,6 +53,7 @@ Supports `v-model` which should be binded to a Boolean or Array in your scope.
 | `readonly` | Boolean | Set to `true`, to make the toggle read-only. |
 | `disable` | Boolean | Set to `true`, to disable the toggle. |
 | `dark` | Boolean | Set to `true` when background is dark. |
+| `no-focus` | Boolean | (v0.17+) Disable accessibility for this component so that it can't receive focus. |
 
 ## Vue Events
 | Vue Event | Description |

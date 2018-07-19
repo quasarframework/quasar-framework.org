@@ -38,3 +38,9 @@ export default {
 ```
 
 Please note that QWindowResizeObservable will issue an event as soon as it gets rendered and attached to DOM, so you can have the initial size of the window.
+
+## Vue Properties
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `debounce` | Number | (v0.17+) Emitting the event with a custom debounce. "0" means no debounce. |

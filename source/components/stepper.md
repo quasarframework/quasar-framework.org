@@ -111,7 +111,6 @@ A more involved example. This one doesn't uses QStepperNavigation as direct chil
 | `alternative-labels` | Boolean | Use alternative labels (applies only to horizontal Stepper). |
 | `contractable` | Boolean | Labels are hidden on narrow windows. |
 | `no-header-navigation` | Boolean | (Quasar v0.15.7+) Disable ability to navigate to previous steps through header. |
-| `order` | Number / String | If you add/remove Steps dynamically, it's good to use this prop to specify the order in which Steps should be displayed. |
 | `done-icon` | String, Boolean | Used to change the display of the Step icon, when the step is finished. Default is the "check" icon. |
 | `active-icon` | String, Boolean | Used to change the icon, when a Step is selected. Default is the "edit" icon. |
 | `error-icon` | String / Boolean | Used to change the icon, when there is an error in a Step. Default is the "warning" icon. |
@@ -190,6 +189,7 @@ export default {
 | `done-icon` | String | The icon to use for Step when it's finished. |
 | `error-icon` | String | The icon to use for Step when it's marked as having an error. |
 | `disable` | Boolean | Step is disabled. |
+| `order` | Number / String | If you add/remove Steps dynamically, it's good to use this prop to specify the order in which Steps should be displayed. |
 
 Methods for this component:
 

@@ -32,6 +32,7 @@ Supports `v-model` which should be binded to a String in your scope, which is es
 | `disable` | Boolean | Sets editor in disable mode. |
 | `min-height` | String | CSS unit for minimum height of the input area. |
 | `max-height` | String | CSS unit for maximum height of the input area. |
+| `height` | String | CSS unit for height of the input area. |
 | `definitions` | Object | Object with definitions (see next sections). |
 | `fonts` | Object | Object with fonts definitions (see next sections). |
 | `toolbar` | Array | Array of Arrays of Objects/Strings with toolbar commands (see next sections). |

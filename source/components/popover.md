@@ -77,6 +77,9 @@ export default {
 | Vue Property | Type | Description |
 | --- | --- | --- |
 | `anchor` | Object | String of form `bottom left` (vertical horizontal) |
+| `anchor-click` | Boolean | Disable triggering the Popover by clicking/tapping on the parent element. |
+| `no-focus` | Boolean | (v0.17+) By default, for accessibility purposes, Popover focuses its content when it's getting displayed. For use cases when you need to keep focus on your current element, set this to `true`. |
+| `no-refocus` | Boolean | (v0.17+) By default, for accessibility purposes, Popover refocuses the previously active element. Set to `true` to disable this behaviour. |
 | `self` | Object | String of form `top left` (vertical horizontal) |
 | `max-height` | String | Optional maximum height of Popover content. Example: `500px` |
 | `touch-position` | Boolean | Open Popover from the position where user clicked/tapped on anchor. |

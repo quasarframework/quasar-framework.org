@@ -50,6 +50,7 @@ Supports `v-model` which must be a String, Number or Date Object.
 | `color` | String | One from [Quasar Color Palette](/components/color-palette.html). |
 | `dark` | Boolean | Is component rendered on a dark background? |
 | `format24h` | Boolean | Override default i18n setting. Use 24 hour time for Material picker instead of AM/PM system which is default. |
+| `no-parent-field` | Boolean | Avoid trying to connect to a parent QField. |
 
 ### Lazy Input
 Vue will soon supply the `.lazy` modifier for v-model on components too, but until then, you can use the longer equivalent form:

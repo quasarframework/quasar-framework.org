@@ -38,7 +38,8 @@ framework: {
 | `content-style` | Object | CSS Style in Object format for the Drawer container element. |
 | `content-class` | String/Object/Array | CSS classes for the Drawer container element. |
 | `mini` | Boolean | (v0.15.11+) If drawer is in mini mode or not. |
-| `mini-width` | String | (v0.15.11+) CSS unit for drawer width when in mini mode. Default: '60px' |
+| `mini-width` | Number | (v0.17+) CSS unit for drawer width when in mini mode. Default: 60 |
+| `width` | Number | The width in pixels of the drawer (when not in mini mode). Default: 300 |
 
 ## Styling Examples
 

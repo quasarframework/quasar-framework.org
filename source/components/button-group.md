@@ -37,9 +37,9 @@ Simple group of three push buttons:
 Simple group of three outlined buttons:
 ```html
 <q-btn-group outline>
-  <q-btn outline label="One" @click="clicHandler1" />
-  <q-btn outline label="Two" @click="clicHandler2" />
-  <q-btn outline label="Three" @click="clicHandler3" />
+  <q-btn outline label="One" @click="clickHandler1" />
+  <q-btn outline label="Two" @click="clickHandler2" />
+  <q-btn outline label="Three" @click="clickHandler3" />
 </q-btn-group>
 ```
 

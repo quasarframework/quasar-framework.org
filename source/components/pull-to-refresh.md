@@ -32,6 +32,7 @@ Use QPullToRefresh component as direct child of your page component, to encapsul
 | --- | --- | --- | --- | --- |
 | `handler` | Function | | **Required** Method from VM to be called to load more content |
 | `distance` | Number | 35 | Minimum threshold distance in pixels to determine if releasing will determine a refresh |
+| `color` | String | (v0.17+) One from [Quasar Color Palette](/components/color-palette.html). |
 | `pull-message` | String | 'Pull down to refresh' | Message to display before hitting the threshold above |
 | `release-message` | String | 'Release to refresh' | Message to display after hitting the threshold above and before releasing |
 | `refresh-message` | String | 'Refreshing...' | Message to display when refreshing content |

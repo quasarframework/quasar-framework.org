@@ -96,7 +96,7 @@ components:
   Buttons:
     Button: $
     Button Group: $
-    Dropdown Button: $
+    Dropdown Button: button-dropdown
   Navigation:
     Toolbar: $
     Tabs: $

@@ -48,6 +48,7 @@ As long as this component is rendered by Vue, it will capture all Ajax calls.
 | --- | --- | --- | --- |
 | `min-characters` | Number | 1 | How many minimum characters can trigger component to suggest something? |
 | `max-results` | Number | 6 | How many results can we display at a time? |
+| `max-height` | String | *None* | (v0.17+) CSS unit to determine the maximum height of Autocomplete popover. |
 | `static-data` | Object | *None* | Use static suggestions. No need to do an Ajax call. Filtering is provided by Autocomplete component. |
 | `filter` | Function | Internal implementation | If provided, autocomplete will perform custom filtering. |
 | `debounce` | Number | 500 | Time in milliseconds, between key presses and finding new results. Good for delay, if using AJAX requests. |

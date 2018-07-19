@@ -98,6 +98,7 @@ The default values of the different QTable labels are taken care of by default t
 | `table-class` | String/Array/Object | Classes for the `<table>` tag itself. |
 | `filter` | String | Filter String for Table used by `filter-method()`. |
 | `filter-method` | Function | When you want a custom filtering method. See next sections for details. |
+| `sort-method` | Function | When you want a custom filtering method. See next sections for details. |
 
 Label properties are by default defined in Quasar's i18n, but you can override them:
 
@@ -197,11 +198,71 @@ export default {
   methods: {
     // this is actually the default filtering method:
     myFilter (rows, terms, cols, cellValue) {
-        const lowerTerms = terms ? terms.toLowerCase() : ''
-        return rows.filter(
-          row => cols.some(col => (cellValue(col, row) + '').toLowerCase().indexOf(lowerTerms) !== -1)
-        )
+      const lowerTerms = terms ? terms.toLowerCase() : ''
+      return rows.filter(
+        row => cols.some(col => (cellValue(col, row) + '').toLowerCase().indexOf(lowerTerms) !== -1)
+      )
+    }
+  }
+}
+</script>
+```
+
+### Custom Sort Method
+```html
+<template>
+  <q-table
+    :sort-method="mySort"
+    ...
+</template>
+
+<script>
+export default {
+  methods: {
+    // this is actually the default filtering method:
+    mySort (data, sortBy, descending) {
+      const col = this.computedCols.find(def => def.name === sortBy)
+      if (col === null || col.field === void 0) {
+        return data
       }
+
+      const
+        dir = descending ? -1 : 1,
+        val = typeof col.field === 'function'
+          ? v => col.field(v)
+          : v => v[col.field]
+
+      return data.sort((a, b) => {
+        let
+          A = val(a),
+          B = val(b)
+
+        if (A === null || A === void 0) {
+          return -1 * dir
+        }
+        if (B === null || B === void 0) {
+          return 1 * dir
+        }
+        if (col.sort) {
+          return col.sort(A, B) * dir
+        }
+        if (isNumber(A) && isNumber(B)) {
+          return (A - B) * dir
+        }
+        if (isDate(A) && isDate(B)) {
+          return sortDate(A, B) * dir
+        }
+        if (typeof A === 'boolean' && typeof B === 'boolean') {
+          return (a - b) * dir
+        }
+
+        [A, B] = [A, B].map(s => (s + '').toLowerCase())
+
+        return A < B
+          ? -1 * dir
+          : (A === B ? 0 : dir)
+      })
+    }
   }
 }
 </script>

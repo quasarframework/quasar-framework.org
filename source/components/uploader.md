@@ -27,6 +27,8 @@ framework: {
 | `name` | String | Name of the file, if it should be different than the file's name. |
 | `headers` | Object | Specify what headers need to be added to the XHR request |
 | `url-factory` | Function | Function (with `file` object received as parameter) which returns a Promise that resolves to a URL. |
+| `upload-factory` | Function | (v0.17+) Function defining a custom upload method which returns a Promise. Check section below. |
+| `no-content-type` | Boolean | (v0.17+) Avoid setting Content-Type header when uploading. |
 | `method` | String | HTTP method to use (POST/PUT). Defaults to POST. |
 | `extensions` | String | Extensions to allow for uploading. Example: `'.gif,.jpg,.jpeg,.png'` |
 | `multiple` | Boolean | Allow multiple file uploads |
@@ -57,8 +59,38 @@ Common input frame properties:
 | `align` | String | One of 'left', 'center' or 'right' which determines the text align within textfield. |
 | `disable` | Boolean | If set to `true`, Uploader is disabled and the user cannot change anything. |
 | `error` | Boolean | If set to true, the input fields colors are changed to show there is an error. |
+| `warning` | Boolean | Same as `error`, the input field color is changed to show there is a warning. |
 | `before` | Array of Objects | Icon buttons on left side of input frame. Read below more details. |
 | `after` | Array of Objects | Icon buttons on right side of input frame. Read below more details. |
+| `no-parent-field` | Boolean | Avoid trying to connect to a parent QField. |
+
+### Upload Factory
+Sometimes you need to define your own upload method. You can do this through `upload-factory` parameter, like below:
+
+```html
+<template>
+  <q-uploader
+    url=""
+    :upload-factory="uploadFile"
+  />
+</template>
+
+<script>
+export default {
+  methods: {
+    uploadFactory (file, updateProgress) {
+      // "file" is an Object containing file's props, including content
+
+      // for updating progress (as 0-100 number), we need to call:
+      // updateProgress (percentage)
+
+      // we need to return a Promise
+      // (resolves when upload is done, rejects when there's an error)
+    }
+  }
+}
+</script>
+```
 
 ### Icon buttons
 This section refers to `before` and `after` properties which can add additional buttons as icons to the textfield. Here is the structure of the two properties:

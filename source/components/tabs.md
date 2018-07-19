@@ -113,7 +113,7 @@ export default {
 
 ### Overflow Behavior
 
-On a desktop, if the Tabs cannot be dispalayed completely, the user will be offered a scroll action in the form of an opaque gradient fill. When hovered over, it turns to an arrow button. The user can press continually on the button, and the unseen Tabs will scroll by.
+On a desktop, if the Tabs cannot be displayed completely, the user will be offered a scroll action in the form of an opaque gradient fill. When hovered over, it turns to an arrow button. The user can press continually on the button, and the unseen Tabs will scroll by.
 
 If the user is on a device with a small screen (like a phone) and all Tabs can fit on the screen, they will be automatically justify aligned and share the complete screen width. If the Tabs do not fit, then the user will also see the arrow to indicate the user can swipe through the Tabs.
 
@@ -136,6 +136,7 @@ If you want to use Vue Router with a Tab (clicking on a Tab triggers a route cha
 | `alert` | Boolean | When `true`, the tab has a red dot, which is meant to get the user's attention.  |
 | `count` | Number, String | A number to indicate there is a list of unread or unseen items in the tab's content. |
 | `color` | String | The color of the tab's icon or text, should it be different than the default. |
+| `tabindex` | Number | Accessibility; Native HTML "tabindex" attribute value for Tab. |
 
 ### Vue Methods
 | Vue Method | Description |

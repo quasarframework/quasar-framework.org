@@ -72,11 +72,13 @@ Supports `v-model` to control the state (open/close).
 | `header-style` | Array/String/Object | Vue style binding for header. |
 | `header-class` | Array/String/Object | Vue class binding for header. |
 | `disable` | Boolean | Disable current Collapsible. |
+| `tag` | Boolean | Tag to use. Default is "div". |
 
 QItem & QItem related components inherited properties:
 
 | Inherited Property | Type | Description |
 | --- | --- | --- |
+| `dark` | Boolean | Set to `true` when background is dark. |
 | `icon`, `right-icon` | String | Icon to use. Either use an icon, image, avatar or letter. |
 | `image`, `right-image` | String | URL to image to use (point to statics). Either use an icon, image, avatar or letter. |
 | `avatar`, `right-avatar` | String | URL to avatar to use (point to statics). Either use an icon, image, avatar or letter. |

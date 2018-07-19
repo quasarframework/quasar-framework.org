@@ -74,6 +74,7 @@ Common input frame properties:
 | `error` | Boolean | If set to true, the input fields colors are changed to show there is an error. |
 | `before` | Array of Objects | Icon buttons on left side of input frame. Read below more details. |
 | `after` | Array of Objects | Icon buttons on right side of input frame. Read below more details. |
+| `no-parent-field` | Boolean | Avoid trying to connect to a parent QField. |
 
 ### Lazy Input
 Vue will soon supply the `.lazy` modifier for v-model on components too, but until then, you can use the longer equivalent form:

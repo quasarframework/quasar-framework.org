@@ -227,7 +227,11 @@ Now let's see how we can add overlays too (through "overlay" slot):
 ```
 
 ### Card Inner Separator
-You can choose to add a separator between Card components, which is basically a horizontal thin line, by adding QCardSeparator:
+You can choose to add a separator between Card components, which is basically a horizontal thin line, by adding QCardSeparator.
+
+| Vue Property | Type | Description |
+| --- | --- | --- | --- |
+| `inset` | Boolean | Inset separator |
 
 ```html
 <q-card>

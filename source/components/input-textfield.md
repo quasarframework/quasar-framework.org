@@ -86,6 +86,7 @@ Common input frame properties:
 | `warning` | Boolean | Same as `error`, the input field color is changed to show there is a warning. |
 | `before` | Array of Objects | Icon buttons on left side of textfield. Read below more details. |
 | `after` | Array of Objects | Icon buttons on right side of textfield. Read below more details. |
+| `no-parent-field` | Boolean | Avoid trying to connect to a parent QField. |
 
 > **IMPORTANT**
 > All DOM attributes that apply to a native `<input>` or `<textarea>` can be used. Example: `maxlength`, `rows`, `min`/`max`/`step`, `autocomplete` and so on.

@@ -340,6 +340,7 @@ export default {
 | `prevent-close` | Boolean | Dialog can be dismissed only by clicking/tapping on OK/Cancel buttons. |
 | `no-esc-dismiss` | Boolean | "ESC" key won't dismiss the Dialog. Overriden to "true" if "prevent-close" is "true". |
 | `no-backdrop-dismiss` | Boolean | Click/Tap on backdrop won't dismiss Dialog. Overriden to "true" if "prevent-close" is "true". |
+| `no-refocus` | Boolean | (v0.17+) By default, when closing a Dialog, the previous focused element gets focused again. When property is set to `true` it disables this behaviour. |
 | `position` | String | Position of Dialog (top, bottom, left, right). |
 | `color` | String | A color from [Quasar Color Palette](/components/color-palette.html). |
 

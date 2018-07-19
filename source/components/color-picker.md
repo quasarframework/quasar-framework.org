@@ -44,6 +44,7 @@ Supports `v-model` which must be a String, Number or Date Object.
 | `format-model` | String | Data type of model (useful especially when starting out with undefined or null). One of 'auto', 'hex', 'rgb', 'hexa', 'rgba'. |
 | `readonly` | Boolean | If set to `true`, component is displayed as read-only. |
 | `disable` | Boolean | If set to `true`, component is disabled and the user cannot change model. |
+| `no-parent-field` | Boolean | Avoid trying to connect to a parent QField. |
 
 ### Lazy Input
 Vue will soon supply the `.lazy` modifier for v-model on components too, but until then, you can use the longer equivalent form:

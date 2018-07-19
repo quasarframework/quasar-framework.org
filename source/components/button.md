@@ -119,6 +119,7 @@ export default {
 | `tabindex`   | Number | Set explicit tab index. |
 | `repeat-timeout` | Number/Function | Enables multiple `@click` events on click/tap and hold. Function gets a Number (timesTriggered) as parameter. |
 | `wait-for-ripple` | Boolean | Wait for ripple then before emitting `@click` event. Mat theme only. |
+| `type` | String | (v0.17+) One of "a" (uses an `<a>` tag), "button", "submit", "reset". |
 
 #### Router syntax sugar
 | Vue Property | Type    | Description |
@@ -137,7 +138,7 @@ The properties above are just syntactic sugar and work similar to `<router-link>
 #### Appearance
 | Vue Property | Type    | Description |
 | ---          | ---     | --- |
-| `size`       | String | Button size. One of `xs`, `sm`, `md`, `lg`, `xl`, or a css string size eg. `25px`, `2rem`, `3vw`. More info below this table. |
+| `size`       | String | Button size. One of `xs`, `sm`, `md`, `lg`, `xl`, or a css unit string size eg. `25px`, `2rem`, `3vw`. More info below this table. |
 | `color`      | String  | A color from [Quasar Color Palette](/components/color-palette.html). |
 | `text-color` | String  | A color from [Quasar Color Palette](/components/color-palette.html). |
 | `align`      | String  | Label/Content alignment. One of `left`, `center`, `right`, `around`, `between`. |

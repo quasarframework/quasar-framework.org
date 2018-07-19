@@ -36,9 +36,8 @@ Best way is to place it in your App root component (`App.vue` if you are using t
 | `position` | String | 'top' | Where to place the loading bar: 'top', 'bottom', 'left' or 'right'. |
 | `size` | String | '4px' | Thickness of loading bar. |
 | `color` | String | 'red' | One from [Quasar Color Palette](/components/color-palette.html). |
-| `speed` | Number | 250 | How fast should loading bar update its value (in milliseconds). |
-| `delay` | Number | 1000 | How much should loading bar wait before showing loading bar after it's triggered (in milliseconds). |
 | `reverse` | Boolean | `false` | Reverse direction of loading bar. |
+| `skip-hijack` | Boolean | `false` | Avoid taking into account Ajax calls. |
 
 ## Vue Methods
 Only if you want to also trigger it manually. Ajax calls trigger these methods automatically.

@@ -59,11 +59,26 @@ All props except `split` are shared with [QBtn](/components/button.html).
 | `wait-for-ripple` | Boolean | Wait for ripple then before emitting `@click` event. Mat theme only. |
 | `content-class` | String/Array/Object | Classes applied to the Popover container. |
 | `content-style` | String/Array/Object | Style applied to the Popover container. |
+| `type` | String | (v0.17+) One of "a" (uses an `<a>` tag), "button", "submit", "reset". |
+
+#### Router syntax sugar
+| Vue Property | Type    | Description |
+| ---          | ---     | --- |
+| `to` | String/Object | Makes button go to the indicated route when clicked. |
+| `replace` | Boolean | Replaces current route instead of pushing to window history. |
+
+The properties above are just syntactic sugar and work similar to `<router-link>` Vue component.
+
+```html
+<q-btn-dropdown to="/" ...> ... </q-btn-dropdown>
+<!-- equivalent to: -->
+<q-btn-dropdown @click="$router.push('/')" ...> ... </q-btn-dropdown>
+```
 
 #### Apearance
 | Vue Property | Type    | Description |
 | ---          | ---     | --- |
-| `size`       | String | Button size. One of `xs`, `sm`, `md`, `lg`, `xl`, or a css string size eg. `25px`, `2rem`, `3vw`. |
+| `size`       | String | Button size. One of `xs`, `sm`, `md`, `lg`, `xl`, or a css unit string size eg. `25px`, `2rem`, `3vw`. |
 | `color`      | String  | A color from [Quasar Color Palette](/components/color-palette.html). |
 | `text-color` | String  | A color from [Quasar Color Palette](/components/color-palette.html). |
 | `align`      | String  | Label/Content alignment. One of `left`, `center`, `right`, `around`, `between`. |

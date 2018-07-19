@@ -37,6 +37,12 @@ export default {
 </script>
 ```
 
+## Vue Properties
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `debounce` | Number | (v0.17+) Emitting the event with a custom debounce. "0" means no debounce. |
+
 ## Determining Scrolling Container
 All components or directives in Quasar have a simple algorithm to determine which is the container that supports the scroll: it searches for a parent DOM element which has the `scroll` Quasar CSS Helper class attached to it. If none is found, then it considers that the scrolling takes place on the document itself.
 

@@ -232,7 +232,8 @@ QItemTile can be used for more control over the content of the left, right side 
 | `icon` | String | Icon to use. Either use an icon, image, avatar or letter as props. |
 | `image` | Boolean | Encapsulates an image. Its content must be an `<img>` with `src` attribute pointing to statics. Either use an icon, image, avatar or letter as props. |
 | `avatar` | Boolean | Encapsulates an avatar image. Its content must be an `<img>` with `src` attribute pointing to statics. Either use an icon, image, avatar or letter as props. |
-| `letter` | String | One character String to define a letter. Either use an icon, image, avatar or letter as props. |
+| `letter` | Boolean | Encapsulates the "letter" of QItem. |
+| `stamp` | Boolean | Encapsulates the "stamp" of QItem. |
 | `tag` | String | Default HTML tag that QItemTile gets rendered with is 'div', but this can be any HTML tag if you need to. |
 
 There are more props available for QItemTile, but only use the following when QItemTile is wrapped with QItemMain:

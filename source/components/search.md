@@ -48,6 +48,8 @@ Common input field properties:
 | `autofocus` | Boolean | Focus input field after rendering component. |
 | `placeholder` | String | A text to be shown on textfield, mainly to explain what should be entered. |
 | `clearable` | Boolean | If set to `true`, the component offers the user an actionable icon to remove the entered text. |
+| `upper-case` | Boolean | Transform input to upper case. |
+| `lower-case` | Boolean | Transform input to lower case. |
 
 Also note you can use the native DOM attributes of an input: "name", "max-length", "autocomplete" and so on.
 
@@ -70,6 +72,7 @@ Common input frame properties:
 | `error` | Boolean | If set to true, the input fields colors are changed to show there is an error. |
 | `before` | Array of Objects | Icon buttons on left side of input frame. Read below more details. |
 | `after` | Array of Objects | Icon buttons on right side of input frame. Read below more details. |
+| `no-parent-field` | Boolean | Avoid trying to connect to a parent QField. |
 
 ### Icon buttons
 This section refers to `before` and `after` properties which can add additional buttons as icons to the textfield. Here is the structure of the two properties:

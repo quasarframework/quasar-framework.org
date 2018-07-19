@@ -33,12 +33,13 @@ Supports `v-model` which should be binded to a String in your scope. Choosing on
 | `label` | String | The text label for the Radio. |
 | `left-label` | Boolean | Set to `true`, if the label should be placed to the left of the radio. |
 | `checked-icon` | String | The icon to use, when the radio is checked. Default is a simple radio icon. |
-| `uncheck-icon` | String | The icon to use, when the radio is not checked. Default is simple unchecked radio icon. |
+| `unchecked-icon` | String | The icon to use, when the radio is not checked. Default is simple unchecked radio icon. |
 | `color` | String | Color from [Quasar Color Palette](/components/color-palette.html) of the Radio. |
 | `keep-color` | Boolean | Keep color when not selected too. |
 | `readonly` | Boolean | Set to `true`, to make the radio read-only. |
 | `disable` | Boolean | Set to `true`, to disable the radio. |
 | `dark` | Boolean | Set to `true` when background is dark. |
+| `no-focus` | Boolean | (v0.17+) Disable accessibility for this component so that it can't receive focus. |
 
 ## Vue Events
 | Vue Event | Description |

@@ -46,11 +46,12 @@ Supports `v-model` which should be a Number.
 | --- | --- | --- |
 | `size` | String | CSS String determining the width and height of the Knob. Examples: "120px", "12rem". |
 | `step` | Number | Number representing difference between two values that the model can take. Default: `1`. |
+| `decimals` | Number | Number of decimals to represent the model with, if no placeholder / default slot is used. |
 | `min` | Number | Minimum value that the model can take. |
 | `max` | Number | Maximum value that the model can take. |
 | `color` | String | One from [Quasar Color Palette](/components/color-palette.html). |
-| `trackColor` | String | One from [Quasar Color Palette](/components/color-palette.html). |
-| `lineWidth` | String | Line width of Knob. Default is '6px'. |
+| `track-color` | String | One from [Quasar Color Palette](/components/color-palette.html). |
+| `line-width` | String | Line width of Knob. Default is '6px'. |
 | `readonly` | Boolean | Sort of a "display" only mode. Model cannot be altered. |
 | `disable` | Boolean | When set to `true` the model cannot be altered. |
 

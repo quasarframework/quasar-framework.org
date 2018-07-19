@@ -80,6 +80,10 @@ Common input frame properties:
 | `error` | Boolean | If set to true, the input fields colors are changed to show there is an error. |
 | `before` | Array of Objects | Icon buttons on left side of input frame. Read below more details. |
 | `after` | Array of Objects | Icon buttons on right side of input frame. Read below more details. |
+| `no-parent-field` | Boolean | Avoid trying to connect to a parent QField. |
+| `clearable` | Boolean | If set to `true`, the component offers the user an actionable icon to remove all chips. |
+| `upper-case` | Boolean | Transform input to upper case. |
+| `lower-case` | Boolean | Transform input to lower case. |
 
 ### Icon buttons
 This section refers to `before` and `after` properties which can add additional buttons as icons to the textfield. Here is the structure of the two properties:
