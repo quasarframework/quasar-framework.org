@@ -116,7 +116,7 @@ export default {
 | `dark-percentage` | Boolean | Optional property for displaying a determinate progress on a light button color. Use along `loading` and `percentage`. |
 | `disable`    | Boolean | The button is disabled, if true. `@click` event won't be triggered while in this state. |
 | `label`      | String/Number | Button label. |
-| `tabindex`   | Number | Set explicit tab index. |
+| `tabindex`   | Number | Accessibility; set explicit HTML "tabindex" attribute value. |
 | `repeat-timeout` | Number/Function | Enables multiple `@click` events on click/tap and hold. Function gets a Number (timesTriggered) as parameter. |
 | `wait-for-ripple` | Boolean | Wait for ripple then before emitting `@click` event. Mat theme only. |
 | `type` | String | (v0.17+) One of "a" (uses an `<a>` tag), "button", "submit", "reset". |

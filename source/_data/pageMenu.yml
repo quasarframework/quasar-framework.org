@@ -169,6 +169,7 @@ components:
     Alert: $
     Chip: $
     Chat: $
+    NoSsr: no-ssr
     Timeline: $
   Touch/Mouse Actions:
     Touch Pan: $
