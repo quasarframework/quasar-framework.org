@@ -61,7 +61,7 @@ We'll cover each component on its own section later on, but for now, take a look
 
 Notice that QItemMain and QItemSide can contain QItemTiles, or for convenience, you can use their own properties to define the content.
 
-Due to how Webpack works in creating the bundle for your App, in some cases you may need to use QItemTile, like for avatars or images. The reason is simple: if you use QItemSide `avatar` property, you must supply the path to the statics folder and cannot use the `assets` folder or relative paths. Instead, the latter two can be used with a QItemTile wrapping an `<img>` HTML tag. Look closely at image paths in the example above (`statics/guy-avatar.png` vs `~assets/boy-avatar.png`). Also read about [App Handling Static Assets](/guide/app-handling-static-assets.html) to understand how Webpack includes assets into the bundle.
+Due to how Webpack works in creating the bundle for your App, in some cases you may need to use QItemTile, like for avatars or images. The reason is simple: if you use QItemSide `avatar` property, you must supply the path to the statics folder and cannot use the `assets` folder or relative paths. Instead, the latter two can be used with a QItemTile wrapping an `<img>` HTML tag. Look closely at image paths in the example above (`statics/guy-avatar.png` vs `~assets/boy-avatar.png`). Also read about [App Handling Static Assets](/guide/app-handling-assets.html) to understand how Webpack includes assets into the bundle.
 
 ## Components
 
