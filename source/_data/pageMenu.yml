@@ -169,6 +169,7 @@ components:
     Alert: $
     Chip: $
     Chat: $
+    Jumbotron: $
     NoSsr: no-ssr
     Timeline: $
   Touch/Mouse Actions:

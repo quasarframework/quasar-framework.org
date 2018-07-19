@@ -14,7 +14,7 @@ framework: {
 }
 ```
 
-## Usage
+## Examples
 Basic:
 ```html
 <q-no-ssr>
@@ -68,3 +68,9 @@ Only placeholder slot:
   <div slot="placeholder">Rendered on server</div>
 </q-no-ssr>
 ```
+
+## Vue Properties
+| Vue Property | Type | Description |
+| --- | --- | --- |
+| `tag` | String | HTML tag to use to render the component. Default: 'div' |
+| `placeholder` | String | String to display on server server, before the client takeover. |
