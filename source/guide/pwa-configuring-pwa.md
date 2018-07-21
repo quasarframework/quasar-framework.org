@@ -25,11 +25,9 @@ Adding PWA mode to a Quasar project means a new folder will be created: `/src-pw
 
 You can freely edit these files. Notice a few things:
 
-1. Both files are embedded ONLY for production builds, while the development build skips them.
-2. "register-service-worker.js" is automatically imported into your app (like any other /src file). It registers the service worker (created by Workbox or your custom one, depending on workbox plugin mode -- quasar.conf.js > pwa > workboxPluginMode) and you can listen for Service Worker's events. You can use ES6 code.
-3. "custom-service-worker.js" will be your service worker file ONLY if workbox plugin mode is set to "InjectManifest" (quasar.conf.js > pwa > workboxPluginMode: 'InjectManifest'). Otherwise, Workbox will create a service-worker file for you.
-4. During development, a no-op service worker will be created which plays nicely with HMR (Hot Module Reload). Its sole purpose is to override any possible previous registered service worker.
-5. It makes sense to run Lighthouse tests on production builds only.
+1. "register-service-worker.js" is automatically imported into your app (like any other /src file). It registers the service worker (created by Workbox or your custom one, depending on workbox plugin mode -- quasar.conf.js > pwa > workboxPluginMode) and you can listen for Service Worker's events. You can use ES6 code.
+2. "custom-service-worker.js" will be your service worker file ONLY if workbox plugin mode is set to "InjectManifest" (quasar.conf.js > pwa > workboxPluginMode: 'InjectManifest'). Otherwise, Workbox will create a service-worker file for you.
+3. It makes sense to run Lighthouse tests on production builds only.
 
 ## Quasar.conf.js
 This is the place where you can configure Workbox's behavior and also tweak your manifest.json.

@@ -32,6 +32,12 @@ guide:
     Supporting IE: app-$
     Deploying SPA: app-$
 
+  Developing SSR:
+    Introduction: ssr-$
+    Configuring SSR: ssr-$
+    Build Commands: ssr-$
+    Deploying: ssr-$
+
   Developing PWA:
     Introduction: pwa-$
     Configuring PWA: pwa-$
@@ -69,6 +75,7 @@ components:
     Internationalization (I18n): internationalization
     RTL Support: $
     Screen Plugin: $
+    Meta Plugin: $
   Style & Identity:
     Color Palette: $
     Stylus Variables: $
