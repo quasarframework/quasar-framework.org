@@ -15,3 +15,19 @@ Quasar CLI helps you in setting some properties of the mobile Apps automatically
 For determining the values for each of the properties mentioned above, Quasar CLI:
 1. Looks in `/quasar.conf.js` for a "cordova" Object. Does it have "id", "version" and/or "description"? If yes, it will use it/them.
 2. If not, then it looks into your `/package.json` for "cordovaId", "version" and "description" fields.
+
+Other options you can configure:
+
+```js
+// Quasar v0.17+ only
+return {
+  framework: {
+    config: {
+      cordova: {
+        iosStatusBarPadding: true/false, // add the dynamic top padding on iOS mobile devices
+        backButtonExit: true/false // Quasar handles app exit on mobile phone back button
+      }
+    }
+  }
+}
+```
