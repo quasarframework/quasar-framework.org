@@ -19,8 +19,9 @@ An app plugin is a simple JavaScript file which needs to export a function. Quas
 | --- | --- |
 | `app` | Object with which the root component gets instantiated by Vue |
 | `router` | Instance of Vue Router from 'src/router/index.js' |
-| `store` | Instance of Vuex from 'src/store/index.js' - **store only will be passed if your project uses Vuex (you have src/store)** |
+| `store` | Instance of the app Vuex Store - **store only will be passed if your project uses Vuex (you have src/store)** |
 | `Vue` | Is same as if we do `import Vue from 'vue'` and it's there for convenience |
+| `ssrContext` | Available only on server-side, if building for SSR |
 
 ```js
 export default ({ app, router, store, Vue }) => {
@@ -188,6 +189,11 @@ import { axiosInstance } from 'plugins/axios'
 Further reading on syntax: [ES6 import](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/import), [ES6 export](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export).
 
 ## Special App Plugin: Boot
+> This is deprecated and will be removed in next version in favor of using [PreFetch Feature](/guide/app-prefetch-feature.html) in src/App.vue and calling `redirect(false)`.
+
+> IMPORTANT!
+> This special app plugin is ignored for SSR builds.
+
 Every Quasar website/app is booted up after plugins have been loaded and executed. The last step is to call `new Vue()` and attach it to the DOM.
 
 If, for whatever reason, you need to control this final step and decide the specific moment when Vue kicks in, you can create a special Quasar plugin named "boot" (**requires Quasar v0.15.6+**).

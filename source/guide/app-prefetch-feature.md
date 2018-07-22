@@ -18,7 +18,7 @@ return {
 }
 ```
 
-> When you use it exclusively to pre-fetch data, you are required to use a Vuex Store, so make sure your project folder has the `/src/store` folder when you create your project, otherwise generate a new project and copy the store folder contents to your current project.
+> When you use it to pre-fetch data, you are required to use a Vuex Store, so make sure your project folder has the `/src/store` folder when you create your project, otherwise generate a new project and copy the store folder contents to your current project.
 
 ## How It Helps SSR Mode
 This feature is especially useful for the SSR mode (but not limited to it only). During SSR, we are essentially rendering a "snapshot" of our app, so if the app relies on some asynchronous data, **these data need to be pre-fetched and resolved before we start the rendering process**.
