@@ -4,13 +4,14 @@ title: Introduction to the Quasar Framework
 ![Quasar - Empowering your websites and apps](/images/responsive-logo.png)
 
 ## What is Quasar?
-Quasar (pronounced /ˈkweɪ.zɑɹ/) is an MIT licensed open-source framework (powered with [Vue](https://vuejs.org/)) that helps web developers create:
-* Responsive Websites
+Quasar (pronounced /ˈkweɪ.zɑɹ/) is an MIT licensed open-source framework (powered with [Vue](https://vuejs.org/)) that helps web developers create responsive++ websites/apps in many flavours:
+* SPAs (Single Page App)
+* SSR (Server-side Rendered App) (+ optional PWA client takeover)
 * PWAs (Progressive Web App)
 * Mobile Apps (Android, iOS, …) through Apache Cordova
 * Multi-platform Desktop Apps (using Electron)
 
-Quasar allows developers to write code once and simultaneously deploy as website, PWA, Mobile App and/or Electron App using the same codebase. Design an app in record time, using a state of the art CLI and backed by well-written, very fast Quasar web components.
+**Quasar allows developers to write code once and simultaneously deploy** as website (SPA, PWA, SSR + SPA client takeover, SSR + PWA client takeover), Mobile App and/or Electron App **using the same codebase**. Design an app in record time, using a state of the art CLI and backed by well-written, very fast Quasar web components.
 
 When using Quasar, you won't need additional heavy libraries like Hammerjs, Momentjs or Bootstrap. It's got that covered too, and with a small footprint!
 
@@ -18,7 +19,7 @@ When using Quasar, you won't need additional heavy libraries like Hammerjs, Mome
 Because of what is offered out of the box. Follow our [Twitter](https://twitter.com/quasarframework) account for testimonials.
 
 ### All Platforms in One Go
-One authoritative source of code for all platforms, simultaneously: responsive desktop/mobile website, PWAs (Progressive Web Apps), mobile apps (that look native) and multi-platform desktop apps (through Electron).
+One authoritative source of code for all platforms, simultaneously: responsive desktop/mobile websites (SPA, SSR + SPA client takeover, SSR + PWA client takeover), PWAs (Progressive Web Apps), mobile apps (that look native) and multi-platform desktop apps (through Electron).
 
 ### Top class, fast web responsive components
 There’s a component for almost every web development need out there. Each of these components is carefully crafted to offer the best possible experience to users. Quasar is **designed with performance & responsiveness in mind** – so the overhead of using Quasar is barely noticeable. This is an area we take special pride in.

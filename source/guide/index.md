@@ -14,6 +14,7 @@ Here's a comparison:
 | Progressive integration of Quasar | **Yes** | - | - |
 | Ability to serve Quasar from CDN | **Yes** | - | - |
 | Build SPA, PWA | **Yes** | **Yes** | **Yes** |
+| Build SSR (+ optional PWA client takeover) | - | **Yes** | ?? |
 | Build Mobile Apps, Electron Apps | **Yes** | **Yes** | - |
 | Dynamic RTL support for Quasar components | **Yes** | **Yes** | **Yes** |
 | Generating your own website/app RTL equivalent CSS rules automatically by Quasar | - | **Yes** | **Yes** |
@@ -47,12 +48,13 @@ Now head on to read about [UMD/Standalone](/guide/embedding-quasar.html).
 ## Starter Kit (Recommended)
 If you want to be able to build:
 * a SPA (Single Page Application/Website),
+* a SSR (Server-side Rendered App/Website),
 * a PWA (Progressive Web App),
 * a Mobile App (through Cordova),
 * an Electron App,
 ...and
 * benefit from a stellar experience provided by Quasar CLI, with HMR (Hot Module Reload)
-* share the same base-code for all those modes
+* **share the same base-code for all those modes**
 * benefit from the latest web recommended practices out of the box
 * ability to write ES6 code
 * benefit from Tree Shaking

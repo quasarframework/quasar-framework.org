@@ -3,7 +3,7 @@ title: Upgrade Guide
 We'll cover how to upgrade to a new Quasar version in your project, both for [UMD](/guide/embedding-quasar.html) and using the [Starter Kit](/guide/app-installation.html). Then we'll go on to discuss how you can migrate v0.15 to v0.16 and your pre v0.15 project to v0.15+.
 
 ## Upgrading to a newer Quasar version
-This applies when upgrading from v0.15+ to a newer Quasar version, including v0.16.
+This applies when upgrading from v0.15+ to a newer Quasar version, including v0.16 and v0.17.
 
 > **IMPORTANT**
 > **Quasar v0.15+ requires Node.js version 8.9.0 or greater**
@@ -27,6 +27,116 @@ Watch for Quasar CLI version. It's not the same thing as Quasar version. Type `$
 > **Caveat**
 > Sometimes after you npm install a package, or even update current packages, might screw things up. You'll get errors that some packages are missing and you need to install them. In such cases, delete node_modules and package-lock.json and npm install again.
 > Same goes for Yarn. In case you get errors, delete node_modules and yarn.lock then install again.
+
+## Upgrading v0.16 to v0.17
+There’s only one breaking change, regarding QLayoutDrawer `mini-width` prop. It is now a Number (instead of String!) defining width in pixels (default: 60).
+
+> v0.17 introduces the SSR mode for Quasar CLI, and the following changes will be required only if you build for SSR too. Otherwise, you can simply upgrade the `quasar-cli` dependency and benefit from the latest goodies.
+
+### SSR mode (ONLY)
+Like mentioned above, these changes will be required by the Quasar CLI only when you build with SSR mode. After doing these changes you’ll still be able to build the other modes (SPA/PWA/Cordova/Electron) too.
+
+##### src/router/index.js
+You need to have a default export set to "function ({ store })" which returns a new instance of Router instead of default exporting the Router instance itself.
+
+```js
+// OLD WAY
+  import Vue from 'vue'
+  import VueRouter from 'vue-router'
+  import routes from './routes'
+  Vue.use(VueRouter)
+
+  // in the new way, we'll wrap the instantiation into:
+  // export default function ({ store }) --> store is optional
+  const Router = new VueRouter({
+    scrollBehavior: () => ({ y: 0 }),
+    routes,
+    // Leave these as they are and change from quasar.conf.js instead!
+    mode: process.env.VUE_ROUTER_MODE,
+    base: process.env.VUE_ROUTER_BASE,
+  })
+
+  // in the new way, this will be no more
+  export default Router
+
+// NEW WAY
+  import Vue from 'vue'
+  import VueRouter from 'vue-router'
+  import routes from './routes'
+  Vue.use(VueRouter)
+
+  // DO NOT import the store here as you will receive it as
+  // parameter in the default exported function:
+
+  export default function (/* { store } */) {
+    // IMPORTANT! Instantiate Router inside this function
+
+    const Router = new VueRouter({
+      scrollBehavior: () => ({ y: 0 }),
+      routes,
+      // Leave these as they are and change from quasar.conf.js instead!
+      mode: process.env.VUE_ROUTER_MODE,
+      base: process.env.VUE_ROUTER_BASE,
+    })
+
+    return Router
+  }
+```
+
+##### src/store/index.js
+You need to have a default export set to "function ()" which returns a new instance of Vuex Store instead of default exporting the Store instance itself.
+
+Some of you might need the Router instance on the Store. It is accessible through `this.$router` inside your actions, mutations, etc.
+
+```js
+// OLD WAY
+  import Vue from 'vue'
+  import Vuex from 'vuex'
+  import example from './module-example'
+  Vue.use(Vuex)
+
+  // in the new way, we'll wrap the instantiation into:
+  // export default function ()
+  const store = new Vuex.Store({
+    modules: {
+      example
+    }
+  })
+
+  // in the new way, this will be no more
+  export default store
+
+// NEW WAY
+  import Vue from 'vue'
+  import Vuex from 'vuex'
+  import example from './module-example'
+  Vue.use(Vuex)
+
+  export default function () {
+    // IMPORTANT! Instantiate Store inside this function
+
+    const Store = new Vuex.Store({
+      modules: {
+        example
+      }
+    })
+
+    return Store
+  }
+```
+
+Also, if you want to be able to access the Router instance from vuex actions, mutations, etc, you need to make some simple changes (in all of them):
+
+```js
+// OLD WAY:
+export const someAction = (context) => { ... }
+
+// NEW WAY:
+export function someAction (context) {
+  // now we have access to:
+  this.$router
+}
+```
 
 ## Upgrading v0.15 to v0.16
 The difference between Quasar v0.15.x and v0.16 is minimal. No big breaking changes as you can see below. The only reason for bumping Quasar's version is to maintain consistency (same major + minor version) with Quasar CLI (which got an important update: webpack 4, babel 7, Workbox, electron-builder support, ionicons v4 and many more).
@@ -62,7 +172,7 @@ $ yarn add --dev quasar-cli@latest   # or: npm install --save-dev quasar-cli@lat
 $ yarn                               # or: npm install
 ```
 
-### Breaking Changes:
+##### Breaking Changes:
 * QIcon: removed "mat" & "ios" props for performance reasons (use `:name="$q.theme === 'mat' ? val : otherVal"` instead)
 * Removed utils > dom > viewport() method (use window.innerHeight/innerWidth instead)
 * Updated Quasar ionicons set to Ionicons v4 -- compatible with quasar-extras@2.0

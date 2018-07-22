@@ -96,6 +96,7 @@ Let's take each option one by one:
 | sourceFiles | Object | (v0.16+) Change the default name of parts of your app. [More info](#sourceFiles-Property) |
 | cordova | Object | Cordova specific [config](/guide/cordova-configuring-cordova.html). |
 | pwa | Object | PWA specific [config](/guide/pwa-configuring-pwa.html). |
+| ssr | Object | SSR specific [config](/guide/ssr-configuring-ssr.html). |
 | electron | Object | Electron specific [config](/guide/electron-configuring-electron.html). |
 
 ### devServer Property

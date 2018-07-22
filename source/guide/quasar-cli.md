@@ -25,7 +25,7 @@ $ quasar
     new           Quickly scaffold page/layout/component/... vue file
     mode          Add/remove Quasar Modes for your App
     info          Display info about your machine and your App
-    serve         Create an ad-hoc server on App distributables
+    serve         Create an ad-hoc (production-ready) server on App distributables
     help          Displays this message
 ```
 
@@ -55,23 +55,23 @@ $ quasar info
 ```bash
 $ quasar dev -h
 
-    Description
-      Starts the app in development mode (hot-code reloading, error
-      reporting, etc)
-    Usage
-      $ quasar dev -p <port number>
-    Options
-      --theme, -t      App theme (default: mat)
-      --mode, -m       App mode [spa|pwa|cordova|electron] (default: spa)
-      --port, -p       A port number on which to start the application
-      --hostname, -H   A hostname to use for serving the application
-      --help, -h       Displays this message
+  Description
+    Starts the app in development mode (hot-code reloading, error
+    reporting, etc)
+  Usage
+    $ quasar dev -p <port number>
+  Options
+    --theme, -t      App theme (default: mat)
+    --mode, -m       App mode [spa|ssr|pwa|cordova|electron] (default: spa)
+    --port, -p       A port number on which to start the application
+    --hostname, -H   A hostname to use for serving the application
+    --help, -h       Displays this message
 
-      Only for Cordova mode:
-      --target, -T     (required) App target
-                         [android|ios|blackberry10|browser|osx|ubuntu|webos|windows]
-      --emulator, -e   (optional) Emulator name
-                         Example: iPhone-7, iPhone-X
+    Only for Cordova mode:
+    --target, -T     (required) App target
+                        [android|ios|blackberry10|browser|osx|ubuntu|webos|windows]
+    --emulator, -e   (optional) Emulator name
+                        Example: iPhone-7, iPhone-X
 ```
 
 The Quasar development server allows you to develop your App by compiling and maintaining code in-memory. A web server will serve your App while offering hot-reload out of the box. Running in-memory offers faster rebuilds when you change your code.
@@ -85,6 +85,9 @@ Based on what you want to develop, you can start the development server by using
 $ quasar dev
 # ...or
 $ quasar dev -m spa
+
+# Developing for SSR
+$ quasar dev -m ssr
 
 # Developing a PWA
 $ quasar dev -m pwa
@@ -137,31 +140,31 @@ If there appears to be an issue with hot reload, you can try two fixes:
 ```bash
 $ quasar build -h
 
-    Description
-      Builds distributables of your app.
-    Usage
-      $ quasar build -p <port number>
-    Options
-      --theme, -t    App theme (default: mat)
-      --mode, -m     App mode [spa|pwa|cordova|electron] (default: spa)
-      --target, -T   App target
-                       - Cordova (default: all installed)
-                          [android|ios|blackberry10|browser|osx|ubuntu|webos|windows]
-                       - Electron with default "electron-packager" bundler (default: yours)
-                          [darwin|win32|linux|mas|all]
-                       - Electron with "electron-builder" bundler (default: yours)
-                          [darwin|mac|win32|win|linux|all]
-      --debug, -d    Build for debugging purposes
-      --help, -h     Displays this message
+  Description
+    Builds distributables of your app.
+  Usage
+    $ quasar build -p <port number>
+  Options
+    --theme, -t    App theme (default: mat)
+    --mode, -m     App mode [spa|ssr|pwa|cordova|electron] (default: spa)
+    --target, -T   App target
+                      - Cordova (default: all installed)
+                        [android|ios|blackberry10|browser|osx|ubuntu|webos|windows]
+                      - Electron with default "electron-packager" bundler (default: yours)
+                        [darwin|win32|linux|mas|all]
+                      - Electron with "electron-builder" bundler (default: yours)
+                        [darwin|mac|win32|win|linux|all]
+    --debug, -d    Build for debugging purposes
+    --help, -h     Displays this message
 
-      ONLY for Electron mode:
-      --bundler, -b  Bundler (electron-packager or electron-builder)
-                       [packager|builder]
-      --arch, -A     App architecture (default: yours)
-                       - with default "electron-packager" bundler:
-                           [ia32|x64|armv7l|arm64|mips64el|all]
-                       - with "electron-builder" bundler:
-                           [ia32|x64|armv7l|arm64|all]
+    ONLY for Electron mode:
+    --bundler, -b  Bundler (electron-packager or electron-builder)
+                      [packager|builder]
+    --arch, -A     App architecture (default: yours)
+                      - with default "electron-packager" bundler:
+                          [ia32|x64|armv7l|arm64|mips64el|all]
+                      - with "electron-builder" bundler:
+                          [ia32|x64|armv7l|arm64|all]
 ```
 
 The Quasar CLI can pack everything together and optimize your App for production. It minifies source code, extracts vendor components, leverages browser cache and much more.
@@ -176,7 +179,7 @@ $ quasar build -t ios
 $ quasar build -m pwa -t mat
 ```
 
-You can also clean up the build assets:
+You can also clean up all the build assets:
 ``` bash
 $ quasar clean
 ```
@@ -185,29 +188,29 @@ $ quasar clean
 ```bash
 $ quasar new -h
 
-    Description
-      Quickly scaffold a page/layout/component/store module.
+  Description
+    Quickly scaffold a page/layout/component/store module.
 
-    Usage
-      $ quasar new [p|page] <page_file_name>
-      $ quasar new [l|layout] <layout_file_name>
-      $ quasar new [c|component] <component_file_name>
-      $ quasar new plugin <plugin_name>
-      $ quasar new [s|store] <store_module_name>
+  Usage
+    $ quasar new [p|page] <page_file_name>
+    $ quasar new [l|layout] <layout_file_name>
+    $ quasar new [c|component] <component_file_name>
+    $ quasar new plugin <plugin_name>
+    $ quasar new [s|store] <store_module_name>
 
-      # Examples:
+    # Examples:
 
-      # Create src/pages/MyNewPage.vue:
-      $ quasar new p MyNewPage
+    # Create src/pages/MyNewPage.vue:
+    $ quasar new p MyNewPage
 
-      # Create src/pages/MyNewPage.vue and src/pages/OtherPage.vue:
-      $ quasar new p MyNewPage OtherPage
+    # Create src/pages/MyNewPage.vue and src/pages/OtherPage.vue:
+    $ quasar new p MyNewPage OtherPage
 
-      # Create src/layouts/shop/Checkout.vue
-      $ quasar new layout shop/Checkout.vue
+    # Create src/layouts/shop/Checkout.vue
+    $ quasar new layout shop/Checkout.vue
 
-    Options
-      --help, -h     Displays this message
+  Options
+    --help, -h     Displays this message
 ```
 
 This command is simply a helper in order to quickly scaffold a page/layout/component/vuex store module. You are not required to use it, but can help you when you don't know how to start.
@@ -216,21 +219,22 @@ This command is simply a helper in order to quickly scaffold a page/layout/compo
 ```bash
 $ quasar mode -h
 
-    Description
-      Add/Remove support for PWA / Cordova / Electron modes.
-    Usage
-      $ quasar mode -r|-a pwa|cordova|electron
-    Options
-      --add, -a     Add support for mode [pwa|cordova|electron]
-      --remove, -r  Remove support for mode [pwa|cordova|electron]
-      --help, -h     Displays this message
+  Description
+    Add/Remove support for SSR / PWA / Cordova / Electron modes.
+  Usage
+    $ quasar mode -r|-a pwa|ssr|cordova|electron
+  Options
+    --add, -a     Add support for mode [pwa|ssr|cordova|electron]
+    --remove, -r  Remove support for mode [pwa|ssr|cordova|electron]
+    --help, -h     Displays this message
 ```
-When you use the Main Starter Kit, you can build SPA (Single Page Website/Application), PWA (Progressive Web App), Mobile App (through Cordova), and/or Electron Apps. When you develop for PWA, Cordova or Electron, you need these modes installed. If you issue "quasar dev" or "quasar build" they will automatically be installed.
+When you use the Main Starter Kit, you can build SPA (Single Page Website/Application), SSR (Server-side Render Website/Application with optional PWA client takeover), PWA (Progressive Web App), Mobile App (through Cordova), and/or Electron Apps. When you develop for SSR, PWA, Cordova or Electron, you need these modes installed. If you issue "quasar dev" or "quasar build" they will automatically be installed.
 
 These modes will add a "src-*" folder into your project with very specific code for it:
 
 | Folder | Mode | Description |
 | --- | --- | --- |
+| src-ssr | ssr | Contains the production Node server files. |
 | src-pwa | pwa | Contains the Service Worker file that you can tweak. |
 | src-cordova | cordova | Is a Cordova project folder that will be using your 'src' as content. Tweak Cordova config, add/remove platforms, splash screens, Cordova plugins and so on from this folder. Do NOT touch "src-cordova/www" folder though as it will get overwritten at every build. |
 | src-electron | electron | Has code for the main Electron thread. The renderer thread will be your app in 'src'. |
@@ -241,22 +245,54 @@ $ quasar mode --remove pwa
 ```
 
 ## serve (Serve Static-Content Folder)
+This command can be used in production too.
+
 ```bash
 $ quasar serve -h
 
   Description
-    Create an ad-hoc http(s) server on a specified folder.
+    Start a HTTP(S) server on a folder.
 
-    This command has been deprecated in favor of using the
-    "http-server" NPM package: https://www.npmjs.com/package/http-server
+  Usage
+    $ quasar serve [path]
+    $ quasar serve . # serve current folder
 
-    Install it by typing: "yarn global add http-server" or "npm install -g http-server"
-    Check its usage by visiting the link above.
+    If you serve a SSR folder built with the CLI then
+    control is yielded to /index.js and params have no effect.
 
-    Basic usage is:
-    $ http-server [path] [options]
+  Options
+    --port, -p             Port to use (default: 8080)
+    --hostname, -H         Address to use (default: 0.0.0.0)
+    --gzip, -g             Compress content (default: true)
+    --silent, -s           Supress log message
+    --colors               Log messages with colors (default: true)
+    --open, -o             Open browser window after starting
+    --cache, -c <number>   Cache time (max-age) in seconds;
+                           Does not apply to /service-worker.js
+                           (default: 86400 - 24 hours)
+    --micro, -m <seconds>  Use micro-cache (default: 1 second)
+    --history              Use history api fallback;
+                           All requests fallback to index.html
+    --https                Enable HTTPS
+    --cert, -C [path]      Path to SSL cert file (Optional)
+    --key, -K [path]       Path to SSL key file (Optional)
+    --proxy <file.js>      Proxy specific requests defined in file;
+                           File must export Array ({ path, rule })
+                           See example below. "rule" is defined at:
+                           https://github.com/chimurai/http-proxy-middleware
+    --help, -h             Displays this message
+
+  Proxy file example
+    module.exports = [
+      {
+        path: '/api',
+        rule: { target: 'http://www.example.org' }
+      }
+    ]
+    --> will be transformed into app.use(path, httpProxyMiddleware(rule))
 ```
 
+### Custom Node server
 When building a SPA or PWA, the distributable folder can be served by any static webserver. To test it out (assuming you don't have a specific publicPath or not using Vue Router "history" mode), you can use the "http-server" npm package.
 
 Or you can build your own server. Here are some examples:

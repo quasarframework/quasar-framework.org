@@ -44,6 +44,25 @@ Quasar = {
 }
 ```
 
+## Init Configuration
+*Requires Quasar v0.17+*
+There are some configuration options for Quasar & Quasar plugins. For the Quasar UMD version you can define the following before including the Quasar script tag:
+
+```js
+<script>
+  // optional
+  window.quasarConfig = {
+    brand: { // this will NOT work on IE 11
+      primary: '#e46262',
+      // ... or all other brand colors
+    },
+    notify: {...}, // default set of options for Notify Quasar plugin
+    loading: {...}, // default set of options for Loading Quasar plugin
+    loadingBar: { ... } // settings for LoadingBar Quasar plugin
+  }
+</script>
+```
+
 ## Usage
 So, after you figured out the CDN links that you need to embed into your webpages (hopefully you've inspected the project folder created by UMD Starter Kit), now it's time to use Quasar.
 

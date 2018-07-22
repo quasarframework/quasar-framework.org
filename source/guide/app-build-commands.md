@@ -16,6 +16,9 @@ $ quasar dev -t ios
 # on specific port
 $ quasar dev -p 9090
 
+# SSR
+$ quasar dev -m ssr
+
 # PWA
 $ quasar dev -m pwa
 
@@ -50,6 +53,9 @@ $ quasar build
 # build for production with specific theme
 $ quasar build -t mat
 $ quasar build -t ios
+
+# SSR
+$ quasar build -m ssr
 
 # PWA
 $ quasar build -m pwa

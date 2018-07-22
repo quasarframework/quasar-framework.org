@@ -2,10 +2,11 @@ title: Main Starter Kit Installation
 ---
 Using the Main Starter Kit is the recommended way to go in order to benefit from all Quasar can do for it. You'll be able to build:
 * a SPA (Single Page Application/Website),
+* a SSR (Server-side Rendered App/Website + optional PWA client takeover)
 * a PWA (Progressive Web App),
 * a Mobile App (through Cordova),
 * an Electron App,
-...sharing the same base-code.
+...**sharing the same base-code**.
 
 First, we install Quasar CLI. Make sure you have Node >=8 and NPM >=5 installed on your machine.
 

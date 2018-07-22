@@ -26,6 +26,7 @@ This is the structure of a project with all modes installed. There's no reason t
 |   │   └── <folder>         # Vuex Store Module...
 │   ├── App.vue              # root Vue component of your App
 │   └── index.template.html  # Template for index.html
+├── src-ssr/                 # SSR specific code (like production Node webserver)
 ├── src-pwa/                 # PWA specific code (like Service Worker)
 ├── src-cordova/             # Cordova generated folder used to create Mobile Apps
 ├── src-electron/            # Electron specific code (like "main" thread)
@@ -45,4 +46,3 @@ This is the structure of a project with all modes installed. There's no reason t
 ├── package.json             # npm scripts and dependencies
 └── README.md                # readme for your website/App
 ```
-
