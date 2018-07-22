@@ -37,6 +37,7 @@ guide:
     Introduction: ssr-$
     Writing Universal Code: ssr-$
     Configuring SSR: ssr-$
+    Client Side Hydration: ssr-$
     Build Commands: ssr-$
     Deploying: ssr-$
 
