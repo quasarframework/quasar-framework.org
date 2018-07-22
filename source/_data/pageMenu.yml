@@ -24,6 +24,7 @@ guide:
     Lazy Loading - Code Splitting: app-$
     Handling Assets: app-$
     App Plugins: $
+    Prefetch Feature: app-$
     API Proxying: app-$
     Pre-Processors and Webpack: app-$
     Vuex Store: app-$
@@ -34,6 +35,7 @@ guide:
 
   Developing SSR:
     Introduction: ssr-$
+    Writing Universal Code: ssr-$
     Configuring SSR: ssr-$
     Build Commands: ssr-$
     Deploying: ssr-$

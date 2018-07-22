@@ -18,4 +18,6 @@ There are also some trade-offs to consider when using SSR:
 
 Before using SSR for your app, the first question you should ask is whether you actually need it. It mostly depends on how important time-to-content is for your app. For example, if you are building an internal dashboard where an extra few hundred milliseconds on initial load doesn't matter that much, SSR would be an overkill. However, in cases where time-to-content is absolutely critical, SSR can help you achieve the best possible initial load performance.
 
-> Most of the content on this page is taken from the official [Vue.js SSR guide](https://ssr.vuejs.org/#what-is-server-side-rendering-ssr), which is a recommended read for you before digging into SSR with Quasar.
+---
+
+Most of the content on this page is taken from the official [Vue.js SSR guide](https://ssr.vuejs.org/#what-is-server-side-rendering-ssr), which is a recommended read for you before digging into SSR with Quasar.
