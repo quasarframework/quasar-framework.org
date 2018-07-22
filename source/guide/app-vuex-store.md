@@ -110,3 +110,6 @@ export default {
 }
 </script>
 ```
+
+## Store Code Splitting
+You can take advantage of [PreFetch Feature](/guide/app-prefetch-feature.html#Store-Code-Splitting) to code split code for modules.

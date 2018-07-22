@@ -1,6 +1,6 @@
 title: PreFetch Feature
 ---
-The PreFetch is a feature available in Quasar CLI that allows a way for the components picked up by Vue Router (defined in `/src/router/routes.js`) to:
+The PreFetch is a feature **available when using Quasar CLI** that allows a way for the components picked up by Vue Router (defined in `/src/router/routes.js`) to:
 * pre-fetch data
 * validate the route
 * redirect to another route should some conditions are not met (like user should be logged in)
@@ -203,3 +203,30 @@ export default {
 
 Also note that because the module is now a dependency of the route component, it will be moved into the route component's async chunk by Webpack.
 
+## Loading State
+A good UX includes notifying the user that something is being worked on in the background while he/she waits for the page to be ready. Quasar CLI offers two options for this out of the box.
+
+### LoadingBar
+When you add Quasar [LoadingBar](/components/loading-bar.html) plugin to your app, Quasar CLI will use it while it runs the preFetch hooks by default.
+
+### Loading
+There's also the possibility to use Quasar [Loading](/components/loading.html) plugin. Here's an example:
+
+```js
+// a route .vue component
+import { Loading } from 'quasar'
+
+export default {
+  // ...
+  preFetch ({ /* ... */ }) {
+    Loading.show()
+
+    return new Promise(resolve => {
+      // do something async here
+      // then call "resolve()"
+    }).then(() => {
+      Loading.hide()
+    })
+  }
+}
+```

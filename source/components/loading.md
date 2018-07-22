@@ -7,7 +7,14 @@ Loading is a feature that you can use to display an overlay with a spinner on to
 Edit `/quasar.conf.js`:
 ```js
 framework: {
-  plugins: ['Loading']
+  plugins: ['Loading'],
+
+  config: {
+    // optional (v0.17+)
+    loading: {
+      // Loading defaults
+    }
+  }
 }
 ```
 
@@ -76,3 +83,8 @@ Outside of a Vue component:
 import { Loading } from 'quasar'
 (Boolean) Loading.isActive
 ```
+
+## Setting Up Defaults
+*Quasar v0.17+*
+
+Should you wish to set up some defaults, rather than specifying them each time, you can do so by using quasar.conf > framework > config > loading: {...} or by calling `Loading.setDefaults({...})` or `this.$q.loading.setDefaults({...})`.

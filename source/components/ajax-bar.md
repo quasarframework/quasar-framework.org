@@ -1,6 +1,9 @@
 title: Ajax Bar
 ---
 Ajax Bar is a component which displays a loading bar (like Youtube) whenever an Ajax call (regardless of Ajax library used) is in progress. It can be manually triggered as well.
+
+> **For a more convenient usage**, you may want to check [LoadingBar](/components/loading-bar.html) Quasar plugin. This page describes how QAjaxBar component works should you want to directly use it yourself. Otherwise, if you want Quasar to take care of setting everything up, head to LoadingBar page.
+
 <input type="hidden" data-fullpage-demo="progress/ajax-bar">
 
 ## Installation

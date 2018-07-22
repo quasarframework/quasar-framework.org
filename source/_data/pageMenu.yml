@@ -154,9 +154,10 @@ components:
     Tooltip: $
   Progress:
     Ajax Bar: $
-    Loading: $
+    Loading Bar: $
     Inner Loading: $
     Progress Bar: $
+    Loading: $
     Spinner: $
   Media:
     Carousel: $

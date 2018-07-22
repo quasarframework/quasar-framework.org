@@ -131,3 +131,36 @@ What this helper does is wrap the raw Javascript `getPropertyValue()` and it's a
 getComputedStyle(document.documentElement)
   .getPropertyValue('--q-color-primary') // #0273d4
 ```
+
+### Setting Up Defaults
+*Quasar v0.17+;* **Not supported by IE11**
+
+Should you wish to set up some brand colors without tampering with the Stylus variables, you can do so in quasar.conf.js:
+
+```
+// quasar.conf.js
+return {
+  framework: {
+    config: {
+      brand: {
+        primary: '#ff0000',
+        // ...
+      }
+    }
+  }
+}
+```
+
+This is especially useful when you use the Quasar UMD version, where you would place the global `quasarConfig` Object before your Quasar script tag.
+
+```html
+<script>
+  // optional
+  window.quasarConfig = {
+    brand: {
+      primary: '#ff0000',
+      // ...
+    }
+  }
+</script>
+```

@@ -7,7 +7,14 @@ Notify is a Quasar plugin that can display animated QAlerts (floating above ever
 Edit `/quasar.conf.js`:
 ```js
 framework: {
-  plugins: ['Notify']
+  plugins: ['Notify'],
+
+  config: {
+    // optional (v0.17+)
+    notify: {
+      // Notify defaults
+    }
+  }
 }
 ```
 
@@ -89,6 +96,11 @@ this.$q.notify({
 
 > **Note**
 > If you define any actions, the notification will automatically be dismissed when user picks it.
+
+## Setting Up Defaults
+*Quasar v0.17+*
+
+Should you wish to set up some defaults, rather than specifying them each time, you can do so by using quasar.conf > framework > config > notify: {...} or by calling `Notify.setDefaults({...})` or `this.$q.notify.setDefaults({...})`.
 
 ## Programmatically Closing Alert
 Notifications are meant to be dismissed only by the user, however for exceptional cases you can do it programmatically. Especially useful when you set indefinite timeout (0).
