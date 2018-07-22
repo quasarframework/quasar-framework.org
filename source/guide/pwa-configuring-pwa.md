@@ -1,6 +1,6 @@
 title: Configuring PWA
 ---
-We'll be using Quasar CLI to develop and build a PWA. The difference between building a SPA, Mobile App, Electron App or a PWA is simply determined by the "mode" parameter in "quasar dev" and "quasar build" commands.
+We'll be using Quasar CLI to develop and build a PWA. The difference between building a SPA, Mobile App, Electron App, PWA or SSR is simply determined by the "mode" parameter in "quasar dev" and "quasar build" commands.
 
 ## Installation
 In order to build a PWA, we first need to add the PWA mode to our Quasar project:

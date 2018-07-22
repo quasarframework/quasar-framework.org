@@ -4,7 +4,7 @@ title: Configuring SSR
 We’ll be using Quasar CLI to develop and build a SSR website. The difference between building a SPA, Mobile App, Electron App, PWA or SSR is simply determined by the “mode” parameter in “quasar dev” and “quasar build” commands.
 
 ## Installation
-In order to build a PWA, we first need to add the PWA mode to our Quasar project:
+In order to build a SSR website, we first need to add the SSR mode to our Quasar project:
 ```bash
 $ quasar mode -a ssr
 ```
