@@ -78,6 +78,7 @@ The default values of the different QTable labels are taken care of by default t
 ## QTable Vue Properties
 | Vue Property | Type | Description |
 | --- | --- | --- |
+| `grid` | Boolean | (v0.17+) Use "grid mode". See example below. |
 | `data` | Array of Objects | Data containing Array of rows to display. |
 | `columns` | Array of Objects | (**Required**) Defining each column's properties. |
 | `row-key` | String | (**Required**) Property name of each row defining a unique **data** key for the respective rows. |
@@ -435,6 +436,57 @@ export default {
   })
 }
 </script>
+```
+
+### Grid Mode
+*Requires Quasar v0.17+*
+
+Notice we'll be using a Vue scoped slot called `item` to define how each record (the equivalent of a row in non-grid mode) should look like. This allows you total freedom.
+
+The code below is the equivalent of the demo. Feel free to tweak however you want as all the QTable features are available in grid mode too. In the example below, we hide the header, but you can show it should you want -- user will be able to sort the data by columns etc.
+
+```html
+<q-table
+  grid
+  hide-header
+  :data="data"
+  :columns="columns"
+  :filter="filter"
+  :selection="selection"
+  :selected.sync="selected"
+  :visible-columns="visibleColumns"
+  row-key="name"
+>
+  <template slot="top-right" slot-scope="props">
+    <q-search hide-underline v-model="filter" />
+  </template>
+
+  <div
+    slot="item"
+    slot-scope="props"
+    class="q-pa-xs col-xs-12 col-sm-6 col-md-4 col-lg-3 transition-generic"
+    :style="props.selected ? 'transform: scale(0.95);' : ''"
+  >
+    <q-card class="transition-generic" :class="props.selected ? 'bg-grey-2' : ''">
+      <q-card-title class="relative-position">
+        <q-checkbox v-model="props.selected" :label="props.row.name" />
+      </q-card-title>
+      <q-card-separator />
+      <q-card-main class="q-pa-none">
+        <q-list no-border>
+          <q-item v-for="col in props.cols.filter(col => col.name !== 'desc')" :key="col.name">
+            <q-item-main>
+              <q-item-tile label>{{ col.label }}</q-item-tile>
+            </q-item-main>
+            <q-item-side right>
+              <q-item-tile>{{ col.value }}</q-item-tile>
+            </q-item-side>
+          </q-item>
+        </q-list>
+      </q-card-main>
+    </q-card>
+  </div>
+</q-table>
 ```
 
 ### Row selection, Extra top/bottom rows, Loading state
