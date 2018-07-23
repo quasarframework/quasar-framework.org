@@ -7,7 +7,7 @@ When writing reusable code for building a mobile App and a website, it's importa
 ## Cordova Use Case
 Quasar handles the back button for you by default, so it can hide any opened Modals/Dialogs **instead of the default behavior** which is to return to the previous page (which is not a nice user experience).
 
-Also, when on the home route ('/') and user presses the back button on the phone/tablet, Quasar will make you app exit. Should you wish to disable this behavior, then you can do so by configuring quasar.conf.js:
+Also, when on the home route ('/') and user presses the back button on the phone/tablet, Quasar will make your app exit. Should you wish to disable this behavior, then you can do so by configuring quasar.conf.js:
 
 ```js
 // Quasar v0.17+ only
@@ -23,9 +23,9 @@ return {
 ```
 
 ## Navigation Scenario
-Consider this situation: We have an App with two pages (so two routes): a login page (route "/") and another page with a list of items on multiple layout tabs-  Let's call this page "List page" from now on, where each tab has a route like "/list/shoes", "/list/hats". The Login page redirects to List page and List page has a "Logout" button, which redirects the user to the Login page.
+Consider this situation: We have an App with two pages (so two routes): a login page (route "/") and another page with a list of items on multiple layout tabs - let's call this page "List page" from now on, where each tab has a route like "/list/shoes", "/list/hats". The Login page redirects to List page and List page has a "Logout" button, which redirects the user to the Login page.
 
-How would you handle this situation? Normally, you'd write code like below for the Login and Logout button (we won't go into details of handling the login information and communicating with a server as this is outside of our point here):
+How would you handle this situation? Normally, you'd write code like below for the Login and Logout button (we won't go into details of handling the login information and communicating with a server as this is outside of the exercise here):
 
 ``` html
 <!-- Login button -->
