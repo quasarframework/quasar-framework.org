@@ -2,7 +2,7 @@ title: Ajax Bar
 ---
 Ajax Bar is a component which displays a loading bar (like Youtube) whenever an Ajax call (regardless of Ajax library used) is in progress. It can be manually triggered as well.
 
-> **For a more convenient usage**, you may want to check [LoadingBar](/components/loading-bar.html) Quasar plugin. This page describes how QAjaxBar component works should you want to directly use it yourself. Otherwise, if you want Quasar to take care of setting everything up, head to LoadingBar page.
+> **For a more convenient usage**, you may want to check [LoadingBar](/components/loading-bar.html) Quasar plugin. This page describes how the QAjaxBar component works should you want to directly use it yourself. Otherwise, if you want Quasar to take care of setting everything up, head to the LoadingBar page.
 
 <input type="hidden" data-fullpage-demo="progress/ajax-bar">
 
@@ -20,7 +20,7 @@ As long as this component is rendered by Vue it will capture all Ajax calls.
 <q-ajax-bar />
 ```
 
-Best way is to place it in your App root component (`App.vue` if you are using the default Quasar template):
+The best way to ise it is to place it in your App's root component (`App.vue` if you are using the default Quasar template):
 ``` html
 <template>
   <div id="q-app">
@@ -37,26 +37,26 @@ Best way is to place it in your App root component (`App.vue` if you are using t
 | Vue Property | Type | Default Value | Description |
 | --- | --- | --- | --- |
 | `position` | String | 'top' | Where to place the loading bar: 'top', 'bottom', 'left' or 'right'. |
-| `size` | String | '4px' | Thickness of loading bar. |
+| `size` | String | '4px' | Thickness of the loading bar. |
 | `color` | String | 'red' | One from [Quasar Color Palette](/components/color-palette.html). |
 | `reverse` | Boolean | `false` | Reverse direction of loading bar. |
 | `skip-hijack` | Boolean | `false` | Avoid taking into account Ajax calls. |
 
 ## Vue Methods
-Only if you want to also trigger it manually. Ajax calls trigger these methods automatically.
+Use this only if you want to also trigger it manually. Ajax calls trigger these methods automatically.
 
 | Vue Method | Description |
 | --- | --- |
 | `start()` | Trigger loading bar. |
-| `stop()` | Notify one event has finished. |
+| `stop()` | Notify when event has finished. |
 
 ## Vue Events
 | Vue Event | Description |
 | --- | --- |
-| `@start` | Triggered when loading bar has been triggered to be displayed. |
-| `@stop` | Triggered when loading bar finished its work and goes hidden. |
+| `@start` | Triggered when loading bar has been triggered for beinb displayed. |
+| `@stop` | Triggered when loading bar has finished its work and becomes hidden. |
 
-> If multiple events are captured by Ajax Bar simultaneously, `@start` and `@stop` will still be triggered only once: when loading bar starts showing up and when it goes hidden.
+> If multiple events are captured by Ajax Bar simultaneously, `@start` and `@stop` will still be triggered only once: when loading bar starts showing up and when it becomes hidden.
 
 ## How start/stop works
 Each Ajax call makes a `start()` call when it is triggered. When it ends, it calls `stop()`. So yes, if you also manually trigger Ajax Bar you must call `start()` each time a new event is starting and `stop()` each time an event finished. Ajax Bar knows to handle multiple events simultaneously.
