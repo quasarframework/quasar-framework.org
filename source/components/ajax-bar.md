@@ -20,7 +20,7 @@ As long as this component is rendered by Vue it will capture all Ajax calls.
 <q-ajax-bar />
 ```
 
-The best way to ise it is to place it in your App's root component (`App.vue` if you are using the default Quasar template):
+The best way to use it is to place it in your App's root component (`App.vue` if you are using the default Quasar template):
 ``` html
 <template>
   <div id="q-app">
