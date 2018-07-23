@@ -4,12 +4,12 @@ Quasar Framework offers a wide selection of colors out of the box. You can use t
 
 <input type="hidden" data-fullpage-demo="style-and-identity/color-palette">
 
-This page comes really handy after reading [Quasar Theming](/guide/quasar-theming.html). You might also want to check [Color Utils](/components/color-utils.html).
+This page comes in really handy after reading [Quasar Theming](/guide/quasar-theming.html). You might also want to check [Color Utils](/components/color-utils.html).
 
 ## Brand Colors
 There can be three main colors used throughout your App, called `primary`, `secondary` and `tertiary`.
 
-Most of the colors that Quasar Components use are strongly linked with these three colors that you can change. Choosing these colors is the first step one should take when differentiating the design of its own App. You'll notice immediately on changing their default values that Quasar Components follow these colors as a guideline.
+Most of the colors that Quasar Components use are strongly linked with these three colors that you can change. Choosing these colors is the first step one should take when differentiating the design of an App. You'll notice immediately upon changing their default values that Quasar Components follow these colors as a guideline.
 
 ## Color List
 
@@ -18,10 +18,10 @@ Here's the list of colors provided out of the box. Use them as CSS classes (in H
 `primary`, `secondary`, `tertiary`
 `positive`, `negative`, `info`, `warning`, `white`, `light`, `dark`, `faded`
 
-On the following colors there are variations available:
+ Colors come in the following preset hues:
 `red`, `pink`, `purple`, `deep-purple`, `indigo`, `blue`, `light-blue`, `cyan`, `teal`, `green`, `light-green`, `lime`, `yellow`, `amber`, `orange`, `deep-orange`, `brown`, `grey`, `blue-grey`
 
-Example of color variation: `red`, `red-1`, `red-2`, ..., `red-14`. See the demo to make a good picture of what variations are. Variation 11 to 14 are color accents.
+Example of color variation: `red`, `red-1`, `red-2`, ..., `red-14`. See the demo to get an idea of what variations do to the shade of the color. Variation 11 to 14 are color accents.
 
 ## Using as CSS Classes
 Use `text-` or `bg-` prefixes as class names to change the color of text or the color of the background.
@@ -50,7 +50,7 @@ div
 ```
 
 ## Adding Your Own Colors
-If you want to use colors of your own for components, let's say we are adding a color named "brand", all you need to do is add the following CSS into your app:
+If you want to use your own colors for your omponents (let's say we are adding a color named "brand") all you need to do is add the following CSS into your app:
 
 ```css
 .text-brand {
@@ -123,7 +123,7 @@ colors.getBrand('primary') // '#33F'
 colors.getBrand('primary', document.getElementById('rebranded-section-id'))
 ```
 
-What this helper does is wrap the raw Javascript `getPropertyValue()` and it's available for convenience. Example of equivalent raw Javascript:
+What this helper does is wrap the raw Javascript `getPropertyValue()` and it's available for convenience. Here is an example of equivalent vanilla Javascript:
 
 ```js
 // equivalent of colors.getBrand('primary') in raw Javascript:
