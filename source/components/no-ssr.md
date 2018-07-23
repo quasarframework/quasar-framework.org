@@ -73,4 +73,4 @@ Only placeholder slot:
 | Vue Property | Type | Description |
 | --- | --- | --- |
 | `tag` | String | HTML tag to use to render the component. Default: 'div' |
-| `placeholder` | String | String to display on server server, before the client takeover. |
+| `placeholder` | String | String to display on server, before the client takeover. |
