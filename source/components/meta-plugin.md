@@ -1,6 +1,6 @@
 title: Quasar Meta Plugin
 ---
-**Better SEO for your website!** The Meta plugin can dynamically change page title, manage `<meta>` tags, manage <html> & <body> DOM element attributes, add/remove/change `<style>` and `<script>` tags in the head of your document (useful for CDN stylesheets or for ld+json script markup, for example), or manage <noscript> tags.
+**Better SEO for your website!** The Meta plugin can dynamically change page title, manage `<meta>` tags, manage <html> & <body> DOM element attributes, add/remove/change `<style>` and `<script>` tags in the head of your document (useful for CDN stylesheets or for json-ld markup, for example), or manage <noscript> tags.
 
 ## Installation
 ```js
@@ -91,7 +91,7 @@ meta: {
 
 > Just make sure not to duplicate content that already exists in `/src/index.template.html`. If you want to use the Meta plugin, the recommended way is to remove the same tags from the html template. But on use-cases where you know a tag will never change and you always want it rendered, then it's better to have it only on the html template instead.
 
-In the examples above, you noticed all of the meta props are "static". But they can be dynamic instead, should you wish so. This is how you can bind to the Vue scope with them. Think of them as a Vue computed property.
+In the examples above, you noticed all of the meta props are "static". But they can be dynamic instead, should you wish. This is how you can bind to the Vue scope with them. Think of them as a Vue computed property.
 
 ```js
 // some .vue file
