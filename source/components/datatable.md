@@ -1,13 +1,13 @@
 title: Data Table
 ---
-QTable is a Component which allows you to display data in a tabular manner. Features:
+QTable is a Component that allows you to display data in a tabular manner. Features:
   * Filtering
   * Sorting
   * Single / Multiple rows selection with custom selection actions
   * Pagination (including server-side if required)
   * Total customization of rows and cells through scoped slots
   * Ability to add additional row(s) at top or bottom of data rows
-  * Columns picker (through QTableColumns component described in one of the sections)
+  * Column picker (through QTableColumns component described in one of the sections)
   * Custom top and/or bottom Table controls
   * Responsive design ("dense" mode for narrow windows)
 <input type="hidden" data-fullpage-demo="grouping/table/table-features" data-source="grouping/table">
@@ -441,9 +441,9 @@ export default {
 ### Grid Mode
 *Requires Quasar v0.17+*
 
-Notice we'll be using a Vue scoped slot called `item` to define how each record (the equivalent of a row in non-grid mode) should look like. This allows you total freedom.
+Notice we'll be using a Vue scoped slot called `item` to define how each record (the equivalent of a row in non-grid mode) should look. This allows you total freedom.
 
-The code below is the equivalent of the demo. Feel free to tweak however you want as all the QTable features are available in grid mode too. In the example below, we hide the header, but you can show it should you want -- user will be able to sort the data by columns etc.
+The code below is the equivalent of the demo. Feel free to tweak however you want as all the QTable features are available in grid mode too. In the example below, we hide the header, but you can show it should you want -- the user will be able to sort the data by columns etc.
 
 ```html
 <q-table
