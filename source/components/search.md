@@ -1,6 +1,6 @@
 title: Search (Textfield)
 ---
-The Search component offers the users an input field with additional features for searching purposes. For autocomplete functionality, also refer to [QAutocomplete](/components/autocomplete.html) documentation.
+The Search component offers the user an input field with additional features for searching purposes. For autocomplete functionality, also refer to [QAutocomplete](/components/autocomplete.html) documentation.
 <input type="hidden" data-fullpage-demo="forms/search">
 
 Works well with [QField](/components/field.html) for additional functionality such as a helper, error message placeholder and many others.
@@ -20,7 +20,7 @@ framework: {
 ```
 
 ## Vue Properties
-Supports `v-model` which should be binded to a String or Number (depending on `type` property used) in your scope.
+Supports `v-model` which you should bind to a String or Number (depending on `type` property used) in your scope.
 
 | Vue Property | Type | Description |
 | --- | --- | --- |
@@ -75,7 +75,7 @@ Common input frame properties:
 | `no-parent-field` | Boolean | Avoid trying to connect to a parent QField. |
 
 ### Icon buttons
-This section refers to `before` and `after` properties which can add additional buttons as icons to the textfield. Here is the structure of the two properties:
+This section refers to `before` and `after` properties which can add additional buttons such as icons to the textfield. Here is the structure of the two properties:
 
 ```js
 {
@@ -229,7 +229,7 @@ This will show an inverted colored input field in amber. Here, the text is autom
 ```
 
 ### Alignment
-You can also align the input to the right, center or left. The default is left. The below example will show a field for Euro currency input.
+You can also align the input to the right, center or left. The default is left. The example below will show a field for Euro currency input.
 
 ```html
 <!-- Align textfield content to the right -->
@@ -260,6 +260,6 @@ It is also possible to further enhance a QInput by wrapping it in a [QField](/co
 </div>
 ```
 
-The above usage of QField will show the input field within a dark grey background with an inverse white text. Notice the usage of the `dark` prop for QInput. This controls the inversion of the text color.
+The above usage of QField will show the input field within a dark grey background and an inverse white text. Notice the usage of the `dark` prop for QInput. This controls the inversion of the text color.
 
 Please refer to the [QField documentation](/components/field.html) for more info about its usage.
