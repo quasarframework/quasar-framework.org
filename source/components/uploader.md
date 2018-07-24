@@ -22,7 +22,7 @@ framework: {
 
 ## Vue Properties
 | Vue Property | Type | Description |
-| --- | --- | --- | --- |
+| --- | --- | --- |
 | `url` | String | (**Required**) URL or path to the server which handles the upload |
 | `name` | String | Name of the file, if it should be different than the file's name. |
 | `headers` | Object | Specify what headers need to be added to the XHR request |
@@ -65,7 +65,7 @@ Common input frame properties:
 | `no-parent-field` | Boolean | Avoid trying to connect to a parent QField. |
 
 ### Upload Factory
-Sometimes you need to define your own upload method. You can do this through `upload-factory` parameter, like below:
+Sometimes you need to define your own upload method. You can do this through `upload-factory` parameter, as below:
 
 ```html
 <template>
