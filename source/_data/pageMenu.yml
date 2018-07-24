@@ -39,6 +39,7 @@ guide:
     Configuring SSR: ssr-$
     Client Side Hydration: ssr-$
     Handling 404 and 500 Errors: ssr-$
+    SSR with PWA: $
     Build Commands: ssr-$
     Deploying: ssr-$
 
