@@ -33,6 +33,8 @@ There’s only one breaking change, regarding QLayoutDrawer `mini-width` prop. I
 
 > v0.17 introduces the SSR mode for Quasar CLI, and the following changes will be required only if you build for SSR too. Otherwise, you can simply upgrade the `quasar-cli` dependency and benefit from the latest goodies.
 
+A minor change that you should be aware of is that we will be deprecating the `boot` app-plugin and it will be removed in the next version in favor of using the [PreFetch Feature](/guide/app-prefetch-feature.html) in src/App.vue and calling `redirect(false)`. For the time being it is still available, but you should migrate as soon as possible.
+
 ### SSR mode (ONLY)
 Like mentioned above, these changes will be required by the Quasar CLI only when you build with SSR mode. After doing these changes you’ll still be able to build the other modes (SPA/PWA/Cordova/Electron) too.
 
