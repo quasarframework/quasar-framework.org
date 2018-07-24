@@ -112,7 +112,7 @@ export default {
 ```
 
 ### Redirecting Example
-Example of redirecting the user under some circumstances, like when it tries to access a page that only an authenticated user should see.
+Example of redirecting the user under some circumstances, like when they try to access a page that only an authenticated user should see.
 
 ```js
 // We assume here we already wrote the authentication logic
