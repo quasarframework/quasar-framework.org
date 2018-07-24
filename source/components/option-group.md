@@ -74,7 +74,7 @@ export default {
 ```
 
 ## Vue Properties
-Supports `v-model`, which is required. For "radio" type it must be a String, otherwise ("checkbox" or "toggle" type) your scope variable binded to `v-model` must be an Array.
+Supports `v-model`, which is required. For "radio" type it must be a String, otherwise ("checkbox" or "toggle" type) your scope variable that you bind to `v-model` must be an Array.
 
 | Vue Property | Type | Description |
 | --- | --- | --- |
