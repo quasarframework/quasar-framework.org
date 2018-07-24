@@ -79,13 +79,13 @@ Supports `v-model`, which is required. For "radio" type it must be a String, oth
 | Vue Property | Type | Description |
 | --- | --- | --- |
 | `type` | String | The type of input component to be used. The default is `radio`. The other choices are `checkbox` and `toggle`. |
-| `options` | Array | An array of objects with `value` and `label` properties. The boolean components will be created according to this array. |
+| `options` | Array | An array of objects with `value` and `label` properties. The binary components will be created according to this array. |
 | `left-label` | Boolean | When set to `true`, the labels will be put on the left side. |
-| `inline` | Boolean | Adjusts the display of the boolean components fill out the row, instead of being stacked vertically. |
+| `inline` | Boolean | Adjusts the display of the binary components fill out the row, instead of being stacked vertically. |
 | `color` | String | Color from [Quasar Color Palette](/components/color-palette.html). |
 | `keep-color` | Boolean | Keep color when not selected/truthy too. |
-| `readonly` | Boolean | Set to `true`, to make the boolean components read-only. |
-| `disable` | Boolean | When set to `true`, the boolean components are not selectable thus cannot change your `v-model`. |
+| `readonly` | Boolean | Set to `true`, to make the binary components read-only. |
+| `disable` | Boolean | When set to `true`, the binry components are not selectable thus cannot change your `v-model`. |
 | `dark` | Boolean | Set to `true` when background is dark. |
 | `no-parent-field` | Boolean | Avoid trying to connect to a parent QField. |
 
