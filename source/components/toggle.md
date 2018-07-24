@@ -36,7 +36,7 @@ framework: {
 Check "Vue Properties" for even more options.
 
 ## Vue Properties
-Supports `v-model` which should be binded to a Boolean or Array in your scope.
+Supports `v-model` which you should bind to a Boolean or Array in your scope.
 
 | Vue Property | Type | Description |
 | --- | --- | --- |
@@ -89,7 +89,7 @@ export default {
 Ticking all toggles will make `selection` scope variable to be `['one', 'two', 'three']`. Unticking all toggles will result in `selection` being an empty array `[]`.
 
 ## More Examples
-There are a number of props, which are available to help quickly format a Toggle. An interesting feature of Toggle is the ripple effect that user gets when clicking/tapping on it to change its state.
+There are a number of props, which are available to help quickly format a Toggle. An interesting feature of Toggle is the ripple effect that user sees when clicking/tapping on it to change its state.
 
 ### Custom Model Values
 Instead of the default `true/false` values, you can use custom ones:
