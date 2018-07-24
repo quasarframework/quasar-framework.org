@@ -190,7 +190,7 @@ export default {
       // OR
       model: '2016-10-24T10:40:14.674Z' // full ISO 8601 compliant value
       // OR
-      model: `2016-10-24` // Any dirivative of a valid ISO 8601 datetime value will
+      model: `2016-10-24` // Any derivative of a valid ISO 8601 datetime value will
                           // also work, like '2016-10-24T10:40:14'
       // OR
       model: `2016-10-24T10:40`, // For an ISO 8601 value, the time must be included
