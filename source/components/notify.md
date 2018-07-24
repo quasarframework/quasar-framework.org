@@ -1,6 +1,6 @@
 title: Notify
 ---
-Notify is a Quasar plugin that can display animated QAlerts (floating above everything in your pages) to users under the form of a notification. They are useful for alerting the user of an event and can even engage the user through actions.
+Notify is a Quasar plugin that can display animated QAlerts (floating above everything in your pages) to users in the form of a notification. They are useful for alerting the user of an event and can even engage the user through actions.
 <input type="hidden" data-fullpage-demo="popups/notify">
 
 ## Installation
@@ -95,7 +95,7 @@ this.$q.notify({
 ```
 
 > **Note**
-> If you define any actions, the notification will automatically be dismissed when user picks it.
+> If you define any actions, the notification will automatically be dismissed when the user picks it.
 
 ## Setting Up Defaults
 *Quasar v0.17+*
