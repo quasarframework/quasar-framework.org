@@ -1,7 +1,7 @@
 title: Writing Universal Code
 ---
 
-Writing "universal" code means writing code that runs on both the server and the client. Due to use case and platform API differences, the behavior of our code will not be exactly the same when running in different environments. Here we will go over the key things you need to be aware of.
+Writing "universal" code means writing code that runs on both the server and the client. Due to use-case and platform API differences, the behavior of our code will not be exactly the same when running in different environments. Here we will go over the key things you need to be aware of.
 
 ![Quasar SSR Build System](/images/ssr-build.png "Quasar SSR Build System")
 
@@ -63,7 +63,7 @@ return {
 ```
 
 ## Data Pre-Fetching and State
-During SSR, we are essentially rendering a "snapshot" of our app, so if the app relies on some asynchronous data, these data need to be pre-fetched and resolved before we start the rendering process.
+During SSR, we are essentially rendering a "snapshot" of our app, so if the app relies on some asynchronous data, this data need to be pre-fetched and resolved before we start the rendering process.
 
 The Quasar CLI [preFetch](/guide/app-prefetch-feature.html) feature has been created to solve this problem. Take a few moments to read about it.
 
