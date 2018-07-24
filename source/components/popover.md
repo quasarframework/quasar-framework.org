@@ -78,7 +78,7 @@ export default {
 | --- | --- | --- |
 | `anchor` | Object | String of form `bottom left` (vertical horizontal) |
 | `anchor-click` | Boolean | Disable triggering the Popover by clicking/tapping on the parent element. |
-| `no-focus` | Boolean | (v0.17+) By default, for accessibility purposes, Popover focuses its content when it's getting displayed. For use cases when you need to keep focus on your current element, set this to `true`. |
+| `no-focus` | Boolean | (v0.17+) By default, for accessibility purposes, Popover focuses its content when it will be displayed. For use-cases when you need to keep focus on your current element, set this to `true`. |
 | `no-refocus` | Boolean | (v0.17+) By default, for accessibility purposes, Popover refocuses the previously active element. Set to `true` to disable this behaviour. |
 | `self` | Object | String of form `top left` (vertical horizontal) |
 | `max-height` | String | Optional maximum height of Popover content. Example: `500px` |
@@ -106,7 +106,7 @@ export default {
 By default, clicking/tapping outside the QPopover content will close it. But if you'd like elements from the QPopover content to close it, then use the `v-close-overlay` Quasar directive.
 
 ## Handling Positioning
-Position of the QPopover can be customized. It keeps account of the `anchor` and `self` optional Vue properties. See demo and play with them.
+Position of the QPopover can be customized. It keeps account of the optional `anchor` and `self` Vue properties. See the demo and play with them.
 
 The final position of the QPopover popup is calculated so that it will be displayed on the available screen real estate, switching to right-side and/or top-side when necessary.
 
