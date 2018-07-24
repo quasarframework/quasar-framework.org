@@ -85,7 +85,7 @@ Supports `v-model`, which is required. For "radio" type it must be a String, oth
 | `color` | String | Color from [Quasar Color Palette](/components/color-palette.html). |
 | `keep-color` | Boolean | Keep color when not selected/truthy too. |
 | `readonly` | Boolean | Set to `true`, to make the binary components read-only. |
-| `disable` | Boolean | When set to `true`, the binry components are not selectable thus cannot change your `v-model`. |
+| `disable` | Boolean | When set to `true`, the binary components are not selectable thus cannot change your `v-model`. |
 | `dark` | Boolean | Set to `true` when background is dark. |
 | `no-parent-field` | Boolean | Avoid trying to connect to a parent QField. |
 
