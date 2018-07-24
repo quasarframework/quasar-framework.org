@@ -26,3 +26,6 @@ The `ssrContext` is available in App Plugins or preFetch feature where it is sup
 The reason for all this is that in a client-only app, every user will be using a fresh instance of the app in their browser. For server-side rendering we want the same: each request should have a fresh, isolated app instance so that there is no cross-request state pollution. So Platform and Cookies need to be bound to each request separately.
 
 A good idea also is to read the [Writing Universal Code](/guide/ssr-writing-universal-code.html) documentation page.
+
+## LocalStorage and SessionStorage not working?
+When running the code on server-side, it can't work. Web Storage is a browser API only.
