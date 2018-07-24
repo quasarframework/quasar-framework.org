@@ -28,7 +28,7 @@ return {
 }
 ```
 
-> If you decide to go with a PWA client takeover (**which is a killer combo**), the Quasar CLI PWA mode will be installed too. You may want to check out the [Quasar PWA](/guide/pwa-introduction.html) guide too.
+> If you decide to go with a PWA client takeover (**which is a killer combo**), the Quasar CLI PWA mode will be installed too. You may want to check out the [Quasar PWA](/guide/pwa-introduction.html) guide too. But most importantly, make sure you read [SSR with PWA](/guide/ssr-configuring-ssr.html) page.
 
 When building, `extendWebpack()` and `chainWebpack()` will receive one more parameter (Object), currently containing `isServer` or `isClient` boolean props, because there will be two Webpack builds (one for the server-side and one for the client-side).
 

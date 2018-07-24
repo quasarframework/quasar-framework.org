@@ -14,6 +14,8 @@ return {
 
 The first request will be served from the webserver. The PWA gets installed then it takes over on client side.
 
+> For more information on PWA, head on to [PWA Introduction](/guide/pwa-introduction.html) and read the whole PWA Guide section.
+
 ## Caveat
 One caveat to be aware of is that, as opposed to a normal PWA build, you need to also specify the URL routes that you wish to cache. The quasar.conf > ssr > pwa can have the Object form, specifying workbox options that will get applied on top of quasar.conf > pwa > workboxOptions. So we'll be using this to add our routes to the runtime caching:
 
