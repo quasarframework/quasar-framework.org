@@ -1,6 +1,6 @@
 title: Pull Down to Refresh
 ---
-When you want to allow the user to refresh the content or add newest content.
+When you want to allow the user to refresh the content or retrieve the newest content.
 
 <input type="hidden" data-fullpage-demo="navigation/pull-to-refresh">
 
@@ -13,7 +13,7 @@ framework: {
 ```
 
 ## Basic Usage
-Use QPullToRefresh component as direct child of your page component, to encapsulate all its content. Refer to the source on the demo for a more detailed example.
+Use QPullToRefresh component as direct child of your page component, to encapsulate all its content. Refer to the source of the demo for a more detailed example.
 
 ``` html
 <q-pull-to-refresh :handler="refresher">
