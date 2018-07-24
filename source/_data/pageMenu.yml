@@ -40,6 +40,7 @@ guide:
     Client Side Hydration: ssr-$
     Handling 404 and 500 Errors: ssr-$
     SSR with PWA: $
+    SSR Frequently Asked Questions: $
     Build Commands: ssr-$
     Deploying: ssr-$
 

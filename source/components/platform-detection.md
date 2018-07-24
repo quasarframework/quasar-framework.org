@@ -65,3 +65,23 @@ Let's say we want to render different components or DOM elements, based on the p
 
 > **NOTE**
 > Based on your needs, you might want to also check [Design Helpers &gt; Visibility](/components/visibility.html#Platform-Related) page to see how you can achieve the same effect using CSS alone. This latter method will render your DOM elements or components regardless of platform though, so choose wisely on how you want to handle the performance of your app.
+
+## Note about SSR
+When building for SSR, use only the `$q.platform` form. If you need to use the `import { Platform } from 'quasar'` (when on server-side), then you'll need to do it like this:
+
+```js
+import { Platform } from 'quasar'
+
+// you need access to `ssrContext`
+function (ssrContext) {
+  const platform = process.env.SERVER
+    ? Platform.parseSSR(ssrContext)
+    : Platform // otherwise we're on client
+
+  // platform is equivalent to the global import as in non-SSR builds
+}
+```
+
+The `ssrContext` is available in App Plugins or preFetch feature where it is supplied as parameter.
+
+The reason for all this is that in a client-only app, every user will be using a fresh instance of the app in their browser. For server-side rendering we want the same: each request should have a fresh, isolated app instance so that there is no cross-request state pollution. So Platform needs to be bound to each request separately.

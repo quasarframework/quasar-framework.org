@@ -13,6 +13,26 @@ framework: {
 }
 ```
 
+### Note about SSR
+When building for SSR, use only the `$q.cookies` form. If you need to use the `import { Cookies } from 'quasar'`, then you'll need to do it like this:
+
+```js
+import { Cookies } from 'quasar'
+
+// you need access to `ssrContext`
+function (ssrContext) {
+  const cookies = process.env.SERVER
+    ? Cookies.parseSSR(ssrContext)
+    : Cookies // otherwise we're on client
+
+  // "cookies" is equivalent to the global import as in non-SSR builds
+}
+```
+
+The `ssrContext` is available in App Plugins or preFetch feature where it is supplied as parameter.
+
+The reason for this is that in a client-only app, every user will be using a fresh instance of the app in their browser. For server-side rendering we want the same: each request should have a fresh, isolated app instance so that there is no cross-request state pollution. So Cookies needs to be bound to each request separately.
+
 ## Read a Cookie
 ``` js
 // outside of a Vue file
