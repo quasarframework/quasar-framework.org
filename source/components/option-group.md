@@ -1,6 +1,6 @@
 title: Option Group
 ---
-The Quasar Option Group component is a helper component, which allows you to better control the grouping of binary (as in on or off, true or false, 1 or 0) form input components like checkboxes, radios or toggles. A good usage for this component is for offering the user a set of options or settings to turn on and off, and thus the name of the component.
+The Quasar Option Group component is a helper component, which allows you to better control the grouping of boolean (as in on or off, true or false, 1 or 0) form input components like checkboxes, radios or toggles. A good usage for this component is for offering the user a set of options or settings to turn on and off, and thus the name of the component.
 <input type="hidden" data-fullpage-demo="forms/option-group">
 
 Works well with [QField](/components/field.html) for additional functionality such as a helper, error message placeholder and many others.
@@ -74,18 +74,18 @@ export default {
 ```
 
 ## Vue Properties
-Supports `v-model`, which is required. For "radio" type it must be a String, otherwise ("checkbox" or "toggle" type) your scope variable binded to `v-model` must be an Array.
+Supports `v-model`, which is required. For "radio" type it must be a String, otherwise ("checkbox" or "toggle" type) your scope variable that you bind to `v-model` must be an Array.
 
 | Vue Property | Type | Description |
 | --- | --- | --- |
 | `type` | String | The type of input component to be used. The default is `radio`. The other choices are `checkbox` and `toggle`. |
-| `options` | Array | An array of objects with `value` and `label` properties. The binary components will be created according to this array. |
+| `options` | Array | An array of objects with `value` and `label` properties. The boolean components will be created according to this array. |
 | `left-label` | Boolean | When set to `true`, the labels will be put on the left side. |
-| `inline` | Boolean | Adjusts the display of the binary components fill out the row, instead of being stacked vertically. |
+| `inline` | Boolean | Adjusts the display of the boolean components fill out the row, instead of being stacked vertically. |
 | `color` | String | Color from [Quasar Color Palette](/components/color-palette.html). |
 | `keep-color` | Boolean | Keep color when not selected/truthy too. |
-| `readonly` | Boolean | Set to `true`, to make the binary components read-only. |
-| `disable` | Boolean | When set to `true`, the binary components are not selectable thus cannot change your `v-model`. |
+| `readonly` | Boolean | Set to `true`, to make the boolean components read-only. |
+| `disable` | Boolean | When set to `true`, the boolean components are not selectable thus cannot change your `v-model`. |
 | `dark` | Boolean | Set to `true` when background is dark. |
 | `no-parent-field` | Boolean | Avoid trying to connect to a parent QField. |
 
