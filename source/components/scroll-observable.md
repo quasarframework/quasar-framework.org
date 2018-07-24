@@ -44,7 +44,7 @@ export default {
 | `debounce` | Number | (v0.17+) Emitting the event with a custom debounce. "0" means no debounce. |
 
 ## Determining Scrolling Container
-All components or directives in Quasar have a simple algorithm to determine which is the container that supports the scroll: it searches for a parent DOM element which has the `scroll` Quasar CSS Helper class attached to it. If none is found, then it considers that the scrolling takes place on the document itself.
+All components or directives in Quasar have a simple algorithm to determine the container that supports the scroll: it searches for a parent DOM element which has the `scroll` Quasar CSS Helper class attached to it. If none is found, then it considers that the scrolling takes place on the document itself.
 
 Components like [QScrollArea](/components/scroll-area.html), for example, respect this design and have the `scroll` class embedded into it, so that QScrollObservable (or any other scrolling component or directive) can succesfully detect it and attach the necessary event handlers to it.
 
