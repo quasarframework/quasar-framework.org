@@ -82,12 +82,12 @@ plugins: [
 ```
 
 ### Quasar App Flow
-In order to better understand how and what a plugin does, you need to understand how your website/app is booted up:
+In order to better understand how a plugin works and what it does, you need to understand how your website/app boots:
 
-1. Quasar gets initialized (components, directives, plugins, Quasar i18n, Quasar icon sets)
+1. Quasar is initialized (components, directives, plugins, Quasar i18n, Quasar icon sets)
 2. Quasar Extras get imported (Roboto font -- if used, icons, animations, ...)
 3. Quasar CSS & your app's global CSS is imported
-4. App.vue is loaded up (not yet being used)
+4. App.vue is loaded (not yet being used)
 5. Store is imported (if using Vuex Store in src/store)
 6. App plugins are imported
 7. App plugins get their default export function executed, except for App Boot plugin

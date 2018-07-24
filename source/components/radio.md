@@ -25,17 +25,17 @@ framework: {
 ```
 
 ## Vue Properties
-Supports `v-model` which should be binded to a String in your scope. Choosing one option (clicking/tapping on a radio) makes your `v-model` change to Radio's `val`.
+Supports `v-model` which you should bind to a String in your scope. Choosing one option (clicking/tapping on a radio) makes your `v-model` change to Radio's `val`.
 
 | Vue Property | Type | Description |
 | --- | --- | --- |
-| `val` | Object  | Used to modify the v-model of the Radio with. |
+| `val` | Object  | Used to modify the v-model of the Radio. |
 | `label` | String | The text label for the Radio. |
 | `left-label` | Boolean | Set to `true`, if the label should be placed to the left of the radio. |
 | `checked-icon` | String | The icon to use, when the radio is checked. Default is a simple radio icon. |
 | `unchecked-icon` | String | The icon to use, when the radio is not checked. Default is simple unchecked radio icon. |
 | `color` | String | Color from [Quasar Color Palette](/components/color-palette.html) of the Radio. |
-| `keep-color` | Boolean | Keep color when not selected too. |
+| `keep-color` | Boolean | Keep color when not selected. |
 | `readonly` | Boolean | Set to `true`, to make the radio read-only. |
 | `disable` | Boolean | Set to `true`, to disable the radio. |
 | `dark` | Boolean | Set to `true` when background is dark. |
@@ -44,12 +44,12 @@ Supports `v-model` which should be binded to a String in your scope. Choosing on
 ## Vue Events
 | Vue Event | Description |
 | --- | --- |
-| `@input` | Triggered when it gets selected. |
+| `@input` | Triggered when Radio gets selected. |
 | `@blur` | Triggered, when Radio loses focus. |
 | `@focus` | Triggered, when Radio gains focus. |
 
 ## More Examples
-There are a number of props, which are available to help quickly format a Radio. An interesting feature of Radio is the ripple effect that user gets when clicking/tapping on it to change its state.
+There are a number of props, which are available to help you quickly format a Radio. An interesting feature of Radio is the ripple effect that user sees when clicking/tapping on it to change its state.
 
 ### Specific State Icons
 Instead of the default radio icon, you can also use the `checked-icon` and `unchecked-icon` props to display a different icon.

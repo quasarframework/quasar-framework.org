@@ -24,7 +24,7 @@ framework: {
 The tooltips content of QEditor are part of [Quasar I18n](/components/internationalization.html). If your desired language pack is missing, please provide a PR for it.
 
 ## Vue Properties
-Supports `v-model` which should be binded to a String in your scope, which is essentially HTML code.
+Supports `v-model` which you should bind to a String in your scope, which is essentially HTML code.
 
 | Vue Property | Type | Description |
 | --- | --- | --- |
@@ -150,7 +150,7 @@ The `toolbar` property is the place where you configure how your toolbar looks l
 ]"
 ```
 
-Take a look at the demo and the examples below to see how you can also specify dropdowns. You can make dropdowns as single selection, meaning only one command from its list can get into "active" state.
+Take a look at the demo and the examples below to see how you can also specify dropdowns. You can make dropdowns as single selection, meaning only one command from its list can have an "active" state.
 ```html
 <!-- Example of a dropdown with text alignment commands -->
 :toolbar="[

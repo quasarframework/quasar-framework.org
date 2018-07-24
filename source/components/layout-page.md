@@ -47,7 +47,7 @@ Usually, the QPageContainer is part of the Layout template (where it contains a 
 
 ## QPage Vue Properties
 | Vue Property | Type | Description |
-| --- | --- | --- | --- |
+| --- | --- | --- |
 | `padding` | Boolean | Adds a default dynamic padding to the page. |
 | `style-fn` | Function | Described below. |
 

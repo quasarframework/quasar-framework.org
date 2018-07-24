@@ -16,7 +16,7 @@ framework: {
 ```
 
 ## Basic Usage
-Below you'll find the code to a very basic modal:
+Below you'll find the code for a very basic modal:
 
 ``` html
 <template>
