@@ -189,7 +189,7 @@ import { axiosInstance } from 'plugins/axios'
 Further reading on syntax: [ES6 import](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/import), [ES6 export](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export).
 
 ## Special App Plugin: Boot
-> This is deprecated and will be removed in next version in favor of using [PreFetch Feature](/guide/app-prefetch-feature.html) in src/App.vue and calling `redirect(false)`.
+> This is deprecated and will be removed in next version in favor of using [PreFetch Feature](/guide/app-prefetch-feature.html) in `src/App.vue` and calling `redirect(false)` to abort app render.
 
 > IMPORTANT!
 > This special app plugin is ignored for SSR builds.

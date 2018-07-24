@@ -38,6 +38,7 @@ guide:
     Writing Universal Code: ssr-$
     Configuring SSR: ssr-$
     Client Side Hydration: ssr-$
+    Handling 404 and 500 Errors: ssr-$
     Build Commands: ssr-$
     Deploying: ssr-$
 
