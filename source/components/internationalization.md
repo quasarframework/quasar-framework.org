@@ -90,7 +90,12 @@ Although the Quasar I18n is designed only for Quasar components, you can still u
 There's also a method to determine user locale which is supplied by Quasar out of the box:
 ```js
 // outside of a Vue file
+
+// for when you don't specify quasar.conf > framework: 'all'
+import { Quasar } from 'quasar'
+// OTHERWISE:
 import Quasar from 'quasar'
+
 Quasar.i18n.getLocale() // returns a string
 
 // inside of a Vue file
