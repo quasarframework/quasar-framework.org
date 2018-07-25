@@ -2,12 +2,7 @@
 
 # Quasar Framework Official Website
 
-## What is Quasar Framework?
-
-* Modern HTML5 SPA front-end framework on steroids.
-* With VueJs.
-* Desktop and Mobile. Native Mobile Apps included.
-* Full Stack Toolkit.
+> Build responsive Single Page Apps, **SSR Apps**, PWAs, Hybrid Mobile Apps and Electron Apps, all using the same codebase!, powered with Vue.
 
 ## Quasar Components
 
