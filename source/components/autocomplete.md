@@ -53,6 +53,7 @@ As long as this component is rendered by Vue, it will capture all Ajax calls.
 | `filter` | Function | Internal implementation | If provided, autocomplete will perform custom filtering. |
 | `debounce` | Number | 500 | Time in milliseconds, between key presses and finding new results. Good for delay, if using AJAX requests. |
 | `separator` | Boolean | false | If set to `true`, it ads a delimeter between the values to select from. |
+| `value-field` | String/Function | value | (v0.17+) What property should we use for filling out the model with? Check example in the next sections. |
 
 ## Vue Methods
 No need to trigger these methods manually as they are invoked automatically. Only use them when your use-case is something very specific.
@@ -81,6 +82,25 @@ function search (terms, done) {
   // DO NOT forget to call done! When no results or an error occured,
   // just call with empty array as param. Example: done([])
 }
+```
+
+## Using value-field
+
+```html
+<!-- as a String -->
+<q-autocomplete
+  @search="search"
+  @selected="selected"
+  :min-characters="0"
+  value-field="icon"
+/>
+
+<!-- as a Function -->
+<q-autocomplete
+  @search="search"
+  @selected="selected"
+  :value-field="v => `${ v.icon } - ${ v.label }`"
+/>
 ```
 
 ## Using Static Data
