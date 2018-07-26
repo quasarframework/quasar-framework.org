@@ -46,7 +46,7 @@ framework: {
 | ---          | ---     | ---         |
 | `heading` | Boolean | Display a timeline subject which helps group timeline entries into separate chunks. |
 | `tag` | String | HTML tag to use to render the timeline entry DOM element. |
-| `side` | Boolean | On wider windows, you can choose on which side to display this entry. Default is on the right side. |
+| `side` | String | On wider windows, you can choose on which side to display this entry (`left` or `right`). Default is on the right side. |
 | `icon` | String | Icon to use. |
 | `color` | String | Color to use for this entry. |
 | `title` | String | Title of the entry. |
