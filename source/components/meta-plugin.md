@@ -1,6 +1,6 @@
 title: Quasar Meta Plugin
 ---
-**Better SEO for your website!** The Meta plugin can dynamically change page title, manage `<meta>` tags, manage <html> & <body> DOM element attributes, add/remove/change `<style>` and `<script>` tags in the head of your document (useful for CDN stylesheets or for json-ld markup, for example), or manage <noscript> tags.
+**Better SEO for your website!** The Meta plugin can dynamically change page title, manage `<meta>` tags, manage <html> & <body> DOM element attributes, add/remove/change `<style>` and `<script>` tags in the head of your document (useful for CDN stylesheets or for json-ld markup, for example), or manage `<noscript>` tags.
 
 ## Installation
 ```js
