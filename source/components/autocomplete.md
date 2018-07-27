@@ -68,7 +68,7 @@ No need to trigger these methods manually as they are invoked automatically. Onl
 | Vue Event | Description |
 | --- | --- |
 | `@search(terms, Function done)` | Triggered by the component when a search should start and offer some results. |
-| `@selected(item)` | Triggered when user has selected a suggestion. |
+| `@selected(item, keyboard)` | Triggered when user has selected a suggestion. On keyboard navigation the event is emitted with a second parameter set to true. |
 | `@show` | Triggered when the selections popup opens. |
 | `@hide` | Triggered when selections popup closes. |
 
