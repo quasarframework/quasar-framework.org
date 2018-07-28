@@ -304,3 +304,20 @@ By default, on large width windows the Tabs are aligned to the left. If you wish
 ```
 
 To align center or to the right, use `align="center"` or `align="right"`.
+
+## Full height of Tabs in the Header
+By adding the class `q-py-none` to the `q-toolbar`, the tabs will take the full height:
+
+``` html
+<q-layout-header>
+    <q-toolbar color="primary" class="q-py-none">
+        <q-toolbar-title>
+            <img alt="Logo" src="~assets/your-logo.png">
+        </q-toolbar-title>
+        <q-tabs>
+            <q-route-tab :to="{name:'home'}" slot="title" label="Home"/>
+            <q-route-tab :to="{name:'user'}" slot="title" label="User"/>
+        </q-tabs>
+    </q-toolbar>
+</q-layout-header>
+```
