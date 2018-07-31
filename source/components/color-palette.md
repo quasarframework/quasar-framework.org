@@ -50,7 +50,7 @@ div
 ```
 
 ## Adding Your Own Colors
-If you want to use your own colors for your omponents (let's say we are adding a color named "brand") all you need to do is add the following CSS into your app:
+If you want to use your own colors for your components (let's say we are adding a color named "brand") all you need to do is add the following CSS into your app:
 
 ```css
 .text-brand {
