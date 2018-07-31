@@ -1,7 +1,7 @@
 title: Publishing to Store
 ---
 
-So you've finished working on your Mobile App. Now it's time to deploy it. Let's learn how.
+So, you've finished working on your Mobile App. Now it's time to deploy it. Let's learn how.
 
 ## Android Publishing
 To generate a release build for Android, we can use the following Quasar CLI command:
@@ -63,10 +63,10 @@ In order for the Google Play Store to accept updated APKs, you’ll need to bump
 First, you need to enroll in [Apple Developer Program](https://developer.apple.com/programs/). As with Google, if you have a personal account with Apple, you can create an additional one for your applications.
 
 ### Connecting Xcode with your developer account
-After you receive your developer status, open Xcode on your Mac and go to Preferences > Accounts and add your account to Xcode by clicking the `+` button on the lower left hand side, and follow the instructions.
+After you receive your developer status, open Xcode on your Mac and go to Preferences > Accounts. Add your account to Xcode by clicking the `+` button on the lower left-hand side and follow the instructions.
 
 ### Signing
-Now that you linked Xcode with your developer account, go to Preferences > Accounts, select your Apple Id on the left hand side and then click the View Details button shown on the previous image.
+Now that you linked Xcode with your developer account, go to Preferences > Accounts, select your Apple Id on the left-hand side and then click the View Details button shown on the previous image.
 
 Click the Create button next to the iOS Distribution option.
 
@@ -77,14 +77,14 @@ Next, through the Apple Developer Member Center we’ll set up the app ID identi
 
 Once you’re logged in you should choose Certificates, Identifiers, and Profiles option. Also select the Identifiers option under the iOS Apps. Then select the `+` button in order to add a new iOS App ID.
 
-Then you’ll have to set the name of your app, and use the Explicit App ID option and set the Bundle ID to the value of the id in your Cordova config.xml tag.
+Then you’ll have to set the name of your app, use the Explicit App ID option and set the Bundle ID to the value of the id in your Cordova config.xml tag.
 
 Additionally, you’ll have to choose any of the services that need to be enabled. For example, if you use Apple Pay or Wallet in your app, you need to choose those option.
 
 You can learn more about registering app identifiers from the [official documentation](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/MaintainingProfiles/MaintainingProfiles.html).
 
 ### Creating the app listing
-Apple uses iTunes Connect to manage app submissions. After you login, you should select the My Apps button, and on the next screen select the `+` button, just below the iTunes Connect My Apps header.
+Apple uses iTunes Connect to manage app submissions. After your login, you should select the My Apps button, and on the next screen select the `+` button, just below the iTunes Connect My Apps header.
 
 This will show three options in a dropdown, and you should select the New App. After this the popup appears where you have to choose the name of the application, platform, primary language, bundle ID and SKU.
 
@@ -109,9 +109,9 @@ Once the Xcode opens up the project, you should see the details about your app i
 You should just check that the bundle identifier is set up correctly, so that it’s the same as the value you specified earlier in the app ID. Also, make sure that the version and build numbers are correct. Team option should be set to your Apple developer account. Under the deployment target you can choose which devices your application will support.
 
 ### Creating an archive of the application
-In Xcode, select Product > Scheme > Edit Scheme to open the scheme editor. Next, select the Archive from the list on the left hand side. Make sure that the Build configuration is set to Release.
+In Xcode, select Product > Scheme > Edit Scheme to open the scheme editor. Next, select the Archive from the list on the left-hand side. Make sure that the Build configuration is set to Release.
 
-To create an archive choose a Generic iOS Device, or your device if it’s connected to your Mac (you can’t create an archive if simulator is selected), from the Scheme toolbar menu in the project editor.
+To create an archive, choose a Generic iOS Device, or your device if it’s connected to your Mac (you can’t create an archive if simulator is selected), from the Scheme toolbar menu in the project editor.
 
 Next, select Product > Archive, and the Archive organizer appears and displays the new archive.
 
@@ -120,17 +120,17 @@ At this point you can click the `Upload to App Store...` button, and if everythi
 At this point you should get an email from iTunes Connect shortly after you uploaded the archive with the content.
 
 ### Finishing the app list process
-Now you should head back to the iTunes Connect portal and login. Next, click on the Pricing and Availability on the left hand side under APP STORE INFORMATION.
+Now you should head back to the iTunes Connect portal and login. Next, click on the Pricing and Availability on the left-hand side under APP STORE INFORMATION.
 
 You don’t have to worry about forgetting to insert any crucial and required information about your application, since you’ll be notified about what’s missing and what needs to be added/changed if you try to submit the app for review before all details are filled in.
 
-Next, click on the 1.0 Prepare for Submission button on the left hand side, as shown on the image below. When we uploaded our archive, iTunes Connect automatically determined which device sizes are supported. You’ll need to upload at least one screenshot image for each of the various app sizes that were detected by iTunes Connect.
+Next, click on the 1.0 Prepare for Submission button on the left-hand side, as shown on the image below. When we uploaded our archive, iTunes Connect automatically determined which device sizes are supported. You’ll need to upload at least one screenshot image for each of the various app sizes that were detected by iTunes Connect.
 
-Next you’ll have to insert Description, Keywords, Support URL and Marketing URL (optionally).
+Next, you’ll have to insert Description, Keywords, Support URL and Marketing URL (optionally).
 
 In the Build section you have to click on the `+` button and select the build that was uploaded through Xcode in the previous steps.
 
-Next you’ll have to upload the icon, edit the rating, and set some additional info like copyright and your information. Note that the size of the icon that you’ll have to upload here will have to be 1024 by 1024 pixels. Thankfully, you can use the splash.png from the second tutorial. If you’re the sole developer then the data in the App Review Information should be your own. Finally, as the last option, you can leave the default checked option that once your app is approved that it is automatically released to the App Store.
+Next, you’ll have to upload the icon, edit the rating, and set some additional info like copyright and your information. Note that the size of the icon that you’ll have to upload here will have to be 1024 by 1024 pixels. Thankfully, you can use the splash.png from the second tutorial. If you’re the sole developer then the data in the App Review Information should be your own. Finally, as the last option, you can leave the default checked option that once your app is approved that it is automatically released to the App Store.
 
 Now that we’re finished with adding all of the details to the app listing, we can press Save and then Submit for Review. Finally, you’ll be presented with the last form that you’ll have to fill out.
 
@@ -139,6 +139,6 @@ After you submit your app for review you’ll see the status of it in the My App
 Apple prides itself with a manual review process, which basically means it can take several days for your app to be reviewed. You’ll be notified of any issues or updates to your app status.
 
 ### Updating the app
-Since you’ll probably want to update your app at some point you’ll you’ll first need to bump the app version (from `/package.json` or from `/quasar.conf.js > cordova > version`, then rebuild the app for release. Finally, you'll have to open it up from the Xcode and follow the same steps all over again.
+Since you’ll probably want to update your app at some point you’ll first need to bump the app version (from `/package.json` or from `/quasar.conf.js > cordova > version`, then rebuild the app for release. Finally, you'll have to open it up from the Xcode and follow the same steps all over again.
 
 Once you submit for the review, you’ll have to wait for the review process again.
