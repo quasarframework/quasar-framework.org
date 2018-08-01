@@ -226,6 +226,9 @@ $sizes = {
 }
 ```
 
+> **IMPORTANT**
+> When customizing breakpoints, the smallest one must _always_ be zero.
+
 ## Using Gutters
 There are 5 types of gutter, depending on the amount of space that you want between your elements:
 
