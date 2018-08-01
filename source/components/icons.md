@@ -108,9 +108,9 @@ If you have a Fontawesome 5 Pro license and want to use it instead Fontawesome F
   ```
 3. Install Fontawesome webfonts:
   ```bash
-  $ yarn add @fortawesome/fontawesome-pro-webfonts
+  $ yarn add @fortawesome/fontawesome-pro
   # or:
-  $ npm install @fortawesome/fontawesome-pro-webfonts
+  $ npm install @fortawesome/fontawesome-pro
   ```
 4. Create new App plugin:
   ```bash
@@ -133,12 +133,12 @@ If you have a Fontawesome 5 Pro license and want to use it instead Fontawesome F
 6. Edit `/src/plugins/fontawesome-pro.js`:
 ```js
 // required
-import '@fortawesome/fontawesome-pro-webfonts/css/fontawesome.css'
-import '@fortawesome/fontawesome-pro-webfonts/css/fa-light.css'
+import '@fortawesome/fontawesome-pro/css/fontawesome.min.css'
+import '@fortawesome/fontawesome-pro/css/light.min.css'
 // do you want these too?
-// import '@fortawesome/fontawesome-pro-webfonts/css/fa-brands.css'
-// import '@fortawesome/fontawesome-pro-webfonts/css/fa-solid.css'
-// import '@fortawesome/fontawesome-pro-webfonts/css/fa-regular.css'
+// import '@fortawesome/fontawesome-pro/css/brands.min.css'
+// import '@fortawesome/fontawesome-pro/css/solid.min.css'
+// import '@fortawesome/fontawesome-pro/css/regular.min.css'
 
 export default () => {
   // Leave blank or make something cool.
@@ -162,9 +162,9 @@ chip: {
 
 _Then_, override it in your `/src/plugins/fontawesome-pro.js`
 ```js
-import '@fortawesome/fontawesome-pro-webfonts/css/fontawesome.css'
-import '@fortawesome/fontawesome-pro-webfonts/css/fa-solid.css'
-import '@fortawesome/fontawesome-pro-webfonts/css/fa-light.css'
+import '@fortawesome/fontawesome-pro/css/fontawesome.min.css'
+import '@fortawesome/fontawesome-pro/css/solid.min.css'
+import '@fortawesome/fontawesome-pro/css/light.min.css'
 
 export default ({ Vue }) => {
   Vue.prototype.$q.icon.chip.close = 'fas fa-times-circle'
