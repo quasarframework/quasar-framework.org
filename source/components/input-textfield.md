@@ -103,12 +103,20 @@ This section refers to `before` and `after` properties which can add additional 
   handler: Function,
 
   // Optional. Show icon button
-  // if model has a value
+  // if textfield model has a value
   content: Boolean,
+  
+  // Optional. Show icon button
+  // if condition is true
+  condition: Boolean,
 
   // Optional. Show icon button
   // if textfield is marked with error
-  error: Boolean
+  error: Boolean,
+  
+  // Optional. Show icon button
+  // if textfield is marked with warning
+  warning: Boolean
 }
 ```
 
