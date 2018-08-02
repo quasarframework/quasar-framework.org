@@ -53,5 +53,4 @@ This show a simple chat between two parties.
 > **IMPORTANT**
 > Strings in the `text` property are not sanitized so you can display arbitrary html as message. If you display text from unknown source, like messages from users, you should always sanitize it yourself. 
 
-
 Please refer to the demo source for a more complete set of examples.
