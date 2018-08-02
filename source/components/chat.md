@@ -42,12 +42,15 @@ This show a simple chat between two parties.
 | `label`      | String  | Label of message                       |
 | `name`       | String  | Name of the message creator            |
 | `avatar`     | String  | URL to the avatar image of the creator (use a static resource) |
-| `text`       | Array   | Array of strings that are the message body |
+| `text`       | Array   | Array of strings that are the message body. Strings are not sanitized, see details below. |
 | `stamp`      | String  | Creation timestamp string             |
 | `text-color` | String  | Color of the text |
 | `bg-color`   | String  | Color of the chat message bubble |
 | `size` | Number | 1-12 out of 12 (same as col-*). |
 
 > **Note** that `text` property is an Array of Strings. This is useful when two or more messages share the same (or very close) timestamp. They will be displayed on separate bubbles, but grouped together more closely so that the name of the creator and timestamp are displayed only once for this kind of group.
+
+> **IMPORTANT**
+> Strings in the `text` property are not sanitized so you can display arbitrary html as message. If you display text from unknown source, like messages from users, you should always sanitize it yourself. 
 
 Please refer to the demo source for a more complete set of examples.
