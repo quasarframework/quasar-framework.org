@@ -53,7 +53,7 @@ Use this only if you want to also trigger it manually. Ajax calls trigger these 
 ## Vue Events
 | Vue Event | Description |
 | --- | --- |
-| `@start` | Triggered when loading bar has been triggered for beinb displayed. |
+| `@start` | Triggered when loading bar has been triggered for being displayed. |
 | `@stop` | Triggered when loading bar has finished its work and becomes hidden. |
 
 > If multiple events are captured by Ajax Bar simultaneously, `@start` and `@stop` will still be triggered only once: when loading bar starts showing up and when it becomes hidden.
