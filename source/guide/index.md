@@ -78,6 +78,9 @@ $ npm install -g quasar-cli
 ```
 
 Then we create a project folder with Quasar CLI:
+
+Note if using @vue/cli (and not vue-cli) then you will need to also run npm install -g @vue/cli-init
+
 ```bash
 $ quasar init <folder_name>
 ```
