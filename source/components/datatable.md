@@ -273,6 +273,7 @@ export default {
 | Vue Event | Parameters | Description |
 | --- | --- | --- |
 | `@request` | Object { pagination, filter, getCellValue } | Gets triggered when using server-side pagination (`pagination` property Object contains `rowsNumber`) |
+| `@fullscreen(true/false)` | (v0.17.7+) Emitted when Fullscreen state gets toggled. |
 
 ## Server-side Pagination, Filtering, Sorting
 When your database contains a big number of rows for a Table, obviously it's not feasible to load them all for multiple reasons (memory, UI rendering performance, ...). Instead, you can load only a Table page. Whenever the user wants to navigate to another Table page, or wants to sort by a column or wants to filter the Table, a request is sent to the server to fetch the partial data.

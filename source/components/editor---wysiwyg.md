@@ -170,6 +170,7 @@ Take a look at the demo and the examples below to see how you can also specify d
 | Vue Event | Description |
 | --- | --- |
 | `@input` | Triggered when input area content changes. |
+| `@fullscreen(true/false)` | (v0.17.7+) Emitted when Fullscreen state gets toggled. |
 
 ## Examples
 

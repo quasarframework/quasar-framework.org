@@ -71,6 +71,7 @@ Supports `v-model` which determines the slide number.
 | `@slide-trigger(oldIndex, newIndex, direction)` | Emitted before animating to the new slide. |
 | `@slide(index, direction)` | Emits the index of the current slide and the direction of the slide after the transition animation finishes. Emits even if navigating to the same slide. |
 | `@slide-direction('next'/'previous')` | Emitted when navigating to a slide, describing direction (next / previous). |
+| `@fullscreen(true/false)` | (v0.17.7+) Emitted when Fullscreen state gets toggled. |
 
 ## QCarouselSlide (Child)
 | Vue Property | Type | Description |
