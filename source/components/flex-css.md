@@ -275,7 +275,7 @@ Let's look at a basic example. Please take note of the structure. You need a wra
 </div>
 ```
 
-By default, the gutter applies both horizontally and vertically. If for example you different levels of gutter only horizontally or only vertically, use `gutter-x-*` and `gutter-y-*` CSS classes:
+By default, the gutter applies both horizontally and vertically. If for example you want different levels of gutter only horizontally or only vertically, use `gutter-x-*` and `gutter-y-*` CSS classes:
 ```html
 <!-- small gutter horizontally, large gutter vertically -->
 <div class="overflow-hidden">
@@ -291,7 +291,7 @@ By default, the gutter applies both horizontally and vertically. If for example 
 ```
 
 ### QInput Example
-Let's say we want to build something depicted in the two picture below.
+Let's say we want to build something depicted in the two pictures below.
 ![QInput on sm+ windows](/images/gutter-sm.png)
 ... which becomes like below on xs windows:
 ![QInput on xs windows](/images/gutter-xs.png)
