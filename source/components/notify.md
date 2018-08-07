@@ -23,10 +23,10 @@ framework: {
 // outside of a Vue file
 import { Notify } from 'quasar'
 
-Notify.create('Danger Will Robinson! Danger!')
+Notify.create('Danger, Will Robinson! Danger!')
 // or with a config object:
 Notify.create({
-  message: 'Danger Will Robinson! Danger!'
+  message: 'Danger, Will Robinson! Danger!'
 })
 
 // inside of a Vue file
