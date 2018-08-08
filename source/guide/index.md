@@ -30,12 +30,12 @@ Here's a comparison:
 If you want to embed Quasar into your existing website project, integrating it in a progressive manner, then go for the UMD/Standalone (Unified Module Definition) version. There a helper UMD starter kit which will show you how to get started and what CSS and JS tags to include into your project. It will ask you some questions (what Quasar theme will you be using, what Quasar I18n to include, ...) and it will generate a simple HTML file that will demo on how to use CDN to add Quasar:
 
 ```bash
-# make sure you have vue-cli globally installed
+# make sure you have @vue/cli globally installed
 # Node.js >= 8.9.0 is required.
 
-$ yarn global add vue-cli
+$ yarn global add @vue/cli
 # or:
-$ npm install -g vue-cli
+$ npm install -g @vue/cli
 
 # then...
 $ vue init quasarframework/quasar-starter-kit-umd <folder_name>
@@ -65,10 +65,10 @@ If you want to be able to build:
 First, we install Quasar CLI. Make sure you have Node >=8 and NPM >=5 installed on your machine.
 
 ```bash
-# make sure you have vue-cli globally installed
-$ yarn global add vue-cli
+# make sure you have @vue/cli globally installed
+$ yarn global add @vue/cli
 # or:
-$ npm install -g vue-cli
+$ npm install -g @vue/cli
 
 # Node.js >= 8.9.0 is required.
 $ yarn global add quasar-cli
@@ -86,13 +86,13 @@ Note that you don't need separate starter kits if you want to build any of the o
 Now head on to read about [Main Starter Kit](/guide/app-installation.html) and also familiarize yourself with the [Quasar CLI](/guide/quasar-cli.html).
 
 ## Vue CLI 3 plugin
-Make sure you have vue-cli 3.x.x:
+Make sure you have @vue/cli 3.x.x:
 
 ```
 vue --version
 ```
 
-If you don't have a project created with vue-cli 3.x yet:
+If you don't have a project created with @vue/cli 3.x yet:
 
 ```
 vue create my-app
