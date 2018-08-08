@@ -66,6 +66,7 @@ First, we install Quasar CLI. Make sure you have Node >=8 and NPM >=5 installed 
 
 ```bash
 # make sure you have vue-cli globally installed
+# see https://cli.vuejs.org/guide/installation.html for using latest Vue CLI @vue/cli
 $ yarn global add vue-cli
 # or:
 $ npm install -g vue-cli
@@ -77,6 +78,9 @@ $ npm install -g quasar-cli
 ```
 
 Then we create a project folder with Quasar CLI:
+
+Note if using @vue/cli (and not vue-cli) then you will need to also run npm install -g @vue/cli-init
+
 ```bash
 $ quasar init <folder_name>
 ```
@@ -87,7 +91,9 @@ Now head on to read about [Main Starter Kit](/guide/app-installation.html) and a
 
 ## Vue CLI 3 plugin
 Make sure you have vue-cli 3.x.x:
-
+Note the Vue CLI package name has changed from vue-cli to @vue/cli
+If you have vue-cli installed, unistall it using npm uninstall -g vue-cli before installing. npm install -g @vue/cli 
+Please see - https://cli.vuejs.org/guide/installation.html
 ```
 vue --version
 ```
