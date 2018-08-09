@@ -191,6 +191,7 @@ If you want to add a value not found in the list either hit the `send` icon or p
 | `@change(newVal)` | Triggered on lazy model value change. |
 | `@clear(clearVal)` | Triggered when the model is cleared. |
 | `@duplicate(val)` | Triggered when user tries to add a duplicate value. |
+| `@remove({index, value})` | Triggered when one Chip is removed. |
 
 ## More Examples
 
