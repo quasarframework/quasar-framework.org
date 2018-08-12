@@ -50,11 +50,11 @@ Supports `v-model` which should be binded to a Number in your scope.
 | `@change(newVal)` | Triggered on model value change. |
 
 ## Coloring
-Use one of the Quasar colors from the [Color Palette](/components/color-palette.html), like `primary`, `secondary`, `orange-7`, `teal-2` as CSS class:
+Use one of the Quasar colors from the [Color Palette](/components/color-palette.html), like `primary`, `secondary`, `orange-7`, `teal-2` as color property:
 
 ``` html
 <q-rating
-  class="orange"
+  color="orange"
   v-model="ratingModel"
   :max="5"
 />
