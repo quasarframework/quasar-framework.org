@@ -115,8 +115,8 @@ Label properties are by default defined in Quasar's i18n, but you can override t
 > **IMPORTANT**
 > Initial sorted column, sorting direction & page is configured through the `pagination` prop. Check the Pagination section below.
 
-### Columns Definition
-Let's take an example of configuring `columns` property. Let's assume we are telling QTable that row-key is 'name'.
+### Defining the Columns
+Let's take an example of configuring the `columns` property. Let's assume we are telling QTable that row-key is 'name'. 
 ```js
 columns: /* array of Objects */ [
   // column Object definition
@@ -157,6 +157,8 @@ columns: /* array of Objects */ [
   { name: 'iron', label: 'Iron (%)', field: 'iron', sortable: true, sort: (a, b) => parseInt(a, 10) - parseInt(b, 10) }
 ]
 ```
+> **IMPORTANT**
+If your data is nested and you need to fill a column with a certain value in the nested objects, you can grab a property value within the nested objects like so: `field: obj => obj.some.nested.prop`
 
 ### Pagination
 When you want to control Table's pagination, use `pagination` prop, but don't forget to add the `.sync` modifier:
