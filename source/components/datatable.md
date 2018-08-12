@@ -158,7 +158,7 @@ columns: /* array of Objects */ [
 ]
 ```
 > **IMPORTANT**
-If your data is nested and you need to fill a column with a certain values in the nested data, you can grab a property value within the nested objects like so: `field: obj => obj.some.nested.prop`
+If your data is nested and you need to fill a column with a certain value in the nested objects, you can grab a property value within the nested objects like so: `field: obj => obj.some.nested.prop`
 
 ### Pagination
 When you want to control Table's pagination, use `pagination` prop, but don't forget to add the `.sync` modifier:
