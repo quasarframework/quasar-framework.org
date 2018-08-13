@@ -36,7 +36,8 @@ Supports `v-model` which should be bound to a String or Number (depending on `ty
 | --- | --- | --- |
 | `type` | String |  Must be one of the following: `text` (default), `textarea`, `email`, `tel`, `number`, `password` and `url`. This is important as it determines the keyboard type popping up on mobile devices. |
 | `readonly` | Boolean | If set to `true`, textfield is readonly and the user cannot change value. |
-| `clearable` | Boolean | If set to `true`, the component offers the user an actionable icon to remove the entered text. |
+| `clearable` | Boolean | If used, the component offers the user an actionable icon to reset the current value to `clear-value` (which is by default an empty string). The icon appears only when the current value matches `clear-value`. |
+| `clear-value` | String | The value to which to reset the field model to when using `clearable`. The default value is an empty string. |
 | `no-pass-toggle` | Boolean | If type is 'password' and set to `true`, then password toggle is not shown. |
 | `upper-case` | Boolean | Transform input to upper case. |
 | `lower-case` | Boolean | Transform input to lower case. |
@@ -65,7 +66,6 @@ Common input field properties:
 | `autofocus` | Boolean | Focus input field after rendering component. |
 | `placeholder` | String | A text to be shown on textfield, mainly to explain what should be entered. |
 | `loading` | Boolean | Place the default spinner of the theme after textfield to highlight some process takes place in the background. |
-| `clearable` | Boolean | If set to `true`, the component offers the user an actionable icon to remove the current selection. |
 
 Common input frame properties:
 
@@ -105,7 +105,7 @@ This section refers to `before` and `after` properties which can add additional 
   // Optional. Show icon button
   // if textfield model has a value
   content: Boolean,
-  
+
   // Optional. Show icon button
   // if condition is true
   condition: Boolean,
@@ -113,7 +113,7 @@ This section refers to `before` and `after` properties which can add additional 
   // Optional. Show icon button
   // if textfield is marked with error
   error: Boolean,
-  
+
   // Optional. Show icon button
   // if textfield is marked with warning
   warning: Boolean

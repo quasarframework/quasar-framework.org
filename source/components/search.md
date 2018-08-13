@@ -29,6 +29,8 @@ Supports `v-model` which you should bind to a String or Number (depending on `ty
 | `type` | String |  Must be one of the following: `text` (default), `email`, `tel`, `number` and `url`. This is important as it determines the keyboard type popping up on mobile devices. |
 | `debounce` | Number | Number of ms to debounce input. Default is 300. |
 | `readonly` | Boolean | If set to `true`, textfield is readonly and the user cannot change value. |
+| `clearable` | Boolean | If used, the component offers the user an actionable icon to reset the current value to `clear-value` (which is by default an empty string). The icon appears only when the current value matches `clear-value`. |
+| `clear-value` | String | The value to which to reset the field model to when using `clearable`. The default value is an empty string. |
 
 A more involved example:
 ``` html
@@ -47,7 +49,6 @@ Common input field properties:
 | --- | --- | --- |
 | `autofocus` | Boolean | Focus input field after rendering component. |
 | `placeholder` | String | A text to be shown on textfield, mainly to explain what should be entered. |
-| `clearable` | Boolean | If set to `true`, the component offers the user an actionable icon to remove the entered text. |
 | `upper-case` | Boolean | Transform input to upper case. |
 | `lower-case` | Boolean | Transform input to lower case. |
 

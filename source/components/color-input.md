@@ -39,9 +39,7 @@ Supports `v-model` which must be a String, Number or Date Object.
 
 | Vue Property | Type | Description |
 | --- | --- | --- |
-| `clearable` | Boolean | If set to `true`, the component offers the user an actionable icon to remove the current selection. |
 | `readonly` | Boolean | If set to `true`, component is displayed as read-only. |
-| `default-value` | String/Number/Date | Default date/time for picker when model is not yet set. |
 | `display-value` | String | Text to display on input frame. Supersedes 'placeholder'. |
 | `hide-underline` | Boolean | Hides the bottom border. |
 | `popover` | Boolean | Always display with a Popover, regardless of Platform. |
@@ -50,6 +48,9 @@ Supports `v-model` which must be a String, Number or Date Object.
 | `placeholder` | String | Placeholder text for input frame to use when model is not set (empty). |
 | `ok-label` | String | Text for the button to accept the input (when using Modal). |
 | `cancel-label` | String | Text for the button to cancel input with no change (when using Modal). |
+| `clearable` | Boolean | If used, the component offers the user an actionable icon to reset the current value to `clear-value` (if it is set) or otherwise `default-value`. The icon appears only when the current value matches `clear-value`/`default-value`. |
+| `default-value` | String/Object | Default color for picker when model is not yet set. |
+| `clear-value` | String/Object | The value to which to reset the field model to when using `clearable`, unless `default-value` is specified. |
 
 Common input frame properties:
 
