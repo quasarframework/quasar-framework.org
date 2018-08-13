@@ -40,6 +40,7 @@ framework: {
 | ---          | ---     | ---                                    |
 | `responsive` | Boolean | (v0.17.7+) Enable responsive mode |
 | `color` | String  | Color of the timeline element |
+| `no-hover` | Boolean | Don't apply any hover effects |
 | `dark` | Boolean | When rendering on a dark background. |
 
 ## QTimelineEntry (Child) Vue Properties
