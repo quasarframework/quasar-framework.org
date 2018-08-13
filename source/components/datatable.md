@@ -50,7 +50,9 @@ export default {
         label: 'Dessert (100g serving)',
         align: 'left',
         field: 'name',
-        sortable: true
+        sortable: true,
+        classes: 'my-class',
+        style: 'width: 500px'
       },
       ...
     ],
@@ -116,7 +118,7 @@ Label properties are by default defined in Quasar's i18n, but you can override t
 > Initial sorted column, sorting direction & page is configured through the `pagination` prop. Check the Pagination section below.
 
 ### Defining the Columns
-Let's take an example of configuring the `columns` property. Let's assume we are telling QTable that row-key is 'name'. 
+Let's take an example of configuring the `columns` property. Let's assume we are telling QTable that row-key is 'name'.
 ```js
 columns: /* array of Objects */ [
   // column Object definition
@@ -138,7 +140,7 @@ columns: /* array of Objects */ [
     align: 'left',
 
     // (optional) tell QTable you want this column sortable
-    sortable: true
+    sortable: true,
 
     // (optional) compare function if you have
     // some custom data or want a specific way to compare two rows
@@ -147,6 +149,10 @@ columns: /* array of Objects */ [
     //   * is less than 0 then sort a to an index lower than b, i.e. a comes first
     //   * is 0 then leave a and b unchanged with respect to each other, but sorted with respect to all different elements
     //   * is greater than 0 then sort b to an index lower than a, i.e. b comes first
+
+    // v0.17.9+; if using scoped slots, apply this yourself instead
+    style: 'width: 500px',
+    classes: 'my-special-class'
   },
   { name: 'calories', label: 'Calories', field: 'calories', sortable: true },
   { name: 'fat', label: 'Fat (g)', field: 'fat', sortable: true },
