@@ -29,6 +29,7 @@ framework: {
 | `url-factory` | Function | Function (with `file` object received as parameter) which returns a Promise that resolves to a URL. |
 | `upload-factory` | Function | (v0.17+) Function defining a custom upload method which returns a Promise. Check section below. |
 | `no-content-type` | Boolean | (v0.17+) Avoid setting Content-Type header when uploading. |
+| `with-credentials` | Boolean | (v0.17+) Sets `xhr.withCredentials` to `true` (doesn't apply when using `upload-factory`). |
 | `method` | String | HTTP method to use (POST/PUT). Defaults to POST. |
 | `extensions` | String | Extensions to allow for uploading. Example: `'.gif,.jpg,.jpeg,.png'` |
 | `multiple` | Boolean | Allow multiple file uploads |
