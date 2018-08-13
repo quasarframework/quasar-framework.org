@@ -26,7 +26,7 @@ More information on the Manifest file can be read by accessing:
 https://developer.mozilla.org/en-US/docs/Web/Manifest
 
 ## Service Worker
-The Service worker provides a programmatic way to cache app resources. Be it files or JSON data from a HTTPS request. The programmatic API allows developers to decide how to handle caching and provides a much more flexible experience than other options.
+The Service worker provides a programmatic way to cache app resources (files). The programmatic API allows developers to decide how to handle caching and provides a much more flexible experience than other options.
 
 More information on the Service Worker API can be read by accessing:
 https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
