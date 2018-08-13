@@ -90,6 +90,7 @@ The following describes a node's properties that are taken into account by QTree
 | --- | --- | --- |
 | `label` | String | Node's label |
 | `icon` | String | Node's icon |
+| `iconColor` | String | (v0.17.9+) Node's icon color. One from Quasar Color Palette. |
 | `img` | String | Node's image. Use statics folder. Example: 'statics/mountains.png' |
 | `avatar` | String | Node's avatar. Use statics folder. Example: 'statics/boy-avatar.png' |
 | `children` | Array | Array of nodes as children. |
