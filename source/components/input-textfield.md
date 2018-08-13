@@ -180,6 +180,10 @@ The below example shows a number input type.
 ``` html
 <q-input v-model="number" type="number" float-label="Number" />
 ```
+If you want user input to be automatically typecast as a number, you can add the number modifier to your v-model inputs:
+``` html 
+<q-input v-model.number="age" type="number" float-label="Number">
+```
 
 ### Prefixes and Suffixes
 You can add a text before or after the field as part of an input mask, for instance, for showing Euro or US Dollar currency.
