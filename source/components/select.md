@@ -89,7 +89,8 @@ Supports `v-model` which should be the String for single selection and Array for
 | `separator` | Boolean | If set to `true`, the selection options will be separated by a line. |
 | `display-value` | String | Overrides text displayed in input frame. See "Working with Display Value" section below. |
 | `placeholder` | String | Placeholder text. |
-| `clearable` | Boolean | If set to `true`, the component offers the user an actionable icon to remove the current selection. |
+| clearable | Boolean | If used, the component offers the user an actionable icon to reset the current value to clear-value (which is by default null for single selection and [] for multiple selection). The icon appears only when the current value matches clear-value. |
+| clear-value| String | The initial value(s) the field should be set to. The default value is `null` for single selection and `[]` for a multiple selection.|
 | `no-icon` | Boolean | Use no icon on left side |
 
 Common input frame properties:
