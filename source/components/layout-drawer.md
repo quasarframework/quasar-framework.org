@@ -41,6 +41,12 @@ framework: {
 | `mini-width` | Number | (v0.17+) CSS unit for drawer width when in mini mode. Default: 60 |
 | `width` | Number | The width in pixels of the drawer (when not in mini mode). Default: 300 |
 
+## QLayoutDrawer Vue Methods
+
+| Vue Property | Description |
+| --- | --- |
+| `@on-layout(Boolean)` | String | (v0.17.9+) Emitted when Drawer toggles using space on Layout. |
+
 ## Styling Examples
 
 ```html
