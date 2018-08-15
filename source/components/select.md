@@ -47,6 +47,11 @@ framework: {
       :options="selectOptions"
       @change="inputChange"
     />
+    <!-- Advanced Select List Object Example-->
+    <q-select
+      v-model="select"
+      :options="selectAdvancedListOptions"
+		/>
   </div>
 </template>
 
@@ -63,6 +68,37 @@ export default {
           label: 'Facebook',
           value: 'fb'
         }
+      ],
+      selectAdvancedListOptions: [
+          {
+            label: 'Google',
+            icon: 'search',
+            value: 'goog'
+          },
+          {
+            label: 'Facebook',
+            inset: true,
+            sublabel: 'Enables communication',
+            value: 'fb'
+          },
+          {
+            label: 'Oracle',
+            sublabel: 'Some Java for today?',
+
+            icon: 'mail',
+            leftColor: 'secondary', // color for left side, whatever it is (icon, letter, ...)
+
+            rightIcon: 'alarm',
+            rightColor: 'negative', // color for right side, whatever it is (icon, letter, ...)
+
+            value: 'ora'
+          },
+          {
+            label: 'Apple Inc.',
+            inset: true,
+            stamp: '10 min',
+            value: 'appl'
+          }
       ]
     }
   }
