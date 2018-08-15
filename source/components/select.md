@@ -51,7 +51,7 @@ framework: {
     <q-select
       v-model="select"
       :options="selectAdvancedListOptions"
-		/>
+    />
   </div>
 </template>
 
