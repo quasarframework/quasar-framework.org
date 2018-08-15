@@ -93,6 +93,23 @@ QItem & QItem related components inherited properties:
 | `separator` | Boolean | Use a separator from other QItems or QCollapsibles, just like on QItem. |
 | `inset-separator` | Boolean | Inset separator, same behavior as `separator`. |
 
+### Using QCollapsible as a Router Link
+*v0.17.9+*
+
+If you want your QCollapsible to act the same as Vue's `<router-link>`, then you can use these additional properties (which work exactly the same as `<router-link>`):
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `to` | String / Object | Route to navigate to |
+| `exact` | Boolean | Match the exact route specified (and not also its children) when adding `router-link-active` CSS class. |
+| `append` | Boolean | Append route definition to current route when navigating. |
+| `replace` | Boolean | Replaces current route with the new one instead of adding it to the window history queue. |
+
+For more details on these properties, please refer to the [Vue Router documentation](http://router.vuejs.org/en/api/router-link.html).
+
+> **NOTE**
+> When you use a QCollapsible as a Router Link then the user will be able to toggle it only by clicking on the right-side icon. The rest of QCollapsible space is used to trigger the navigation.
+
 ## Vue Methods
 | Vue Methods | Description |
 | --- | --- |
