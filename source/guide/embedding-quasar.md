@@ -1,6 +1,103 @@
 title: UMD Starter Kit - CDN install
 ---
-If you want to embed Quasar into your existing website project, integrating it in a progressive manner, then go for the UMD/Standalone (Unified Module Definition) version. The UMD starter kit will ask you some questions and will generate a simple HTML file that will show you how to use CDN to add Quasar:
+If you want to embed Quasar into your existing website project, integrating it in a progressive manner, then go for the UMD/Standalone (Unified Module Definition) version.
+
+### Installation
+UMD is all about adding Quasar style and javascript tags. This is a full list. Choose only what you use.
+
+```html
+<head>
+  <!-- Do you need Material Icons? -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css">
+
+  <!-- Do you need Fontawesome? -->
+  <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+
+  <!-- Do you need Ionicons? -->
+  <link href="https://cdn.jsdelivr.net/npm/ionicons@^4.0.0/dist/css/ionicons.min.css" rel="stylesheet">
+
+  <!-- Do you need MDI? -->
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@^2.0.0/css/materialdesignicons.min.css" rel="stylesheet">
+
+  <!-- Do you need all animations? -->
+  <link href="https://cdn.jsdelivr.net/npm/animate.css@^3.5.2/animate.min.css" rel="stylesheet">
+
+
+  <!--
+    Finally, add Quasar's CSS:
+    Replace version below (0.17.8) with your desired version of Quasar.
+    Replace ".mat" with ".ios" for the iOS theme.
+    Add ".rtl" for the RTL support (example: quasar.mat.rtl.min.css).
+  -->
+  <link href="https://cdn.jsdelivr.net/npm/quasar-framework@0.17.8/dist/umd/quasar.mat.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+  <!-- Do you want IE support? Replace "0.17.8" with your desired Quasar version -->
+  <script src="https://cdn.jsdelivr.net/npm/quasar-framework@0.17.8/dist/umd/quasar.ie.polyfills.umd.min.js"></script>
+
+  <!-- You need Vue too -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@latest/dist/vue.min.js"></script>
+
+  <!--
+    Add Quasar's JS:
+    Replace version below (0.17.8) with your desired version of Quasar.
+    Replace ".mat" with ".ios" for the iOS theme.
+  -->
+  <script src="https://cdn.jsdelivr.net/npm/quasar-framework@0.17.8/dist/umd/quasar.mat.umd.min.js"></script>
+
+  <!--
+    If you want to add a Quasar I18n language pack (other than "en-us").
+    Notice "pt-br" in "i18n.pt-br.umd.min.js" for Brazilian Portuguese language pack.
+    Replace version below (0.17.8) with your desired version of Quasar.
+    Also check final <script> tag below to enable the language
+    Language pack list: https://github.com/quasarframework/quasar/tree/dev/i18n
+  -->
+  <script src="https://cdn.jsdelivr.net/npm/quasar-framework@0.17.8/dist/umd/i18n.pt-br.umd.min.js"></script>
+
+  <!--
+    If you want to make Quasar use a specific set of icons (unless you're using Material Icons already).
+    Replace version below (0.17.8) with your desired version of Quasar.
+    Icon sets list: https://github.com/quasarframework/quasar/tree/dev/icons
+  -->
+  <script src="https://cdn.jsdelivr.net/npm/quasar-framework@0.17.8/dist/umd/icons.fontawesome.umd.min.js"></script>
+
+  <script>
+    // if using a Quasar language pack other than the default "en-us";
+    // requires the language pack style tag from above
+    Quasar.i18n.set(Quasar.i18n.ptBr) // notice camel-case "ptBr"
+
+    // if you want Quasar components to use a specific icon library
+    // other than the default Material Icons;
+    // requires the icon set style tag from above
+    Quasar.icons.set(Quasar.icons.fontawesome) // fontawesome is just an example
+
+    /*
+      Example kicking off the UI.
+      Obviously, adapt this your specific needs.
+     */
+
+    // custom component example, assumes you have a <div id="my-page"></div> in your <body>
+    Vue.component('my-page', {
+      template: '#my-page'
+    })
+
+    // start the UI; assumes you have a <div id="q-app"></div> in your <body>
+    new Vue({
+      el: '#q-app',
+      data: function () {
+        return {}
+      },
+      methods: {},
+      // ...etc
+    })
+  </script>
+</body>
+```
+
+#### Optional
+One other quick way to get necessary tags based on your requirements is to use the UMD starter kit. It will ask you some questions and will generate a simple HTML file that will show you how to use CDN to add Quasar:
 
 ```bash
 $ vue init quasarframework/quasar-starter-kit-umd <folder_name>
