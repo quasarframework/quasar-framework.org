@@ -86,15 +86,15 @@ Let's take each option one by one:
 
 | Property | Type | Description |
 | --- | --- | --- |
-| css | Array | Global CSS/Stylus/... files from `/src/css/`, except for theme files, which are included by default. See details below. |
+| css | Array | Global CSS/Stylus/... files from `/src/css/`, except for theme files, which are included by default. [More info](#css-Property) |
 | preFetch | Boolean | Enable [PreFetch Feature](/guide/app-prefetch-feature.html). |
 | extras | Array | What to import from [quasar-extras](https://github.com/quasarframework/quasar-extras) package. Example: _['material-icons', 'roboto-font', 'ionicons']_ |
-| vendor | Object | (v0.17+) Add/remove files/3rd party libraries to/from vendor chunk: { add: [...], remove: [...] }. See details below. |
+| vendor | Object | (v0.17+) Add/remove files/3rd party libraries to/from vendor chunk: { add: [...], remove: [...] }. [More info](#vendor-Property) |
 | supportIE | Boolean | Add support for IE11+. |
-| framework | Object/String | What Quasar components/directives/plugins to import, what Quasar I18n language pack to use, what icon set to use for Quasar components. Example: _{ components: ['QBtn', 'QIcon'], directives: ['TouchSwipe'], plugins: ['Notify'], iconSet: 'fontawesome', i18n: 'de' }_. Note that for iconSet to work, you also need to tell Quasar to embed that icon pack through `extras` prop. |
+| framework | Object/String | What Quasar components/directives/plugins to import, what Quasar I18n language pack to use, what icon set to use for Quasar components. [More info](#framework-Property) |
 | animations | Object/String | What [CSS animations](/components/transition.html) to import. Example: _['bounceInLeft', 'bounceOutRight']_ |
 | devServer | Object | Dev server [options](https://webpack.js.org/configuration/dev-server/). Some properties are overwritten based on the Quasar mode you're using in order to ensure a correct config. |
-| build | Object | Build configuration options. See [section](#build-Property) below. |
+| build | Object | Build configuration options. [More info](#build-Property) |
 | sourceFiles | Object | (v0.16+) Change the default name of parts of your app. [More info](#sourceFiles-Property) |
 | cordova | Object | Cordova specific [config](/guide/cordova-configuring-cordova.html). |
 | pwa | Object | PWA specific [config](/guide/pwa-configuring-pwa.html). |
@@ -126,6 +126,32 @@ return {
   }
 }
 ```
+
+### framework Property
+Tells the CLI what Quasar components/directives/plugins to import, what Quasar I18n language pack to use, what icon set to use for Quasar components and more.
+```js
+// quasar.conf
+return {
+  // a list with all options (all are optional)
+  framework: {
+    components: ['QBtn', 'QIcon' /* ... */],
+    directives: ['TouchSwipe' /* ... */],
+    plugins: ['Notify' /* ... */],
+
+    // Quasar config
+    // You'll see this mentioned for components/directives/plugins which use it
+    config: { /* ... */ },
+
+    iconSet: 'fontawesome', // requires icon library to be specified in "extras" section too,
+    i18n: 'de', // Tell Quasar which language pack to use for its own components
+
+    // v0.17+
+    cssAddon: true // Adds the flex responsive++ CSS classes (noticeable bump in footprint)
+  }
+}
+```
+
+More on cssAddon [here](/components/flex-css.html#Flex-Addons).
 
 ### devServer Property
 Take a look at the [full list](https://webpack.js.org/configuration/dev-server/) of options. Some are overwritten by Quasar CLI based on "quasar dev" parameters and Quasar mode in order to ensure that everything is setup correctly.

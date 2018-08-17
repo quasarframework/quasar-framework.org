@@ -229,6 +229,30 @@ $sizes = {
 > **IMPORTANT**
 > When customizing breakpoints, the smallest one must _always_ be zero.
 
+## Flex Addons
+*v0.17+*
+
+When enabled (through `quasar.conf > framework > cssAddon: true`) it provides breakpoint aware versions for all flex (and display) related CSS classes.
+
+> Note that there will be a noticeable bump in CSS footprint when enabling it. So only do it if you really need it.
+
+```
+.flex-<bp>-(block|inline)
+.(row|column|flex)-<bp>(|-inline)
+.reverse-<bp>
+.(wrap|no-wrap|reverse-wrap)-<bp>
+.order-<bp>-(first|last|none)
+.justify-<bp>-(start|end|center|between|around)
+.items-<bp>-(start|end|center|baseline|stretch)
+.content-<bp>-(start|end|center|between|around)
+.self-<bp>-(start|end|center|baseline|stretch)
+.flex-<bp>-center
+.gutter-<bp>(|-x|-y)-(xs|sm|md|lg|xl)
+.(col|offset)-<bp>(|0..12)
+```
+
+Examples: `.row-md` `.items-lg-end`
+
 ## Using Gutters
 There are 5 types of gutter, depending on the amount of space that you want between your elements:
 
