@@ -242,7 +242,7 @@ These settings are completely up to you to use as you'd like. You could even go 
 *v0.17.9+*
 
 > **WARNING**
-> This is an experimental feature. Do NOT use it in production yet. May be removed without notice in future versions if it turns out to not be technically feasible.
+> This is an experimental feature. Take it as a pre-released feature. Do NOT use it in production yet. May be removed without notice in future versions if it turns out to not be technically feasible.
 >
 > Not supported in IE11.
 > Known issue: scrollbar overlaps content; we're working on a fix.
