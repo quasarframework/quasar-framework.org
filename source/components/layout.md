@@ -237,3 +237,74 @@ These settings are completely up to you to use as you'd like. You could even go 
 | `@resize` | Event emitted on window resize. |
 | `@scroll` | Event emitted on page scroll. |
 | `@scrollHeight` | Event emitted on page scroll height change. |
+
+## Containerized QLayout
+*v0.17.9+*
+
+> **WARNING**
+> This is an experimental feature. Do NOT use it in production yet. May be removed without notice in future versions if it turns out to not be technically feasible.
+>
+> Not supported in IE11.
+> Known issue: scrollbar overlaps content; we're working on a fix.
+
+Please note that it **requires a CSS height/width (or min-height/min-width) being set explicitly**, otherwise it can't work.
+
+Example:
+```html
+<q-layout view="LHh lpR fff" container style="height: 500px; width: 300px" class="q-mt-xl shadow-2">
+  <q-layout-header reveal>
+    <q-toolbar>
+      <q-btn flat @click="drawer = !drawer" round dense icon="menu" />
+      <q-toolbar-title>Header</q-toolbar-title>
+    </q-toolbar>
+  </q-layout-header>
+
+  <q-layout-footer>
+    <q-toolbar>
+      <q-btn flat @click="drawer = !drawer" round dense icon="menu" />
+      <q-toolbar-title>Footer</q-toolbar-title>
+    </q-toolbar>
+  </q-layout-footer>
+
+  <q-layout-drawer v-model="drawer" :width="200" :breakpoint="300">
+    <div v-for="n in 50" :key="n">Drawer</div>
+  </q-layout-drawer>
+  <q-page-container>
+    <q-page style="padding-top: 50px">
+      <div v-for="n in 50" :key="n">My page</div>
+    </q-page>
+  </q-page-container>
+</q-layout>
+```
+
+Example in a QModal:
+```html
+<q-modal v-model="modal">
+  <q-layout view="LHh lpR fff" container style="min-height: 60vh; min-width: 60vw;">
+    <q-layout-header reveal>
+      <q-toolbar>
+        <q-btn flat @click="drawer2 = !drawer2" round dense icon="menu" />
+        <q-toolbar-title>Header</q-toolbar-title>
+        <q-btn flat @click="modal = false" round dense icon="close" />
+      </q-toolbar>
+    </q-layout-header>
+
+    <q-layout-footer>
+      <q-toolbar>
+        <q-btn flat @click="drawer2 = !drawer2" round dense icon="menu" />
+        <q-toolbar-title>Footer</q-toolbar-title>
+      </q-toolbar>
+    </q-layout-footer>
+
+    <q-layout-drawer v-model="drawer2" :width="200" :breakpoint="900">
+      <div v-for="n in 50" :key="n">Drawer</div>
+    </q-layout-drawer>
+
+    <q-page-container>
+      <q-page style="padding-top: 50px">
+        <div v-for="n in 50" :key="n">My page</div>
+      </q-page>
+    </q-page-container>
+  </q-layout>
+</q-modal>
+```
