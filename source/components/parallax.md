@@ -36,7 +36,7 @@ Specifying an image through `media` slot. This way you can have more control on 
 </q-parallax>
 ```
 
-Specifying a video with `media` slot. This way you can have more control on the image and also reference it from `assets` folder which is handled directly by Webpack.
+Specifying a video with `media` slot. This way you can have more control on the video tag and also reference it from `assets` folder which is handled directly by Webpack.
 ``` html
 <q-parallax>
   <video slot="media" poster="http://www.markhillard.com/sandbox/media/polina.jpg" autoplay loop muted>
@@ -47,6 +47,9 @@ Specifying a video with `media` slot. This way you can have more control on the 
   <h1>Video</h1>
 </q-parallax>
 ```
+
+> **Warning**
+> On some iOS platforms there may be problems regarding the autoplay feature of the native `<video>` tag. [Reference](https://webkit.org/blog/6784/new-video-policies-for-ios/). QParallax and Quasar are not interfering in any way with the client browser's ability/restrictions on the `<video>` tag.
 
 As you noticed in the examples above, you can display some content on top of the Parallax image/video (in the example above an `<h1>` tag).
 

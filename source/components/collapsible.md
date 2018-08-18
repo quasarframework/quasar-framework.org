@@ -110,6 +110,14 @@ For more details on these properties, please refer to the [Vue Router documentat
 > **NOTE**
 > When you use a QCollapsible as a Router Link then the user will be able to toggle it only by clicking on the right-side icon. The rest of QCollapsible space is used to trigger the navigation.
 
+```html
+<q-collapsible to="/some/page" icon="explore" label="First">
+  <div>
+    Content
+  </div>
+</q-collapsible>
+```
+
 ## Vue Methods
 | Vue Methods | Description |
 | --- | --- |
