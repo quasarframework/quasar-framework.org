@@ -91,6 +91,7 @@ Let's take each option one by one:
 | extras | Array | What to import from [quasar-extras](https://github.com/quasarframework/quasar-extras) package. Example: _['material-icons', 'roboto-font', 'ionicons']_ |
 | vendor | Object | (v0.17+) Add/remove files/3rd party libraries to/from vendor chunk: { add: [...], remove: [...] }. [More info](#vendor-Property) |
 | supportIE | Boolean | Add support for IE11+. |
+| htmlVariables | Object | (CLI v0.17.11+) Add variables that you can use in index.template.html. [More info](#htmlVariables-Property) |
 | framework | Object/String | What Quasar components/directives/plugins to import, what Quasar I18n language pack to use, what icon set to use for Quasar components. [More info](#framework-Property) |
 | animations | Object/String | What [CSS animations](/components/transition.html) to import. Example: _['bounceInLeft', 'bounceOutRight']_ |
 | devServer | Object | Dev server [options](https://webpack.js.org/configuration/dev-server/). Some properties are overwritten based on the Quasar mode you're using in order to ensure a correct config. |
@@ -195,6 +196,22 @@ The following properties of `build` are automatically configured by Quasar CLI d
 | webpackManifest | Boolean | Improves caching strategy. Use a webpack manifest (runtime) file to avoid cache bust on vendor chunk changing hash on each build. |
 
 If, for example, you run "quasar build --debug", sourceMap and extractCSS will be set to "true" regardless of what you configure.
+
+### htmlVariables Property
+*CLI v0.17.11+*
+
+You can define and then reference variables in `src/index.template.html`, like this:
+```js
+// quasar.conf
+module.exports = function (ctx) {
+  return {
+    htmlVariables: { title: 'test name' }
+```
+Then (just an example showing you how to reference a variable defined above, in this case `title`):
+```html
+<!-- src/index.template.html -->
+<%= htmlWebpackPlugin.options.title %>
+```
 
 ### sourceFiles Property
 *Quasar v0.16+*
