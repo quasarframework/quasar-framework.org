@@ -8,18 +8,18 @@ Before you read this guide, please make sure you understand the concepts behind 
 
 ## Using existing components
 
-Quasar is a framework. It provides the building blocks to build your own apps. But, often the question arises as to how one can use the already existing Quasar components to build their own components.
+Quasar as a framework, provides the building blocks to build your own apps. But, often the question arises as to how one can use the already existing Quasar components to build their own components.
 
 **The first thing to notice is that Vue favors composition over inheritance**.
 
-Inheritance is a concept known from Object Oriented Programming, where classes are able to extend other classes in order to reuse their methods and attributes to build a new, but in some ways different, classes. Composition, on the other hand, is also a known concept from Object Oriented Programming. With composition, instead of extending or overwriting an existing class, the composed objects are built from the classes through interfaces or mixins, et. al. The main difference being inheritance builds an "is a" relationship between the objects and composition builds a "has a" relationship. Think about a page for a login. It "has a" username field and a password field. 
+Inheritance is a concept known from Object Oriented Programming, where classes are able to extend other classes in order to reuse their methods and attributes to build a new, but in some ways different, classes. Composition, on the other hand, is also a known concept from Object Oriented Programming. With composition, instead of extending or overwriting an existing class, the composed objects are built from the classes through interfaces or mixins, et. al. The main difference being inheritance builds an "is a" relationship between the objects and composition builds a "has a" relationship. Think about a page for a login, for example. It "has a" username field and "has a" password field. 
 
-Being able to compose components together to make more complicated components, is a powerful concept of SFCs. 
+Being able to compose components together to make more intricate components, is a powerful concept of SFCs. 
 
 ### Compose components to build a new one
 
 Most of the time you'll want to take existing Quasar components and build new components from them.
-You can refer to this as the [Decorator pattern / Wrapper](https://en.wikipedia.org/wiki/Decorator_pattern), also known from Object Oriented Programming. This pattern allows the developer to create new versions of an object by altering/extending its behavior through a wrapper object, which is given a new name. This new object can have any added methods or properties, but they do not affect the base object.
+You can refer to this as the [Decorator / Wrapper Pattern](https://en.wikipedia.org/wiki/Decorator_pattern), also known from Object Oriented Programming. This pattern allows the developer to create new versions of an object by altering/extending its behavior through a wrapper object, which is given a new name. This new object can have any added methods or properties, but they do not affect the base object.
 
 Let's take a look at a simple example:
 
