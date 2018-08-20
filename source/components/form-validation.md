@@ -55,7 +55,7 @@ export default {
   },
   validations: {
     form: {
-      email: { required, email  }
+      email: { required, email }
     }
   },
   methods: {
