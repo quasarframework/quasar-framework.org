@@ -3,7 +3,7 @@ title: Building Reusable Components with Quasar
 
 Vue greatly encourages the use of components to encapsulate reusable code. Following this practice can [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) up your code, saving tons of developer time and effort. Quasar also follows this same practice and distributes all its components encapsulated. This guide should help you build new components by either using existing Quasar components or by building your own from scratch.
 
-Before you read this guide, please make sure you understand the concepts behind [Vue components](https://vuejs.org/v2/guide/components.html) and also read up on [Single File Components](https://vuejs.org/v2/guide/single-file-components.html)(SFCs).
+Before you read this guide, please make sure you understand the concepts behind [Vue components](https://vuejs.org/v2/guide/components.html) and also read up on [Single File Components](https://vuejs.org/v2/guide/single-file-components.html) (SFC).
 
 
 ## Using existing components
