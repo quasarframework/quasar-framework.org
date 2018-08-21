@@ -8,7 +8,7 @@ Before you read this guide, please make sure you understand the concepts behind 
 
 ## Using existing components
 
-Quasar as a framework, provides the building blocks to build your own apps. But, often the question arises as to how one can use the already existing Quasar components to build their own components.
+Quasar as a framework provides the building blocks to build your own apps. But, often the question arises as to how one can use the already existing Quasar components to build their own components.
 
 **The first thing to notice is that Vue favors composition over inheritance**.
 
