@@ -1,6 +1,6 @@
 title: Mobile App Preparation
 ---
-Before we dive in to the actual development, we need to do some preparation work.
+Before we dive in to the actual development, we need to do some preparation work. Here we will go over Android as the target platform.
 
 ## 1. Installation
 First step is to make sure you got the Cordova CLI installed and the necessary SDKs.
@@ -12,11 +12,18 @@ $ npm install -g cordova
 
 * After this step you will need to install the Android platform SDK on your machine. You can [download the Android Studio here](https://developer.android.com/studio/index.html) and follow these [installation steps](https://developer.android.com/studio/install.html) afterwards.
 
-* Update your ~/.bashrc file to contain the correct paths to your installation of Android Studio:
+* Add Android installation to your path
 
+*Unix*
 ``` bash
 export ANDROID_HOME="$HOME/Android/Sdk"
 PATH=$PATH:$ANDROID_HOME/tools; PATH=$PATH:$ANDROID_HOME/platform-tools
+```
+
+*Windows*
+``` command
+setx ANDROID_HOME "%USERPROFILE%\AppData\Local\Android\Sdk"
+setx path "%path%;%ANDROID_HOME%\tools;%ANDROID_HOME%\platform-tools"
 ```
 
 * Start Android studio by changing into the folder you installed it in and run `./studio.sh`. Next step is to install the individual SDKs:
@@ -25,7 +32,7 @@ PATH=$PATH:$ANDROID_HOME/tools; PATH=$PATH:$ANDROID_HOME/platform-tools
 
   ![SDK manager](/images/Android-Studio-SDK-Menu.png "SDK manager")
 
-  Select the desired SDKs. As per May 2017 Cordova supports 4.4 and up and click on "Apply" to install the SDKs.
+  Select the desired SDKs. As per August 2018 Cordova supports 5.0 and up and click on "Apply" to install the SDKs.
 
   ![SDK selection](/images/Android-Studio-SDK-selection.png "SDK selection")
 
@@ -35,6 +42,12 @@ In order to develop/build a Mobile app, we need to add the Cordova mode to our Q
 $ quasar mode -a cordova
 ```
 
+## 3. Add Platform
+To add a target platform, type:
+```
+$ cordova platform add [android|ios]
+```
+
 You can now verify if everything is in order. "cd" into `/src-cordova` and type:
 ```bash
 $ cordova requirements
@@ -42,8 +55,8 @@ $ cordova requirements
 > On some newer Debian-based operating systems you might face a very persistent problem when running `cordova requirements`. Please see the ["Android SDK not found" after installation](/guide/cordova-troubleshooting-and-tips.html#Android-SDK-not-found-after-installation-of-the-SDK) section for assistance.
 
 ## 3. Start Developing
-If you want to jump right in and start developing, you can skip the previous step with "quasar mode" command and issue:
+If you want to jump right in and start developing, you can skip step #3 and #4 commands and issue:
 ```bash
 $ quasar dev -m cordova -T [android|ios]
 ```
-This will add Cordova mode automatically, if it is missing.
+This will add Cordova mode and project automatically, if it is missing.
