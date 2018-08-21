@@ -243,7 +243,7 @@ Almost all Quasar components use props to allow you to pass data or set options 
 
 For more complex communication events are used.
 
-One particulary interesting thing about events is that `v-model="foo"` is just syntactic sugar for `:value="foo" @input="foo = $event.target.the value"`. If you want to build a custom component you can use `v-model`. Just emit an `input` event with the payload somewhere in your code. **(needs an example!)**
+One particulary interesting thing about events is that `v-model="foo"` is just syntactic sugar for `:value="foo" @input="foo = $event.target.the value"`. If you want to build a custom component you can use `v-model`. Just emit an `input` event with the payload somewhere in your code.
 
 ## Directives
 
@@ -261,4 +261,4 @@ The [Material Ripple](/components/material-ripples.html) directive allows you ad
 
 ## Utils
 
-In addition to components and directives Quasar also offers a set of JavaScript Utils to simplify your component development, check them out in the [Utils section](https://quasar-framework.org/components/date-utils.html).
+In addition to components and directives Quasar also offers a set of JavaScript Utils to simplify your component development, check them out in the Components > Utils section.
