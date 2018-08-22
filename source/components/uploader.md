@@ -31,6 +31,7 @@ framework: {
 | `no-content-type` | Boolean | (v0.17+) Avoid setting Content-Type header when uploading. |
 | `with-credentials` | Boolean | (v0.17+) Sets `xhr.withCredentials` to `true` (doesn't apply when using `upload-factory`). |
 | `method` | String | HTTP method to use (POST/PUT). Defaults to POST. |
+| `filter` | Function | (v0.17+) Function defining a custom filter method which returns a list of filtered files. Check section below. |
 | `extensions` | String | Extensions to allow for uploading. Example: `'.gif,.jpg,.jpeg,.png'` |
 | `multiple` | Boolean | Allow multiple file uploads |
 | `hide-upload-button` | Boolean | Hides the Upload button. You can then trigger it manually by calling `upload()` on the Vue ref |
@@ -87,6 +88,30 @@ export default {
 
       // we need to return a Promise
       // (resolves when upload is done, rejects when there's an error)
+    }
+  }
+}
+</script>
+```
+
+### Filter files
+Sometimes you need to filter files before upload. You can do this through `filter` parameter, as below:
+
+```html
+<template>
+  <q-uploader
+    url=""
+    :filter="filterFiles"
+  />
+</template>
+
+<script>
+export default {
+  methods: {
+    filterFiles (files) {
+      // .....
+      // "filteredFiles" is an Array containing allowed files
+      return filteredFiles
     }
   }
 }
