@@ -162,6 +162,7 @@ Vue will soon supply the `.lazy` modifier for v-model on components too, but unt
 | `@keydown` | Triggered by keydown event on textfield. |
 | `@keyup` | Triggered by keyup event on textfield. |
 | `@click` | Triggered by a native `click` event on textfield. |
+| `@paste` | (v0.17.10+) Triggered by a paste event on the textfield. |
 
 ### Coloring
 Use the `color` prop with one of the Quasar colors from the [Color Palette](/components/color-palette.html), like `primary`, `secondary`, `orange-7`, `teal-2`:
