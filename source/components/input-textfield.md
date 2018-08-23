@@ -243,7 +243,7 @@ If, for some reason, the input requires some longer term background action or pr
 | `@keydown` | Triggered by keydown event on textfield. |
 | `@keyup` | Triggered by keyup event on textfield. |
 | `@click` | Triggered by a native `click` event on textfield. |
-| `@paste` | Triggered by a paste event on the textfield. |
+| `@paste` | (v0.17.10+) Triggered by a paste event on the textfield. |
 
 ## Formatting
 It is possible to add formatting to a QInput in two ways. One is for the basic component. The other is with the QField component. Both methods offer "inverted" coloring.
