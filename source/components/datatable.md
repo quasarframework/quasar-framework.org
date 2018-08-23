@@ -277,11 +277,48 @@ export default {
 </script>
 ```
 
+### Popup Edit
+*Quasar v0.17.10+*
+
+Below is an example with the user being able to edit "in place" with the help of [QPopupEdit](/components/popup-edit.html) component. Please note that we are using the "body" scoped slot. **QPopupEdit won't work with cell scoped slots.**
+``` html
+<q-table
+  :data="data"
+  :columns="columns"
+  :filter="filter"
+  :title="title"
+  row-key="name"
+>
+  <q-tr slot="body" slot-scope="props" :props="props">
+    <q-td key="desc" :props="props">
+      {{ props.row.name }}
+      <q-popup-edit v-model="props.row.name">
+        <q-field count>
+          <q-input v-model="props.row.name" />
+        </q-field>
+      </q-popup-edit>
+    </q-td>
+    <q-td key="calories" :props="props">
+      {{ props.row.calories }}
+      <q-popup-edit v-model="props.row.calories" title="Update calories" buttons>
+        <q-input type="number" v-model="props.row.calories" />
+      </q-popup-edit>
+    </q-td>
+    <q-td key="fat" :props="props">{{ props.row.fat }}</q-td>
+    <q-td key="carbs" :props="props">{{ props.row.carbs }}</q-td>
+    <q-td key="protein" :props="props">{{ props.row.protein }}</q-td>
+    <q-td key="sodium" :props="props">{{ props.row.sodium }}</q-td>
+    <q-td key="calcium" :props="props">{{ props.row.calcium }}</q-td>
+    <q-td key="iron" :props="props">{{ props.row.iron }}</q-td>
+  </q-tr>
+</q-table>
+```
+
 ### QTable Vue Events
 | Vue Event | Parameters | Description |
 | --- | --- | --- |
 | `@request` | Object { pagination, filter, getCellValue } | Gets triggered when using server-side pagination (`pagination` property Object contains `rowsNumber`) |
-| `@fullscreen(true/false)` | (v0.17.7+) Emitted when Fullscreen state gets toggled. |
+| `@fullscreen` | Boolean (`true`/`false`) | (v0.17.7+) Emitted when Fullscreen state gets toggled. |
 
 ## Server-side Pagination, Filtering, Sorting
 When your database contains a big number of rows for a Table, obviously it's not feasible to load them all for multiple reasons (memory, UI rendering performance, ...). Instead, you can load only a Table page. Whenever the user wants to navigate to another Table page, or wants to sort by a column or wants to filter the Table, a request is sent to the server to fetch the partial data.

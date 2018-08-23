@@ -155,6 +155,7 @@ components:
     Notify: $
     Popover: $
     Tooltip: $
+    Popup Edit: $
   Progress:
     Ajax Bar: $
     Loading Bar: $
