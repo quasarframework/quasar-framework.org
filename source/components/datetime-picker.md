@@ -51,6 +51,7 @@ Supports `v-model` which must be a String, Number or Date Object.
 | `dark` | Boolean | Is component rendered on a dark background? |
 | `format24h` | Boolean | Override default i18n setting. Use 24 hour time for Material picker instead of AM/PM system which is default. |
 | `no-parent-field` | Boolean | Avoid trying to connect to a parent QField. |
+| `header-label` | String | (v0.17.10+) Override weekday string. Applies to Material theme only. |
 
 ### Lazy Input
 Vue will soon supply the `.lazy` modifier for v-model on components too, but until then, you can use the longer equivalent form:

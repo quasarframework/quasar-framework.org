@@ -106,6 +106,9 @@ export default {
 </script>
 ```
 
+> **IMPORTANT**
+> **Starting with Quasar v0.17.10+, please make sure the labels are sanitized, otherwise your app might be a target for XSS attacks.**
+
 ## Vue Properties
 Supports `v-model` which should be the String for single selection and Array for multiple selection.
 

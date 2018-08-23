@@ -242,16 +242,13 @@ These settings are completely up to you to use as you'd like. You could even go 
 *v0.17.9+*
 
 > **WARNING**
-> This is an experimental feature. Take it as a pre-released feature. Do NOT use it in production yet. May be removed without notice in future versions if it turns out to not be technically feasible.
->
 > Not supported in IE11.
-> Known issue: scrollbar overlaps content; we're working on a fix.
 
 Please note that it **requires a CSS height/width (or min-height/min-width) being set explicitly**, otherwise it can't work.
 
 Example:
 ```html
-<q-layout view="LHh lpR fff" container style="height: 500px; width: 300px" class="q-mt-xl shadow-2">
+<q-layout view="LHh lpR fff" container style="height: 500px; width: 300px" class="shadow-2">
   <q-layout-header reveal>
     <q-toolbar>
       <q-btn flat @click="drawer = !drawer" round dense icon="menu" />

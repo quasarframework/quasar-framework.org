@@ -49,10 +49,12 @@ Use the QTabs component to wrap your Tabs.
 ### Vue Properties
 | Vue Property | Type | Description |
 | --- | --- | --- |
+| `animated` | Boolean | (v0.17.10+) Animate panes when switching from one to another. |
+| `swipeable` | Boolean | (v0.17.10+) Enables user to swipe on tab pane to switch to adjacent tabs. |
 | `align` | String | The type of the alignment for the tabs within the tabs container. The allowed values are `left` (default), `center`, `right` or `justify`. |
 | `position` | String | The screen position of the tabs. The allowed values are `top` or `bottom`. |
 | `color` | String | A Quasar standard CSS color. |
-| `text-color` | String | (Quasar v0.15.7+) One from Quasar Palette to override color of text |
+| `text-color` | String | (v0.15.7+) One from Quasar Palette to override color of text |
 | `inverted` | Boolean | Set to true, to invert the tab color. |
 | `two-lines` | Boolean | Set to true, should a tab's label wrap to a second line. |
 | `no-pane-border` | Boolean | Avoid drawing a border around QTabPanes. |
@@ -106,6 +108,9 @@ export default {
 | Vue Method | Description |
 | --- | --- |
 | `selectTab(name)` | Set the active Tab using its name. |
+| `previous()` | (v0.17.10+) Switch to Tab on the left of current active one. |
+| `next()` | (v0.17.10+) Switch to Tab on the right of current active one. |
+| `go(offset)` | (v0.17.10+) Switch to Tab + offset as current active one. `next()` is alias to `go(1)` and `previous()` is alias to `go(-1)`. |
 
 ### Vue Events
 | Event | Description |

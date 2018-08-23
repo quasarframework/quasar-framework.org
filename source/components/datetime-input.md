@@ -57,6 +57,7 @@ Supports `v-model` which must be a String, Number or Date Object.
 | `placeholder` | String | Placeholder text for input frame to use when model is not set (empty). |
 | `ok-label` | String | Text for the button to accept the input (when using Modal). |
 | `cancel-label` | String | Text for the button to cancel input with no change (when using Modal). |
+| `header-label` | String | (v0.17.10+) Override weekday string on popup. Applies to Material theme only. |
 
 Common input frame properties:
 
