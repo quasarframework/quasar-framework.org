@@ -27,7 +27,7 @@ framework: {
 | `name` | String | Name of the file, if it should be different than the file's name. |
 | `headers` | Object | Specify what headers need to be added to the XHR request |
 | `url-factory` | Function | Function (with `file` object received as parameter) which returns a Promise that resolves to a URL. |
-| `upload-factory` | Function | (v0.17+) Function defining a custom upload method which returns a Promise. Check section below. |
+| `upload-factory` | Function | (v0.17+) Function defining a custom upload method which returns a Promise that resolves with a file. Check section below. |
 | `no-content-type` | Boolean | (v0.17+) Avoid setting Content-Type header when uploading. |
 | `with-credentials` | Boolean | (v0.17+) Sets `xhr.withCredentials` to `true` (doesn't apply when using `upload-factory`). |
 | `method` | String | HTTP method to use (POST/PUT). Defaults to POST. |
