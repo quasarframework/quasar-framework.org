@@ -83,7 +83,7 @@ export default {
     uploadFactory (file, updateProgress) {
       // "file" is an Object containing file's props, including content
 
-      // for updating progress (as 0-1 number), we need to call:
+      // for updating progress (as 0-1 floating number), we need to call:
       // updateProgress (progress)
 
       // we need to return a Promise
