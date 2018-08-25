@@ -84,7 +84,7 @@ export default {
       // "file" is an Object containing file's props, including content
 
       // for updating progress (as 0-1 floating number), we need to call:
-      // updateProgress (progress)
+      // updateProgress (bytesTransferred / totalBytes)
 
       // we need to return a Promise
       // (resolves when upload is done, rejects when there's an error)
