@@ -67,6 +67,7 @@ Notice that nodes must have a unique key defined by a property of each key. In t
 | --- | --- | --- |
 | `nodes` | Array | Vue model for the Tree |
 | `node-key` | String | Property of node to use as unique key. |
+| `label-key` | String | (v0.17.11+) Property of node to use as label. |
 | `color` | String | Color of the connector lines. |
 | `control-color` | String | Color of checkboxes. |
 | `text-color` | String | Color of text. |
