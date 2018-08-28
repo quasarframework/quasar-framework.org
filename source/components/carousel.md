@@ -317,7 +317,7 @@ Controlling from outside of Carousel:
     >
       <div class="q-display-3">Slide {{ n }}</div>
     </q-carousel-slide>
-  </q-carouse>
+  </q-carousel>
 </template>
 
 <script>
