@@ -85,7 +85,7 @@ The default values of the different QTable labels are taken care of by default t
 | `columns` | Array of Objects | (**Required**) Defining each column's properties. |
 | `row-key` | String | (**Required**) Property name of each row defining a unique **data** key for the respective rows. |
 | `pagination` | Object | **Use with .sync**. Control of the pagination and sorting. Can enable Table "server-mode" by containing `rowsNumber` property. See next sections for details. |
-| `rows-per-page-options` | Array | Array of Numbers representing options for user to select how many rows per page should be shown. Example: '[3, 5, 7, 0]'. Notice value 0 means "All". |
+| `rows-per-page-options` | Array | Array of Numbers representing options for user to select how many rows per page should be shown. Example: '[3, 5, 7, 0]'. Notice value 0 means "All" and empty array hides the selection. |
 | `selection` | String | Set selection mode. One of 'single', 'multiple' or (default) 'none'. |
 | `selected` | Array | **Use with .sync**. Array of unique keys for selected row(s). |
 | `visible-columns` | Array | Array of Strings containing the 'name' column property value of the visible columns. |
