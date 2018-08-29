@@ -122,7 +122,7 @@ Supports `v-model` which should be the String for single selection and Array for
 | `chips-color` | String | Override default children chips text color. |
 | `chips-bg-color` | String | Override default children chips background color. |
 | `readonly` | Boolean | If set to `true`, select is readonly and the user cannot change model. |
-| `filter` | Boolean | If set to `true`, the selections will offer an input to filter the selection options. |
+| `filter` | Boolean/Function(terms,obj) | If set to `true` or supplying a filter function, the selections will offer an input to filter the selection options. |
 | `autofocus-filter` | Boolean | Auto-focus on the filter input field (if available) when opening selection. |
 | `filter-placeholder` | String | A text to show in the filter input field. Default is "Filter". |
 | `separator` | Boolean | If set to `true`, the selection options will be separated by a line. |

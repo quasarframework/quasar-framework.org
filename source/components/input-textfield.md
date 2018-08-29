@@ -34,7 +34,7 @@ Supports `v-model` which should be bound to a String or Number (depending on `ty
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `type` | String |  Must be one of the following: `text` (default), `textarea`, `email`, `tel`, `number`, `password` and `url`. This is important as it determines the keyboard type popping up on mobile devices. |
+| `type` | String |  Must be one of the following: `text` (default), `textarea`, `email`, `tel`, `number`, `password`, `url` and `search`. This is important as it determines the keyboard type popping up on mobile devices. |
 | `readonly` | Boolean | If set to `true`, textfield is readonly and the user cannot change value. |
 | `clearable` | Boolean | If used, the component offers the user an actionable icon to reset the current value to `clear-value` (which is by default an empty string). The icon appears only when the current value matches `clear-value`. |
 | `clear-value` | String | The value to which to reset the field model to when using `clearable`. The default value is an empty string. |

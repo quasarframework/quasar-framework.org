@@ -67,6 +67,7 @@ Notice that nodes must have a unique key defined by a property of each key. In t
 | --- | --- | --- |
 | `nodes` | Array | Vue model for the Tree |
 | `node-key` | String | Property of node to use as unique key. |
+| `label-key` | String | (v0.17.11+) Property of node to use as label. |
 | `color` | String | Color of the connector lines. |
 | `control-color` | String | Color of checkboxes. |
 | `text-color` | String | Color of text. |
@@ -143,6 +144,18 @@ export default {
 }
 </script>
 ```
+
+## Vue Methods
+
+| Vue Property | Description |
+| --- | --- |
+| `getNodeByKey(key)` | Get a node by specifying its unique key. |
+| `collapseAll()` | Collapses all nodes. Useful if not using a synched `expanded` bind, otherwise just set `expanded` to an empty array. |
+| `expandAll()` | Expands all nodes. Useful if not using a synched `expanded` bind. |
+| `isTicked(key)` | Returns a boolean specifying if node with key is ticked. |
+| `isExpanded(key)` | Returns a boolean specifying if node with key is expanded. |
+| `getTickedNodes()` | Returns an array with keys of nodes that are ticked. Useful if not using a synched `ticked` bind. |
+| `getExpandedNodes()` | Returns an array with keys of nodes that are expanded. Useful if not using a synched `expanded` bind. |
 
 ## Examples
 

@@ -105,7 +105,7 @@ node.addEventListener('click', evt => {
   (Number) event.getEventKey(evt)
 
   // Mouse wheel distance (in pixels)
-  (Number) event.getMouseWheelDistance(evt)
+  (Object {x, y}) event.getMouseWheelDistance(evt)
 
   // position on viewport
   // works both for mouse and touch events!
