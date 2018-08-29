@@ -102,6 +102,7 @@ The default values of the different QTable labels are taken care of by default t
 | `filter` | String | Filter String for Table used by `filter-method()`. |
 | `filter-method` | Function | When you want a custom filtering method. See next sections for details. |
 | `sort-method` | Function | When you want a custom filtering method. See next sections for details. |
+| `binary-state-sort` | Boolean | (v0.17.11+) By default, sorting a column has 3 states (no sort, ascending, descending). By using this property it only allows 2 states (ascending, descending). |
 
 Label properties are by default defined in Quasar's i18n, but you can override them:
 
