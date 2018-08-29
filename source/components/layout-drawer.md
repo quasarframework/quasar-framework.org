@@ -40,6 +40,7 @@ framework: {
 | `mini` | Boolean | (v0.15.11+) If drawer is in mini mode or not. |
 | `mini-width` | Number | (v0.17+) CSS unit for drawer width when in mini mode. Default: 60 |
 | `width` | Number | The width in pixels of the drawer (when not in mini mode). Default: 300 |
+| `show-if-above` | Boolean | The initial state of the drawer when it gets rendered for first time, overriding the model (which might have been previously set to "false" by a user toggle). |
 
 ## QLayoutDrawer Vue Methods
 
