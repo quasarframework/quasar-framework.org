@@ -16,7 +16,7 @@ Most of the colors that Quasar Components use are strongly linked with these thr
 Here's the list of colors provided out of the box. Use them as CSS classes (in HTML templates) or as Stylus variables (in `<style lang="stylus">` tags) within your app's `*.vue` files.
 
 `primary`, `secondary`, `tertiary`
-`positive`, `negative`, `info`, `warning`, `white`, `light`, `dark`, `faded`
+`positive`, `negative`, `info`, `warning`, `white`, `black`, `light`, `dark`, `faded`
 
  Colors come in the following preset hues:
 `red`, `pink`, `purple`, `deep-purple`, `indigo`, `blue`, `light-blue`, `cyan`, `teal`, `green`, `light-green`, `lime`, `yellow`, `amber`, `orange`, `deep-orange`, `brown`, `grey`, `blue-grey`
