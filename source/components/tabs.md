@@ -60,6 +60,7 @@ Use the QTabs component to wrap your Tabs.
 | `no-pane-border` | Boolean | Avoid drawing a border around QTabPanes. |
 | `glossy` | Boolean | Apply a glossy effect |
 | `panes-container-class` | String | Custom classes for tab panes container. |
+| `underline-color` | String | (v0.17.11+) One from Quasar Palette to override color of the underline. |
 
 There is support for `v-model` (which is optional). In this case, you need a Vue variable in your scope which will contain the name of the current selected tab (through `name` prop on QTab). Changing the value will also make QTabs select the according QTab.
 
