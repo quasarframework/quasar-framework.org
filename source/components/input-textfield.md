@@ -160,7 +160,7 @@ Examples:
 ```
 
 ### Labeling
-QInput comes with two built-in labeling possibilities. You can use the `float-label` or the `stack-label` properties to add text for the labeling of the field. A `stack-label` is static in its position above the field, whereas the `fload-label` is more dynamic. Check the examples to the right to see the difference.
+QInput comes with two built-in labeling possibilities. You can use the `float-label` or the `stack-label` properties to add text for the labeling of the field. A `stack-label` is static in its position above the field, whereas the `float-label` is more dynamic. Check the examples to the right to see the difference.
 
 ```html
 <q-input v-model="text" stack-label="Stack Label" placeholder="Add some text..."  />
