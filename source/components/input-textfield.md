@@ -27,6 +27,11 @@ framework: {
   :max-height="100"
   rows="7"
 /><!-- max-height refers to pixels -->
+
+<!-- With custom loading spinner -->
+<q-input v-model="text">
+  <q-spinner-oval slot="loading" />
+</q-input>
 ```
 
 ## Vue Properties

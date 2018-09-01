@@ -157,6 +157,20 @@ Examples:
 />
 ```
 
+### Custom Spinner
+By default, when the Uploader component is in `uploading` state, it displays the default theme spinner to indicate such state. It is possible to customize the spinner used by defining a `loading` slot, as below:
+
+```html
+<q-uploader
+  :url="url">
+  <!--
+      Notice slot="loading". This is optional.
+      If missing, the default theme spinner will be used.
+    -->
+  <q-spinner-bars slot="loading" />
+</q-uploader>
+```
+
 ## Vue Methods
 | Vue Method | Description |
 | --- | --- |

@@ -33,6 +33,11 @@ framework: {
 
 <!-- On error state -->
 <q-chips-input v-model="model" error />
+
+<!-- With custom loading spinner -->
+<q-chips-input v-model="model">
+  <q-spinner-oval slot="loading" />
+</q-chips-input>
 ```
 
 > The model variable must be an Array.
