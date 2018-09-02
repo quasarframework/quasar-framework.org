@@ -62,7 +62,7 @@ If you want to be able to build:
 * ability to write SFC (Single File Component - for Vue)
 ...then go for the **Starter Kit** way:
 
-First, we install Quasar CLI. Make sure you have Node >=8 and NPM >=5 installed on your machine. We'll also be installing Vue CLI, as Quasar CLI uses it under the hood for initializing projects only.
+First, we install Quasar CLI. Make sure you have Node >=8 and NPM >=5 installed on your machine. We'll also be installing Vue CLI, as Quasar CLI uses it under the hood for initializing projects. 
 
 ```bash
 # make sure you have vue-cli globally installed
