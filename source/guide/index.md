@@ -33,9 +33,9 @@ If you want to embed Quasar into your existing website project, integrating it i
 # make sure you have vue-cli globally installed
 # Node.js >= 8.9.0 is required.
 
-$ yarn global add vue-cli
+$ yarn global add @vue-cli
 # or:
-$ npm install -g vue-cli
+$ npm install -g @vue-cli
 
 # then...
 $ vue init quasarframework/quasar-starter-kit-umd <folder_name>
@@ -62,7 +62,7 @@ If you want to be able to build:
 * ability to write SFC (Single File Component - for Vue)
 ...then go for the **Starter Kit** way:
 
-First, we install Quasar CLI. Make sure you have Node >=8 and NPM >=5 installed on your machine. We'll also be installing Vue CLI, as Quasar CLI uses it under the hood.
+First, we install Quasar CLI. Make sure you have Node >=8 and NPM >=5 installed on your machine. We'll also be installing Vue CLI, as Quasar CLI uses it under the hood for initializing projects only.
 
 ```bash
 # make sure you have vue-cli globally installed
