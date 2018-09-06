@@ -1,8 +1,8 @@
 title: Directive "v-mask"
 ---
-This directives can take an String or an Array of tokens, to be used as a masked input.
+This directives can take a String or an Array of tokens and can use them to create a specialized masked input.
 
-When the directive is applied all the response of the Input will be the masked value.
+When the directive is applied, the value of the input will be kept in line with the masked value. This is great for adding, for instance, a mask for a telephone number input.  
 
 ## Installation
 Edit `/quasar.conf.js`:
@@ -22,7 +22,7 @@ framework: {
 ...
 ```
 ### String Mask
-If you want to have a simple mask, the directive can be called with a `string of tokens.
+If you want to have a simple mask, the directive can be called with a `string of tokens`.
 
 ``` html
 <!-- Template for VueModel below -->
@@ -32,7 +32,7 @@ If you want to have a simple mask, the directive can be called with a `string of
 ```
 
 ### Array Mask
-If you need to have a dynamic mask, that need to be placed on the length of the string. You can pass to the directive an `array` of token `trings`.
+If you need to have a dynamic mask that needs to be placed on the length of the string. You can pass an `array` of token `strings` to the directive.
 
 ``` html
 <!-- Template for VueModel below -->
@@ -42,10 +42,10 @@ If you need to have a dynamic mask, that need to be placed on the length of the 
 ```
 
 ### Object Mask
-If you mask need to have a custom rule, or an custom settings, you can pass an `object` as a value.
+If your mask needs to have a custom rule, or a custom setting, you can pass an `object` as the masking value.
 
-The object need to have two properties, `mask` and `tokens`. 
-`mask` can be an `string` or an `array` of `strings`.
+The object needs to have two properties, `mask` and `tokens`. 
+`mask` can be a `string` or an `array` of `strings`.
 
 `tokens` need to be an `object` with each key being a regex pattern.
  
