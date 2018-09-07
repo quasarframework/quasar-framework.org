@@ -80,7 +80,7 @@ Sometimes you need to define your own upload method. You can do this through `up
 <script>
 export default {
   methods: {
-    uploadFactory (file, updateProgress) {
+    uploadFile (file, updateProgress) {
       // "file" is an Object containing file's props, including content
 
       // for updating progress (as 0-1 floating number), we need to call:
