@@ -61,6 +61,7 @@ Supports `v-model` which should be bound to a String or Number (depending on `ty
 | `label-cancel` | String | Override label for "Cancel" button |
 | `color` | String | One from [Quasar Color Palette](/components/color-palette.html) to apply for inner input and buttons |
 | `validate(val)` | Function | Function to determine if input is correct, and in such case the value is saved, otherwise the edit is cancelled |
+| `persistent` | Boolean | Do not close popup if clicking outside of it |
 | `disable` | Boolean | Disable popup |
 
 ## Vue Events
@@ -69,6 +70,6 @@ Supports `v-model` which should be bound to a String or Number (depending on `ty
 | --- | --- |
 | `@show` | Triggered after opening popup. |
 | `@hide` | Triggered after closing popup. |
-| `@save(val)` | Edit is successful and the value gets saved |
+| `@save(val, initialValue)` | Edit is successful and the value gets saved |
 | `@cancel(val, initialValue)` | Edit has been cancelled and the value gets reverted to its original form |
 
