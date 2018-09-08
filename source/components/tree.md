@@ -83,6 +83,7 @@ Notice that nodes must have a unique key defined by a property of each key. In t
 | `filter-method` | Function | Custom filtering method. |
 | `no-nodes-label` | String | Override default i18n of message when no nodes are available. |
 | `no-results-label` | String | Override default i18n of message when no nodes are available after filtering. |
+| `duration` | Number | (v0.17.13+) Toggle animation duration in milliseconds. Default: 300 |
 
 ### Nodes model structure
 The following describes a node's properties that are taken into account by QTree's v-model.

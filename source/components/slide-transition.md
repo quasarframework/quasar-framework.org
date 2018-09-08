@@ -53,3 +53,10 @@ You can also trigger the animation when rendering the component for first time (
 ```
 
 (v0.15.13+) You can also use `@show` and `@hide` Vue events if you want to trigger something after animation is over.
+
+## Vue Properties
+
+| Vue Property | Type | Description |
+| --- | --- | --- |
+| `appear` | Boolean | Apply animation when first rendered too. |
+| `duration` | Number | (v0.17.13+) Animation duration in milliseconds. Default: 300 |
