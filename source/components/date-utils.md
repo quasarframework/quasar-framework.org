@@ -19,7 +19,7 @@ import { date } from 'quasar'
 // destructuring to keep only what is needed
 const { addToDate } = date
 
-let newDate = addToDate(new Date(), { days: 7, months: 1 })
+let newDate = addToDate(new Date(), { days: 7, month: 1 })
 ```
 
 ## Format for display
