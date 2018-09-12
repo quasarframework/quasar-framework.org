@@ -33,6 +33,7 @@ Following are Vue properties of QCard component:
 | `inline` | Boolean | Make it inline. Also set a CSS width to work. Take a look at Grid example on the "More Examples" section. |
 | `color` | String | One color from [Quasar Color Palette](/components/color-palette.html). |
 | `text-color` | String | Override color of text, one from [Quasar Color Palette](/components/color-palette.html). |
+| `dark` | Boolean | (v0.17.13+) To be set when the `color` is a dark one. |
 
 ``` html
 <!-- An basic example -->
