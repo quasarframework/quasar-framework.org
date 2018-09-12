@@ -131,6 +131,7 @@ Supports `v-model` which should be the String for single selection and Array for
 | `clearable` | Boolean | If used, the component offers the user an actionable icon to reset the current value to `clear-value` (which is by default `null` for single selection and `[]` for multiple selection). The icon appears only when the current value matches `clear-value`. |
 | `clear-value` | String | The value to which to reset the field model to when using `clearable`. The default value is `null` for single selection and `[]` for a multiple selection. |
 | `no-icon` | Boolean | Use no icon on left side |
+| `popup-max-height` | String | (v0.17.13+) Maximum height of popup described in CSS units. |
 
 Common input frame properties:
 

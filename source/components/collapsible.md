@@ -72,6 +72,7 @@ Supports `v-model` to control the state (open/close).
 | `header-style` | Array/String/Object | Vue style binding for header. |
 | `header-class` | Array/String/Object | Vue class binding for header. |
 | `disable` | Boolean | Disable current Collapsible. |
+| `duration` | Number | (v0.17.13+) Toggle animation duration in milliseconds. Default: 300 |
 | `tag` | Boolean | Tag to use. Default is "div". |
 
 QItem & QItem related components inherited properties:
