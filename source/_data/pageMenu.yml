@@ -14,7 +14,7 @@ guide:
   UMD / Standalone:
     Embedding Quasar: $
 
-  Starter Kit:
+  Quasar CLI:
     Installation: app-$
     Directory Structure: app-$
     quasar.conf.js: app-$
