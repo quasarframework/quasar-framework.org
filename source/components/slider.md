@@ -1,6 +1,6 @@
 title: Slider
 ---
-Quasar Slider is a great way to make the user specify a number value between a minimum and maximum value, with optional steps between valid values.
+Quasar Slider is a great way to make the user specify a number value between a minimum and maximum value, with optional steps between valid values. The slider also has a focus indicator (highlighted slider button), which allows for keyboard adjustments of the slider. 
 <input type="hidden" data-fullpage-demo="forms/slider">
 
 Also check its "sibling", the [Range](/components/range.html) component.
