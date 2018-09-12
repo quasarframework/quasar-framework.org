@@ -82,12 +82,13 @@ export default {
 | `no-refocus` | Boolean | (v0.17+) By default, for accessibility purposes, Popover refocuses the previously active element. Set to `true` to disable this behaviour. |
 | `self` | Object | String of form `top left` (vertical horizontal) |
 | `max-height` | String | Optional maximum height of Popover content. Example: `500px` |
-| `touch-position` | Boolean | Open Popover from the position where user clicked/tapped on anchor. |
+| `touch-position` | Boolean | Open Popover from the position where user clicked/tapped on anchor, and keep the same relative position on scroll. |
 | `fit` | Boolean | Popover has `min-width` set as same as the `width` of the container. |
 | `disable` | Boolean | When set to `true`, Popover won't be triggered. |
 | `offset` | Array of 2 Numbers | Offset on horizontal and vertical (in pixels). Example: `[18, 18]`. |
 | `cover` | (v0.17.10+) Popover will cover its parent element. |
 | `persistent` | (v0.17.10+) Popover will not be closed if clicking/tapping outside of it, like it happens by default. |
+| `keep-on-screen` | (v0.17.13+) Popover will not be closed if the parent element gets out of screen. |
 | `disable` | Boolean | Disable Popover |
 
 ## Vue Methods
