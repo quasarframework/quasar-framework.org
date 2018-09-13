@@ -82,7 +82,7 @@ import { Cookies } from 'quasar'
 Cookies.set('cookie_name', cookie_value, options)
 ```
 
-`options` is an Object which can have the following properties: `expire`, `path`, `domain`, `secure`. They are explained below.
+`options` is an Object which can have the following properties: `expires`, `path`, `domain`, `secure`. They are explained below.
 
 ``` js
 // outside of a Vue file
