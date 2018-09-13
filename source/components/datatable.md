@@ -151,6 +151,9 @@ columns: /* array of Objects */ [
     //   * is 0 then leave a and b unchanged with respect to each other, but sorted with respect to all different elements
     //   * is greater than 0 then sort b to an index lower than a, i.e. b comes first
 
+    // (optional) you can format the data with a function
+    format: val => `${val}%`
+
     // v0.17.9+; if using scoped slots, apply this yourself instead
     style: 'width: 500px',
     classes: 'my-special-class'
