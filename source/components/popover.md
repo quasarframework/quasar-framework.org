@@ -86,9 +86,9 @@ export default {
 | `fit` | Boolean | Popover has `min-width` set as same as the `width` of the container. |
 | `disable` | Boolean | When set to `true`, Popover won't be triggered. |
 | `offset` | Array of 2 Numbers | Offset on horizontal and vertical (in pixels). Example: `[18, 18]`. |
-| `cover` | (v0.17.10+) Popover will cover its parent element. |
-| `persistent` | (v0.17.10+) Popover will not be closed if clicking/tapping outside of it, like it happens by default. |
-| `keep-on-screen` | (v0.17.13+) Popover will not be closed if the parent element gets out of screen. |
+| `cover` | Boolean | (v0.17.10+) Popover will cover its parent element. |
+| `persistent` | Boolean | (v0.17.10+) Popover will not be closed if clicking/tapping outside of it, like it happens by default. |
+| `keep-on-screen` | Boolean | (v0.17.13+) Popover will not be closed if the parent element gets out of screen. |
 | `disable` | Boolean | Disable Popover |
 
 ## Vue Methods
