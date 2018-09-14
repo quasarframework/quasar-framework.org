@@ -102,6 +102,14 @@ Quasar.i18n.getLocale() // returns a string
 this.$q.i18n.getLocale() // returns a string
 ```
 
+## UPPERCASE
+Many languages, such as Greek, German and Dutch have non-intuitive rules for uppercase display, and there is an edge case that you should be aware of: 
+
+`q-button` will use the CSS `text-transform: uppercase` rule to automatically turn its label into all-caps. According to the [MDN webdocs](https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform), "The language is defined by the lang HTML attribute or the xml:lang XML attribute." Unfortunately, this has spotty implementation across browsers, and the 2017 ISO standard for the uppercase German eszett `ß` has not really entered the canon. At the moment you have two options:
+
+1. use the prop `no-caps` in your label and write the string as it should appear
+2. use the prop `no-caps` in your label and rewrite the string with [toLocaleUpperCase](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleUpperCase) by using the locale as detected by `this.$q.i18n.getLocale()` 
+
 ## Handling Quasar UMD
 To add a Quasar language pack you need to include the language pack JS tag for your Quasar version and also tell Quasar to use it. Example:
 
