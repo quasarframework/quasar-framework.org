@@ -30,12 +30,12 @@ Here's a comparison:
 If you want to embed Quasar into your existing website project, integrating it in a progressive manner, then go for the UMD/Standalone (Unified Module Definition) version. There a helper UMD starter kit which will show you how to get started and what CSS and JS tags to include into your project. It will ask you some questions (what Quasar theme will you be using, what Quasar I18n to include, ...) and it will generate a simple HTML file that will demo on how to use CDN to add Quasar:
 
 ```bash
-# make sure you have vue-cli globally installed
+# make sure you have @vue-cli (Vue CLI 3.0) globally installed
 # Node.js >= 8.9.0 is required.
 
-$ yarn global add vue-cli
+$ yarn global add @vue-cli
 # or:
-$ npm install -g vue-cli
+$ npm install -g @vue-cli
 
 # then...
 $ vue init quasarframework/quasar-starter-kit-umd <folder_name>
