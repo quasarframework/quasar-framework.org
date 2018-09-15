@@ -67,9 +67,9 @@ First, we will need to install Quasar CLI. Make sure you have Node >=8 and NPM >
 
 ```bash
 # make sure you have vue-cli globally installed
-$ yarn global add vue-cli
+$ yarn global add @vue-cli
 # or:
-$ npm install -g vue-cli
+$ npm install -g @vue-cli
 
 # Node.js >= 8.9.0 is required.
 $ yarn global add quasar-cli
