@@ -60,7 +60,7 @@ If you want to be able to build:
 * benefit from Tree Shaking
 * get your code optimized, minified, bundled in the best possible way
 * ability to write SFC (Single File Component - for Vue)
-...then go for the **Starter Kit** way:
+...then go for the best developer experience:
 
 First, we install Quasar CLI. Make sure you have Node >=8 and NPM >=5 installed on your machine.
 
@@ -83,7 +83,7 @@ $ quasar init <folder_name>
 
 Note that you don't need separate starter kits if you want to build any of the options described above. This one can seamlessly handle all of them.
 
-Now head on to read about [Main Starter Kit](/guide/app-installation.html) and also familiarize yourself with the [Quasar CLI](/guide/quasar-cli.html).
+Be sure to also familiarize yourself with the [Quasar CLI](/guide/quasar-cli.html).
 
 ## Vue CLI 3 plugin
 Make sure you have vue-cli 3.x.x:
