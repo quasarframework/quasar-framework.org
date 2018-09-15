@@ -3,12 +3,12 @@ title: Getting Started - Installation
 
 **If you want to learn what Quasar is and what it can do for you**, read the [Introduction to Quasar](/guide/introduction-to-quasar.html). Otherwise, let's get started and choose how you want to use Quasar:
  * UMD/Standalone (embed into an existing project through CDN, progressive integration)
- * Starter Kit handled by Quasar CLI (**the premium experience, recommended**)
+ * Development with Quasar CLI (**the premium experience, recommended**)
  * Vue CLI 3 plugin
 
 Here's a comparison:
 
-| Feature | UMD | Starter Kit | Vue CLI 3 Plugin |
+| Feature | UMD | Quasar CLI | Vue CLI 3 Plugin |
 | --- | --- | --- | --- |
 | Ability to embed into an existing project | **Yes** | - | **Yes, if it is Vue CLI app** |
 | Progressive integration of Quasar | **Yes** | - | - |
@@ -45,7 +45,7 @@ And you're done. Inspect `index.html` file that was created in the new folder an
 
 Now head on to read about [UMD/Standalone](/guide/embedding-quasar.html).
 
-## Starter Kit (Recommended)
+## Development with Quasar CLI (Recommended)
 If you want to be able to build:
 * a SPA (Single Page Application/Website),
 * a SSR (Server-side Rendered App/Website),
@@ -53,7 +53,7 @@ If you want to be able to build:
 * a Mobile App (through Cordova),
 * an Electron App,
 ...and
-* benefit from a stellar experience provided by Quasar CLI, with HMR (Hot Module Reload)
+* benefit from a stellar experience provided by the Quasar CLI, with HMR (Hot Module Reload)
 * **share the same base-code for all those modes**
 * benefit from the latest web recommended practices out of the box
 * ability to write ES6 code
