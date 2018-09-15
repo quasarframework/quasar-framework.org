@@ -63,7 +63,7 @@ If you want to be able to build:
 
 ...then go for the best developer experience:
 
-First, we will need to install Quasar CLI. Make sure you have Node >=8 and NPM >=5 installed on your machine.
+First, we will need to install Quasar CLI. Make sure you have Node >=8 and NPM >=5 installed on your machine. We'll also be installing Vue CLI 3.0, which is only needed for initializing a Quasar project.
 
 ```bash
 # make sure you have vue-cli globally installed
