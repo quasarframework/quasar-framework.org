@@ -1,6 +1,6 @@
-title: Main Starter Kit Installation
+title: CLI Installation and Development Features
 ---
-Using the Main Starter Kit is the recommended way to go in order to benefit from all Quasar can do for it. You'll be able to build:
+Using the CLI is the recommended way to go in order to benefit from all Quasar can do for it. You'll be able to build:
 * a SPA (Single Page Application/Website),
 * a SSR (Server-side Rendered App/Website + optional PWA client takeover)
 * a PWA (Progressive Web App),
@@ -22,9 +22,9 @@ Then we create a project folder with Quasar CLI:
 $ quasar init <folder_name>
 ```
 
-Note that you don't need separate starter kits if you want to build any of the options described above. This one can seamlessly handle all of them.
+Note that you don't need separate projects if you want to build any of the options described above. This one project can seamlessly handle all of them.
 
-Make sure you familiarize yourself with the [Quasar CLI](/guide/quasar-cli.html) because you will be using it a lot.
+To continue your learning about Quasar, you should familiarize yourself with the [Quasar CLI](/guide/quasar-cli.html) in depth, because you will be using it a lot.
 
 ## What's Included
 
