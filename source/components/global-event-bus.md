@@ -28,3 +28,31 @@ this.$root.$off('event_name', cb)
 // Emitting an event:
 this.$root.$emit('event_name', 'some message')
 ```
+
+Example using event to open drawer from another component or page
+
+```
+// (1) This code is inside layout file that have a drawer
+//     if this.leftDrawerOpen is true, drawer is displayed
+
+// (2) Listen for an event in created
+created(){
+  this.$root.$on("openLeftDrawer", this.openLeftDrawercb);
+},
+methods: {
+  openURL,
+  // (3) Define the callback in methods
+  openLeftDrawercb() {
+    this.leftDrawerOpen = !this.leftDrawerOpen;
+  }
+}
+
+// (4) In another component or page, emit the event!
+//     Call the method when clicking button etc.
+methods: {
+  openLeftDrawer() {
+    this.$root.$emit("openLeftDrawer");
+  }
+}
+```
+
