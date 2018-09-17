@@ -39,7 +39,7 @@ The idea is to place QTooltip inside your DOM element / component (as **direct c
 <template>
   <div>
     <q-btn color="primary" @click="showing = true" label="Show" />
-    <q-btn color="primary" @close="showing = false" label="Hide" />
+    <q-btn color="primary" @click="showing = false" label="Hide" />
 
     <div>
       ...
