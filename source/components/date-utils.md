@@ -74,7 +74,7 @@ import { date } from 'quasar'
 
 let newDate = date.buildDate({ year:2010, day:5, hours:15, milliseconds:123})
 ```
-You can pass a third argument (a boolean) for setting UTC time (true) instead of local time.
+You can pass a second argument (a boolean) for setting UTC time (true) instead of local time.
 
 The object literal provided can contain the following keys (all are optional):
 
