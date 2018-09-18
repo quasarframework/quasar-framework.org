@@ -2,7 +2,7 @@ title: Quasar CLI
 ---
 The Quasar CLI allows you to create new projects in no time, by generating a base application, filled with everything you need to begin working on your application. It does most of the heavy-lifting, so you need not concern yourself with the redundant tasks of building the application.
 
-**You only need Quasar CLI if using the Main Starter Kit**. If you want the UMD version, you won't be using it.
+**You only need Quasar CLI if you are using the project initialization feature**. If you want the UMD version, you won't be needing it.
 
 ``` bash
 # Node.js >= 8.9.0 is required.
@@ -36,7 +36,7 @@ $ quasar [command name] --help
 
 ## init (Create Project Folder)
 
-Initializes an App folder with a starter boilerplate.
+Creates an App folder with initial project boilerplate.
 ``` bash
 $ quasar init <folder-name>
 ```
@@ -228,7 +228,7 @@ $ quasar mode -h
     --remove, -r  Remove support for mode [pwa|ssr|cordova|electron]
     --help, -h     Displays this message
 ```
-When you use the Main Starter Kit, you can build SPA (Single Page Website/Application), SSR (Server-side Render Website/Application with optional PWA client takeover), PWA (Progressive Web App), Mobile App (through Cordova), and/or Electron Apps. When you develop for SSR, PWA, Cordova or Electron, you need these modes installed. If you issue "quasar dev" or "quasar build" they will automatically be installed.
+When you initialize a project with the CLI, you can build SPA (Single Page Website/Application), SSR (Server-side Render Website/Application with optional PWA client takeover), PWA (Progressive Web App), Mobile App (through Cordova), and/or Electron Apps. When you develop for SSR, PWA, Cordova or Electron, you need these modes installed. If you issue "quasar dev" or "quasar build" they will automatically be installed.
 
 These modes will add a "src-*" folder into your project with very specific code for it:
 

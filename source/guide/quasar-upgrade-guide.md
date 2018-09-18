@@ -1,6 +1,6 @@
 title: Upgrade Guide
 ---
-We'll cover how to upgrade to a new Quasar version in your project, both for [UMD](/guide/embedding-quasar.html) and using the [Starter Kit](/guide/app-installation.html). Then we'll go on to discuss how you can migrate v0.15 to v0.16 and your pre v0.15 project to v0.15+.
+We'll cover how to upgrade to a new Quasar version in your project, both for [UMD](/guide/embedding-quasar.html) and using the project initialization feature of the [CLI](/guide/app-installation.html). Then we'll go on to discuss how you can migrate v0.15 to v0.16 and your pre v0.15 project to v0.15+.
 
 ## Upgrading to a newer Quasar version
 This applies when upgrading from v0.15+ to a newer Quasar version, including v0.16 and v0.17.
@@ -11,7 +11,7 @@ This applies when upgrading from v0.15+ to a newer Quasar version, including v0.
 ### UMD
 Simply replace the version string in all the CSS and JS tags that refer to Quasar to the newer version.
 
-### Starter Kit
+### The CLI
 As you may have noticed, the only dependency in your project (unless you've also installed a linter or your own deps) is `quasar-cli`. All you need is to update this dependency.
 
 ```bash
@@ -180,7 +180,7 @@ $ yarn                               # or: npm install
 * Updated Quasar ionicons set to Ionicons v4 -- compatible with quasar-extras@2.0
 
 ## Upgrading pre v0.15 to Quasar v0.15+
-There's been A LOT of work done for v0.15. The Quasar CLI has been rewritten from scratch to allow for a stellar development experience (Mobile App developers and Electron will fall in love with it!). Only one starter kit is required in order to handle websites, PWAs, Mobile Apps and Electron Apps. Building any of those is a matter of just adding a parameter to the dev/build command.
+There's been A LOT of work done for v0.15. The Quasar CLI has been rewritten from scratch to allow for a stellar development experience (Mobile App developers and Electron will fall in love with it!). Only one CLI initialized project is required in order to handle websites, PWAs, Mobile Apps and Electron Apps. Building any of those is a matter of just adding a parameter to the dev/build command.
 
 **Furthermore, you can now use an UMD/standalone version of Quasar to embed in an existing project. No build step is required.**
 
@@ -188,7 +188,7 @@ Take some time to read all "Guide" pages once again. It will help you understand
 
 So, what is new and what has changed? Everything has been polished. The full list of enhancements and new features is exhausting. We'll try to cover the major parts only. This is just a guide to get you started so that you know where to look in docs for things that have changed.
 
-### First step - when using starter kit
+### First step - when using the CLI
 First we make sure we update the globally installed Quasar version (needs to be at least v0.15). Then we create a new project folder:
 ```bash
 # Node.js >= 8.9.0 is required.
@@ -200,10 +200,10 @@ $ npm install -g quasar-cli@latest
 $ quasar init <folder_name>
 ```
 
-Observe the new [project structure](/guide/app-directory-structure.html). Start to port out files to the new project folder, taking into account the far superior structure. **Using the new starter kit will allow you to take advantage of future seamless upgrades!** In any case, do not simply copy your `/src` folder over to the new starter kit.
+Observe the new [project structure](/guide/app-directory-structure.html). Start to port out files to the new project folder, taking into account the far superior structure. **Using the new project initialization feature will allow you to take advantage of future seamless upgrades!** In any case, do not simply copy your `/src` folder over to the newly initialized project folder.
 
 ### Build configuration no longer required
-You'll notice the new starter kit doesn't provide a `/build` or `/config` folders. They are no longer required. Everything can be easily configured from `/quasar.conf.js` now. You don't need to know Webpack. [More Info](/guide/app-quasar.conf.js.html).
+You'll notice a newly initialized project doesn't provide a `/build` or `/config` folders. They are no longer required. Everything can be easily configured from `/quasar.conf.js` now. You don't need to know Webpack. [More Info](/guide/app-quasar.conf.js.html).
 
 ### No main.js?
 Yes. It's no longer there because you don't need it anymore. For initialization code and importing libraries into your website/app, read about [App Plugins](/guide/app-plugins.html).

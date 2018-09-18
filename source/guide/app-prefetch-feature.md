@@ -148,9 +148,9 @@ In a large application, your Vuex store will likely be split into multiple modul
 ```js
 // src/store/foo.js
 // we've merged everything into one file here;
-// the starter kit splits every component of a Vuex module
+// an initialized Quasar project splits every component of a Vuex module
 // into separate files, but for the sake of the example
-// here on docs, we show this module as a single file
+// here in the docs, we show this module as a single file
 
 export default {
   namespaced: true,

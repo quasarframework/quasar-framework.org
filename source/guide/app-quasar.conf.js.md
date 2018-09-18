@@ -1,6 +1,6 @@
 title: Configuring quasar.conf.js
 ---
-Quasar Starter Kit makes use of some awesome tools under the cover, like [Webpack](https://webpack.js.org/). Fortunately, the complexity of configuring the underlying tools is managed by Quasar CLI which does the heavy lifting for you. As a result, you don't even need to know Webpack in order to use Quasar.
+Quasar makes use of some awesome development tools under it's hood, like [Webpack](https://webpack.js.org/). One of the great things about Quasar is its handling of most of the complex configuration needed by the underlying tools for you. As a result, you don't even need to know Webpack or any of the other development tools in order to use Quasar. 
 
 So what can you configure through `/quasar.conf.js`?
 * Quasar components, directives and plugins that you'll be using in your website/app.
@@ -16,9 +16,9 @@ So what can you configure through `/quasar.conf.js`?
 * IE11+ support
 * Extend Webpack config Object
 
-**You'll notice that changing any of these settings does not require you to manually reload the dev server. Quasar detects if the changes can be injected through Hot Module Reload and in case it can't, it will reload the dev server for you. You won't lose your development flow as you will just sit back while Quasar CLI quickly takes care of it.**
+**You'll notice that changing any of these settings does not require you to manually reload the dev server. Quasar detects if the changes can be injected through [Hot Module Replacement](https://webpack.js.org/concepts/hot-module-replacement/) and in case it can't, it will reload the dev server automatically for you. You won't lose your development flow, because you can just sit back while Quasar CLI quickly reloads the changed code, even keeping the current state. This save tons of your time!**
 
-> `/quasar.conf.js` is run by the Quasar CLI build system, so this code runs under Node directly, not in the context of your app. So you can require modules like 'fs', 'path', 'webpack' and so on. Make sure the ES6 features that you want to write this file with are supported by the installed version of your Node (which should be >= 8.9.0).
+> `/quasar.conf.js` is run by the Quasar CLI build system, so this code runs under Node directly, not in the context of your app. This means you can require modules like 'fs', 'path', 'webpack' and so on. Make sure the ES6 features that you want to write this file with are supported by the installed version of your Node (which should be >= 8.9.0).
 
 ## Structure
 You'll notice that `/quasar.conf.js` exports a function that takes a `ctx` (context) parameter and returns an Object. This allows you to dynamically change your website/app config based on this context:
