@@ -47,7 +47,7 @@ When using Quasar's CLI, developers benefit from:
  * Many more leading-edge developer tools and techniques
 
 ### Get up to speed fast
-The top-class starter kit makes it easy for developers to bring an idea to reality in record time. The heavy lifting is done for the developer, not by the developer. You are free to focus on your features instead and let the boilerplate be done by Quasar.
+The top-class project intitialization feature of the CLI makes getting started very easy for you, as a developer. You can get your idea to reality in record time. In other words, Quasar does the heavy lifting for you, so you are free to focus on your features and not on boilerplate.
 
 ### Awesome ever-growing community
 When developers encounter a problem they can’t solve, they can visit the Quasar forum or [Discord chat server](https://discord.gg/5TDhbDg). The community is there to help you.
