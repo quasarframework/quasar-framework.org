@@ -52,7 +52,7 @@ Common input field properties:
 | `upper-case` | Boolean | Transform input to upper case. |
 | `lower-case` | Boolean | Transform input to lower case. |
 
-Also note you can use the native DOM attributes of an input: "name", "max-length", "autocomplete" and so on.
+Also note you can use the native DOM attributes of an input: "name", "maxlength", "autocomplete" and so on.
 
 Common input frame properties:
 
