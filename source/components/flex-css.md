@@ -254,7 +254,7 @@ When enabled (through `quasar.conf > framework > cssAddon: true`) it provides br
 Starting with *v0.17.6* the addon was enhanced with responsive classes for spacing, both for padding and for margin:
 
 ```
-.q-(p|m)(a|x|y|t|b|l|r)-<bp>-(xs|sm|md|lg|xl)
+.q-(p|m)(t|r|b|l|a|x|y)-<bp>-(none|auto|xs|sm|md|lg|xl)
 ```
 
 Examples: `row-md` `items-lg-end` `q-pa-xs q-pa-sm-sm q-px-md-lg q-py-md-md`
