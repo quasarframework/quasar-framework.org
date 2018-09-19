@@ -4,7 +4,7 @@ There are CSS classes supplied by Quasar to help you with spacing for DOM elemen
 
 ## Syntax
 ```
-q-[p|m][t|r|b|l|a|x|y]-[none|xs|sm|md|lg|xl]
+q-[p|m][t|r|b|l|a|x|y]-[none|auto|xs|sm|md|lg|xl]
     T       D                   S
 
 T - type
@@ -18,11 +18,14 @@ D - direction
 S - size
   - values:
       none,
+      auto (just for margin),
       xs (extra small),
       sm (small),
       md (medium),
       lg (large),
       xl (extra large)
+
+q-my-form - applies the default vertical margins for form controls, according to material specification.
 ```
 
 ## Examples
@@ -34,3 +37,19 @@ S - size
 <!-- medium margin to top, small margin to right -->
 <q-card class="q-mt-md q-mr-sm">...</q-card>
 ```
+
+## Flex Addons
+*v0.17.6+*
+
+When enabled (through `quasar.conf > framework > cssAddon: true`) it provides breakpoint aware versions for all spacing related CSS classes.
+
+> Note that there will be a noticeable bump in CSS footprint when enabling it. So only do it if you really need it.
+
+```
+.q-(p|m)(t|r|b|l|a|x|y)-<bp>-(none|auto|xs|sm|md|lg|xl)
+.q-my-<bp>-form
+```
+
+Examples: `q-pa-xs q-pa-sm-sm q-px-md-lg q-py-md-md`
+
+See more details about the [Flex Addons](/components/flex-css.html#Flex-Addons)
