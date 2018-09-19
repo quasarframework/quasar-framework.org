@@ -255,6 +255,7 @@ Starting with *v0.17.6* the addon was enhanced with responsive classes for spaci
 
 ```
 .q-(p|m)(t|r|b|l|a|x|y)-<bp>-(none|auto|xs|sm|md|lg|xl)
+.q-my-<bp>-form
 ```
 
 Examples: `row-md` `items-lg-end` `q-pa-xs q-pa-sm-sm q-px-md-lg q-py-md-md`
