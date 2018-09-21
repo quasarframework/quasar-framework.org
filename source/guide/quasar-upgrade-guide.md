@@ -22,7 +22,7 @@ $ npm install --save-dev quasar-cli@latest
 
 Quasar CLI is installed both globally and locally. When you issue a Quasar command, the global installation defers to the project locally installed Quasar CLI. This allows you to skip writing npm scripts in your package.json (for Quasar commands), and also it allows you to run different Quasar versions in multiple projects.
 
-Watch for Quasar CLI version. It's not the same thing as Quasar version. Type `$ quasar info`. All you need to know is that the major and minor part of Quasar CLI version matches Quasar version. So for example installing latest Quasar CLI v0.15.x will ensure you are using latest Quasar v0.15.x. While working on v0.15.x, no breaking changes will occur, so you are safe (& recommended) to upgrade to latest Quasar CLI as it's released.
+Watch for Quasar CLI version. It's not the same thing as Quasar version. Type `$ quasar version`. All you need to know is that the major and minor part of Quasar CLI version matches Quasar version. So for example installing latest Quasar CLI v0.15.x will ensure you are using latest Quasar v0.15.x. While working on v0.15.x, no breaking changes will occur, so you are safe (& recommended) to upgrade to latest Quasar CLI as it's released.
 
 > **Caveat**
 > Sometimes after you npm install a package, or even update current packages, might screw things up. You'll get errors that some packages are missing and you need to install them. In such cases, delete node_modules and package-lock.json and npm install again.
