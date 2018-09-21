@@ -39,6 +39,7 @@ Supports `v-model` which should be bound to a String or Number (depending on `ty
 | `clearable` | Boolean | If used, the component offers the user an actionable icon to reset the current value to `clear-value` (which is by default an empty string). The icon appears only when the current value matches `clear-value`. |
 | `clear-value` | String | The value to which to reset the field model to when using `clearable`. The default value is an empty string. |
 | `no-pass-toggle` | Boolean | If type is 'password' and set to `true`, then password toggle is not shown. |
+| `initial-show-password` | Boolean | If type is 'password' and set to `true`, then password is toggled to visible by default. |
 | `upper-case` | Boolean | Transform input to upper case. |
 | `lower-case` | Boolean | Transform input to lower case. |
 
