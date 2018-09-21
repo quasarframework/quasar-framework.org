@@ -157,6 +157,7 @@ For more information about Tooltips, please refer to the [Tooltip documentation]
 | `push` | Boolean | n/a | Set true, for a push styled button. |
 | `flat` | Boolean | n/a | Set true, for a flat styled button. |
 | `glossy` | Boolean | n/a | Make button "glossy". |
+| `persistent` | Boolean | false | (v0.17.17+) Do not hide when route changes. |
 
 ### QFab Vue Methods
 | Vue Method | Description |
