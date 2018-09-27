@@ -163,7 +163,7 @@ Most used properties are:
 | --- | --- | --- |
 | port | Number | Port of dev server |
 | host | String | Local IP/Host to use for dev server |
-| open | Boolean | Open up browser pointing to dev server address automatically. Applies to SPA and PWA modes. |
+| open | Boolean | Open up browser pointing to dev server address automatically. Applies to SPA, PWA and SSR modes. |
 | public | String | Public address of the application (for use with reverse proxies) |
 
 ### build Property
