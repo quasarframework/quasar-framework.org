@@ -94,7 +94,7 @@ Let's take each option one by one:
 | htmlVariables | Object | (CLI v0.17.11+) Add variables that you can use in index.template.html. [More info](#htmlVariables-Property) |
 | framework | Object/String | What Quasar components/directives/plugins to import, what Quasar I18n language pack to use, what icon set to use for Quasar components. [More info](#framework-Property) |
 | animations | Object/String | What [CSS animations](/components/transition.html) to import. Example: _['bounceInLeft', 'bounceOutRight']_ |
-| devServer | Object | Dev server [options](https://webpack.js.org/configuration/dev-server/). Some properties are overwritten based on the Quasar mode you're using in order to ensure a correct config. |
+| devServer | Object | Webpack dev server [options](https://webpack.js.org/configuration/dev-server/). Some properties are overwritten based on the Quasar mode you're using in order to ensure a correct config. Note: if you're proxying the development server (i.e. using a cloud IDE), set the `public` setting to your public application URL. |
 | build | Object | Build configuration options. [More info](#build-Property) |
 | sourceFiles | Object | (v0.16+) Change the default name of parts of your app. [More info](#sourceFiles-Property) |
 | cordova | Object | Cordova specific [config](/guide/cordova-configuring-cordova.html). |
@@ -155,7 +155,7 @@ return {
 More on cssAddon [here](/components/flex-css.html#Flex-Addons).
 
 ### devServer Property
-Take a look at the [full list](https://webpack.js.org/configuration/dev-server/) of options. Some are overwritten by Quasar CLI based on "quasar dev" parameters and Quasar mode in order to ensure that everything is setup correctly.
+Webpack devServer options. Take a look at the [full list](https://webpack.js.org/configuration/dev-server/) of options. Some are overwritten by Quasar CLI based on "quasar dev" parameters and Quasar mode in order to ensure that everything is setup correctly. Note: if you're proxying the development server (i.e. using a cloud IDE), set the `public` setting to your public application URL.
 
 Most used properties are:
 
@@ -164,6 +164,7 @@ Most used properties are:
 | port | Number | Port of dev server |
 | host | String | Local IP/Host to use for dev server |
 | open | Boolean | Open up browser pointing to dev server address automatically. Applies to SPA and PWA modes. |
+| public | String | Public address of the application (for use with reverse proxies) |
 
 ### build Property
 | Property | Type | Description |
