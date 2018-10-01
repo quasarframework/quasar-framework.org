@@ -89,7 +89,6 @@ export default {
 | `cover` | Boolean | (v0.17.10+) Popover will cover its parent element. |
 | `persistent` | Boolean | (v0.17.10+) Popover will not be closed if clicking/tapping outside of it, like it happens by default. |
 | `keep-on-screen` | Boolean | (v0.17.13+) Popover will not be closed if the parent element gets out of screen. |
-| `disable` | Boolean | Disable Popover |
 
 ## Vue Methods
 | Method | Description |
