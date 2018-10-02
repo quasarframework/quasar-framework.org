@@ -2,31 +2,13 @@ title: Internationalization (I18n)
 ---
 Internationalization is a design process that ensures a product (a website or application) can be adapted to various languages and regions without requiring engineering changes to the source code. Think of internationalization as readiness for localization.
 
-The recommended package for handling website/app is [vue-i18n](https://github.com/kazupon/vue-i18n). It should be noted that what is described below is the internationalization of quasar-framework components. If you need to internationalize your own components, read the documentation indicated above and configure the project by editing the files located in `<project>/src/i18n`
+The recommended package for handling website/app is [vue-i18n](https://github.com/kazupon/vue-i18n). This package should be added as an [App Plugin](https://quasar-framework.org/guide/app-plugins.html). See the [specific example for plugging in vue-i18n](https://quasar-framework.org/guide/app-plugins.html#vue-i18n). 
 
-The following is an example recipe for using **vue-i18n** embedded `<i18n>` template components in your vue files with **vue-i18n-loader**, which you have to add in your `quasar.conf.js`. In this case the translations are stored in yaml format in the block.
+It should be noted that what is described below is the internationalization of quasar-framework components only. If you need to internationalize your own components, read the documentation indicated above and configure the project by editing the files located in `<project>/src/i18n` (you may need to create this directory).
 
-```js
-// quasar.conf
-build: {
-  // OR use the equivalent chainWebpack()
-  // with its own chain statements (CLI v0.16.2+)
-  extendWebpack (cfg) {
-    cfg.module.rules.push({
-      resourceQuery: /blockType=i18n/,
-      use: [
-        {loader: '@kazupon/vue-i18n-loader'},
-        {loader: 'yaml-loader'}
-      ]
-    })
-    ...
-  }
-}
-```
+Quasar components have their own labels too. One option is to configure labels through the label properties on each instance of Quasar components like QTable or QDatetime. This is how you can customize the text to match the selected language. This however, also takes time and adds unnecessary complexity to your website/app. Instead, in many standard cases, you can use the Quasar I18n (applies to Quasar components only!) system, which has a number of standard label definitions translated for you, like "Cancel", "Clear", "Select", "Update", etc. No need to translate these again!! 
 
-However, handling i18n in app-space is not enough. Quasar components have their own labels too. One option is to configure labels through label properties on each instance of Quasar components like QTable or QDatetime. This takes time and adds unnecessary complexity to your website/app. Instead, use the Quasar I18n (applies to Quasar components only!) system.
-
-> For a complete list of available languages, check [Quasar I18n on Github](https://github.com/quasarframework/quasar/tree/dev/i18n).
+> For a complete list of available languages and phrases, check [Quasar I18n on Github](https://github.com/quasarframework/quasar/tree/dev/i18n).
 > **If your desired language is not on that list**, then feel free to submit a PR to add it. It takes from 5 to 10 minutes at most. We kindly welcome any language!
 
 ## Configuring the Default Language
@@ -100,6 +82,27 @@ Quasar.i18n.getLocale() // returns a string
 
 // inside of a Vue file
 this.$q.i18n.getLocale() // returns a string
+```
+
+## Setting up Translation Blocks in your SFCs
+The following is an example recipe for using **vue-i18n** embedded `<i18n>` template components in your vue files with **vue-i18n-loader**, which you have to add in your `quasar.conf.js`. In this case the translations are stored in yaml format in the block.
+
+```js
+// quasar.conf
+build: {
+  // OR use the equivalent chainWebpack()
+  // with its own chain statements (CLI v0.16.2+)
+  extendWebpack (cfg) {
+    cfg.module.rules.push({
+      resourceQuery: /blockType=i18n/,
+      use: [
+        {loader: '@kazupon/vue-i18n-loader'},
+        {loader: 'yaml-loader'}
+      ]
+    })
+    ...
+  }
+}
 ```
 
 ## UPPERCASE
