@@ -118,6 +118,17 @@ Label properties are by default defined in Quasar's i18n, but you can override t
 > **IMPORTANT**
 > Initial sorted column, sorting direction & page is configured through the `pagination` prop. Check the Pagination section below.
 
+## QTableColumns Vue Properties
+
+Supports `v-model` which should be the String for single selection and Array for multiple selection.
+
+| Vue Property | Type | Description |
+| --- | --- | --- |
+| `columns` | Array of Objects | (**Required**) Defining each column's properties. |
+| `label` | String | Overrides text displayed in input frame. See "Working with Display Value" section below. |
+| `color` | String | One from [Quasar Color Palette](/components/color-palette.html). |
+| `dark` | Boolean | Is it rendered on a dark background? |
+
 ### Defining the Columns
 Let's take an example of configuring the `columns` property. Let's assume we are telling QTable that row-key is 'name'.
 ```js
