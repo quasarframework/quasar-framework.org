@@ -246,7 +246,7 @@ The unit parameter indicates the unit of measurement, if not specified then it i
 | `years` | distance in years |
 
 ### Calendar
-To get the week number in year for a given date object use:
+To get the [ISO week number in year](https://en.wikipedia.org/wiki/ISO_week_date) for a given date object use:
 ``` js
 import { date } from 'quasar'
 
