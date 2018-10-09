@@ -38,6 +38,15 @@ export default function (/* { ssrContext } */) {
 }
 ```
 
+If you're using [Vuex modules](https://vuex.vuejs.org/guide/modules.html) don't forget to export the state as a function otherwise a singleton will be created:
+```js
+// src/store/myModule/state.js
+export default () => ({
+  ...
+})
+
+```
+
 ## Access to Platform-Specific APIs
 Universal code cannot assume access to platform-specific APIs, so if your code directly uses browser-only globals like `window` or `document`, they will throw errors when executed in Node.js, and vice-versa.
 
