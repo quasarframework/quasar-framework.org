@@ -27,11 +27,11 @@ framework: {
 | Property | Type | Description |
 | --- | --- | --- |
 | `percentage` | Number | Progress (in percentage). |
-| `buffer` | Number | Buffer (in percentage). |
+| `buffer` | Number | Buffer (in percentage). When < 100, the buffer area above the given percentage is animated regardless of the animate property value. |
 | `color` | String | The Quasar CSS color value the bar should be. |
 | `stripe` | Boolen | If set to `true`, the progress bar will be striped. |
-| `animate` | Boolean | If set to `true`, the progress bar will be animated. |
-| `indeterminate` | Boolean | If set to `true`, the state is indeterminate, meaning it is unknown when the progress will stop. |
+| `animate` | Boolean | If set to `true`, the progress bar stripe will be animated. |
+| `indeterminate` | Boolean | If set to `true`, the state is indeterminate (meaning it is unknown when the progress will stop) and is animated regardless of the animate property value. |
 | `height` | String | CSS unit for height of QProgress. |
 
 Percentage and buffer, being percentage values, must be between 0 and 100, and `percentage` + `buffer` must be lower or equal to 100. If `percentage` is outside this interval the component will parse it and make it be within the interval.
