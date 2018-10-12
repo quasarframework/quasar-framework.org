@@ -11,8 +11,7 @@ body
   margin 0
   padding 0
   font-weight 300
-  background white
-  color #7E96B3
+  color #a7a7a7
   line-height 1.5
   font-size 16px
 
@@ -21,32 +20,33 @@ h1
   font-weight 300
 
 h2
-  font-size 36px
+  font-size 32px
   font-weight 300
-  color $primary
+  color #027be3
 
 a
-  color #B0BED1
+  color white
   &:hover
-    color $primary
+    color #027be3
 
 a.button, button
   cursor pointer
   text-transform uppercase
   font-size 14px
   font-weight normal
-  color #7E96B3
-  background white
-  border 2px solid #CCD6E4
-  border-radius 6px
-  padding 15px 30px
+  color white
+  background #027be3
+  border 0 !important
+  border-radius 3px
+  padding 10px 20px
   display inline-block
   line-height 1
   text-decoration none
   transition all .2s
   &:hover
-    color $primary
-    border-color $primary
+    opacity 1
+    color black
+    border 0
   i
     font-size 150%
     margin-right 5px
@@ -67,6 +67,9 @@ a.button, button
   border 0
   text-align center
 
+.q-header, .q-footer
+  background black
+
 .q-container
   max-width 1040px
   margin 0 auto
@@ -74,19 +77,17 @@ a.button, button
   overflow hidden
 
 .q-header-navbar
-  margin-top 30px
+  margin 30px 0
 
 .q-header-navbar, .q-footer-navbar
   a
     border 0
-    color #B0BED1
     margin 0 10px 5px
     display inline-block
     text-decoration none
+    font-size 18px
     padding-bottom 1px
-    transition all .2s
-    &:hover
-      color $primary
+    transition opacity .2s
 
 
 .q-body
@@ -94,13 +95,14 @@ a.button, button
   padding-top 100px
   padding-bottom 100px
   h2
-    color #7e96b3
+    color #027be3
     margin-top 0
     margin-bottom 15px
   img + h2
     margin-top 15px
   p
     text-align left
+    color #333
   .q-container
     max-width 600px
 
@@ -110,9 +112,8 @@ a.button, button
   padding-bottom 150px
   h1
     margin 25px 0 0
-    color #3c5675
+    color #027be3
   h2
-    color #7e96b3
     margin-top 0
     margin-bottom 15px
   p
@@ -132,8 +133,24 @@ a.button, button
 
 
 .q-feature
-  padding 50px 0 0
-  background-image linear-gradient(to bottom, #eff2f6 0%, rgba(239, 242, 246, 0) 250px)
+  padding 100px 0
+
+.q-blue
+  background #027be3
+  color white
+  .q-feature-item
+    p
+      color white
+      opacity .6
+
+.q-white
+  .q-feature-item
+    h3
+      color black
+    h4
+      color #027be3
+    p
+      color black
 
 .q-feature-header
   text-align center
@@ -202,26 +219,26 @@ figure
 
 .q-feature-list
   overflow hidden
-  margin-top 25px
 
 .q-feature-item
   float left
   width 50%
-  height 400px
+  min-height 400px
   box-sizing border-box
   padding 0 50px
-  color #888
   font-size 1.1em
   i
     font-size 64px
-    color $primary
     vertical-align middle
     margin-right 5px
+    color white
   h4
-    color #444
+    color white
     font-size 18px
     font-weight 600
     margin 1em 0 0
+  p
+    color #7e96b3
 
 
 
@@ -229,7 +246,6 @@ figure
 
 .q-actions
   padding 60px 0
-  background-image linear-gradient(to bottom, #eff2f6 0%, rgba(239, 242, 246, 0) 250px)
 
 .q-actions-item
   width 33%
@@ -253,8 +269,9 @@ figure
 
 .q-footer
   text-align center
-  margin 100px 0
+  padding 100px 0
   line-height 2em
+
 .q-footer-navbar
   margin-bottom 5px
   a
@@ -270,7 +287,6 @@ figure
   margin 15px 0
   display inline-block
   width 360px
-  border 2px solid #ccd6e4
   border-radius 6px
   h4
     margin 10px 0 0
