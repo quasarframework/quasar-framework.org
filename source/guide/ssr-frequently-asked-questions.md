@@ -2,7 +2,7 @@ title: SSR FAQ
 ---
 
 ## Why am I getting hydration errors?
-Take a look at our [Client Side Hydration](/guide/ssr-client-side-hydration.html) page. When you get hydration errors, it means the HTML rendered on the server does not match the equivalent HTML rendered on client-side. This error will appear only when developing (and NOT on production) and it definitely needs to be addressed, before you release your app. Is there some content that you can only generate on client-side? Then use [QNoSSR](components/no-ssr.html).
+Take a look at our [Client Side Hydration](/guide/ssr-client-side-hydration.html) page. When you get hydration errors, it means the HTML rendered on the server does not match the equivalent HTML rendered on client-side. This error will appear only when developing (and NOT on production) and it definitely needs to be addressed, before you release your app. Is there some content that you can only generate on client-side? Then use [QNoSSR](/components/no-ssr.html).
 
 ## Why doesn't importing Platform and Cookies work?
 When building for SSR, use only the `$q.platform`/`$q.cookies` form. If you need to use the `import { Platform, Cookies } from 'quasar'` (when on server-side), then you’ll need to do it like this:
