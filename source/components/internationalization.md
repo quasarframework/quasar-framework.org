@@ -125,3 +125,10 @@ To add a Quasar language pack you need to include the language pack JS tag for y
 ```
 
 Check what tags you need to include in your HTML files by generating a sample with `$ vue init quasarframework/quasar-starter-kit-umd <folder>` and specifying a language code for Quasar I18n (other than default "en-us").
+
+## Switch language programmatically
+The plugin can also be imported (since v0.17.17+):
+```
+import { i18n } from '../plugins/i18n'
+```
+in order to access the vue-i18n instance programmatically.
