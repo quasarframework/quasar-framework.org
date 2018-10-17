@@ -20,6 +20,7 @@ animations: [
   'bounceOutRight'
 ]
 ```
+Note: `/quasar.conf.js` already had defined `animations: []`, look for it and modify it as you want instead of adding it again
 
 If you are building a website, you can also skip configuring quasar.conf.js and use a CDN link which points to Animate.css like this (following is just an example, Google for latest link). Remember this will require an Internet connection for your user, as opposed to bundling from within quasar.conf.js.
 
@@ -81,4 +82,19 @@ Please note some things in the above example:
 1. Note `<transition-group>` instead of `<transition>`.
 2. The components and DOM elements must be keyed, like `key="text"` or `key="email-button"` in the example above.
 3. Both examples above have the Boolean property `appear` specified, which makes the entering animation kick in right after component(s) have been rendered. This property is optional.
+
+### Adding Route Transition
+To animate routes changes, is necessary to add the property `mode="out-in"`.
+
+```html
+<!-- Example with routes transition -->
+<transition
+  appear
+  mode="out-in"
+  enter-active-class="animated fadeInLeft"
+  leave-active-class="animated fadeOutLeft"
+>
+  <router-view></router-view>
+</transition>
+```
 
