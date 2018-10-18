@@ -51,6 +51,8 @@ QContextMenu also supports a Boolean 'v-model' which controls the open/close sta
 | `show()` | Open Context Menu |
 | `hide()` | Close Context Menu |
 
+Note that you need to pass the original DOM event to the show() method as the first argument to have the context menu show  correctly.
+
 ## Vue Events
 | Vue Method | Description |
 | --- | --- |
