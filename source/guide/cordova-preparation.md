@@ -53,7 +53,7 @@ To add a target platform, type:
 $ cordova platform add [android|ios]
 ```
 
-You can now verify if everything is in order. Type:
+To verify that everything is in order, type:
 ```bash
 $ cordova requirements
 ```
