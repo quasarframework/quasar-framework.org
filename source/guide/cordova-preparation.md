@@ -43,19 +43,24 @@ $ quasar mode -a cordova
 ```
 
 ## 3. Add Platform
+To switch to the cordova project, type:
+```
+$ cd src-cordova
+```
+
 To add a target platform, type:
 ```
 $ cordova platform add [android|ios]
 ```
 
-You can now verify if everything is in order. "cd" into `/src-cordova` and type:
+You can now verify if everything is in order. Type:
 ```bash
 $ cordova requirements
 ```
 > On some newer Debian-based operating systems you might face a very persistent problem when running `cordova requirements`. Please see the ["Android SDK not found" after installation](/guide/cordova-troubleshooting-and-tips.html#Android-SDK-not-found-after-installation-of-the-SDK) section for assistance.
 
-## 3. Start Developing
-If you want to jump right in and start developing, you can skip step #3 and #4 commands and issue:
+## 4. Start Developing
+If you want to jump right in and start developing, you can skip step #2 and #3 commands and issue:
 ```bash
 $ quasar dev -m cordova -T [android|ios]
 ```
