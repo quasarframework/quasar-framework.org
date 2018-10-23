@@ -101,7 +101,7 @@ The example link tag below would include Font Awesome v4.7.0 icons. Do a Google 
 ### Using Fontawesome-Pro
 If you have a Fontawesome 5 Pro license and want to use it instead Fontawesome Free version. Following this instructions.
 
-1. Open [Linked Accounts section](https://fontawesome.com/account/linked-accounts) in Fontawesome's user account page to grab npm TOKENID (login if necessary).
+1. Open [Linked Accounts section](https://fontawesome.com/account) in Fontawesome's user account page to grab npm TOKENID (login if necessary).
 2. Create or append TOKENID into file .npmrc (file path same as package.json):
   ```
   @fortawesome:registry=https://npm.fontawesome.com/TOKENID
