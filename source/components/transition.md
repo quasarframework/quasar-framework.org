@@ -60,6 +60,7 @@ You can also group components or DOM elements in a transition so that the same e
 ``` html
 <!-- Example with wrapping multiple DOM elements / components -->
 <transition-group
+  appear
   enter-active-class="animated fadeIn"
   leave-active-class="animated fadeOut"
 >
