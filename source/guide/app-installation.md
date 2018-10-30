@@ -11,6 +11,11 @@ Using the CLI is the recommended way to go in order to benefit from all Quasar c
 First, we install Quasar CLI. Make sure you have Node >=8 and NPM >=5 installed on your machine.
 
 ```bash
+# make sure you have vue-cli globally installed
+$ yarn global add vue-cli
+# or:
+$ npm install -g vue-cli
+
 # Node.js >= 8.9.0 is required.
 $ yarn global add quasar-cli
 # or:
