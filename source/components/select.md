@@ -317,6 +317,7 @@ Use an Object for each option like above (notice that it uses some properties fr
 | `rightInverted` | Boolean | Invert mode, but only for icon and letter. |
 | `rightTextColor` | String | Override default "white" text-color when using an icon or letter only. |
 | `stamp` | String | Stamp to use for right side. Example: '10 min ago'. |
+| `disable` | Boolean | If set to true, the option isn't selectable. |
 
 ### Working with Display Value
 If for some reason you want to have total control over the text in the input frame (replacing the comma delimited option strings), then use `display-value` property:
