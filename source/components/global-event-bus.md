@@ -31,7 +31,7 @@ this.$root.$emit('event_name', 'some message')
 
 Example using event to open drawer from another component or page
 
-```
+```js
 // (1) This code is inside layout file that have a drawer
 //     if this.leftDrawerOpen is true, drawer is displayed
 
