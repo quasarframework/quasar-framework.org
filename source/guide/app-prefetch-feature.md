@@ -230,3 +230,4 @@ export default {
   }
 }
 ```
+> Please note that the above example would not work in SSR mode due to the nature of SS, i.e. a spinner would not be shown. The page content for a Vue route component is prerendered on the **server** while Quasar Loading is a client-side UI component.
