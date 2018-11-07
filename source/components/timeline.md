@@ -35,6 +35,8 @@ framework: {
 </q-timeline>
 ```
 ## Customize Entries Titles via slots
+*Quasar v0.17.18+*
+
 ```html
 <q-timeline responsive color="secondary">
   <q-timeline-entry
