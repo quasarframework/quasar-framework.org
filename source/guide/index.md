@@ -76,6 +76,8 @@ $ npm install -g vue-cli # or @vue/cli @vue/cli-init
 $ yarn global add quasar-cli
 # or:
 $ npm install -g quasar-cli
+# If using Windows, and you are having issues with the install, try
+$ npm install -g --no-bin-links quasar-cli
 ```
 
 Then we will create a project folder with Quasar CLI:
