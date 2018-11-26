@@ -95,7 +95,8 @@ export default {
 ```
 
 ### Filter files
-Sometimes you need to filter files before upload. You can do this through `filter` parameter, as below:
+Sometimes you need to filter files before upload. You can do this through `filter` parameter.
+Below an example with max file size check:
 
 ```html
 <template>
@@ -109,9 +110,11 @@ Sometimes you need to filter files before upload. You can do this through `filte
 export default {
   methods: {
     filterFiles (files) {
-      // .....
-      // "filteredFiles" is an Array containing allowed files
-      return filteredFiles
+      const MAX_FILE_SIZE = 3 * 1024 * 1024 /* =3M */
+      // returns an Array containing allowed files
+      return files.filter((file) => {
+        return file.size <= MAX_FILE_SIZE
+      })
     }
   }
 }
