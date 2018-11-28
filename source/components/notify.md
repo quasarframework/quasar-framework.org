@@ -48,7 +48,7 @@ Let's go deeper and analyze the different optional properties available for a no
 ``` js
 this.$q.notify({
   // only required parameter is the message:
-  message: `A text with your alert's awesome message`,
+  message: `A text with your nofification's awesome message`,
 
   /*
    * All parameters below are optional:
@@ -62,14 +62,16 @@ this.$q.notify({
   type: 'positive',
 
   color: 'positive',
-  textColor: 'black', // if default 'white' doesn't fits
+  textColor: 'black', // if default 'white' doesn't fit
 
   icon: 'wifi',
   // or
   avatar: 'statics/boy-avatar.png',
 
   detail: 'Optional detail message.',
-  position: 'top-right', // 'top', 'left', 'bottom-left' etc
+  position: 'top-right', // 'top', 'left', 'bottom-left' etc.
+
+  closeBtn: true, // or string as button message e.g. 'dismiss'
 
   actions: [
     {
