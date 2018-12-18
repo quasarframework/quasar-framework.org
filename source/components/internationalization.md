@@ -8,7 +8,7 @@ It should be noted that what is described below is the internationalization of q
 
 Quasar components have their own labels too. One option is to configure labels through the label properties on each instance of Quasar components like QTable or QDatetime. This is how you can customize the text to match the selected language. This however, also takes time and adds unnecessary complexity to your website/app. Instead, in many standard cases, you can use the Quasar I18n (applies to Quasar components only!) system, which has a number of standard label definitions translated for you, like "Cancel", "Clear", "Select", "Update", etc. No need to translate these again!! 
 
-> For a complete list of available languages and phrases, check [Quasar I18n on Github](https://github.com/quasarframework/quasar/tree/dev/i18n).
+> For a complete list of available languages and phrases, check [Quasar I18n on Github](https://github.com/quasarframework/quasar/tree/dev/quasar/i18n).
 > **If your desired language is not on that list**, then feel free to submit a PR to add it. It takes from 5 to 10 minutes at most. We kindly welcome any language!
 
 ## Configuring the Default Language
