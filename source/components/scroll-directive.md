@@ -38,6 +38,7 @@ framework: {
 
 > **IMPORTANT**
 > Please note that by default the method called is not debounced. For that you have to do it yourself, by wrapping your method with Quasar's debouncer (as an example) like in example below.
+> <br>As per the example below, you need to use `function (position) {}` or `position => {}.bind(this)` to be able to access the Vue component inside the debounce function.
 > <br>Read more about `debouncing` [here](/components/other-utils.html#Debounce-Function).
 
 ``` js
@@ -47,7 +48,7 @@ export default {
   ...,
   methods: {
     ...,
-    scrolled: debounce(position => {
+    scrolled: debounce(function (position) {
       // when this method is invoked then it means user
       // has scrolled the Page to `position`
       //
