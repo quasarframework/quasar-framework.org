@@ -2,13 +2,13 @@ title: Internationalization (I18n)
 ---
 Internationalization is a design process that ensures a product (a website or application) can be adapted to various languages and regions without requiring engineering changes to the source code. Think of internationalization as readiness for localization.
 
-The recommended package for handling website/app is [vue-i18n](https://github.com/kazupon/vue-i18n). This package should be added as an [App Plugin](https://quasar-framework.org/guide/app-plugins.html). See the [specific example for plugging in vue-i18n](https://quasar-framework.org/guide/app-plugins.html#vue-i18n). 
+The recommended package for handling website/app is [vue-i18n](https://github.com/kazupon/vue-i18n). This package should be added as an [App Plugin](https://quasar-framework.org/guide/app-plugins.html). See the [specific example for plugging in vue-i18n](https://quasar-framework.org/guide/app-plugins.html#vue-i18n).
 
 It should be noted that what is described below is the internationalization of quasar-framework components only. If you need to internationalize your own components, read the documentation indicated above and configure the project by editing the files located in `<project>/src/i18n` (you may need to create this directory).
 
-Quasar components have their own labels too. One option is to configure labels through the label properties on each instance of Quasar components like QTable or QDatetime. This is how you can customize the text to match the selected language. This however, also takes time and adds unnecessary complexity to your website/app. Instead, in many standard cases, you can use the Quasar I18n (applies to Quasar components only!) system, which has a number of standard label definitions translated for you, like "Cancel", "Clear", "Select", "Update", etc. No need to translate these again!! 
+Quasar components have their own labels too. One option is to configure labels through the label properties on each instance of Quasar components like QTable or QDatetime. This is how you can customize the text to match the selected language. This however, also takes time and adds unnecessary complexity to your website/app. Instead, in many standard cases, you can use the Quasar I18n (applies to Quasar components only!) system, which has a number of standard label definitions translated for you, like "Cancel", "Clear", "Select", "Update", etc. No need to translate these again!!
 
-> For a complete list of available languages and phrases, check [Quasar I18n on Github](https://github.com/quasarframework/quasar/tree/dev/i18n).
+> For a complete list of available languages and phrases, check [Quasar I18n on Github](https://github.com/quasarframework/quasar/tree/v0.17/i18n).
 > **If your desired language is not on that list**, then feel free to submit a PR to add it. It takes from 5 to 10 minutes at most. We kindly welcome any language!
 
 ## Configuring the Default Language
@@ -106,12 +106,12 @@ build: {
 ```
 
 ## UPPERCASE
-Many languages, such as Greek, German and Dutch have non-intuitive rules for uppercase display, and there is an edge case that you should be aware of: 
+Many languages, such as Greek, German and Dutch have non-intuitive rules for uppercase display, and there is an edge case that you should be aware of:
 
 QBtn component will use the CSS `text-transform: uppercase` rule to automatically turn its label into all-caps. According to the [MDN webdocs](https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform), "The language is defined by the lang HTML attribute or the xml:lang XML attribute." Unfortunately, this has spotty implementation across browsers, and the 2017 ISO standard for the uppercase German eszett `ß` has not really entered the canon. At the moment you have two options:
 
 1. use the prop `no-caps` in your label and write the string as it should appear
-2. use the prop `no-caps` in your label and rewrite the string with [toLocaleUpperCase](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleUpperCase) by using the locale as detected by `this.$q.i18n.getLocale()` 
+2. use the prop `no-caps` in your label and rewrite the string with [toLocaleUpperCase](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleUpperCase) by using the locale as detected by `this.$q.i18n.getLocale()`
 
 ## Handling Quasar UMD
 To add a Quasar language pack you need to include the language pack JS tag for your Quasar version and also tell Quasar to use it. Example:
