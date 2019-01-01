@@ -20,6 +20,8 @@ export ANDROID_HOME="$HOME/Android/Sdk"
 PATH=$PATH:$ANDROID_HOME/tools; PATH=$PATH:$ANDROID_HOME/platform-tools
 ```
 
+> Please note that sometimes the `/Android/Sdk` folder is added inside `/Library/` inside your user folder. Check your user folder and if the `/Android/` folder is only inside `/Library/` do: `export ANDROID_HOME="$HOME/Library/Android/Sdk"` instead.
+
 *Windows*
 ``` command
 setx ANDROID_HOME "%USERPROFILE%\AppData\Local\Android\Sdk"

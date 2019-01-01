@@ -34,7 +34,7 @@ const { getScrollTarget, setScrollPosition } = scroll
 // takes an element object
 function scrollToElement (el) {
   let target = getScrollTarget(el)
-  let offset = el.offsetTop - el.scrollHeight
+  let offset = el.offsetTop
   let duration = 1000
   setScrollPosition(target, offset, duration)
 }

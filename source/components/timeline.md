@@ -34,6 +34,38 @@ framework: {
   </q-timeline-entry>
 </q-timeline>
 ```
+## Customize Entries Titles via slots
+*Quasar v0.17.18+*
+
+```html
+<q-timeline responsive color="secondary">
+  <q-timeline-entry
+    subtitle="April 22, 1991"
+    side="left"
+  >
+    <div>
+      Lorem ipsum dolor sit amet.
+    </div>
+    <!--
+      Use the class q-timeline-title to stick to original styling when using slots
+    -->
+    <h3 slot="title" class="q-timeline-title">
+      <q-icon name="account_balance" />
+      <span>Event</span>
+      <em>Title</em>
+    </h3>
+    <!--
+      Use the class q-timeline-subtitle to stick to original styling when using slots
+    -->
+    <h5 slot="subtitle" class="q-timeline-subtitle">
+      <q-icon name="warning" />
+      <span>April 22,</span>
+      <em>1991</em>
+    </h5>
+  </q-timeline-entry>
+</q-timeline>
+```
+
 
 ## QTimeline (Parent) Vue Properties
 | Vue Property | Type    | Description                            |
