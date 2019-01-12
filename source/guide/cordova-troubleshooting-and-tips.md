@@ -9,7 +9,7 @@ Use Google Chrome's emulator from Developer Tools. It's a fantastic tool. You ca
 
 ![Google Chrome emulator](/images/browser-simulator.png "Google Chrome emulator")
 
-## Android tips
+## Android Tips
 
 ### Remote Debugging
 
@@ -120,7 +120,7 @@ SUBSYSTEM=="usb", ATTRS{idVendor}=="1bbb", MODE="0666"
 
 Now running `adb devices` should discover your device.
 
-## iOS tips
+## iOS Tips
 
 ### Remote Debugging
 
@@ -134,7 +134,7 @@ First enable the "developer" menu option in the Settings of Safari. Then if you 
 
 Since mobile phones have a status bar and/or notches, your app's styling might need some tweaking when building on Cordova. In order to prevent parts of your app from going behind the status bar, there is a global CSS variable that can be used for creating a "safe-area". This variable can then be applied in your app's top and bottom padding or margin.
 
-Quasar has [some support for these CSS safe-areas](https://github.com/quasarframework/quasar/search?q=safe-area-inset-top&unscoped_q=safe-area-inset-top). However it's important to always check your Cordova build on several models to see if all cases of your app are dealing with the safe areas correctly.
+Quasar has [support for these CSS safe-areas](https://github.com/quasarframework/quasar/search?q=safe-area-inset-top&unscoped_q=safe-area-inset-top) by default in Layout Header/Footer and Notify. However it's important to always check your Cordova build on several models to see if all cases of your app are dealing with the safe areas correctly.
 
 In cases you need to manually tweak your CSS you can do so with:
 ```stylus
@@ -150,7 +150,7 @@ Of course you can also use the above example with `margin` instead of `padding` 
 In order to make sure these are only added when opened on mobile via the Cordova build, you can check for the CSS class `.cordova` which is automatically added to the body by Quasar. Eg.
 
 ```stylus
-body.cordova .my-header
+body.cordova .my-selector
   padding-top constant(safe-area-inset-top)
   padding-top env(safe-area-inset-top)
 ```
