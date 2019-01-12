@@ -90,27 +90,27 @@ To understand more about Quasar CLI, be sure to familiarize yourself [with the g
 ## Vue CLI 3 plugin
 To work with Quasar via a Vue CLI plugin, you will need to make sure you have vue-cli 3.x.x installed globally. To make sure you have Vue CLI 3.0, use this command:
 
-```
+```bash
 $ vue --version
 ```
 
 You should see something like: 
 
-```
+```bash
 $ vue --version
 3.2.3
 ```
 
 Should you have Vue CLI 2.x.x. installed, you'll need to uninstall it with:
 
-```
+```bash
 $ npm uninstall -g vue-cli
 # or: 
 $ yarn global remove vue-cli
 ```
 and then install Vue CLI 3.0 as follows: 
 
-```
+```bash
 $ yarn global add @vue/cli
 # or:
 $ npm install -g @vue/cli // recommended
@@ -118,13 +118,13 @@ $ npm install -g @vue/cli // recommended
 
 If you don't yet have a project created with vue-cli 3.x, then do so with:
 
-```
+```bash
 $ vue create my-app
 ```
 
 Navigate to the newly created project folder and add the cli plugin. Before installing it, make sure to commit your current changes should you wish to revert them later.
 
-```
+```bash
 $ cd my-app
 $ vue add quasar
 ```
