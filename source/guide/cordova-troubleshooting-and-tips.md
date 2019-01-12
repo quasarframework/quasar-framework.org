@@ -1,7 +1,7 @@
 title: Cordova Troubleshooting and Tips
 ---
 
-### Browser Simulator
+## Browser Simulator
 Use Google Chrome's emulator from Developer Tools. It's a fantastic tool. You can select which device to emulate, but keep in mind that it's an *emulator* and not the real deal.
 
 > **IMPORTANT**
@@ -9,18 +9,13 @@ Use Google Chrome's emulator from Developer Tools. It's a fantastic tool. You ca
 
 ![Google Chrome emulator](/images/browser-simulator.png "Google Chrome emulator")
 
-### Disabling iOS rubber band effect
-
-When building an iOS app with Cordova and you want to disable the rubber band effect (https://www.youtube.com/watch?v=UjuNGpU29Mk), add this to your `/src-cordova/config.xml`:
-
-``` xml
-<preference name = "DisallowOverscroll" value = "true" />
-```
+## Android Tips
 
 ### Remote Debugging
+
 If you are debugging Android Apps, you can use Google Chrome [Remote Debugging](https://developers.google.com/web/tools/chrome-devtools/debug/remote-debugging/remote-debugging?hl=en) through a USB cable attached to your Android phone/tablet. It can be used for emulator too.
 
-> This way you have Chrome Dev Tools directly for your App running on the emulator/phone/table. Inspect elements, check console output, and so on and so forth.
+This way you have Chrome Dev Tools directly for your App running on the emulator/phone/table. Inspect elements, check console output, and so on and so forth.
 
 ![Android Remote Debugging](/images/remote-debug.png "Android Remote Debugging")
 ![Android Remote Debugging](/images/remote-debug-2.png "Android Remote Debugging")
@@ -70,7 +65,6 @@ The output should contain each one entry for the Android SDK 'tools'-folder and 
 ```
 
 > If you ensured your paths are set correctly and still get the error on `cordova requirements` you can try the following fix: [Replacing the Android Studio 'tools' folder manually](https://github.com/meteor/meteor/issues/8464#issuecomment-288112504)
-
 
 ### Setting Up Device on Linux
 
@@ -125,3 +119,46 @@ SUBSYSTEM=="usb", ATTRS{idVendor}=="1bbb", MODE="0666"
 ```
 
 Now running `adb devices` should discover your device.
+
+## iOS Tips
+
+### Remote Debugging
+
+If you are debugging iOS Apps, you can use the Safari developer tools to remotely debug through a USB cable attached to your iOS phone/tablet. It can be used for emulator too.
+
+This way you have Safari developer tools directly for your App running on the emulator/phone/table. Inspect elements, check console output, and so on and so forth.
+
+First enable the "developer" menu option in the Settings of Safari. Then if you navigate to the "developer" menu option you will see your emulator or connected device listed near the top. From here you can open the developer tools.
+
+### Status bar and notch safe-areas
+
+Since mobile phones have a status bar and/or notches, your app's styling might need some tweaking when building on Cordova. In order to prevent parts of your app from going behind the status bar, there is a global CSS variable that can be used for creating a "safe-area". This variable can then be applied in your app's top and bottom padding or margin.
+
+Quasar has [support for these CSS safe-areas](https://github.com/quasarframework/quasar/search?q=safe-area-inset-top&unscoped_q=safe-area-inset-top) by default in Layout Header/Footer and Notify. However it's important to always check your Cordova build on several models to see if all cases of your app are dealing with the safe areas correctly.
+
+In cases you need to manually tweak your CSS you can do so with:
+```stylus
+// for your app's header
+padding-top constant(safe-area-inset-top) // for iOS 11.0
+padding-top env(safe-area-inset-top) // for iOS 11.2 +
+// for your app's footer
+padding-bottom constant(safe-area-inset-bottom)
+padding-bottom env(safe-area-inset-bottom)
+```
+Of course you can also use the above example with `margin` instead of `padding` depending on your app.
+
+In order to make sure these are only added when opened on mobile via the Cordova build, you can check for the CSS class `.cordova` which is automatically added to the body by Quasar. Eg.
+
+```stylus
+body.cordova .my-selector
+  padding-top constant(safe-area-inset-top)
+  padding-top env(safe-area-inset-top)
+```
+
+### Disabling iOS rubber band effect
+
+When building an iOS app with Cordova and you want to disable the rubber band effect (https://www.youtube.com/watch?v=UjuNGpU29Mk), add this to your `/src-cordova/config.xml`:
+
+``` xml
+<preference name = "DisallowOverscroll" value = "true" />
+```
