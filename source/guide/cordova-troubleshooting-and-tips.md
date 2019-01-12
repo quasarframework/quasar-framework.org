@@ -15,7 +15,7 @@ Use Google Chrome's emulator from Developer Tools. It's a fantastic tool. You ca
 
 If you are debugging Android Apps, you can use Google Chrome [Remote Debugging](https://developers.google.com/web/tools/chrome-devtools/debug/remote-debugging/remote-debugging?hl=en) through a USB cable attached to your Android phone/tablet. It can be used for emulator too.
 
-> This way you have Chrome Dev Tools directly for your App running on the emulator/phone/table. Inspect elements, check console output, and so on and so forth.
+This way you have Chrome Dev Tools directly for your App running on the emulator/phone/table. Inspect elements, check console output, and so on and so forth.
 
 ![Android Remote Debugging](/images/remote-debug.png "Android Remote Debugging")
 ![Android Remote Debugging](/images/remote-debug-2.png "Android Remote Debugging")
@@ -121,6 +121,14 @@ SUBSYSTEM=="usb", ATTRS{idVendor}=="1bbb", MODE="0666"
 Now running `adb devices` should discover your device.
 
 ## iOS tips
+
+### Remote Debugging
+
+If you are debugging iOS Apps, you can use the Safari developer tools to remotely debug through a USB cable attached to your iOS phone/tablet. It can be used for emulator too.
+
+This way you have Safari developer tools directly for your App running on the emulator/phone/table. Inspect elements, check console output, and so on and so forth.
+
+First enable the "developer" menu option in the Settings of Safari. Then if you navigate to the "developer" menu option you will see your emulator or connected device listed near the top. From here you can open the developer tools.
 
 ### Status bar and notch safe-areas
 
