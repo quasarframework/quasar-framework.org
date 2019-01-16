@@ -1,6 +1,6 @@
 title: Directive "v-scroll"
 ---
-[This is a Vue directive](https://www.npmjs.com/package/vue-scroll) which takes one parameter (a Function) and fires when user scrolls the page containing that DOM node.
+This is a Vue directive which takes one parameter (a Function) and fires when user scrolls the page containing that DOM node.
 
 One alternative to using this directive is to place a [QScrollObservable](/components/scroll-observable.html) component on your page.
 
