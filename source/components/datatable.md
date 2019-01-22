@@ -884,9 +884,9 @@ The value returned by `field` is used for sorting rows, while the `format` value
   row-key="name"
 >
   <q-tr slot="header" slot-scope="props" :props="props">
-    <q-th v-for="col in props.cols" :key="col.name" :props="props">
+    <th v-for="col in props.cols" :key="col.name" :props="props">
       # {{ col.label }} #
-    </q-th>
+    </th>
   </q-tr>
 </q-table>
 ```
