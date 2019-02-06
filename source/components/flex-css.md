@@ -2,6 +2,15 @@ title: Flex CSS
 ---
 Quasar provides lots of CSS classes to help you build your UI easily with the help of [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/). Think of it like operating with rows and columns with many options at hand.
 
+Example:
+``` html
+<div class="row">  <!-- use 'row' class to define a container / parent -->
+  <div>First column</div>  <!-- children will default to 'col'  -->
+  <div>Second column</div>
+  <div>Third column</div>
+</div>
+```
+
 > The final section of this page will show you how to create responsive UIs. Also take a look at the demo (best viewed by clicking "Desktop View" when on a desktop, because that's where you can resize the window width to see helper classes in action). Click on "View Source" too to see the demo's source code.
 <input type="hidden" data-fullpage-demo="css-helpers/flex-css" data-source="css-helpers/flex-css">
 
@@ -13,17 +22,19 @@ The main idea behind the flex layout is to give the container the ability to alt
 Most importantly, the flexbox layout is direction-agnostic as opposed to the regular layouts (block which is vertically-based and inline which is horizontally-based). While those work well for pages, they lack flexibility (no pun intended) to support large or complex applications (especially when it comes to orientation changing, resizing, stretching, shrinking, etc.).
 
 ## Getting Started
-Quasar Flex CSS classes apply to either the Container (Parent) or the Container's items (Children).
+Quasar Flex CSS works in a Parent / Child setup. 
+The image below shows the Parent element, or Container 
 
 ![Flexbox Container](/images/flexbox-container.svg)
+
+The image below shows the Children elements or Items.
 ![Flexbox Items](/images/flexbox-items.svg)
 
+All that's required to make this work is an element containing children with one of the parent classes defined on the parent. Nothing else. It does not matter what the parent of the parent is – i.e. it doesn't matter if the Container is inside a `q-page` or `flex` or anything else. There's also no need to define height and width on the parent... but of course if your containers and children are all empty you may not see anything!
+
 ## Parent Classes
-
-### Setting Direction
-One of the following CSS classes is mandatory for the parent in order for the children ones (described in next sections) to have any effect.
-
-![Flexbox Direction](/images/flexbox-direction.svg)
+One of the following CSS classes is mandatory for the parent in order for the children ones (described in next sections) to have any effect. The various sub-headings below in this Parent section describe classes for use on the parent element, or Container.
+* *Tip for newbies:* start with a simple parent - just with class="row" - then skip ahead to the "Children" section to see how to define your columns
 
 | Class Name | Description |
 | --- | --- |
@@ -34,14 +45,10 @@ One of the following CSS classes is mandatory for the parent in order for the ch
 | `row reverse` | Flex row with `flex-direction` set to `row-reverse` |
 | `column reverse` | Flex column with `flex-direction` set to `column-reverse` |
 
-Example:
-``` html
-<div class="row">
-  <div>First column</div>
-  <div>Second column</div>
-  <div>Third column</div>
-</div>
-```
+### Setting Direction
+The diagram below illustrates the effects of `row reverse` and `column reverse` parent classes.
+
+![Flexbox Direction](/images/flexbox-direction.svg)
 
 ### Wrapping by default
 By default, all rows and columns are wrapping content.
@@ -50,7 +57,7 @@ By default, all rows and columns are wrapping content.
 
 However if you explicitly do not want to wrap and by so doing you want to fit all content into one line, then add `no-wrap` CSS helper class.
 
-Also, if you want to wrap in reverse order, then `reverse-wrap` is available.
+Also, if you want to wrap in reverse order, then `reverse-wrap` is available to be set on the parent.
 
 | Class Name | Description |
 | --- | --- |
@@ -73,6 +80,7 @@ The next classes **align a flex container's lines** within when there is extra s
 ![Flexbox Content Align](/images/flexbox-content-align.svg)
 
 ## Children Classes
+This section describes classes for use on the Child elements (or "Items" from the "Getting Started" sectoin above.
 
 ### Distribution of Size
 Quasar uses a 12 point column system for distributing size of row children. Here are some examples of the CSS helper classes available:
@@ -178,7 +186,7 @@ What we've learned so far is that, for example, we can size the columns regardle
 
 Example: `col-md-7`, `offset-lg-3`, `col-xs-auto`.
 
-> Before diving into examples, make sure you read and understood [Children Classes &gt; Wrapping](#Wrapping) because it is key to understanding how you can build a responsive design.
+> Before diving into examples, make sure you read and understood [Children Classes &gt; Wrapping](#Wrapping) because it is key to understanding how you can build a responsive design. Also see https://quasar-framework.org/components/visibility.html#Window-Width-Related to avoid any confusion.
 
 A full example: let's say we have a row with three children. On extra small windows, we need to stack the children vertically, on small windows we need to display them side by side (each having equal width), and starting with medium windows we should display them all on same line:
 
