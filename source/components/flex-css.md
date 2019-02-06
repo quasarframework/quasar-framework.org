@@ -186,7 +186,10 @@ What we've learned so far is that, for example, we can size the columns regardle
 
 Example: `col-md-7`, `offset-lg-3`, `col-xs-auto`.
 
-> Before diving into examples, make sure you read and understood [Children Classes &gt; Wrapping](#Wrapping) because it is key to understanding how you can build a responsive design. Also see https://quasar-framework.org/components/visibility.html#Window-Width-Related to avoid any confusion.
+> Before diving into examples, make sure you read and understood [Children Classes &gt; Wrapping](#Wrapping) because it is key to understanding how you can build a responsive design. Also see the following links to avoid confusion:
+
+https://quasar-framework.org/components/visibility.html#Window-Width-Related <br/>
+https://quasar-framework.org/components/spacing.html
 
 A full example: let's say we have a row with three children. On extra small windows, we need to stack the children vertically, on small windows we need to display them side by side (each having equal width), and starting with medium windows we should display them all on same line:
 
