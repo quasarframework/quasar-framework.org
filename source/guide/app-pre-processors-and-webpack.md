@@ -37,7 +37,7 @@ Let's discuss about Webpack loaders now. It's probably where you'll make the mos
 
 ## Webpack Aliases
 Quasar comes with a bunch of useful Webpack aliases preconfigured.
-You can use them anywhere in your project and webpack will resolve the correct path. If you want to add you own alias, se the section about [adding your own alias to Webpack](/guide/app-quasar.conf.js.html#Adding-you-own-alias-to-Webpack).
+You can use them anywhere in your project and webpack will resolve the correct path. If you want to add you own alias, se the section about [adding your own alias to Webpack](/guide/app-quasar.conf.js.html#Adding-your-own-alias-to-Webpack).
 
 | Alias | Resolves to |
 | --- | --- |
