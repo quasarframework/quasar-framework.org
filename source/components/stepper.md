@@ -179,9 +179,8 @@ export default {
 | Vue Property | Type | Description |
 | --- | --- | --- |
 | `name` | Number, String | Step name, used by QStepper's `v-model` or `goToStep()` method. |
-| `default` | Boolean | (Optional) Use it on only one Step. Becomes default selected one. |
 | `error` | Boolean | Mark Step as having an error. |
-| `default` | Boolean | Use on only one Step to make it be the active one by default. Previous steps will be marked as `done`. Useful when refreshing page. |
+| `default` | Boolean | (Optional) Use it on only one Step. Becomes default selected one. Previous steps will be marked as `done`. Useful when refreshing page. |
 | `title` | String | Step title. |
 | `subtitle` | String | Step's additional information along the title. |
 | `icon` | String | Step's icon when Step isn't finished yet. If no `active-icon` is specified, then this icon will be used when Step is currently active too. |
