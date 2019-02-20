@@ -103,7 +103,14 @@ The properties above are just syntactic sugar and work similar to `<router-link>
 ## More examples
 Complete example with [QList](/components/lists-and-list-items.html):
 
-> Note the use of the `v-close-overlay` directive to close the dropdown on click. Don't forget to register it in `quasar.conf.js`
+> Note the use of the `v-close-overlay` directive to close the dropdown on click. Don't forget to register it in `quasar.conf.js` (as a directive, not a component)
+
+```
+    framework: {
+      directives: [
+        'CloseOverlay'
+      ],
+```
 
 ```html
 <q-btn-dropdown
