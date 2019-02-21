@@ -16,7 +16,7 @@ $ quasar build
 ```
 For possible build options please refer to the [Quasar CLI docs](/guide/quasar-cli).
 
-This command will build your project in SPA mode and output your production ready bundle to a newly created folder `/dist/spa-<theme>` were `<theme>` is replaced by the theme you chose to build with.
+This command will build your project in SPA mode and output your production ready bundle to a newly created folder `/dist/spa-<theme>` where `<theme>` is replaced by the theme you chose to build with.
 
 To serve your production files it is *required* to use a web server, so to serve over http:// protocol. Simply opening the `index.html` file from within your browser will not work, since this uses the file:// protocol instead.
 
