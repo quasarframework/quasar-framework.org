@@ -3,7 +3,7 @@ title: Mobile Addressbar Coloring
 Newer mobile browsers have the ability to specify a color for the addressbar, like in the example below.
 
 > **Note 1.** There isn't yet a Web standard for this so it won't work for all mobile browsers.
-> **Note 2.** This applies when building a website only. For coloring top bar on a mobile app (built with Cordova wrapper), please refer to [Cordova plugins](https://cordova.apache.org/plugins/).
+> **Note 2.** This applies when building a website only. For coloring top bar on a mobile app (built with Cordova wrapper), please refer to [cordova-plugin-statusbar](https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-statusbar/).
 
 ![Mobile Addressbar Coloring](/images/mobile-address-bar-colors.jpg "Mobile Addressbar Coloring")
 
