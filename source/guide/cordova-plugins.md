@@ -81,7 +81,7 @@ export default {
     updateBatteryStatus (status) {
       this.batteryStatus = `Level: ${status.level}, plugged: ${status.isPlugged}`
     }
-  }
+  },
   created () {
     // we register the event like on plugin's doc page
     window.addEventListener('batterystatus', this.updateBatteryStatus, false)
