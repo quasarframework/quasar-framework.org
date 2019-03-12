@@ -1,7 +1,7 @@
 title: Form Validation
 ---
 Recommended package for Form Validations is `Vuelidate`.
-Get started with the [documentation](https://monterail.github.io/vuelidate/).
+Get started with the [documentation](https://vuelidate.netlify.com/).
 
 ## Installation of Vuelidate
 ```bash
