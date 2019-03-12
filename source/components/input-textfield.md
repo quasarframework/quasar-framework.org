@@ -308,7 +308,7 @@ The above usage of QField will show the input field within a dark grey backgroun
 Please refer to the [QField documentation](/components/field.html) for more info about its usage.
 
 ## Validations with Vuelidate
-Quasar's recommendation for doing form components validations is  [Vuelidate](https://monterail.github.io/vuelidate/) as it fits great with the overall architecture. It's simple, lightweight and **model-based**.
+Quasar's recommendation for doing form components validations is  [Vuelidate](https://vuelidate.netlify.com/) as it fits great with the overall architecture. It's simple, lightweight and **model-based**.
 
 You need to have Vuelidate added to your project first. See [here](/components/form-validation.html).
 
