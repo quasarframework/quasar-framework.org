@@ -6,8 +6,9 @@ Loading is a feature that you can use to display an overlay with a spinner on to
 ## Installation
 Edit `/quasar.conf.js`:
 ```js
+import { Loading } from 'quasar'
 framework: {
-  plugins: ['Loading'],
+  plugins: [ Loading ],
 
   config: {
     // optional (v0.17+)
