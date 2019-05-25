@@ -13,8 +13,7 @@ You can also help with the documentation. If you catch a mistake or want to add 
 ## Github Repositories
 
 * [Quasar Framework](https://github.com/quasarframework/quasar)
-* [Quasar CLI](https://github.com/quasarframework/quasar-cli)
-* [Quasar Starter Kit](https://github.com/quasarframework/quasar-starter-kit)
+* [Quasar Starter Kit](https://github.com/quasarframework/quasar-starter-kit/tree/v0.17)
 * [Quasar Play](https://github.com/quasarframework/quasar-play)
 * [Documentation Website](https://github.com/quasarframework/quasar-framework.org)
 

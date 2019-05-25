@@ -169,7 +169,7 @@ If you are seeing babel issues when you run `quasar dev`, then you have probably
 # cd into project folder
 $ rm yarn.lock                       # or: package-lock.json (if installed through npm)
 $ rm -rf node_modules/
-$ yarn global add quasar-cli@latest  # or: npm install --global quasar-cli@latest
+$ npm install --global @quasar/cli@latest
 $ yarn add --dev quasar-cli@latest   # or: npm install --save-dev quasar-cli@latest
 $ yarn                               # or: npm install
 ```
@@ -190,14 +190,18 @@ So, what is new and what has changed? Everything has been polished. The full lis
 
 ### First step - when using the CLI
 First we make sure we update the globally installed Quasar version (needs to be at least v0.15). Then we create a new project folder:
-```bash
-# Node.js >= 8.9.0 is required.
-$ yarn global add quasar-cli@latest
-# or:
-$ npm install -g quasar-cli@latest
 
-# Then we create a project folder with Quasar CLI:
-$ quasar init <folder_name>
+```bash
+# remove old quasar-cli package if you have it
+$ npm uninstall -g quasar-cli
+
+# install the new one
+$ npm install -g @quasar/cli
+```
+
+Then we create a project folder with Quasar CLI:
+```bash
+$ quasar create <folder_name> -b v0.16
 ```
 
 Observe the new [project structure](/guide/app-directory-structure.html). Start to port out files to the new project folder, taking into account the far superior structure. **Using the new project initialization feature will allow you to take advantage of future seamless upgrades!** In any case, do not simply copy your `/src` folder over to the newly initialized project folder.

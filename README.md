@@ -4,16 +4,15 @@
 
 > Build responsive Single Page Apps, **SSR Apps**, PWAs, Hybrid Mobile Apps and Electron Apps, all using the same codebase!, powered with Vue.
 
-## Quasar Components
+## Quasar Docs
 
 * [Quasar Framework](https://github.com/quasarframework/quasar)
-* [Quasar Framework CLI](https://github.com/quasarframework/quasar-cli)
 
 ## Contributing
 
 I'm excited if you want to contribute to Quasar under any form (report bugs, write a plugin, fix an issue, write a new feature).
 
-I'm only asking that you [read this](http://quasar-framework.org/guide/quasar-contribution-guide.html) first.
+I'm only asking that you [read this](http://v0-17.quasar-framework.org/guide/quasar-contribution-guide.html) first.
 
 ## License
 

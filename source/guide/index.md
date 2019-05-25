@@ -64,23 +64,19 @@ If you want to be able to build:
 
 ...then go for the best developer experience:
 
-First, we will need to install Quasar CLI. Make sure you have Node >=8 and NPM >=5 or Yarn installed on your machine. We'll also be installing Vue CLI, which is only used internally by Quasar for creating an initial Quasar application project. Both version 2 and 3 of Vue CLI will work for this.
+First, we will need to install Quasar CLI. Make sure you have Node >=8 and NPM >=5 or Yarn installed on your machine.
 
 ```bash
-# install vue-cli globally
-$ npm install -g vue-cli # or @vue/cli @vue/cli-init // recommended
-# or:
-$ yarn global add vue-cli # or @vue/cli @vue/cli-init
+# remove old quasar-cli package if you have it
+$ npm uninstall -g quasar-cli
 
-# Node.js >= 8.9.0 is required.
-$ npm install -g quasar-cli // recommended
-# or:
-$ yarn global add quasar-cli 
+# install the latest cli
+$ npm install -g @quasar/cli
 ```
 
 With Quasar CLI globally installed, we can now create a new project:
 ```bash
-$ quasar init <folder_name>
+$ quasar create <folder_name> -b v0.17
 ```
 
 Note that you don't need different projects, in order to build any one of the application options described above. This one project folder can seamlessly handle all of them.
@@ -94,7 +90,7 @@ To work with Quasar via a Vue CLI plugin, you will need to make sure you have vu
 $ vue --version
 ```
 
-You should see something like: 
+You should see something like:
 
 ```bash
 $ vue --version
@@ -105,10 +101,10 @@ Should you have Vue CLI 2.x.x. installed, you'll need to uninstall it with:
 
 ```bash
 $ npm uninstall -g vue-cli
-# or: 
+# or:
 $ yarn global remove vue-cli
 ```
-and then install Vue CLI 3.0 as follows: 
+and then install Vue CLI 3.0 as follows:
 
 ```bash
 $ yarn global add @vue/cli

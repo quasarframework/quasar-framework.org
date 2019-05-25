@@ -2,7 +2,7 @@ title: Internationalization (I18n)
 ---
 Internationalization is a design process that ensures a product (a website or application) can be adapted to various languages and regions without requiring engineering changes to the source code. Think of internationalization as readiness for localization.
 
-The recommended package for handling website/app is [vue-i18n](https://github.com/kazupon/vue-i18n). This package should be added as an [App Plugin](https://quasar-framework.org/guide/app-plugins.html). See the [specific example for plugging in vue-i18n](https://quasar-framework.org/guide/app-plugins.html#vue-i18n).
+The recommended package for handling website/app is [vue-i18n](https://github.com/kazupon/vue-i18n). This package should be added as an [App Plugin](https://v0-17.quasar-framework.org/guide/app-plugins.html). See the [specific example for plugging in vue-i18n](https://v0-17.quasar-framework.org/guide/app-plugins.html#vue-i18n).
 
 It should be noted that what is described below is the internationalization of quasar-framework components only. If you need to internationalize your own components, read the documentation indicated above and configure the project by editing the files located in `<project>/src/i18n` (you may need to create this directory).
 

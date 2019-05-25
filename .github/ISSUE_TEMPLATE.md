@@ -4,8 +4,8 @@ Got a question?
 ===
 The issue list of this repo is **exclusively** for bug reports and feature requests. For simple questions, please use the following resources:
 
-- Read the docs: https://quasar-framework.org
-- For simple/quick questions ask on Discord chat server: http://chat.quasar-framework.org/
+- Read the docs: https://v0-17.quasar-framework.org
+- For simple/quick questions ask on Discord chat server: https://chat.quasar.dev/
 - For complex questions or requiring help, ask on the forum: https://forum.quasar-framework.org/
 
 Reporting a bug?

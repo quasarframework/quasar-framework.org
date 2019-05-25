@@ -13,8 +13,8 @@ Make sure to read [about it](/guide/embedding-quasar.html) before diving in. Whe
 
 ### Quasar Play
 Live Demo:
-* [Material Theme](http://quasar-framework.org/quasar-play/android/index.html#/showcase)
-* [iOS Theme](http://quasar-framework.org/quasar-play/apple/index.html#/showcase)
+* [Material Theme](http://v0-17.quasar-framework.org/quasar-play/android/index.html#/showcase)
+* [iOS Theme](http://v0-17.quasar-framework.org/quasar-play/apple/index.html#/showcase)
 * [Google Play Store](https://play.google.com/store/apps/details?id=com.quasarframework.quasarplay) (currently it's outdated, using a very old Quasar version)
 
 Quasar Play is used for these documentation pages too, on the right side, on the mobile frame.

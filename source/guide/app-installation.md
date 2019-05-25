@@ -11,15 +11,16 @@ Using the CLI is the recommended way to go in order to benefit from all Quasar c
 First, we install Quasar CLI. Make sure you have Node >=8 and NPM >=5 installed on your machine.
 
 ```bash
-# Node.js >= 8.9.0 is required.
-$ yarn global add quasar-cli
-# or:
-$ npm install -g quasar-cli
+# remove old quasar-cli package if you have it
+$ npm uninstall -g quasar-cli
+
+# install the new one
+$ npm install -g @quasar/cli
 ```
 
 Then we create a project folder with Quasar CLI:
 ```bash
-$ quasar init <folder_name>
+$ quasar create <folder_name> -b v0.17
 ```
 
 Note that you don't need separate projects if you want to build any of the options described above. This one project can seamlessly handle all of them.

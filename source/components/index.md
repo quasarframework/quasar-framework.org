@@ -11,5 +11,5 @@ Quasar Components are written as Web Components, so they embed HTML, CSS and Jav
 Check out the live demos for each Quasar theme to see what each component looks like and to learn how to use each one. If you widen your browser window enough then you'll see a live demo on the right side of each component page.
 
 Live Component Demo:
-* [Material Theme](http://quasar-framework.org/quasar-play/android/index.html#/showcase)
-* [iOS Theme](http://quasar-framework.org/quasar-play/apple/index.html#/showcase)
+* [Material Theme](http://v0-17.quasar-framework.org/quasar-play/android/index.html#/showcase)
+* [iOS Theme](http://v0-17.quasar-framework.org/quasar-play/apple/index.html#/showcase)

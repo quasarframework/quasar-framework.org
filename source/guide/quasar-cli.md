@@ -4,11 +4,12 @@ The Quasar CLI allows you to create new projects in no time, by generating a bas
 
 **You only need Quasar CLI if you are using the project initialization feature**. If you want the UMD version, you won't be needing it.
 
-``` bash
-# Node.js >= 8.9.0 is required.
-$ yarn global add quasar-cli
-# or:
-$ npm install -g quasar-cli
+```bash
+# remove old quasar-cli package if you have it
+$ npm uninstall -g quasar-cli
+
+# install the new one
+$ npm install -g @quasar/cli
 ```
 
 Familiarize yourself with the list of commands:
@@ -38,10 +39,8 @@ $ quasar [command name] --help
 
 Creates an App folder with initial project boilerplate.
 ``` bash
-$ quasar init <folder-name>
+$ quasar create <folder-name> -b v0.17
 ```
-
-You'll need `@vue/cli` and `@vue/cli-init` globally installed, or just `vue-cli`.
 
 ## info (Package Versions)
 The Quasar CLI is equipped with a stable combination of multiple NPM build packages (Webpack, Vue, etc) which gets updated frequently after heavy testing.

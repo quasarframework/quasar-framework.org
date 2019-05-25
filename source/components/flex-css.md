@@ -22,8 +22,8 @@ The main idea behind the flex layout is to give the container the ability to alt
 Most importantly, the flexbox layout is direction-agnostic as opposed to the regular layouts (block which is vertically-based and inline which is horizontally-based). While those work well for pages, they lack flexibility (no pun intended) to support large or complex applications (especially when it comes to orientation changing, resizing, stretching, shrinking, etc.).
 
 ## Getting Started
-Quasar Flex CSS works in a Parent / Child setup. 
-The image below shows the Parent element, or Container 
+Quasar Flex CSS works in a Parent / Child setup.
+The image below shows the Parent element, or Container
 
 ![Flexbox Container](/images/flexbox-container.svg)
 
@@ -188,8 +188,8 @@ Example: `col-md-7`, `offset-lg-3`, `col-xs-auto`.
 
 > Before diving into examples, make sure you read and understood [Children Classes &gt; Wrapping](#Wrapping) because it is key to understanding how you can build a responsive design. Also see the following links to avoid confusion:
 
-https://quasar-framework.org/components/visibility.html#Window-Width-Related <br/>
-https://quasar-framework.org/components/spacing.html
+https://v0-17.quasar-framework.org/components/visibility.html#Window-Width-Related <br/>
+https://v0-17.quasar-framework.org/components/spacing.html
 
 A full example: let's say we have a row with three children. On extra small windows, we need to stack the children vertically, on small windows we need to display them side by side (each having equal width), and starting with medium windows we should display them all on same line:
 
