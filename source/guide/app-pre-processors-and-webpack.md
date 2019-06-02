@@ -94,6 +94,14 @@ build: {
 
 And you're done.
 
+### Web worker Support Hotfix (https://github.com/webpack/webpack/issues/6642):
+```
+  // quasar.conf
+  extendWebpack (cfg) {
+    cfg.output.globalObject = 'this'
+  }
+```
+
 ## SASS/SCSS support
 So you want to be able to write SASS/SCSS CSS code. You need a loader for it. We first install it. Note that for this particular case you also need to install node-sass because sass-loader depends on it as a peer dependency.
 

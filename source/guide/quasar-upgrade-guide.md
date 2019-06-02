@@ -178,6 +178,8 @@ $ yarn                               # or: npm install
 * QIcon: removed "mat" & "ios" props for performance reasons (use `:name="$q.theme === 'mat' ? val : otherVal"` instead)
 * Removed utils > dom > viewport() method (use window.innerHeight/innerWidth instead)
 * Updated Quasar ionicons set to Ionicons v4 -- compatible with quasar-extras@2.0
+* [Web Workers break Upstream Hot Module Reload HMR] (https://github.com/webpack/webpack/issues/6642)
+* [Web Workers require update to webpack.cfg] (/guide/app-quasar.conf.js.html) for quasar.conf.js
 
 ## Upgrading pre v0.15 to Quasar v0.15+
 There's been A LOT of work done for v0.15. The Quasar CLI has been rewritten from scratch to allow for a stellar development experience (Mobile App developers and Electron will fall in love with it!). Only one CLI initialized project is required in order to handle websites, PWAs, Mobile Apps and Electron Apps. Building any of those is a matter of just adding a parameter to the dev/build command.
