@@ -50,6 +50,23 @@ window.addEventListener(
 )
 ```
 
+Vue SFV example:
+```
+<template>
+<q-input @keyup="save(submission)" v-model="submission"  />
+</template
+<script>
+export default {
+ import { debounce } from 'quasar'
+ methods: {    
+    save: debounce(function(field, value) {
+        console.log(value);
+      }, 300 /*ms to wait*/)
+  }
+}
+</script>
+```
+
 ## Throttle Function
 Throttling enforces a maximum number of times a function can be called over time. As in "execute this function at most once every X milliseconds."
 
