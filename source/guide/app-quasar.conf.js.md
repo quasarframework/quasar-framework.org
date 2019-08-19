@@ -12,7 +12,7 @@ So what can you configure through `/quasar.conf.js`?
 * [App Plugins](/guide/app-plugins.html) list (that determines order of execution too) -- which are files in `/src/plugins` that tell how your app is initialized before mounting the root Vue component
 * Global CSS/Stylus/... files to be included in the bundle
 * PWA [manifest](/guide/pwa-configuring-pwa.html#Configuring-Manifest-File) and [Workbox options](/guide/pwa-configuring-pwa.html#Quasar-conf-js)
-* [Electron Packager](/guide/electron-configuring-electron.html) and/or [Electron Builder](/electron-configuring-electron.html)
+* [Electron Packager](/guide/electron-configuring-electron.html) and/or [Electron Builder](https://www.electron.build/configuration/configuration)
 * IE11+ support
 * Extend Webpack config Object
 
