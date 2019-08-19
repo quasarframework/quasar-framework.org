@@ -164,6 +164,8 @@ Examples:
 | Vue Method | Description |
 | --- | --- |
 | `upload()` | Start file(s) upload. |
+| `pick()` | Trigger file pick (same as clicking the plus button on the uploader). Must be called as a direct consequence of user interaction (eg. in a click handler), due to browsers security policy. |
+| `add(files)` | Add array of files. |
 | `abort()` | Abort uploading file(s). |
 | `reset()` | Reset uploader state. |
 
