@@ -246,6 +246,13 @@ If, for some reason, the input requires some longer term background action or pr
 | `@click` | Triggered by a native `click` event on textfield. |
 | `@paste` | (v0.17.10+) Triggered by a paste event on the textfield. |
 
+### @input vs @change
+
+`@input` event is emitted each time some interaction is performed on the control (even if it's not changing the model). If you use v-model then on each `@input` the value of the model is changed.
+`@change` event is emitted only when the control changes are considered done (let's simplify and consider on blur) AND when the internal model of the control is different from the external model.
+When using v-model, your internal and external models are always in sync and no `@change` is emitted.
+When using `:value="model" @change="val => { model = val; do_something_with(val)}"`, then there will be `@change` events.
+
 ## Formatting
 It is possible to add formatting to a QInput in two ways. One is for the basic component. The other is with the QField component. Both methods offer "inverted" coloring.
 
