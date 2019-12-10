@@ -32,7 +32,7 @@ let timeStamp = Date.now()
 let formattedString = date.formatDate(timeStamp, 'YYYY-MM-DDTHH:mm:ss.SSSZ')
 ```
 
-For i18n, you can use a third parameter:
+For `$q.i18n` (Quasar's built in localization), locale will be set automatically based on the global quasar `locale`. For custom i18n, you can use a third parameter:
 ```js
 let formattedString = date.formatDate(timesStamp, 'MMMM - dddd', {
   dayNames: ['Duminica', 'Luni', /* and all the rest of days - remember starting with Sunday */],
