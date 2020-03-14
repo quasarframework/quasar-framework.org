@@ -42,6 +42,11 @@ export default {
       ldJson: {
         type: 'application/ld+json',
         innerHTML: `{ "@context": "http://schema.org" }`
+      },
+      // or for a js script stored on a cdn
+      someCDNScript: {
+        type: 'text/javascript',
+        src: 'http://some-cdn.url'
       }
     },
 
