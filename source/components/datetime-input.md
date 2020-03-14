@@ -38,7 +38,6 @@ Supports `v-model` which must be a String, Number or Date Object.
 | --- | --- | --- |
 | `type` | String | One of `date`, `time` or `datetime`. Default is `date`. |
 | `clearable` | Boolean | If used, the component offers the user an actionable icon to reset the current value to `clear-value` (if it is set) or otherwise `default-value`. The icon appears only when the current value matches `clear-value`/`default-value`. |
-| `default-value` | String/Object | Default color for picker when model is not yet set. |
 | `clear-value` | String/Object | The value to which to reset the field model to when using `clearable`, unless `default-value` is specified. |
 | `minimal` | Boolean | (v0.15.9+) Don't display header. |
 | `readonly` | Boolean | If set to `true`, component is displayed as read-only. |
