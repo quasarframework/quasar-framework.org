@@ -131,9 +131,9 @@ Component events:
 | `@step` | Emitted when navigating to another step. |
 
 ### Using `v-model`
-Each QStep has a `name` prop (which is optional). Use this prop along with `v-model` to control the current step.
+Each QStep has an optional `name` prop. Use the `@click` to set the value of `currentStep` in `v-model`. The example below shows how you can use `v-model` alone to control navigation using `@click` events. 
 
-The example below shows how you can use `v-model` alone to control navigation. Notice the `@click` events. If you dynamically insert/remove Steps it's better to use a Vue reference on QStepper and call `next()` or `previous()` methods since these methods are not binded to specific Step names.
+If you dynamically insert/remove steps, then it's better to use a Vue reference on QStepper ($refs.stepper) and call the `next()` or `previous()` methods since these methods are not bound to specific step names.
 
 ```html
 <template>
